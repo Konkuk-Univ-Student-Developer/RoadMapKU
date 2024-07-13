@@ -5,8 +5,8 @@
 - 로컬에서 바로 원격 develop 브랜치에 push 하는 것을 막아놓았습니다.
 - develop 브랜치에 반영하기 위해선 로컬에서 작업한 내용을 별도의 브랜치를 생성하고 Pull Request를 진행해야 합니다.
 - PR 제목은 {제목태그} - {구현사항 간략한 요약} 으로 해주시면 감사하겠습니다.
-- ![image](https://github.com/user-attachments/assets/e6b83451-c1d5-4d5a-b448-fc45cf2dd5e8)
-- 반드시 기능을 개발할 때, **pull** 을 반드시 하고 개발을 해주시기 바랍니다!!!!!!!
+- ![image](https://github.com/user-attachments/assets/ccaaf8d8-cbad-48bc-83f5-35b0924445bb)
+- push 하기 전에, **pull** 을 반드시 해주시기 바랍니다!!!!!!!
 
 ## Branch 이름에 대하여
 - 가능한 feature/ ~~~ 형식에 맞게 지어주시면 감사하겠습니다!
