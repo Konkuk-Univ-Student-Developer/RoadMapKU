@@ -1,10 +1,78 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import './List.css';
-import '../../Animation/Animation.css';
+import { immergeBounce, dismissBounce } from '../Animation/Animation';
+import Modal from './Modal';
+import Backdrop from './Backdrop';
 
-import Modal from '../Modal/Modal';
-import Backdrop from '../Backdrop/Backdrop';
+const Content = styled.div`
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	transition: width 500ms ease-in-out;
+
+	&.with-sidebar {
+		width: calc(100% - 20rem);
+	}
+
+	&.full-width {
+		width: 100%;
+	}
+`;
+
+const Title = styled.div`
+	margin-right: auto;
+	margin-left: 1rem;
+	margin-top: 1rem;
+	font-size: xx-large;
+	font-weight: bolder;
+`;
+
+const ListContainer = styled.ul`
+	margin-left: 20rem;
+	margin: 1rem;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	grid-auto-rows: minmax(2rem, auto);
+	gap: 0.5rem;
+`;
+
+const ListItem = styled.li`
+	box-sizing: border-box;
+	border: 0.05rem solid black;
+	background-color: white;
+	font-size: small;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: ${({ column }) => column};
+	grid-row: ${({ row }) => row};
+	cursor: ${({ unclickable }) => (unclickable ? 'default' : 'pointer')};
+
+	&.unclickable {
+		pointer-events: none;
+		color: gray;
+	}
+
+	&.small-size {
+		font-size: smaller;
+	}
+
+	&:hover,
+	&:active {
+		background-color: #dadada;
+	}
+
+	&.BounceImmerge {
+		animation: ${immergeBounce} 400ms ease-out forwards;
+	}
+
+	&.BounceDismiss {
+		animation: ${dismissBounce} 400ms ease-out forwards;
+	}
+`;
 
 const animationTiming = {
 	enter: 1000,
@@ -164,7 +232,7 @@ const List = ({ show }) => {
 					exit: 'BounceDismiss'
 				}}
 			>
-				<li
+				<ListItem
 					className={`ListItem ${isUnclickable ? 'unclickable' : ''}
             ${isIndexItems ? 'small-size' : ''}
             `}
@@ -176,24 +244,20 @@ const List = ({ show }) => {
 					}}
 				>
 					{item.content[0]}
-				</li>
+				</ListItem>
 			</CSSTransition>
 		);
 	});
 
 	return (
-		<div className={`content ${show ? 'with-sidebar' : 'full-width'}`}>
+		<Content className={`content ${show ? 'with-sidebar' : 'full-width'}`}>
 			<Modal show={selectedItem !== null} content={selectedItem} closed={closeModal} />
 			{selectedItem !== null && <Backdrop show={true} />}
 
-			<div className="title">내 로드맵</div>
-			<TransitionGroup component="ul" className="List">
-				{listItems}
-			</TransitionGroup>
-			<TransitionGroup component="ul" className="List">
-				{listItems}
-			</TransitionGroup>
-		</div>
+			<Title>내 로드맵</Title>
+			<TransitionGroup component={ListContainer}>{listItems}</TransitionGroup>
+			<TransitionGroup component={ListContainer}>{listItems}</TransitionGroup>
+		</Content>
 	);
 };
 
