@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
-import Main from '../pages/Main/Main';
+import Main from '../components/Main';
 import { useState } from 'react';
 
 const Container = styled.a``;
