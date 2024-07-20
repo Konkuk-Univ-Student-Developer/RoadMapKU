@@ -45,10 +45,10 @@ const Modal = (props) => {
 
 	useEffect(() => {
 		if (props.show) {
-			setModalContent(props.content[0]);
-			setModalContent_sub1(props.content[0]);
-			setModalContent_sub2(props.content[0]);
-			setModalContent_sub3(props.content[0]);
+			setModalContent(props.item.content[0]);
+			setModalContent_sub1(props.item.content[0]);
+			setModalContent_sub2(props.item.content[0]);
+			setModalContent_sub3(props.item.content[0]);
 		}
 	}, [props.show, props.content]);
 
