@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
+import HeroSection from './HeroSection';
+import Header from '../components/Header';
 function Home() {
 	// const navigate = useNavigate();
 
@@ -10,9 +12,8 @@ function Home() {
 		<>
 			{/* <h1>hi</h1>
 			<button onClick={onClickHandler}>start</button> */}
-			<AppContainer>
-				<HeroSection></HeroSection>
-			</AppContainer>
+			<Header />
+			<HeroSection />
 
 			{/* <AppContainer>
 				<Sidebar />
