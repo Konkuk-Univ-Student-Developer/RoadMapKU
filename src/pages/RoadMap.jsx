@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
+import Main from '../components/Main';
 import { useState } from 'react';
+
+const Container = styled.a``;
 
 const ShareButton = styled.a`
 	position: fixed;
@@ -31,7 +34,9 @@ function RoadMap() {
 			<button onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep === 3}>
 				Next
 			</button>
-			<h1>Road Map Page!</h1>
+			<Container>
+				<Main />
+			</Container>
 			<ShareButton>Share</ShareButton>
 		</>
 	);

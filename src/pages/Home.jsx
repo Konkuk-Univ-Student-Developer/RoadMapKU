@@ -1,16 +1,4 @@
-// import { useNavigate } from 'react-router-dom';
-// import { Sidebar } from '../components/SideBar';
-// import { MainContent } from '../components/MainContent';
-import styled from 'styled-components';
-import HeroSection from './HeroSection';
-
-const AppContainer = styled.div`
-	display: flex;
-	width: 100%;
-	height: 100%;
-	background-color: #f7f7f7;
-`;
-
+import { useNavigate } from 'react-router-dom';
 function Home() {
 	// const navigate = useNavigate();
 
