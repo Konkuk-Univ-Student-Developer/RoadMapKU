@@ -99,9 +99,9 @@ function Header() {
 				</HeaderLinks>
 				<HeaderActions>
 					<ExtraLinks>
-						<ExtraLink href="/campus">캠퍼스</ExtraLink>
-						<ExtraLink href="/service">KU Service</ExtraLink>
-						<ExtraLink href="/language">Language</ExtraLink>
+						<ExtraLink onClick={() => navigate('/campus')}>캠퍼스</ExtraLink>
+						<ExtraLink onClick={() => navigate('/service')}>KU Service</ExtraLink>
+						<ExtraLink onClick={() => navigate('/language')}>Language</ExtraLink>
 					</ExtraLinks>
 				</HeaderActions>
 			</HeaderContainer>
