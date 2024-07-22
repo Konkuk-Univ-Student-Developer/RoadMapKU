@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import NavBar from '../components/NavBar';
 import Main from '../components/Main';
-import { useState } from 'react';
+import Header from '../components/Header';
 
 const Container = styled.a``;
 
@@ -23,17 +22,9 @@ const ShareButton = styled.a`
 `;
 
 function RoadMap() {
-	const [currentStep, setCurrentStep] = useState(0);
-
 	return (
 		<>
-			<NavBar currentStep={currentStep} />
-			<button onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep === 0}>
-				Previous
-			</button>
-			<button onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep === 3}>
-				Next
-			</button>
+			<Header />
 			<Container>
 				<Main />
 			</Container>

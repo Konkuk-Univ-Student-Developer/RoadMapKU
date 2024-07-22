@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import styled from 'styled-components';
 import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
@@ -75,7 +75,7 @@ function Header() {
 	const [showModal, setShowModal] = useState(false);
 	const handleModalOpen = () => setShowModal(true);
 	const handleModalClose = () => setShowModal(false);
-	const activeLink = '/'; // Example active link, replace with your logic for determining active link
+	const { pathname } = useLocation();
 
 	return (
 		<>
@@ -84,13 +84,13 @@ function Header() {
 					<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
 				</HeaderBrand>
 				<HeaderLinks>
-					<HeaderLink onClick={() => navigate('/')} active={activeLink === '/'}>
+					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
 						Home
 					</HeaderLink>
-					<HeaderLink onClick={() => navigate('/road-map')} active={activeLink === '/road-map'}>
+					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
 						로드맵
 					</HeaderLink>
-					<HeaderLink onClick={() => navigate('/colleges')} active={activeLink === '/colleges'}>
+					<HeaderLink onClick={() => navigate('/colleges')} active={pathname === '/colleges'}>
 						대학/대학원
 					</HeaderLink>
 					<HeaderLink href="#" onClick={handleModalOpen}>
