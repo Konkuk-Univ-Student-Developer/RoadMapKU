@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const theme = {
@@ -68,7 +69,8 @@ const ExtraLink = styled.a`
 `;
 
 function Header() {
-	const activeLink = '/'; // Example active link, replace with your logic for determining active link
+	const navigate = useNavigate();
+	const activeLink = '/';
 
 	return (
 		<HeaderContainer>
@@ -76,24 +78,24 @@ function Header() {
 				<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
 			</HeaderBrand>
 			<HeaderLinks>
-				<HeaderLink href="/" active={activeLink === '/'}>
+				<HeaderLink onClick={() => navigate('/')} active={activeLink === '/'}>
 					Home
 				</HeaderLink>
-				<HeaderLink href="/road-map" active={activeLink === '/voca-village'}>
+				<HeaderLink onClick={() => navigate('/road-map')} active={activeLink === '/road-map'}>
 					로드맵
 				</HeaderLink>
-				<HeaderLink href="/colleges" active={activeLink === '/colleges'}>
+				<HeaderLink onClick={() => navigate('/colleges')} active={activeLink === '/colleges'}>
 					대학/대학원
 				</HeaderLink>
-				<HeaderLink href="/academic" active={activeLink === '/academic'}>
+				<HeaderLink onClick={() => navigate('/academic')} active={activeLink === '/academic'}>
 					학사안내
 				</HeaderLink>
 			</HeaderLinks>
 			<HeaderActions>
 				<ExtraLinks>
-					<ExtraLink href="/campus">캠퍼스</ExtraLink>
-					<ExtraLink href="/service">KU Service</ExtraLink>
-					<ExtraLink href="/language">Language</ExtraLink>
+					<ExtraLink onClick={() => navigate('/campus')}>캠퍼스</ExtraLink>
+					<ExtraLink onClick={() => navigate('/service')}>KU Service</ExtraLink>
+					<ExtraLink onClick={() => navigate('/language')}>Language</ExtraLink>
 				</ExtraLinks>
 			</HeaderActions>
 		</HeaderContainer>
