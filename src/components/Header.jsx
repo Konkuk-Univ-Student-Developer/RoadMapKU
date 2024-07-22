@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 
 const theme = {
 	active: {
@@ -68,35 +70,45 @@ const ExtraLink = styled.a`
 `;
 
 function Header() {
+	const [showModal, setShowModal] = useState(false);
+	const handleModalOpen = () => setShowModal(true);
+	const handleModalClose = () => setShowModal(false);
 	const activeLink = '/'; // Example active link, replace with your logic for determining active link
 
 	return (
-		<HeaderContainer>
-			<HeaderBrand>
-				<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
-			</HeaderBrand>
-			<HeaderLinks>
-				<HeaderLink href="/" active={activeLink === '/'}>
-					Home
-				</HeaderLink>
-				<HeaderLink href="/road-map" active={activeLink === '/voca-village'}>
-					로드맵
-				</HeaderLink>
-				<HeaderLink href="/colleges" active={activeLink === '/colleges'}>
-					대학/대학원
-				</HeaderLink>
-				<HeaderLink href="/academic" active={activeLink === '/academic'}>
-					학사안내
-				</HeaderLink>
-			</HeaderLinks>
-			<HeaderActions>
-				<ExtraLinks>
-					<ExtraLink href="/campus">캠퍼스</ExtraLink>
-					<ExtraLink href="/service">KU Service</ExtraLink>
-					<ExtraLink href="/language">Language</ExtraLink>
-				</ExtraLinks>
-			</HeaderActions>
-		</HeaderContainer>
+		<>
+			<HeaderContainer>
+				<HeaderBrand>
+					<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
+				</HeaderBrand>
+				<HeaderLinks>
+					<HeaderLink href="/" active={activeLink === '/'}>
+						Home
+					</HeaderLink>
+					<HeaderLink href="/road-map" active={activeLink === '/voca-village'}>
+						로드맵
+					</HeaderLink>
+					<HeaderLink href="/colleges" active={activeLink === '/colleges'}>
+						대학/대학원
+					</HeaderLink>
+					<HeaderLink href="#" onClick={handleModalOpen}>
+						학사안내
+					</HeaderLink>
+				</HeaderLinks>
+				<HeaderActions>
+					<ExtraLinks>
+						<ExtraLink href="/campus">캠퍼스</ExtraLink>
+						<ExtraLink href="/service">KU Service</ExtraLink>
+						<ExtraLink href="/language">Language</ExtraLink>
+					</ExtraLinks>
+				</HeaderActions>
+			</HeaderContainer>
+			<Modal
+				show={showModal}
+				closed={handleModalClose}
+				item={{ content: ['학사안내 내용1', '학사안내 내용2', '학사안내 내용3'] }}
+			/>
+		</>
 	);
 }
 
