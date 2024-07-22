@@ -1,5 +1,7 @@
+
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 
 const theme = {
 	active: {
@@ -70,7 +72,10 @@ const ExtraLink = styled.a`
 
 function Header() {
 	const navigate = useNavigate();
-	const activeLink = '/';
+	const [showModal, setShowModal] = useState(false);
+	const handleModalOpen = () => setShowModal(true);
+	const handleModalClose = () => setShowModal(false);
+	const activeLink = '/'; //
 
 	return (
 		<HeaderContainer>
@@ -87,7 +92,7 @@ function Header() {
 				<HeaderLink onClick={() => navigate('/colleges')} active={activeLink === '/colleges'}>
 					대학/대학원
 				</HeaderLink>
-				<HeaderLink onClick={() => navigate('/academic')} active={activeLink === '/academic'}>
+				<HeaderLink onClick={handleModalOpen} active={activeLink === '/academic'}>
 					학사안내
 				</HeaderLink>
 			</HeaderLinks>
@@ -99,6 +104,11 @@ function Header() {
 				</ExtraLinks>
 			</HeaderActions>
 		</HeaderContainer>
+<Modal
+				show={showModal}
+				closed={handleModalClose}
+				item={{ content: ['학사안내 내용1', '학사안내 내용2', '학사안내 내용3'] }}
+			/>
 	);
 }
 

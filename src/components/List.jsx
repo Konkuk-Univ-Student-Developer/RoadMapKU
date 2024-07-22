@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { immergeBounce, dismissBounce, slideUp, slideDown } from '../Animation/Animation';
-import Modal from './Modal';
+import Modal from './Modal/Modal';
 import Backdrop from './Backdrop';
 
 const Content = styled.div`
