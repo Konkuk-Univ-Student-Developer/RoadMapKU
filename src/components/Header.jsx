@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 
@@ -70,45 +71,44 @@ const ExtraLink = styled.a`
 `;
 
 function Header() {
+	const navigate = useNavigate();
 	const [showModal, setShowModal] = useState(false);
 	const handleModalOpen = () => setShowModal(true);
 	const handleModalClose = () => setShowModal(false);
-	const activeLink = '/'; // Example active link, replace with your logic for determining active link
+	const activeLink = '/'; //
 
 	return (
-		<>
-			<HeaderContainer>
-				<HeaderBrand>
-					<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
-				</HeaderBrand>
-				<HeaderLinks>
-					<HeaderLink href="/" active={activeLink === '/'}>
-						Home
-					</HeaderLink>
-					<HeaderLink href="/road-map" active={activeLink === '/voca-village'}>
-						로드맵
-					</HeaderLink>
-					<HeaderLink href="/colleges" active={activeLink === '/colleges'}>
-						대학/대학원
-					</HeaderLink>
-					<HeaderLink href="#" onClick={handleModalOpen}>
-						학사안내
-					</HeaderLink>
-				</HeaderLinks>
-				<HeaderActions>
-					<ExtraLinks>
-						<ExtraLink href="/campus">캠퍼스</ExtraLink>
-						<ExtraLink href="/service">KU Service</ExtraLink>
-						<ExtraLink href="/language">Language</ExtraLink>
-					</ExtraLinks>
-				</HeaderActions>
-			</HeaderContainer>
-			<Modal
+		<HeaderContainer>
+			<HeaderBrand>
+				<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
+			</HeaderBrand>
+			<HeaderLinks>
+				<HeaderLink onClick={() => navigate('/')} active={activeLink === '/'}>
+					Home
+				</HeaderLink>
+				<HeaderLink onClick={() => navigate('/road-map')} active={activeLink === '/road-map'}>
+					로드맵
+				</HeaderLink>
+				<HeaderLink onClick={() => navigate('/colleges')} active={activeLink === '/colleges'}>
+					대학/대학원
+				</HeaderLink>
+				<HeaderLink onClick={handleModalOpen} active={activeLink === '/academic'}>
+					학사안내
+				</HeaderLink>
+			</HeaderLinks>
+			<HeaderActions>
+				<ExtraLinks>
+					<ExtraLink onClick={() => navigate('/campus')}>캠퍼스</ExtraLink>
+					<ExtraLink onClick={() => navigate('/service')}>KU Service</ExtraLink>
+					<ExtraLink onClick={() => navigate('/language')}>Language</ExtraLink>
+				</ExtraLinks>
+			</HeaderActions>
+		</HeaderContainer>
+<Modal
 				show={showModal}
 				closed={handleModalClose}
 				item={{ content: ['학사안내 내용1', '학사안내 내용2', '학사안내 내용3'] }}
 			/>
-		</>
 	);
 }
 
