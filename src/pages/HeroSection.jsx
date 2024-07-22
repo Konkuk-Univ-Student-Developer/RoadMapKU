@@ -18,7 +18,7 @@ const MainSection = styled.div`
 	height: 100%; /* Ensure full height */
 	justify-content: center;
 	align-items: center; /* Center the content vertically */
-	background-color: #456e2a; /* Assuming --main is a CSS variable */
+	background-color: white; /* Assuming --main is a CSS variable */
 `;
 
 const ImageWrapper = styled.div`
