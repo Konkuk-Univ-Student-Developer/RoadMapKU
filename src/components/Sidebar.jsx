@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SidebarContents from './SidebarContents';
 
 const SidebarContainer = styled.div`
 	position: absolute;
@@ -59,7 +60,7 @@ const Sidebar = ({ show, toggleSidebar }) => {
 			<HideButton onClick={toggleSidebar} className={show ? 'visible' : 'hidden'}>
 				{show ? '<<' : '>>'}
 			</HideButton>
-			<div>Sidebar Content</div>
+			<SidebarContents />
 		</SidebarContainer>
 	);
 };
