@@ -128,7 +128,7 @@ const List = ({ show, courseItems }) => {
 	const [roadMapItems, setRoadMapItems] = useState(indexItems_my);
 	const [myItems, setMyItems] = useState(indexItems_my);
 	const [lastIndex, setLastIndex] = useState(lastIndexList);
-	const [maxRowValue, setMaxRowValue] = useState(0);
+	// const [maxRowValue, setMaxRowValue] = useState(0);
 
 	useEffect(() => {
 		const newItems = [...indexItems];
@@ -140,7 +140,7 @@ const List = ({ show, courseItems }) => {
 			newItems.push({ content: [`${i}`], row: i + 1, column: 1 });
 		}
 		setRoadMapItems([...newItems]);
-		setMaxRowValue(maxRowValueFromCourseItems);
+		// setMaxRowValue(maxRowValueFromCourseItems);
 
 		courseItems.forEach((item, index) => {
 			setTimeout(() => {

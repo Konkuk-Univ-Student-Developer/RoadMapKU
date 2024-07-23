@@ -13,6 +13,7 @@ const MainContent = styled.div`
 `;
 
 const Content = styled.div`
+	padding: 5rem;
 	width: 100%;
 	// background-color: blueviolet;
 `;
