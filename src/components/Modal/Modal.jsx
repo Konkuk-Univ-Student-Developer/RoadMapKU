@@ -200,7 +200,7 @@ const Modal = ({ show, width, closed }) => {
 	}, [show, scrollPosition]);
 
 	const handleOverlayClick = (e) => {
-		// 클릭한 영역이 ModalWrapper이 아닌 경우 모달을 닫습니다.
+		// 클릭한 영역이 ModalWrapper이 아닌 경우 모달을 닫음
 		if (e.target === e.currentTarget) {
 			closed();
 		}
