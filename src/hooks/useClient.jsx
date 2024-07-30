@@ -1,7 +1,10 @@
+import { useSetRecoilState } from 'recoil';
 import useApi from './useApi';
+import { largeFieldState } from '../recoils/atoms';
 
 const useClient = () => {
 	const { clientApi } = useApi();
+	const setLargeFieldState = useSetRecoilState(largeFieldState);
 
 	const fetchTest = () => {
 		clientApi.get('data/mockdata.json').then((res) => {
@@ -14,6 +17,7 @@ const useClient = () => {
 			.get('data/fieldsLarge.json')
 			.then((res) => {
 				console.log(res.data);
+				setLargeFieldState(res.data);
 			})
 			.catch((error) => {
 				console.log(error);
