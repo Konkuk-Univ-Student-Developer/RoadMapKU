@@ -19,7 +19,6 @@ const useClient = () => {
 		clientApi
 			.get('data/fieldsLarge.json')
 			.then((res) => {
-				console.log(res.data);
 				setLargeFieldState(res.data);
 			})
 			.catch((error) => {
@@ -33,7 +32,6 @@ const useClient = () => {
 			.then((res) => {
 				const prefixReq = requestMiddle.largeFieldCode.substring(0, 2);
 				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 2));
-				console.log(filteredData);
 				setMiddleFieldState(filteredData);
 			})
 			.catch((error) => {
@@ -47,7 +45,6 @@ const useClient = () => {
 			.then((res) => {
 				const prefixReq = requestSmall.middleFieldCode.substring(0, 4);
 				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 4));
-				console.log(filteredData);
 				setSmallFieldState(filteredData);
 			})
 			.catch((error) => {
@@ -61,7 +58,6 @@ const useClient = () => {
 			.then((res) => {
 				const prefixReq = requestDetail.smallFieldCode.substring(0, 6);
 				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 6));
-				console.log(filteredData);
 				setDetailFieldState(filteredData);
 			})
 			.catch((error) => {
