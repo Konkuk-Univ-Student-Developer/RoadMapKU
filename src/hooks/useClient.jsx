@@ -1,11 +1,12 @@
 import { useSetRecoilState } from 'recoil';
 import useApi from './useApi';
-import { largeFieldState, middleFieldState } from '../recoils/atoms';
+import { largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
 
 const useClient = () => {
 	const { clientApi } = useApi();
 	const setLargeFieldState = useSetRecoilState(largeFieldState);
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
+	const setSmallFieldState = useSetRecoilState(smallFieldState);
 
 	const fetchTest = () => {
 		clientApi.get('data/mockdata.json').then((res) => {
@@ -46,6 +47,7 @@ const useClient = () => {
 				const prefixReq = requestSmall.middleFieldCode.substring(0, 4);
 				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 4));
 				console.log(filteredData);
+				setSmallFieldState(filteredData);
 			})
 			.catch((error) => {
 				console.error(error);

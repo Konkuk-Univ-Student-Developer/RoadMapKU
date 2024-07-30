@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
-import { largeFieldState, middleFieldState } from '../recoils/atoms';
+import { largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
 import useClient from '../hooks/useClient';
 import styled from 'styled-components';
 
@@ -33,9 +33,10 @@ const StyledSelect = styled.select`
 `;
 
 const FieldCategoryInput = () => {
-	const { fetchLargeField, fetchMiddleField } = useClient();
+	const { fetchLargeField, fetchMiddleField, fetchSmallField } = useClient();
 	const largeFields = useRecoilValue(largeFieldState);
 	const middleFields = useRecoilValue(middleFieldState);
+	const smallFields = useRecoilValue(smallFieldState);
 
 	useEffect(() => {
 		fetchLargeField();
@@ -49,6 +50,14 @@ const FieldCategoryInput = () => {
 		fetchMiddleField(reqData);
 	};
 
+	const selectMiddleField = (e) => {
+		console.log(e.target.value);
+		const reqData = {
+			middleFieldCode: e.target.value
+		};
+		fetchSmallField(reqData);
+	};
+
 	return (
 		<Container>
 			<StyledSelect onChange={selectLargeField}>
@@ -58,10 +67,17 @@ const FieldCategoryInput = () => {
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect>
+			<StyledSelect onChange={selectMiddleField}>
 				{middleFields.map((item) => (
 					<option key={item.fieldCode} value={item.fieldCode}>
 						{item.middleField}
+					</option>
+				))}
+			</StyledSelect>
+			<StyledSelect>
+				{smallFields.map((item) => (
+					<option key={item.fieldCode} value={item.fieldCode}>
+						{item.smallField}
 					</option>
 				))}
 			</StyledSelect>
