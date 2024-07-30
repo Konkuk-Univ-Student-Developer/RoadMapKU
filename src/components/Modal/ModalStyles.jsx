@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
+export const Overlay = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+`;
+
 export const ModalWrapper = styled.div`
 	position: fixed;
 	z-index: 200;
@@ -18,6 +31,7 @@ export const ModalWrapper = styled.div`
 	transform: translate(-50%, -50%); /* 모달을 중앙에 배치 */
 	border-radius: 1rem; /* 모서리 둥글게 */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 시각적으로 모달을 돋보이게 하는 그림자 추가 */
+	z-index: 1001; /* Overlay보다 위에 표시되도록 설정 */
 
 	&.BounceImmerge {
 		animation: ${immergeBounce} 400ms ease-out forwards;

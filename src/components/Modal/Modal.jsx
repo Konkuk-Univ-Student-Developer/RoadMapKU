@@ -87,22 +87,22 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 // import { Scrollbars } from 'react-custom-scrollbars';
 import {
+	Overlay,
 	ModalWrapper,
 	Title,
 	Subtitle,
 	ModalContent,
-	Table,
 	ButtonContainer,
 	Button,
 	Subject,
 	SubjectContainer
-} from './ModalStyles'; // 경로는 실제 파일 위치에 맞게 조정
+} from './ModalStyles';
 import TableComponent from '../TableComponent';
 
-const animationTiming = {
-	enter: 1000,
-	exit: 1000
-};
+// const animationTiming = {
+// 	enter: 1000,
+// 	exit: 1000
+// };
 
 const Modal = ({ show, width, closed }) => {
 	const [title, setTitle] = useState('');
@@ -114,6 +114,7 @@ const Modal = ({ show, width, closed }) => {
 	const [subtitle3, setSubtitle3] = useState('');
 	const [tableHeaders, setTableHeaders] = useState([]);
 	const [tableRows, setTableRows] = useState([]);
+	const [scrollPosition, setScrollPosition] = useState(0);
 	// const [additionalInfo, setAdditionalInfo] = useState({
 	// 	university: '',
 	// 	department: '',
@@ -185,10 +186,30 @@ const Modal = ({ show, width, closed }) => {
 		// setAdditionalInfo(modalContent.sections[3].text);
 	}, []);
 
+	useEffect(() => {
+		if (show) {
+			// 저장 현재 스크롤 위치
+			setScrollPosition(window.scrollY);
+			// 모달 열 때 스크롤 비활성화
+			document.body.style.overflow = 'hidden';
+		} else {
+			// 모달 닫을 때 원래 위치로 스크롤 복원
+			document.body.style.overflow = 'auto';
+			window.scrollTo(0, scrollPosition);
+		}
+	}, [show, scrollPosition]);
+
+	const handleOverlayClick = (e) => {
+		// 클릭한 영역이 ModalWrapper이 아닌 경우 모달을 닫음
+		if (e.target === e.currentTarget) {
+			closed();
+		}
+	};
+
 	return (
 		<CSSTransition
 			in={show}
-			timeout={animationTiming}
+			//timeout={animationTiming}
 			mountOnEnter
 			unmountOnExit
 			classNames={{
@@ -197,68 +218,56 @@ const Modal = ({ show, width, closed }) => {
 				exit: 'BounceDismiss'
 			}}
 		>
-			<ModalWrapper width={width}>
-				<div>
-					<Title>{title}</Title>
-					<SubjectContainer>
-						<Subject>{subject}</Subject>
-					</SubjectContainer>
+			<Overlay onClick={handleOverlayClick}>
+				<ModalWrapper width={width} onClick={(e) => e.stopPropagation()}>
 					<div>
-						<Subtitle>{subtitle1}</Subtitle>
-						<ModalContent>{text1}</ModalContent>
-					</div>
-					<div>
-						<Subtitle>{subtitle2}</Subtitle>
-						<ModalContent>{text2}</ModalContent>
-					</div>
-					<div>
-						<Subtitle>{subtitle3}</Subtitle>
-						<ModalContent>
-							<Table>
-								<thead>
-									<tr>
-										{tableHeaders.map((header, i) => (
-											<th key={i}>{header}</th>
-										))}
-									</tr>
-								</thead>
-								<tbody>
-									{tableRows.map((row, i) => (
-										<tr key={i}>
-											{row.map((cell, j) => (
-												<td key={j}>{cell}</td>
+						<Title>{title}</Title>
+						<SubjectContainer>
+							<Subject>{subject}</Subject>
+						</SubjectContainer>
+						<div>
+							<Subtitle>{subtitle1}</Subtitle>
+							<ModalContent>{text1}</ModalContent>
+						</div>
+						<div>
+							<Subtitle>{subtitle2}</Subtitle>
+							<ModalContent>{text2}</ModalContent>
+						</div>
+						<div>
+							<Subtitle>{subtitle3}</Subtitle>
+							<ModalContent>
+								<TableComponent>
+									<thead>
+										<tr>
+											{tableHeaders.map((header, i) => (
+												<th key={i}>{header}</th>
 											))}
 										</tr>
-									))}
-								</tbody>
-							</Table>
-						</ModalContent>
+									</thead>
+									<tbody>
+										{tableRows.map((row, i) => (
+											<tr key={i}>
+												{row.map((cell, j) => (
+													<td key={j}>{cell}</td>
+												))}
+											</tr>
+										))}
+									</tbody>
+								</TableComponent>
+							</ModalContent>
+						</div>
+						<div>
+							<Subtitle>Additional information </Subtitle>
+							<ModalContent>
+								<TableComponent />
+							</ModalContent>
+						</div>
+						<ButtonContainer>
+							<Button onClick={closed}>Close</Button>
+						</ButtonContainer>
 					</div>
-					<div>
-						<Subtitle>Additional information </Subtitle>
-						<ModalContent>
-							{/* <p>{additionalInfo.university}</p>
-							<p>{additionalInfo.department}</p>
-							<p>{additionalInfo.lectureType}</p>
-							<p>{additionalInfo.grade}</p>
-							<p>{additionalInfo.semester}</p>
-							<p>{additionalInfo.credits}</p>
-							<p>{additionalInfo.certificationCompletion}</p>
-							<p>{additionalInfo.certificationType}</p>
-							<p>{additionalInfo.certificationDetail}</p>
-							<p>{additionalInfo.sameCourseCode}</p>
-							<p>{additionalInfo.prerequisite}</p>
-							<p>{additionalInfo.mooc}</p>
-							<p>{additionalInfo.selc}</p>
-							<p>{additionalInfo.challenger}</p> */}
-							<TableComponent />
-						</ModalContent>
-					</div>
-					<ButtonContainer>
-						<Button onClick={closed}>Close</Button>
-					</ButtonContainer>
-				</div>
-			</ModalWrapper>
+				</ModalWrapper>
+			</Overlay>
 		</CSSTransition>
 	);
 };
