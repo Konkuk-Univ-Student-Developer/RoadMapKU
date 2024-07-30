@@ -9,6 +9,13 @@ const useClient = () => {
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 
+	const getFilteredData = (fieldCode, responseData, offset) => {
+		const prefixReq = fieldCode.substring(0, offset);
+		const filteredData = responseData.filter((item) => prefixReq == item.fieldCode.substring(0, offset));
+
+		return filteredData;
+	};
+
 	const fetchTest = () => {
 		clientApi.get('data/mockdata.json').then((res) => {
 			console.log(res.data);
@@ -30,8 +37,7 @@ const useClient = () => {
 		clientApi
 			.get('data/fieldsMiddle.json', requestMiddle)
 			.then((res) => {
-				const prefixReq = requestMiddle.largeFieldCode.substring(0, 2);
-				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 2));
+				const filteredData = getFilteredData(requestMiddle.largeFieldCode, res.data, 2);
 				setMiddleFieldState(filteredData);
 			})
 			.catch((error) => {
@@ -43,8 +49,7 @@ const useClient = () => {
 		clientApi
 			.get('data/fieldsSmall.json', requestSmall)
 			.then((res) => {
-				const prefixReq = requestSmall.middleFieldCode.substring(0, 4);
-				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 4));
+				const filteredData = getFilteredData(requestSmall.middleFieldCode, res.data, 4);
 				setSmallFieldState(filteredData);
 			})
 			.catch((error) => {
@@ -56,8 +61,7 @@ const useClient = () => {
 		clientApi
 			.get('data/fieldsDetail.json', requestDetail)
 			.then((res) => {
-				const prefixReq = requestDetail.smallFieldCode.substring(0, 6);
-				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 6));
+				const filteredData = getFilteredData(requestDetail.smallFieldCode, res.data, 6);
 				setDetailFieldState(filteredData);
 			})
 			.catch((error) => {
