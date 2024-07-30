@@ -1,162 +1,162 @@
 [
 	{
 		"fieldCode": "01010000",
-		"largeCategory": "경영·사무·금융·보험직",
-		"middleCategory": "관리직(임원·부서장)"
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)"
 	},
 	{
 		"fieldCode": "01020000",
-		"largeCategory": "경영·사무·금융·보험직",
-		"middleCategory": "사무직"
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "사무직"
 	},
 	{
 		"fieldCode": "01030000",
-		"largeCategory": "경영·사무·금융·보험직",
-		"middleCategory": "금융 및 보험직"
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융 및 보험직"
 	},
 	{
 		"fieldCode": "02010000",
-		"largeCategory": "연구직 및 공학 기술직",
-		"middleCategory": "연구직"
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "연구직"
 	},
 	{
 		"fieldCode": "02020000",
-		"largeCategory": "연구직 및 공학 기술직",
-		"middleCategory": "공학 기술직"
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "공학 기술직"
 	},
 	{
 		"fieldCode": "03010000",
-		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
-		"middleCategory": "교육직"
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직"
 	},
 	{
 		"fieldCode": "03020000",
-		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
-		"middleCategory": "법률직"
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직"
 	},
 	{
 		"fieldCode": "03030000",
-		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
-		"middleCategory": "사회복지직"
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지직"
 	},
 	{
 		"fieldCode": "03040000",
-		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
-		"middleCategory": "경찰·소방직 및 군인"
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "경찰·소방직 및 군인"
 	},
 	{
 		"fieldCode": "04010000",
-		"largeCategory": "보건·의료직",
-		"middleCategory": "의료직"
+		"largeField": "보건·의료직",
+		"middleField": "의료직"
 	},
 	{
 		"fieldCode": "04020000",
-		"largeCategory": "보건·의료직",
-		"middleCategory": "보건직"
+		"largeField": "보건·의료직",
+		"middleField": "보건직"
 	},
 	{
 		"fieldCode": "05010000",
-		"largeCategory": "예술·디자인·방송·스포츠직",
-		"middleCategory": "예술직"
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술직"
 	},
 	{
 		"fieldCode": "05020000",
-		"largeCategory": "예술·디자인·방송·스포츠직",
-		"middleCategory": "디자인직"
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "디자인직"
 	},
 	{
 		"fieldCode": "05030000",
-		"largeCategory": "예술·디자인·방송·스포츠직",
-		"middleCategory": "방송직"
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "방송직"
 	},
 	{
 		"fieldCode": "05040000",
-		"largeCategory": "예술·디자인·방송·스포츠직",
-		"middleCategory": "스포츠직"
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠직"
 	},
 	{
 		"fieldCode": "06010000",
-		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
-		"middleCategory": "미용직"
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용직"
 	},
 	{
 		"fieldCode": "06020000",
-		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
-		"middleCategory": "여행·숙박직"
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박직"
 	},
 	{
 		"fieldCode": "06030000",
-		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
-		"middleCategory": "음식직"
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식직"
 	},
 	{
 		"fieldCode": "06040000",
-		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
-		"middleCategory": "경비직"
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경비직"
 	},
 	{
 		"fieldCode": "06050000",
-		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
-		"middleCategory": "청소직"
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소직"
 	},
 	{
 		"fieldCode": "07010000",
-		"largeCategory": "영업·판매·운전·운송직",
-		"middleCategory": "영업직"
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업직"
 	},
 	{
 		"fieldCode": "07020000",
-		"largeCategory": "영업·판매·운전·운송직",
-		"middleCategory": "판매직"
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "판매직"
 	},
 	{
 		"fieldCode": "07030000",
-		"largeCategory": "영업·판매·운전·운송직",
-		"middleCategory": "운전직"
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전직"
 	},
 	{
 		"fieldCode": "07040000",
-		"largeCategory": "영업·판매·운전·운송직",
-		"middleCategory": "운송직"
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운송직"
 	},
 	{
 		"fieldCode": "08010000",
-		"largeCategory": "건설·채굴직",
-		"middleCategory": "건설직"
+		"largeField": "건설·채굴직",
+		"middleField": "건설직"
 	},
 	{
 		"fieldCode": "08020000",
-		"largeCategory": "건설·채굴직",
-		"middleCategory": "채굴직"
+		"largeField": "건설·채굴직",
+		"middleField": "채굴직"
 	},
 	{
 		"fieldCode": "09010000",
-		"largeCategory": "설치·정비·생산직",
-		"middleCategory": "설치직"
+		"largeField": "설치·정비·생산직",
+		"middleField": "설치직"
 	},
 	{
 		"fieldCode": "09020000",
-		"largeCategory": "설치·정비·생산직",
-		"middleCategory": "정비직"
+		"largeField": "설치·정비·생산직",
+		"middleField": "정비직"
 	},
 	{
 		"fieldCode": "09030000",
-		"largeCategory": "설치·정비·생산직",
-		"middleCategory": "생산직"
+		"largeField": "설치·정비·생산직",
+		"middleField": "생산직"
 	},
 	{
 		"fieldCode": "10010000",
-		"largeCategory": "농림어업직",
-		"middleCategory": "농업직"
+		"largeField": "농림어업직",
+		"middleField": "농업직"
 	},
 	{
 		"fieldCode": "10020000",
-		"largeCategory": "농림어업직",
-		"middleCategory": "림업직"
+		"largeField": "농림어업직",
+		"middleField": "림업직"
 	},
 	{
 		"fieldCode": "10030000",
-		"largeCategory": "농림어업직",
-		"middleCategory": "어업직"
+		"largeField": "농림어업직",
+		"middleField": "어업직"
 	}
 ]
