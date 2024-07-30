@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SidebarContents from './SidebarContents';
+import FieldCategoryInput from './FieldCategoryInput';
 
 const SidebarContainer = styled.div`
 	position: absolute;
@@ -59,6 +60,7 @@ const Sidebar = ({ show, toggleSidebar }) => {
 				{show ? '<<' : '>>'}
 			</HideButton>
 			<SidebarContents />
+			<FieldCategoryInput />
 		</SidebarContainer>
 	);
 };
