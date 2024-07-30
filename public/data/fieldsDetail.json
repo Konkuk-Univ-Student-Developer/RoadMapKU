@@ -1,0 +1,3152 @@
+[
+	{
+		"fieldCode": "01010101",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "의회의원·고위공무원 및 기업 고위임원",
+		"detailCategory": "의회의원·고위공무원 및 공공단체임원"
+	},
+	{
+		"fieldCode": "01010102",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "의회의원·고위공무원 및 기업 고위임원",
+		"detailCategory": "기업 고위임원"
+	},
+	{
+		"fieldCode": "01010201",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "행정·경영·금융·보험 관리자　",
+		"detailCategory": "정부행정 관리자"
+	},
+	{
+		"fieldCode": "01010202",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "행정·경영·금융·보험 관리자　",
+		"detailCategory": "경영지원 관리자"
+	},
+	{
+		"fieldCode": "01010203",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "행정·경영·금융·보험 관리자　",
+		"detailCategory": "마케팅·광고·홍보 관리자"
+	},
+	{
+		"fieldCode": "01010204",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "행정·경영·금융·보험 관리자　",
+		"detailCategory": "금융·보험 관리자"
+	},
+	{
+		"fieldCode": "01010301",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "연구 관리자"
+	},
+	{
+		"fieldCode": "01010302",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "교육 관리자"
+	},
+	{
+		"fieldCode": "01010303",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "법률·경찰·소방·교도 관리자"
+	},
+	{
+		"fieldCode": "01010304",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "보건·의료 관리자"
+	},
+	{
+		"fieldCode": "01010305",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "사회복지 관리자"
+	},
+	{
+		"fieldCode": "01010306",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "예술·디자인·방송 관리자"
+	},
+	{
+		"fieldCode": "01010307",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "정보통신 관리자"
+	},
+	{
+		"fieldCode": "01010308",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "전문서비스 관리자",
+		"detailCategory": "부동산·조사·인력알선 및 기타 전문서비스 관리자"
+	},
+	{
+		"fieldCode": "01010401",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailCategory": "미용·여행?숙박·스포츠 관리자"
+	},
+	{
+		"fieldCode": "01010402",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailCategory": "음식서비스 관리자"
+	},
+	{
+		"fieldCode": "01010403",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailCategory": "경비·청소 관리자"
+	},
+	{
+		"fieldCode": "01010501",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "영업·판매·운송 관리자",
+		"detailCategory": "영업·판매 관리자"
+	},
+	{
+		"fieldCode": "01010502",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "영업·판매·운송 관리자",
+		"detailCategory": "운송 관리자"
+	},
+	{
+		"fieldCode": "01010503",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "영업·판매·운송 관리자",
+		"detailCategory": "기타 판매 및 고객서비스 관리자"
+	},
+	{
+		"fieldCode": "01010601",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "건설·채굴·제조·생산 관리자",
+		"detailCategory": "건설·채굴 관리자"
+	},
+	{
+		"fieldCode": "01010602",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "건설·채굴·제조·생산 관리자",
+		"detailCategory": "전기·가스·수도 관리자"
+	},
+	{
+		"fieldCode": "01010603",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "건설·채굴·제조·생산 관리자",
+		"detailCategory": "제조·생산 관리자"
+	},
+	{
+		"fieldCode": "01010604",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "관리직(임원·부서장)",
+		"smallCategory": "건설·채굴·제조·생산 관리자",
+		"detailCategory": "기타 건설·전기 및 제조 관리자"
+	},
+	{
+		"fieldCode": "01020101",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공행정 전문가",
+		"detailCategory": "정부·공공행정 전문가"
+	},
+	{
+		"fieldCode": "01020201",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영·인사 전문가",
+		"detailCategory": "경영·진단 전문가"
+	},
+	{
+		"fieldCode": "01020202",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영·인사 전문가",
+		"detailCategory": "인사·노무 전문가"
+	},
+	{
+		"fieldCode": "01020301",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·세무·감정 전문가",
+		"detailCategory": "회계사"
+	},
+	{
+		"fieldCode": "01020302",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·세무·감정 전문가",
+		"detailCategory": "세무사"
+	},
+	{
+		"fieldCode": "01020303",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·세무·감정 전문가",
+		"detailCategory": "관세사"
+	},
+	{
+		"fieldCode": "01020304",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·세무·감정 전문가",
+		"detailCategory": "감정 전문가"
+	},
+	{
+		"fieldCode": "01020401",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "광고·조사·상품기획·행사기획 전문가",
+		"detailCategory": "광고·홍보 전문가"
+	},
+	{
+		"fieldCode": "01020402",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "광고·조사·상품기획·행사기획 전문가",
+		"detailCategory": "조사 전문가"
+	},
+	{
+		"fieldCode": "01020403",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "광고·조사·상품기획·행사기획 전문가",
+		"detailCategory": "상품 기획자"
+	},
+	{
+		"fieldCode": "01020404",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "광고·조사·상품기획·행사기획 전문가",
+		"detailCategory": "행사 기획자"
+	},
+	{
+		"fieldCode": "01020501",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공 행정 사무원",
+		"detailCategory": "조세행정 사무원"
+	},
+	{
+		"fieldCode": "01020502",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공 행정 사무원",
+		"detailCategory": "관세행정 사무원"
+	},
+	{
+		"fieldCode": "01020503",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공 행정 사무원",
+		"detailCategory": "병무행정 사무원"
+	},
+	{
+		"fieldCode": "01020504",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공 행정 사무원",
+		"detailCategory": "국가·지방행정 사무원"
+	},
+	{
+		"fieldCode": "01020505",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "정부·공공 행정 사무원",
+		"detailCategory": "공공행정 사무원"
+	},
+	{
+		"fieldCode": "01020601",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영지원 사무원",
+		"detailCategory": "기획·마케팅 사무원"
+	},
+	{
+		"fieldCode": "01020602",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영지원 사무원",
+		"detailCategory": "인사·교육·훈련 사무원"
+	},
+	{
+		"fieldCode": "01020603",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영지원 사무원",
+		"detailCategory": "총무 사무원 및 대학 행정조교"
+	},
+	{
+		"fieldCode": "01020604",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "경영지원 사무원",
+		"detailCategory": "감사 사무원"
+	},
+	{
+		"fieldCode": "01020701",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·경리 사무원",
+		"detailCategory": "회계 사무원"
+	},
+	{
+		"fieldCode": "01020702",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "회계·경리 사무원",
+		"detailCategory": "경리 사무원"
+	},
+	{
+		"fieldCode": "01020801",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "무역·운송·생산·품질 사무원",
+		"detailCategory": "무역 사무원"
+	},
+	{
+		"fieldCode": "01020802",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "무역·운송·생산·품질 사무원",
+		"detailCategory": "운송 사무원"
+	},
+	{
+		"fieldCode": "01020803",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "무역·운송·생산·품질 사무원",
+		"detailCategory": "자재·구매·물류 사무원"
+	},
+	{
+		"fieldCode": "01020804",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "무역·운송·생산·품질 사무원",
+		"detailCategory": "생산·품질 사무원"
+	},
+	{
+		"fieldCode": "01020901",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "안내·접수원 및 전화교환원"
+	},
+	{
+		"fieldCode": "01020902",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "고객 상담원 및 모니터 요원"
+	},
+	{
+		"fieldCode": "01020903",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "통계 사무원 "
+	},
+	{
+		"fieldCode": "01020904",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "비서"
+	},
+	{
+		"fieldCode": "01020905",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "전산자료 입력원 및 사무 보조원"
+	},
+	{
+		"fieldCode": "01020906",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "경영·행정·사무직",
+		"smallCategory": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailCategory": "기타 사무원"
+	},
+	{
+		"fieldCode": "01030101",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "투자·신용 분석가"
+	},
+	{
+		"fieldCode": "01030102",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "자산 운용가"
+	},
+	{
+		"fieldCode": "01030103",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "보험·금융상품 개발자"
+	},
+	{
+		"fieldCode": "01030104",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "증권·외환 딜러"
+	},
+	{
+		"fieldCode": "01030105",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "손해사정사"
+	},
+	{
+		"fieldCode": "01030106",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 전문가",
+		"detailCategory": "기타 금융·보험 전문가"
+	},
+	{
+		"fieldCode": "01030201",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "은행 사무원"
+	},
+	{
+		"fieldCode": "01030202",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "증권 사무원"
+	},
+	{
+		"fieldCode": "01030203",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "보험 심사원 및 사무원"
+	},
+	{
+		"fieldCode": "01030204",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "출납창구 사무원"
+	},
+	{
+		"fieldCode": "01030205",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "수금원 및 신용 추심원"
+	},
+	{
+		"fieldCode": "01030206",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 사무원",
+		"detailCategory": "기타 금융 사무원"
+	},
+	{
+		"fieldCode": "01030301",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 영업원",
+		"detailCategory": "대출 및 신용카드 모집인"
+	},
+	{
+		"fieldCode": "01030302",
+		"largeCategory": "경영·사무·금융·보험직",
+		"middleCategory": "금융·보험직",
+		"smallCategory": "금융·보험 영업원",
+		"detailCategory": "보험 모집인 및 투자 권유 대행인"
+	},
+	{
+		"fieldCode": "02010101",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "인문·사회과학 연구직",
+		"smallCategory": "인문·사회과학 연구원",
+		"detailCategory": "인문과학 연구원"
+	},
+	{
+		"fieldCode": "02010102",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "인문·사회과학 연구직",
+		"smallCategory": "인문·사회과학 연구원",
+		"detailCategory": "사회과학 연구원"
+	},
+	{
+		"fieldCode": "02020101",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "자연·생명과학 연구직",
+		"smallCategory": "자연과학 연구원 및 시험원",
+		"detailCategory": "자연과학 연구원"
+	},
+	{
+		"fieldCode": "02020102",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "자연·생명과학 연구직",
+		"smallCategory": "자연과학 연구원 및 시험원",
+		"detailCategory": "자연과학 시험원"
+	},
+	{
+		"fieldCode": "02020201",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "자연·생명과학 연구직",
+		"smallCategory": "생명과학 연구원 및 시험원",
+		"detailCategory": "생명과학 연구원"
+	},
+	{
+		"fieldCode": "02020202",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "자연·생명과학 연구직",
+		"smallCategory": "생명과학 연구원 및 시험원",
+		"detailCategory": "생명과학 시험원"
+	},
+	{
+		"fieldCode": "02020203",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "자연·생명과학 연구직",
+		"smallCategory": "생명과학 연구원 및 시험원",
+		"detailCategory": "농림어업 시험원"
+	},
+	{
+		"fieldCode": "02030101",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "컴퓨터하드웨어·통신공학 기술자",
+		"detailCategory": "컴퓨터 하드웨어 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02030102",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "컴퓨터하드웨어·통신공학 기술자",
+		"detailCategory": "통신공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02030201",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "컴퓨터시스템 전문가",
+		"detailCategory": "컴퓨터시스템 전문가"
+	},
+	{
+		"fieldCode": "02030301",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "소프트웨어 개발자",
+		"detailCategory": "시스템 소프트웨어 개발자"
+	},
+	{
+		"fieldCode": "02030302",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "소프트웨어 개발자",
+		"detailCategory": "응용 소프트웨어 개발자"
+	},
+	{
+		"fieldCode": "02030303",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "소프트웨어 개발자",
+		"detailCategory": "웹 개발자"
+	},
+	{
+		"fieldCode": "02030304",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "소프트웨어 개발자",
+		"detailCategory": "기타 컴퓨터 전문가 및 소프트웨어 전문가"
+	},
+	{
+		"fieldCode": "02030401",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailCategory": "데이터 전문가"
+	},
+	{
+		"fieldCode": "02030402",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailCategory": "네트워크 시스템 개발자"
+	},
+	{
+		"fieldCode": "02030403",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailCategory": "정보시스템 운영자"
+	},
+	{
+		"fieldCode": "02030404",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailCategory": "웹 운영자"
+	},
+	{
+		"fieldCode": "02030405",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailCategory": "기타 데이터 및 네트워크 전문가"
+	},
+	{
+		"fieldCode": "02030501",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "정보보안 전문가",
+		"detailCategory": "정보보안 전문가"
+	},
+	{
+		"fieldCode": "02030601",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "정보통신 연구개발직 및 공학기술직",
+		"smallCategory": "통신·방송송출 장비 기사",
+		"detailCategory": "통신·방송송출 장비 기사"
+	},
+	{
+		"fieldCode": "02040101",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "건축가"
+	},
+	{
+		"fieldCode": "02040102",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "건축공학 기술자"
+	},
+	{
+		"fieldCode": "02040103",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "토목공학 기술자"
+	},
+	{
+		"fieldCode": "02040104",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "조경 기술자"
+	},
+	{
+		"fieldCode": "02040105",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "도시·교통 전문가"
+	},
+	{
+		"fieldCode": "02040106",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "측량·지리정보 전문가"
+	},
+	{
+		"fieldCode": "02040107",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "건설·채굴 연구개발직 및 공학기술직",
+		"smallCategory": "건축·토목공학 기술자 및 시험원",
+		"detailCategory": "건설자재 시험원"
+	},
+	{
+		"fieldCode": "02050101",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "기계·로봇공학 기술자 및 시험원",
+		"detailCategory": "기계공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050102",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "기계·로봇공학 기술자 및 시험원",
+		"detailCategory": "로봇공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050103",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "기계·로봇공학 기술자 및 시험원",
+		"detailCategory": "기계·로봇공학 시험원"
+	},
+	{
+		"fieldCode": "02050201",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "금속·재료공학 기술자 및 시험원",
+		"detailCategory": "금속·재료공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050202",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "금속·재료공학 기술자 및 시험원",
+		"detailCategory": "금속·재료공학 시험원"
+	},
+	{
+		"fieldCode": "02050301",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "전기·전자공학 기술자 및 시험원",
+		"detailCategory": "전기공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050302",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "전기·전자공학 기술자 및 시험원",
+		"detailCategory": "전자공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050303",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "전기·전자공학 기술자 및 시험원",
+		"detailCategory": "전기·전자공학 시험원"
+	},
+	{
+		"fieldCode": "02050401",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "화학공학 기술자 및 시험원",
+		"detailCategory": "화학공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050402",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "화학공학 기술자 및 시험원",
+		"detailCategory": "화학공학 시험원"
+	},
+	{
+		"fieldCode": "02050501",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "에너지·환경공학 기술자 및 시험원",
+		"detailCategory": "가스·에너지공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050502",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "에너지·환경공학 기술자 및 시험원",
+		"detailCategory": "가스·에너지공학 시험원"
+	},
+	{
+		"fieldCode": "02050503",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "에너지·환경공학 기술자 및 시험원",
+		"detailCategory": "환경공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050504",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "에너지·환경공학 기술자 및 시험원",
+		"detailCategory": "환경공학 시험원"
+	},
+	{
+		"fieldCode": "02050505",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "에너지·환경공학 기술자 및 시험원",
+		"detailCategory": "보건위생·환경 검사원"
+	},
+	{
+		"fieldCode": "02050601",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "섬유공학 기술자 및 시험원",
+		"detailCategory": "섬유공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050602",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "섬유공학 기술자 및 시험원",
+		"detailCategory": "섬유공학 시험원"
+	},
+	{
+		"fieldCode": "02050701",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "식품공학 기술자 및 시험원",
+		"detailCategory": "식품공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050702",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "식품공학 기술자 및 시험원",
+		"detailCategory": "식품공학 시험원"
+	},
+	{
+		"fieldCode": "02050801",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "소방·방재·산업안전·비파괴 기술자",
+		"detailCategory": "방재 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050802",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "소방·방재·산업안전·비파괴 기술자",
+		"detailCategory": "소방공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050803",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "소방·방재·산업안전·비파괴 기술자",
+		"detailCategory": "소방공학 시험원 "
+	},
+	{
+		"fieldCode": "02050804",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "소방·방재·산업안전·비파괴 기술자",
+		"detailCategory": "산업 안전원 및 위험 관리원"
+	},
+	{
+		"fieldCode": "02050805",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "소방·방재·산업안전·비파괴 기술자",
+		"detailCategory": "비파괴 검사원"
+	},
+	{
+		"fieldCode": "02050901",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "제도사 및 기타 인쇄·목재 등 공학 기술자 및 시험원",
+		"detailCategory": "제도사"
+	},
+	{
+		"fieldCode": "02050902",
+		"largeCategory": "연구직 및 공학 기술직",
+		"middleCategory": "제조 연구개발직 및 공학기술직",
+		"smallCategory": "제도사 및 기타 인쇄·목재 등 공학 기술자 및 시험원",
+		"detailCategory": "기타 인쇄·목재 등 공학 기술자 및 시험원"
+	},
+	{
+		"fieldCode": "03010101",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "대학 교수 및 강사",
+		"detailCategory": "대학 교수"
+	},
+	{
+		"fieldCode": "03010102",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "대학 교수 및 강사",
+		"detailCategory": "대학 시간강사"
+	},
+	{
+		"fieldCode": "03010201",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "학교 교사",
+		"detailCategory": "중·고등학교 교사"
+	},
+	{
+		"fieldCode": "03010202",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "학교 교사",
+		"detailCategory": "초등학교 교사"
+	},
+	{
+		"fieldCode": "03010203",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "학교 교사",
+		"detailCategory": "특수교육 교사"
+	},
+	{
+		"fieldCode": "03010204",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "학교 교사",
+		"detailCategory": "기타 교사"
+	},
+	{
+		"fieldCode": "03010301",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "유치원 교사",
+		"detailCategory": "유치원 교사"
+	},
+	{
+		"fieldCode": "03010401",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "문리·어학 강사"
+	},
+	{
+		"fieldCode": "03010402",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "컴퓨터 강사"
+	},
+	{
+		"fieldCode": "03010403",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "기술·기능계 강사"
+	},
+	{
+		"fieldCode": "03010404",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "예능 강사"
+	},
+	{
+		"fieldCode": "03010405",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "학습지·교육교구 방문강사"
+	},
+	{
+		"fieldCode": "03010406",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "문리·기술·예능 강사",
+		"detailCategory": "기타 문리·기술 및 예능 강사"
+	},
+	{
+		"fieldCode": "03010501",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "장학관 및 기타 교육 종사자",
+		"detailCategory": "장학관·연구관 및 교육 전문가"
+	},
+	{
+		"fieldCode": "03010502",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "장학관 및 기타 교육 종사자",
+		"detailCategory": "대학 교육 조교(연구 조교(RA) 포함)"
+	},
+	{
+		"fieldCode": "03010503",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "교육직",
+		"smallCategory": "장학관 및 기타 교육 종사자",
+		"detailCategory": "교사보조 및 보육보조 서비스 종사원"
+	},
+	{
+		"fieldCode": "03020101",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 전문가",
+		"detailCategory": "판사 및 검사"
+	},
+	{
+		"fieldCode": "03020102",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 전문가",
+		"detailCategory": "변호사"
+	},
+	{
+		"fieldCode": "03020103",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 전문가",
+		"detailCategory": "법무사 및 집행관"
+	},
+	{
+		"fieldCode": "03020104",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 전문가",
+		"detailCategory": "변리사"
+	},
+	{
+		"fieldCode": "03020105",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 전문가",
+		"detailCategory": "기타 법률 전문가"
+	},
+	{
+		"fieldCode": "03020201",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "법률직",
+		"smallCategory": "법률 사무원",
+		"detailCategory": "법률 사무원"
+	},
+	{
+		"fieldCode": "03030101",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "사회복지사 및 상담사",
+		"detailCategory": "사회복지사"
+	},
+	{
+		"fieldCode": "03030102",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "사회복지사 및 상담사",
+		"detailCategory": "상담 전문가"
+	},
+	{
+		"fieldCode": "03030103",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "사회복지사 및 상담사",
+		"detailCategory": "청소년 지도사"
+	},
+	{
+		"fieldCode": "03030104",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "사회복지사 및 상담사",
+		"detailCategory": "직업상담사"
+	},
+	{
+		"fieldCode": "03030105",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "사회복지사 및 상담사",
+		"detailCategory": "시민단체 활동가"
+	},
+	{
+		"fieldCode": "03030201",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "보육교사 및 기타 사회복지 종사자",
+		"detailCategory": "보육교사"
+	},
+	{
+		"fieldCode": "03030202",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "보육교사 및 기타 사회복지 종사자",
+		"detailCategory": "기타 사회복지 종사원"
+	},
+	{
+		"fieldCode": "03030301",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "성직자 및 기타 종교 종사자",
+		"detailCategory": "성직자"
+	},
+	{
+		"fieldCode": "03030302",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "사회복지·종교직",
+		"smallCategory": "성직자 및 기타 종교 종사자",
+		"detailCategory": "기타 종교 종사원"
+	},
+	{
+		"fieldCode": "03040101",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "경찰·소방·교도직",
+		"smallCategory": "경찰관, 소방관 및 교도관",
+		"detailCategory": "경찰관 및 수사관"
+	},
+	{
+		"fieldCode": "03040102",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "경찰·소방·교도직",
+		"smallCategory": "경찰관, 소방관 및 교도관",
+		"detailCategory": "소방관"
+	},
+	{
+		"fieldCode": "03040103",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "경찰·소방·교도직",
+		"smallCategory": "경찰관, 소방관 및 교도관",
+		"detailCategory": "교도관 및 소년원학교 교사"
+	},
+	{
+		"fieldCode": "03050101",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "군인",
+		"smallCategory": "군인",
+		"detailCategory": "영관급 이상 장교"
+	},
+	{
+		"fieldCode": "03050102",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "군인",
+		"smallCategory": "군인",
+		"detailCategory": "위관급 장교 "
+	},
+	{
+		"fieldCode": "03050103",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "군인",
+		"smallCategory": "군인",
+		"detailCategory": "부사관"
+	},
+	{
+		"fieldCode": "03050104",
+		"largeCategory": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleCategory": "군인",
+		"smallCategory": "군인",
+		"detailCategory": "기타 군인"
+	},
+	{
+		"fieldCode": "04010101",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의사, 한의사 및 치과의사",
+		"detailCategory": "전문 의사"
+	},
+	{
+		"fieldCode": "04010102",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의사, 한의사 및 치과의사",
+		"detailCategory": "일반 의사"
+	},
+	{
+		"fieldCode": "04010103",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의사, 한의사 및 치과의사",
+		"detailCategory": "한의사"
+	},
+	{
+		"fieldCode": "04010104",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의사, 한의사 및 치과의사",
+		"detailCategory": "치과 의사"
+	},
+	{
+		"fieldCode": "04010201",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "수의사",
+		"detailCategory": "수의사"
+	},
+	{
+		"fieldCode": "04010301",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "약사 및 한약사",
+		"detailCategory": "약사 및 한약사"
+	},
+	{
+		"fieldCode": "04010401",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "간호사",
+		"detailCategory": "간호사"
+	},
+	{
+		"fieldCode": "04010501",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "영양사",
+		"detailCategory": "영양사"
+	},
+	{
+		"fieldCode": "04010601",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "임상병리사"
+	},
+	{
+		"fieldCode": "04010602",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "방사선사"
+	},
+	{
+		"fieldCode": "04010603",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "치과기공사"
+	},
+	{
+		"fieldCode": "04010604",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "치과위생사"
+	},
+	{
+		"fieldCode": "04010605",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "물리 및 작업 치료사"
+	},
+	{
+		"fieldCode": "04010606",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "임상심리사"
+	},
+	{
+		"fieldCode": "04010607",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "재활공학 기사"
+	},
+	{
+		"fieldCode": "04010608",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "의료기사·치료사·재활사",
+		"detailCategory": "기타 치료·재활사 및 의료기사"
+	},
+	{
+		"fieldCode": "04010701",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "응급구조사"
+	},
+	{
+		"fieldCode": "04010702",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "위생사"
+	},
+	{
+		"fieldCode": "04010703",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "안경사"
+	},
+	{
+		"fieldCode": "04010704",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "의무기록사"
+	},
+	{
+		"fieldCode": "04010705",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "간호조무사"
+	},
+	{
+		"fieldCode": "04010706",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "안마사"
+	},
+	{
+		"fieldCode": "04010707",
+		"largeCategory": "보건·의료직",
+		"middleCategory": "보건·의료직",
+		"smallCategory": "보건·의료 종사자",
+		"detailCategory": "기타 보건·의료 종사원"
+	},
+	{
+		"fieldCode": "05010101",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "작가·통번역가",
+		"detailCategory": "작가"
+	},
+	{
+		"fieldCode": "05010102",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "작가·통번역가",
+		"detailCategory": "번역가 및 통역가"
+	},
+	{
+		"fieldCode": "05010103",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "작가·통번역가",
+		"detailCategory": "출판물 전문가"
+	},
+	{
+		"fieldCode": "05010201",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "기자 및 언론 전문가",
+		"detailCategory": "기자 및 언론 전문가"
+	},
+	{
+		"fieldCode": "05010301",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "학예사·사서·기록물관리사",
+		"detailCategory": "학예사 및 문화재 보존원"
+	},
+	{
+		"fieldCode": "05010302",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "학예사·사서·기록물관리사",
+		"detailCategory": "사서 및 기록물 관리사"
+	},
+	{
+		"fieldCode": "05010401",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "화가 및 조각가"
+	},
+	{
+		"fieldCode": "05010402",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "사진작가 및 사진사"
+	},
+	{
+		"fieldCode": "05010403",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "만화가 및 만화영화 작가"
+	},
+	{
+		"fieldCode": "05010404",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "국악인 및 전통 예능인"
+	},
+	{
+		"fieldCode": "05010405",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "지휘자, 작곡가 및 연주가"
+	},
+	{
+		"fieldCode": "05010406",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "가수 및 성악가"
+	},
+	{
+		"fieldCode": "05010407",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "무용가 및 안무가"
+	},
+	{
+		"fieldCode": "05010408",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "창작·공연 전문가(작가, 연극 제외)",
+		"detailCategory": "기타 시각 및 공연 예술가"
+	},
+	{
+		"fieldCode": "05010501",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "디자이너",
+		"detailCategory": "제품 디자이너"
+	},
+	{
+		"fieldCode": "05010502",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "디자이너",
+		"detailCategory": "패션 디자이너"
+	},
+	{
+		"fieldCode": "05010503",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "디자이너",
+		"detailCategory": "실내장식 디자이너"
+	},
+	{
+		"fieldCode": "05010504",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "디자이너",
+		"detailCategory": "시각 디자이너"
+	},
+	{
+		"fieldCode": "05010505",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "디자이너",
+		"detailCategory": "미디어 콘텐츠 디자이너"
+	},
+	{
+		"fieldCode": "05010601",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "감독 및 기술감독"
+	},
+	{
+		"fieldCode": "05010602",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "배우 및 모델"
+	},
+	{
+		"fieldCode": "05010603",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "아나운서 및 리포터"
+	},
+	{
+		"fieldCode": "05010604",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "촬영 기사"
+	},
+	{
+		"fieldCode": "05010605",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "음향·녹음 기사"
+	},
+	{
+		"fieldCode": "05010606",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "영상·녹화·편집 기사"
+	},
+	{
+		"fieldCode": "05010607",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "조명·영사 기사"
+	},
+	{
+		"fieldCode": "05010608",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "연극·영화·방송 전문가",
+		"detailCategory": "기타 연극·영화·방송 종사원"
+	},
+	{
+		"fieldCode": "05010701",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "문화·예술 기획자 및 매니저",
+		"detailCategory": "공연·영화 및 음반 기획자"
+	},
+	{
+		"fieldCode": "05010702",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "예술·디자인·방송직",
+		"smallCategory": "문화·예술 기획자 및 매니저",
+		"detailCategory": "연예인매니저 및 스포츠매니저"
+	},
+	{
+		"fieldCode": "05020101",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "스포츠·레크리에이션직",
+		"smallCategory": "스포츠·레크리에이션 종사자",
+		"detailCategory": "스포츠 감독 및 코치"
+	},
+	{
+		"fieldCode": "05020102",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "스포츠·레크리에이션직",
+		"smallCategory": "스포츠·레크리에이션 종사자",
+		"detailCategory": "직업 운동선수"
+	},
+	{
+		"fieldCode": "05020103",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "스포츠·레크리에이션직",
+		"smallCategory": "스포츠·레크리에이션 종사자",
+		"detailCategory": "경기 심판 및 경기 기록원"
+	},
+	{
+		"fieldCode": "05020104",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "스포츠·레크리에이션직",
+		"smallCategory": "스포츠·레크리에이션 종사자",
+		"detailCategory": "스포츠강사, 레크리에이션강사 및 기타 관련 전문가"
+	},
+	{
+		"fieldCode": "05020105",
+		"largeCategory": "예술·디자인·방송·스포츠직",
+		"middleCategory": "스포츠·레크리에이션직",
+		"smallCategory": "스포츠·레크리에이션 종사자",
+		"detailCategory": "기타 스포츠 및 여가서비스 종사원"
+	},
+	{
+		"fieldCode": "06010101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "이용사"
+	},
+	{
+		"fieldCode": "06010102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "미용사"
+	},
+	{
+		"fieldCode": "06010103",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "피부 및 체형 관리사"
+	},
+	{
+		"fieldCode": "06010104",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "메이크업 아티스트 및 분장사"
+	},
+	{
+		"fieldCode": "06010105",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "반려동물 미용 및 관리 종사원"
+	},
+	{
+		"fieldCode": "06010106",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "미용 서비스원",
+		"detailCategory": "기타 미용 서비스원"
+	},
+	{
+		"fieldCode": "06010201",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "결혼·장례 등 예식 서비스원",
+		"detailCategory": "결혼상담원 및 웨딩플래너"
+	},
+	{
+		"fieldCode": "06010202",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "결혼·장례 등 예식 서비스원",
+		"detailCategory": "혼례 종사원"
+	},
+	{
+		"fieldCode": "06010203",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "결혼·장례 등 예식 서비스원",
+		"detailCategory": "장례 지도사 및 장례 상담원"
+	},
+	{
+		"fieldCode": "06010204",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "결혼·장례 등 예식 서비스원",
+		"detailCategory": "점술가 및 민속신앙 종사원"
+	},
+	{
+		"fieldCode": "06010205",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "미용·예식 서비스직",
+		"smallCategory": "결혼·장례 등 예식 서비스원",
+		"detailCategory": "기타 개인 생활 서비스원"
+	},
+	{
+		"fieldCode": "06020101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "여행 서비스원",
+		"detailCategory": "여행상품 개발자"
+	},
+	{
+		"fieldCode": "06020102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "여행 서비스원",
+		"detailCategory": "여행 사무원"
+	},
+	{
+		"fieldCode": "06020103",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "여행 서비스원",
+		"detailCategory": "여행 안내원 및 해설사"
+	},
+	{
+		"fieldCode": "06020201",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "항공기·선박·열차 객실승무원",
+		"detailCategory": "항공기 객실승무원"
+	},
+	{
+		"fieldCode": "06020202",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "항공기·선박·열차 객실승무원",
+		"detailCategory": "선박·열차 객실승무원"
+	},
+	{
+		"fieldCode": "06020301",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "숙박시설 서비스원",
+		"detailCategory": "숙박시설 서비스원"
+	},
+	{
+		"fieldCode": "06020401",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "여행·숙박·오락 서비스직",
+		"smallCategory": "오락시설 서비스원",
+		"detailCategory": "오락시설 서비스원"
+	},
+	{
+		"fieldCode": "06030101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "주방장 및 요리 연구가"
+	},
+	{
+		"fieldCode": "06030102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "한식 조리사"
+	},
+	{
+		"fieldCode": "06030103",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "중식 조리사"
+	},
+	{
+		"fieldCode": "06030104",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "양식 조리사"
+	},
+	{
+		"fieldCode": "06030105",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "일식 조리사"
+	},
+	{
+		"fieldCode": "06030106",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "바텐더"
+	},
+	{
+		"fieldCode": "06030107",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "음료 조리사 "
+	},
+	{
+		"fieldCode": "06030108",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "주방장 및 조리사",
+		"detailCategory": "기타 조리사"
+	},
+	{
+		"fieldCode": "06030201",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "식당 서비스원",
+		"detailCategory": "패스트푸드 준비원"
+	},
+	{
+		"fieldCode": "06030202",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "식당 서비스원",
+		"detailCategory": "접객원(홀서빙원)"
+	},
+	{
+		"fieldCode": "06030203",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "식당 서비스원",
+		"detailCategory": "주방 보조원"
+	},
+	{
+		"fieldCode": "06030204",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "식당 서비스원",
+		"detailCategory": "음식 배달원"
+	},
+	{
+		"fieldCode": "06030205",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "음식 서비스직",
+		"smallCategory": "식당 서비스원",
+		"detailCategory": "기타 음식 서비스 종사원"
+	},
+	{
+		"fieldCode": "06040101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "경호·경비직",
+		"smallCategory": "경호·보안 종사자",
+		"detailCategory": "경호원"
+	},
+	{
+		"fieldCode": "06040102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "경호·경비직",
+		"smallCategory": "경호·보안 종사자",
+		"detailCategory": "청원경찰"
+	},
+	{
+		"fieldCode": "06040103",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "경호·경비직",
+		"smallCategory": "경호·보안 종사자",
+		"detailCategory": "시설·특수 경비원"
+	},
+	{
+		"fieldCode": "06040104",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "경호·경비직",
+		"smallCategory": "경호·보안 종사자",
+		"detailCategory": "기타 경호·보안 종사원"
+	},
+	{
+		"fieldCode": "06040201",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "경호·경비직",
+		"smallCategory": "경비원",
+		"detailCategory": "경비원(건물 관리원)"
+	},
+	{
+		"fieldCode": "06050101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "돌봄 서비스직(간병·육아)",
+		"smallCategory": "돌봄 서비스 종사자",
+		"detailCategory": "요양 보호사 및 간병인"
+	},
+	{
+		"fieldCode": "06050102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "돌봄 서비스직(간병·육아)",
+		"smallCategory": "돌봄 서비스 종사자",
+		"detailCategory": "육아 도우미"
+	},
+	{
+		"fieldCode": "06060101",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "청소원"
+	},
+	{
+		"fieldCode": "06060102",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "환경미화원 및 재활용품 수거원"
+	},
+	{
+		"fieldCode": "06060103",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "배관 세정원 및 방역원"
+	},
+	{
+		"fieldCode": "06060104",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "구두 미화원"
+	},
+	{
+		"fieldCode": "06060105",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "세탁원(다림질원)"
+	},
+	{
+		"fieldCode": "06060106",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "청소·방역 및 가사 서비스원",
+		"detailCategory": "가사 도우미"
+	},
+	{
+		"fieldCode": "06060201",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailCategory": "계기 검침원 및 가스 점검원"
+	},
+	{
+		"fieldCode": "06060202",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailCategory": "자동판매기 관리원"
+	},
+	{
+		"fieldCode": "06060203",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailCategory": "주차 관리·안내원"
+	},
+	{
+		"fieldCode": "06060204",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailCategory": "검표원"
+	},
+	{
+		"fieldCode": "06060205",
+		"largeCategory": "미용·여행·숙박·음식·경비·청소직",
+		"middleCategory": "청소 및 기타 개인서비스직",
+		"smallCategory": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailCategory": "기타 서비스 단순 종사원"
+	},
+	{
+		"fieldCode": "07010101",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "부동산 컨설턴트 및 중개인",
+		"detailCategory": "부동산 컨설턴트 및 중개인"
+	},
+	{
+		"fieldCode": "07010201",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "기술 영업원"
+	},
+	{
+		"fieldCode": "07010202",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "해외 영업원"
+	},
+	{
+		"fieldCode": "07010203",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "자동차 영업원"
+	},
+	{
+		"fieldCode": "07010204",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "제품·광고 영업원"
+	},
+	{
+		"fieldCode": "07010205",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "상품 중개인 및 경매사"
+	},
+	{
+		"fieldCode": "07010206",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "영업원 및 상품중개인",
+		"detailCategory": "기타 기술 영업·중개 종사원"
+	},
+	{
+		"fieldCode": "07010301",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "텔레마케터",
+		"detailCategory": "텔레마케터"
+	},
+	{
+		"fieldCode": "07010401",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "소규모 상점 경영 및 일선 관리 종사자",
+		"detailCategory": "소규모 상점 경영 및 일선 관리 종사원"
+	},
+	{
+		"fieldCode": "07010501",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "상점 판매원"
+	},
+	{
+		"fieldCode": "07010502",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "통신 기기·서비스 판매원"
+	},
+	{
+		"fieldCode": "07010503",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "온라인 판매원"
+	},
+	{
+		"fieldCode": "07010504",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "상품 대여원"
+	},
+	{
+		"fieldCode": "07010505",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "노점 및 이동 판매원"
+	},
+	{
+		"fieldCode": "07010506",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "방문 판매원"
+	},
+	{
+		"fieldCode": "07010507",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판매 종사자",
+		"detailCategory": "주유원(가스충전원)"
+	},
+	{
+		"fieldCode": "07010601",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "매장 계산원 및 매표원　",
+		"detailCategory": "매장 계산원 및 요금 정산원"
+	},
+	{
+		"fieldCode": "07010602",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "매장 계산원 및 매표원　",
+		"detailCategory": "매표원 및 복권 판매원"
+	},
+	{
+		"fieldCode": "07010701",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판촉 및 기타 판매 단순 종사자",
+		"detailCategory": "홍보 도우미 및 판촉원"
+	},
+	{
+		"fieldCode": "07010702",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "영업·판매직",
+		"smallCategory": "판촉 및 기타 판매 단순 종사자",
+		"detailCategory": "기타 판매 단순 종사원"
+	},
+	{
+		"fieldCode": "07020101",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "항공기·선박·철도 조종사 및 관제사",
+		"detailCategory": "항공기 조종사"
+	},
+	{
+		"fieldCode": "07020102",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "항공기·선박·철도 조종사 및 관제사",
+		"detailCategory": "선장, 항해사 및 도선사"
+	},
+	{
+		"fieldCode": "07020103",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "항공기·선박·철도 조종사 및 관제사",
+		"detailCategory": "철도·전동차 기관사"
+	},
+	{
+		"fieldCode": "07020104",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "항공기·선박·철도 조종사 및 관제사",
+		"detailCategory": "관제사"
+	},
+	{
+		"fieldCode": "07020105",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "항공기·선박·철도 조종사 및 관제사",
+		"detailCategory": "기타 철도운송 종사원"
+	},
+	{
+		"fieldCode": "07020201",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "자동차 운전원",
+		"detailCategory": "택시 운전원"
+	},
+	{
+		"fieldCode": "07020202",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "자동차 운전원",
+		"detailCategory": "버스 운전원"
+	},
+	{
+		"fieldCode": "07020203",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "자동차 운전원",
+		"detailCategory": "화물차·특수차 운전원"
+	},
+	{
+		"fieldCode": "07020204",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "자동차 운전원",
+		"detailCategory": "기타 자동차 운전원"
+	},
+	{
+		"fieldCode": "07020301",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "물품이동장비 조작원(크레인·호이스트·지게차)",
+		"detailCategory": "물품이동장비 조작원(크레인·호이스트·지게차)"
+	},
+	{
+		"fieldCode": "07020401",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "택배원 및 기타 운송 종사자",
+		"detailCategory": "택배원"
+	},
+	{
+		"fieldCode": "07020402",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "택배원 및 기타 운송 종사자",
+		"detailCategory": "우편물 집배원"
+	},
+	{
+		"fieldCode": "07020403",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "택배원 및 기타 운송 종사자",
+		"detailCategory": "선박승무원 및 관련 종사원(선박객실 승무원 제외)"
+	},
+	{
+		"fieldCode": "07020404",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "택배원 및 기타 운송 종사자",
+		"detailCategory": "하역·적재 종사원"
+	},
+	{
+		"fieldCode": "07020405",
+		"largeCategory": "영업·판매·운전·운송직",
+		"middleCategory": "운전·운송직",
+		"smallCategory": "택배원 및 기타 운송 종사자",
+		"detailCategory": "기타 배달원"
+	},
+	{
+		"fieldCode": "08010101",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "강구조물 가공원 및 건립원"
+	},
+	{
+		"fieldCode": "08010102",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "경량철골공"
+	},
+	{
+		"fieldCode": "08010103",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "철근공"
+	},
+	{
+		"fieldCode": "08010104",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "콘크리트공"
+	},
+	{
+		"fieldCode": "08010105",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "건축 석공"
+	},
+	{
+		"fieldCode": "08010106",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "건축 목공"
+	},
+	{
+		"fieldCode": "08010107",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "조적공 및 석재부설원"
+	},
+	{
+		"fieldCode": "08010108",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설구조 기능원",
+		"detailCategory": "기타 건설 구조 기능원"
+	},
+	{
+		"fieldCode": "08010201",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "미장공"
+	},
+	{
+		"fieldCode": "08010202",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "방수공"
+	},
+	{
+		"fieldCode": "08010203",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "단열공"
+	},
+	{
+		"fieldCode": "08010204",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "바닥재 시공원"
+	},
+	{
+		"fieldCode": "08010205",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "도배공 및 유리 부착원"
+	},
+	{
+		"fieldCode": "08010206",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "건축 도장공"
+	},
+	{
+		"fieldCode": "08010207",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "새시 조립·설치원"
+	},
+	{
+		"fieldCode": "08010208",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건축마감 기능원",
+		"detailCategory": "기타 건축 마감 기능원"
+	},
+	{
+		"fieldCode": "08010301",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "배관공",
+		"detailCategory": "건설 배관공"
+	},
+	{
+		"fieldCode": "08010302",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "배관공",
+		"detailCategory": "공업 배관공"
+	},
+	{
+		"fieldCode": "08010303",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "배관공",
+		"detailCategory": "기타 배관공"
+	},
+	{
+		"fieldCode": "08010401",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설·채굴 기계 운전원",
+		"detailCategory": "건설·채굴 기계 운전원"
+	},
+	{
+		"fieldCode": "08010501",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "기타 건설 기능원(채굴포함)",
+		"detailCategory": "광원, 채석원 및 석재 절단원"
+	},
+	{
+		"fieldCode": "08010502",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "기타 건설 기능원(채굴포함)",
+		"detailCategory": "철로 설치·보수원"
+	},
+	{
+		"fieldCode": "08010503",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "기타 건설 기능원(채굴포함)",
+		"detailCategory": "기타 채굴·토목 종사원"
+	},
+	{
+		"fieldCode": "08010601",
+		"largeCategory": "건설·채굴직",
+		"middleCategory": "건설·채굴직",
+		"smallCategory": "건설·채굴 단순 종사자",
+		"detailCategory": "건설·채굴 단순 종사원"
+	},
+	{
+		"fieldCode": "09010101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "공업기계 설치·정비원"
+	},
+	{
+		"fieldCode": "09010102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "승강기 설치·정비원"
+	},
+	{
+		"fieldCode": "09010103",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "물품이동장비 설치·정비원"
+	},
+	{
+		"fieldCode": "09010104",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "냉동·냉장·공조기 설치·정비원"
+	},
+	{
+		"fieldCode": "09010105",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "보일러 설치·정비원"
+	},
+	{
+		"fieldCode": "09010106",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "건설·광업 기계 설치·정비원"
+	},
+	{
+		"fieldCode": "09010107",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계장비 설치·정비원(운송장비 제외)",
+		"detailCategory": "농업용 및 기타 기계장비 설치·정비원"
+	},
+	{
+		"fieldCode": "09010201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 정비원",
+		"detailCategory": "항공기 정비원"
+	},
+	{
+		"fieldCode": "09010202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 정비원",
+		"detailCategory": "선박 정비원"
+	},
+	{
+		"fieldCode": "09010203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 정비원",
+		"detailCategory": "철도기관차·전동차 정비원"
+	},
+	{
+		"fieldCode": "09010204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 정비원",
+		"detailCategory": "자동차 정비원"
+	},
+	{
+		"fieldCode": "09010205",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 정비원",
+		"detailCategory": "기타 운송장비 정비원"
+	},
+	{
+		"fieldCode": "09010301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "금형원 및 공작기계 조작원",
+		"detailCategory": "금형원"
+	},
+	{
+		"fieldCode": "09010302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "금형원 및 공작기계 조작원",
+		"detailCategory": "금속 공작기계 조작원"
+	},
+	{
+		"fieldCode": "09010401",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "냉·난방 설비 조작원",
+		"detailCategory": "냉·난방 설비 조작원"
+	},
+	{
+		"fieldCode": "09010501",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "자동조립라인·산업용로봇 조작원",
+		"detailCategory": "자동조립라인·산업용로봇 조작원"
+	},
+	{
+		"fieldCode": "09010601",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계 조립원(운송장비 제외)",
+		"detailCategory": "일반기계 조립원"
+	},
+	{
+		"fieldCode": "09010602",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "기계 조립원(운송장비 제외)",
+		"detailCategory": "금속기계부품 조립원"
+	},
+	{
+		"fieldCode": "09010701",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 조립원",
+		"detailCategory": "자동차 조립원"
+	},
+	{
+		"fieldCode": "09010702",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 조립원",
+		"detailCategory": "자동차 부분품 조립원"
+	},
+	{
+		"fieldCode": "09010703",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "기계 설치·정비·생산직",
+		"smallCategory": "운송장비 조립원",
+		"detailCategory": "운송장비 조립원"
+	},
+	{
+		"fieldCode": "09020101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "금속관련 기계·설비 조작원",
+		"detailCategory": "금속가공 제어장치 조작원"
+	},
+	{
+		"fieldCode": "09020102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "금속관련 기계·설비 조작원",
+		"detailCategory": "금속가공 기계 조작원"
+	},
+	{
+		"fieldCode": "09020201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "판금원 및 제관원",
+		"detailCategory": "판금원"
+	},
+	{
+		"fieldCode": "09020202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "판금원 및 제관원",
+		"detailCategory": "판금기조작원"
+	},
+	{
+		"fieldCode": "09020203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "판금원 및 제관원",
+		"detailCategory": "제관원"
+	},
+	{
+		"fieldCode": "09020204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "판금원 및 제관원",
+		"detailCategory": "제관기조작원"
+	},
+	{
+		"fieldCode": "09020301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "단조원 및 주조원",
+		"detailCategory": "단조원"
+	},
+	{
+		"fieldCode": "09020302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "단조원 및 주조원",
+		"detailCategory": "단조기조작원"
+	},
+	{
+		"fieldCode": "09020303",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "단조원 및 주조원",
+		"detailCategory": "주조원"
+	},
+	{
+		"fieldCode": "09020304",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "단조원 및 주조원",
+		"detailCategory": "주조기조작원"
+	},
+	{
+		"fieldCode": "09020401",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "용접원",
+		"detailCategory": "용접원"
+	},
+	{
+		"fieldCode": "09020402",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "용접원",
+		"detailCategory": "용접기조작원"
+	},
+	{
+		"fieldCode": "09020501",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "도장원 및 도금원　",
+		"detailCategory": "도장원(도장기조작원)"
+	},
+	{
+		"fieldCode": "09020502",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "도장원 및 도금원　",
+		"detailCategory": "도금·금속분무기 조작원"
+	},
+	{
+		"fieldCode": "09020601",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "비금속제품 생산기계 조작원",
+		"detailCategory": "유리·유리제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020602",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "비금속제품 생산기계 조작원",
+		"detailCategory": "점토제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020603",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "비금속제품 생산기계 조작원",
+		"detailCategory": "시멘트·광물제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020604",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "비금속제품 생산기계 조작원",
+		"detailCategory": "광석·석제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020605",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallCategory": "비금속제품 생산기계 조작원",
+		"detailCategory": "기타 비금속제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기공",
+		"detailCategory": "산업 전기공"
+	},
+	{
+		"fieldCode": "09030102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기공",
+		"detailCategory": "내선 전기공"
+	},
+	{
+		"fieldCode": "09030103",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기공",
+		"detailCategory": "외선 전기공"
+	},
+	{
+		"fieldCode": "09030201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 기기 설치·수리원",
+		"detailCategory": "사무용 전자기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09030202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 기기 설치·수리원",
+		"detailCategory": "가전제품 설치·수리원"
+	},
+	{
+		"fieldCode": "09030203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 기기 설치·수리원",
+		"detailCategory": "기타 전기·전자 기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09030301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "발전·배전 장치 조작원",
+		"detailCategory": "발전·배전 장치 조작원"
+	},
+	{
+		"fieldCode": "09030401",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 설비 조작원",
+		"detailCategory": "전기·전자 설비 조작원"
+	},
+	{
+		"fieldCode": "09030501",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 부품·제품 생산기계 조작원　",
+		"detailCategory": "전기 부품·제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030502",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 부품·제품 생산기계 조작원　",
+		"detailCategory": "전자 부품·제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030601",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "전기·전자 설치·정비·생산직",
+		"smallCategory": "전기·전자 부품·제품 조립원",
+		"detailCategory": "전기·전자 부품·제품 조립원"
+	},
+	{
+		"fieldCode": "09040101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "정보통신기기 설치·수리원",
+		"detailCategory": "컴퓨터 설치·수리원"
+	},
+	{
+		"fieldCode": "09040102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "정보통신기기 설치·수리원",
+		"detailCategory": "이동전화기 수리원"
+	},
+	{
+		"fieldCode": "09040103",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "정보통신기기 설치·수리원",
+		"detailCategory": "기타 정보통신기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09040201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "방송·통신장비 설치·정비원",
+		"detailCategory": "방송장비 설치·수리원"
+	},
+	{
+		"fieldCode": "09040202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "방송·통신장비 설치·정비원",
+		"detailCategory": "통신장비 설치·수리원"
+	},
+	{
+		"fieldCode": "09040203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "정보통신 설치·정비직",
+		"smallCategory": "방송·통신장비 설치·정비원",
+		"detailCategory": "방송·통신·인터넷 케이블 설치·수리원"
+	},
+	{
+		"fieldCode": "09050101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "석유·화학물 가공장치 조작원",
+		"detailCategory": "석유·천연가스 제조 제어장치 조작원"
+	},
+	{
+		"fieldCode": "09050102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "석유·화학물 가공장치 조작원",
+		"detailCategory": "화학물 가공장치 조작원"
+	},
+	{
+		"fieldCode": "09050103",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "석유·화학물 가공장치 조작원",
+		"detailCategory": "기타 석유·화학물 가공장치 조작원"
+	},
+	{
+		"fieldCode": "09050201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailCategory": "타이어·고무제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09050202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailCategory": "플라스틱제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09050203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailCategory": "화학제품 생산기계 조작원(고무·플라스틱 제외)"
+	},
+	{
+		"fieldCode": "09050204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailCategory": "고무·플라스틱 제품 조립원"
+	},
+	{
+		"fieldCode": "09050301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "환경관련 장치 조작원",
+		"detailCategory": "상·하수도 처리장치 조작원"
+	},
+	{
+		"fieldCode": "09050302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "화학·환경 설치·정비·생산직",
+		"smallCategory": "환경관련 장치 조작원",
+		"detailCategory": "재활용 처리장치·소각로 조작원"
+	},
+	{
+		"fieldCode": "09060101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "섬유 제조·가공 기계 조작원",
+		"detailCategory": "섬유 제조기계 조작원"
+	},
+	{
+		"fieldCode": "09060102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "섬유 제조·가공 기계 조작원",
+		"detailCategory": "직조기·편직기 조작원"
+	},
+	{
+		"fieldCode": "09060103",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "섬유 제조·가공 기계 조작원",
+		"detailCategory": "표백·염색기 조작원"
+	},
+	{
+		"fieldCode": "09060201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "패턴사, 재단사 및 재봉사",
+		"detailCategory": "패턴사"
+	},
+	{
+		"fieldCode": "09060202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "패턴사, 재단사 및 재봉사",
+		"detailCategory": "재단사"
+	},
+	{
+		"fieldCode": "09060203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "패턴사, 재단사 및 재봉사",
+		"detailCategory": "재봉사"
+	},
+	{
+		"fieldCode": "09060204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "패턴사, 재단사 및 재봉사",
+		"detailCategory": "기타 섬유·가죽 기능원"
+	},
+	{
+		"fieldCode": "09060301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "의복 제조원 및 수선원",
+		"detailCategory": "한복 제조원"
+	},
+	{
+		"fieldCode": "09060302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "의복 제조원 및 수선원",
+		"detailCategory": "양장·양복 제조원"
+	},
+	{
+		"fieldCode": "09060303",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "의복 제조원 및 수선원",
+		"detailCategory": "모피·가죽의복 제조원"
+	},
+	{
+		"fieldCode": "09060304",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "의복 제조원 및 수선원",
+		"detailCategory": "의복·가죽·모피 수선원"
+	},
+	{
+		"fieldCode": "09060305",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "의복 제조원 및 수선원",
+		"detailCategory": "기타 의복 제조원"
+	},
+	{
+		"fieldCode": "09060401",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailCategory": "제화원"
+	},
+	{
+		"fieldCode": "09060402",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailCategory": "신발 제조기계 조작원 및 조립원"
+	},
+	{
+		"fieldCode": "09060403",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailCategory": "세탁 기계 조작원"
+	},
+	{
+		"fieldCode": "09060404",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "섬유·의복 생산직",
+		"smallCategory": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailCategory": "기타 직물·신발 기계 조작원 및 조립원"
+	},
+	{
+		"fieldCode": "09070101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "제과·제빵원 및 떡제조원",
+		"detailCategory": "제과·제빵원"
+	},
+	{
+		"fieldCode": "09070102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "제과·제빵원 및 떡제조원",
+		"detailCategory": "떡 제조원"
+	},
+	{
+		"fieldCode": "09070201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기능원",
+		"detailCategory": "정육원 및 도축원"
+	},
+	{
+		"fieldCode": "09070202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기능원",
+		"detailCategory": "김치·밑반찬 제조 종사원"
+	},
+	{
+		"fieldCode": "09070203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기능원",
+		"detailCategory": "식품·담배 등급원"
+	},
+	{
+		"fieldCode": "09070204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기능원",
+		"detailCategory": "기타 식품 가공 종사원"
+	},
+	{
+		"fieldCode": "09070301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "육류·어패류·낙농품 가공기계 조작원"
+	},
+	{
+		"fieldCode": "09070302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "제분·도정 기계 조작원"
+	},
+	{
+		"fieldCode": "09070303",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "곡물 가공제품 기계 조작원"
+	},
+	{
+		"fieldCode": "09070304",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "과실·채소 기계 조작원"
+	},
+	{
+		"fieldCode": "09070305",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "음료 제조기계 조작원"
+	},
+	{
+		"fieldCode": "09070306",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "식품 가공·생산직",
+		"smallCategory": "식품 가공 기계 조작원",
+		"detailCategory": "기타 식품 가공 기계 조작원"
+	},
+	{
+		"fieldCode": "09080101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "인쇄기계·사진현상기 조작원",
+		"detailCategory": "인쇄기계 조작원"
+	},
+	{
+		"fieldCode": "09080102",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "인쇄기계·사진현상기 조작원",
+		"detailCategory": "사진 인화·현상기 조작원(사진수정 포함)"
+	},
+	{
+		"fieldCode": "09080201",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "목재·펄프·종이 생산기계 조작원",
+		"detailCategory": "목재 가공기계 조작원"
+	},
+	{
+		"fieldCode": "09080202",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "목재·펄프·종이 생산기계 조작원",
+		"detailCategory": "펄프·종이 제조장치 조작원"
+	},
+	{
+		"fieldCode": "09080203",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "목재·펄프·종이 생산기계 조작원",
+		"detailCategory": "종이제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09080204",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "목재·펄프·종이 생산기계 조작원",
+		"detailCategory": "기타 목재·종이 기계 조작원"
+	},
+	{
+		"fieldCode": "09080301",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "가구·목제품 제조·수리원",
+		"detailCategory": "가구 제조·수리원"
+	},
+	{
+		"fieldCode": "09080302",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "가구·목제품 제조·수리원",
+		"detailCategory": "가구 조립원"
+	},
+	{
+		"fieldCode": "09080303",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "가구·목제품 제조·수리원",
+		"detailCategory": "목제품 제조원"
+	},
+	{
+		"fieldCode": "09080401",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "공예원 및 귀금속세공원",
+		"detailCategory": "공예원"
+	},
+	{
+		"fieldCode": "09080402",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "공예원 및 귀금속세공원",
+		"detailCategory": "귀금속·보석 세공원"
+	},
+	{
+		"fieldCode": "09080501",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "악기·간판 및 기타 제조 종사자",
+		"detailCategory": "악기 제조원 및 조율사"
+	},
+	{
+		"fieldCode": "09080502",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "악기·간판 및 기타 제조 종사자",
+		"detailCategory": "간판 제작·설치원"
+	},
+	{
+		"fieldCode": "09080503",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "악기·간판 및 기타 제조 종사자",
+		"detailCategory": "유리기능, 복사, 수제 제본 등 기타 기능 종사원"
+	},
+	{
+		"fieldCode": "09080504",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallCategory": "악기·간판 및 기타 제조 종사자",
+		"detailCategory": "주입·포장·상표부착기 및 기타 기계 조작원"
+	},
+	{
+		"fieldCode": "09090101",
+		"largeCategory": "설치·정비·생산직",
+		"middleCategory": "제조 단순직",
+		"smallCategory": "제조 단순 종사자",
+		"detailCategory": "제조 단순 종사원"
+	},
+	{
+		"fieldCode": "10010101",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "작물재배 종사자",
+		"detailCategory": "곡식작물 재배원"
+	},
+	{
+		"fieldCode": "10010102",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "작물재배 종사자",
+		"detailCategory": "채소·특용작물 재배원"
+	},
+	{
+		"fieldCode": "10010103",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "작물재배 종사자",
+		"detailCategory": "과수작물 재배원"
+	},
+	{
+		"fieldCode": "10010104",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "작물재배 종사자",
+		"detailCategory": "원예작물 재배원"
+	},
+	{
+		"fieldCode": "10010105",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "작물재배 종사자",
+		"detailCategory": "조경원"
+	},
+	{
+		"fieldCode": "10010201",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "낙농·사육 종사자",
+		"detailCategory": "낙농 종사원"
+	},
+	{
+		"fieldCode": "10010202",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "낙농·사육 종사자",
+		"detailCategory": "가축 사육 종사원"
+	},
+	{
+		"fieldCode": "10010203",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "낙농·사육 종사자",
+		"detailCategory": "기타 사육 종사원"
+	},
+	{
+		"fieldCode": "10010301",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "임업 종사자　",
+		"detailCategory": "조림·산림경영인 및 벌목원"
+	},
+	{
+		"fieldCode": "10010302",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "임업 종사자　",
+		"detailCategory": "임산물 채취 및 기타 임업 종사원"
+	},
+	{
+		"fieldCode": "10010401",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "어업 종사자",
+		"detailCategory": "양식원"
+	},
+	{
+		"fieldCode": "10010402",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "어업 종사자",
+		"detailCategory": "어부 및 해녀"
+	},
+	{
+		"fieldCode": "10010501",
+		"largeCategory": "농림어업직",
+		"middleCategory": "농림어업직",
+		"smallCategory": "농림어업 단순 종사자",
+		"detailCategory": "농림어업 단순 종사원"
+	}
+]
