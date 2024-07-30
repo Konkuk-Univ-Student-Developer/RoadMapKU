@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { detailFieldState, largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
 import useClient from '../hooks/useClient';
 import styled from 'styled-components';
@@ -33,34 +33,34 @@ const StyledSelect = styled.select`
 `;
 
 const FieldCategoryInput = () => {
-	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField } = useClient();
 	const largeFields = useRecoilValue(largeFieldState);
 	const middleFields = useRecoilValue(middleFieldState);
-	const smallFields = useRecoilValue(smallFieldState);
-	const detailFields = useRecoilValue(detailFieldState);
+	const [smallFields, setSmallFields] = useRecoilState(smallFieldState);
+	const [detailFields, setDetailFields] = useRecoilState(detailFieldState);
+	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField } = useClient();
 
 	useEffect(() => {
 		fetchLargeField();
 	}, []);
 
 	const selectLargeField = (e) => {
-		console.log(e.target.value);
 		const reqData = {
 			largeFieldCode: e.target.value
 		};
 		fetchMiddleField(reqData);
+		setSmallFields([]);
+		setDetailFields([]);
 	};
 
 	const selectMiddleField = (e) => {
-		console.log(e.target.value);
 		const reqData = {
 			middleFieldCode: e.target.value
 		};
 		fetchSmallField(reqData);
+		setDetailFields([]);
 	};
 
 	const selectSmallField = (e) => {
-		console.log(e.target.value);
 		const reqData = {
 			smallFieldCode: e.target.value
 		};
