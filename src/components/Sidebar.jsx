@@ -4,7 +4,7 @@ import SidebarContents from './SidebarContents';
 
 const SidebarContainer = styled.div`
 	position: absolute;
-	top: 7rem;
+	top: 4rem;
 	left: 0;
 	height: calc(100% - 7rem);
 	width: 19rem;
@@ -42,13 +42,11 @@ const HideButton = styled.button`
 	}
 
 	&.hidden {
-		top: -5rem;
 		left: calc(100% + 2rem);
 		transform: translateX(0) translateY(0);
 	}
 
 	&.visible {
-		top: 0;
 		left: calc(100% - 3rem);
 		transform: translateX(0) translateY(0);
 	}
