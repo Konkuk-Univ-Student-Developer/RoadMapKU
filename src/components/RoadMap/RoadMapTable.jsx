@@ -12,18 +12,15 @@ const TableContainer = styled.div`
 	gap: 0.5rem;
 `;
 
-const ColumnSemesterContainer = styled.div`
-	width: 12%;
-`;
-
 const ColumnSemester = styled.div`
+	width: 12%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 `;
 
 const animationTiming = {
-	enter: 1000,
+	enter: 400,
 	exit: 0
 };
 
@@ -32,23 +29,20 @@ const RoadMapTable = ({ tableData, onCellClick, unclickableCells }) => {
 		<TableContainer>
 			<MajorCompetencyTable />
 			{tableData.map((row, rowIndex) => (
-				<ColumnSemesterContainer key={rowIndex}>
-					<TransitionGroup component={ColumnSemester}>
-						{row.map((cellData, colIndex) => (
-							<CSSTransition key={cellData} timeout={animationTiming} classNames="Bounce">
-								<Cell
-									cellData={cellData}
-									rowIndex={rowIndex}
-									onClick={onCellClick}
-									unclickable={
-										unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData) ||
-										colIndex === 0
-									}
-								/>
-							</CSSTransition>
-						))}
-					</TransitionGroup>
-				</ColumnSemesterContainer>
+				<TransitionGroup component={ColumnSemester} key={rowIndex}>
+					{row.map((cellData, colIndex) => (
+						<CSSTransition key={cellData} timeout={animationTiming} classNames="Bounce">
+							<Cell
+								cellData={cellData}
+								rowIndex={rowIndex}
+								onClick={onCellClick}
+								unclickable={
+									unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData) || colIndex === 0
+								}
+							/>
+						</CSSTransition>
+					))}
+				</TransitionGroup>
 			))}
 		</TableContainer>
 	);
