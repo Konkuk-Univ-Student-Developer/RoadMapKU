@@ -9,7 +9,13 @@ const useClient = () => {
 		});
 	};
 
-	return { fetchTest };
+	const fetchLargeField = () => {
+		clientApi.get('data/fieldsLarge.json').then((res) => {
+			console.log(res.data);
+		});
+	};
+
+	return { fetchTest, fetchLargeField };
 };
 
 export default useClient;
