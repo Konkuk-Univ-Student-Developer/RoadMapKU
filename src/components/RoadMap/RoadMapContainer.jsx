@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import RoadMapTable from './RoadMapTable';
 
@@ -49,15 +49,25 @@ const Button = styled.button`
 
 const RoadMapContainer = ({ show }) => {
 	const [tableDataDefault, setTableDataDefault] = useState([['2-1'], ['2-2'], ['3-1'], ['3-2'], ['4-1'], ['4-2']]);
+	const [tableDataWithData, setTableDataWithData] = useState([['2-1'], ['2-2'], ['3-1'], ['3-2'], ['4-1'], ['4-2']]);
 
-	const tableDataWithData = [
-		['2-1', 'A1', 'A2', 'A3'],
-		['2-2', 'B1', 'B2'],
-		['3-1', 'C1'],
-		['3-2', 'D1', 'D2', 'D3'],
-		['4-1', 'E1', 'E2'],
-		['4-2', 'F1']
-	];
+	const courseData = [['A1', 'A2', 'A3'], ['B1', 'B2'], ['C1'], ['D1', 'D2', 'D3'], ['E1', 'E2'], ['F1']];
+
+	useEffect(() => {
+		let delay = 0;
+		courseData.forEach((row, rowIndex) => {
+			row.forEach((item) => {
+				setTimeout(() => {
+					setTableDataWithData((prevItems) => {
+						const newItems = [...prevItems];
+						newItems[rowIndex] = [...newItems[rowIndex], item];
+						return newItems;
+					});
+				}, delay);
+				delay += 50;
+			});
+		});
+	}, []);
 
 	const [unclickableCells, setUnclickableCells] = useState([]);
 
