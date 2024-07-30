@@ -33,7 +33,20 @@ const useClient = () => {
 			});
 	};
 
-	return { fetchTest, fetchLargeField, fetchMiddleField };
+	const fetchSmallField = (requestMiddle) => {
+		clientApi
+			.get('data/fieldsSmall.json', requestMiddle)
+			.then((res) => {
+				const prefixReq = requestMiddle.middleFieldCode.substring(0, 4);
+				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 4));
+				console.log(filteredData);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
+	return { fetchTest, fetchLargeField, fetchMiddleField, fetchSmallField };
 };
 
 export default useClient;
