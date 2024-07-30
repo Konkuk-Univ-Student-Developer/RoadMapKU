@@ -33,11 +33,11 @@ const useClient = () => {
 			});
 	};
 
-	const fetchSmallField = (requestMiddle) => {
+	const fetchSmallField = (requestSmall) => {
 		clientApi
-			.get('data/fieldsSmall.json', requestMiddle)
+			.get('data/fieldsSmall.json', requestSmall)
 			.then((res) => {
-				const prefixReq = requestMiddle.middleFieldCode.substring(0, 4);
+				const prefixReq = requestSmall.middleFieldCode.substring(0, 4);
 				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 4));
 				console.log(filteredData);
 			})
@@ -46,7 +46,20 @@ const useClient = () => {
 			});
 	};
 
-	return { fetchTest, fetchLargeField, fetchMiddleField, fetchSmallField };
+	const fetchDetailField = (requestDetail) => {
+		clientApi
+			.get('data/fieldsDetail.json', requestDetail)
+			.then((res) => {
+				const prefixReq = requestDetail.smallFieldCode.substring(0, 6);
+				const filteredData = res.data.filter((item) => prefixReq == item.fieldCode.substring(0, 6));
+				console.log(filteredData);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
+	return { fetchTest, fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField };
 };
 
 export default useClient;
