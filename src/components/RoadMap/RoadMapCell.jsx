@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { CSSTransition } from 'react-transition-group';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
 const StyledCell = styled.div`
@@ -16,7 +15,7 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.2s ease-out;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
@@ -33,31 +32,15 @@ const StyledCell = styled.div`
 	}
 
 	&.Bounce-exit {
-		animation: ${dismissBounce} 400ms ease-out forwards;
+		animation: ${dismissBounce} 0ms ease-out forwards;
 	}
 `;
 
 const Cell = ({ cellData, rowIndex, onClick, unclickable }) => {
-	const [inProp, setInProp] = useState(false);
-
-	useEffect(() => {
-		setInProp(true);
-		return () => setInProp(false);
-	}, [cellData]);
-
 	return (
-		<CSSTransition
-			in={inProp}
-			timeout={400}
-			classNames={{
-				enter: 'Bounce-enter',
-				exit: 'Bounce-exit'
-			}}
-		>
-			<StyledCell className={unclickable ? 'unclickable' : ''} onClick={() => onClick(cellData, rowIndex)}>
-				{cellData}
-			</StyledCell>
-		</CSSTransition>
+		<StyledCell className={unclickable ? 'unclickable' : ''} onClick={() => onClick(cellData, rowIndex)}>
+			{cellData}
+		</StyledCell>
 	);
 };
 
