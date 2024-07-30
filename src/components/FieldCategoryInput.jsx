@@ -76,21 +76,21 @@ const FieldCategoryInput = () => {
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect onChange={selectMiddleField}>
+			<StyledSelect onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
 				{middleFields.map((item) => (
 					<option key={item.fieldCode} value={item.fieldCode}>
 						{item.middleField}
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect onChange={selectSmallField}>
+			<StyledSelect onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
 				{smallFields.map((item) => (
 					<option key={item.fieldCode} value={item.fieldCode}>
 						{item.smallField}
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect>
+			<StyledSelect disabled={detailFields.length > 0 ? '' : 'disabled'}>
 				{detailFields.map((item) => (
 					<option key={item.fieldCode} value={item.fieldCode}>
 						{item.detailField}
