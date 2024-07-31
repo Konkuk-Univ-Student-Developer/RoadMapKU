@@ -27,17 +27,17 @@ const Description = styled.div`
 	color: #666;
 `;
 
-const FixButton = styled.button`
+export const FixButton = styled.button`
 	padding: 10px 20px;
 	font-size: 16px;
 	color: #fff;
-	background-color: #54ad2d;
+	background-color: #036b3f;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 
 	&:hover {
-		background-color: #459423;
+		background-color: #02472a;
 	}
 `;
 
