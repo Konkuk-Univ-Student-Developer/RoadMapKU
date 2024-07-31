@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRecoilValue } from 'recoil';
 import { detailFieldState, largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
 import useClient from '../hooks/useClient';
 import styled from 'styled-components';
+import { FixButton } from './FieldCategory';
 
-// Styled-components
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -33,6 +33,10 @@ const StyledSelect = styled.select`
 `;
 
 const FieldCategoryInput = () => {
+	const largeRef = useRef();
+	const middleRef = useRef();
+	const smallRef = useRef();
+	const detailRef = useRef();
 	const largeFields = useRecoilValue(largeFieldState);
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
@@ -44,56 +48,80 @@ const FieldCategoryInput = () => {
 	}, []);
 
 	const selectLargeField = (e) => {
+		const data = JSON.parse(e.target.value);
 		const reqData = {
-			largeFieldCode: e.target.value
+			largeFieldCode: data.fieldCode
 		};
 		fetchMiddleField(reqData);
 	};
 
 	const selectMiddleField = (e) => {
+		const data = JSON.parse(e.target.value);
 		const reqData = {
-			middleFieldCode: e.target.value
+			middleFieldCode: data.fieldCode
 		};
 		fetchSmallField(reqData);
 	};
 
 	const selectSmallField = (e) => {
+		const data = JSON.parse(e.target.value);
 		const reqData = {
-			smallFieldCode: e.target.value
+			smallFieldCode: data.fieldCode
 		};
 		fetchDetailField(reqData);
 	};
 
+	const submitHandler = () => {
+		const fieldState = {};
+		if (largeRef.current.value) {
+			fieldState.largeField = JSON.parse(largeRef.current.value).largeField;
+		}
+		if (middleRef.current.value) {
+			fieldState.middleField = JSON.parse(middleRef.current.value).middleField;
+		}
+		if (smallRef.current.value) {
+			fieldState.smallField = JSON.parse(smallRef.current.value).smallField;
+		}
+		if (detailRef.current.value) {
+			fieldState.detailField = JSON.parse(detailRef.current.value).detailField;
+		}
+		console.log(fieldState);
+	};
+
 	return (
 		<Container>
-			<StyledSelect onChange={selectLargeField}>
+			<StyledSelect ref={largeRef} onChange={selectLargeField}>
 				{largeFields.map((item) => (
-					<option key={item.fieldCode} value={item.fieldCode}>
+					<option key={item.fieldCode} value={JSON.stringify(item)}>
 						{item.largeField}
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
+			<StyledSelect ref={middleRef} onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
+				<option value="">분야를 선택해주세요</option>
 				{middleFields.map((item) => (
-					<option key={item.fieldCode} value={item.fieldCode}>
+					<option key={item.fieldCode} value={JSON.stringify(item)}>
 						{item.middleField}
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
+			<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
+				<option value="">분야를 선택해주세요</option>
 				{smallFields.map((item) => (
-					<option key={item.fieldCode} value={item.fieldCode}>
+					<option key={item.fieldCode} value={JSON.stringify(item)}>
 						{item.smallField}
 					</option>
 				))}
 			</StyledSelect>
-			<StyledSelect disabled={detailFields.length > 0 ? '' : 'disabled'}>
+			<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
+				<option value="">분야를 선택해주세요</option>
 				{detailFields.map((item) => (
-					<option key={item.fieldCode} value={item.fieldCode}>
+					<option key={item.fieldCode} value={JSON.stringify(item)}>
 						{item.detailField}
 					</option>
 				))}
 			</StyledSelect>
+			<FixButton onClick={submitHandler}>검색하기</FixButton>
 		</Container>
 	);
 };
