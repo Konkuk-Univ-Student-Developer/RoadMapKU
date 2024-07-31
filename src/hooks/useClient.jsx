@@ -39,6 +39,8 @@ const useClient = () => {
 			.then((res) => {
 				const filteredData = getFilteredData(requestMiddle.largeFieldCode, res.data, 2);
 				setMiddleFieldState(filteredData);
+				setSmallFieldState([]);
+				setDetailFieldState([]);
 			})
 			.catch((error) => {
 				console.error(error);
@@ -51,6 +53,7 @@ const useClient = () => {
 			.then((res) => {
 				const filteredData = getFilteredData(requestSmall.middleFieldCode, res.data, 4);
 				setSmallFieldState(filteredData);
+				setDetailFieldState([]);
 			})
 			.catch((error) => {
 				console.error(error);
