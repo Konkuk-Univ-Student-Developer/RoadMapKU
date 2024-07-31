@@ -1,6 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { useRecoilValue } from 'recoil';
-import { detailFieldState, largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+	detailFieldState,
+	largeFieldState,
+	middleFieldState,
+	selectedFieldState,
+	smallFieldState
+} from '../recoils/atoms';
 import useClient from '../hooks/useClient';
 import styled from 'styled-components';
 import { FixButton } from './FieldCategory';
@@ -41,6 +47,7 @@ const FieldCategoryInput = () => {
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
+	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField } = useClient();
 
 	useEffect(() => {
@@ -72,20 +79,20 @@ const FieldCategoryInput = () => {
 	};
 
 	const submitHandler = () => {
-		const fieldState = {};
+		const selectedField = {};
 		if (largeRef.current.value) {
-			fieldState.largeField = JSON.parse(largeRef.current.value).largeField;
+			selectedField.largeField = JSON.parse(largeRef.current.value).largeField;
 		}
 		if (middleRef.current.value) {
-			fieldState.middleField = JSON.parse(middleRef.current.value).middleField;
+			selectedField.middleField = JSON.parse(middleRef.current.value).middleField;
 		}
 		if (smallRef.current.value) {
-			fieldState.smallField = JSON.parse(smallRef.current.value).smallField;
+			selectedField.smallField = JSON.parse(smallRef.current.value).smallField;
 		}
 		if (detailRef.current.value) {
-			fieldState.detailField = JSON.parse(detailRef.current.value).detailField;
+			selectedField.detailField = JSON.parse(detailRef.current.value).detailField;
 		}
-		console.log(fieldState);
+		setSelectedFields(selectedField);
 	};
 
 	return (
