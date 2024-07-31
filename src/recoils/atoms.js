@@ -19,3 +19,8 @@ export const detailFieldState = atom({
 	key: 'detailFieldState',
 	default: []
 });
+
+export const selectedFieldState = atom({
+	key: 'selectedFieldState',
+	default: {}
+});
