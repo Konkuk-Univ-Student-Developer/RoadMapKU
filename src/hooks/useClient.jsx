@@ -16,12 +16,6 @@ const useClient = () => {
 		return filteredData;
 	};
 
-	const fetchTest = () => {
-		clientApi.get('data/mockdata.json').then((res) => {
-			console.log(res.data);
-		});
-	};
-
 	const fetchLargeField = () => {
 		clientApi
 			.get('data/fieldsLarge.json')
@@ -72,7 +66,7 @@ const useClient = () => {
 			});
 	};
 
-	return { fetchTest, fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField };
+	return { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField };
 };
 
 export default useClient;
