@@ -5,6 +5,7 @@ import {
 	largeFieldState,
 	middleFieldState,
 	selectedFieldState,
+	showFieldInputState,
 	smallFieldState
 } from '../recoils/atoms';
 import useClient from '../hooks/useClient';
@@ -48,6 +49,7 @@ const FieldCategoryInput = () => {
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
+	const setShowFieldInput = useSetRecoilState(showFieldInputState);
 	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField } = useClient();
 
 	useEffect(() => {
@@ -93,6 +95,7 @@ const FieldCategoryInput = () => {
 			selectedField.detailField = JSON.parse(detailRef.current.value).detailField;
 		}
 		setSelectedFields(selectedField);
+		setShowFieldInput(false);
 	};
 
 	return (

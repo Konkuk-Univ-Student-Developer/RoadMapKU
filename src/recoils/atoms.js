@@ -24,3 +24,8 @@ export const selectedFieldState = atom({
 	key: 'selectedFieldState',
 	default: {}
 });
+
+export const showFieldInputState = atom({
+	key: 'showFieldInputState',
+	default: true
+});

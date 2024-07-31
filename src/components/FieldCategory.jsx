@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState } from '../recoils/atoms';
+import { selectedFieldState, showFieldInputState } from '../recoils/atoms';
 
 const FieldCategoryContainer = styled.div`
 	display: flex;
@@ -45,8 +45,9 @@ export const FixButton = styled.button`
 
 const FieldCategory = () => {
 	const fieldState = useRecoilValue(selectedFieldState);
+	const setShowFieldInput = useSetRecoilState(showFieldInputState);
 	const onClickHandler = () => {
-		alert('진출분야를 바꿀 수 있습니다!');
+		setShowFieldInput(true);
 	};
 	return (
 		<>
