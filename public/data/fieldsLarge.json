@@ -1,0 +1,42 @@
+[
+	{
+		"fieldCode": "01000000",
+		"largeField": "경영·사무·금융·보험직"
+	},
+	{
+		"fieldCode": "02000000",
+		"largeField": "연구직 및 공학 기술직"
+	},
+	{
+		"fieldCode": "03000000",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인"
+	},
+	{
+		"fieldCode": "04000000",
+		"largeField": "보건·의료직"
+	},
+	{
+		"fieldCode": "05000000",
+		"largeField": "예술·디자인·방송·스포츠직"
+	},
+	{
+		"fieldCode": "06000000",
+		"largeField": "미용·여행·숙박·음식·경비·청소직"
+	},
+	{
+		"fieldCode": "07000000",
+		"largeField": "영업·판매·운전·운송직"
+	},
+	{
+		"fieldCode": "08000000",
+		"largeField": "건설·채굴직"
+	},
+	{
+		"fieldCode": "09000000",
+		"largeField": "설치·정비·생산직"
+	},
+	{
+		"fieldCode": "10000000",
+		"largeField": "농림어업직"
+	}
+]

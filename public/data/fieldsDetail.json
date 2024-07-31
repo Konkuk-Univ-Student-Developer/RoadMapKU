@@ -1,0 +1,3152 @@
+[
+	{
+		"fieldCode": "01010101",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "의회의원·고위공무원 및 기업 고위임원",
+		"detailField": "의회의원·고위공무원 및 공공단체임원"
+	},
+	{
+		"fieldCode": "01010102",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "의회의원·고위공무원 및 기업 고위임원",
+		"detailField": "기업 고위임원"
+	},
+	{
+		"fieldCode": "01010201",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "행정·경영·금융·보험 관리자　",
+		"detailField": "정부행정 관리자"
+	},
+	{
+		"fieldCode": "01010202",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "행정·경영·금융·보험 관리자　",
+		"detailField": "경영지원 관리자"
+	},
+	{
+		"fieldCode": "01010203",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "행정·경영·금융·보험 관리자　",
+		"detailField": "마케팅·광고·홍보 관리자"
+	},
+	{
+		"fieldCode": "01010204",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "행정·경영·금융·보험 관리자　",
+		"detailField": "금융·보험 관리자"
+	},
+	{
+		"fieldCode": "01010301",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "연구 관리자"
+	},
+	{
+		"fieldCode": "01010302",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "교육 관리자"
+	},
+	{
+		"fieldCode": "01010303",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "법률·경찰·소방·교도 관리자"
+	},
+	{
+		"fieldCode": "01010304",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "보건·의료 관리자"
+	},
+	{
+		"fieldCode": "01010305",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "사회복지 관리자"
+	},
+	{
+		"fieldCode": "01010306",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "예술·디자인·방송 관리자"
+	},
+	{
+		"fieldCode": "01010307",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "정보통신 관리자"
+	},
+	{
+		"fieldCode": "01010308",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "전문서비스 관리자",
+		"detailField": "부동산·조사·인력알선 및 기타 전문서비스 관리자"
+	},
+	{
+		"fieldCode": "01010401",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailField": "미용·여행?숙박·스포츠 관리자"
+	},
+	{
+		"fieldCode": "01010402",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailField": "음식서비스 관리자"
+	},
+	{
+		"fieldCode": "01010403",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "미용·여행·숙박·음식·경비·청소 관리자",
+		"detailField": "경비·청소 관리자"
+	},
+	{
+		"fieldCode": "01010501",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "영업·판매·운송 관리자",
+		"detailField": "영업·판매 관리자"
+	},
+	{
+		"fieldCode": "01010502",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "영업·판매·운송 관리자",
+		"detailField": "운송 관리자"
+	},
+	{
+		"fieldCode": "01010503",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "영업·판매·운송 관리자",
+		"detailField": "기타 판매 및 고객서비스 관리자"
+	},
+	{
+		"fieldCode": "01010601",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "건설·채굴·제조·생산 관리자",
+		"detailField": "건설·채굴 관리자"
+	},
+	{
+		"fieldCode": "01010602",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "건설·채굴·제조·생산 관리자",
+		"detailField": "전기·가스·수도 관리자"
+	},
+	{
+		"fieldCode": "01010603",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "건설·채굴·제조·생산 관리자",
+		"detailField": "제조·생산 관리자"
+	},
+	{
+		"fieldCode": "01010604",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "관리직(임원·부서장)",
+		"smallField": "건설·채굴·제조·생산 관리자",
+		"detailField": "기타 건설·전기 및 제조 관리자"
+	},
+	{
+		"fieldCode": "01020101",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공행정 전문가",
+		"detailField": "정부·공공행정 전문가"
+	},
+	{
+		"fieldCode": "01020201",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영·인사 전문가",
+		"detailField": "경영·진단 전문가"
+	},
+	{
+		"fieldCode": "01020202",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영·인사 전문가",
+		"detailField": "인사·노무 전문가"
+	},
+	{
+		"fieldCode": "01020301",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·세무·감정 전문가",
+		"detailField": "회계사"
+	},
+	{
+		"fieldCode": "01020302",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·세무·감정 전문가",
+		"detailField": "세무사"
+	},
+	{
+		"fieldCode": "01020303",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·세무·감정 전문가",
+		"detailField": "관세사"
+	},
+	{
+		"fieldCode": "01020304",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·세무·감정 전문가",
+		"detailField": "감정 전문가"
+	},
+	{
+		"fieldCode": "01020401",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "광고·조사·상품기획·행사기획 전문가",
+		"detailField": "광고·홍보 전문가"
+	},
+	{
+		"fieldCode": "01020402",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "광고·조사·상품기획·행사기획 전문가",
+		"detailField": "조사 전문가"
+	},
+	{
+		"fieldCode": "01020403",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "광고·조사·상품기획·행사기획 전문가",
+		"detailField": "상품 기획자"
+	},
+	{
+		"fieldCode": "01020404",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "광고·조사·상품기획·행사기획 전문가",
+		"detailField": "행사 기획자"
+	},
+	{
+		"fieldCode": "01020501",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공 행정 사무원",
+		"detailField": "조세행정 사무원"
+	},
+	{
+		"fieldCode": "01020502",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공 행정 사무원",
+		"detailField": "관세행정 사무원"
+	},
+	{
+		"fieldCode": "01020503",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공 행정 사무원",
+		"detailField": "병무행정 사무원"
+	},
+	{
+		"fieldCode": "01020504",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공 행정 사무원",
+		"detailField": "국가·지방행정 사무원"
+	},
+	{
+		"fieldCode": "01020505",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "정부·공공 행정 사무원",
+		"detailField": "공공행정 사무원"
+	},
+	{
+		"fieldCode": "01020601",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영지원 사무원",
+		"detailField": "기획·마케팅 사무원"
+	},
+	{
+		"fieldCode": "01020602",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영지원 사무원",
+		"detailField": "인사·교육·훈련 사무원"
+	},
+	{
+		"fieldCode": "01020603",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영지원 사무원",
+		"detailField": "총무 사무원 및 대학 행정조교"
+	},
+	{
+		"fieldCode": "01020604",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "경영지원 사무원",
+		"detailField": "감사 사무원"
+	},
+	{
+		"fieldCode": "01020701",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·경리 사무원",
+		"detailField": "회계 사무원"
+	},
+	{
+		"fieldCode": "01020702",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "회계·경리 사무원",
+		"detailField": "경리 사무원"
+	},
+	{
+		"fieldCode": "01020801",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "무역·운송·생산·품질 사무원",
+		"detailField": "무역 사무원"
+	},
+	{
+		"fieldCode": "01020802",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "무역·운송·생산·품질 사무원",
+		"detailField": "운송 사무원"
+	},
+	{
+		"fieldCode": "01020803",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "무역·운송·생산·품질 사무원",
+		"detailField": "자재·구매·물류 사무원"
+	},
+	{
+		"fieldCode": "01020804",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "무역·운송·생산·품질 사무원",
+		"detailField": "생산·품질 사무원"
+	},
+	{
+		"fieldCode": "01020901",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "안내·접수원 및 전화교환원"
+	},
+	{
+		"fieldCode": "01020902",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "고객 상담원 및 모니터 요원"
+	},
+	{
+		"fieldCode": "01020903",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "통계 사무원 "
+	},
+	{
+		"fieldCode": "01020904",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "비서"
+	},
+	{
+		"fieldCode": "01020905",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "전산자료 입력원 및 사무 보조원"
+	},
+	{
+		"fieldCode": "01020906",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "경영·행정·사무직",
+		"smallField": "안내·고객상담·통계·비서·사무보조 및 기타 사무원",
+		"detailField": "기타 사무원"
+	},
+	{
+		"fieldCode": "01030101",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "투자·신용 분석가"
+	},
+	{
+		"fieldCode": "01030102",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "자산 운용가"
+	},
+	{
+		"fieldCode": "01030103",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "보험·금융상품 개발자"
+	},
+	{
+		"fieldCode": "01030104",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "증권·외환 딜러"
+	},
+	{
+		"fieldCode": "01030105",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "손해사정사"
+	},
+	{
+		"fieldCode": "01030106",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 전문가",
+		"detailField": "기타 금융·보험 전문가"
+	},
+	{
+		"fieldCode": "01030201",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "은행 사무원"
+	},
+	{
+		"fieldCode": "01030202",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "증권 사무원"
+	},
+	{
+		"fieldCode": "01030203",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "보험 심사원 및 사무원"
+	},
+	{
+		"fieldCode": "01030204",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "출납창구 사무원"
+	},
+	{
+		"fieldCode": "01030205",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "수금원 및 신용 추심원"
+	},
+	{
+		"fieldCode": "01030206",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 사무원",
+		"detailField": "기타 금융 사무원"
+	},
+	{
+		"fieldCode": "01030301",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 영업원",
+		"detailField": "대출 및 신용카드 모집인"
+	},
+	{
+		"fieldCode": "01030302",
+		"largeField": "경영·사무·금융·보험직",
+		"middleField": "금융·보험직",
+		"smallField": "금융·보험 영업원",
+		"detailField": "보험 모집인 및 투자 권유 대행인"
+	},
+	{
+		"fieldCode": "02010101",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "인문·사회과학 연구직",
+		"smallField": "인문·사회과학 연구원",
+		"detailField": "인문과학 연구원"
+	},
+	{
+		"fieldCode": "02010102",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "인문·사회과학 연구직",
+		"smallField": "인문·사회과학 연구원",
+		"detailField": "사회과학 연구원"
+	},
+	{
+		"fieldCode": "02020101",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "자연·생명과학 연구직",
+		"smallField": "자연과학 연구원 및 시험원",
+		"detailField": "자연과학 연구원"
+	},
+	{
+		"fieldCode": "02020102",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "자연·생명과학 연구직",
+		"smallField": "자연과학 연구원 및 시험원",
+		"detailField": "자연과학 시험원"
+	},
+	{
+		"fieldCode": "02020201",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "자연·생명과학 연구직",
+		"smallField": "생명과학 연구원 및 시험원",
+		"detailField": "생명과학 연구원"
+	},
+	{
+		"fieldCode": "02020202",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "자연·생명과학 연구직",
+		"smallField": "생명과학 연구원 및 시험원",
+		"detailField": "생명과학 시험원"
+	},
+	{
+		"fieldCode": "02020203",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "자연·생명과학 연구직",
+		"smallField": "생명과학 연구원 및 시험원",
+		"detailField": "농림어업 시험원"
+	},
+	{
+		"fieldCode": "02030101",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "컴퓨터하드웨어·통신공학 기술자",
+		"detailField": "컴퓨터 하드웨어 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02030102",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "컴퓨터하드웨어·통신공학 기술자",
+		"detailField": "통신공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02030201",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "컴퓨터시스템 전문가",
+		"detailField": "컴퓨터시스템 전문가"
+	},
+	{
+		"fieldCode": "02030301",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "소프트웨어 개발자",
+		"detailField": "시스템 소프트웨어 개발자"
+	},
+	{
+		"fieldCode": "02030302",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "소프트웨어 개발자",
+		"detailField": "응용 소프트웨어 개발자"
+	},
+	{
+		"fieldCode": "02030303",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "소프트웨어 개발자",
+		"detailField": "웹 개발자"
+	},
+	{
+		"fieldCode": "02030304",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "소프트웨어 개발자",
+		"detailField": "기타 컴퓨터 전문가 및 소프트웨어 전문가"
+	},
+	{
+		"fieldCode": "02030401",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailField": "데이터 전문가"
+	},
+	{
+		"fieldCode": "02030402",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailField": "네트워크 시스템 개발자"
+	},
+	{
+		"fieldCode": "02030403",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailField": "정보시스템 운영자"
+	},
+	{
+		"fieldCode": "02030404",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailField": "웹 운영자"
+	},
+	{
+		"fieldCode": "02030405",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "데이터·네트워크 및 시스템 운영 전문가",
+		"detailField": "기타 데이터 및 네트워크 전문가"
+	},
+	{
+		"fieldCode": "02030501",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "정보보안 전문가",
+		"detailField": "정보보안 전문가"
+	},
+	{
+		"fieldCode": "02030601",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "정보통신 연구개발직 및 공학기술직",
+		"smallField": "통신·방송송출 장비 기사",
+		"detailField": "통신·방송송출 장비 기사"
+	},
+	{
+		"fieldCode": "02040101",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "건축가"
+	},
+	{
+		"fieldCode": "02040102",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "건축공학 기술자"
+	},
+	{
+		"fieldCode": "02040103",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "토목공학 기술자"
+	},
+	{
+		"fieldCode": "02040104",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "조경 기술자"
+	},
+	{
+		"fieldCode": "02040105",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "도시·교통 전문가"
+	},
+	{
+		"fieldCode": "02040106",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "측량·지리정보 전문가"
+	},
+	{
+		"fieldCode": "02040107",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "건설·채굴 연구개발직 및 공학기술직",
+		"smallField": "건축·토목공학 기술자 및 시험원",
+		"detailField": "건설자재 시험원"
+	},
+	{
+		"fieldCode": "02050101",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "기계·로봇공학 기술자 및 시험원",
+		"detailField": "기계공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050102",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "기계·로봇공학 기술자 및 시험원",
+		"detailField": "로봇공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050103",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "기계·로봇공학 기술자 및 시험원",
+		"detailField": "기계·로봇공학 시험원"
+	},
+	{
+		"fieldCode": "02050201",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "금속·재료공학 기술자 및 시험원",
+		"detailField": "금속·재료공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050202",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "금속·재료공학 기술자 및 시험원",
+		"detailField": "금속·재료공학 시험원"
+	},
+	{
+		"fieldCode": "02050301",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "전기·전자공학 기술자 및 시험원",
+		"detailField": "전기공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050302",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "전기·전자공학 기술자 및 시험원",
+		"detailField": "전자공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050303",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "전기·전자공학 기술자 및 시험원",
+		"detailField": "전기·전자공학 시험원"
+	},
+	{
+		"fieldCode": "02050401",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "화학공학 기술자 및 시험원",
+		"detailField": "화학공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050402",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "화학공학 기술자 및 시험원",
+		"detailField": "화학공학 시험원"
+	},
+	{
+		"fieldCode": "02050501",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "에너지·환경공학 기술자 및 시험원",
+		"detailField": "가스·에너지공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050502",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "에너지·환경공학 기술자 및 시험원",
+		"detailField": "가스·에너지공학 시험원"
+	},
+	{
+		"fieldCode": "02050503",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "에너지·환경공학 기술자 및 시험원",
+		"detailField": "환경공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050504",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "에너지·환경공학 기술자 및 시험원",
+		"detailField": "환경공학 시험원"
+	},
+	{
+		"fieldCode": "02050505",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "에너지·환경공학 기술자 및 시험원",
+		"detailField": "보건위생·환경 검사원"
+	},
+	{
+		"fieldCode": "02050601",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "섬유공학 기술자 및 시험원",
+		"detailField": "섬유공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050602",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "섬유공학 기술자 및 시험원",
+		"detailField": "섬유공학 시험원"
+	},
+	{
+		"fieldCode": "02050701",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "식품공학 기술자 및 시험원",
+		"detailField": "식품공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050702",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "식품공학 기술자 및 시험원",
+		"detailField": "식품공학 시험원"
+	},
+	{
+		"fieldCode": "02050801",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "소방·방재·산업안전·비파괴 기술자",
+		"detailField": "방재 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050802",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "소방·방재·산업안전·비파괴 기술자",
+		"detailField": "소방공학 기술자 및 연구원"
+	},
+	{
+		"fieldCode": "02050803",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "소방·방재·산업안전·비파괴 기술자",
+		"detailField": "소방공학 시험원 "
+	},
+	{
+		"fieldCode": "02050804",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "소방·방재·산업안전·비파괴 기술자",
+		"detailField": "산업 안전원 및 위험 관리원"
+	},
+	{
+		"fieldCode": "02050805",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "소방·방재·산업안전·비파괴 기술자",
+		"detailField": "비파괴 검사원"
+	},
+	{
+		"fieldCode": "02050901",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "제도사 및 기타 인쇄·목재 등 공학 기술자 및 시험원",
+		"detailField": "제도사"
+	},
+	{
+		"fieldCode": "02050902",
+		"largeField": "연구직 및 공학 기술직",
+		"middleField": "제조 연구개발직 및 공학기술직",
+		"smallField": "제도사 및 기타 인쇄·목재 등 공학 기술자 및 시험원",
+		"detailField": "기타 인쇄·목재 등 공학 기술자 및 시험원"
+	},
+	{
+		"fieldCode": "03010101",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "대학 교수 및 강사",
+		"detailField": "대학 교수"
+	},
+	{
+		"fieldCode": "03010102",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "대학 교수 및 강사",
+		"detailField": "대학 시간강사"
+	},
+	{
+		"fieldCode": "03010201",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "학교 교사",
+		"detailField": "중·고등학교 교사"
+	},
+	{
+		"fieldCode": "03010202",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "학교 교사",
+		"detailField": "초등학교 교사"
+	},
+	{
+		"fieldCode": "03010203",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "학교 교사",
+		"detailField": "특수교육 교사"
+	},
+	{
+		"fieldCode": "03010204",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "학교 교사",
+		"detailField": "기타 교사"
+	},
+	{
+		"fieldCode": "03010301",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "유치원 교사",
+		"detailField": "유치원 교사"
+	},
+	{
+		"fieldCode": "03010401",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "문리·어학 강사"
+	},
+	{
+		"fieldCode": "03010402",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "컴퓨터 강사"
+	},
+	{
+		"fieldCode": "03010403",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "기술·기능계 강사"
+	},
+	{
+		"fieldCode": "03010404",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "예능 강사"
+	},
+	{
+		"fieldCode": "03010405",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "학습지·교육교구 방문강사"
+	},
+	{
+		"fieldCode": "03010406",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "문리·기술·예능 강사",
+		"detailField": "기타 문리·기술 및 예능 강사"
+	},
+	{
+		"fieldCode": "03010501",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "장학관 및 기타 교육 종사자",
+		"detailField": "장학관·연구관 및 교육 전문가"
+	},
+	{
+		"fieldCode": "03010502",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "장학관 및 기타 교육 종사자",
+		"detailField": "대학 교육 조교(연구 조교(RA) 포함)"
+	},
+	{
+		"fieldCode": "03010503",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "교육직",
+		"smallField": "장학관 및 기타 교육 종사자",
+		"detailField": "교사보조 및 보육보조 서비스 종사원"
+	},
+	{
+		"fieldCode": "03020101",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 전문가",
+		"detailField": "판사 및 검사"
+	},
+	{
+		"fieldCode": "03020102",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 전문가",
+		"detailField": "변호사"
+	},
+	{
+		"fieldCode": "03020103",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 전문가",
+		"detailField": "법무사 및 집행관"
+	},
+	{
+		"fieldCode": "03020104",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 전문가",
+		"detailField": "변리사"
+	},
+	{
+		"fieldCode": "03020105",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 전문가",
+		"detailField": "기타 법률 전문가"
+	},
+	{
+		"fieldCode": "03020201",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "법률직",
+		"smallField": "법률 사무원",
+		"detailField": "법률 사무원"
+	},
+	{
+		"fieldCode": "03030101",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "사회복지사 및 상담사",
+		"detailField": "사회복지사"
+	},
+	{
+		"fieldCode": "03030102",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "사회복지사 및 상담사",
+		"detailField": "상담 전문가"
+	},
+	{
+		"fieldCode": "03030103",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "사회복지사 및 상담사",
+		"detailField": "청소년 지도사"
+	},
+	{
+		"fieldCode": "03030104",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "사회복지사 및 상담사",
+		"detailField": "직업상담사"
+	},
+	{
+		"fieldCode": "03030105",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "사회복지사 및 상담사",
+		"detailField": "시민단체 활동가"
+	},
+	{
+		"fieldCode": "03030201",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "보육교사 및 기타 사회복지 종사자",
+		"detailField": "보육교사"
+	},
+	{
+		"fieldCode": "03030202",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "보육교사 및 기타 사회복지 종사자",
+		"detailField": "기타 사회복지 종사원"
+	},
+	{
+		"fieldCode": "03030301",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "성직자 및 기타 종교 종사자",
+		"detailField": "성직자"
+	},
+	{
+		"fieldCode": "03030302",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "사회복지·종교직",
+		"smallField": "성직자 및 기타 종교 종사자",
+		"detailField": "기타 종교 종사원"
+	},
+	{
+		"fieldCode": "03040101",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "경찰·소방·교도직",
+		"smallField": "경찰관, 소방관 및 교도관",
+		"detailField": "경찰관 및 수사관"
+	},
+	{
+		"fieldCode": "03040102",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "경찰·소방·교도직",
+		"smallField": "경찰관, 소방관 및 교도관",
+		"detailField": "소방관"
+	},
+	{
+		"fieldCode": "03040103",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "경찰·소방·교도직",
+		"smallField": "경찰관, 소방관 및 교도관",
+		"detailField": "교도관 및 소년원학교 교사"
+	},
+	{
+		"fieldCode": "03050101",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "군인",
+		"smallField": "군인",
+		"detailField": "영관급 이상 장교"
+	},
+	{
+		"fieldCode": "03050102",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "군인",
+		"smallField": "군인",
+		"detailField": "위관급 장교 "
+	},
+	{
+		"fieldCode": "03050103",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "군인",
+		"smallField": "군인",
+		"detailField": "부사관"
+	},
+	{
+		"fieldCode": "03050104",
+		"largeField": "교육·법률·사회복지·경찰·소방직 및 군인",
+		"middleField": "군인",
+		"smallField": "군인",
+		"detailField": "기타 군인"
+	},
+	{
+		"fieldCode": "04010101",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의사, 한의사 및 치과의사",
+		"detailField": "전문 의사"
+	},
+	{
+		"fieldCode": "04010102",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의사, 한의사 및 치과의사",
+		"detailField": "일반 의사"
+	},
+	{
+		"fieldCode": "04010103",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의사, 한의사 및 치과의사",
+		"detailField": "한의사"
+	},
+	{
+		"fieldCode": "04010104",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의사, 한의사 및 치과의사",
+		"detailField": "치과 의사"
+	},
+	{
+		"fieldCode": "04010201",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "수의사",
+		"detailField": "수의사"
+	},
+	{
+		"fieldCode": "04010301",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "약사 및 한약사",
+		"detailField": "약사 및 한약사"
+	},
+	{
+		"fieldCode": "04010401",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "간호사",
+		"detailField": "간호사"
+	},
+	{
+		"fieldCode": "04010501",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "영양사",
+		"detailField": "영양사"
+	},
+	{
+		"fieldCode": "04010601",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "임상병리사"
+	},
+	{
+		"fieldCode": "04010602",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "방사선사"
+	},
+	{
+		"fieldCode": "04010603",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "치과기공사"
+	},
+	{
+		"fieldCode": "04010604",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "치과위생사"
+	},
+	{
+		"fieldCode": "04010605",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "물리 및 작업 치료사"
+	},
+	{
+		"fieldCode": "04010606",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "임상심리사"
+	},
+	{
+		"fieldCode": "04010607",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "재활공학 기사"
+	},
+	{
+		"fieldCode": "04010608",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "의료기사·치료사·재활사",
+		"detailField": "기타 치료·재활사 및 의료기사"
+	},
+	{
+		"fieldCode": "04010701",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "응급구조사"
+	},
+	{
+		"fieldCode": "04010702",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "위생사"
+	},
+	{
+		"fieldCode": "04010703",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "안경사"
+	},
+	{
+		"fieldCode": "04010704",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "의무기록사"
+	},
+	{
+		"fieldCode": "04010705",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "간호조무사"
+	},
+	{
+		"fieldCode": "04010706",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "안마사"
+	},
+	{
+		"fieldCode": "04010707",
+		"largeField": "보건·의료직",
+		"middleField": "보건·의료직",
+		"smallField": "보건·의료 종사자",
+		"detailField": "기타 보건·의료 종사원"
+	},
+	{
+		"fieldCode": "05010101",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "작가·통번역가",
+		"detailField": "작가"
+	},
+	{
+		"fieldCode": "05010102",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "작가·통번역가",
+		"detailField": "번역가 및 통역가"
+	},
+	{
+		"fieldCode": "05010103",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "작가·통번역가",
+		"detailField": "출판물 전문가"
+	},
+	{
+		"fieldCode": "05010201",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "기자 및 언론 전문가",
+		"detailField": "기자 및 언론 전문가"
+	},
+	{
+		"fieldCode": "05010301",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "학예사·사서·기록물관리사",
+		"detailField": "학예사 및 문화재 보존원"
+	},
+	{
+		"fieldCode": "05010302",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "학예사·사서·기록물관리사",
+		"detailField": "사서 및 기록물 관리사"
+	},
+	{
+		"fieldCode": "05010401",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "화가 및 조각가"
+	},
+	{
+		"fieldCode": "05010402",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "사진작가 및 사진사"
+	},
+	{
+		"fieldCode": "05010403",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "만화가 및 만화영화 작가"
+	},
+	{
+		"fieldCode": "05010404",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "국악인 및 전통 예능인"
+	},
+	{
+		"fieldCode": "05010405",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "지휘자, 작곡가 및 연주가"
+	},
+	{
+		"fieldCode": "05010406",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "가수 및 성악가"
+	},
+	{
+		"fieldCode": "05010407",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "무용가 및 안무가"
+	},
+	{
+		"fieldCode": "05010408",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "창작·공연 전문가(작가, 연극 제외)",
+		"detailField": "기타 시각 및 공연 예술가"
+	},
+	{
+		"fieldCode": "05010501",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "디자이너",
+		"detailField": "제품 디자이너"
+	},
+	{
+		"fieldCode": "05010502",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "디자이너",
+		"detailField": "패션 디자이너"
+	},
+	{
+		"fieldCode": "05010503",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "디자이너",
+		"detailField": "실내장식 디자이너"
+	},
+	{
+		"fieldCode": "05010504",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "디자이너",
+		"detailField": "시각 디자이너"
+	},
+	{
+		"fieldCode": "05010505",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "디자이너",
+		"detailField": "미디어 콘텐츠 디자이너"
+	},
+	{
+		"fieldCode": "05010601",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "감독 및 기술감독"
+	},
+	{
+		"fieldCode": "05010602",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "배우 및 모델"
+	},
+	{
+		"fieldCode": "05010603",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "아나운서 및 리포터"
+	},
+	{
+		"fieldCode": "05010604",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "촬영 기사"
+	},
+	{
+		"fieldCode": "05010605",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "음향·녹음 기사"
+	},
+	{
+		"fieldCode": "05010606",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "영상·녹화·편집 기사"
+	},
+	{
+		"fieldCode": "05010607",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "조명·영사 기사"
+	},
+	{
+		"fieldCode": "05010608",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "연극·영화·방송 전문가",
+		"detailField": "기타 연극·영화·방송 종사원"
+	},
+	{
+		"fieldCode": "05010701",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "문화·예술 기획자 및 매니저",
+		"detailField": "공연·영화 및 음반 기획자"
+	},
+	{
+		"fieldCode": "05010702",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "예술·디자인·방송직",
+		"smallField": "문화·예술 기획자 및 매니저",
+		"detailField": "연예인매니저 및 스포츠매니저"
+	},
+	{
+		"fieldCode": "05020101",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠·레크리에이션직",
+		"smallField": "스포츠·레크리에이션 종사자",
+		"detailField": "스포츠 감독 및 코치"
+	},
+	{
+		"fieldCode": "05020102",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠·레크리에이션직",
+		"smallField": "스포츠·레크리에이션 종사자",
+		"detailField": "직업 운동선수"
+	},
+	{
+		"fieldCode": "05020103",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠·레크리에이션직",
+		"smallField": "스포츠·레크리에이션 종사자",
+		"detailField": "경기 심판 및 경기 기록원"
+	},
+	{
+		"fieldCode": "05020104",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠·레크리에이션직",
+		"smallField": "스포츠·레크리에이션 종사자",
+		"detailField": "스포츠강사, 레크리에이션강사 및 기타 관련 전문가"
+	},
+	{
+		"fieldCode": "05020105",
+		"largeField": "예술·디자인·방송·스포츠직",
+		"middleField": "스포츠·레크리에이션직",
+		"smallField": "스포츠·레크리에이션 종사자",
+		"detailField": "기타 스포츠 및 여가서비스 종사원"
+	},
+	{
+		"fieldCode": "06010101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "이용사"
+	},
+	{
+		"fieldCode": "06010102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "미용사"
+	},
+	{
+		"fieldCode": "06010103",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "피부 및 체형 관리사"
+	},
+	{
+		"fieldCode": "06010104",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "메이크업 아티스트 및 분장사"
+	},
+	{
+		"fieldCode": "06010105",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "반려동물 미용 및 관리 종사원"
+	},
+	{
+		"fieldCode": "06010106",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "미용 서비스원",
+		"detailField": "기타 미용 서비스원"
+	},
+	{
+		"fieldCode": "06010201",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "결혼·장례 등 예식 서비스원",
+		"detailField": "결혼상담원 및 웨딩플래너"
+	},
+	{
+		"fieldCode": "06010202",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "결혼·장례 등 예식 서비스원",
+		"detailField": "혼례 종사원"
+	},
+	{
+		"fieldCode": "06010203",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "결혼·장례 등 예식 서비스원",
+		"detailField": "장례 지도사 및 장례 상담원"
+	},
+	{
+		"fieldCode": "06010204",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "결혼·장례 등 예식 서비스원",
+		"detailField": "점술가 및 민속신앙 종사원"
+	},
+	{
+		"fieldCode": "06010205",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "미용·예식 서비스직",
+		"smallField": "결혼·장례 등 예식 서비스원",
+		"detailField": "기타 개인 생활 서비스원"
+	},
+	{
+		"fieldCode": "06020101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "여행 서비스원",
+		"detailField": "여행상품 개발자"
+	},
+	{
+		"fieldCode": "06020102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "여행 서비스원",
+		"detailField": "여행 사무원"
+	},
+	{
+		"fieldCode": "06020103",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "여행 서비스원",
+		"detailField": "여행 안내원 및 해설사"
+	},
+	{
+		"fieldCode": "06020201",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "항공기·선박·열차 객실승무원",
+		"detailField": "항공기 객실승무원"
+	},
+	{
+		"fieldCode": "06020202",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "항공기·선박·열차 객실승무원",
+		"detailField": "선박·열차 객실승무원"
+	},
+	{
+		"fieldCode": "06020301",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "숙박시설 서비스원",
+		"detailField": "숙박시설 서비스원"
+	},
+	{
+		"fieldCode": "06020401",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "여행·숙박·오락 서비스직",
+		"smallField": "오락시설 서비스원",
+		"detailField": "오락시설 서비스원"
+	},
+	{
+		"fieldCode": "06030101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "주방장 및 요리 연구가"
+	},
+	{
+		"fieldCode": "06030102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "한식 조리사"
+	},
+	{
+		"fieldCode": "06030103",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "중식 조리사"
+	},
+	{
+		"fieldCode": "06030104",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "양식 조리사"
+	},
+	{
+		"fieldCode": "06030105",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "일식 조리사"
+	},
+	{
+		"fieldCode": "06030106",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "바텐더"
+	},
+	{
+		"fieldCode": "06030107",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "음료 조리사 "
+	},
+	{
+		"fieldCode": "06030108",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "주방장 및 조리사",
+		"detailField": "기타 조리사"
+	},
+	{
+		"fieldCode": "06030201",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "식당 서비스원",
+		"detailField": "패스트푸드 준비원"
+	},
+	{
+		"fieldCode": "06030202",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "식당 서비스원",
+		"detailField": "접객원(홀서빙원)"
+	},
+	{
+		"fieldCode": "06030203",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "식당 서비스원",
+		"detailField": "주방 보조원"
+	},
+	{
+		"fieldCode": "06030204",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "식당 서비스원",
+		"detailField": "음식 배달원"
+	},
+	{
+		"fieldCode": "06030205",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "음식 서비스직",
+		"smallField": "식당 서비스원",
+		"detailField": "기타 음식 서비스 종사원"
+	},
+	{
+		"fieldCode": "06040101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경호·경비직",
+		"smallField": "경호·보안 종사자",
+		"detailField": "경호원"
+	},
+	{
+		"fieldCode": "06040102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경호·경비직",
+		"smallField": "경호·보안 종사자",
+		"detailField": "청원경찰"
+	},
+	{
+		"fieldCode": "06040103",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경호·경비직",
+		"smallField": "경호·보안 종사자",
+		"detailField": "시설·특수 경비원"
+	},
+	{
+		"fieldCode": "06040104",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경호·경비직",
+		"smallField": "경호·보안 종사자",
+		"detailField": "기타 경호·보안 종사원"
+	},
+	{
+		"fieldCode": "06040201",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "경호·경비직",
+		"smallField": "경비원",
+		"detailField": "경비원(건물 관리원)"
+	},
+	{
+		"fieldCode": "06050101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "돌봄 서비스직(간병·육아)",
+		"smallField": "돌봄 서비스 종사자",
+		"detailField": "요양 보호사 및 간병인"
+	},
+	{
+		"fieldCode": "06050102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "돌봄 서비스직(간병·육아)",
+		"smallField": "돌봄 서비스 종사자",
+		"detailField": "육아 도우미"
+	},
+	{
+		"fieldCode": "06060101",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "청소원"
+	},
+	{
+		"fieldCode": "06060102",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "환경미화원 및 재활용품 수거원"
+	},
+	{
+		"fieldCode": "06060103",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "배관 세정원 및 방역원"
+	},
+	{
+		"fieldCode": "06060104",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "구두 미화원"
+	},
+	{
+		"fieldCode": "06060105",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "세탁원(다림질원)"
+	},
+	{
+		"fieldCode": "06060106",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "청소·방역 및 가사 서비스원",
+		"detailField": "가사 도우미"
+	},
+	{
+		"fieldCode": "06060201",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailField": "계기 검침원 및 가스 점검원"
+	},
+	{
+		"fieldCode": "06060202",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailField": "자동판매기 관리원"
+	},
+	{
+		"fieldCode": "06060203",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailField": "주차 관리·안내원"
+	},
+	{
+		"fieldCode": "06060204",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailField": "검표원"
+	},
+	{
+		"fieldCode": "06060205",
+		"largeField": "미용·여행·숙박·음식·경비·청소직",
+		"middleField": "청소 및 기타 개인서비스직",
+		"smallField": "검침·주차관리 및 기타 서비스 단순 종사자",
+		"detailField": "기타 서비스 단순 종사원"
+	},
+	{
+		"fieldCode": "07010101",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "부동산 컨설턴트 및 중개인",
+		"detailField": "부동산 컨설턴트 및 중개인"
+	},
+	{
+		"fieldCode": "07010201",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "기술 영업원"
+	},
+	{
+		"fieldCode": "07010202",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "해외 영업원"
+	},
+	{
+		"fieldCode": "07010203",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "자동차 영업원"
+	},
+	{
+		"fieldCode": "07010204",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "제품·광고 영업원"
+	},
+	{
+		"fieldCode": "07010205",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "상품 중개인 및 경매사"
+	},
+	{
+		"fieldCode": "07010206",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "영업원 및 상품중개인",
+		"detailField": "기타 기술 영업·중개 종사원"
+	},
+	{
+		"fieldCode": "07010301",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "텔레마케터",
+		"detailField": "텔레마케터"
+	},
+	{
+		"fieldCode": "07010401",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "소규모 상점 경영 및 일선 관리 종사자",
+		"detailField": "소규모 상점 경영 및 일선 관리 종사원"
+	},
+	{
+		"fieldCode": "07010501",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "상점 판매원"
+	},
+	{
+		"fieldCode": "07010502",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "통신 기기·서비스 판매원"
+	},
+	{
+		"fieldCode": "07010503",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "온라인 판매원"
+	},
+	{
+		"fieldCode": "07010504",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "상품 대여원"
+	},
+	{
+		"fieldCode": "07010505",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "노점 및 이동 판매원"
+	},
+	{
+		"fieldCode": "07010506",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "방문 판매원"
+	},
+	{
+		"fieldCode": "07010507",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판매 종사자",
+		"detailField": "주유원(가스충전원)"
+	},
+	{
+		"fieldCode": "07010601",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "매장 계산원 및 매표원　",
+		"detailField": "매장 계산원 및 요금 정산원"
+	},
+	{
+		"fieldCode": "07010602",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "매장 계산원 및 매표원　",
+		"detailField": "매표원 및 복권 판매원"
+	},
+	{
+		"fieldCode": "07010701",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판촉 및 기타 판매 단순 종사자",
+		"detailField": "홍보 도우미 및 판촉원"
+	},
+	{
+		"fieldCode": "07010702",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "영업·판매직",
+		"smallField": "판촉 및 기타 판매 단순 종사자",
+		"detailField": "기타 판매 단순 종사원"
+	},
+	{
+		"fieldCode": "07020101",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "항공기·선박·철도 조종사 및 관제사",
+		"detailField": "항공기 조종사"
+	},
+	{
+		"fieldCode": "07020102",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "항공기·선박·철도 조종사 및 관제사",
+		"detailField": "선장, 항해사 및 도선사"
+	},
+	{
+		"fieldCode": "07020103",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "항공기·선박·철도 조종사 및 관제사",
+		"detailField": "철도·전동차 기관사"
+	},
+	{
+		"fieldCode": "07020104",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "항공기·선박·철도 조종사 및 관제사",
+		"detailField": "관제사"
+	},
+	{
+		"fieldCode": "07020105",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "항공기·선박·철도 조종사 및 관제사",
+		"detailField": "기타 철도운송 종사원"
+	},
+	{
+		"fieldCode": "07020201",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "자동차 운전원",
+		"detailField": "택시 운전원"
+	},
+	{
+		"fieldCode": "07020202",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "자동차 운전원",
+		"detailField": "버스 운전원"
+	},
+	{
+		"fieldCode": "07020203",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "자동차 운전원",
+		"detailField": "화물차·특수차 운전원"
+	},
+	{
+		"fieldCode": "07020204",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "자동차 운전원",
+		"detailField": "기타 자동차 운전원"
+	},
+	{
+		"fieldCode": "07020301",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "물품이동장비 조작원(크레인·호이스트·지게차)",
+		"detailField": "물품이동장비 조작원(크레인·호이스트·지게차)"
+	},
+	{
+		"fieldCode": "07020401",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "택배원 및 기타 운송 종사자",
+		"detailField": "택배원"
+	},
+	{
+		"fieldCode": "07020402",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "택배원 및 기타 운송 종사자",
+		"detailField": "우편물 집배원"
+	},
+	{
+		"fieldCode": "07020403",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "택배원 및 기타 운송 종사자",
+		"detailField": "선박승무원 및 관련 종사원(선박객실 승무원 제외)"
+	},
+	{
+		"fieldCode": "07020404",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "택배원 및 기타 운송 종사자",
+		"detailField": "하역·적재 종사원"
+	},
+	{
+		"fieldCode": "07020405",
+		"largeField": "영업·판매·운전·운송직",
+		"middleField": "운전·운송직",
+		"smallField": "택배원 및 기타 운송 종사자",
+		"detailField": "기타 배달원"
+	},
+	{
+		"fieldCode": "08010101",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "강구조물 가공원 및 건립원"
+	},
+	{
+		"fieldCode": "08010102",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "경량철골공"
+	},
+	{
+		"fieldCode": "08010103",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "철근공"
+	},
+	{
+		"fieldCode": "08010104",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "콘크리트공"
+	},
+	{
+		"fieldCode": "08010105",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "건축 석공"
+	},
+	{
+		"fieldCode": "08010106",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "건축 목공"
+	},
+	{
+		"fieldCode": "08010107",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "조적공 및 석재부설원"
+	},
+	{
+		"fieldCode": "08010108",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설구조 기능원",
+		"detailField": "기타 건설 구조 기능원"
+	},
+	{
+		"fieldCode": "08010201",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "미장공"
+	},
+	{
+		"fieldCode": "08010202",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "방수공"
+	},
+	{
+		"fieldCode": "08010203",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "단열공"
+	},
+	{
+		"fieldCode": "08010204",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "바닥재 시공원"
+	},
+	{
+		"fieldCode": "08010205",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "도배공 및 유리 부착원"
+	},
+	{
+		"fieldCode": "08010206",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "건축 도장공"
+	},
+	{
+		"fieldCode": "08010207",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "새시 조립·설치원"
+	},
+	{
+		"fieldCode": "08010208",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건축마감 기능원",
+		"detailField": "기타 건축 마감 기능원"
+	},
+	{
+		"fieldCode": "08010301",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "배관공",
+		"detailField": "건설 배관공"
+	},
+	{
+		"fieldCode": "08010302",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "배관공",
+		"detailField": "공업 배관공"
+	},
+	{
+		"fieldCode": "08010303",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "배관공",
+		"detailField": "기타 배관공"
+	},
+	{
+		"fieldCode": "08010401",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설·채굴 기계 운전원",
+		"detailField": "건설·채굴 기계 운전원"
+	},
+	{
+		"fieldCode": "08010501",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "기타 건설 기능원(채굴포함)",
+		"detailField": "광원, 채석원 및 석재 절단원"
+	},
+	{
+		"fieldCode": "08010502",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "기타 건설 기능원(채굴포함)",
+		"detailField": "철로 설치·보수원"
+	},
+	{
+		"fieldCode": "08010503",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "기타 건설 기능원(채굴포함)",
+		"detailField": "기타 채굴·토목 종사원"
+	},
+	{
+		"fieldCode": "08010601",
+		"largeField": "건설·채굴직",
+		"middleField": "건설·채굴직",
+		"smallField": "건설·채굴 단순 종사자",
+		"detailField": "건설·채굴 단순 종사원"
+	},
+	{
+		"fieldCode": "09010101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "공업기계 설치·정비원"
+	},
+	{
+		"fieldCode": "09010102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "승강기 설치·정비원"
+	},
+	{
+		"fieldCode": "09010103",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "물품이동장비 설치·정비원"
+	},
+	{
+		"fieldCode": "09010104",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "냉동·냉장·공조기 설치·정비원"
+	},
+	{
+		"fieldCode": "09010105",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "보일러 설치·정비원"
+	},
+	{
+		"fieldCode": "09010106",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "건설·광업 기계 설치·정비원"
+	},
+	{
+		"fieldCode": "09010107",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계장비 설치·정비원(운송장비 제외)",
+		"detailField": "농업용 및 기타 기계장비 설치·정비원"
+	},
+	{
+		"fieldCode": "09010201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 정비원",
+		"detailField": "항공기 정비원"
+	},
+	{
+		"fieldCode": "09010202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 정비원",
+		"detailField": "선박 정비원"
+	},
+	{
+		"fieldCode": "09010203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 정비원",
+		"detailField": "철도기관차·전동차 정비원"
+	},
+	{
+		"fieldCode": "09010204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 정비원",
+		"detailField": "자동차 정비원"
+	},
+	{
+		"fieldCode": "09010205",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 정비원",
+		"detailField": "기타 운송장비 정비원"
+	},
+	{
+		"fieldCode": "09010301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "금형원 및 공작기계 조작원",
+		"detailField": "금형원"
+	},
+	{
+		"fieldCode": "09010302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "금형원 및 공작기계 조작원",
+		"detailField": "금속 공작기계 조작원"
+	},
+	{
+		"fieldCode": "09010401",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "냉·난방 설비 조작원",
+		"detailField": "냉·난방 설비 조작원"
+	},
+	{
+		"fieldCode": "09010501",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "자동조립라인·산업용로봇 조작원",
+		"detailField": "자동조립라인·산업용로봇 조작원"
+	},
+	{
+		"fieldCode": "09010601",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계 조립원(운송장비 제외)",
+		"detailField": "일반기계 조립원"
+	},
+	{
+		"fieldCode": "09010602",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "기계 조립원(운송장비 제외)",
+		"detailField": "금속기계부품 조립원"
+	},
+	{
+		"fieldCode": "09010701",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 조립원",
+		"detailField": "자동차 조립원"
+	},
+	{
+		"fieldCode": "09010702",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 조립원",
+		"detailField": "자동차 부분품 조립원"
+	},
+	{
+		"fieldCode": "09010703",
+		"largeField": "설치·정비·생산직",
+		"middleField": "기계 설치·정비·생산직",
+		"smallField": "운송장비 조립원",
+		"detailField": "운송장비 조립원"
+	},
+	{
+		"fieldCode": "09020101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "금속관련 기계·설비 조작원",
+		"detailField": "금속가공 제어장치 조작원"
+	},
+	{
+		"fieldCode": "09020102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "금속관련 기계·설비 조작원",
+		"detailField": "금속가공 기계 조작원"
+	},
+	{
+		"fieldCode": "09020201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "판금원 및 제관원",
+		"detailField": "판금원"
+	},
+	{
+		"fieldCode": "09020202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "판금원 및 제관원",
+		"detailField": "판금기조작원"
+	},
+	{
+		"fieldCode": "09020203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "판금원 및 제관원",
+		"detailField": "제관원"
+	},
+	{
+		"fieldCode": "09020204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "판금원 및 제관원",
+		"detailField": "제관기조작원"
+	},
+	{
+		"fieldCode": "09020301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "단조원 및 주조원",
+		"detailField": "단조원"
+	},
+	{
+		"fieldCode": "09020302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "단조원 및 주조원",
+		"detailField": "단조기조작원"
+	},
+	{
+		"fieldCode": "09020303",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "단조원 및 주조원",
+		"detailField": "주조원"
+	},
+	{
+		"fieldCode": "09020304",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "단조원 및 주조원",
+		"detailField": "주조기조작원"
+	},
+	{
+		"fieldCode": "09020401",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "용접원",
+		"detailField": "용접원"
+	},
+	{
+		"fieldCode": "09020402",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "용접원",
+		"detailField": "용접기조작원"
+	},
+	{
+		"fieldCode": "09020501",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "도장원 및 도금원　",
+		"detailField": "도장원(도장기조작원)"
+	},
+	{
+		"fieldCode": "09020502",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "도장원 및 도금원　",
+		"detailField": "도금·금속분무기 조작원"
+	},
+	{
+		"fieldCode": "09020601",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "비금속제품 생산기계 조작원",
+		"detailField": "유리·유리제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020602",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "비금속제품 생산기계 조작원",
+		"detailField": "점토제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020603",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "비금속제품 생산기계 조작원",
+		"detailField": "시멘트·광물제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020604",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "비금속제품 생산기계 조작원",
+		"detailField": "광석·석제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09020605",
+		"largeField": "설치·정비·생산직",
+		"middleField": "금속·재료 설치·정비·생산직(판금·단조·주조·용접·도장 등)",
+		"smallField": "비금속제품 생산기계 조작원",
+		"detailField": "기타 비금속제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기공",
+		"detailField": "산업 전기공"
+	},
+	{
+		"fieldCode": "09030102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기공",
+		"detailField": "내선 전기공"
+	},
+	{
+		"fieldCode": "09030103",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기공",
+		"detailField": "외선 전기공"
+	},
+	{
+		"fieldCode": "09030201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 기기 설치·수리원",
+		"detailField": "사무용 전자기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09030202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 기기 설치·수리원",
+		"detailField": "가전제품 설치·수리원"
+	},
+	{
+		"fieldCode": "09030203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 기기 설치·수리원",
+		"detailField": "기타 전기·전자 기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09030301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "발전·배전 장치 조작원",
+		"detailField": "발전·배전 장치 조작원"
+	},
+	{
+		"fieldCode": "09030401",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 설비 조작원",
+		"detailField": "전기·전자 설비 조작원"
+	},
+	{
+		"fieldCode": "09030501",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 부품·제품 생산기계 조작원　",
+		"detailField": "전기 부품·제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030502",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 부품·제품 생산기계 조작원　",
+		"detailField": "전자 부품·제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09030601",
+		"largeField": "설치·정비·생산직",
+		"middleField": "전기·전자 설치·정비·생산직",
+		"smallField": "전기·전자 부품·제품 조립원",
+		"detailField": "전기·전자 부품·제품 조립원"
+	},
+	{
+		"fieldCode": "09040101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "정보통신기기 설치·수리원",
+		"detailField": "컴퓨터 설치·수리원"
+	},
+	{
+		"fieldCode": "09040102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "정보통신기기 설치·수리원",
+		"detailField": "이동전화기 수리원"
+	},
+	{
+		"fieldCode": "09040103",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "정보통신기기 설치·수리원",
+		"detailField": "기타 정보통신기기 설치·수리원"
+	},
+	{
+		"fieldCode": "09040201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "방송·통신장비 설치·정비원",
+		"detailField": "방송장비 설치·수리원"
+	},
+	{
+		"fieldCode": "09040202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "방송·통신장비 설치·정비원",
+		"detailField": "통신장비 설치·수리원"
+	},
+	{
+		"fieldCode": "09040203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "정보통신 설치·정비직",
+		"smallField": "방송·통신장비 설치·정비원",
+		"detailField": "방송·통신·인터넷 케이블 설치·수리원"
+	},
+	{
+		"fieldCode": "09050101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "석유·화학물 가공장치 조작원",
+		"detailField": "석유·천연가스 제조 제어장치 조작원"
+	},
+	{
+		"fieldCode": "09050102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "석유·화학물 가공장치 조작원",
+		"detailField": "화학물 가공장치 조작원"
+	},
+	{
+		"fieldCode": "09050103",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "석유·화학물 가공장치 조작원",
+		"detailField": "기타 석유·화학물 가공장치 조작원"
+	},
+	{
+		"fieldCode": "09050201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailField": "타이어·고무제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09050202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailField": "플라스틱제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09050203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailField": "화학제품 생산기계 조작원(고무·플라스틱 제외)"
+	},
+	{
+		"fieldCode": "09050204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "고무·플라스틱 및 화학제품 생산기계 조작원 및 조립원",
+		"detailField": "고무·플라스틱 제품 조립원"
+	},
+	{
+		"fieldCode": "09050301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "환경관련 장치 조작원",
+		"detailField": "상·하수도 처리장치 조작원"
+	},
+	{
+		"fieldCode": "09050302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "화학·환경 설치·정비·생산직",
+		"smallField": "환경관련 장치 조작원",
+		"detailField": "재활용 처리장치·소각로 조작원"
+	},
+	{
+		"fieldCode": "09060101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "섬유 제조·가공 기계 조작원",
+		"detailField": "섬유 제조기계 조작원"
+	},
+	{
+		"fieldCode": "09060102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "섬유 제조·가공 기계 조작원",
+		"detailField": "직조기·편직기 조작원"
+	},
+	{
+		"fieldCode": "09060103",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "섬유 제조·가공 기계 조작원",
+		"detailField": "표백·염색기 조작원"
+	},
+	{
+		"fieldCode": "09060201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "패턴사, 재단사 및 재봉사",
+		"detailField": "패턴사"
+	},
+	{
+		"fieldCode": "09060202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "패턴사, 재단사 및 재봉사",
+		"detailField": "재단사"
+	},
+	{
+		"fieldCode": "09060203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "패턴사, 재단사 및 재봉사",
+		"detailField": "재봉사"
+	},
+	{
+		"fieldCode": "09060204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "패턴사, 재단사 및 재봉사",
+		"detailField": "기타 섬유·가죽 기능원"
+	},
+	{
+		"fieldCode": "09060301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "의복 제조원 및 수선원",
+		"detailField": "한복 제조원"
+	},
+	{
+		"fieldCode": "09060302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "의복 제조원 및 수선원",
+		"detailField": "양장·양복 제조원"
+	},
+	{
+		"fieldCode": "09060303",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "의복 제조원 및 수선원",
+		"detailField": "모피·가죽의복 제조원"
+	},
+	{
+		"fieldCode": "09060304",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "의복 제조원 및 수선원",
+		"detailField": "의복·가죽·모피 수선원"
+	},
+	{
+		"fieldCode": "09060305",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "의복 제조원 및 수선원",
+		"detailField": "기타 의복 제조원"
+	},
+	{
+		"fieldCode": "09060401",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailField": "제화원"
+	},
+	{
+		"fieldCode": "09060402",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailField": "신발 제조기계 조작원 및 조립원"
+	},
+	{
+		"fieldCode": "09060403",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailField": "세탁 기계 조작원"
+	},
+	{
+		"fieldCode": "09060404",
+		"largeField": "설치·정비·생산직",
+		"middleField": "섬유·의복 생산직",
+		"smallField": "제화원, 기타 섬유·의복 기계 조작원 및 조립원",
+		"detailField": "기타 직물·신발 기계 조작원 및 조립원"
+	},
+	{
+		"fieldCode": "09070101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "제과·제빵원 및 떡제조원",
+		"detailField": "제과·제빵원"
+	},
+	{
+		"fieldCode": "09070102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "제과·제빵원 및 떡제조원",
+		"detailField": "떡 제조원"
+	},
+	{
+		"fieldCode": "09070201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기능원",
+		"detailField": "정육원 및 도축원"
+	},
+	{
+		"fieldCode": "09070202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기능원",
+		"detailField": "김치·밑반찬 제조 종사원"
+	},
+	{
+		"fieldCode": "09070203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기능원",
+		"detailField": "식품·담배 등급원"
+	},
+	{
+		"fieldCode": "09070204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기능원",
+		"detailField": "기타 식품 가공 종사원"
+	},
+	{
+		"fieldCode": "09070301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "육류·어패류·낙농품 가공기계 조작원"
+	},
+	{
+		"fieldCode": "09070302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "제분·도정 기계 조작원"
+	},
+	{
+		"fieldCode": "09070303",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "곡물 가공제품 기계 조작원"
+	},
+	{
+		"fieldCode": "09070304",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "과실·채소 기계 조작원"
+	},
+	{
+		"fieldCode": "09070305",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "음료 제조기계 조작원"
+	},
+	{
+		"fieldCode": "09070306",
+		"largeField": "설치·정비·생산직",
+		"middleField": "식품 가공·생산직",
+		"smallField": "식품 가공 기계 조작원",
+		"detailField": "기타 식품 가공 기계 조작원"
+	},
+	{
+		"fieldCode": "09080101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "인쇄기계·사진현상기 조작원",
+		"detailField": "인쇄기계 조작원"
+	},
+	{
+		"fieldCode": "09080102",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "인쇄기계·사진현상기 조작원",
+		"detailField": "사진 인화·현상기 조작원(사진수정 포함)"
+	},
+	{
+		"fieldCode": "09080201",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "목재·펄프·종이 생산기계 조작원",
+		"detailField": "목재 가공기계 조작원"
+	},
+	{
+		"fieldCode": "09080202",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "목재·펄프·종이 생산기계 조작원",
+		"detailField": "펄프·종이 제조장치 조작원"
+	},
+	{
+		"fieldCode": "09080203",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "목재·펄프·종이 생산기계 조작원",
+		"detailField": "종이제품 생산기계 조작원"
+	},
+	{
+		"fieldCode": "09080204",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "목재·펄프·종이 생산기계 조작원",
+		"detailField": "기타 목재·종이 기계 조작원"
+	},
+	{
+		"fieldCode": "09080301",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "가구·목제품 제조·수리원",
+		"detailField": "가구 제조·수리원"
+	},
+	{
+		"fieldCode": "09080302",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "가구·목제품 제조·수리원",
+		"detailField": "가구 조립원"
+	},
+	{
+		"fieldCode": "09080303",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "가구·목제품 제조·수리원",
+		"detailField": "목제품 제조원"
+	},
+	{
+		"fieldCode": "09080401",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "공예원 및 귀금속세공원",
+		"detailField": "공예원"
+	},
+	{
+		"fieldCode": "09080402",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "공예원 및 귀금속세공원",
+		"detailField": "귀금속·보석 세공원"
+	},
+	{
+		"fieldCode": "09080501",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "악기·간판 및 기타 제조 종사자",
+		"detailField": "악기 제조원 및 조율사"
+	},
+	{
+		"fieldCode": "09080502",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "악기·간판 및 기타 제조 종사자",
+		"detailField": "간판 제작·설치원"
+	},
+	{
+		"fieldCode": "09080503",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "악기·간판 및 기타 제조 종사자",
+		"detailField": "유리기능, 복사, 수제 제본 등 기타 기능 종사원"
+	},
+	{
+		"fieldCode": "09080504",
+		"largeField": "설치·정비·생산직",
+		"middleField": "인쇄·목재·공예 및 기타 설치·정비·생산직",
+		"smallField": "악기·간판 및 기타 제조 종사자",
+		"detailField": "주입·포장·상표부착기 및 기타 기계 조작원"
+	},
+	{
+		"fieldCode": "09090101",
+		"largeField": "설치·정비·생산직",
+		"middleField": "제조 단순직",
+		"smallField": "제조 단순 종사자",
+		"detailField": "제조 단순 종사원"
+	},
+	{
+		"fieldCode": "10010101",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "작물재배 종사자",
+		"detailField": "곡식작물 재배원"
+	},
+	{
+		"fieldCode": "10010102",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "작물재배 종사자",
+		"detailField": "채소·특용작물 재배원"
+	},
+	{
+		"fieldCode": "10010103",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "작물재배 종사자",
+		"detailField": "과수작물 재배원"
+	},
+	{
+		"fieldCode": "10010104",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "작물재배 종사자",
+		"detailField": "원예작물 재배원"
+	},
+	{
+		"fieldCode": "10010105",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "작물재배 종사자",
+		"detailField": "조경원"
+	},
+	{
+		"fieldCode": "10010201",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "낙농·사육 종사자",
+		"detailField": "낙농 종사원"
+	},
+	{
+		"fieldCode": "10010202",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "낙농·사육 종사자",
+		"detailField": "가축 사육 종사원"
+	},
+	{
+		"fieldCode": "10010203",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "낙농·사육 종사자",
+		"detailField": "기타 사육 종사원"
+	},
+	{
+		"fieldCode": "10010301",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "임업 종사자　",
+		"detailField": "조림·산림경영인 및 벌목원"
+	},
+	{
+		"fieldCode": "10010302",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "임업 종사자　",
+		"detailField": "임산물 채취 및 기타 임업 종사원"
+	},
+	{
+		"fieldCode": "10010401",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "어업 종사자",
+		"detailField": "양식원"
+	},
+	{
+		"fieldCode": "10010402",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "어업 종사자",
+		"detailField": "어부 및 해녀"
+	},
+	{
+		"fieldCode": "10010501",
+		"largeField": "농림어업직",
+		"middleField": "농림어업직",
+		"smallField": "농림어업 단순 종사자",
+		"detailField": "농림어업 단순 종사원"
+	}
+]

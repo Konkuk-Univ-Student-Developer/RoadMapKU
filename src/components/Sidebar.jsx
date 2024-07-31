@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import SidebarContents from './SidebarContents';
+import FieldCategoryInput from './FieldCategoryInput';
+import { useRecoilValue } from 'recoil';
+import { showFieldInputState } from '../recoils/atoms';
 
 const SidebarContainer = styled.div`
 	position: absolute;
@@ -53,12 +56,14 @@ const HideButton = styled.button`
 `;
 
 const Sidebar = ({ show, toggleSidebar }) => {
+	const isShowFieldCategoryInput = useRecoilValue(showFieldInputState);
 	return (
 		<SidebarContainer className={show ? 'visible' : 'hidden'}>
 			<HideButton onClick={toggleSidebar} className={show ? 'visible' : 'hidden'}>
 				{show ? '<<' : '>>'}
 			</HideButton>
 			<SidebarContents />
+			{isShowFieldCategoryInput && <FieldCategoryInput />}
 		</SidebarContainer>
 	);
 };
