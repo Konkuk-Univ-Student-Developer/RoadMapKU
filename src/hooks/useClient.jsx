@@ -1,6 +1,13 @@
 import { useSetRecoilState } from 'recoil';
 import useApi from './useApi';
-import { detailFieldState, largeFieldState, middleFieldState, smallFieldState } from '../recoils/atoms';
+import {
+	detailFieldState,
+	largeFieldState,
+	middleFieldState,
+	smallFieldState,
+	competencyListInSubjectState,
+	courseByCompetencyInSubjectState
+} from '../recoils/atoms';
 
 const useClient = () => {
 	const { clientApi } = useApi();
@@ -8,6 +15,8 @@ const useClient = () => {
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
+	const setCompetencyListInSubjectState = useSetRecoilState(competencyListInSubjectState);
+	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 
 	const getFilteredData = (fieldCode, responseData, offset) => {
 		const prefixReq = fieldCode.substring(0, offset);
@@ -66,13 +75,36 @@ const useClient = () => {
 			});
 	};
 
-	const fetchCourseByCompetencyInSubjectData = () => {
-		clientApi.get('data/courseByCompetencyInSubjectData.json').then((res) => {
-			console.log(res.data);
-		});
+	const fetchCompetencyListInSubject = () => {
+		clientApi
+			.get('data/competencyListInSubjectData.json')
+			.then((res) => {
+				setCompetencyListInSubjectState(res.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
-	return { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchCourseByCompetencyInSubjectData };
+	const fetchCourseByCompetencyInSubject = () => {
+		clientApi
+			.get('data/courseByCompetencyInSubjectData.json')
+			.then((res) => {
+				setCourseByCompetencyInSubjectState(res.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	return {
+		fetchLargeField,
+		fetchMiddleField,
+		fetchSmallField,
+		fetchDetailField,
+		fetchCompetencyListInSubject,
+		fetchCourseByCompetencyInSubject
+	};
 };
 
 export default useClient;

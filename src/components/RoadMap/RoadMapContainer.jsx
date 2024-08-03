@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
+import useClient from '../../hooks/useClient';
+import {
+	competencyListInSubjectState as competencyListInSubjectState,
+	courseByCompetencyInSubjectState
+} from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 
 const Container = styled.div`
@@ -47,151 +53,125 @@ const Button = styled.button`
 	}
 `;
 
-const competenctListInSubjectData = {
-	subjectCode: '122281',
-	subjectName: '미디어커뮤니케이션학과',
-	competencies: [
-		{
-			competencyCode: '12228106',
-			competencyName: '기업 홍보 능력',
-			competencyDescription:
-				'기업이 관계하는 공중(Public)의 이해와 협력을 얻기 위해 기업 이미지 제고 및 공중을 설득하는 능력'
-		},
-		{
-			competencyCode: '12228108',
-			competencyName: '광고 기획 및 제작 능력',
-			competencyDescription:
-				'다양한 커뮤니케이션 방안의 융합을 이해하고, 커뮤니케이션 방안의 적절한 융합을 통해 업무에 응용하며 효과적으로 업무를 수행하는 능력'
-		},
-		{
-			competencyCode: '12228103',
-			competencyName: '융합커뮤니케이션 이해 및 응용 능력',
-			competencyDescription:
-				'다양한 커뮤니케이션 방안의 융합을 이해하고, 커뮤니케이션 방안의 적절한 융합을 통해 업무에 응용하며 효과적으로 업무를 수행하는 능력'
-		}
-	],
-	lastUpdated: '2023-11-03T19:42:38Z'
-};
+// const courseByCompetencyInSubjectData_1 = {
+// 	subjectCode: '122281',
+// 	subjectName: '미디어커뮤니케이션학과',
+// 	competencyCode: '12228106',
+// 	competencyName: '기업 홍보 능력',
+// 	courses: [
+// 		{
+// 			haksuId: 'BANA45191',
+// 			courseName: '광고와 커뮤니케이션',
+// 			year: 3,
+// 			semester: '1학기'
+// 		},
+// 		{
+// 			haksuId: 'COM402',
+// 			courseName: '디지털 미디어 전략',
+// 			year: 4,
+// 			semester: '2학기'
+// 		}
+// 	]
+// };
 
-const courseByCompetencyInSubjectData_1 = {
-	subjectCode: '122281',
-	subjectName: '미디어커뮤니케이션학과',
-	competencyCode: '12228106',
-	competencyName: '기업 홍보 능력',
-	courses: [
-		{
-			haksuId: 'BANA45191',
-			courseName: '광고와 커뮤니케이션',
-			year: 3,
-			semester: '1학기'
-		},
-		{
-			haksuId: 'COM402',
-			courseName: '디지털 미디어 전략',
-			year: 4,
-			semester: '2학기'
-		}
-	]
-};
+// const courseByCompetencyInSubjectData_2 = {
+// 	subjectCode: '122281',
+// 	subjectName: '미디어커뮤니케이션학과',
+// 	competencyCode: '12228108',
+// 	competencyName: '광고 기획 및 제작 능력',
+// 	courses: [
+// 		{
+// 			haksuId: 'COM201',
+// 			courseName: 'Lorem Ipsum2-1',
+// 			year: 2,
+// 			semester: '1학기'
+// 		},
+// 		{
+// 			haksuId: 'BANA45191',
+// 			courseName: '광고와 커뮤니케이션',
+// 			year: 3,
+// 			semester: '1학기'
+// 		},
+// 		{
+// 			haksuId: 'COM403',
+// 			courseName: 'Lorem Ipsum4-1',
+// 			year: 4,
+// 			semester: '1학기'
+// 		}
+// 	]
+// };
 
-const courseByCompetencyInSubjectData_2 = {
-	subjectCode: '122281',
-	subjectName: '미디어커뮤니케이션학과',
-	competencyCode: '12228108',
-	competencyName: '광고 기획 및 제작 능력',
-	courses: [
-		{
-			haksuId: 'COM201',
-			courseName: 'Lorem Ipsum2-1',
-			year: 2,
-			semester: '1학기'
-		},
-		{
-			haksuId: 'BANA45191',
-			courseName: '광고와 커뮤니케이션',
-			year: 3,
-			semester: '1학기'
-		},
-		{
-			haksuId: 'COM403',
-			courseName: 'Lorem Ipsum4-1',
-			year: 4,
-			semester: '1학기'
-		}
-	]
-};
-
-const courseByCompetencyInSubjectData_3 = {
-	subjectCode: '122281',
-	subjectName: '미디어커뮤니케이션학과',
-	competencyCode: '12228103',
-	competencyName: '융합커뮤니케이션 이해 및 응용 능력',
-	courses: [
-		{
-			haksuId: 'COM202',
-			courseName: 'Lorem Ipsum2-1-1',
-			year: 2,
-			semester: '1학기'
-		},
-		{
-			haksuId: 'BANA45191',
-			courseName: '광고와 커뮤니케이션',
-			year: 3,
-			semester: '1학기'
-		},
-		{
-			haksuId: 'COM404',
-			courseName: 'Lorem Ipsu3-2',
-			year: 3,
-			semester: '2학기'
-		}
-	]
-};
+// const courseByCompetencyInSubjectData_3 = {
+// 	subjectCode: '122281',
+// 	subjectName: '미디어커뮤니케이션학과',
+// 	competencyCode: '12228103',
+// 	competencyName: '융합커뮤니케이션 이해 및 응용 능력',
+// 	courses: [
+// 		{
+// 			haksuId: 'COM202',
+// 			courseName: 'Lorem Ipsum2-1-1',
+// 			year: 2,
+// 			semester: '1학기'
+// 		},
+// 		{
+// 			haksuId: 'BANA45191',
+// 			courseName: '광고와 커뮤니케이션',
+// 			year: 3,
+// 			semester: '1학기'
+// 		},
+// 		{
+// 			haksuId: 'COM404',
+// 			courseName: 'Lorem Ipsu3-2',
+// 			year: 3,
+// 			semester: '2학기'
+// 		}
+// 	]
+// };
+// const courseByCompetencyInSubjectData = [
+// 	courseByCompetencyInSubjectData_1,
+// 	courseByCompetencyInSubjectData_2,
+// 	courseByCompetencyInSubjectData_3
+// ];
 
 const RoadMapContainer = ({ show }) => {
-	const [competencyTableData, setCompetencyTableData] = useState([]);
-	// const [myCompetencyTableData, setMyCompetencyTableData] = useState([]);
+	const competencyListInSubject = useRecoilValue(competencyListInSubjectState); // eslint-disable-line no-unused-vars
+	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState); // eslint-disable-line no-unused-vars
+
+	const { fetchCompetencyListInSubject, fetchCourseByCompetencyInSubject } = useClient();
 
 	const [roadMapTableData, setRoadMapTableData] = useState([
-		[['semester3', '2-1']],
-		[['semester4', '2-2']],
-		[['semester5', '3-1']],
-		[['semester6', '3-2']],
-		[['semester7', '4-1']],
-		[['semester8', '4-2']]
+		[['semester3', '2-1', '', '']],
+		[['semester4', '2-2', '', '']],
+		[['semester5', '3-1', '', '']],
+		[['semester6', '3-2', '', '']],
+		[['semester7', '4-1', '', '']],
+		[['semester8', '4-2', '', '']]
 	]);
 	const [myTableData, setMyTableData] = useState([
-		[['semester3', '2-1']],
-		[['semester4', '2-2']],
-		[['semester5', '3-1']],
-		[['semester6', '3-2']],
-		[['semester7', '4-1']],
-		[['semester8', '4-2']]
+		[['semester3', '2-1', '', '']],
+		[['semester4', '2-2', '', '']],
+		[['semester5', '3-1', '', '']],
+		[['semester6', '3-2', '', '']],
+		[['semester7', '4-1', '', '']],
+		[['semester8', '4-2', '', '']]
 	]);
+	const [myCompetencyList, setMyCompetencyList] = useState({}); // eslint-disable-line no-unused-vars
 
-	const subjectName = competenctListInSubjectData.subjectName;
+	const subjectName = competencyListInSubject.subjectName;
 
 	useEffect(() => {
-		let delay = 0;
+		fetchCompetencyListInSubject();
+		fetchCourseByCompetencyInSubject();
+	}, []);
 
-		competenctListInSubjectData.competencies.forEach((competencies) => {
-			setTimeout(() => {
-				setCompetencyTableData((prevItems) => {
-					const newItems = [...prevItems, competencies];
-					return newItems;
-				});
-			}, delay);
-			delay += 50;
-		});
+	useEffect(() => {
+		if (!courseByCompetencyInSubject.subjectCode) {
+			console.log('courseByCompetencyInSubject is empty');
+		} else {
+			console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
 
-		const courseByCompetencyInSubjectData = [
-			courseByCompetencyInSubjectData_1,
-			courseByCompetencyInSubjectData_2,
-			courseByCompetencyInSubjectData_3
-		];
-
-		courseByCompetencyInSubjectData.forEach((courseByCompetency) => {
-			courseByCompetency.courses.forEach((course) => {
+			let delay = 0;
+			courseByCompetencyInSubject.courses.forEach((course) => {
 				const { year, semester, haksuId, courseName } = course;
 				const semesterIndex = semester === '1학기' ? 0 : 1;
 				const index = (year - 2) * 2 + semesterIndex;
@@ -199,14 +179,22 @@ const RoadMapContainer = ({ show }) => {
 				setTimeout(() => {
 					setRoadMapTableData((prevItems) => {
 						const newItems = [...prevItems];
-						newItems[index] = [...newItems[index], [haksuId, courseName]];
+						newItems[index] = [
+							...newItems[index],
+							[
+								haksuId,
+								courseName,
+								courseByCompetencyInSubject.competencyCode,
+								courseByCompetencyInSubject.competencyName
+							]
+						];
 						return newItems;
 					});
 				}, delay);
 				delay += 50;
 			});
-		});
-	}, []);
+		}
+	}, [courseByCompetencyInSubject]);
 
 	const [unclickableCells, setUnclickableCells] = useState([]);
 
@@ -219,9 +207,9 @@ const RoadMapContainer = ({ show }) => {
 		setUnclickableCells(updatedUnclickableCells);
 
 		// Update tableDataDefault to add the clicked cell's data
-		const updatedRoadMapTableData = [...myTableData];
-		updatedRoadMapTableData[rowIndex].push(cellData);
-		setMyTableData(updatedRoadMapTableData);
+		const updatedMyTableData = [...myTableData];
+		updatedMyTableData[rowIndex].push(cellData);
+		setMyTableData(updatedMyTableData);
 	};
 
 	const handleCellClick_remove = (cellData, rowIndex) => {
@@ -247,7 +235,7 @@ const RoadMapContainer = ({ show }) => {
 				<Button>{subjectName} 로드맵 보기</Button>
 			</TitleWrapper>
 			<RoadMapTable
-				competencyTableData={competencyTableData}
+				competencyTableData={competencyListInSubject}
 				roadMapTableData={roadMapTableData}
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}
@@ -256,7 +244,7 @@ const RoadMapContainer = ({ show }) => {
 				<Title>내 로드맵</Title>
 			</TitleWrapper>
 			<RoadMapTable
-				competencyTableData={competencyTableData}
+				competencyTableData={myCompetencyList}
 				roadMapTableData={myTableData}
 				onCellClick={handleCellClick_remove}
 				unclickableCells={[]}
