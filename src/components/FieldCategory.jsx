@@ -1,5 +1,7 @@
 import React from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
+import { selectedFieldState, showFieldInputState } from '../recoils/atoms';
 
 const FieldCategoryContainer = styled.div`
 	display: flex;
@@ -27,42 +29,44 @@ const Description = styled.div`
 	color: #666;
 `;
 
-const FixButton = styled.button`
+export const FixButton = styled.button`
 	padding: 10px 20px;
 	font-size: 16px;
 	color: #fff;
-	background-color: #54ad2d;
+	background-color: #036b3f;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 
 	&:hover {
-		background-color: #459423;
+		background-color: #02472a;
 	}
 `;
 
 const FieldCategory = () => {
+	const fieldState = useRecoilValue(selectedFieldState);
+	const setShowFieldInput = useSetRecoilState(showFieldInputState);
 	const onClickHandler = () => {
-		alert('진출분야를 바꿀 수 있습니다!');
+		setShowFieldInput(true);
 	};
 	return (
 		<>
 			<FieldCategoryContainer>
 				<ItemContainer>
 					<Title>대분류</Title>
-					<Description>연구직 및 공학 기술직</Description>
+					<Description>{fieldState.largeField}</Description>
 				</ItemContainer>
 				<ItemContainer>
 					<Title>중분류</Title>
-					<Description>정보통신 연구개발직 및 공학기술직</Description>
+					<Description>{fieldState.middleField}</Description>
 				</ItemContainer>
 				<ItemContainer>
 					<Title>소분류</Title>
-					<Description>소프트웨어 개발자</Description>
+					<Description>{fieldState.smallField}</Description>
 				</ItemContainer>
 				<ItemContainer>
 					<Title>세분류</Title>
-					<Description>웹 개발자</Description>
+					<Description>{fieldState.detailField}</Description>
 				</ItemContainer>
 				<ItemContainer>
 					<FixButton onClick={onClickHandler}>설정 바꾸기</FixButton>
