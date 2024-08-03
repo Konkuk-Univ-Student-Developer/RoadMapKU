@@ -1,0 +1,17 @@
+{
+	"fieldCode": "01010000",
+	"subjects": [
+		{
+			"subjectCode": "122281",
+			"subjectName": "미디어커뮤니케이션학과"
+		},
+		{
+			"subjectCode": "122282",
+			"subjectName": "경영학과"
+		},
+		{
+			"subjectCode": "122283",
+			"subjectName": "경제학과"
+		}
+	]
+}

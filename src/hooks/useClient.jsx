@@ -66,7 +66,13 @@ const useClient = () => {
 			});
 	};
 
-	return { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField };
+	const fetchCourseByCompetencyInSubjectData = () => {
+		clientApi.get('data/courseByCompetencyInSubjectData.json').then((res) => {
+			console.log(res.data);
+		});
+	};
+
+	return { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchCourseByCompetencyInSubjectData };
 };
 
 export default useClient;

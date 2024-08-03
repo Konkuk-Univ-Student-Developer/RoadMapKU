@@ -1,0 +1,20 @@
+{
+	"subjectCode": "122281",
+	"subjectName": "미디어커뮤니케이션학과",
+	"competencyCode": "12228106",
+	"competencyName": "기업 홍보 능력",
+	"courses": [
+		{
+			"haksuId": "BANA45191",
+			"courseName": "광고와 커뮤니케이션",
+			"year": 3,
+			"semester": "1학기"
+		},
+		{
+			"haksuId": "COM402",
+			"courseName": "디지털 미디어 전략",
+			"year": 4,
+			"semester": "2학기"
+		}
+	]
+}

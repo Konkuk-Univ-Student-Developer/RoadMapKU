@@ -1,0 +1,22 @@
+{
+	"subjectCode": "122281",
+	"subjectName": "미디어커뮤니케이션학과",
+	"competencies": [
+		{
+			"competencyCode": "12228106",
+			"competencyName": "기업 홍보 능력",
+			"competencyDescription": "기업이 관계하는 공중(Public)의 이해와 협력을 얻기 위해 기업 이미지 제고 및 공중을 설득하는 능력"
+		},
+		{
+			"competencyCode": "12228108",
+			"competencyName": "광고 기획 및 제작 능력",
+			"competencyDescription": "다양한 커뮤니케이션 방안의 융합을 이해하고, 커뮤니케이션 방안의 적절한 융합을 통해 업무에 응용하며 효과적으로 업무를 수행하는 능력"
+		},
+		{
+			"competencyCode": "12228103",
+			"competencyName": "융합커뮤니케이션 이해 및 응용 능력",
+			"competencyDescription": "다양한 커뮤니케이션 방안의 융합을 이해하고, 커뮤니케이션 방안의 적절한 융합을 통해 업무에 응용하며 효과적으로 업무를 수행하는 능력"
+		}
+	],
+	"lastUpdated": "2023-11-03T19:42:38Z"
+}
