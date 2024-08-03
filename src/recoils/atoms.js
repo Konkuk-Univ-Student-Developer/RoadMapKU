@@ -29,3 +29,13 @@ export const showFieldInputState = atom({
 	key: 'showFieldInputState',
 	default: true
 });
+
+export const competencyListInSubjectState = atom({
+	key: 'competencyListInSubjectState',
+	default: {}
+});
+
+export const courseByCompetencyInSubjectState = atom({
+	key: 'courseByCompetencyInSubjectState',
+	default: {}
+});

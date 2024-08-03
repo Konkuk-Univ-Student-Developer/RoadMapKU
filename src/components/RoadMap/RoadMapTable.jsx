@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import MajorCompetencyTable from './CompetencyTable';
+import CompetencyTable from './CompetencyTable';
 import Cell from './RoadMapCell';
 
 const TableContainer = styled.div`
@@ -25,9 +25,11 @@ const animationTiming = {
 };
 
 const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, unclickableCells }) => {
+	// TODO: useEffect [roadMapTableData] 해서 전공역량을 competencyTable에 추가
+
 	return (
 		<TableContainer>
-			<MajorCompetencyTable competencyTableData={competencyTableData} />
+			<CompetencyTable competencyTable={competencyTableData} />
 			{roadMapTableData.map((row, rowIndex) => (
 				<TransitionGroup component={ColumnSemester} key={rowIndex}>
 					{row.map((cellData, colIndex) => (

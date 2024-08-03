@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './CompetencyCell';
@@ -29,13 +29,36 @@ const Title = styled.div`
 	color: #036b3f;
 `;
 
-const MajorCompetenctTable = ({ competencyTableData }) => {
+const CompetenctTable = ({ competencyTable }) => {
+	const [competencyTableData, setCompetencyTableData] = useState([]);
+
+	useEffect(() => {
+		if (!competencyTable.subjectCode) {
+			console.log('competencyTable is empty');
+		} else {
+			console.log('competencyTable: ', competencyTable);
+
+			let delay = 0;
+			if (competencyTable) {
+				competencyTable.competencies.forEach((competencies) => {
+					setTimeout(() => {
+						setCompetencyTableData((prevItems) => {
+							const newItems = [...prevItems, competencies];
+							return newItems;
+						});
+					}, delay);
+					delay += 50;
+				});
+			}
+		}
+	}, [competencyTable]);
+
 	return (
 		<Container>
 			<Title>전공역량</Title>
 			<TransitionGroup component={ColumnMajorCompetency}>
 				{competencyTableData.map((competency) => (
-					<CSSTransition key={competency.competencyKey} timeout={400} classNames="Bounce">
+					<CSSTransition key={competency.competencyCode} timeout={400} classNames="Bounce">
 						<Cell cellData={competency} />
 					</CSSTransition>
 				))}
@@ -44,4 +67,4 @@ const MajorCompetenctTable = ({ competencyTableData }) => {
 	);
 };
 
-export default MajorCompetenctTable;
+export default CompetenctTable;
