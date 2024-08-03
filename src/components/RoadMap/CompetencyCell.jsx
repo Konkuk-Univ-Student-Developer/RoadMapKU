@@ -22,11 +22,6 @@ const StyledCell = styled.div`
 		background-color: #a9d1b3;
 	}
 
-	&.unclickable {
-		pointer-events: none;
-		background-color: #f4f4f4;
-	}
-
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
 	}
@@ -36,12 +31,8 @@ const StyledCell = styled.div`
 	}
 `;
 
-const Cell = ({ cellData, rowIndex, onClick, unclickable }) => {
-	return (
-		<StyledCell className={unclickable ? 'unclickable' : ''} onClick={() => onClick(cellData, rowIndex)}>
-			{cellData[1]}
-		</StyledCell>
-	);
+const Cell = ({ cellData }) => {
+	return <StyledCell>{cellData.competencyName}</StyledCell>;
 };
 
 export default Cell;

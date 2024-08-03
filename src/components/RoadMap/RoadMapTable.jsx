@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import MajorCompetencyTable from './MajorCompetencyTable';
+import MajorCompetencyTable from './CompetencyTable';
 import Cell from './RoadMapCell';
 
 const TableContainer = styled.div`
@@ -24,14 +24,14 @@ const animationTiming = {
 	exit: 0
 };
 
-const RoadMapTable = ({ tableData, onCellClick, unclickableCells }) => {
+const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, unclickableCells }) => {
 	return (
 		<TableContainer>
-			<MajorCompetencyTable />
-			{tableData.map((row, rowIndex) => (
+			<MajorCompetencyTable competencyTableData={competencyTableData} />
+			{roadMapTableData.map((row, rowIndex) => (
 				<TransitionGroup component={ColumnSemester} key={rowIndex}>
 					{row.map((cellData, colIndex) => (
-						<CSSTransition key={cellData} timeout={animationTiming} classNames="Bounce">
+						<CSSTransition key={cellData[0]} timeout={animationTiming} classNames="Bounce">
 							<Cell
 								cellData={cellData}
 								rowIndex={rowIndex}

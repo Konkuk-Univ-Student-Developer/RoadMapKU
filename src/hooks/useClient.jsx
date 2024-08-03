@@ -9,7 +9,13 @@ const useClient = () => {
 		});
 	};
 
-	return { fetchTest };
+	const fetchCourseByCompetencyInSubjectData = () => {
+		clientApi.get('data/courseByCompetencyInSubjectData.json').then((res) => {
+			console.log(res.data);
+		});
+	};
+
+	return { fetchTest, fetchCourseByCompetencyInSubjectData };
 };
 
 export default useClient;
