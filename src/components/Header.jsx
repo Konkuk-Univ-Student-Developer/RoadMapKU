@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import styled from 'styled-components';
 import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
+import KuLogo from '../components/LogoFile/Kulogo';
 
 const theme = {
 	active: {
@@ -81,7 +82,7 @@ function Header() {
 		<>
 			<HeaderContainer>
 				<HeaderBrand>
-					<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
+					<KuLogo />
 				</HeaderBrand>
 				<HeaderLinks>
 					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
@@ -103,6 +104,9 @@ function Header() {
 						<ExtraLink onClick={() => navigate('/service')}>KU Service</ExtraLink>
 						<ExtraLink onClick={() => navigate('/language')}>Language</ExtraLink>
 					</ExtraLinks>
+					<HeaderBrand>
+						<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
+					</HeaderBrand>
 				</HeaderActions>
 			</HeaderContainer>
 			<Modal
