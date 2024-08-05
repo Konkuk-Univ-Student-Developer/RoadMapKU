@@ -9,7 +9,7 @@ const TableContainer = styled.div`
 
 const StyledTable = styled.table`
 	border-collapse: collapse;
-	width: 80%;
+	width: 90%;
 	border-radius: 10px;
 	overflow: hidden;
 	border: 1px solid #ddd;
@@ -20,18 +20,20 @@ const Th = styled.th`
 	background-color: #036b3f;
 	text-align: center;
 	color: white;
+	font-size: 12px; /* 헤더의 폰트 크기 설정 */
 	border: 1px solid black; /* 테두리 추가 */
-	font-size: 14px; /* 셀의 폰트 크기 설정 */
 `;
 
 const Td = styled.td`
 	padding: 8px;
 	text-align: center;
+	font-size: 12px; /* 셀의 폰트 크기 설정 */
 	border: 1px solid black; /* 테두리 추가 */
-	font-size: 14px; /* 셀의 폰트 크기 설정 */
 `;
 
-const TableComponent = ({ data }) => {
+const TableComponent2 = ({ data }) => {
+	const headers = ['주전공역량', '보조전공역량1', '보조전공역량2'];
+
 	return (
 		<TableContainer>
 			<StyledTable>
@@ -39,11 +41,13 @@ const TableComponent = ({ data }) => {
 					<tr>
 						<Th>분류</Th>
 						<Th>특징</Th>
+						<Th>설명</Th>
 					</tr>
 				</thead>
 				<tbody>
 					{data.map((row, i) => (
 						<tr key={i}>
+							<Td>{headers[i]}</Td>
 							{row.map((cell, j) => (
 								<Td key={j}>{cell}</Td>
 							))}
@@ -55,4 +59,4 @@ const TableComponent = ({ data }) => {
 	);
 };
 
-export default TableComponent;
+export default TableComponent2;

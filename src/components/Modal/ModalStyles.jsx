@@ -19,7 +19,7 @@ export const ModalWrapper = styled.div`
 	z-index: 200;
 	border: 0.05rem solid black;
 	background-color: white;
-	padding: 2rem;
+	padding: 2.5rem;
 	text-align: start;
 	box-sizing: border-box;
 	top: 50%;
@@ -61,7 +61,7 @@ export const Subject = styled.h1`
 	border-radius: 8px;
 	color: black;
 	margin: 0;
-	font-size: 2rem;
+	font-size: 1.7rem;
 	padding: 0.5rem;
 `;
 
@@ -75,6 +75,11 @@ export const Subtitle = styled.h2`
 export const ModalContent = styled.div`
 	font-family: Arial;
 	font-size: 1rem;
+	margin: 10px 0;
+`;
+export const TableContent = styled.div`
+	font-family: Arial;
+
 	margin: 10px 0;
 `;
 

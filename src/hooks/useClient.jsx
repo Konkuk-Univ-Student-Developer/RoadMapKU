@@ -6,7 +6,8 @@ import {
 	middleFieldState,
 	smallFieldState,
 	competencyListInSubjectState,
-	courseByCompetencyInSubjectState
+	courseByCompetencyInSubjectState,
+	couseDetailState
 } from '../recoils/atoms';
 
 const useClient = () => {
@@ -17,6 +18,7 @@ const useClient = () => {
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 	const setCompetencyListInSubjectState = useSetRecoilState(competencyListInSubjectState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
+	const setCourseDetailState = useSetRecoilState(couseDetailState);
 
 	const getFilteredData = (fieldCode, responseData, offset) => {
 		const prefixReq = fieldCode.substring(0, offset);
@@ -97,13 +99,25 @@ const useClient = () => {
 			});
 	};
 
+	const fetchCourseDetail = () => {
+		clientApi
+			.get('data/courseDetail.json')
+			.then((res) => {
+				setCourseDetailState(res.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
 	return {
 		fetchLargeField,
 		fetchMiddleField,
 		fetchSmallField,
 		fetchDetailField,
 		fetchCompetencyListInSubject,
-		fetchCourseByCompetencyInSubject
+		fetchCourseByCompetencyInSubject,
+		fetchCourseDetail
 	};
 };
 

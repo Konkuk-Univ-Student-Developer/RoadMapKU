@@ -1,0 +1,157 @@
+[
+	{
+		"typicalKoreanName": "마케팅과기업커뮤니케이션",
+		"typicalEnglishName": "Marketing and Communication of Corporate",
+		"koreanDescription": "기업의 효율적인 의사소통과 마케팅 전략을 살핀다. 포지셔닝 전략 분석, 소비자 행동 분석, 기업의 로고와 CI 분석 등을 연습하면서 마케팅 커뮤니케이션의 전략 수립 방법을 공부한다.",
+		"englishDescription": "Understanding marketing strategy and efficient communication of corporate with analysis of positioning strategy, consumer behavior, CI and logo. As such semiotics play an important role within marketing as marketing is seen in terms of exchange relationships that entail psychological and social, as well as physical and financial meanings. Products therefore become 'signs for sale'. The objective of applied semiotic research is to study how manufacturers and consumers create and extract meanings in the market place. Thus, the purpose of this class is to learn how to understand consumer behaviour and how to be effective in marketing communications.",
+		"Addimfomation": {
+			"openingSubjectCode": 122281,
+			"openingCollegeName": "문과대학",
+			"openingSubjectName": "미디어커뮤니케이션학과",
+			"lectureType": "이론",
+			"openingSchoolYear": 3,
+			"openingSemesterTerm": "2학기",
+			"time": 3,
+			"preCourse": "고등학교 공부",
+			"engineeringCertificationFlagCode": 0,
+			"moocFlag": 0,
+			"dreamSemesterFlag": 0,
+			"selectiveFlag": 0
+		},
+		"competency": {
+			"competencyCode1": "12228106",
+			"competencyName1": "기업 홍보 능력",
+			"competencyRemark1": "기업이 관계하는 공중(Public)의 이해와 협력을 얻기 위해 기업 이미지 제고 및 공중을 설득하는 능력",
+			"competencyCode2": "12228108",
+			"competencyName2": "광고 기획 및 제작 능력",
+			"competencyRemark2": "효과적인 광고 기획과 제작을 위해 다양한 매체와 메시지 전략을 설계하고 실행하는 능력",
+			"competencyCode3": "12228103",
+			"competencyName3": "융합커뮤니케이션 이해 및 응용 능력",
+			"competencyRemark3": "다양한 커뮤니케이션 방안의 융합을 이해하고, 커뮤니케이션 방안의 적절한 융합을 통해 업무에 응용하며 효과적으로 업무를 수행하는 능력"
+		}
+	},
+	{
+		"typicalKoreanName": "소비자행동론",
+		"typicalEnglishName": "Consumer Behavior",
+		"koreanDescription": "소비자들의 행동을 이해하고 분석하는 방법을 배운다. 다양한 소비자 행동 모델과 이론을 다루며, 실제 사례를 통해 적용 방법을 학습한다.",
+		"englishDescription": "This course covers the understanding and analysis of consumer behavior. Students will learn various consumer behavior models and theories, and apply these concepts to real-world cases.",
+		"Addimfomation": {
+			"openingSubjectCode": 122282,
+			"openingCollegeName": "문과대학",
+			"openingSubjectName": "경영학과",
+			"lectureType": "이론",
+			"openingSchoolYear": 2,
+			"openingSemesterTerm": "1학기",
+			"time": 3,
+			"preCourse": "마케팅 원론",
+			"engineeringCertificationFlagCode": 0,
+			"moocFlag": 0,
+			"dreamSemesterFlag": 0,
+			"selectiveFlag": 0
+		},
+		"competency": {
+			"competencyCode1": "12228206",
+			"competencyName1": "소비자 분석 능력",
+			"competencyRemark1": "소비자의 행동과 심리를 분석하고, 이를 바탕으로 마케팅 전략을 수립하는 능력",
+			"competencyCode2": "12228208",
+			"competencyName2": "데이터 해석 능력",
+			"competencyRemark2": "소비자 데이터를 분석하고, 통계적 방법을 통해 인사이트를 도출하는 능력",
+			"competencyCode3": "12228203",
+			"competencyName3": "전략적 사고 능력",
+			"competencyRemark3": "소비자 행동을 바탕으로 한 전략적 마케팅 계획 수립 능력"
+		}
+	},
+	{
+		"typicalKoreanName": "브랜드관리",
+		"typicalEnglishName": "Brand Management",
+		"koreanDescription": "브랜드의 개념과 중요성을 이해하고, 브랜드 전략을 수립하는 방법을 배운다. 브랜드 포지셔닝, 브랜드 확장, 브랜드 리뉴얼 등의 주제를 다룬다.",
+		"englishDescription": "This course introduces the concept and importance of branding, and teaches students how to develop brand strategies. Topics include brand positioning, brand extension, and brand renewal.",
+		"Addimfomation": {
+			"openingSubjectCode": 122283,
+			"openingCollegeName": "문과대학",
+			"openingSubjectName": "광고홍보학과",
+			"lectureType": "이론",
+			"openingSchoolYear": 4,
+			"openingSemesterTerm": "1학기",
+			"time": 3,
+			"preCourse": "소비자행동론",
+			"engineeringCertificationFlagCode": 0,
+			"moocFlag": 0,
+			"dreamSemesterFlag": 0,
+			"selectiveFlag": 0
+		},
+		"competency": {
+			"competencyCode1": "12228306",
+			"competencyName1": "브랜드 전략 수립 능력",
+			"competencyRemark1": "브랜드의 포지셔닝과 전략을 수립하고, 이를 실행하는 능력",
+			"competencyCode2": "12228308",
+			"competencyName2": "시장 분석 능력",
+			"competencyRemark2": "브랜드와 관련된 시장을 분석하고, 트렌드를 파악하는 능력",
+			"competencyCode3": "12228303",
+			"competencyName3": "창의적 사고 능력",
+			"competencyRemark3": "브랜드 관리에 필요한 창의적인 아이디어를 도출하는 능력"
+		}
+	},
+	{
+		"typicalKoreanName": "디지털마케팅",
+		"typicalEnglishName": "Digital Marketing",
+		"koreanDescription": "디지털 환경에서의 마케팅 전략을 배우고, 소셜 미디어, 검색 엔진 최적화(SEO), 콘텐츠 마케팅 등 다양한 디지털 마케팅 기법을 익힌다.",
+		"englishDescription": "This course teaches marketing strategies in a digital environment, covering various digital marketing techniques such as social media, search engine optimization (SEO), and content marketing.",
+		"Addimfomation": {
+			"openingSubjectCode": 122284,
+			"openingCollegeName": "문과대학",
+			"openingSubjectName": "디지털미디어학과",
+			"lectureType": "이론",
+			"openingSchoolYear": 3,
+			"openingSemesterTerm": "2학기",
+			"time": 3,
+			"preCourse": "마케팅 원론",
+			"engineeringCertificationFlagCode": 0,
+			"moocFlag": 0,
+			"dreamSemesterFlag": 0,
+			"selectiveFlag": 0
+		},
+		"competency": {
+			"competencyCode1": "12228406",
+			"competencyName1": "디지털 전략 수립 능력",
+			"competencyRemark1": "디지털 환경에서의 마케팅 전략을 수립하고, 이를 실행하는 능력",
+			"competencyCode2": "12228408",
+			"competencyName2": "소셜 미디어 활용 능력",
+			"competencyRemark2": "소셜 미디어를 활용한 마케팅 캠페인을 기획하고 실행하는 능력",
+			"competencyCode3": "12228403",
+			"competencyName3": "SEO 최적화 능력",
+			"competencyRemark3": "검색 엔진 최적화(SEO)를 통해 웹사이트의 가시성을 높이는 능력"
+		}
+	},
+	{
+		"typicalKoreanName": "국제경영학",
+		"typicalEnglishName": "International Business",
+		"koreanDescription": "국제 경영 환경과 관련된 주요 이슈를 다루고, 글로벌 시장에서의 경영 전략과 의사결정 과정을 학습한다.",
+		"englishDescription": "This course covers major issues related to the international business environment, and teaches management strategies and decision-making processes in the global market.",
+		"Addimfomation": {
+			"openingSubjectCode": 122285,
+			"openingCollegeName": "경영대학",
+			"openingSubjectName": "국제경영학과",
+			"lectureType": "이론",
+			"openingSchoolYear": 4,
+			"openingSemesterTerm": "1학기",
+			"time": 3,
+			"preCourse": "경영학 개론",
+			"engineeringCertificationFlagCode": 0,
+			"moocFlag": 0,
+			"dreamSemesterFlag": 0,
+			"selectiveFlag": 0
+		},
+		"competency": {
+			"competencyCode1": "12228506",
+			"competencyName1": "국제 경영 전략 수립 능력",
+			"competencyRemark1": "글로벌 시장에서의 경영 전략을 수립하고, 이를 실행하는 능력",
+			"competencyCode2": "12228508",
+			"competencyName2": "문화적 차이 이해 능력",
+			"competencyRemark2": "다양한 문화적 배경을 이해하고, 이를 바탕으로 효과적인 의사소통을 수행하는 능력",
+			"competencyCode3": "12228503",
+			"competencyName3": "글로벌 시장 분석 능력",
+			"competencyRemark3": "국제 경영 환경을 분석하고, 시장 동향을 파악하는 능력"
+		}
+	}
+]
