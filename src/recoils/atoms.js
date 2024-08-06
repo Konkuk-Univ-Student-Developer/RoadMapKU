@@ -40,7 +40,7 @@ export const courseByCompetencyInSubjectState = atom({
 	default: {}
 });
 
-export const couseDetailState = atom({
-	key: 'couseDetailState',
+export const courseDetailState = atom({
+	key: 'courseDetailState',
 	default: []
 });

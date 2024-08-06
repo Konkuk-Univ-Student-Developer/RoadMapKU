@@ -1,8 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import styled from 'styled-components';
-import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
+//import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 import KuLogo from '../components/LogoFile/Kulogo';
+import CourseDetail from './CourseDetail/CousreDetail';
+import FieldCategoryInput from './FieldCategoryInput';
 
 const theme = {
 	active: {
@@ -71,12 +73,35 @@ const ExtraLink = styled.a`
 	}
 `;
 
+export const Button = styled.button`
+	background-color: #036b3f; /* main color */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 0.875rem;
+	font-weight: normal;
+	border-radius: 0.375rem;
+	padding: 0.5rem 1.25rem;
+	transition: background-color 0.2s ease-in-out;
+	cursor: pointer;
+	&:hover {
+		background-color: #059669; /* darker green on hover */
+	}
+`;
+
 function Header() {
 	const navigate = useNavigate();
-	const [showModal, setShowModal] = useState(false);
-	const handleModalOpen = () => setShowModal(true);
-	const handleModalClose = () => setShowModal(false);
+	const [isOpen1, setIsOpen1] = useState(false);
+	const [isOpen2, setIsOpen2] = useState(false);
 	const { pathname } = useLocation();
+
+	const onClickButton1 = () => {
+		setIsOpen1(true);
+	};
+	const onClickButton2 = () => {
+		setIsOpen2(true);
+	};
 
 	return (
 		<>
@@ -91,12 +116,22 @@ function Header() {
 					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
 						로드맵
 					</HeaderLink>
-					<HeaderLink onClick={() => navigate('/colleges')} active={pathname === '/colleges'}>
-						대학/대학원
-					</HeaderLink>
-					<HeaderLink href="#" onClick={handleModalOpen}>
-						학사안내
-					</HeaderLink>
+					<Button onClick={onClickButton2}>대학/대학원</Button>
+					{isOpen2 && (
+						<FieldCategoryInput
+							onClose={() => {
+								setIsOpen2(false);
+							}}
+						/>
+					)}
+					<Button onClick={onClickButton1}>학사 안내</Button>
+					{isOpen1 && (
+						<CourseDetail
+							onClose={() => {
+								setIsOpen1(false);
+							}}
+						/>
+					)}
 				</HeaderLinks>
 				<HeaderActions>
 					<ExtraLinks>
@@ -109,11 +144,9 @@ function Header() {
 					</HeaderBrand>
 				</HeaderActions>
 			</HeaderContainer>
-			<Modal
-				show={showModal}
-				closed={handleModalClose}
-				item={{ content: ['학사안내 내용1', '학사안내 내용2', '학사안내 내용3'] }}
-			/>
+			{/* <Modal show={showModal} width={800} closed={handleModalClose}>
+				<CourseDetail />
+			</Modal> */}
 		</>
 	);
 }
