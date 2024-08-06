@@ -7,7 +7,7 @@ import {
 	smallFieldState,
 	competencyListInSubjectState,
 	courseByCompetencyInSubjectState,
-	couseDetailState
+	courseDetailState
 } from '../recoils/atoms';
 
 const useClient = () => {
@@ -18,7 +18,7 @@ const useClient = () => {
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 	const setCompetencyListInSubjectState = useSetRecoilState(competencyListInSubjectState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
-	const setCourseDetailState = useSetRecoilState(couseDetailState);
+	const setCourseDetailState = useSetRecoilState(courseDetailState);
 
 	const getFilteredData = (fieldCode, responseData, offset) => {
 		const prefixReq = fieldCode.substring(0, offset);
