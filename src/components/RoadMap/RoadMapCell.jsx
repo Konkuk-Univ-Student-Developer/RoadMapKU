@@ -32,14 +32,14 @@ const StyledCell = styled.div`
 	}
 
 	&.Bounce-exit {
-		animation: ${dismissBounce} 0ms ease-out forwards;
+		animation: ${dismissBounce} 400ms ease-out forwards;
 	}
 `;
 
 const Cell = ({ cellData, rowIndex, onClick, unclickable }) => {
 	return (
 		<StyledCell className={unclickable ? 'unclickable' : ''} onClick={() => onClick(cellData, rowIndex)}>
-			{cellData[1]}
+			{cellData.courseName}
 		</StyledCell>
 	);
 };

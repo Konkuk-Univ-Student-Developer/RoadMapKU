@@ -29,36 +29,50 @@ const Title = styled.div`
 	color: #036b3f;
 `;
 
-const CompetenctTable = ({ competencyTable }) => {
-	const [competencyTableData, setCompetencyTableData] = useState([]);
+const animationTiming = {
+	enter: 400,
+	exit: 0
+};
+
+const CompetenctTable = ({ competencyTableData }) => {
+	const [competencyTable, setCompetencyTable] = useState([]);
+
+	const isEqualArray = (arr1, arr2) => {
+		return JSON.stringify(arr1) === JSON.stringify(arr2);
+	};
 
 	useEffect(() => {
-		if (!competencyTable.subjectCode) {
-			console.log('competencyTable is empty');
+		if (!competencyTableData) {
+			console.log('competencyTableData is empty');
 		} else {
-			console.log('competencyTable: ', competencyTable);
+			// 전공역량을 역량코드 순으로 재배열
+			const sortedCompetencyTable = [...competencyTableData];
+			sortedCompetencyTable.sort((a, b) => a.competencyCode.localeCompare(b.competencyCode));
 
-			let delay = 0;
-			if (competencyTable) {
-				competencyTable.competencies.forEach((competencies) => {
+			// 테이블이 다를 경우에만 새로 렌더링
+			if (!isEqualArray(competencyTable, sortedCompetencyTable)) {
+				setCompetencyTable([]);
+				let delay = 0;
+				sortedCompetencyTable.forEach((competencies) => {
 					setTimeout(() => {
-						setCompetencyTableData((prevItems) => {
-							const newItems = [...prevItems, competencies];
-							return newItems;
+						setCompetencyTable((prevItems) => {
+							const updatedCompetencyTableData = [...prevItems, competencies];
+							updatedCompetencyTableData.sort((a, b) => a.competencyCode.localeCompare(b.competencyCode));
+							return updatedCompetencyTableData;
 						});
 					}, delay);
 					delay += 50;
 				});
 			}
 		}
-	}, [competencyTable]);
+	}, [competencyTableData]);
 
 	return (
 		<Container>
 			<Title>전공역량</Title>
 			<TransitionGroup component={ColumnMajorCompetency}>
-				{competencyTableData.map((competency) => (
-					<CSSTransition key={competency.competencyCode} timeout={400} classNames="Bounce">
+				{competencyTable.map((competency) => (
+					<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
 						<Cell cellData={competency} />
 					</CSSTransition>
 				))}

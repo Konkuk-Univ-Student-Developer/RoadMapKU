@@ -32,6 +32,7 @@ const StyledCell = styled.div`
 `;
 
 const Cell = ({ cellData }) => {
+	// TODO: onClick 추가
 	return <StyledCell>{cellData.competencyName}</StyledCell>;
 };
 
