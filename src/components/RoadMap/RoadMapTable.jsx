@@ -21,19 +21,17 @@ const ColumnSemester = styled.div`
 
 const animationTiming = {
 	enter: 400,
-	exit: 0
+	exit: 400
 };
 
 const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, unclickableCells }) => {
-	// TODO: useEffect [roadMapTableData] 해서 전공역량을 competencyTable에 추가
-
 	return (
 		<TableContainer>
-			<CompetencyTable competencyTable={competencyTableData} />
+			<CompetencyTable competencyTableData={competencyTableData} />
 			{roadMapTableData.map((row, rowIndex) => (
 				<TransitionGroup component={ColumnSemester} key={rowIndex}>
 					{row.map((cellData, colIndex) => (
-						<CSSTransition key={cellData[0]} timeout={animationTiming} classNames="Bounce">
+						<CSSTransition key={cellData.haksuId + cellData.courseName} timeout={animationTiming} classNames="Bounce">
 							<Cell
 								cellData={cellData}
 								rowIndex={rowIndex}
