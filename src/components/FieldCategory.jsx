@@ -41,6 +41,7 @@ export const FixButton = styled.button`
 	&:hover {
 		background-color: #02472a;
 	}
+	margin-top: 2rem;
 `;
 
 const FieldCategory = () => {

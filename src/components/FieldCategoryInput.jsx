@@ -12,14 +12,15 @@ import useClient from '../hooks/useClient';
 import styled from 'styled-components';
 import { FixButton } from './FieldCategory';
 
+import Modal from './Modal/Modal';
+
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 20px;
-	background-color: #f9f9f9;
+	background-color: white;
 	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const StyledSelect = styled.select`
@@ -31,6 +32,7 @@ const StyledSelect = styled.select`
 	font-size: 16px;
 	background-color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 1rem;
 
 	&:focus {
 		border-color: #007bff;
@@ -39,7 +41,13 @@ const StyledSelect = styled.select`
 	}
 `;
 
-const FieldCategoryInput = () => {
+export const Title = styled.h2`
+	color: #036b3f; /* main color */
+	font-size: 1.7rem;
+	margin: 1rem;
+	padding-bottom: 2rem;
+`;
+function FieldCategoryInput({ onClose }) {
 	const largeRef = useRef();
 	const middleRef = useRef();
 	const smallRef = useRef();
@@ -99,41 +107,44 @@ const FieldCategoryInput = () => {
 	};
 
 	return (
-		<Container>
-			<StyledSelect ref={largeRef} onChange={selectLargeField}>
-				{largeFields.map((item) => (
-					<option key={item.fieldCode} value={JSON.stringify(item)}>
-						{item.largeField}
-					</option>
-				))}
-			</StyledSelect>
-			<StyledSelect ref={middleRef} onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
-				<option value="">분야를 선택해주세요</option>
-				{middleFields.map((item) => (
-					<option key={item.fieldCode} value={JSON.stringify(item)}>
-						{item.middleField}
-					</option>
-				))}
-			</StyledSelect>
-			<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
-				<option value="">분야를 선택해주세요</option>
-				{smallFields.map((item) => (
-					<option key={item.fieldCode} value={JSON.stringify(item)}>
-						{item.smallField}
-					</option>
-				))}
-			</StyledSelect>
-			<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
-				<option value="">분야를 선택해주세요</option>
-				{detailFields.map((item) => (
-					<option key={item.fieldCode} value={JSON.stringify(item)}>
-						{item.detailField}
-					</option>
-				))}
-			</StyledSelect>
-			<FixButton onClick={submitHandler}>검색하기</FixButton>
-		</Container>
+		<Modal onClose={onClose}>
+			<Container>
+				<Title>직군을 선택해주세요</Title>
+				<StyledSelect ref={largeRef} onChange={selectLargeField}>
+					{largeFields.map((item) => (
+						<option key={item.fieldCode} value={JSON.stringify(item)}>
+							{item.largeField}
+						</option>
+					))}
+				</StyledSelect>
+				<StyledSelect ref={middleRef} onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
+					<option value="">분야를 선택해주세요</option>
+					{middleFields.map((item) => (
+						<option key={item.fieldCode} value={JSON.stringify(item)}>
+							{item.middleField}
+						</option>
+					))}
+				</StyledSelect>
+				<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
+					<option value="">분야를 선택해주세요</option>
+					{smallFields.map((item) => (
+						<option key={item.fieldCode} value={JSON.stringify(item)}>
+							{item.smallField}
+						</option>
+					))}
+				</StyledSelect>
+				<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
+					<option value="">분야를 선택해주세요</option>
+					{detailFields.map((item) => (
+						<option key={item.fieldCode} value={JSON.stringify(item)}>
+							{item.detailField}
+						</option>
+					))}
+				</StyledSelect>
+				<FixButton onClick={submitHandler}>검색하기</FixButton>
+			</Container>
+		</Modal>
 	);
-};
+}
 
 export default FieldCategoryInput;
