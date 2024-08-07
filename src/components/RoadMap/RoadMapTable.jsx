@@ -31,7 +31,7 @@ const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, uncl
 			{roadMapTableData.map((row, rowIndex) => (
 				<TransitionGroup component={ColumnSemester} key={rowIndex}>
 					{row.map((cellData, colIndex) => (
-						<CSSTransition key={cellData.haksuId + cellData.courseName} timeout={animationTiming} classNames="Bounce">
+						<CSSTransition key={rowIndex * 10 + colIndex} timeout={animationTiming} classNames="Bounce">
 							<Cell
 								cellData={cellData}
 								rowIndex={rowIndex}

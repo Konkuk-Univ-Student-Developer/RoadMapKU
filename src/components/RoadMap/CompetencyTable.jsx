@@ -24,6 +24,7 @@ const ColumnMajorCompetency = styled.div`
 
 const Title = styled.div`
 	padding-bottom: 1rem;
+	user-select: none;
 	font-size: x-large;
 	font-weight: bolder;
 	color: #036b3f;
@@ -34,7 +35,7 @@ const animationTiming = {
 	exit: 0
 };
 
-const CompetenctTable = ({ competencyTableData }) => {
+const CompetencyTable = ({ competencyTableData }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
 
 	const isEqualArray = (arr1, arr2) => {
@@ -57,7 +58,6 @@ const CompetenctTable = ({ competencyTableData }) => {
 					setTimeout(() => {
 						setCompetencyTable((prevItems) => {
 							const updatedCompetencyTableData = [...prevItems, competencies];
-							updatedCompetencyTableData.sort((a, b) => a.competencyCode.localeCompare(b.competencyCode));
 							return updatedCompetencyTableData;
 						});
 					}, delay);
@@ -81,4 +81,4 @@ const CompetenctTable = ({ competencyTableData }) => {
 	);
 };
 
-export default CompetenctTable;
+export default CompetencyTable;
