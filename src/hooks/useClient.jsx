@@ -53,11 +53,10 @@ const useClient = () => {
 	};
 
 	const fetchSmallField = (requestSmall) => {
-		clientApi
-			.get('data/fieldsSmall.json', requestSmall)
+		axios
+			.post('http://203.252.168.41:8080/api/v1/fields/small', requestSmall)
 			.then((res) => {
-				const filteredData = getFilteredData(requestSmall.middleFieldCode, res.data, 4);
-				setSmallFieldState(filteredData);
+				setSmallFieldState(res.data);
 				setDetailFieldState([]);
 			})
 			.catch((error) => {
