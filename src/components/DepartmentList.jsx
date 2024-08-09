@@ -31,7 +31,7 @@ const DepartmentList = () => {
 	return (
 		<Container>
 			{subjects.map((subject) => {
-				return <SelectedDepartment key={subject}>{subject}</SelectedDepartment>;
+				return <SelectedDepartment key={subject.subjectCode}>{subject.subjectName}</SelectedDepartment>;
 			})}
 		</Container>
 	);
