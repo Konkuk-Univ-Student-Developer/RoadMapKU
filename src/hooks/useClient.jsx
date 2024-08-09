@@ -7,7 +7,8 @@ import {
 	smallFieldState,
 	competencyListInSubjectState,
 	courseByCompetencyInSubjectState,
-	courseDetailState
+	courseDetailState,
+	subjectesInField
 } from '../recoils/atoms';
 import axios from 'axios';
 
@@ -17,6 +18,7 @@ const useClient = () => {
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
+	const setSubjectesInFieldState = useSetRecoilState(subjectesInField);
 	const setCompetencyListInSubjectState = useSetRecoilState(competencyListInSubjectState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
@@ -71,7 +73,13 @@ const useClient = () => {
 	const fetchSubjectsInField = (fieldCode) => {
 		axios
 			.get(`http://203.252.168.41:8080/api/v1/fields/${fieldCode}/subjects`)
-			.then((res) => console.log(res.data))
+			.then((res) => {
+				setSubjectesInFieldState(res.data);
+				setDetailFieldState([]);
+				setMiddleFieldState([]);
+				setSmallFieldState([]);
+				setDetailFieldState([]);
+			})
 			.catch((error) => {
 				console.error(error);
 			});
