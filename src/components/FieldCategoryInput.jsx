@@ -67,7 +67,8 @@ function FieldCategoryInput({ onClose }) {
 	const selectLargeField = (e) => {
 		const data = JSON.parse(e.target.value);
 		const reqData = {
-			largeFieldCode: data.fieldCode
+			largeFieldCode: data.fieldCode,
+			largeField: data.largeField
 		};
 		fetchMiddleField(reqData);
 	};

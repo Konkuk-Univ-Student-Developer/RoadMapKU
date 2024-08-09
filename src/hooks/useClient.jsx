@@ -40,11 +40,10 @@ const useClient = () => {
 	};
 
 	const fetchMiddleField = (requestMiddle) => {
-		clientApi
-			.get('data/fieldsMiddle.json', requestMiddle)
+		axios
+			.post('http://203.252.168.41:8080/api/v1/fields/middle', requestMiddle)
 			.then((res) => {
-				const filteredData = getFilteredData(requestMiddle.largeFieldCode, res.data, 2);
-				setMiddleFieldState(filteredData);
+				setMiddleFieldState(res.data);
 				setSmallFieldState([]);
 				setDetailFieldState([]);
 			})
