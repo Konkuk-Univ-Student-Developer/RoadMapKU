@@ -66,40 +66,31 @@ function FieldCategoryInput({ onClose }) {
 
 	const selectLargeField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			largeFieldCode: data.fieldCode,
-			largeField: data.largeField
-		};
-		fetchMiddleField(reqData);
+		fetchMiddleField(data);
 	};
 
 	const selectMiddleField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			middleFieldCode: data.fieldCode,
-			largeField: data.largeField,
-			middleField: data.middleField
-		};
-		fetchSmallField(reqData);
+		fetchSmallField(data);
 	};
 
 	const selectSmallField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			smallFieldCode: data.fieldCode
-		};
-		fetchDetailField(reqData);
+		fetchDetailField(data);
 	};
 
 	const submitHandler = () => {
 		const selectedField = {};
 		if (largeRef.current.value) {
+			selectedField.fieldCode = JSON.parse(largeRef.current.value).fieldCode;
 			selectedField.largeField = JSON.parse(largeRef.current.value).largeField;
 		}
 		if (middleRef.current.value) {
+			selectedField.fieldCode = JSON.parse(middleRef.current.value).fieldCode;
 			selectedField.middleField = JSON.parse(middleRef.current.value).middleField;
 		}
 		if (smallRef.current.value) {
+			selectedField.fieldCode = JSON.parse(smallRef.current.value).fieldCode;
 			selectedField.smallField = JSON.parse(smallRef.current.value).smallField;
 		}
 		if (detailRef.current.value) {

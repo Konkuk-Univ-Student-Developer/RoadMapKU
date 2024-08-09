@@ -21,13 +21,6 @@ const useClient = () => {
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 
-	const getFilteredData = (fieldCode, responseData, offset) => {
-		const prefixReq = fieldCode.substring(0, offset);
-		const filteredData = responseData.filter((item) => prefixReq == item.fieldCode.substring(0, offset));
-
-		return filteredData;
-	};
-
 	const fetchLargeField = () => {
 		axios
 			.get('http://203.252.168.41:8080/api/v1/fields/large')
@@ -65,11 +58,10 @@ const useClient = () => {
 	};
 
 	const fetchDetailField = (requestDetail) => {
-		clientApi
-			.get('data/fieldsDetail.json', requestDetail)
+		axios
+			.post('http://203.252.168.41:8080/api/v1/fields/detail', requestDetail)
 			.then((res) => {
-				const filteredData = getFilteredData(requestDetail.smallFieldCode, res.data, 6);
-				setDetailFieldState(filteredData);
+				setDetailFieldState(res.data);
 			})
 			.catch((error) => {
 				console.error(error);
