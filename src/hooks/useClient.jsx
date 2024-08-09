@@ -9,6 +9,7 @@ import {
 	courseByCompetencyInSubjectState,
 	courseDetailState
 } from '../recoils/atoms';
+import axios from 'axios';
 
 const useClient = () => {
 	const { clientApi } = useApi();
@@ -28,8 +29,8 @@ const useClient = () => {
 	};
 
 	const fetchLargeField = () => {
-		clientApi
-			.get('data/fieldsLarge.json')
+		axios
+			.get('http://203.252.168.41:8080/api/v1/fields/large')
 			.then((res) => {
 				setLargeFieldState(res.data);
 			})
