@@ -68,6 +68,15 @@ const useClient = () => {
 			});
 	};
 
+	const fetchSubjectsInField = (fieldCode) => {
+		axios
+			.get(`http://203.252.168.41:8080/api/v1/fields/${fieldCode}/subjects`)
+			.then((res) => console.log(res.data))
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
 	const fetchCompetencyListInSubject = () => {
 		clientApi
 			.get('data/competencyListInSubjectData.json')
@@ -108,7 +117,8 @@ const useClient = () => {
 		fetchDetailField,
 		fetchCompetencyListInSubject,
 		fetchCourseByCompetencyInSubject,
-		fetchCourseDetail
+		fetchCourseDetail,
+		fetchSubjectsInField
 	};
 };
 
