@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState, subjectesInField } from '../recoils/atoms';
+import { selectedFieldState, subjectsInFieldState } from '../recoils/atoms';
 import useField from '../hooks/useField';
 
 const Container = styled.div`
@@ -27,9 +27,9 @@ const SelectedDepartment = styled.button`
 `;
 
 const DepartmentList = () => {
-	const { fetcthCoursesInFieldsAndSubjects, fetchCoursesInFields } = useField();
+	const { fetchCoursesInFieldsAndSubjects, fetchCoursesInFields } = useField();
 	const selectedField = useRecoilValue(selectedFieldState);
-	const subjects = useRecoilValue(subjectesInField);
+	const subjects = useRecoilValue(subjectsInFieldState);
 
 	return (
 		<Container>
@@ -41,7 +41,7 @@ const DepartmentList = () => {
 					<SelectedDepartment
 						key={subject.subjectCode}
 						onClick={() => {
-							fetcthCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
+							fetchCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
 						}}
 					>
 						{subject.subjectName}

@@ -4,7 +4,7 @@ import {
 	largeFieldState,
 	middleFieldState,
 	smallFieldState,
-	subjectesInField
+	subjectsInFieldState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -14,7 +14,7 @@ const useField = () => {
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
-	const setSubjectesInFieldState = useSetRecoilState(subjectesInField);
+	const setSubjectsInFieldState = useSetRecoilState(subjectsInFieldState);
 
 	const fetchLargeField = () => {
 		serverApi
@@ -67,7 +67,7 @@ const useField = () => {
 		serverApi
 			.get(`/api/v1/fields/${fieldCode}/subjects`)
 			.then((res) => {
-				setSubjectesInFieldState(res.data);
+				setSubjectsInFieldState(res.data);
 				setDetailFieldState([]);
 				setMiddleFieldState([]);
 				setSmallFieldState([]);
@@ -78,7 +78,7 @@ const useField = () => {
 			});
 	};
 
-	const fetcthCoursesInFieldsAndSubjects = (fieldCode, subjectCode) => {
+	const fetchCoursesInFieldsAndSubjects = (fieldCode, subjectCode) => {
 		serverApi
 			.get(`/api/v1/courses/${subjectCode}/${fieldCode}`)
 			.then((res) => {
@@ -106,7 +106,7 @@ const useField = () => {
 		fetchSmallField,
 		fetchDetailField,
 		fetchSubjectsInField,
-		fetcthCoursesInFieldsAndSubjects,
+		fetchCoursesInFieldsAndSubjects,
 		fetchCoursesInFields
 	};
 };

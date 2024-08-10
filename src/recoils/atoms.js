@@ -45,7 +45,7 @@ export const courseDetailState = atom({
 	default: []
 });
 
-export const subjectesInField = atom({
-	key: 'subjectesInField',
+export const subjectsInFieldState = atom({
+	key: 'subjectsInFieldState',
 	default: []
 });
