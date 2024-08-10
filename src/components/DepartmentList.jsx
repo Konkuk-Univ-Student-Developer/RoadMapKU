@@ -27,19 +27,21 @@ const SelectedDepartment = styled.button`
 `;
 
 const DepartmentList = () => {
-	const { fetcthCoursesInFieldsAndSubjects } = useClient();
+	const { fetcthCoursesInFieldsAndSubjects, fetchCoursesInFields } = useClient();
 	const selectedField = useRecoilValue(selectedFieldState);
 	const subjects = useRecoilValue(subjectesInField);
 
 	return (
 		<Container>
-			<SelectedDepartment>해당 직군 전체 강좌</SelectedDepartment>
+			<SelectedDepartment onClick={() => fetchCoursesInFields(selectedField.fieldCode)}>
+				해당 직군 전체 강좌
+			</SelectedDepartment>
 			{subjects.map((subject) => {
 				return (
 					<SelectedDepartment
 						key={subject.subjectCode}
 						onClick={() => {
-							fetcthCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode || '');
+							fetcthCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
 						}}
 					>
 						{subject.subjectName}
