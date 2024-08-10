@@ -10,10 +10,9 @@ import {
 	courseDetailState,
 	subjectesInField
 } from '../recoils/atoms';
-import axios from 'axios';
 
 const useClient = () => {
-	const { clientApi } = useApi();
+	const { serverApi } = useApi();
 	const setLargeFieldState = useSetRecoilState(largeFieldState);
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
@@ -24,8 +23,8 @@ const useClient = () => {
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 
 	const fetchLargeField = () => {
-		axios
-			.get('http://203.252.168.41:8080/api/v1/fields/large')
+		serverApi
+			.get('/api/v1/fields/large')
 			.then((res) => {
 				setLargeFieldState(res.data);
 			})
@@ -35,8 +34,8 @@ const useClient = () => {
 	};
 
 	const fetchMiddleField = (requestMiddle) => {
-		axios
-			.post('http://203.252.168.41:8080/api/v1/fields/middle', requestMiddle)
+		serverApi
+			.post('/api/v1/fields/middle', requestMiddle)
 			.then((res) => {
 				setMiddleFieldState(res.data);
 				setSmallFieldState([]);
@@ -48,8 +47,8 @@ const useClient = () => {
 	};
 
 	const fetchSmallField = (requestSmall) => {
-		axios
-			.post('http://203.252.168.41:8080/api/v1/fields/small', requestSmall)
+		serverApi
+			.post('/api/v1/fields/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
 				setDetailFieldState([]);
@@ -60,8 +59,8 @@ const useClient = () => {
 	};
 
 	const fetchDetailField = (requestDetail) => {
-		axios
-			.post('http://203.252.168.41:8080/api/v1/fields/detail', requestDetail)
+		serverApi
+			.post('/api/v1/fields/detail', requestDetail)
 			.then((res) => {
 				setDetailFieldState(res.data);
 			})
@@ -71,8 +70,8 @@ const useClient = () => {
 	};
 
 	const fetchSubjectsInField = (fieldCode) => {
-		axios
-			.get(`http://203.252.168.41:8080/api/v1/fields/${fieldCode}/subjects`)
+		serverApi
+			.get(`/api/v1/fields/${fieldCode}/subjects`)
 			.then((res) => {
 				setSubjectesInFieldState(res.data);
 				setDetailFieldState([]);
@@ -86,8 +85,8 @@ const useClient = () => {
 	};
 
 	const fetcthCoursesInFieldsAndSubjects = (fieldCode, subjectCode) => {
-		axios
-			.get(`http://203.252.168.41:8080/api/v1/courses/${subjectCode}/${fieldCode}`)
+		serverApi
+			.get(`/api/v1/courses/${subjectCode}/${fieldCode}`)
 			.then((res) => {
 				console.log(res.data);
 			})
@@ -97,8 +96,8 @@ const useClient = () => {
 	};
 
 	const fetchCoursesInFields = (fieldCode) => {
-		axios
-			.get(`http://203.252.168.41:8080/api/v1/courses/${fieldCode}/field`)
+		serverApi
+			.get(`/api/v1/courses/${fieldCode}/field`)
 			.then((res) => {
 				console.log(res.data);
 			})
@@ -108,7 +107,7 @@ const useClient = () => {
 	};
 
 	const fetchCompetencyListInSubject = () => {
-		clientApi
+		serverApi
 			.get('data/competencyListInSubjectData.json')
 			.then((res) => {
 				setCompetencyListInSubjectState(res.data);
@@ -119,7 +118,7 @@ const useClient = () => {
 	};
 
 	const fetchCourseByCompetencyInSubject = () => {
-		clientApi
+		serverApi
 			.get('data/courseByCompetencyInSubjectData.json')
 			.then((res) => {
 				setCourseByCompetencyInSubjectState(res.data);
@@ -130,7 +129,7 @@ const useClient = () => {
 	};
 
 	const fetchCourseDetail = () => {
-		clientApi
+		serverApi
 			.get('data/courseDetail.json')
 			.then((res) => {
 				setCourseDetailState(res.data);
