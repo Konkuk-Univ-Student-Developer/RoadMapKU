@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const useApi = () => {
-	const clientApi = axios.create({
-		baseURL: process.env.REACT_APP_API == 'development' ? 'http://localhost:3000/' : 'http://203.252.168.41:8080/'
+	const serverApi = axios.create({
+		baseURL: 'http://203.252.168.41:8080/'
 	});
 
-	return { clientApi };
+	return { serverApi };
 };
 
 export default useApi;

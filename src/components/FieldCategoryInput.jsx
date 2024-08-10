@@ -8,11 +8,11 @@ import {
 	showFieldInputState,
 	smallFieldState
 } from '../recoils/atoms';
-import useClient from '../hooks/useClient';
 import styled from 'styled-components';
 import { FixButton } from './FieldCategory';
 
 import Modal from './Modal/Modal';
+import useField from '../hooks/useField';
 
 const Container = styled.div`
 	display: flex;
@@ -47,6 +47,7 @@ export const Title = styled.h2`
 	margin: 1rem;
 	padding-bottom: 2rem;
 `;
+
 function FieldCategoryInput({ onClose }) {
 	const largeRef = useRef();
 	const middleRef = useRef();
@@ -58,7 +59,7 @@ function FieldCategoryInput({ onClose }) {
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
-	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField } = useClient();
+	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
 
 	useEffect(() => {
 		fetchLargeField();
@@ -66,43 +67,47 @@ function FieldCategoryInput({ onClose }) {
 
 	const selectLargeField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			largeFieldCode: data.fieldCode
-		};
-		fetchMiddleField(reqData);
+		fetchMiddleField(data);
 	};
 
 	const selectMiddleField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			middleFieldCode: data.fieldCode
-		};
-		fetchSmallField(reqData);
+		fetchSmallField(data);
 	};
 
 	const selectSmallField = (e) => {
 		const data = JSON.parse(e.target.value);
-		const reqData = {
-			smallFieldCode: data.fieldCode
-		};
-		fetchDetailField(reqData);
+		fetchDetailField(data);
 	};
 
 	const submitHandler = () => {
 		const selectedField = {};
+
 		if (largeRef.current.value) {
+			selectedField.fieldCode = JSON.parse(largeRef.current.value).fieldCode;
 			selectedField.largeField = JSON.parse(largeRef.current.value).largeField;
+		} else {
+			alert('대분류를 입력해주세요');
+			return;
 		}
+
 		if (middleRef.current.value) {
+			selectedField.fieldCode = JSON.parse(middleRef.current.value).fieldCode;
 			selectedField.middleField = JSON.parse(middleRef.current.value).middleField;
 		}
+
 		if (smallRef.current.value) {
+			selectedField.fieldCode = JSON.parse(smallRef.current.value).fieldCode;
 			selectedField.smallField = JSON.parse(smallRef.current.value).smallField;
 		}
+
 		if (detailRef.current.value) {
+			selectedField.fieldCode = JSON.parse(detailRef.current.value).fieldCode;
 			selectedField.detailField = JSON.parse(detailRef.current.value).detailField;
 		}
+
 		setSelectedFields(selectedField);
+		fetchSubjectsInField(selectedField.fieldCode);
 		setShowFieldInput(false);
 	};
 
@@ -111,6 +116,7 @@ function FieldCategoryInput({ onClose }) {
 			<Container>
 				<Title>직군을 선택해주세요</Title>
 				<StyledSelect ref={largeRef} onChange={selectLargeField}>
+					<option value="">분야를 선택해주세요</option>
 					{largeFields.map((item) => (
 						<option key={item.fieldCode} value={JSON.stringify(item)}>
 							{item.largeField}
