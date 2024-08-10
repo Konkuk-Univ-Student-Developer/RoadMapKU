@@ -8,11 +8,11 @@ import {
 	showFieldInputState,
 	smallFieldState
 } from '../recoils/atoms';
-import useClient from '../hooks/useClient';
 import styled from 'styled-components';
 import { FixButton } from './FieldCategory';
 
 import Modal from './Modal/Modal';
+import useField from '../hooks/useField';
 
 const Container = styled.div`
 	display: flex;
@@ -59,7 +59,7 @@ function FieldCategoryInput({ onClose }) {
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
-	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useClient();
+	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
 
 	useEffect(() => {
 		fetchLargeField();
