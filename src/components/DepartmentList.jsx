@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { subjectesInField } from '../recoils/atoms';
+import { selectedFieldState, subjectesInField } from '../recoils/atoms';
+import useClient from '../hooks/useClient';
 
 const Container = styled.div`
 	display: flex;
@@ -26,12 +27,24 @@ const SelectedDepartment = styled.button`
 `;
 
 const DepartmentList = () => {
+	const { fetcthCoursesInFieldsAndSubjects } = useClient();
+	const selectedField = useRecoilValue(selectedFieldState);
 	const subjects = useRecoilValue(subjectesInField);
 
 	return (
 		<Container>
+			<SelectedDepartment>해당 직군 전체 강좌</SelectedDepartment>
 			{subjects.map((subject) => {
-				return <SelectedDepartment key={subject.subjectCode}>{subject.subjectName}</SelectedDepartment>;
+				return (
+					<SelectedDepartment
+						key={subject.subjectCode}
+						onClick={() => {
+							fetcthCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode || '');
+						}}
+					>
+						{subject.subjectName}
+					</SelectedDepartment>
+				);
 			})}
 		</Container>
 	);
