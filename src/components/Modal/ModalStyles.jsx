@@ -40,7 +40,7 @@ export const ModalWrapper = styled.div`
 	// &.BounceDismiss {
 	// 	animation: ${dismissBounce} 400ms ease-out forwards;
 	// }
-	width: 600px;
+	width: 800px;
 	height: fit-content;
 	border-radius: 15px;
 	background-color: #fff;
@@ -113,7 +113,7 @@ export const ButtonContainer = styled.div`
 	justify-content: flex-end;
 	padding-right: 2rem;
 	margin-top: 1rem;
-	margin-bottom: 0rem;
+	margin-bottom: -2rem;
 `;
 
 export const Button = styled.button`
