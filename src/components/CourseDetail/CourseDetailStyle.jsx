@@ -22,7 +22,7 @@ export const Title = styled.h1`
 export const SubjectContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-top: 1rem;
+	margin-top: 0rem;
 `;
 
 export const Subject = styled.h1`
@@ -31,7 +31,7 @@ export const Subject = styled.h1`
 	color: black;
 	margin: 0;
 	font-size: 1.7rem;
-	padding: 0.5rem;
+	padding: 0rem;
 `;
 
 export const Subtitle = styled.h2`

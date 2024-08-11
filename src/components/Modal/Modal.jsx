@@ -11,20 +11,17 @@ function Modal({ onClose, children }) {
 	};
 
 	useOutSideClick(modalRef, handleClose);
-	useEffect(() => {
-		const $body = document.querySelector('body');
-		$body.style.overflow = 'hidden';
-		return () => ($body.style.overflow = 'auto');
-	}, []);
 
 	useEffect(() => {
 		const $body = document.querySelector('body');
-		const overflow = $body.style.overflow;
+		const originalOverflow = $body.style.overflow;
 		$body.style.overflow = 'hidden';
+
 		return () => {
-			$body.style.overflow = overflow;
+			$body.style.overflow = originalOverflow;
 		};
 	}, []);
+
 	return (
 		<ModalContainer>
 			<L.Overlay>
