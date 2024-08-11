@@ -41,6 +41,17 @@ const useClient = () => {
 			});
 	};
 
+	// const fetchCourseDetail = (HaksuId) => {
+	// 	serverApi
+	// 		.get(`/course/${HaksuId}/details`)
+	// 		.then((res) => {
+	// 			setCourseDetailState(res.data);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.error('Error fetching course details:', error);
+	// 		});
+	// };
+
 	return {
 		fetchCompetencyListInSubject,
 		fetchCourseByCompetencyInSubject,

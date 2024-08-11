@@ -15,9 +15,9 @@ import TableComponent2 from '../TableComponent2';
 import Modal from '../Modal/Modal';
 
 function CourseDetail({ onClose }) {
-	// const courseDetail = useRecoilValue(courseDetailState);
+	// // const courseDetail = useRecoilValue(courseDetailState);
 
-	// console.log('Course Detail:', courseDetail); // 데이터 확인
+	//MockDATA 이용 -------------
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	useEffect(() => {
 		fetch('/data/courseDetail.json')
@@ -26,9 +26,38 @@ function CourseDetail({ onClose }) {
 			.catch((error) => console.error('Error fetching course details:', error));
 	}, [setCourseDetail]);
 
-	console.log('Course Detail:', courseDetail); // 데이터 확인
-
 	const modalContent = courseDetail[1]; // 예시로 네 번째 데이터를 사용
+
+	console.log('Course Detail:', courseDetail); // 데이터 확인
+	console.log('modalContent :', modalContent);
+	if (!courseDetail.length)
+		return (
+			<Modal onClose={onClose}>
+				<div>Loading...</div>
+			</Modal>
+		); // 데이터가 없을 때 로딩 표시
+
+	//---------------------------
+
+	//API 연결 코드-------------------------
+	// const [courseDetail] = useRecoilState(courseDetailState);
+	// const { fetchCourseDetail } = useClient();
+
+	// useEffect(() => {
+	// 	if (HaksuId) {
+	// 		fetchCourseDetail(HaksuId); // HaksuId로 데이터 가져오기
+	// 	}
+	// }, [HaksuId, fetchCourseDetail]);
+
+	// console.log('Course Detail:', courseDetail);
+
+	// if (!courseDetail || !courseDetail.length)
+	// 	return (
+	// 		<Modal onClose={onClose}>
+	// 			<div>Loading...</div>
+	// 		</Modal>
+	// 	);
+	//API 연결 코드-------------------------
 
 	console.log('modalContent :', modalContent);
 	if (!courseDetail.length)
