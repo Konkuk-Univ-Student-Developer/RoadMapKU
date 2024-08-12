@@ -21,12 +21,13 @@ const ItemContainer = styled.div`
 `;
 const Title = styled.h2`
 	font-size: 18px;
-	color: #333;
+	color: #036b3f;
 	margin-bottom: 10px;
 `;
 const Description = styled.div`
-	font-size: 16px;
-	color: #666;
+	font-size: 15px;
+	color: black;
+	font-weight: 600;
 `;
 
 export const FixButton = styled.button`
