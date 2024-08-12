@@ -7,7 +7,6 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 20px;
 	width: 95%;
 	height: 340px;
 	background: #74ae96;

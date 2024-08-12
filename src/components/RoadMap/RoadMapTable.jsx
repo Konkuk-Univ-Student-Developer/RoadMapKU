@@ -5,6 +5,7 @@ import CompetencyTable from './CompetencyTable';
 import Cell from './RoadMapCell';
 
 const TableContainer = styled.div`
+	width: 90%;
 	height: 25rem;
 	display: flex;
 	flex-direction: row;

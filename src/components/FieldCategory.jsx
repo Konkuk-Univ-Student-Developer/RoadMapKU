@@ -10,7 +10,6 @@ const FieldCategoryContainer = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
-	margin: 30px 0;
 `;
 const ItemContainer = styled.div`
 	display: flex;
