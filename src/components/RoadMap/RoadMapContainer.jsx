@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import useClient from '../../hooks/useClient';
-import { competencyListInSubjectState } from '../../recoils/atoms';
+import useField from '../../hooks/useField';
+import { competencyListInSubjectState, courseByCompetencyInSubjectState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 
 const Container = styled.div`
@@ -54,12 +55,21 @@ const Button = styled.button`
 
 const RoadMapContainer = ({ show }) => {
 	const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
+	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const subjectName = competencyListInSubject.subjectName;
-	const competencyList = competencyListInSubject.competencies;
+	// const competencyList = competencyListInSubject.competencies;
+	const competencyList = courseByCompetencyInSubject;
+
+	console.log('competencyListInSubject: ', competencyListInSubject);
+	console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
+	console.log('competencyList: ', competencyList);
 
 	const { fetchCompetencyListInSubject } = useClient();
+	const { fetchCoursesInFieldsAndSubjects } = useField();
 
 	const [roadMapTableData, setRoadMapTableData] = useState([
+		[{ courseName: '1-1' }],
+		[{ courseName: '1-2' }],
 		[{ courseName: '2-1' }],
 		[{ courseName: '2-2' }],
 		[{ courseName: '3-1' }],
@@ -68,6 +78,8 @@ const RoadMapContainer = ({ show }) => {
 		[{ courseName: '4-2' }]
 	]);
 	const [myTableData, setMyTableData] = useState([
+		[{ courseName: '1-1' }],
+		[{ courseName: '11-2' }],
 		[{ courseName: '2-1' }],
 		[{ courseName: '2-2' }],
 		[{ courseName: '3-1' }],
@@ -79,20 +91,23 @@ const RoadMapContainer = ({ show }) => {
 
 	useEffect(() => {
 		fetchCompetencyListInSubject();
+		fetchCoursesInFieldsAndSubjects();
 	}, []);
 
 	useEffect(() => {
-		if (!competencyListInSubject.subjectCode) {
+		if (!courseByCompetencyInSubject[0]) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
+			console.log('NEW DATA INSERTED!!!');
+
 			const haksuIdToCompetencyMap = new Map();
 			let delay = 0;
 			const updatedRoadMapTableData = [...roadMapTableData];
-			competencyList.forEach((competency) => {
-				competency.courses.forEach((course) => {
-					const { year, semester, haksuId, courseName } = course;
-					const semesterIndex = semester === '1학기' ? 0 : 1;
-					const index = (year - 2) * 2 + semesterIndex;
+			courseByCompetencyInSubject.forEach((competency) => {
+				competency.courseGetResponseList.forEach((course) => {
+					const { openingYear, openingSemester, haksuId, name } = course;
+					const semesterIndex = openingSemester === '1학기' ? 0 : 1;
+					const index = (openingYear - 1) * 2 + semesterIndex;
 					if (!haksuIdToCompetencyMap.has(haksuId)) {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
@@ -100,13 +115,20 @@ const RoadMapContainer = ({ show }) => {
 					setTimeout(() => {
 						setRoadMapTableData((prevItems) => {
 							const updatedRoadMapTableData = [...prevItems];
-							const isDuplicate = updatedRoadMapTableData[index].some((item) => item.haksuId === haksuId);
-							if (!isDuplicate) {
-								updatedRoadMapTableData[index] = [
-									...updatedRoadMapTableData[index],
+							updatedRoadMapTableData[index] = [
+								...updatedRoadMapTableData[index],
+								{
+									haksuId: haksuId,
+									courseName: name,
+									competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+								}
+							];
+							if (openingSemester === '1,2학기') {
+								updatedRoadMapTableData[index - 1] = [
+									...updatedRoadMapTableData[index - 1],
 									{
 										haksuId: haksuId,
-										courseName: courseName,
+										courseName: name,
 										competencyCodes: haksuIdToCompetencyMap.get(haksuId)
 									}
 								];
@@ -119,7 +141,7 @@ const RoadMapContainer = ({ show }) => {
 			});
 			setRoadMapTableData(updatedRoadMapTableData);
 		}
-	}, [competencyListInSubject]);
+	}, [courseByCompetencyInSubject]);
 
 	useEffect(() => {
 		const competencyArray = [];
@@ -180,7 +202,7 @@ const RoadMapContainer = ({ show }) => {
 				<Button>{subjectName} 로드맵 보기</Button>
 			</TitleWrapper>
 			<RoadMapTable
-				competencyTableData={competencyList}
+				competencyTableData={courseByCompetencyInSubject}
 				roadMapTableData={roadMapTableData}
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}

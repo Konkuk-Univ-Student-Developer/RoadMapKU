@@ -37,14 +37,16 @@ const animationTiming = {
 
 const CompetencyTable = ({ competencyTableData }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
+	console.log('competencyTableData: ', competencyTableData);
 
 	const isEqualArray = (arr1, arr2) => {
 		return JSON.stringify(arr1) === JSON.stringify(arr2);
 	};
 
 	useEffect(() => {
-		if (!competencyTableData) {
+		if (!competencyTableData[0]) {
 			console.log('competencyTableData is empty');
+			setCompetencyTable([]);
 		} else {
 			// 전공역량을 역량코드 순으로 재배열
 			const sortedCompetencyTable = [...competencyTableData];
