@@ -10,7 +10,6 @@ const FieldCategoryContainer = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
-	margin: 30px 0;
 `;
 const ItemContainer = styled.div`
 	display: flex;
@@ -21,15 +20,18 @@ const ItemContainer = styled.div`
 `;
 const Title = styled.h2`
 	font-size: 18px;
-	color: #333;
+	color: #036b3f;
 	margin-bottom: 10px;
 `;
 const Description = styled.div`
-	font-size: 16px;
-	color: #666;
+	font-size: 15px;
+	color: black;
+	font-weight: 600;
 `;
 
 export const FixButton = styled.button`
+	margin-top: 15px;
+	width: 60%;
 	padding: 10px 20px;
 	font-size: 16px;
 	color: #fff;
@@ -37,11 +39,9 @@ export const FixButton = styled.button`
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-
 	&:hover {
 		background-color: #02472a;
 	}
-	margin-top: 2rem;
 `;
 
 const FieldCategory = () => {
@@ -69,9 +69,10 @@ const FieldCategory = () => {
 					<Title>세분류</Title>
 					<Description>{fieldState.detailField}</Description>
 				</ItemContainer>
-				<ItemContainer>
-					<FixButton onClick={onClickHandler}>설정 바꾸기</FixButton>
-				</ItemContainer>
+
+				<FixButton onClick={onClickHandler} style={{ width: '90%' }}>
+					설정 바꾸기
+				</FixButton>
 			</FieldCategoryContainer>
 		</>
 	);

@@ -6,14 +6,10 @@ import { competencyListInSubjectState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 
 const Container = styled.div`
-	margin-left: auto;
 	display: flex;
 	flex-direction: column;
 	transition: width 500ms ease-in-out;
-
-	&.with-sidebar {
-		width: calc(100% - 20rem);
-	}
+	width: 100%;
 
 	&.full-width {
 		width: 100%;
