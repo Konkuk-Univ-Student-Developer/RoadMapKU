@@ -8,24 +8,26 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 20px;
-	width: 100%;
-	height: 330px;
-	background: #ffffff;
+	width: 95%;
+	height: 340px;
+	background: #74ae96;
+	border-radius: 10px;
 	overflow: auto;
 `;
 
 const SelectedDepartment = styled.button`
-	width: 85%;
-	margin-top: 20px;
-	padding: 10px 10px;
-	font-size: 18px;
+	width: 95%;
+	height: 50px;
+	margin: 5px 0;
+	font-size: 20px;
 	cursor: pointer;
-	color: #333;
-	background-color: #f1f1f1;
+	font-weight: 600;
+	color: black;
+	background-color: #ffffff;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	border-radius: 10px;
 	&: hover {
-		background-color: #ffffff;
+		background-color: #f1f1f1;
 	}
 `;
 
