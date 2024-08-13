@@ -6,6 +6,7 @@ import LinkContents from '../components/HeroContents/LinkContents';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import GreetTextContents from '../components/HeroContents/GreetTextContents';
 
 const HomeContainer = styled.div`
 	width: 100vw;
@@ -33,6 +34,7 @@ function Home() {
 		pauseOnHover: false,
 		cssEase: 'ease-out'
 	};
+
 	return (
 		<HomeContainer>
 			<Header />
@@ -46,7 +48,7 @@ function Home() {
 
 				<HeroSection imageUrl={'./img/HomePicture2.png'}>
 					<MainContainer>
-						<TextContents />
+						<GreetTextContents />
 					</MainContainer>
 				</HeroSection>
 			</Slider>
