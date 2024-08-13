@@ -20,20 +20,20 @@ const MainContainer = styled.div`
 	height: 50%;
 	display: flex;
 	flex-direction: row;
-	jusify-content: center;
+	justify-content: center;
 	align-items: center;
 `;
 
 function Home() {
 	const settings = {
-		dots: true,
 		infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 5000,
 		pauseOnHover: false,
-		cssEase: 'ease-out'
+		cssEase: 'ease-out',
+		useTransform: false
 	};
 
 	return (
