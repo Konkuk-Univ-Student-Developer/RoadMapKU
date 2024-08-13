@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const MainSection = styled.div`
 	width: 100vw;
 	height: 100vh;
-	background-image: url('./img/HomePicture.png');
+	background-image: ${(props) => (props.url ? `url(${props.url})` : '')};
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -12,8 +12,8 @@ const MainSection = styled.div`
 	justify-content: center;
 `;
 
-function HeroSection({ children }) {
-	return <MainSection>{children}</MainSection>;
+function HeroSection({ children, imageUrl }) {
+	return <MainSection url={imageUrl}>{children}</MainSection>;
 }
 
 export default HeroSection;
