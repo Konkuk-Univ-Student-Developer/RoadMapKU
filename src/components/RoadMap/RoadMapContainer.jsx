@@ -34,7 +34,7 @@ const Title = styled.div`
 const Button = styled.button`
 	height: 2rem;
 	width: 23rem;
-	background-color: #54ad2d;
+	background-color: #036b3f;
 	color: white;
 	border: none;
 	border-radius: 0.2rem;
@@ -44,7 +44,7 @@ const Button = styled.button`
 	font-size: small;
 
 	&:hover {
-		background-color: #459423;
+		background-color: #02472a;
 	}
 `;
 

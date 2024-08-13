@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState, subjectsInFieldState } from '../recoils/atoms';
+import { selectedFieldState, selectedSubjectState, subjectsInFieldState } from '../recoils/atoms';
 import useField from '../hooks/useField';
 import { Title } from './FieldCategory';
 
@@ -37,7 +36,7 @@ const SelectedDepartment = styled.button`
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	&:hover {
-		background-color: #f1f1f1;
+		background-color: #d3d3d3;
 	}
 `;
 
@@ -52,10 +51,10 @@ const DepartmentList = () => {
 	const selectedField = useRecoilValue(selectedFieldState);
 	const subjects = useRecoilValue(subjectsInFieldState);
 
-	const [selectedDepartment, setSelectedDepartment] = useState(null);
+	const [selectedDepartment, setSelectedDepartment] = useRecoilState(selectedSubjectState);
 
-	const handleDepartmentClick = (fieldCode, subjectCode = null) => {
-		setSelectedDepartment(subjectCode);
+	const handleDepartmentClick = (fieldCode, subjectCode, subjectName) => {
+		setSelectedDepartment({ subjectCode, subjectName });
 		if (subjectCode) {
 			fetchCoursesInFieldsAndSubjects(fieldCode, subjectCode);
 		} else {
@@ -70,8 +69,8 @@ const DepartmentList = () => {
 			</TitleContainer>
 			<DepartmentContainer>
 				<SelectedDepartment
-					isSelected={selectedDepartment === null}
-					onClick={() => handleDepartmentClick(selectedField.fieldCode)}
+					isSelected={selectedDepartment.subjectCode === -1}
+					onClick={() => handleDepartmentClick(selectedField.fieldCode, -1, '전체')}
 				>
 					해당 직군 전체 강좌
 				</SelectedDepartment>
@@ -79,8 +78,8 @@ const DepartmentList = () => {
 					return (
 						<SelectedDepartment
 							key={subject.subjectCode}
-							isSelected={selectedDepartment === subject.subjectCode}
-							onClick={() => handleDepartmentClick(selectedField.fieldCode, subject.subjectCode)}
+							isSelected={selectedDepartment.subjectCode === subject.subjectCode}
+							onClick={() => handleDepartmentClick(selectedField.fieldCode, subject.subjectCode, subject.subjectName)}
 						>
 							{subject.subjectName}
 						</SelectedDepartment>
