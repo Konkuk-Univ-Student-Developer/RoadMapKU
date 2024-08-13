@@ -45,6 +45,7 @@ const DepartmentList = () => {
 					<SelectedDepartment
 						key={subject.subjectCode}
 						onClick={() => {
+							console.log('hu');
 							fetchCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
 						}}
 					>
