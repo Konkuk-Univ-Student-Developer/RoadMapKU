@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { competencyListInSubjectState, courseByCompetencyInSubjectState } from '../../recoils/atoms';
+import { courseByCompetencyInSubjectState, selectedSubjectState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
+import useField from '../../hooks/useField';
 
 const Container = styled.div`
 	display: flex;
@@ -48,11 +49,11 @@ const Button = styled.button`
 `;
 
 const RoadMapContainer = ({ show }) => {
-	const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
+	// const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
-	const subjectName = competencyListInSubject.subjectName;
+	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 	// const competencyList = courseByCompetencyInSubject;
-
+	const { fetchCoursesInSubject } = useField();
 	// console.log('competencyListInSubject: ', competencyListInSubject);
 	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
 	// console.log('competencyList: ', competencyList);
@@ -194,11 +195,15 @@ const RoadMapContainer = ({ show }) => {
 		setMyTableData(updatedMyTableData);
 	};
 
+	const showRoadMapHandler = () => {
+		fetchCoursesInSubject(subjectCode);
+	};
+
 	return (
 		<Container className={`content ${show ? 'with-sidebar' : 'full-width'}`}>
 			<TitleWrapper>
 				<Title>학과 로드맵</Title>
-				<Button>{subjectName} 로드맵 보기</Button>
+				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 로드맵 보기</Button>}
 			</TitleWrapper>
 			<RoadMapTable
 				competencyTableData={courseByCompetencyInSubject}

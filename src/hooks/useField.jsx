@@ -106,7 +106,7 @@ const useField = () => {
 
 	const fetchCoursesInSubject = (subjectCode) => {
 		serverApi
-			.get(`/api/v1/${subjectCode}/subject`)
+			.get(`/api/v1/courses/${subjectCode}/subject`)
 			.then((res) => {
 				console.log(res.data);
 			})
