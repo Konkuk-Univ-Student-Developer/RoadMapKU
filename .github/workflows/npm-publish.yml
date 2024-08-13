@@ -19,4 +19,4 @@ jobs:
             git commit -m "temp"
             git fetch origin develop
             git merge origin/develop
-            yarn start
+            nohup yarn start >> output.log 2>&1 &
