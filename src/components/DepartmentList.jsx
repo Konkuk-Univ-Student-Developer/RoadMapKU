@@ -11,7 +11,7 @@ const Container = styled.div`
 	justify-content: center;
 	width: 95%;
 	height: 310px;
-	background: #74ae96;
+	background: #036b3f;
 	border-radius: 10px;
 	overflow: auto;
 `;
