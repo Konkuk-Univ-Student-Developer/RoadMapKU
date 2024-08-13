@@ -96,6 +96,18 @@ const useField = () => {
 		serverApi
 			.get(`/api/v1/courses/${fieldCode}/field`)
 			.then((res) => {
+				setCourseByCompetencyInSubjectState(res.data);
+				console.log(res.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
+	const fetchCoursesInSubject = (subjectCode) => {
+		serverApi
+			.get(`/api/v1/courses/${subjectCode}/subject`)
+			.then((res) => {
 				console.log(res.data);
 			})
 			.catch((error) => {
@@ -110,7 +122,8 @@ const useField = () => {
 		fetchDetailField,
 		fetchSubjectsInField,
 		fetchCoursesInFieldsAndSubjects,
-		fetchCoursesInFields
+		fetchCoursesInFields,
+		fetchCoursesInSubject
 	};
 };
 
