@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SidebarContents from './SidebarContents';
 import FieldCategoryInput from './FieldCategoryInput';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { showFieldInputState } from '../recoils/atoms';
 
 const SidebarContainer = styled.div`
@@ -19,11 +19,17 @@ const SidebarContainer = styled.div`
 `;
 
 const Sidebar = () => {
-	const isShowFieldCategoryInput = useRecoilValue(showFieldInputState);
+	const [isShowFieldCategoryInput, setIsShowFieldCategoryInput] = useRecoilState(showFieldInputState);
 	return (
 		<SidebarContainer>
 			<SidebarContents />
-			{isShowFieldCategoryInput && <FieldCategoryInput />}
+			{isShowFieldCategoryInput && (
+				<FieldCategoryInput
+					onClose={() => {
+						setIsShowFieldCategoryInput(false);
+					}}
+				/>
+			)}
 		</SidebarContainer>
 	);
 };
