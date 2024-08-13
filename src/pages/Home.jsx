@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import GreetTextContents from '../components/HeroContents/GreetTextContents';
 
 const HomeContainer = styled.div`
+	min-width: 100vw;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;

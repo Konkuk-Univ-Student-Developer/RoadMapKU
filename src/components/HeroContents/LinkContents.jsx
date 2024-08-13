@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const LinkContainer = styled.div`
@@ -30,10 +31,11 @@ const LinkButton = styled.button`
 	}
 `;
 const LinkContents = () => {
+	const navigate = useNavigate();
 	return (
 		<LinkContainer>
-			<LinkLabel>KUMAP 이란?</LinkLabel>
-			<LinkButton>KUMAP 바로가기</LinkButton>
+			<LinkLabel onClick={() => navigate('/manual')}>KUMAP 이란?</LinkLabel>
+			<LinkButton onClick={() => navigate('/road-map')}>KUMAP 바로가기</LinkButton>
 		</LinkContainer>
 	);
 };
