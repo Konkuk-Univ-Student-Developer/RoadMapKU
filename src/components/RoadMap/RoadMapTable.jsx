@@ -37,7 +37,7 @@ const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, uncl
 								rowIndex={rowIndex}
 								onClick={onCellClick}
 								unclickable={
-									unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData) || colIndex === 0
+									unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId) || colIndex === 0
 								}
 							/>
 						</CSSTransition>

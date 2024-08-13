@@ -57,12 +57,11 @@ const RoadMapContainer = ({ show }) => {
 	const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const subjectName = competencyListInSubject.subjectName;
-	// const competencyList = competencyListInSubject.competencies;
-	const competencyList = courseByCompetencyInSubject;
+	// const competencyList = courseByCompetencyInSubject;
 
-	console.log('competencyListInSubject: ', competencyListInSubject);
-	console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
-	console.log('competencyList: ', competencyList);
+	// console.log('competencyListInSubject: ', competencyListInSubject);
+	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
+	// console.log('competencyList: ', competencyList);
 
 	const { fetchCompetencyListInSubject } = useClient();
 	const { fetchCoursesInFieldsAndSubjects } = useField();
@@ -79,7 +78,7 @@ const RoadMapContainer = ({ show }) => {
 	]);
 	const [myTableData, setMyTableData] = useState([
 		[{ courseName: '1-1' }],
-		[{ courseName: '11-2' }],
+		[{ courseName: '1-2' }],
 		[{ courseName: '2-1' }],
 		[{ courseName: '2-2' }],
 		[{ courseName: '3-1' }],
@@ -160,14 +159,14 @@ const RoadMapContainer = ({ show }) => {
 	function findCompetencyByCode(competencyCodes) {
 		// Find competencies for each code in the array
 		const competencies = competencyCodes.map((code) => {
-			return competencyList.find((item) => item.competencyCode === code);
+			return courseByCompetencyInSubject.find((item) => item.competencyCode === code);
 		});
 		return competencies;
 	}
 
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
-		if (unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData)) return;
+		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
 
 		// Set cell as unclickable
 		const updatedUnclickableCells = [...unclickableCells];
@@ -181,9 +180,7 @@ const RoadMapContainer = ({ show }) => {
 	};
 	const handleCellClick_remove = (cellData, rowIndex) => {
 		// Remove cell from unclickableCells
-		const updatedUnclickableCells = unclickableCells.filter(
-			(cell) => !(cell.row === rowIndex && cell.cellData === cellData)
-		);
+		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
 		// Update myTableData to remove the clicked cell's data
