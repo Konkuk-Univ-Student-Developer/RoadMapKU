@@ -1,7 +1,7 @@
 name: deploy-react
 on:
   push:
-    branches: main
+    branches: develop
 
 jobs:
   deploy:
