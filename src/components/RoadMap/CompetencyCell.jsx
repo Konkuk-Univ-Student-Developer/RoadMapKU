@@ -16,6 +16,7 @@ const StyledCell = styled.div`
 	justify-content: center;
 	text-align: center;
 	transition: background-color 0.3s ease-out;
+	overflow: hidden;
 
 	&:hover,
 	&:active {
@@ -31,9 +32,47 @@ const StyledCell = styled.div`
 	}
 `;
 
-const Cell = ({ cellData }) => {
-	// TODO: onClick 추가
-	return <StyledCell>{cellData.competencyName}</StyledCell>;
+const ButtonWrapper = styled.div`
+	display: flex;
+	width: 100%;
+	height: 100%;
+`;
+
+const LeftButton = styled.div`
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		background-color: #a9d1b3;
+	}
+`;
+
+const RightButton = styled.div`
+	width: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		background-color: #a9d1b3;
+	}
+`;
+
+const Cell = ({ cellData, onClick }) => {
+	return (
+		<StyledCell>
+			<ButtonWrapper>
+				<LeftButton onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</LeftButton>
+				<RightButton onClick={() => {}}>:</RightButton>
+			</ButtonWrapper>
+		</StyledCell>
+	);
 };
 
 export default Cell;

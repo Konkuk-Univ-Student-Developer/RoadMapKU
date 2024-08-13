@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import useClient from '../../hooks/useClient';
-import { competencyListInSubjectState } from '../../recoils/atoms';
+import useField from '../../hooks/useField';
+import { competencyListInSubjectState, courseByCompetencyInSubjectState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 
 const Container = styled.div`
@@ -50,12 +51,20 @@ const Button = styled.button`
 
 const RoadMapContainer = ({ show }) => {
 	const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
+	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const subjectName = competencyListInSubject.subjectName;
-	const competencyList = competencyListInSubject.competencies;
+	// const competencyList = courseByCompetencyInSubject;
+
+	// console.log('competencyListInSubject: ', competencyListInSubject);
+	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
+	// console.log('competencyList: ', competencyList);
 
 	const { fetchCompetencyListInSubject } = useClient();
+	const { fetchCoursesInFieldsAndSubjects } = useField();
 
 	const [roadMapTableData, setRoadMapTableData] = useState([
+		[{ courseName: '1-1' }],
+		[{ courseName: '1-2' }],
 		[{ courseName: '2-1' }],
 		[{ courseName: '2-2' }],
 		[{ courseName: '3-1' }],
@@ -64,6 +73,8 @@ const RoadMapContainer = ({ show }) => {
 		[{ courseName: '4-2' }]
 	]);
 	const [myTableData, setMyTableData] = useState([
+		[{ courseName: '1-1' }],
+		[{ courseName: '1-2' }],
 		[{ courseName: '2-1' }],
 		[{ courseName: '2-2' }],
 		[{ courseName: '3-1' }],
@@ -72,23 +83,29 @@ const RoadMapContainer = ({ show }) => {
 		[{ courseName: '4-2' }]
 	]);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
+	// const [competencyCodes, setCompetencyCodes] = useState([]);
 
 	useEffect(() => {
 		fetchCompetencyListInSubject();
+		fetchCoursesInFieldsAndSubjects();
 	}, []);
 
 	useEffect(() => {
-		if (!competencyListInSubject.subjectCode) {
+		if (!courseByCompetencyInSubject[0]) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
+			// const updatedCompetencyCodes = competencyTableData.map((item) => item.competencyCode);
+			// setCompetencyCodes(updatedCompetencyCodes);
+			// console.log('competencyCodes: ', updatedCompetencyCodes);
+
 			const haksuIdToCompetencyMap = new Map();
 			let delay = 0;
 			const updatedRoadMapTableData = [...roadMapTableData];
-			competencyList.forEach((competency) => {
-				competency.courses.forEach((course) => {
-					const { year, semester, haksuId, courseName } = course;
-					const semesterIndex = semester === '1학기' ? 0 : 1;
-					const index = (year - 2) * 2 + semesterIndex;
+			courseByCompetencyInSubject.forEach((competency) => {
+				competency.courseGetResponseList.forEach((course) => {
+					const { openingYear, openingSemester, haksuId, name } = course;
+					const semesterIndex = openingSemester === '1학기' ? 0 : 1;
+					const index = (openingYear - 1) * 2 + semesterIndex;
 					if (!haksuIdToCompetencyMap.has(haksuId)) {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
@@ -96,13 +113,20 @@ const RoadMapContainer = ({ show }) => {
 					setTimeout(() => {
 						setRoadMapTableData((prevItems) => {
 							const updatedRoadMapTableData = [...prevItems];
-							const isDuplicate = updatedRoadMapTableData[index].some((item) => item.haksuId === haksuId);
-							if (!isDuplicate) {
-								updatedRoadMapTableData[index] = [
-									...updatedRoadMapTableData[index],
+							updatedRoadMapTableData[index] = [
+								...updatedRoadMapTableData[index],
+								{
+									haksuId: haksuId,
+									courseName: name,
+									competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+								}
+							];
+							if (openingSemester === '1,2학기') {
+								updatedRoadMapTableData[index - 1] = [
+									...updatedRoadMapTableData[index - 1],
 									{
 										haksuId: haksuId,
-										courseName: courseName,
+										courseName: name,
 										competencyCodes: haksuIdToCompetencyMap.get(haksuId)
 									}
 								];
@@ -115,7 +139,7 @@ const RoadMapContainer = ({ show }) => {
 			});
 			setRoadMapTableData(updatedRoadMapTableData);
 		}
-	}, [competencyListInSubject]);
+	}, [courseByCompetencyInSubject]);
 
 	useEffect(() => {
 		const competencyArray = [];
@@ -134,14 +158,27 @@ const RoadMapContainer = ({ show }) => {
 	function findCompetencyByCode(competencyCodes) {
 		// Find competencies for each code in the array
 		const competencies = competencyCodes.map((code) => {
-			return competencyList.find((item) => item.competencyCode === code);
+			return courseByCompetencyInSubject.find((item) => item.competencyCode === code);
 		});
 		return competencies;
 	}
 
+	const [isHighlighted, setIsHighlighted] = useState(false);
+	const [competencyCode, setCompetencyCode] = useState('');
+	const handleCellClick_highlight = (competencyCode) => {
+		if (isHighlighted) {
+			console.log('isHighlighted: ', false);
+			setIsHighlighted(false);
+		} else {
+			setIsHighlighted(true);
+			console.log('isHighlighted: ', true);
+		}
+		setCompetencyCode(competencyCode);
+	};
+
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
-		if (unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData)) return;
+		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
 
 		// Set cell as unclickable
 		const updatedUnclickableCells = [...unclickableCells];
@@ -155,9 +192,7 @@ const RoadMapContainer = ({ show }) => {
 	};
 	const handleCellClick_remove = (cellData, rowIndex) => {
 		// Remove cell from unclickableCells
-		const updatedUnclickableCells = unclickableCells.filter(
-			(cell) => !(cell.row === rowIndex && cell.cellData === cellData)
-		);
+		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
 		// Update myTableData to remove the clicked cell's data
@@ -176,10 +211,13 @@ const RoadMapContainer = ({ show }) => {
 				<Button>{subjectName} 로드맵 보기</Button>
 			</TitleWrapper>
 			<RoadMapTable
-				competencyTableData={competencyList}
+				competencyTableData={courseByCompetencyInSubject}
 				roadMapTableData={roadMapTableData}
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}
+				onCompetencyClick={handleCellClick_highlight}
+				isHighlighted={isHighlighted}
+				competencyCode={competencyCode}
 			/>
 			<TitleWrapper>
 				<Title>내 로드맵</Title>
@@ -189,6 +227,9 @@ const RoadMapContainer = ({ show }) => {
 				roadMapTableData={myTableData}
 				onCellClick={handleCellClick_remove}
 				unclickableCells={[]}
+				onCompetencyClick={handleCellClick_highlight}
+				isHighlighted={isHighlighted}
+				competencyCode={competencyCode}
 			/>
 		</Container>
 	);

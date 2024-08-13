@@ -25,21 +25,31 @@ const animationTiming = {
 	exit: 400
 };
 
-const RoadMapTable = ({ competencyTableData, roadMapTableData, onCellClick, unclickableCells }) => {
+const RoadMapTable = ({
+	competencyTableData,
+	roadMapTableData,
+	onCellClick,
+	unclickableCells,
+	onCompetencyClick,
+	isHighlighted,
+	competencyCode
+}) => {
 	return (
 		<TableContainer>
-			<CompetencyTable competencyTableData={competencyTableData} />
+			<CompetencyTable competencyTableData={competencyTableData} onClick={onCompetencyClick} />
 			{roadMapTableData.map((row, rowIndex) => (
 				<TransitionGroup component={ColumnSemester} key={rowIndex}>
 					{row.map((cellData, colIndex) => (
-						<CSSTransition key={rowIndex * 10 + colIndex} timeout={animationTiming} classNames="Bounce">
+						<CSSTransition key={cellData.haksuId + rowIndex + colIndex} timeout={animationTiming} classNames="Bounce">
 							<Cell
 								cellData={cellData}
 								rowIndex={rowIndex}
 								onClick={onCellClick}
 								unclickable={
-									unclickableCells.some((cell) => cell.row === rowIndex && cell.cellData === cellData) || colIndex === 0
+									unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId) || colIndex === 0
 								}
+								isHighlighted={isHighlighted}
+								competencyCode={competencyCode}
 							/>
 						</CSSTransition>
 					))}

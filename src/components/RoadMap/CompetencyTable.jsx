@@ -35,7 +35,7 @@ const animationTiming = {
 	exit: 0
 };
 
-const CompetencyTable = ({ competencyTableData }) => {
+const CompetencyTable = ({ competencyTableData, onClick }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
 
 	const isEqualArray = (arr1, arr2) => {
@@ -43,8 +43,9 @@ const CompetencyTable = ({ competencyTableData }) => {
 	};
 
 	useEffect(() => {
-		if (!competencyTableData) {
+		if (!competencyTableData[0]) {
 			console.log('competencyTableData is empty');
+			setCompetencyTable([]);
 		} else {
 			// 전공역량을 역량코드 순으로 재배열
 			const sortedCompetencyTable = [...competencyTableData];
@@ -73,7 +74,7 @@ const CompetencyTable = ({ competencyTableData }) => {
 			<TransitionGroup component={ColumnMajorCompetency}>
 				{competencyTable.map((competency) => (
 					<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
-						<Cell cellData={competency} />
+						<Cell cellData={competency} onClick={onClick} />
 					</CSSTransition>
 				))}
 			</TransitionGroup>
