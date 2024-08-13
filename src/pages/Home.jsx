@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import HeroSection from './HeroSection';
 import TextContents from '../components/HeroContents/TextContens';
+import LinkContents from '../components/HeroContents/LinkContents';
 
 const HomeContainer = styled.div`
 	width: 100vw;
@@ -27,6 +28,7 @@ function Home() {
 			<HeroSection>
 				<MainContainer>
 					<TextContents />
+					<LinkContents />
 				</MainContainer>
 			</HeroSection>
 		</HomeContainer>

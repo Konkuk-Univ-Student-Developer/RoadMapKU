@@ -12,6 +12,7 @@ const Text = styled.div`
 	font-size: 50px;
 	font-weight: 600;
 `;
+
 const TextContents = () => {
 	return (
 		<TextContainer>
