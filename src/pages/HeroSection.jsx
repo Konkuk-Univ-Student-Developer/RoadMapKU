@@ -1,45 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center; /* Center the content vertically */
-	align-items: center; /* Center the content horizontally */
-	width: 100%;
-	height: 100%; /* Ensure the container takes the full height of the viewport */
-	margin: 0 auto; /* Center the container horizontally */
-	padding: 0; /* Remove default padding */
-`;
-
 const MainSection = styled.div`
+	width: 100vw;
+	height: 100vh;
+	background-image: ${(props) => (props.url ? `url(${props.url})` : '')};
+	background-size: cover;
+	background-position: center;
 	display: flex;
-	width: 100%; /* Ensure full width */
-	height: 100%; /* Ensure full height */
-	justify-content: center;
-	align-items: center; /* Center the content vertically */
-	background-color: white; /* Assuming --main is a CSS variable */
-`;
-
-const ImageWrapper = styled.div`
-	flex: 1;
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	padding-left: 0px;
-	box-sizing: border-box;
+	justify-content: center;
 `;
 
-function HeroSection() {
-	return (
-		<MainSection>
-			<Container>
-				<ImageWrapper>
-					<img style={{ width: '100%' }} src={`/img/KU_Herosection.png`} alt="Hero Section Character" />
-				</ImageWrapper>
-			</Container>
-		</MainSection>
-	);
+function HeroSection({ children, imageUrl }) {
+	return <MainSection url={imageUrl}>{children}</MainSection>;
 }
 
 export default HeroSection;

@@ -1,5 +1,6 @@
 body {
 	overflow-y: overlay;
+	margin: 0;
 }
 
 ::-webkit-scrollbar {
