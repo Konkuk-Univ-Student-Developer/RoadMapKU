@@ -3,13 +3,14 @@ import Header from '../components/Header';
 import HeroSection from './HeroSection';
 import TextContents from '../components/HeroContents/TextContens';
 import LinkContents from '../components/HeroContents/LinkContents';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const HomeContainer = styled.div`
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	overflow: hidden;
 `;
 
 const MainContainer = styled.div`
@@ -22,15 +23,33 @@ const MainContainer = styled.div`
 `;
 
 function Home() {
+	const settings = {
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		pauseOnHover: false,
+		cssEase: 'ease-out'
+	};
 	return (
 		<HomeContainer>
 			<Header />
-			<HeroSection>
-				<MainContainer>
-					<TextContents />
-					<LinkContents />
-				</MainContainer>
-			</HeroSection>
+			<Slider {...settings}>
+				<HeroSection imageUrl={'./img/HomePicture.png'}>
+					<MainContainer>
+						<TextContents />
+						<LinkContents />
+					</MainContainer>
+				</HeroSection>
+
+				<HeroSection imageUrl={'./img/HomePicture2.png'}>
+					<MainContainer>
+						<TextContents />
+					</MainContainer>
+				</HeroSection>
+			</Slider>
 		</HomeContainer>
 	);
 }
