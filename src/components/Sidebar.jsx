@@ -13,7 +13,7 @@ const SidebarContainer = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	width: 400px;
-	height: 800px;
+	height: 750px;
 	background-color: #e6f0ec;
 	border-radius: 10px;
 `;

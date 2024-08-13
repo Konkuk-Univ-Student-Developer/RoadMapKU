@@ -4,11 +4,13 @@ import { selectedFieldState, subjectsInFieldState } from '../recoils/atoms';
 import useField from '../hooks/useField';
 
 const Container = styled.div`
+	margin: 10px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	width: 95%;
-	height: 340px;
+	height: 310px;
 	background: #74ae96;
 	border-radius: 10px;
 	overflow: auto;
