@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CourseDetail from '../CourseDetail/CousreDetail';
@@ -27,6 +27,10 @@ const StyledCell = styled.div`
 	&.unclickable {
 		pointer-events: none;
 		background-color: #f4f4f4;
+	}
+
+	&.isHighlighted {
+		background-color: yellow;
 	}
 
 	&.Bounce-enter {
@@ -69,21 +73,34 @@ const RightButton = styled.div`
 	}
 `;
 
-const Cell = ({ cellData, rowIndex, onClick, unclickable }) => {
-	const [isOpen1, setIsOpen1] = useState(false);
-	const onClickButton1 = () => {
-		setIsOpen1(true);
+const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, competencyCode }) => {
+	const [isDetailOpen, setIsDetailOpen] = useState(false);
+	const onClickDetailButton = () => {
+		setIsDetailOpen(true);
 	};
 
+	const [isHighlighted_final, setIsHighlighted_final] = useState(false);
+
+	useEffect(() => {
+		const competencyCodes = cellData.competencyCodes;
+		if (Array.isArray(competencyCodes)) {
+			if (isHighlighted && competencyCodes.includes(competencyCode)) {
+				setIsHighlighted_final(true);
+			} else {
+				setIsHighlighted_final(false);
+			}
+		}
+	}, [cellData, isHighlighted]);
+
 	return (
-		<StyledCell className={unclickable ? 'unclickable' : ''}>
+		<StyledCell className={`${unclickable ? 'unclickable' : ''} ${isHighlighted_final ? 'isHighlighted' : ''}`}>
 			<ButtonWrapper>
 				<LeftButton onClick={() => onClick(cellData, rowIndex)}>{cellData.courseName}</LeftButton>
-				<RightButton onClick={onClickButton1}>:</RightButton>
-				{isOpen1 && (
+				<RightButton onClick={onClickDetailButton}>:</RightButton>
+				{isDetailOpen && (
 					<CourseDetail
 						onClose={() => {
-							setIsOpen1(false);
+							setIsDetailOpen(false);
 						}}
 					/>
 				)}

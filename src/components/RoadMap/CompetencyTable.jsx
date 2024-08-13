@@ -35,9 +35,8 @@ const animationTiming = {
 	exit: 0
 };
 
-const CompetencyTable = ({ competencyTableData }) => {
+const CompetencyTable = ({ competencyTableData, onClick }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
-	console.log('competencyTableData: ', competencyTableData);
 
 	const isEqualArray = (arr1, arr2) => {
 		return JSON.stringify(arr1) === JSON.stringify(arr2);
@@ -75,7 +74,7 @@ const CompetencyTable = ({ competencyTableData }) => {
 			<TransitionGroup component={ColumnMajorCompetency}>
 				{competencyTable.map((competency) => (
 					<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
-						<Cell cellData={competency} />
+						<Cell cellData={competency} onClick={onClick} />
 					</CSSTransition>
 				))}
 			</TransitionGroup>

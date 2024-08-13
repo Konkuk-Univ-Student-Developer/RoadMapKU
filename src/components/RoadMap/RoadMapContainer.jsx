@@ -87,6 +87,7 @@ const RoadMapContainer = ({ show }) => {
 		[{ courseName: '4-2' }]
 	]);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
+	// const [competencyCodes, setCompetencyCodes] = useState([]);
 
 	useEffect(() => {
 		fetchCompetencyListInSubject();
@@ -97,7 +98,9 @@ const RoadMapContainer = ({ show }) => {
 		if (!courseByCompetencyInSubject[0]) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
-			console.log('NEW DATA INSERTED!!!');
+			// const updatedCompetencyCodes = competencyTableData.map((item) => item.competencyCode);
+			// setCompetencyCodes(updatedCompetencyCodes);
+			// console.log('competencyCodes: ', updatedCompetencyCodes);
 
 			const haksuIdToCompetencyMap = new Map();
 			let delay = 0;
@@ -164,6 +167,19 @@ const RoadMapContainer = ({ show }) => {
 		return competencies;
 	}
 
+	const [isHighlighted, setIsHighlighted] = useState(false);
+	const [competencyCode, setCompetencyCode] = useState('');
+	const handleCellClick_highlight = (competencyCode) => {
+		if (isHighlighted) {
+			console.log('isHighlighted: ', false);
+			setIsHighlighted(false);
+		} else {
+			setIsHighlighted(true);
+			console.log('isHighlighted: ', true);
+		}
+		setCompetencyCode(competencyCode);
+	};
+
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
 		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
@@ -203,6 +219,9 @@ const RoadMapContainer = ({ show }) => {
 				roadMapTableData={roadMapTableData}
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}
+				onCompetencyClick={handleCellClick_highlight}
+				isHighlighted={isHighlighted}
+				competencyCode={competencyCode}
 			/>
 			<TitleWrapper>
 				<Title>내 로드맵</Title>
@@ -212,6 +231,9 @@ const RoadMapContainer = ({ show }) => {
 				roadMapTableData={myTableData}
 				onCellClick={handleCellClick_remove}
 				unclickableCells={[]}
+				onCompetencyClick={handleCellClick_highlight}
+				isHighlighted={isHighlighted}
+				competencyCode={competencyCode}
 			/>
 		</Container>
 	);
