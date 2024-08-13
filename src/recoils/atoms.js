@@ -49,3 +49,11 @@ export const subjectsInFieldState = atom({
 	key: 'subjectsInFieldState',
 	default: []
 });
+
+export const selectedSubjectState = atom({
+	key: 'selectedSubjectState',
+	default: {
+		subjectName: '전체',
+		subjectCode: -1
+	}
+});
