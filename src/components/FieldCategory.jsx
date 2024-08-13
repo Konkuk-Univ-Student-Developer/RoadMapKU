@@ -18,13 +18,13 @@ const ItemContainer = styled.div`
 	width: 90%;
 	height: 80px;
 `;
-const Title = styled.h2`
-	font-size: 18px;
+export const Title = styled.h2`
+	font-size: 15px;
 	color: #036b3f;
 	margin-bottom: 10px;
 `;
 const Description = styled.div`
-	font-size: 15px;
+	font-size: 20px;
 	color: black;
 	font-weight: 600;
 `;

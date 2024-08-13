@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import useClient from '../../hooks/useClient';
-import useField from '../../hooks/useField';
 import { competencyListInSubjectState, courseByCompetencyInSubjectState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 
@@ -59,9 +57,6 @@ const RoadMapContainer = ({ show }) => {
 	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
 	// console.log('competencyList: ', competencyList);
 
-	const { fetchCompetencyListInSubject } = useClient();
-	const { fetchCoursesInFieldsAndSubjects } = useField();
-
 	const [roadMapTableData, setRoadMapTableData] = useState([
 		[{ courseName: '1-1' }],
 		[{ courseName: '1-2' }],
@@ -84,11 +79,6 @@ const RoadMapContainer = ({ show }) => {
 	]);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
 	// const [competencyCodes, setCompetencyCodes] = useState([]);
-
-	useEffect(() => {
-		fetchCompetencyListInSubject();
-		fetchCoursesInFieldsAndSubjects();
-	}, []);
 
 	useEffect(() => {
 		if (!courseByCompetencyInSubject[0]) {

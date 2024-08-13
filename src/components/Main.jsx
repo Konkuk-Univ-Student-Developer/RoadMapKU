@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 
 const MainContent = styled.div`
+	min-width: 1200px;
 	display: flex;
 `;
 

@@ -15,6 +15,7 @@ import Modal from './Modal/Modal';
 import useField from '../hooks/useField';
 
 const Container = styled.div`
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -32,7 +33,6 @@ const StyledSelect = styled.select`
 	font-size: 16px;
 	background-color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	margin-bottom: 1rem;
 
 	&:focus {
 		border-color: #007bff;
@@ -48,6 +48,15 @@ export const Title = styled.h2`
 	padding-bottom: 2rem;
 `;
 
+const SelectContainer = styled.div`
+	width: 100%;
+	gap: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+`;
+
 function FieldCategoryInput({ onClose }) {
 	const largeRef = useRef();
 	const middleRef = useRef();
@@ -59,7 +68,14 @@ function FieldCategoryInput({ onClose }) {
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
-	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
+	const {
+		fetchLargeField,
+		fetchMiddleField,
+		fetchSmallField,
+		fetchDetailField,
+		fetchSubjectsInField,
+		fetchCoursesInFields
+	} = useField();
 
 	useEffect(() => {
 		fetchLargeField();
@@ -105,7 +121,7 @@ function FieldCategoryInput({ onClose }) {
 			selectedField.fieldCode = JSON.parse(detailRef.current.value).fieldCode;
 			selectedField.detailField = JSON.parse(detailRef.current.value).detailField;
 		}
-
+		fetchCoursesInFields(selectedField.fieldCode);
 		setSelectedFields(selectedField);
 		fetchSubjectsInField(selectedField.fieldCode);
 		setShowFieldInput(false);
@@ -114,40 +130,50 @@ function FieldCategoryInput({ onClose }) {
 	return (
 		<Modal onClose={onClose}>
 			<Container>
-				<Title>직군을 선택해주세요</Title>
-				<StyledSelect ref={largeRef} onChange={selectLargeField}>
-					<option value="">분야를 선택해주세요</option>
-					{largeFields.map((item) => (
-						<option key={item.fieldCode} value={JSON.stringify(item)}>
-							{item.largeField}
-						</option>
-					))}
-				</StyledSelect>
-				<StyledSelect ref={middleRef} onChange={selectMiddleField} disabled={middleFields.length > 0 ? '' : 'disabled'}>
-					<option value="">분야를 선택해주세요</option>
-					{middleFields.map((item) => (
-						<option key={item.fieldCode} value={JSON.stringify(item)}>
-							{item.middleField}
-						</option>
-					))}
-				</StyledSelect>
-				<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
-					<option value="">분야를 선택해주세요</option>
-					{smallFields.map((item) => (
-						<option key={item.fieldCode} value={JSON.stringify(item)}>
-							{item.smallField}
-						</option>
-					))}
-				</StyledSelect>
-				<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
-					<option value="">분야를 선택해주세요</option>
-					{detailFields.map((item) => (
-						<option key={item.fieldCode} value={JSON.stringify(item)}>
-							{item.detailField}
-						</option>
-					))}
-				</StyledSelect>
-				<FixButton onClick={submitHandler}>검색하기</FixButton>
+				<div>
+					<Title>직군을 선택해주세요</Title>
+				</div>
+				<SelectContainer>
+					<StyledSelect ref={largeRef} onChange={selectLargeField}>
+						<option value="">분야를 선택해주세요</option>
+						{largeFields.map((item) => (
+							<option key={item.fieldCode} value={JSON.stringify(item)}>
+								{item.largeField}
+							</option>
+						))}
+					</StyledSelect>
+					<StyledSelect
+						ref={middleRef}
+						onChange={selectMiddleField}
+						disabled={middleFields.length > 0 ? '' : 'disabled'}
+					>
+						<option value="">분야를 선택해주세요</option>
+						{middleFields.map((item) => (
+							<option key={item.fieldCode} value={JSON.stringify(item)}>
+								{item.middleField}
+							</option>
+						))}
+					</StyledSelect>
+					<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
+						<option value="">분야를 선택해주세요</option>
+						{smallFields.map((item) => (
+							<option key={item.fieldCode} value={JSON.stringify(item)}>
+								{item.smallField}
+							</option>
+						))}
+					</StyledSelect>
+					<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
+						<option value="">분야를 선택해주세요</option>
+						{detailFields.map((item) => (
+							<option key={item.fieldCode} value={JSON.stringify(item)}>
+								{item.detailField}
+							</option>
+						))}
+					</StyledSelect>
+				</SelectContainer>
+				<FixButton onClick={submitHandler} style={{ marginTop: '3rem' }}>
+					검색하기
+				</FixButton>
 			</Container>
 		</Modal>
 	);

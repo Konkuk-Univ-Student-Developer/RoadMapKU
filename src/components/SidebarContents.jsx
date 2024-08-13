@@ -7,7 +7,7 @@ const SidebarContainer = styled.div`
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 `;
 
