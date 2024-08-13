@@ -2,8 +2,16 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { selectedFieldState, subjectsInFieldState } from '../recoils/atoms';
 import useField from '../hooks/useField';
+import { Title } from './FieldCategory';
 
 const Container = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+const DepartmentContainer = styled.div`
 	margin: 10px 0;
 	display: flex;
 	flex-direction: column;
@@ -32,6 +40,12 @@ const SelectedDepartment = styled.button`
 	}
 `;
 
+const TitleContainer = styled.div`
+	width: 90%;
+	display: flex;
+	align-items: flex-start;
+`;
+
 const DepartmentList = () => {
 	const { fetchCoursesInFieldsAndSubjects, fetchCoursesInFields } = useField();
 	const selectedField = useRecoilValue(selectedFieldState);
@@ -39,22 +53,27 @@ const DepartmentList = () => {
 
 	return (
 		<Container>
-			<SelectedDepartment onClick={() => fetchCoursesInFields(selectedField.fieldCode)}>
-				해당 직군 전체 강좌
-			</SelectedDepartment>
-			{subjects.map((subject) => {
-				return (
-					<SelectedDepartment
-						key={subject.subjectCode}
-						onClick={() => {
-							console.log('hu');
-							fetchCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
-						}}
-					>
-						{subject.subjectName}
-					</SelectedDepartment>
-				);
-			})}
+			<TitleContainer>
+				<Title style={{ marginBottom: '0' }}>학과 리스트</Title>
+			</TitleContainer>
+			<DepartmentContainer>
+				<SelectedDepartment onClick={() => fetchCoursesInFields(selectedField.fieldCode)}>
+					해당 직군 전체 강좌
+				</SelectedDepartment>
+				{subjects.map((subject) => {
+					return (
+						<SelectedDepartment
+							key={subject.subjectCode}
+							onClick={() => {
+								console.log('hu');
+								fetchCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
+							}}
+						>
+							{subject.subjectName}
+						</SelectedDepartment>
+					);
+				})}
+			</DepartmentContainer>
 		</Container>
 	);
 };
