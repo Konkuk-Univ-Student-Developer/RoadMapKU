@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { selectedFieldState, subjectsInFieldState } from '../recoils/atoms';
@@ -32,10 +33,10 @@ const SelectedDepartment = styled.button`
 	cursor: pointer;
 	font-weight: 600;
 	color: black;
-	background-color: #ffffff;
+	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#ffffff')};
 	border: 1px solid #ccc;
 	border-radius: 10px;
-	&: hover {
+	&:hover {
 		background-color: #f1f1f1;
 	}
 `;
@@ -51,23 +52,35 @@ const DepartmentList = () => {
 	const selectedField = useRecoilValue(selectedFieldState);
 	const subjects = useRecoilValue(subjectsInFieldState);
 
+	const [selectedDepartment, setSelectedDepartment] = useState(null);
+
+	const handleDepartmentClick = (fieldCode, subjectCode = null) => {
+		setSelectedDepartment(subjectCode);
+		if (subjectCode) {
+			fetchCoursesInFieldsAndSubjects(fieldCode, subjectCode);
+		} else {
+			fetchCoursesInFields(fieldCode);
+		}
+	};
+
 	return (
 		<Container>
 			<TitleContainer>
 				<Title style={{ marginBottom: '0' }}>학과 리스트</Title>
 			</TitleContainer>
 			<DepartmentContainer>
-				<SelectedDepartment onClick={() => fetchCoursesInFields(selectedField.fieldCode)}>
+				<SelectedDepartment
+					isSelected={selectedDepartment === null}
+					onClick={() => handleDepartmentClick(selectedField.fieldCode)}
+				>
 					해당 직군 전체 강좌
 				</SelectedDepartment>
 				{subjects.map((subject) => {
 					return (
 						<SelectedDepartment
 							key={subject.subjectCode}
-							onClick={() => {
-								console.log('hu');
-								fetchCoursesInFieldsAndSubjects(selectedField.fieldCode, subject.subjectCode);
-							}}
+							isSelected={selectedDepartment === subject.subjectCode}
+							onClick={() => handleDepartmentClick(selectedField.fieldCode, subject.subjectCode)}
 						>
 							{subject.subjectName}
 						</SelectedDepartment>

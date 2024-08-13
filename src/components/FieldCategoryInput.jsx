@@ -68,7 +68,14 @@ function FieldCategoryInput({ onClose }) {
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
-	const { fetchLargeField, fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
+	const {
+		fetchLargeField,
+		fetchMiddleField,
+		fetchSmallField,
+		fetchDetailField,
+		fetchSubjectsInField,
+		fetchCoursesInFields
+	} = useField();
 
 	useEffect(() => {
 		fetchLargeField();
@@ -114,7 +121,7 @@ function FieldCategoryInput({ onClose }) {
 			selectedField.fieldCode = JSON.parse(detailRef.current.value).fieldCode;
 			selectedField.detailField = JSON.parse(detailRef.current.value).detailField;
 		}
-
+		fetchCoursesInFields(selectedField.fieldCode);
 		setSelectedFields(selectedField);
 		fetchSubjectsInField(selectedField.fieldCode);
 		setShowFieldInput(false);
