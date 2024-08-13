@@ -6,13 +6,13 @@ import { useRecoilState } from 'recoil';
 import { showFieldInputState } from '../recoils/atoms';
 
 const SidebarContainer = styled.div`
+	min-width: 320px;
 	margin-top: 5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	width: 400px;
 	height: 750px;
 	background-color: #e6f0ec;
 	border-radius: 10px;

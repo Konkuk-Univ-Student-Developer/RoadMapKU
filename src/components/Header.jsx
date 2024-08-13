@@ -14,6 +14,7 @@ const theme = {
 };
 
 const HeaderContainer = styled.nav`
+	min-width: 1200px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
