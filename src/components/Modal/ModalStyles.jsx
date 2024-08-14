@@ -39,6 +39,7 @@ export const ModalWrap = styled.div`
 
 export const Contents = styled.div`
 	margin: 50px 30px;
+	display: flex;
 	justify-content: center;
 	h1 {
 		font-size: 30px;
