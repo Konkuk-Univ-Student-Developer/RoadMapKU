@@ -10,8 +10,8 @@ import {
 	TableContent,
 	ScrollContainer
 } from './CourseDetailStyle';
-import TableComponent from '../TableComponent';
-import TableComponent2 from '../TableComponent2';
+import TableComponent from '../Modal/TableComponent';
+import TableComponent2 from '../Modal/TableComponent2';
 import Modal from '../Modal/Modal';
 
 function CourseDetail({ onClose }) {
