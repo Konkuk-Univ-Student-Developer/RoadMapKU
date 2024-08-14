@@ -102,7 +102,7 @@ function Header() {
 	const onClickButton2 = () => {
 		setIsOpen2(true);
 	};
-	//const haksuId = 'COAA83717';
+	const haksuId = 'BUCA65952';
 
 	return (
 		<>
@@ -125,20 +125,21 @@ function Header() {
 							}}
 						/>
 					)}
+
+					<Button onClick={onClickButton1}>학사 안내</Button>
 					{/* {isOpen1 && (
 						<CourseDetail
 							onClose={() => {
 								setIsOpen1(false);
 							}}
-							HaksuId={haksuId} // 변수로 전달
 						/>
 					)} */}
-					<Button onClick={onClickButton1}>학사 안내</Button>
 					{isOpen1 && (
 						<CourseDetail
 							onClose={() => {
 								setIsOpen1(false);
 							}}
+							HaksuId={haksuId} // 변수로 전달
 						/>
 					)}
 				</HeaderLinks>

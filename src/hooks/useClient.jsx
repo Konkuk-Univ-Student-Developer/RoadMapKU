@@ -30,27 +30,27 @@ const useClient = () => {
 			});
 	};
 
-	const fetchCourseDetail = () => {
-		serverApi
-			.get('data/courseDetail.json')
-			.then((res) => {
-				setCourseDetailState(res.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	};
-
-	// const fetchCourseDetail = (HaksuId) => {
+	// const fetchCourseDetail = () => {
 	// 	serverApi
-	// 		.get(`/course/${HaksuId}/details`)
+	// 		.get('data/courseDetail.json')
 	// 		.then((res) => {
 	// 			setCourseDetailState(res.data);
 	// 		})
 	// 		.catch((error) => {
-	// 			console.error('Error fetching course details:', error);
+	// 			console.error(error);
 	// 		});
 	// };
+
+	const fetchCourseDetail = (haksuId) => {
+		serverApi
+			.get(`/api/v1/courses/${haksuId}/details`)
+			.then((res) => {
+				setCourseDetailState(res.data);
+			})
+			.catch((error) => {
+				console.error('Error fetching course details:', error);
+			});
+	};
 
 	return {
 		fetchCompetencyListInSubject,
