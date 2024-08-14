@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { courseDetailState } from '../../recoils/atoms';
 import {
@@ -13,32 +13,88 @@ import {
 import TableComponent from '../TableComponent';
 import TableComponent2 from '../TableComponent2';
 import Modal from '../Modal/Modal';
+import useField from '../../hooks/useField';
 
-function CourseDetail({ onClose }) {
-	// const courseDetail = useRecoilValue(courseDetailState);
+function CourseDetail({ onClose, HaksuId }) {
+	//MockDATA 이용 -------------
+	// const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
+	// useEffect(() => {
+	// 	fetch('/data/courseDetail.json')
+	// 		.then((response) => response.json())
+	// 		.then((data) => setCourseDetail(data))
+	// 		.catch((error) => console.error('Error fetching course details:', error));
+	// }, [setCourseDetail]);
+
+	// const modalContent = courseDetail[1]; // 예시로 네 번째 데이터를 사용
 
 	// console.log('Course Detail:', courseDetail); // 데이터 확인
+	// console.log('modalContent :', modalContent);
+	// if (!courseDetail.length)
+	// 	return (
+	// 		<Modal onClose={onClose}>
+	// 			<div>Loading...</div>
+	// 		</Modal>
+	// 	); // 데이터가 없을 때 로딩 표시
+
+	//---------------------------
+
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
+	const { fetchCourseDetail } = useField();
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
 	useEffect(() => {
-		fetch('/data/courseDetail.json')
-			.then((response) => response.json())
-			.then((data) => setCourseDetail(data))
-			.catch((error) => console.error('Error fetching course details:', error));
-	}, [setCourseDetail]);
+		const loadData = async () => {
+			if (HaksuId) {
+				try {
+					setLoading(true);
+					setError(null);
+					const data = await fetchCourseDetail(HaksuId);
+					setCourseDetail(data);
+				} catch (error) {
+					console.error('Error fetching course details:', error);
+					setError('Failed to fetch course details');
+				} finally {
+					setLoading(false);
+				}
+			}
+		};
 
-	console.log('Course Detail:', courseDetail); // 데이터 확인
+		loadData();
+	}, [HaksuId, setCourseDetail]);
 
-	const modalContent = courseDetail[1]; // 예시로 네 번째 데이터를 사용
-
-	console.log('modalContent :', modalContent);
-	if (!courseDetail.length)
+	if (loading) {
 		return (
 			<Modal onClose={onClose}>
 				<div>Loading...</div>
 			</Modal>
-		); // 데이터가 없을 때 로딩 표시
+		);
+	}
 
-	const additionalInfo = modalContent.Addimfomation;
+	//오류 처리
+	if (error) {
+		return (
+			<Modal onClose={onClose}>
+				<div>{error}</div>
+			</Modal>
+		);
+	}
+
+	//찾을 수 없는 학수 번호 예외 처리
+	if (!courseDetail || Object.keys(courseDetail).length === 0) {
+		return (
+			<Modal onClose={onClose}>
+				<div>No course details found.</div>
+			</Modal>
+		);
+	}
+
+	// 데이터가 정상적으로 로드된 경우
+	const additionalInfo = courseDetail.addInformationGetResponse;
+	const competency = courseDetail.competencyInCourseGetResponse;
+	console.log('Course Detail:', courseDetail);
+
+	//API 연결 코드-------------------------
 
 	const tableData = [
 		['개설대학', additionalInfo.openingCollegeName],
@@ -55,9 +111,9 @@ function CourseDetail({ onClose }) {
 	];
 
 	const tableData2 = [
-		[modalContent.competency.competencyName1, modalContent.competency.competencyRemark1],
-		[modalContent.competency.competencyName2, modalContent.competency.competencyRemark2],
-		[modalContent.competency.competencyName3, modalContent.competency.competencyRemark3]
+		[competency.competencyName1, competency.competencyRemark1],
+		[competency.competencyName2, competency.competencyRemark2],
+		[competency.competencyName3, competency.competencyRemark3]
 	];
 
 	return (
@@ -67,13 +123,13 @@ function CourseDetail({ onClose }) {
 
 				<SubjectContainer>
 					<Subject>
-						{modalContent.typicalKoreanName} ({modalContent.typicalEnglishName})
+						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
 					</Subject>
 				</SubjectContainer>
 				<Subtitle>국문설명</Subtitle>
-				<ModalContent>{modalContent.koreanDescription}</ModalContent>
+				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
 				<Subtitle>영문설명</Subtitle>
-				<ModalContent>{modalContent.englishDescription}</ModalContent>
+				<ModalContent>{courseDetail.englishDescription}</ModalContent>
 				<Subtitle>Additional Information</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />
