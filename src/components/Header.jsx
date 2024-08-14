@@ -101,6 +101,10 @@ function Header() {
 							}}
 						/>
 					)}
+
+					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
+						How to USE
+					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>
 					<HeaderBrand>
@@ -108,9 +112,6 @@ function Header() {
 					</HeaderBrand>
 				</HeaderActions>
 			</HeaderContainer>
-			{/* <Modal show={showModal} width={800} closed={handleModalClose}>
-				<CourseDetail />
-			</Modal> */}
 		</>
 	);
 }
