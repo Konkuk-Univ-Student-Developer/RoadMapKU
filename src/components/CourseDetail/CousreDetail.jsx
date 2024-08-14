@@ -16,8 +16,6 @@ import Modal from '../Modal/Modal';
 import useClient from '../../hooks/useClient';
 
 function CourseDetail({ onClose, HaksuId }) {
-	// // const courseDetail = useRecoilValue(courseDetailState);
-
 	//MockDATA 이용 -------------
 	// const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	// useEffect(() => {
@@ -40,30 +38,30 @@ function CourseDetail({ onClose, HaksuId }) {
 
 	//---------------------------
 
-	//API 연결 코드-------------------------
-	const [courseDetail] = useRecoilState(courseDetailState);
+	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useClient();
-
 	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		const loadData = async () => {
-			try {
-				await fetchCourseDetail(HaksuId); // 데이터 가져오기
-				// 데이터 가져온 후 1초간 추가로 기다리기
-				setTimeout(() => {
-					setLoading(false); // 로딩 종료
-				}, 50); // 1000ms = 1초
-			} catch (error) {
-				console.error('Error fetching course details:', error);
-				setLoading(false); // 에러 발생 시 로딩 상태 해제
+			if (HaksuId) {
+				try {
+					setLoading(true);
+					setError(null);
+					const data = await fetchCourseDetail(HaksuId);
+					setCourseDetail(data);
+				} catch (error) {
+					console.error('Error fetching course details:', error);
+					setError('Failed to fetch course details');
+				} finally {
+					setLoading(false);
+				}
 			}
 		};
 
-		if (HaksuId) {
-			loadData();
-		}
-	}, [HaksuId]);
+		loadData();
+	}, [HaksuId, setCourseDetail]);
 
 	if (loading) {
 		return (
@@ -73,6 +71,16 @@ function CourseDetail({ onClose, HaksuId }) {
 		);
 	}
 
+	//오류 처리
+	if (error) {
+		return (
+			<Modal onClose={onClose}>
+				<div>{error}</div>
+			</Modal>
+		);
+	}
+
+	//찾을 수 없는 학수 번호 예외 처리
 	if (!courseDetail || Object.keys(courseDetail).length === 0) {
 		return (
 			<Modal onClose={onClose}>
@@ -80,12 +88,6 @@ function CourseDetail({ onClose, HaksuId }) {
 			</Modal>
 		);
 	}
-
-	// const handleClose = () => {
-	// 	setLoading(true); // loading 상태 초기화
-	// 	//setCourseDetail(null); // courseDetail 상태 초기화
-	// 	onClose(); // 부모 컴포넌트에서 전달된 onClose 호출
-	// };
 
 	// 데이터가 정상적으로 로드된 경우
 	const additionalInfo = courseDetail.addInformationGetResponse;
