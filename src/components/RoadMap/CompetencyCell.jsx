@@ -68,8 +68,8 @@ const Cell = ({ cellData, onClick }) => {
 	return (
 		<StyledCell>
 			<ButtonWrapper>
-				<LeftButton onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</LeftButton>
-				<RightButton onClick={() => {}}>:</RightButton>
+				<LeftButton onClick={() => {}}>{cellData.competencyName}</LeftButton>
+				<RightButton onClick={() => onClick(cellData.competencyCode)}>:</RightButton>
 			</ButtonWrapper>
 		</StyledCell>
 	);

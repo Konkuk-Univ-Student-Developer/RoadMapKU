@@ -48,49 +48,46 @@ const Button = styled.button`
 	}
 `;
 
+const defaultTable = [
+	[{ haksuId: '0', courseName: '1-1' }],
+	[{ haksuId: '0', courseName: '1-2' }],
+	[{ haksuId: '0', courseName: '2-1' }],
+	[{ haksuId: '0', courseName: '2-2' }],
+	[{ haksuId: '0', courseName: '3-1' }],
+	[{ haksuId: '0', courseName: '3-2' }],
+	[{ haksuId: '0', courseName: '4-1' }],
+	[{ haksuId: '0', courseName: '4-2' }]
+];
+
 const RoadMapContainer = ({ show }) => {
-	// const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-	// const competencyList = courseByCompetencyInSubject;
 	const { fetchCoursesInSubject } = useField();
-	// console.log('competencyListInSubject: ', competencyListInSubject);
-	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
-	// console.log('competencyList: ', competencyList);
 
-	const [roadMapTableData, setRoadMapTableData] = useState([
-		[{ courseName: '1-1' }],
-		[{ courseName: '1-2' }],
-		[{ courseName: '2-1' }],
-		[{ courseName: '2-2' }],
-		[{ courseName: '3-1' }],
-		[{ courseName: '3-2' }],
-		[{ courseName: '4-1' }],
-		[{ courseName: '4-2' }]
-	]);
-	const [myTableData, setMyTableData] = useState([
-		[{ courseName: '1-1' }],
-		[{ courseName: '1-2' }],
-		[{ courseName: '2-1' }],
-		[{ courseName: '2-2' }],
-		[{ courseName: '3-1' }],
-		[{ courseName: '3-2' }],
-		[{ courseName: '4-1' }],
-		[{ courseName: '4-2' }]
-	]);
+	const [roadMapTableData, setRoadMapTableData] = useState(defaultTable);
+	const [myTableData, setMyTableData] = useState(defaultTable);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
-	// const [competencyCodes, setCompetencyCodes] = useState([]);
+
+	useEffect(() => {
+		console.log('subject has changed! ', subjectCode);
+		setRoadMapTableData([
+			[{ haksuId: '0', courseName: '1-1' }],
+			[{ haksuId: '0', courseName: '1-2' }],
+			[{ haksuId: '0', courseName: '2-1' }],
+			[{ haksuId: '0', courseName: '2-2' }],
+			[{ haksuId: '0', courseName: '3-1' }],
+			[{ haksuId: '0', courseName: '3-2' }],
+			[{ haksuId: '0', courseName: '4-1' }],
+			[{ haksuId: '0', courseName: '4-2' }]
+		]);
+	}, [subjectCode]);
 
 	useEffect(() => {
 		if (!courseByCompetencyInSubject[0]) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
-			// const updatedCompetencyCodes = competencyTableData.map((item) => item.competencyCode);
-			// setCompetencyCodes(updatedCompetencyCodes);
-			// console.log('competencyCodes: ', updatedCompetencyCodes);
-
 			const haksuIdToCompetencyMap = new Map();
-			let delay = 0;
+			let delay = 200;
 			const updatedRoadMapTableData = [...roadMapTableData];
 			courseByCompetencyInSubject.forEach((competency) => {
 				competency.courseGetResponseList.forEach((course) => {
@@ -101,34 +98,66 @@ const RoadMapContainer = ({ show }) => {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
 					haksuIdToCompetencyMap.get(haksuId).push(competency.competencyCode);
-					setTimeout(() => {
-						setRoadMapTableData((prevItems) => {
-							const updatedRoadMapTableData = [...prevItems];
-							updatedRoadMapTableData[index] = [
-								...updatedRoadMapTableData[index],
-								{
-									haksuId: haksuId,
-									courseName: name,
-									competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-								}
-							];
-							if (openingSemester === '1,2학기') {
-								updatedRoadMapTableData[index - 1] = [
-									...updatedRoadMapTableData[index - 1],
-									{
-										haksuId: haksuId,
-										courseName: name,
-										competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-									}
-								];
+
+					updatedRoadMapTableData[index] = [
+						...updatedRoadMapTableData[index],
+						{
+							haksuId: haksuId,
+							courseName: name,
+							competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+						}
+					];
+					if (openingSemester === '1,2학기') {
+						updatedRoadMapTableData[index - 1] = [
+							...updatedRoadMapTableData[index - 1],
+							{
+								haksuId: haksuId,
+								courseName: name,
+								competencyCodes: haksuIdToCompetencyMap.get(haksuId)
 							}
-							return updatedRoadMapTableData;
-						});
-					}, delay);
-					delay += 50;
+						];
+					}
+
+					// setTimeout(() => {
+					// 	setRoadMapTableData((prevItems) => {
+					// 		const updatedRoadMapTableData = [...prevItems];
+					// 		updatedRoadMapTableData[index] = [
+					// 			...updatedRoadMapTableData[index],
+					// 			{
+					// 				haksuId: haksuId,
+					// 				courseName: name,
+					// 				competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+					// 			}
+					// 		];
+					// 		if (openingSemester === '1,2학기') {
+					// 			updatedRoadMapTableData[index - 1] = [
+					// 				...updatedRoadMapTableData[index - 1],
+					// 				{
+					// 					haksuId: haksuId,
+					// 					courseName: name,
+					// 					competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+					// 				}
+					// 			];
+					// 		}
+					// 		return updatedRoadMapTableData;
+					// 	});
+					// }, delay);
+					// delay += 10;
 				});
 			});
-			setRoadMapTableData(updatedRoadMapTableData);
+			updatedRoadMapTableData.forEach((innerArray, index) => {
+				innerArray.forEach((item) => {
+					setTimeout(() => {
+						setRoadMapTableData((prev) => {
+							const sortedTableData = [...prev];
+							sortedTableData[index].push(item);
+							return sortedTableData;
+						});
+					}, delay);
+
+					delay += 5;
+				});
+			});
 		}
 	}, [courseByCompetencyInSubject]);
 

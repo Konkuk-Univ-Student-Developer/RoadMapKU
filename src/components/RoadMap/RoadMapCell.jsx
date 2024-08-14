@@ -4,7 +4,8 @@ import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CourseDetail from '../CourseDetail/CousreDetail';
 
 const StyledCell = styled.div`
-	height: 2rem;
+	min-width: 50%;
+	min-height: 2rem;
 	font-size: small;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
@@ -49,7 +50,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const LeftButton = styled.div`
-	width: 90%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -62,7 +63,7 @@ const LeftButton = styled.div`
 `;
 
 const RightButton = styled.div`
-	width: 10%;
+	width: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -92,11 +93,15 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, compete
 		}
 	}, [cellData, isHighlighted]);
 
+	if (cellData.haksuId === '0') {
+		unclickable = true;
+	}
+
 	return (
 		<StyledCell className={`${unclickable ? 'unclickable' : ''} ${isHighlighted_final ? 'isHighlighted' : ''}`}>
 			<ButtonWrapper>
-				<LeftButton onClick={() => onClick(cellData, rowIndex)}>{cellData.courseName}</LeftButton>
-				<RightButton onClick={onClickDetailButton}>:</RightButton>
+				<LeftButton onClick={onClickDetailButton}>{cellData.courseName}</LeftButton>
+				{cellData.haksuId !== '0' && <RightButton onClick={() => onClick(cellData, rowIndex)}>:</RightButton>}
 				{isDetailOpen && (
 					<CourseDetail
 						onClose={() => {
