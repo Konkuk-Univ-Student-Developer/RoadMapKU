@@ -7,11 +7,11 @@ import {
 	selectedFieldState,
 	showFieldInputState,
 	smallFieldState
-} from '../recoils/atoms';
+} from '../../recoils/atoms';
 import styled from 'styled-components';
 
-import Modal from './Modal/Modal';
-import useField from '../hooks/useField';
+import Modal from './Modal';
+import useField from '../../hooks/useField';
 
 const Container = styled.div`
 	width: 90%;
