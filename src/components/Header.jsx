@@ -104,6 +104,10 @@ function Header() {
 							HaksuId={haksuId} // 변수로 전달
 						/>
 					)}
+
+					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
+						How to USE
+					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>
 					<HeaderBrand>
@@ -111,9 +115,6 @@ function Header() {
 					</HeaderBrand>
 				</HeaderActions>
 			</HeaderContainer>
-			{/* <Modal show={showModal} width={800} closed={handleModalClose}>
-				<CourseDetail />
-			</Modal> */}
 		</>
 	);
 }
