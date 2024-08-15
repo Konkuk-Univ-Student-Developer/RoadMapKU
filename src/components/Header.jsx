@@ -79,6 +79,8 @@ function Header() {
 		setIsOpen1(true);
 	};
 
+	const haksuId = 'BUCA65952';
+
 	return (
 		<>
 			<HeaderContainer>
@@ -99,6 +101,7 @@ function Header() {
 							onClose={() => {
 								setIsOpen1(false);
 							}}
+							HaksuId={haksuId} // 변수로 전달
 						/>
 					)}
 				</HeaderLinks>
