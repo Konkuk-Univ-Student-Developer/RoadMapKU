@@ -26,7 +26,7 @@ const ContentsContainer = styled.div`
 const GreetTextContents = () => {
 	return (
 		<TextContainer>
-			<Text>2025 학년도</Text>
+			<Text>2025학년도</Text>
 			<ContentsContainer>
 				<Text style={{ fontSize: '85px', color: '#036B3F' }}>건국대학교</Text>
 				<Text>에</Text>
