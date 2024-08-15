@@ -213,7 +213,6 @@ const RoadMapContainer = ({ show }) => {
 	};
 	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
-		// Remove cell from unclickableCells
 		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
