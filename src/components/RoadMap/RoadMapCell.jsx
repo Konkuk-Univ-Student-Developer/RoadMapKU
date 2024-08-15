@@ -89,9 +89,7 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 	const onClickDetailButton = () => {
 		setIsDetailOpen(true);
 	};
-
 	const [isHighlighted, setIsHighlighted] = useState(false);
-	let isSemesterCell = false;
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -104,18 +102,13 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 		}
 	}, [cellData, highlightedCompetency]);
 
-	if (cellData.haksuId === '0') {
-		unclickable = true;
-		isSemesterCell = true;
-	}
-
 	return (
-		<StyledCell className={unclickable ? 'unclickable' : 'courseCell'}>
+		<StyledCell className={unclickable ? 'unclickable' : ''}>
 			<ButtonWrapper>
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
 					{cellData.courseName}
 				</LeftButton>
-				{!isSemesterCell && (
+				{!(cellData.haksuId === '0') && (
 					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
 						{cellData.isMyTable ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
 					</RightButton>

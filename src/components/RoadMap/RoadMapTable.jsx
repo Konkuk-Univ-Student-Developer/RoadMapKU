@@ -77,14 +77,7 @@ const RoadMapTable = ({
 					{defaultTable.map((row, rowIndex) => (
 						<CourseColumn key={rowIndex}>
 							{row.map((cellData) => (
-								<Cell
-									key={cellData.haksuId}
-									cellData={cellData}
-									rowIndex={rowIndex}
-									onClick={onCellClick}
-									unclickable={unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)}
-									highlightedCompetency={highlightedCompetency}
-								/>
+								<Cell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
 							))}
 						</CourseColumn>
 					))}
