@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState, showFieldInputState } from '../recoils/atoms';
+import { selectedFieldState, showFieldInputState } from '../../recoils/atoms';
 
 const FieldCategoryContainer = styled.div`
 	display: flex;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const TextContainer = styled.div`
-	padding-left: 5rem;
 	display: flex;
 	width: 100%;
 	height: 500px;
@@ -16,12 +15,23 @@ const Text = styled.div`
 	font-weight: 600;
 `;
 
+const ContentsContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+`;
+
 const GreetTextContents = () => {
 	return (
 		<TextContainer>
-			<Text>2025 학년도</Text>
-			<Text style={{ fontSize: '85px', color: '#036B3F' }}>건국대학교</Text>
-			<Text>에 입학한 것을 환영합니다!</Text>
+			<Text>2025학년도</Text>
+			<ContentsContainer>
+				<Text style={{ fontSize: '85px', color: '#036B3F' }}>건국대학교</Text>
+				<Text>에</Text>
+			</ContentsContainer>
+			<Text>입학한 것을 환영합니다!</Text>
 		</TextContainer>
 	);
 };

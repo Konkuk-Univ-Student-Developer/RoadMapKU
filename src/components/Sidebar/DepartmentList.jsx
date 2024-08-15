@@ -1,7 +1,7 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState, selectedSubjectState, subjectsInFieldState } from '../recoils/atoms';
-import useField from '../hooks/useField';
+import { selectedFieldState, selectedSubjectState, subjectsInFieldState } from '../../recoils/atoms';
+import useField from '../../hooks/useField';
 import { Title } from './FieldCategory';
 
 const Container = styled.div`
