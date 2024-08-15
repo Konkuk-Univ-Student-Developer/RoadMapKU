@@ -6,7 +6,6 @@ import Cell from './CompetencyCell';
 const Container = styled.div`
 	width: 16%;
 	height: auto;
-	padding: 0.5rem;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
 	border-radius: 0.2rem;
@@ -14,21 +13,30 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.8rem;
 `;
 
-const ColumnMajorCompetency = styled.div`
+const CompetencyContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	overflow-y: scroll;
 `;
 
 const Title = styled.div`
-	padding-bottom: 1rem;
 	user-select: none;
 	font-size: x-large;
 	font-weight: bolder;
 	color: #036b3f;
+	padding-bottom: 0.5rem;
+`;
+
+const CompetencyColumn = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 `;
 
 const animationTiming = {
@@ -72,13 +80,15 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 	return (
 		<Container>
 			<Title>전공역량</Title>
-			<TransitionGroup component={ColumnMajorCompetency}>
-				{competencyTable.map((competency) => (
-					<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
-						<Cell cellData={competency} onClick={onClick} highlightedCompetency={highlightedCompetency} />
-					</CSSTransition>
-				))}
-			</TransitionGroup>
+			<CompetencyContainer>
+				<TransitionGroup component={CompetencyColumn}>
+					{competencyTable.map((competency) => (
+						<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
+							<Cell cellData={competency} onClick={onClick} highlightedCompetency={highlightedCompetency} />
+						</CSSTransition>
+					))}
+				</TransitionGroup>
+			</CompetencyContainer>
 		</Container>
 	);
 };
