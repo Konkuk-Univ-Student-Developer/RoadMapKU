@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import SidebarContents from './SidebarContents';
-import FieldCategoryInput from './FieldCategoryInput';
+import FieldCategoryInput from '../FieldCategoryInput';
 import { useRecoilState } from 'recoil';
-import { showFieldInputState } from '../recoils/atoms';
+import { showFieldInputState } from '../../recoils/atoms';
 
 const SidebarContainer = styled.div`
 	min-width: 320px;
