@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const TextContainer = styled.div`
+	gap: 15px;
 	padding-left: 5rem;
 	display: flex;
 	width: 50%;

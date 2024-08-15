@@ -7,12 +7,11 @@ import {
 	selectedFieldState,
 	showFieldInputState,
 	smallFieldState
-} from '../recoils/atoms';
+} from '../../recoils/atoms';
 import styled from 'styled-components';
-import { FixButton } from './FieldCategory';
 
-import Modal from './Modal/Modal';
-import useField from '../hooks/useField';
+import Modal from './Modal';
+import useField from '../../hooks/useField';
 
 const Container = styled.div`
 	width: 90%;
@@ -50,11 +49,26 @@ export const Title = styled.h2`
 
 const SelectContainer = styled.div`
 	width: 100%;
-	gap: 5px;
+	gap: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+`;
+
+const Button = styled.button`
+	margin-top: 15px;
+	width: 200px;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #036b3f;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	&:hover {
+		background-color: #02472a;
+	}
 `;
 
 function FieldCategoryInput({ onClose }) {
@@ -187,9 +201,9 @@ function FieldCategoryInput({ onClose }) {
 						))}
 					</StyledSelect>
 				</SelectContainer>
-				<FixButton onClick={submitHandler} style={{ marginTop: '3rem' }}>
+				<Button onClick={submitHandler} style={{ marginTop: '3rem' }}>
 					검색하기
-				</FixButton>
+				</Button>
 			</Container>
 		</Modal>
 	);

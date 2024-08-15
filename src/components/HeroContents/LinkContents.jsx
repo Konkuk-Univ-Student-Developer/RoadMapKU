@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const LinkContainer = styled.div`
-	gap: 10px;
+	gap: 25px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -10,32 +10,31 @@ const LinkContainer = styled.div`
 	align-items: center;
 `;
 
-const LinkLabel = styled.div`
-	cursor: pointer;
-	font-size: 35px;
-	text-decoration: underline;
-`;
-
 const LinkButton = styled.button`
 	width: 400px;
 	height: 100px;
 	padding: 10px 20px;
-	font-size: 45px;
-	color: #fff;
-	background-color: #036b3f;
+	font-size: 30px;
+	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? 'white' : '#036b3f')};
 	border: none;
-	border-radius: 50px;
+	border-radius: 20px;
 	cursor: pointer;
+	transition: 0.1s ease-in;
 	&:hover {
-		background-color: #02472a;
+		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
 	}
 `;
 const LinkContents = () => {
 	const navigate = useNavigate();
 	return (
 		<LinkContainer>
-			<LinkLabel onClick={() => navigate('/manual')}>KUMAP 이란?</LinkLabel>
-			<LinkButton onClick={() => navigate('/road-map')}>KUMAP 바로가기</LinkButton>
+			<LinkButton onClick={() => navigate('/manual')} option={'white'}>
+				KUMAP 이란?
+			</LinkButton>
+			<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+				KUMAP 바로가기
+			</LinkButton>
 		</LinkContainer>
 	);
 };

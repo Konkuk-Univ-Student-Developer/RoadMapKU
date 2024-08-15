@@ -5,7 +5,8 @@ import {
 	middleFieldState,
 	smallFieldState,
 	subjectsInFieldState,
-	courseByCompetencyInSubjectState
+	courseByCompetencyInSubjectState,
+	courseDetailState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -17,6 +18,7 @@ const useField = () => {
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 	const setSubjectsInFieldState = useSetRecoilState(subjectsInFieldState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
+	const setCourseDetailState = useSetRecoilState(courseDetailState);
 
 	const resetFields = (selectedField) => {
 		if (selectedField === 'large' || selectedField === 'all') {
@@ -128,6 +130,16 @@ const useField = () => {
 				console.error(error);
 			});
 	};
+	const fetchCourseDetail = (haksuId) => {
+		serverApi
+			.get(`/api/v1/courses/${haksuId}/details`)
+			.then((res) => {
+				setCourseDetailState(res.data);
+			})
+			.catch((error) => {
+				console.error('Error fetching course details:', error);
+			});
+	};
 
 	return {
 		fetchLargeField,
@@ -138,6 +150,7 @@ const useField = () => {
 		fetchCoursesInFieldsAndSubjects,
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
+		fetchCourseDetail,
 		resetFields
 	};
 };

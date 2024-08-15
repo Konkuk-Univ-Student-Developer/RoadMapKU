@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Header from '../components/Header';
 import HeroSection from './HeroSection';
-import TextContents from '../components/HeroContents/TextContens';
+import TextContents from '../components/HeroContents/TextContents';
 import LinkContents from '../components/HeroContents/LinkContents';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

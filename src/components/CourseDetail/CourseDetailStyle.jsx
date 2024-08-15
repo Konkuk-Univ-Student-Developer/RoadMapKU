@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const ScrollContainer = styled.div`
 	background-color: transparent;
-	width:300px
-	height:500px
 	padding: 0rem;
 	border-radius: 8px;
 	max-height: 80vh; /* 내용물의 최대 높이 설정 */
@@ -37,14 +35,14 @@ export const Subject = styled.h1`
 export const Subtitle = styled.h2`
 	color: #036b3f; /* main color */
 	font-size: 1.5rem;
-	margin: 0.5rem 0;
+	margin: 0.5rem 20px;
 	padding-top: 2rem;
 `;
 
 export const ModalContent = styled.div`
 	font-family: Arial;
 	font-size: 1rem;
-	margin: 10px 0;
+	margin: 10px 20px;
 `;
 
 export const TableContent = styled.div`

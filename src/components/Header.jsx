@@ -79,6 +79,8 @@ function Header() {
 		setIsOpen1(true);
 	};
 
+	const haksuId = 'BUCA65952';
+
 	return (
 		<>
 			<HeaderContainer>
@@ -99,8 +101,13 @@ function Header() {
 							onClose={() => {
 								setIsOpen1(false);
 							}}
+							HaksuId={haksuId} // 변수로 전달
 						/>
 					)}
+
+					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
+						How to USE
+					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>
 					<HeaderBrand>
@@ -108,9 +115,6 @@ function Header() {
 					</HeaderBrand>
 				</HeaderActions>
 			</HeaderContainer>
-			{/* <Modal show={showModal} width={800} closed={handleModalClose}>
-				<CourseDetail />
-			</Modal> */}
 		</>
 	);
 }
