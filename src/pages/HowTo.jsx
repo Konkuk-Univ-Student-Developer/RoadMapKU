@@ -124,14 +124,14 @@ function HowTo() {
 							<Illustration src={competencydetail} alt="" />
 							<StepTitle color="black">
 								+ 전공 역량 옆 돋보기를 선택하면 <br />
-								해당 과목의 상세 정보를 만나보실 수 있습니다!
+								해당 전공 역량의 상세 정보를 만나보실 수 있습니다!
 							</StepTitle>
 						</FeatureItem>
 						<FeatureItem>
 							<Illustration src={detail} alt="" />
 							<StepTitle color="black">
-								+ 과목 옆 돋보기를 선택하면 <br />
-								해당 과목의 상세 정보를 만나보실 수 있습니다!
+								+ 과목 누르면 과목 상세정보를 확인하실 수 있고, <br />
+								오른쪽 화살표 를 눌러서 내 로드맵에 담을 수 있습니다!
 							</StepTitle>
 						</FeatureItem>
 					</FeaturesContainer>
