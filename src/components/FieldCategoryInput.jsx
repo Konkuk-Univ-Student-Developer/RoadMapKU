@@ -84,7 +84,7 @@ function FieldCategoryInput({ onClose }) {
 
 	const selectLargeField = (e) => {
 		if (!e.target.value) {
-			alert('대분류를 선택해 주세요');
+			alert('유효하지 않은 대분류 입니다.');
 			resetFields('large');
 			return;
 		}
@@ -94,7 +94,7 @@ function FieldCategoryInput({ onClose }) {
 
 	const selectMiddleField = (e) => {
 		if (!e.target.value) {
-			alert('중분류를 선택해 주세요');
+			alert('유효하지 않은 중분류 입니다.');
 			resetFields('middle');
 			return;
 		}
@@ -104,7 +104,7 @@ function FieldCategoryInput({ onClose }) {
 
 	const selectSmallField = (e) => {
 		if (!e.target.value) {
-			alert('소분류를 선택해 주세요');
+			alert('유효하지 않은 소분류 입니다.');
 			resetFields('small');
 			return;
 		}
