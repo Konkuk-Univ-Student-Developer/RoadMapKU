@@ -74,7 +74,8 @@ function FieldCategoryInput({ onClose }) {
 		fetchSmallField,
 		fetchDetailField,
 		fetchSubjectsInField,
-		fetchCoursesInFields
+		fetchCoursesInFields,
+		resetFields
 	} = useField();
 
 	useEffect(() => {
@@ -82,16 +83,31 @@ function FieldCategoryInput({ onClose }) {
 	}, []);
 
 	const selectLargeField = (e) => {
+		if (!e.target.value) {
+			alert('유효하지 않은 대분류 입니다.');
+			resetFields('large');
+			return;
+		}
 		const data = JSON.parse(e.target.value);
 		fetchMiddleField(data);
 	};
 
 	const selectMiddleField = (e) => {
+		if (!e.target.value) {
+			alert('유효하지 않은 중분류 입니다.');
+			resetFields('middle');
+			return;
+		}
 		const data = JSON.parse(e.target.value);
 		fetchSmallField(data);
 	};
 
 	const selectSmallField = (e) => {
+		if (!e.target.value) {
+			alert('유효하지 않은 소분류 입니다.');
+			resetFields('small');
+			return;
+		}
 		const data = JSON.parse(e.target.value);
 		fetchDetailField(data);
 	};

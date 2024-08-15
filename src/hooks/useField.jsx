@@ -18,6 +18,24 @@ const useField = () => {
 	const setSubjectsInFieldState = useSetRecoilState(subjectsInFieldState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 
+	const resetFields = (selectedField) => {
+		if (selectedField === 'large' || selectedField === 'all') {
+			setMiddleFieldState([]);
+			setSmallFieldState([]);
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'middle') {
+			setSmallFieldState([]);
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'small') {
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'all') {
+			setLargeFieldState([]);
+		}
+	};
+
 	const fetchLargeField = () => {
 		serverApi
 			.get('/api/v1/fields/large')
@@ -34,8 +52,7 @@ const useField = () => {
 			.post('/api/v1/fields/middle', requestMiddle)
 			.then((res) => {
 				setMiddleFieldState(res.data);
-				setSmallFieldState([]);
-				setDetailFieldState([]);
+				resetFields('middle');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -47,7 +64,7 @@ const useField = () => {
 			.post('/api/v1/fields/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
-				setDetailFieldState([]);
+				resetFields('small');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -70,10 +87,7 @@ const useField = () => {
 			.get(`/api/v1/fields/${fieldCode}/subjects`)
 			.then((res) => {
 				setSubjectsInFieldState(res.data);
-				setDetailFieldState([]);
-				setMiddleFieldState([]);
-				setSmallFieldState([]);
-				setDetailFieldState([]);
+				resetFields('all');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -123,7 +137,8 @@ const useField = () => {
 		fetchSubjectsInField,
 		fetchCoursesInFieldsAndSubjects,
 		fetchCoursesInFields,
-		fetchCoursesInSubject
+		fetchCoursesInSubject,
+		resetFields
 	};
 };
 
