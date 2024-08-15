@@ -31,7 +31,7 @@ function Home() {
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 5000,
-		pauseOnHover: true,
+		pauseOnHover: false,
 		cssEase: 'ease-out',
 		useTransform: false
 	};
