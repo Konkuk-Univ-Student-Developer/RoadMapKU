@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CourseDetail from '../CourseDetail/CousreDetail';
 
@@ -116,7 +117,7 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 				</LeftButton>
 				{!isSemesterCell && (
 					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
-						:
+						{cellData.isMyTable ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
 					</RightButton>
 				)}
 				{isDetailOpen && (

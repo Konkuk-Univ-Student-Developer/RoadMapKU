@@ -86,14 +86,14 @@ const RoadMapContainer = ({ show }) => {
 	}, [subjectCode]);
 
 	useEffect(() => {
-		if (!courseByCompetencyInSubject[0]) {
+		if (!Array.isArray(courseByCompetencyInSubject)) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
 			// haksuIdToCompetencyMap: 과목이 가지는 전공역량들을 배열로 저장
 			const haksuIdToCompetencyMap = new Map();
 
 			// 데이터 가공
-			const updatedRoadMapTableData = [...roadMapTableData];
+			const updatedRoadMapTableData = [...defaultTable];
 			courseByCompetencyInSubject.forEach((competency) => {
 				const { competencyCode } = competency;
 				// 조회했던 전공역량 모두 저장: 내 로드맵에서 전공역량을 조회해야하기 때문
@@ -118,7 +118,8 @@ const RoadMapContainer = ({ show }) => {
 						{
 							haksuId: haksuId,
 							courseName: name,
-							competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+							competencyCodes: haksuIdToCompetencyMap.get(haksuId),
+							isMyTable: false
 						}
 					];
 					if (openingSemester === '1,2학기') {
@@ -127,7 +128,8 @@ const RoadMapContainer = ({ show }) => {
 							{
 								haksuId: haksuId,
 								courseName: name,
-								competencyCodes: haksuIdToCompetencyMap.get(haksuId)
+								competencyCodes: haksuIdToCompetencyMap.get(haksuId),
+								isMyTable: false
 							}
 						];
 					}
@@ -137,7 +139,7 @@ const RoadMapContainer = ({ show }) => {
 			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
 			let delay = 200;
 			updatedRoadMapTableData.forEach((innerArray, index) => {
-				innerArray.forEach((item) => {
+				innerArray.slice(1).forEach((item) => {
 					setTimeout(() => {
 						setRoadMapTableData((prev) => {
 							const sortedTableData = [...prev];
@@ -205,6 +207,7 @@ const RoadMapContainer = ({ show }) => {
 		setUnclickableCells(updatedUnclickableCells);
 
 		const updatedMyTableData = [...myTableData];
+		cellData.isMyTable = true;
 		updatedMyTableData[rowIndex].push(cellData);
 		setMyTableData(updatedMyTableData);
 	};

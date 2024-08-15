@@ -44,7 +44,7 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 	};
 
 	useEffect(() => {
-		if (!competencyTableData[0]) {
+		if (!Array.isArray(competencyTableData)) {
 			console.log('competencyTableData is empty');
 			setCompetencyTable([]);
 		} else {

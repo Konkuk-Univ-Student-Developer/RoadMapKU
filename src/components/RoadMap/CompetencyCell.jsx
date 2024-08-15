@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
 const StyledCell = styled.div`
@@ -95,7 +96,7 @@ const Cell = ({ cellData, onClick, highlightedCompetency }) => {
 					{cellData.competencyName}
 				</LeftButton>
 				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
-					:
+					<IoMdArrowDropright />
 				</RightButton>
 			</ButtonWrapper>
 		</StyledCell>
