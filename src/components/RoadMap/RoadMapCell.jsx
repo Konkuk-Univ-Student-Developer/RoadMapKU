@@ -15,7 +15,6 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
-	overflow: hidden;
 
 	&.unclickable {
 		pointer-events: none;

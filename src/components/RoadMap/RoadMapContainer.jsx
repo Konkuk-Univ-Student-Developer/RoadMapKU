@@ -207,8 +207,8 @@ const RoadMapContainer = ({ show }) => {
 		setUnclickableCells(updatedUnclickableCells);
 
 		const updatedMyTableData = [...myTableData];
-		cellData.isMyTable = true;
-		updatedMyTableData[rowIndex].push(cellData);
+		const copiedCellData = { ...cellData, isMyTable: true };
+		updatedMyTableData[rowIndex].push(copiedCellData);
 		setMyTableData(updatedMyTableData);
 	};
 	// 내 로드맵 Cell Click 이벤트
