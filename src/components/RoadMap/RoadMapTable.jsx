@@ -39,12 +39,15 @@ const RoadMapTable = ({
 	onCellClick,
 	unclickableCells,
 	onCompetencyClick,
-	isHighlighted,
-	competencyCode
+	highlightedCompetency
 }) => {
 	return (
 		<TableContainer>
-			<CompetencyTable competencyTableData={competencyTableData} onClick={onCompetencyClick} />
+			<CompetencyTable
+				competencyTableData={competencyTableData}
+				onClick={onCompetencyClick}
+				highlightedCompetency={highlightedCompetency}
+			/>
 			<CourseContainer>
 				{roadMapTableData.map((row, rowIndex) => (
 					<TransitionGroup component={ColumnSemester} key={rowIndex}>
@@ -55,8 +58,7 @@ const RoadMapTable = ({
 									rowIndex={rowIndex}
 									onClick={onCellClick}
 									unclickable={unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)}
-									isHighlighted={isHighlighted}
-									competencyCode={competencyCode}
+									highlightedCompetency={highlightedCompetency}
 								/>
 							</CSSTransition>
 						))}

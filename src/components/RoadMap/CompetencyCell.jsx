@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
@@ -15,13 +15,7 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.3s ease-out;
 	overflow: hidden;
-
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
 
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
@@ -44,9 +38,19 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
+		background-color: #a9d1b3;
+	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
 		background-color: #a9d1b3;
 	}
 `;
@@ -57,19 +61,42 @@ const RightButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
 		background-color: #a9d1b3;
 	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
+		background-color: #a9d1b3;
+	}
 `;
 
-const Cell = ({ cellData, onClick }) => {
+const Cell = ({ cellData, onClick, highlightedCompetency }) => {
+	const [isHighlighted, setIsHighlighted] = useState(false);
+	useEffect(() => {
+		if (highlightedCompetency === cellData.competencyCode) {
+			setIsHighlighted(true);
+		} else {
+			setIsHighlighted(false);
+		}
+	}, [cellData, highlightedCompetency]);
+
 	return (
 		<StyledCell>
 			<ButtonWrapper>
-				<LeftButton onClick={() => {}}>{cellData.competencyName}</LeftButton>
-				<RightButton onClick={() => onClick(cellData.competencyCode)}>:</RightButton>
+				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => {}}>
+					{cellData.competencyName}
+				</LeftButton>
+				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
+					:
+				</RightButton>
 			</ButtonWrapper>
 		</StyledCell>
 	);

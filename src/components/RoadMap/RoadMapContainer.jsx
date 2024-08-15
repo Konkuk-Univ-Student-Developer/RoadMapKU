@@ -42,8 +42,10 @@ const Button = styled.button`
 	cursor: pointer;
 	user-select: none;
 	font-size: small;
+	transition: background-color 0.3s ease-out;
 
-	&:hover {
+	&:hover,
+	&:active {
 		background-color: #02472a;
 	}
 `;
@@ -94,6 +96,7 @@ const RoadMapContainer = ({ show }) => {
 			const updatedRoadMapTableData = [...roadMapTableData];
 			courseByCompetencyInSubject.forEach((competency) => {
 				const { competencyCode } = competency;
+				// 조회했던 전공역량 모두 저장: 내 로드맵에서 전공역량을 조회해야하기 때문
 				setCompetencyTable((prev) => {
 					const updatedCompetencyTable = [...prev];
 					if (!updatedCompetencyTable.find((item) => item.competencyCode === competencyCode)) {
@@ -148,6 +151,7 @@ const RoadMapContainer = ({ show }) => {
 		}
 	}, [courseByCompetencyInSubject]);
 
+	// 내 로드맵 변경 시 내 로드맵 과목들의 역량을 찾아 채우는 기능
 	useEffect(() => {
 		const competencyArray = [];
 		myTableData.forEach((row) => {
@@ -169,40 +173,47 @@ const RoadMapContainer = ({ show }) => {
 		return competencies;
 	}
 
-	const [isHighlighted, setIsHighlighted] = useState(false);
-	const [competencyCode, setCompetencyCode] = useState('');
-	const handleCellClick_highlight = (competencyCode) => {
-		if (isHighlighted) {
-			console.log('isHighlighted: ', false);
-			setIsHighlighted(false);
-		} else {
-			setIsHighlighted(true);
-			console.log('isHighlighted: ', true);
-		}
-		setCompetencyCode(competencyCode);
+	// 역량에 해당하는 과목들 하이라이트하는 기능
+	const [highlightedCompetencies, setHighlightedCompetencies] = useState({});
+	const handleCellClick_highlight = (selectedCompetencyCode) => {
+		setHighlightedCompetencies((prev) => {
+			const updatedHighlightedCompetencies = {};
+			for (let competencyCode in prev) {
+				updatedHighlightedCompetencies[competencyCode] = false;
+			}
+			updatedHighlightedCompetencies[selectedCompetencyCode] = !prev[selectedCompetencyCode];
+			return updatedHighlightedCompetencies;
+		});
 	};
+	const [highlightedCompetency, setHighlightedCompetency] = useState('');
+	useEffect(() => {
+		const highlightedCode = Object.keys(highlightedCompetencies).find((code) => highlightedCompetencies[code] === true);
+		if (highlightedCode) {
+			setHighlightedCompetency(highlightedCode);
+		} else {
+			setHighlightedCompetency('no_highlight');
+		}
+	}, [highlightedCompetencies]);
 
-	// Cell Click 이벤트
+	// 학과 로드맵 Cell Click 이벤트
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
 		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
 
-		// Set cell as unclickable
 		const updatedUnclickableCells = [...unclickableCells];
 		updatedUnclickableCells.push({ cellData: cellData, row: rowIndex });
 		setUnclickableCells(updatedUnclickableCells);
 
-		// Update myTableData to add the clicked cell's data
 		const updatedMyTableData = [...myTableData];
 		updatedMyTableData[rowIndex].push(cellData);
 		setMyTableData(updatedMyTableData);
 	};
+	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
 		// Remove cell from unclickableCells
 		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
-		// Update myTableData to remove the clicked cell's data
 		const updatedMyTableData = [...myTableData];
 		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
 		if (cellIndex !== -1) {
@@ -227,8 +238,7 @@ const RoadMapContainer = ({ show }) => {
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}
 				onCompetencyClick={handleCellClick_highlight}
-				isHighlighted={isHighlighted}
-				competencyCode={competencyCode}
+				highlightedCompetency={highlightedCompetency}
 			/>
 			<TitleWrapper>
 				<Title>내 로드맵</Title>
@@ -239,8 +249,7 @@ const RoadMapContainer = ({ show }) => {
 				onCellClick={handleCellClick_remove}
 				unclickableCells={[]}
 				onCompetencyClick={handleCellClick_highlight}
-				isHighlighted={isHighlighted}
-				competencyCode={competencyCode}
+				highlightedCompetency={highlightedCompetency}
 			/>
 		</Container>
 	);

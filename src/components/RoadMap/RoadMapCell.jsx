@@ -14,21 +14,11 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
-	transition: background-color 0.3s ease-out;
 	overflow: hidden;
-
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
 
 	&.unclickable {
 		pointer-events: none;
 		background-color: #f4f4f4;
-	}
-
-	&.isHighlighted {
-		background-color: yellow;
 	}
 
 	&.Bounce-enter {
@@ -53,10 +43,20 @@ const LeftButton = styled.div`
 	justify-content: center;
 	text-align: center;
 	cursor: pointer;
+	transition: background-color 0.3s ease-out;
 	overflow: hidden;
 
 	&:hover,
 	&:active {
+		background-color: #a9d1b3;
+	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
 		background-color: #a9d1b3;
 	}
 `;
@@ -66,32 +66,42 @@ const RightButton = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
 		background-color: #a9d1b3;
 	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
+		background-color: #a9d1b3;
+	}
 `;
 
-const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, competencyCode }) => {
+const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const onClickDetailButton = () => {
 		setIsDetailOpen(true);
 	};
 
-	const [isHighlighted_final, setIsHighlighted_final] = useState(false);
+	const [isHighlighted, setIsHighlighted] = useState(false);
 	let isSemesterCell = false;
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
 		if (Array.isArray(competencyCodes)) {
-			if (isHighlighted && competencyCodes.includes(competencyCode)) {
-				setIsHighlighted_final(true);
+			if (competencyCodes.includes(highlightedCompetency)) {
+				setIsHighlighted(true);
 			} else {
-				setIsHighlighted_final(false);
+				setIsHighlighted(false);
 			}
 		}
-	}, [cellData, isHighlighted]);
+	}, [cellData, highlightedCompetency]);
 
 	if (cellData.haksuId === '0') {
 		unclickable = true;
@@ -99,12 +109,16 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, compete
 	}
 
 	return (
-		<StyledCell
-			className={`${unclickable ? 'unclickable' : 'courseCell'} ${isHighlighted_final ? 'isHighlighted' : ''}`}
-		>
+		<StyledCell className={unclickable ? 'unclickable' : 'courseCell'}>
 			<ButtonWrapper>
-				<LeftButton onClick={onClickDetailButton}>{cellData.courseName}</LeftButton>
-				{!isSemesterCell && <RightButton onClick={() => onClick(cellData, rowIndex)}>:</RightButton>}
+				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
+					{cellData.courseName}
+				</LeftButton>
+				{!isSemesterCell && (
+					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
+						:
+					</RightButton>
+				)}
 				{isDetailOpen && (
 					<CourseDetail
 						onClose={() => {
