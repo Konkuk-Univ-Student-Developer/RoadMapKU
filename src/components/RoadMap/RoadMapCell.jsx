@@ -14,9 +14,6 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
 	transition: background-color 0.3s ease-out;
 	overflow: hidden;
 
@@ -54,7 +51,9 @@ const LeftButton = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	cursor: pointer;
+	overflow: hidden;
 
 	&:hover,
 	&:active {
@@ -63,7 +62,7 @@ const LeftButton = styled.div`
 `;
 
 const RightButton = styled.div`
-	width: 20%;
+	width: 10%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -81,6 +80,7 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, compete
 	};
 
 	const [isHighlighted_final, setIsHighlighted_final] = useState(false);
+	let isSemesterCell = false;
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -95,13 +95,16 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, isHighlighted, compete
 
 	if (cellData.haksuId === '0') {
 		unclickable = true;
+		isSemesterCell = true;
 	}
 
 	return (
-		<StyledCell className={`${unclickable ? 'unclickable' : ''} ${isHighlighted_final ? 'isHighlighted' : ''}`}>
+		<StyledCell
+			className={`${unclickable ? 'unclickable' : 'courseCell'} ${isHighlighted_final ? 'isHighlighted' : ''}`}
+		>
 			<ButtonWrapper>
 				<LeftButton onClick={onClickDetailButton}>{cellData.courseName}</LeftButton>
-				{cellData.haksuId !== '0' && <RightButton onClick={() => onClick(cellData, rowIndex)}>:</RightButton>}
+				{!isSemesterCell && <RightButton onClick={() => onClick(cellData, rowIndex)}>:</RightButton>}
 				{isDetailOpen && (
 					<CourseDetail
 						onClose={() => {

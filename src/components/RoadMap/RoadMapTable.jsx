@@ -13,11 +13,12 @@ const TableContainer = styled.div`
 `;
 
 const CourseContainer = styled.div`
-	width: 80%;
+	width: 85%;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-	overflow-y: auto;
+	margin: 0;
+	overflow-y: scroll;
 `;
 
 const ColumnSemester = styled.div`

@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const TitleWrapper = styled.div`
 	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-right: 2rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -33,7 +33,7 @@ const Title = styled.div`
 
 const Button = styled.button`
 	height: 2rem;
-	width: 23rem;
+	width: 25rem;
 	background-color: #036b3f;
 	color: white;
 	border: none;
@@ -49,14 +49,14 @@ const Button = styled.button`
 `;
 
 const defaultTable = [
-	[{ haksuId: '0', courseName: '1-1' }],
-	[{ haksuId: '0', courseName: '1-2' }],
-	[{ haksuId: '0', courseName: '2-1' }],
-	[{ haksuId: '0', courseName: '2-2' }],
-	[{ haksuId: '0', courseName: '3-1' }],
-	[{ haksuId: '0', courseName: '3-2' }],
-	[{ haksuId: '0', courseName: '4-1' }],
-	[{ haksuId: '0', courseName: '4-2' }]
+	[{ haksuId: '0', courseName: '1 - 1' }],
+	[{ haksuId: '0', courseName: '1 - 2' }],
+	[{ haksuId: '0', courseName: '2 - 1' }],
+	[{ haksuId: '0', courseName: '2 - 2' }],
+	[{ haksuId: '0', courseName: '3 - 1' }],
+	[{ haksuId: '0', courseName: '3 - 2' }],
+	[{ haksuId: '0', courseName: '4 - 1' }],
+	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
 const RoadMapContainer = ({ show }) => {
@@ -67,18 +67,19 @@ const RoadMapContainer = ({ show }) => {
 	const [roadMapTableData, setRoadMapTableData] = useState(defaultTable);
 	const [myTableData, setMyTableData] = useState(defaultTable);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
+	const [competencyTable, setCompetencyTable] = useState([]);
 
+	// 다른 전공을 클릭했을 때 테이블 초기화
 	useEffect(() => {
-		console.log('subject has changed! ', subjectCode);
 		setRoadMapTableData([
-			[{ haksuId: '0', courseName: '1-1' }],
-			[{ haksuId: '0', courseName: '1-2' }],
-			[{ haksuId: '0', courseName: '2-1' }],
-			[{ haksuId: '0', courseName: '2-2' }],
-			[{ haksuId: '0', courseName: '3-1' }],
-			[{ haksuId: '0', courseName: '3-2' }],
-			[{ haksuId: '0', courseName: '4-1' }],
-			[{ haksuId: '0', courseName: '4-2' }]
+			[{ haksuId: '0', courseName: '1 - 1' }],
+			[{ haksuId: '0', courseName: '1 - 2' }],
+			[{ haksuId: '0', courseName: '2 - 1' }],
+			[{ haksuId: '0', courseName: '2 - 2' }],
+			[{ haksuId: '0', courseName: '3 - 1' }],
+			[{ haksuId: '0', courseName: '3 - 2' }],
+			[{ haksuId: '0', courseName: '4 - 1' }],
+			[{ haksuId: '0', courseName: '4 - 2' }]
 		]);
 	}, [subjectCode]);
 
@@ -86,10 +87,20 @@ const RoadMapContainer = ({ show }) => {
 		if (!courseByCompetencyInSubject[0]) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
+			// haksuIdToCompetencyMap: 과목이 가지는 전공역량들을 배열로 저장
 			const haksuIdToCompetencyMap = new Map();
-			let delay = 200;
+
+			// 데이터 가공
 			const updatedRoadMapTableData = [...roadMapTableData];
 			courseByCompetencyInSubject.forEach((competency) => {
+				const { competencyCode } = competency;
+				setCompetencyTable((prev) => {
+					const updatedCompetencyTable = [...prev];
+					if (!updatedCompetencyTable.find((item) => item.competencyCode === competencyCode)) {
+						updatedCompetencyTable.push(competency);
+					}
+					return updatedCompetencyTable;
+				});
 				competency.courseGetResponseList.forEach((course) => {
 					const { openingYear, openingSemester, haksuId, name } = course;
 					const semesterIndex = openingSemester === '1학기' ? 0 : 1;
@@ -117,34 +128,11 @@ const RoadMapContainer = ({ show }) => {
 							}
 						];
 					}
-
-					// setTimeout(() => {
-					// 	setRoadMapTableData((prevItems) => {
-					// 		const updatedRoadMapTableData = [...prevItems];
-					// 		updatedRoadMapTableData[index] = [
-					// 			...updatedRoadMapTableData[index],
-					// 			{
-					// 				haksuId: haksuId,
-					// 				courseName: name,
-					// 				competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-					// 			}
-					// 		];
-					// 		if (openingSemester === '1,2학기') {
-					// 			updatedRoadMapTableData[index - 1] = [
-					// 				...updatedRoadMapTableData[index - 1],
-					// 				{
-					// 					haksuId: haksuId,
-					// 					courseName: name,
-					// 					competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-					// 				}
-					// 			];
-					// 		}
-					// 		return updatedRoadMapTableData;
-					// 	});
-					// }, delay);
-					// delay += 10;
 				});
 			});
+
+			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
+			let delay = 200;
 			updatedRoadMapTableData.forEach((innerArray, index) => {
 				innerArray.forEach((item) => {
 					setTimeout(() => {
@@ -154,7 +142,6 @@ const RoadMapContainer = ({ show }) => {
 							return sortedTableData;
 						});
 					}, delay);
-
 					delay += 5;
 				});
 			});
@@ -176,9 +163,8 @@ const RoadMapContainer = ({ show }) => {
 	}, [myTableData]);
 
 	function findCompetencyByCode(competencyCodes) {
-		// Find competencies for each code in the array
 		const competencies = competencyCodes.map((code) => {
-			return courseByCompetencyInSubject.find((item) => item.competencyCode === code);
+			return competencyTable.find((item) => item.competencyCode === code);
 		});
 		return competencies;
 	}
@@ -196,6 +182,7 @@ const RoadMapContainer = ({ show }) => {
 		setCompetencyCode(competencyCode);
 	};
 
+	// Cell Click 이벤트
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
 		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
