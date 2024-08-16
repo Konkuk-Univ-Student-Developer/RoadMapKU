@@ -132,7 +132,6 @@ const RoadMapContainer = () => {
 			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
 			let delay = 200;
 			let animationTime = Math.floor(100 / max_length);
-			console.log('max_length: ', max_length, ' / animationTime: ', animationTime);
 			updatedRoadMapTableData.forEach((courseRow, index) => {
 				courseRow.slice(1).forEach((item) => {
 					setTimeout(() => {

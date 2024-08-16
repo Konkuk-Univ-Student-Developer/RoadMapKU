@@ -64,6 +64,10 @@ const CourseTitle = styled.div`
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+
+	&.semesterCell {
+		padding-left: 0;
+	}
 `;
 
 const RightButton = styled.div`
@@ -110,7 +114,7 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 		<StyledCell className={unclickable ? 'unclickable' : ''}>
 			<ButtonWrapper>
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
-					<CourseTitle>{cellData.courseName}</CourseTitle>
+					<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
 				</LeftButton>
 				{!(cellData.haksuId === '0') && (
 					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
