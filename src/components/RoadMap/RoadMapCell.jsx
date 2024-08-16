@@ -60,6 +60,7 @@ const LeftButton = styled.div`
 `;
 
 const CourseTitle = styled.div`
+	padding-left: 0.5rem;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;

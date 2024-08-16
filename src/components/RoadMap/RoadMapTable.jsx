@@ -15,10 +15,11 @@ const RoadMapContainer = styled.div`
 `;
 
 const TableContainer = styled.div`
-	width: 84%;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	overflow: hidden;
 `;
 
 const SemesterContainer = styled.div`

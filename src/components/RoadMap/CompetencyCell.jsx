@@ -4,7 +4,7 @@ import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
 const StyledCell = styled.div`
-	height: 2rem;
+	min-height: 2rem;
 	font-size: small;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
@@ -16,7 +16,6 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	overflow: hidden;
 
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
@@ -39,6 +38,7 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	padding: 0.5rem;
 	transition: background-color 0.3s ease-out;
 
 	&:hover,

@@ -6,6 +6,7 @@ import RoadMapTable from './RoadMapTable';
 import useField from '../../hooks/useField';
 
 const Container = styled.div`
+	min-width: 50rem;
 	display: flex;
 	flex-direction: column;
 `;
@@ -13,7 +14,7 @@ const Container = styled.div`
 const TitleWrapper = styled.div`
 	padding-top: 0.5rem;
 	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	padding-right: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
