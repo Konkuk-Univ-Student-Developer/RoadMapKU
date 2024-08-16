@@ -9,33 +9,39 @@ const RoadMapContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-	padding: 1rem;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 `;
 
 const TableContainer = styled.div`
-	width: 85%;
+	width: 84%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 `;
 
 const SemesterContainer = styled.div`
-	min-height: 2rem;
+	height: 2.2rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	overflow-y: scroll;
+	overflow-x: hidden;
 `;
 
 const CourseContainer = styled.div`
+	height: 24.8rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	overflow-y: scroll;
+	overflow-x: hidden;
 `;
 
 const CourseColumn = styled.div`
-	width: 12.5%;
+	min-width: 0;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;

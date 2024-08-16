@@ -5,16 +5,14 @@ import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CourseDetail from '../CourseDetail/CousreDetail';
 
 const StyledCell = styled.div`
-	min-width: 50%;
 	min-height: 2rem;
+	display: flex;
 	font-size: small;
-	box-sizing: border-box;
 	border: 0.05rem solid black;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
 	user-select: none;
-	display: flex;
 
 	&.unclickable {
 		pointer-events: none;
@@ -31,9 +29,9 @@ const StyledCell = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-	display: flex;
 	width: 100%;
-	height: 100%;
+	display: flex;
+	flex-direction: row;
 `;
 
 const LeftButton = styled.div`
@@ -59,6 +57,13 @@ const LeftButton = styled.div`
 	&.isHighlighted:active {
 		background-color: #a9d1b3;
 	}
+`;
+
+const CourseTitle = styled.div`
+	padding-left: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 `;
 
 const RightButton = styled.div`
@@ -105,7 +110,7 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 		<StyledCell className={unclickable ? 'unclickable' : ''}>
 			<ButtonWrapper>
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
-					{cellData.courseName}
+					<CourseTitle>{cellData.courseName}</CourseTitle>
 				</LeftButton>
 				{!(cellData.haksuId === '0') && (
 					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>

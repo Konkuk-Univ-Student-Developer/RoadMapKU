@@ -8,17 +8,12 @@ import useField from '../../hooks/useField';
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	transition: width 500ms ease-in-out;
-	width: 100%;
-
-	&.full-width {
-		width: 100%;
-	}
 `;
 
 const TitleWrapper = styled.div`
-	padding-left: 1rem;
-	padding-right: 2rem;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -38,7 +33,7 @@ const Button = styled.button`
 	color: white;
 	border: none;
 	border-radius: 0.2rem;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem;
 	cursor: pointer;
 	user-select: none;
 	font-size: small;
@@ -61,7 +56,7 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
-const RoadMapContainer = ({ show }) => {
+const RoadMapContainer = () => {
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 	const { fetchCoursesInSubject } = useField();
@@ -138,8 +133,8 @@ const RoadMapContainer = ({ show }) => {
 
 			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
 			let delay = 200;
-			updatedRoadMapTableData.forEach((innerArray, index) => {
-				innerArray.slice(1).forEach((item) => {
+			updatedRoadMapTableData.forEach((courseRow, index) => {
+				courseRow.slice(1).forEach((item) => {
 					setTimeout(() => {
 						setRoadMapTableData((prev) => {
 							const sortedTableData = [...prev];
@@ -200,8 +195,6 @@ const RoadMapContainer = ({ show }) => {
 	// 학과 로드맵 Cell Click 이벤트
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
-		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
-
 		const updatedUnclickableCells = [...unclickableCells];
 		updatedUnclickableCells.push({ cellData: cellData, row: rowIndex });
 		setUnclickableCells(updatedUnclickableCells);
@@ -229,7 +222,7 @@ const RoadMapContainer = ({ show }) => {
 	};
 
 	return (
-		<Container className={`content ${show ? 'with-sidebar' : 'full-width'}`}>
+		<Container>
 			<TitleWrapper>
 				<Title>학과 로드맵</Title>
 				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 로드맵 보기</Button>}

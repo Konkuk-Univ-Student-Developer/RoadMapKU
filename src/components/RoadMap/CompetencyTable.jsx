@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './CompetencyCell';
 
 const Container = styled.div`
-	width: 16%;
+	width: 15%;
 	height: auto;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
