@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
 	font-family: 'Impact';
 	font-weight: normal;
 	src: url('../src/fonts/Impact.ttf') format('truetype');
@@ -12,7 +12,7 @@
 	font-family: 'NanumSquare';
 	font-weight: normal;
 	src: url('../src/fonts/NanumSquareR.ttf') format('truetype');
-}
+} */
 
 body {
 	overflow-y: overlay;
