@@ -61,23 +61,14 @@ const RoadMapContainer = () => {
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 	const { fetchCoursesInSubject } = useField();
 
-	const [roadMapTableData, setRoadMapTableData] = useState(defaultTable);
-	const [myTableData, setMyTableData] = useState(defaultTable);
+	const [roadMapTableData, setRoadMapTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
+	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
 	const [competencyTable, setCompetencyTable] = useState([]);
 
 	// 다른 전공을 클릭했을 때 테이블 초기화
 	useEffect(() => {
-		setRoadMapTableData([
-			[{ haksuId: '0', courseName: '1 - 1' }],
-			[{ haksuId: '0', courseName: '1 - 2' }],
-			[{ haksuId: '0', courseName: '2 - 1' }],
-			[{ haksuId: '0', courseName: '2 - 2' }],
-			[{ haksuId: '0', courseName: '3 - 1' }],
-			[{ haksuId: '0', courseName: '3 - 2' }],
-			[{ haksuId: '0', courseName: '4 - 1' }],
-			[{ haksuId: '0', courseName: '4 - 2' }]
-		]);
+		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
 	}, [subjectCode]);
 
 	useEffect(() => {
@@ -86,9 +77,10 @@ const RoadMapContainer = () => {
 		} else {
 			// haksuIdToCompetencyMap: 과목이 가지는 전공역량들을 배열로 저장
 			const haksuIdToCompetencyMap = new Map();
+			let max_length = 0;
 
 			// 데이터 가공
-			const updatedRoadMapTableData = [...defaultTable];
+			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			courseByCompetencyInSubject.forEach((competency) => {
 				const { competencyCode } = competency;
 				// 조회했던 전공역량 모두 저장: 내 로드맵에서 전공역량을 조회해야하기 때문
@@ -128,11 +120,18 @@ const RoadMapContainer = () => {
 							}
 						];
 					}
+
+					// 가장 긴 배열 탐색
+					if (updatedRoadMapTableData[index].length > max_length) {
+						max_length = updatedRoadMapTableData[index].length;
+					}
 				});
 			});
 
 			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
 			let delay = 200;
+			let animationTime = Math.floor(100 / max_length);
+			console.log('max_length: ', max_length, ' / animationTime: ', animationTime);
 			updatedRoadMapTableData.forEach((courseRow, index) => {
 				courseRow.slice(1).forEach((item) => {
 					setTimeout(() => {
@@ -142,7 +141,7 @@ const RoadMapContainer = () => {
 							return sortedTableData;
 						});
 					}, delay);
-					delay += 5;
+					delay += animationTime;
 				});
 			});
 		}
