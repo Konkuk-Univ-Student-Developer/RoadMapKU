@@ -116,17 +116,18 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
 					<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
 				</LeftButton>
-				{!(cellData.haksuId === '0') && (
-					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
-						{cellData.isMyTable ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
-					</RightButton>
-				)}
 				{isDetailOpen && (
 					<CourseDetail
 						onClose={() => {
 							setIsDetailOpen(false);
 						}}
+						HaksuId={cellData.haksuId}
 					/>
+				)}
+				{!(cellData.haksuId === '0') && (
+					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
+						{cellData.isMyTable ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
+					</RightButton>
 				)}
 			</ButtonWrapper>
 		</StyledCell>
