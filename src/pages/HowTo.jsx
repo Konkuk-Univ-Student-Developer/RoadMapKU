@@ -26,7 +26,6 @@ const Title = styled.h1`
 	font-weight: bold;
 	text-align: left;
 	padding-left: 100px;
-	font-family: Impact;
 `;
 
 const Section = styled.section`
