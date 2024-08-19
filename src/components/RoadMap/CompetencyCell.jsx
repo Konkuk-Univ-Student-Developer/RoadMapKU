@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
+import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
@@ -79,8 +80,14 @@ const RightButton = styled.div`
 	}
 `;
 
-const Cell = ({ cellData, onClick, highlightedCompetency }) => {
+const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	const [isHighlighted, setIsHighlighted] = useState(false);
+
+	const [isDetailOpen, setIsDetailOpen] = useState(false);
+	const onClickDetailButton = () => {
+		setIsDetailOpen(true);
+	};
+
 	useEffect(() => {
 		if (highlightedCompetency === cellData.competencyCode) {
 			setIsHighlighted(true);
@@ -90,17 +97,25 @@ const Cell = ({ cellData, onClick, highlightedCompetency }) => {
 	}, [cellData, highlightedCompetency]);
 
 	return (
-		<StyledCell>
+		<StyledCell ref={ref}>
 			<ButtonWrapper>
-				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => {}}>
+				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
 					{cellData.competencyName}
 				</LeftButton>
+				{isDetailOpen && (
+					<CompetencyDetail
+						onClose={() => {
+							setIsDetailOpen(false);
+						}}
+						competencyData={cellData}
+					/>
+				)}
 				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
 					<IoMdArrowDropright />
 				</RightButton>
 			</ButtonWrapper>
 		</StyledCell>
 	);
-};
+});
 
 export default Cell;

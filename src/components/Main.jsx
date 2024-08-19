@@ -18,7 +18,7 @@ const MainContent = styled.div`
 
 const Content = styled.div`
 	padding-top: 5rem;
-	width: calc(100% - 320px);
+	width: calc(100% - 330px);
 `;
 
 const Main = () => {

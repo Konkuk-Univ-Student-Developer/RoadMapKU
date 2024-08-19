@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 //import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 import KuLogo from '../components/LogoFile/Kulogo';
-import CourseDetail from './CourseDetail/CousreDetail';
+import CourseDetail from './CourseDetail/CourseDetail';
 
 const theme = {
 	active: {

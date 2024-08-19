@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import CompetencyTable from './CompetencyTable';
 import Cell from './RoadMapCell';
 
 const RoadMapContainer = styled.div`
-	height: 27rem;
+	height: 22rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
@@ -32,7 +32,7 @@ const SemesterContainer = styled.div`
 `;
 
 const CourseContainer = styled.div`
-	height: 24.8rem;
+	height: 19.8rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
@@ -72,6 +72,12 @@ const RoadMapTable = ({
 	onCompetencyClick,
 	highlightedCompetency
 }) => {
+	const refs = useRef(
+		roadMapTableData.map((row) =>
+			row.slice(1).map(() => React.createRef())
+		)
+	).current;
+
 	return (
 		<RoadMapContainer>
 			<CompetencyTable
@@ -92,9 +98,15 @@ const RoadMapTable = ({
 				<CourseContainer>
 					{roadMapTableData.map((row, rowIndex) => (
 						<TransitionGroup component={CourseColumn} key={rowIndex}>
-							{row.slice(1).map((cellData) => (
-								<CSSTransition key={cellData.haksuId + rowIndex} timeout={animationTiming} classNames="Bounce">
+							{row.slice(1).map((cellData, cellIndex) => (
+								<CSSTransition
+									key={cellData.haksuId}
+									timeout={animationTiming}
+									classNames="Bounce"
+									nodeRef={refs[rowIndex][cellIndex]}
+								>
 									<Cell
+										ref={refs[rowIndex][cellIndex]}
 										cellData={cellData}
 										rowIndex={rowIndex}
 										onClick={onCellClick}
@@ -102,7 +114,7 @@ const RoadMapTable = ({
 										highlightedCompetency={highlightedCompetency}
 									/>
 								</CSSTransition>
-							))}
+                            ))}
 						</TransitionGroup>
 					))}
 				</CourseContainer>

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
-import CourseDetail from '../CourseDetail/CousreDetail';
+import CourseDetail from '../CourseDetail/CourseDetail';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
@@ -92,7 +92,7 @@ const RightButton = styled.div`
 	}
 `;
 
-const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }) => {
+const Cell = forwardRef(({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }, ref) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const onClickDetailButton = () => {
 		setIsDetailOpen(true);
@@ -132,6 +132,6 @@ const Cell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency 
 			</ButtonWrapper>
 		</StyledCell>
 	);
-};
+});
 
 export default Cell;

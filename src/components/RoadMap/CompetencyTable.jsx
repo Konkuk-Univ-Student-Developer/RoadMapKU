@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './CompetencyCell';
@@ -15,7 +15,6 @@ const Container = styled.div`
 	align-items: center;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	padding-left: 0.8rem;
 `;
 
 const CompetencyContainer = styled.div`
@@ -23,6 +22,7 @@ const CompetencyContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
+	padding-left: 0.9rem;
 `;
 
 const Title = styled.div`
@@ -46,6 +46,7 @@ const animationTiming = {
 
 const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
+	const [refs, setRefs] = useState([]);
 
 	const isEqualArray = (arr1, arr2) => {
 		return JSON.stringify(arr1) === JSON.stringify(arr2);
@@ -55,10 +56,13 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		if (!Array.isArray(competencyTableData)) {
 			console.log('competencyTableData is empty');
 			setCompetencyTable([]);
+			setRefs([]);
 		} else {
 			// 전공역량을 역량코드 순으로 재배열
 			const sortedCompetencyTable = [...competencyTableData];
 			sortedCompetencyTable.sort((a, b) => a.competencyCode.localeCompare(b.competencyCode));
+
+			setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
 			// 테이블이 다를 경우에만 새로 렌더링
 			if (!isEqualArray(competencyTable, sortedCompetencyTable)) {
@@ -82,9 +86,9 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 			<Title>전공역량</Title>
 			<CompetencyContainer>
 				<TransitionGroup component={CompetencyColumn}>
-					{competencyTable.map((competency) => (
-						<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce">
-							<Cell cellData={competency} onClick={onClick} highlightedCompetency={highlightedCompetency} />
+					{competencyTable.map((competency, index) => (
+						<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce" nodeRef={refs[index]}>
+							<Cell ref={refs[index]} cellData={competency} onClick={onClick} highlightedCompetency={highlightedCompetency} />
 						</CSSTransition>
 					))}
 				</TransitionGroup>

@@ -5,6 +5,7 @@ import {
 	middleFieldState,
 	smallFieldState,
 	subjectsInFieldState,
+	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState
 } from '../recoils/atoms';
@@ -17,6 +18,7 @@ const useField = () => {
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 	const setSubjectsInFieldState = useSetRecoilState(subjectsInFieldState);
+	const setTotalRoadMapState = useSetRecoilState(totalRoadMapState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 
@@ -124,6 +126,7 @@ const useField = () => {
 		serverApi
 			.get(`/api/v1/courses/${subjectCode}/subject`)
 			.then((res) => {
+				setTotalRoadMapState(res.data);
 				console.log(res.data);
 			})
 			.catch((error) => {
