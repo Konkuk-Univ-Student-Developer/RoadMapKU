@@ -34,7 +34,6 @@ const AboutUsContents = () => {
 				totam natus consectetur ullam optio corporis mollitia sint. Dolorem beatae repellendus laboriosam fugiat,
 				quisquam provident illo suscipit!
 			</SubTitle>
-
 			<Description>
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, eveniet sequi! Laudantium, dolorum. Alias
 				consectetur quidem, vero error eum doloremque optio. Quas assumenda aut optio ad quam adipisci voluptates

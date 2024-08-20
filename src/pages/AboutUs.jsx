@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
 import LogoContents from '../components/AboutUsContents/LogoContents';
 import MainContainer from '../components/MainContainer';
+import IntroductionContents from '../components/AboutUsContents/IntroductionContents';
 
 const SubContainer = styled.div`
 	width: 100%;
@@ -18,6 +19,7 @@ const AboutUs = () => {
 			<SubContainer>
 				<LogoContents />
 				<AboutUsContents />
+				<IntroductionContents />
 			</SubContainer>
 		</MainContainer>
 	);
