@@ -1,9 +1,6 @@
 body {
 	overflow-y: overlay;
 	margin: 0;
-	font-family: 'Impact';
-	font-family: 'Pretendard';
-	font-family: 'NanumSquare';
 }
 
 ::-webkit-scrollbar {

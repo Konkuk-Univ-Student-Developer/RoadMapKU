@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
+import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
+import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 
 const StyledCell = styled.div`
-	height: 2rem;
+	min-height: 2rem;
 	font-size: small;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
@@ -15,13 +17,6 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.3s ease-out;
-	overflow: hidden;
-
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
 
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
@@ -44,9 +39,20 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	padding: 0.5rem;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
+		background-color: #a9d1b3;
+	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
 		background-color: #a9d1b3;
 	}
 `;
@@ -57,22 +63,59 @@ const RightButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	transition: background-color 0.3s ease-out;
 
 	&:hover,
 	&:active {
 		background-color: #a9d1b3;
 	}
+
+	&.isHighlighted {
+		background-color: yellow;
+	}
+
+	&.isHighlighted:hover,
+	&.isHighlighted:active {
+		background-color: #a9d1b3;
+	}
 `;
 
-const Cell = ({ cellData, onClick }) => {
+const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
+	const [isHighlighted, setIsHighlighted] = useState(false);
+
+	const [isDetailOpen, setIsDetailOpen] = useState(false);
+	const onClickDetailButton = () => {
+		setIsDetailOpen(true);
+	};
+
+	useEffect(() => {
+		if (highlightedCompetency === cellData.competencyCode) {
+			setIsHighlighted(true);
+		} else {
+			setIsHighlighted(false);
+		}
+	}, [cellData, highlightedCompetency]);
+
 	return (
-		<StyledCell>
+		<StyledCell ref={ref}>
 			<ButtonWrapper>
-				<LeftButton onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</LeftButton>
-				<RightButton onClick={() => {}}>:</RightButton>
+				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
+					{cellData.competencyName}
+				</LeftButton>
+				{isDetailOpen && (
+					<CompetencyDetail
+						onClose={() => {
+							setIsDetailOpen(false);
+						}}
+						competencyData={cellData}
+					/>
+				)}
+				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
+					<IoMdArrowDropright />
+				</RightButton>
 			</ButtonWrapper>
 		</StyledCell>
 	);
-};
+});
 
 export default Cell;

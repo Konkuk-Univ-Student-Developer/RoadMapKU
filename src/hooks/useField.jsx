@@ -5,6 +5,7 @@ import {
 	middleFieldState,
 	smallFieldState,
 	subjectsInFieldState,
+	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState
 } from '../recoils/atoms';
@@ -17,8 +18,27 @@ const useField = () => {
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
 	const setSubjectsInFieldState = useSetRecoilState(subjectsInFieldState);
+	const setTotalRoadMapState = useSetRecoilState(totalRoadMapState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
+
+	const resetFields = (selectedField) => {
+		if (selectedField === 'large' || selectedField === 'all') {
+			setMiddleFieldState([]);
+			setSmallFieldState([]);
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'middle') {
+			setSmallFieldState([]);
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'small') {
+			setDetailFieldState([]);
+		}
+		if (selectedField === 'all') {
+			setLargeFieldState([]);
+		}
+	};
 
 	const fetchLargeField = () => {
 		serverApi
@@ -36,8 +56,7 @@ const useField = () => {
 			.post('/api/v1/fields/middle', requestMiddle)
 			.then((res) => {
 				setMiddleFieldState(res.data);
-				setSmallFieldState([]);
-				setDetailFieldState([]);
+				resetFields('middle');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -49,7 +68,7 @@ const useField = () => {
 			.post('/api/v1/fields/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
-				setDetailFieldState([]);
+				resetFields('small');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -72,10 +91,7 @@ const useField = () => {
 			.get(`/api/v1/fields/${fieldCode}/subjects`)
 			.then((res) => {
 				setSubjectsInFieldState(res.data);
-				setDetailFieldState([]);
-				setMiddleFieldState([]);
-				setSmallFieldState([]);
-				setDetailFieldState([]);
+				resetFields('all');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -110,6 +126,7 @@ const useField = () => {
 		serverApi
 			.get(`/api/v1/courses/${subjectCode}/subject`)
 			.then((res) => {
+				setTotalRoadMapState(res.data);
 				console.log(res.data);
 			})
 			.catch((error) => {
@@ -136,7 +153,8 @@ const useField = () => {
 		fetchCoursesInFieldsAndSubjects,
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
-		fetchCourseDetail
+		fetchCourseDetail,
+		resetFields
 	};
 };
 

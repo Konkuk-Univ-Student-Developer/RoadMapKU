@@ -18,8 +18,7 @@ const MainContent = styled.div`
 
 const Content = styled.div`
 	padding-top: 5rem;
-	width: 100%;
-	// background-color: blueviolet;
+	width: calc(100% - 330px);
 `;
 
 const Main = () => {
@@ -43,7 +42,7 @@ const Main = () => {
 				<MainContent>
 					<Sidebar show={showSidebar} toggleSidebar={toggleSidebar} />
 					<Content>
-						<RoadMapContainer show={showSidebar} />
+						<RoadMapContainer />
 					</Content>
 				</MainContent>
 			</Container>

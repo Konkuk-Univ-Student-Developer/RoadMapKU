@@ -55,7 +55,7 @@ const DepartmentList = () => {
 
 	const handleDepartmentClick = (fieldCode, subjectCode, subjectName) => {
 		setSelectedDepartment({ subjectCode, subjectName });
-		if (subjectCode) {
+		if (subjectCode > 0) {
 			fetchCoursesInFieldsAndSubjects(fieldCode, subjectCode);
 		} else {
 			fetchCoursesInFields(fieldCode);

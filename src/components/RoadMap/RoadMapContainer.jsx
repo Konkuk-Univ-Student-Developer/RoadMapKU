@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { courseByCompetencyInSubjectState, selectedSubjectState } from '../../recoils/atoms';
+import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 import useField from '../../hooks/useField';
 
 const Container = styled.div`
+	min-width: 50rem;
 	display: flex;
 	flex-direction: column;
-	transition: width 500ms ease-in-out;
-	width: 100%;
-
-	&.full-width {
-		width: 100%;
-	}
 `;
 
 const TitleWrapper = styled.div`
-	padding-left: 1rem;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
 	padding-right: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -33,105 +29,191 @@ const Title = styled.div`
 
 const Button = styled.button`
 	height: 2rem;
-	width: 23rem;
+	width: 25rem;
 	background-color: #036b3f;
 	color: white;
 	border: none;
 	border-radius: 0.2rem;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem;
 	cursor: pointer;
 	user-select: none;
 	font-size: small;
+	transition: background-color 0.3s ease-out;
 
-	&:hover {
+	&:hover,
+	&:active {
 		background-color: #02472a;
 	}
 `;
 
-const RoadMapContainer = ({ show }) => {
-	// const competencyListInSubject = useRecoilValue(competencyListInSubjectState);
-	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
-	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-	// const competencyList = courseByCompetencyInSubject;
-	const { fetchCoursesInSubject } = useField();
-	// console.log('competencyListInSubject: ', competencyListInSubject);
-	// console.log('courseByCompetencyInSubject: ', courseByCompetencyInSubject);
-	// console.log('competencyList: ', competencyList);
+const defaultTable = [
+	[{ haksuId: '0', courseName: '1 - 1' }],
+	[{ haksuId: '0', courseName: '1 - 2' }],
+	[{ haksuId: '0', courseName: '2 - 1' }],
+	[{ haksuId: '0', courseName: '2 - 2' }],
+	[{ haksuId: '0', courseName: '3 - 1' }],
+	[{ haksuId: '0', courseName: '3 - 2' }],
+	[{ haksuId: '0', courseName: '4 - 1' }],
+	[{ haksuId: '0', courseName: '4 - 2' }]
+];
 
-	const [roadMapTableData, setRoadMapTableData] = useState([
-		[{ courseName: '1-1' }],
-		[{ courseName: '1-2' }],
-		[{ courseName: '2-1' }],
-		[{ courseName: '2-2' }],
-		[{ courseName: '3-1' }],
-		[{ courseName: '3-2' }],
-		[{ courseName: '4-1' }],
-		[{ courseName: '4-2' }]
-	]);
-	const [myTableData, setMyTableData] = useState([
-		[{ courseName: '1-1' }],
-		[{ courseName: '1-2' }],
-		[{ courseName: '2-1' }],
-		[{ courseName: '2-2' }],
-		[{ courseName: '3-1' }],
-		[{ courseName: '3-2' }],
-		[{ courseName: '4-1' }],
-		[{ courseName: '4-2' }]
-	]);
+const RoadMapContainer = () => {
+	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
+	const totalRoadMap = useRecoilValue(totalRoadMapState);
+	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
+	const { fetchCoursesInSubject } = useField();
+
+	const [competencyList, setCompetencyList] = useState(courseByCompetencyInSubjectState)
+	const [roadMapTableData, setRoadMapTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
+	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
-	// const [competencyCodes, setCompetencyCodes] = useState([]);
+	const [competencyTable, setCompetencyTable] = useState([]);
+
+	// 다른 전공을 클릭했을 때 테이블 초기화
+	useEffect(() => {
+		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
+	}, [courseByCompetencyInSubject, subjectCode, totalRoadMap]);
 
 	useEffect(() => {
-		if (!courseByCompetencyInSubject[0]) {
+		if (!Array.isArray(courseByCompetencyInSubject)) {
 			console.log('courseByCompetencyInSubject is empty');
 		} else {
-			// const updatedCompetencyCodes = competencyTableData.map((item) => item.competencyCode);
-			// setCompetencyCodes(updatedCompetencyCodes);
-			// console.log('competencyCodes: ', updatedCompetencyCodes);
+			setCompetencyList(courseByCompetencyInSubject);
 
+			// haksuIdToCompetencyMap: 과목이 가지는 전공역량들을 배열로 저장
 			const haksuIdToCompetencyMap = new Map();
-			let delay = 0;
-			const updatedRoadMapTableData = [...roadMapTableData];
+			let max_length = 0;
+
+			// 데이터 가공
+			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			courseByCompetencyInSubject.forEach((competency) => {
+				const { competencyCode } = competency;
+				// 조회했던 전공역량 모두 저장: 내 로드맵에서 전공역량을 조회해야하기 때문
+				setCompetencyTable((prev) => {
+					const updatedCompetencyTable = [...prev];
+					if (!updatedCompetencyTable.find((item) => item.competencyCode === competencyCode)) {
+						updatedCompetencyTable.push(competency);
+					}
+					return updatedCompetencyTable;
+				});
 				competency.courseGetResponseList.forEach((course) => {
 					const { openingYear, openingSemester, haksuId, name } = course;
-					const semesterIndex = openingSemester === '1학기' ? 0 : 1;
-					const index = (openingYear - 1) * 2 + semesterIndex;
+					const semesterIndex = openingSemester === '2학기' ? 1 : 0;
+					const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+					const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+					
 					if (!haksuIdToCompetencyMap.has(haksuId)) {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
 					haksuIdToCompetencyMap.get(haksuId).push(competency.competencyCode);
-					setTimeout(() => {
-						setRoadMapTableData((prevItems) => {
-							const updatedRoadMapTableData = [...prevItems];
-							updatedRoadMapTableData[index] = [
-								...updatedRoadMapTableData[index],
-								{
-									haksuId: haksuId,
-									courseName: name,
-									competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-								}
-							];
-							if (openingSemester === '1,2학기') {
-								updatedRoadMapTableData[index - 1] = [
-									...updatedRoadMapTableData[index - 1],
-									{
-										haksuId: haksuId,
-										courseName: name,
-										competencyCodes: haksuIdToCompetencyMap.get(haksuId)
-									}
-								];
+
+					updatedRoadMapTableData[index] = [
+						...updatedRoadMapTableData[index],
+						{
+							haksuId: haksuId,
+							courseName: name,
+							competencyCodes: haksuIdToCompetencyMap.get(haksuId),
+							isMyTable: false
+						}
+					];
+					if (openingSemester === '1,2학기') {
+						updatedRoadMapTableData[index + 1] = [
+							...updatedRoadMapTableData[index + 1],
+							{
+								haksuId: haksuId,
+								courseName: name,
+								competencyCodes: haksuIdToCompetencyMap.get(haksuId),
+								isMyTable: false
 							}
-							return updatedRoadMapTableData;
-						});
-					}, delay);
-					delay += 50;
+						];
+					}
+
+					// 가장 긴 배열 탐색
+					if (updatedRoadMapTableData[index].length > max_length) {
+						max_length = updatedRoadMapTableData[index].length;
+					}
 				});
 			});
-			setRoadMapTableData(updatedRoadMapTableData);
+
+			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
+			let delay = 200;
+			let animationTime = Math.floor(100 / max_length);
+			updatedRoadMapTableData.forEach((courseRow, index) => {
+				courseRow.slice(1).forEach((item) => {
+					setTimeout(() => {
+						setRoadMapTableData((prev) => {
+							const sortedTableData = [...prev];
+							sortedTableData[index].push(item);
+							return sortedTableData;
+						});
+					}, delay);
+					delay += animationTime;
+				});
+			});
 		}
 	}, [courseByCompetencyInSubject]);
 
+	useEffect(() => {
+		if (!Array.isArray(totalRoadMap)) {
+			console.log('totalRoadMap is empty');
+		} else {
+			setCompetencyList([]);
+			let max_length = 0;
+
+			// 데이터 가공
+			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
+			totalRoadMap.forEach((course) => {
+				const { openingYear, openingSemester, haksuId, name } = course;
+				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
+				const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+				
+				updatedRoadMapTableData[index] = [
+					...updatedRoadMapTableData[index],
+					{
+						haksuId: haksuId,
+						courseName: name,
+						competencyCodes: [],
+						isMyTable: false
+					}
+				];
+				if (openingSemester === '1,2학기') {
+					updatedRoadMapTableData[index + 1] = [
+						...updatedRoadMapTableData[index + 1],
+						{
+							haksuId: haksuId,
+							courseName: name,
+							competencyCodes: [],
+							isMyTable: false
+						}
+					];
+				}
+
+				// 가장 긴 배열 탐색
+				if (updatedRoadMapTableData[index].length > max_length) {
+					max_length = updatedRoadMapTableData[index].length;
+				}
+			});
+
+			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
+			let delay = 200;
+			let animationTime = Math.floor(100 / max_length);
+			updatedRoadMapTableData.forEach((courseRow, index) => {
+				courseRow.slice(1).forEach((item) => {
+					setTimeout(() => {
+						setRoadMapTableData((prev) => {
+							const sortedTableData = [...prev];
+							sortedTableData[index].push(item);
+							return sortedTableData;
+						});
+					}, delay);
+					delay += animationTime;
+				});
+			});
+		}
+	}, [totalRoadMap]);
+
+	// 내 로드맵 변경 시 내 로드맵 과목들의 역량을 찾아 채우는 기능
 	useEffect(() => {
 		const competencyArray = [];
 		myTableData.forEach((row) => {
@@ -147,46 +229,51 @@ const RoadMapContainer = ({ show }) => {
 	}, [myTableData]);
 
 	function findCompetencyByCode(competencyCodes) {
-		// Find competencies for each code in the array
 		const competencies = competencyCodes.map((code) => {
-			return courseByCompetencyInSubject.find((item) => item.competencyCode === code);
+			return competencyTable.find((item) => item.competencyCode === code);
 		});
 		return competencies;
 	}
 
-	const [isHighlighted, setIsHighlighted] = useState(false);
-	const [competencyCode, setCompetencyCode] = useState('');
-	const handleCellClick_highlight = (competencyCode) => {
-		if (isHighlighted) {
-			console.log('isHighlighted: ', false);
-			setIsHighlighted(false);
-		} else {
-			setIsHighlighted(true);
-			console.log('isHighlighted: ', true);
-		}
-		setCompetencyCode(competencyCode);
+	// 역량에 해당하는 과목들 하이라이트하는 기능
+	const [highlightedCompetencies, setHighlightedCompetencies] = useState({});
+	const handleCellClick_highlight = (selectedCompetencyCode) => {
+		setHighlightedCompetencies((prev) => {
+			const updatedHighlightedCompetencies = {};
+			for (let competencyCode in prev) {
+				updatedHighlightedCompetencies[competencyCode] = false;
+			}
+			updatedHighlightedCompetencies[selectedCompetencyCode] = !prev[selectedCompetencyCode];
+			return updatedHighlightedCompetencies;
+		});
 	};
+	const [highlightedCompetency, setHighlightedCompetency] = useState('');
+	useEffect(() => {
+		const highlightedCode = Object.keys(highlightedCompetencies).find((code) => highlightedCompetencies[code] === true);
+		if (highlightedCode) {
+			setHighlightedCompetency(highlightedCode);
+		} else {
+			setHighlightedCompetency('no_highlight');
+		}
+	}, [highlightedCompetencies]);
 
+	// 학과 로드맵 Cell Click 이벤트
 	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
-		if (unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)) return;
-
-		// Set cell as unclickable
 		const updatedUnclickableCells = [...unclickableCells];
 		updatedUnclickableCells.push({ cellData: cellData, row: rowIndex });
 		setUnclickableCells(updatedUnclickableCells);
 
-		// Update myTableData to add the clicked cell's data
 		const updatedMyTableData = [...myTableData];
-		updatedMyTableData[rowIndex].push(cellData);
+		const copiedCellData = { ...cellData, isMyTable: true };
+		updatedMyTableData[rowIndex].push(copiedCellData);
 		setMyTableData(updatedMyTableData);
 	};
+	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
-		// Remove cell from unclickableCells
 		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
-		// Update myTableData to remove the clicked cell's data
 		const updatedMyTableData = [...myTableData];
 		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
 		if (cellIndex !== -1) {
@@ -200,19 +287,18 @@ const RoadMapContainer = ({ show }) => {
 	};
 
 	return (
-		<Container className={`content ${show ? 'with-sidebar' : 'full-width'}`}>
+		<Container>
 			<TitleWrapper>
 				<Title>학과 로드맵</Title>
 				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 로드맵 보기</Button>}
 			</TitleWrapper>
 			<RoadMapTable
-				competencyTableData={courseByCompetencyInSubject}
+				competencyTableData={competencyList}
 				roadMapTableData={roadMapTableData}
 				onCellClick={handleCellClick_add}
 				unclickableCells={unclickableCells}
 				onCompetencyClick={handleCellClick_highlight}
-				isHighlighted={isHighlighted}
-				competencyCode={competencyCode}
+				highlightedCompetency={highlightedCompetency}
 			/>
 			<TitleWrapper>
 				<Title>내 로드맵</Title>
@@ -223,8 +309,7 @@ const RoadMapContainer = ({ show }) => {
 				onCellClick={handleCellClick_remove}
 				unclickableCells={[]}
 				onCompetencyClick={handleCellClick_highlight}
-				isHighlighted={isHighlighted}
-				competencyCode={competencyCode}
+				highlightedCompetency={highlightedCompetency}
 			/>
 		</Container>
 	);
