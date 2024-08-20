@@ -5,6 +5,7 @@ import {
 	largeFieldState,
 	middleFieldState,
 	selectedFieldState,
+	selectedSubjectState,
 	showFieldInputState,
 	smallFieldState
 } from '../../recoils/atoms';
@@ -82,6 +83,7 @@ function FieldCategoryInput({ onClose }) {
 	const detailFields = useRecoilValue(detailFieldState);
 	const setSelectedFields = useSetRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
+	const setSubjectsState = useSetRecoilState(selectedSubjectState);
 	const {
 		fetchLargeField,
 		fetchMiddleField,
@@ -153,6 +155,7 @@ function FieldCategoryInput({ onClose }) {
 		}
 		fetchCoursesInFields(selectedField.fieldCode);
 		setSelectedFields(selectedField);
+		setSubjectsState({ subjectName: '전체', subjectCode: -1 });
 		fetchSubjectsInField(selectedField.fieldCode);
 		setShowFieldInput(false);
 	};
