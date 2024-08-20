@@ -57,13 +57,20 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
+const findCompetencyByCode = (competencyCodes, competencyTable) => {
+	const competencies = competencyCodes.map((code) => {
+		return competencyTable.find((item) => item.competencyCode === code);
+	});
+	return competencies;
+};
+
 const RoadMapContainer = () => {
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const totalRoadMap = useRecoilValue(totalRoadMapState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 	const { fetchCoursesInSubject } = useField();
 
-	const [competencyList, setCompetencyList] = useState(courseByCompetencyInSubjectState)
+	const [competencyList, setCompetencyList] = useState(courseByCompetencyInSubjectState);
 	const [roadMapTableData, setRoadMapTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
@@ -99,9 +106,9 @@ const RoadMapContainer = () => {
 				competency.courseGetResponseList.forEach((course) => {
 					const { openingYear, openingSemester, haksuId, name } = course;
 					const semesterIndex = openingSemester === '2학기' ? 1 : 0;
-					const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+					const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
 					const index = (openingYear_include9 - 1) * 2 + semesterIndex;
-					
+
 					if (!haksuIdToCompetencyMap.has(haksuId)) {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
@@ -165,9 +172,9 @@ const RoadMapContainer = () => {
 			totalRoadMap.forEach((course) => {
 				const { openingYear, openingSemester, haksuId, name } = course;
 				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
-				const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+				const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
 				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
-				
+
 				updatedRoadMapTableData[index] = [
 					...updatedRoadMapTableData[index],
 					{
@@ -224,16 +231,9 @@ const RoadMapContainer = () => {
 			});
 		});
 		const uniqueCompetencyArray = competencyArray.filter((item, index, self) => self.indexOf(item) === index);
-		const updatedMyCompetencyList = [...findCompetencyByCode(uniqueCompetencyArray)];
+		const updatedMyCompetencyList = [...findCompetencyByCode(uniqueCompetencyArray, competencyTable)];
 		setMyCompetencyList(updatedMyCompetencyList);
-	}, [myTableData]);
-
-	function findCompetencyByCode(competencyCodes) {
-		const competencies = competencyCodes.map((code) => {
-			return competencyTable.find((item) => item.competencyCode === code);
-		});
-		return competencies;
-	}
+	}, [myTableData, competencyTable]);
 
 	// 역량에 해당하는 과목들 하이라이트하는 기능
 	const [highlightedCompetencies, setHighlightedCompetencies] = useState({});

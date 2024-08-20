@@ -111,7 +111,7 @@ const Cell = forwardRef(({ cellData, rowIndex, onClick, unclickable, highlighted
 	}, [cellData, highlightedCompetency]);
 
 	return (
-		<StyledCell className={unclickable ? 'unclickable' : ''}>
+		<StyledCell ref={ref} className={unclickable ? 'unclickable' : ''}>
 			<ButtonWrapper>
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
 					<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
@@ -133,5 +133,7 @@ const Cell = forwardRef(({ cellData, rowIndex, onClick, unclickable, highlighted
 		</StyledCell>
 	);
 });
+
+Cell.displayName = 'Cell';
 
 export default Cell;

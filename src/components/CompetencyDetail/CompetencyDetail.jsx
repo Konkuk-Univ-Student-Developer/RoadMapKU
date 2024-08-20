@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-    Title,
-	Subtitle,
-	ModalContent,
-	Subject,
-	SubjectContainer,
-	ScrollContainer
-} from './CompetencyDetailStyle';
+import { Title, Subtitle, ModalContent, Subject, SubjectContainer, ScrollContainer } from './CompetencyDetailStyle';
 import Modal from '../Modal/Modal';
 
 function CourseDetail({ onClose, competencyData }) {
@@ -55,9 +48,7 @@ function CourseDetail({ onClose, competencyData }) {
 				<Title>Competency Information</Title>
 
 				<SubjectContainer>
-					<Subject>
-						{competencyDetail.competencyName}
-					</Subject>
+					<Subject>{competencyDetail.competencyName}</Subject>
 				</SubjectContainer>
 				<Subtitle>설명</Subtitle>
 				<ModalContent>{competencyDetail.competencyDescription}</ModalContent>

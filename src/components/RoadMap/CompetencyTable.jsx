@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './CompetencyCell';
@@ -48,37 +48,31 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 	const [competencyTable, setCompetencyTable] = useState([]);
 	const [refs, setRefs] = useState([]);
 
-	const isEqualArray = (arr1, arr2) => {
-		return JSON.stringify(arr1) === JSON.stringify(arr2);
-	};
-
 	useEffect(() => {
-		if (!Array.isArray(competencyTableData)) {
+		if (!Array.isArray(competencyTableData) || competencyTableData.length === 0) {
 			console.log('competencyTableData is empty');
 			setCompetencyTable([]);
 			setRefs([]);
-		} else {
-			// 전공역량을 역량코드 순으로 재배열
-			const sortedCompetencyTable = [...competencyTableData];
-			sortedCompetencyTable.sort((a, b) => a.competencyCode.localeCompare(b.competencyCode));
-
-			setRefs(sortedCompetencyTable.map(() => React.createRef()));
-
-			// 테이블이 다를 경우에만 새로 렌더링
-			if (!isEqualArray(competencyTable, sortedCompetencyTable)) {
-				setCompetencyTable([]);
-				let delay = 0;
-				sortedCompetencyTable.forEach((competencies) => {
-					setTimeout(() => {
-						setCompetencyTable((prevItems) => {
-							const updatedCompetencyTableData = [...prevItems, competencies];
-							return updatedCompetencyTableData;
-						});
-					}, delay);
-					delay += 50;
-				});
-			}
+			return;
 		}
+
+		// Sort competencyTableData by competencyCode
+		const sortedCompetencyTable = [...competencyTableData].sort((a, b) =>
+			a.competencyCode.localeCompare(b.competencyCode)
+		);
+
+		// Update refs
+		setRefs(sortedCompetencyTable.map(() => React.createRef()));
+
+		// Update competencyTable with delays
+		let delay = 0;
+		setCompetencyTable([]);
+		sortedCompetencyTable.forEach((competency) => {
+			setTimeout(() => {
+				setCompetencyTable((prevItems) => [...prevItems, competency]);
+			}, delay);
+			delay += 50;
+		});
 	}, [competencyTableData]);
 
 	return (
@@ -87,8 +81,18 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 			<CompetencyContainer>
 				<TransitionGroup component={CompetencyColumn}>
 					{competencyTable.map((competency, index) => (
-						<CSSTransition key={competency.competencyCode} timeout={animationTiming} classNames="Bounce" nodeRef={refs[index]}>
-							<Cell ref={refs[index]} cellData={competency} onClick={onClick} highlightedCompetency={highlightedCompetency} />
+						<CSSTransition
+							key={competency.competencyCode}
+							timeout={animationTiming}
+							classNames="Bounce"
+							nodeRef={refs[index]}
+						>
+							<Cell
+								ref={refs[index]}
+								cellData={competency}
+								onClick={onClick}
+								highlightedCompetency={highlightedCompetency}
+							/>
 						</CSSTransition>
 					))}
 				</TransitionGroup>
