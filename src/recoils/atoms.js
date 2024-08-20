@@ -52,9 +52,8 @@ export const subjectsInFieldState = atom({
 
 export const totalRoadMapState = atom({
 	key: 'totalRoadMapState',
-	default: [],
-  });
-  
+	default: []
+});
 
 export const selectedSubjectState = atom({
 	key: 'selectedSubjectState',

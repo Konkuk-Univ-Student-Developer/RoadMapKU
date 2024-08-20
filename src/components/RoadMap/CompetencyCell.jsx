@@ -118,4 +118,6 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	);
 });
 
+Cell.displayName = 'Cell';
+
 export default Cell;

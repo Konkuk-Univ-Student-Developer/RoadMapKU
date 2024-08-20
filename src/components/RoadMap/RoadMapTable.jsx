@@ -72,11 +72,7 @@ const RoadMapTable = ({
 	onCompetencyClick,
 	highlightedCompetency
 }) => {
-	const refs = useRef(
-		roadMapTableData.map((row) =>
-			row.slice(1).map(() => React.createRef())
-		)
-	).current;
+	const refs = useRef(roadMapTableData.map((row) => row.slice(1).map(() => React.createRef()))).current;
 
 	return (
 		<RoadMapContainer>
@@ -114,7 +110,7 @@ const RoadMapTable = ({
 										highlightedCompetency={highlightedCompetency}
 									/>
 								</CSSTransition>
-                            ))}
+							))}
 						</TransitionGroup>
 					))}
 				</CourseContainer>
