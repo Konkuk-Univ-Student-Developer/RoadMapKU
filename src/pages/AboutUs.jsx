@@ -1,5 +1,13 @@
+import LogoContents from '../components/AboutUsContents/LogoContents';
+import Header from '../components/Header';
+
 const AboutUs = () => {
-	return <h1>About Us</h1>;
+	return (
+		<div>
+			<Header />
+			<LogoContents />
+		</div>
+	);
 };
 
 export default AboutUs;
