@@ -5,7 +5,7 @@ import CompetencyTable from './CompetencyTable';
 import Cell from './RoadMapCell';
 
 const RoadMapContainer = styled.div`
-	height: 22rem;
+	height: calc(45vh - 5rem);
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
@@ -23,7 +23,7 @@ const TableContainer = styled.div`
 `;
 
 const SemesterContainer = styled.div`
-	height: 2.2rem;
+	height: 2.1rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
@@ -32,7 +32,7 @@ const SemesterContainer = styled.div`
 `;
 
 const CourseContainer = styled.div`
-	height: 19.8rem;
+	flex: 1;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
