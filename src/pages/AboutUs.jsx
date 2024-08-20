@@ -1,12 +1,24 @@
+import styled from 'styled-components';
+import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
 import LogoContents from '../components/AboutUsContents/LogoContents';
-import Header from '../components/Header';
+import MainContainer from '../components/MainContainer';
+
+const SubContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 70px;
+`;
 
 const AboutUs = () => {
 	return (
-		<div>
-			<Header />
-			<LogoContents />
-		</div>
+		<MainContainer>
+			<SubContainer>
+				<LogoContents />
+				<AboutUsContents />
+			</SubContainer>
+		</MainContainer>
 	);
 };
 

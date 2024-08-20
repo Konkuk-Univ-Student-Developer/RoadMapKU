@@ -6,7 +6,6 @@ const LogoContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-itmes: center;
-	margin-top: 70px;
 `;
 
 const LogoContents = () => {
