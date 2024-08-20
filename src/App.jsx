@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import RoadMap from './pages/RoadMap';
 import { RecoilRoot } from 'recoil';
 import HowToPage from './pages/HowToPage';
+import AboutUs from './pages/AboutUs';
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/road-map" element={<RoadMap />} />
 				<Route path="/howtopage" element={<HowToPage />} />
+				<Route path="/about-us" element={<AboutUs />} />
 			</Routes>
 		</RecoilRoot>
 	);
