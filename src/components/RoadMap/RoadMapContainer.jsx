@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const TitleWrapper = styled.div`
+	height: 4vh;
 	padding-top: 0.5rem;
 	padding-left: 1.5rem;
 	padding-right: 1rem;
