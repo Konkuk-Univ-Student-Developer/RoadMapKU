@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+	padding-top: 60px;
 	display: flex;
 	width: 300px;
 	height: 100%;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 20px;
 `;
@@ -33,7 +34,8 @@ const ProfileUl = styled.ul`
 `;
 
 const ProfileLi = styled.li`
-	font-size: 20px;
+	padding: 5px 0;
+	font-size: 15px;
 `;
 
 const ProfileContents = ({ name, role, roleDatas, srcUrl }) => {
