@@ -25,7 +25,7 @@ const IntroductionProfileContents = () => {
 				roleDatas={SungjongRole}
 			/>
 			<ProfileContents
-				srcUrl={'./../img/SungjongProfile.png'}
+				srcUrl={'./../img/SeungraeProfile.png'}
 				name={'하승래'}
 				role={'프론트엔드'}
 				roleDatas={SeugraeRole}

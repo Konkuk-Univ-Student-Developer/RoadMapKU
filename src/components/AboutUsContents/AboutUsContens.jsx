@@ -21,9 +21,9 @@ export const SubTitle = styled.p`
 `;
 
 const Description = styled.div`
+	width: 90%;
 	text-align: center;
-	word-wrap: break-word;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 500;
 `;
 
