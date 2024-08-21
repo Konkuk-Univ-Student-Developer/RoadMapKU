@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ProfileContents from './ProfileContents';
+import { JiaRole } from '../../data/RoleData';
 
 const Container = styled.div`
 	display: flex;
@@ -14,18 +15,8 @@ const Container = styled.div`
 const IntroductionProfileContents = () => {
 	return (
 		<Container>
-			<ProfileContents
-				srcUrl={'./../img/JiaProfile.png'}
-				name={'김지아'}
-				role={'기획'}
-				roleDatas={['놀기', '밥먹기', '노래듣기']}
-			/>
-			<ProfileContents
-				srcUrl={'./../img/SejoonProfile.png'}
-				name={'박세준'}
-				role={'백엔드'}
-				roleDatas={['놀기', '밥먹기', '노래듣기']}
-			/>
+			<ProfileContents srcUrl={'./../img/JiaProfile.png'} name={'김지아'} role={'기획'} roleDatas={JiaRole} />
+			<ProfileContents srcUrl={'./../img/SejoonProfile.png'} name={'박세준'} role={'백엔드'} roleDatas={JiaRole} />
 			<ProfileContents
 				srcUrl={'./../img/YeeunProfile.png'}
 				name={'김예은'}
