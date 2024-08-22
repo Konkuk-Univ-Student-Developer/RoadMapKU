@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Header from '../components/Header';
 import HeroSection from './HeroSection';
 import TextContents from '../components/HeroContents/TextContents';
 import LinkContents from '../components/HeroContents/LinkContents';
@@ -7,15 +6,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GreetTextContents from '../components/HeroContents/GreetTextContents';
+import MainContainer from '../components/MainContainer';
 
-const HomeContainer = styled.div`
-	min-width: 100vw;
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-`;
-
-const MainContainer = styled.div`
+const SubContainer = styled.div`
 	width: 100%;
 	height: 50%;
 	display: flex;
@@ -37,23 +30,22 @@ function Home() {
 	};
 
 	return (
-		<HomeContainer>
-			<Header />
+		<MainContainer>
 			<Slider {...settings}>
 				<HeroSection imageUrl={'./img/HomePicture.png'}>
-					<MainContainer>
+					<SubContainer>
 						<TextContents />
 						<LinkContents />
-					</MainContainer>
+					</SubContainer>
 				</HeroSection>
 
 				<HeroSection imageUrl={'./img/HomePicture2.png'}>
-					<MainContainer>
+					<SubContainer>
 						<GreetTextContents />
-					</MainContainer>
+					</SubContainer>
 				</HeroSection>
 			</Slider>
-		</HomeContainer>
+		</MainContainer>
 	);
 }
 

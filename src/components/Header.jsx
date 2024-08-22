@@ -108,6 +108,9 @@ function Header() {
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
 						How to USE
 					</HeaderLink>
+					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
+						About Us
+					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>
 					<HeaderBrand>
