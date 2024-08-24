@@ -5,6 +5,8 @@ import html2canvas from 'html2canvas';
 import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 import useField from '../../hooks/useField';
+import { Icon } from '@iconify/react';
+import bxCamera from '@iconify-icons/bx/bx-camera';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -357,7 +359,9 @@ const RoadMapContainer = () => {
 				/>
 			</Content>
 
-			<FloatingButton onClick={handleCaptureButtonClick}>📸</FloatingButton>
+			<FloatingButton onClick={handleCaptureButtonClick}>
+				<Icon icon={bxCamera} />
+			</FloatingButton>
 		</Container>
 	);
 };
