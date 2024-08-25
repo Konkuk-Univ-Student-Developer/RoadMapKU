@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
+import html2canvas from 'html2canvas';
 import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
 import useField from '../../hooks/useField';
+import { Icon } from '@iconify/react';
+import bxCamera from '@iconify-icons/bx/bx-camera';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -11,6 +14,10 @@ const Container = styled.div`
 	flex-direction: column;
 `;
 
+const Content = styled.div`
+	padding-top: 10px;
+	background-color: #f9f9f9;
+`;
 const TitleWrapper = styled.div`
 	height: 4vh;
 	padding-top: 0.5rem;
@@ -47,6 +54,29 @@ const Button = styled.button`
 	}
 `;
 
+const FloatingButton = styled.button`
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #036b3f;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	font-size: 24px;
+	cursor: pointer;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: #02472a;
+	}
+`;
+
 const defaultTable = [
 	[{ haksuId: '0', courseName: '1 - 1' }],
 	[{ haksuId: '0', courseName: '1 - 2' }],
@@ -76,6 +106,7 @@ const RoadMapContainer = () => {
 	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
 	const [competencyTable, setCompetencyTable] = useState([]);
+	const roadmapContentRef = useRef(null);
 
 	// 다른 전공을 클릭했을 때 테이블 초기화
 	useEffect(() => {
@@ -287,6 +318,23 @@ const RoadMapContainer = () => {
 		fetchCoursesInSubject(subjectCode);
 	};
 
+	const handleCaptureButtonClick = () => {
+		if (roadmapContentRef.current) {
+			html2canvas(roadmapContentRef.current)
+				.then((canvas) => {
+					const link = document.createElement('a');
+					link.href = canvas.toDataURL('image/png');
+					link.download = 'roadmap.png';
+					link.click();
+				})
+				.catch((error) => {
+					console.error('Error capturing the element:', error);
+				});
+		} else {
+			console.error('Roadmap content is not available');
+		}
+	};
+
 	return (
 		<Container>
 			<TitleWrapper>
@@ -301,17 +349,23 @@ const RoadMapContainer = () => {
 				onCompetencyClick={handleCellClick_highlight}
 				highlightedCompetency={highlightedCompetency}
 			/>
-			<TitleWrapper>
-				<Title>내 로드맵</Title>
-			</TitleWrapper>
-			<RoadMapTable
-				competencyTableData={myCompetencyList}
-				roadMapTableData={myTableData}
-				onCellClick={handleCellClick_remove}
-				unclickableCells={[]}
-				onCompetencyClick={handleCellClick_highlight}
-				highlightedCompetency={highlightedCompetency}
-			/>
+			<Content ref={roadmapContentRef} id="roadmap-content">
+				<TitleWrapper>
+					<Title>내 로드맵</Title>
+				</TitleWrapper>
+				<RoadMapTable
+					competencyTableData={myCompetencyList}
+					roadMapTableData={myTableData}
+					onCellClick={handleCellClick_remove}
+					unclickableCells={[]}
+					onCompetencyClick={handleCellClick_highlight}
+					highlightedCompetency={highlightedCompetency}
+				/>
+			</Content>
+
+			<FloatingButton onClick={handleCaptureButtonClick}>
+				<Icon icon={bxCamera} />
+			</FloatingButton>
 		</Container>
 	);
 };
