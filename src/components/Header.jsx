@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-//import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 import KuLogo from '../components/LogoFile/Kulogo';
 
 const theme = {
@@ -84,15 +83,15 @@ function Header() {
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
-						소개
+						Info
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
-						How to USE
+						Usage
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
-						로드맵
+						KUMAP
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
