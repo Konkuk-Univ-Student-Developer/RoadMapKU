@@ -68,6 +68,10 @@ const FloatingButton = styled.button`
 	cursor: pointer;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	&:hover {
 		background-color: #02472a;
 	}
