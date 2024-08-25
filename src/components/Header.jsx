@@ -82,10 +82,10 @@ function Header() {
 						Home
 					</HeaderLink>
 					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
-						로드맵
+						KUMAP
 					</HeaderLink>
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
-						How to USE
+						Usage
 					</HeaderLink>
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
 						About Us
