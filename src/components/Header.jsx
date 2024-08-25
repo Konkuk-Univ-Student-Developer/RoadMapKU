@@ -1,9 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import styled from 'styled-components';
 //import Modal from './Modal/Modal'; // Modal 컴포넌트 임포트
 import KuLogo from '../components/LogoFile/Kulogo';
-import CourseDetail from './CourseDetail/CourseDetail';
 
 const theme = {
 	active: {
@@ -72,14 +70,7 @@ export const Button = styled.button`
 
 function Header() {
 	const navigate = useNavigate();
-	const [isOpen1, setIsOpen1] = useState(false);
 	const { pathname } = useLocation();
-
-	const onClickButton1 = () => {
-		setIsOpen1(true);
-	};
-
-	const haksuId = 'BUCA65952';
 
 	return (
 		<>
@@ -91,23 +82,19 @@ function Header() {
 					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
 						Home
 					</HeaderLink>
-					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
-						로드맵
-					</HeaderLink>
 
-					<HeaderLink onClick={onClickButton1}>학사 안내 테스트</HeaderLink>
-					{isOpen1 && (
-						<CourseDetail
-							onClose={() => {
-								setIsOpen1(false);
-							}}
-							HaksuId={haksuId} // 변수로 전달
-						/>
-					)}
+					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
+						소개
+					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
 						How to USE
 					</HeaderLink>
+
+					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
+						로드맵
+					</HeaderLink>
+
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
 						About Us
 					</HeaderLink>
