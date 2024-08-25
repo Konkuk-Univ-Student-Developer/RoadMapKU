@@ -16,9 +16,8 @@ const DepartmentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	width: 95%;
-	height: 310px;
 	background: #036b3f;
 	border-radius: 10px;
 	overflow: auto;
