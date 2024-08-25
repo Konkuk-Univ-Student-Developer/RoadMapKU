@@ -168,7 +168,7 @@ function FieldCategoryInput({ onClose }) {
 				</div>
 				<SelectContainer>
 					<StyledSelect ref={largeRef} onChange={selectLargeField}>
-						<option value="">분야를 선택해주세요</option>
+						<option value="">대분류를 선택해주세요</option>
 						{largeFields.map((item) => (
 							<option key={item.fieldCode} value={JSON.stringify(item)}>
 								{item.largeField}
@@ -180,7 +180,7 @@ function FieldCategoryInput({ onClose }) {
 						onChange={selectMiddleField}
 						disabled={middleFields.length > 0 ? '' : 'disabled'}
 					>
-						<option value="">분야를 선택해주세요</option>
+						<option value="">중분류를 선택해주세요</option>
 						{middleFields.map((item) => (
 							<option key={item.fieldCode} value={JSON.stringify(item)}>
 								{item.middleField}
@@ -188,7 +188,7 @@ function FieldCategoryInput({ onClose }) {
 						))}
 					</StyledSelect>
 					<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
-						<option value="">분야를 선택해주세요</option>
+						<option value="">소분류를 선택해주세요</option>
 						{smallFields.map((item) => (
 							<option key={item.fieldCode} value={JSON.stringify(item)}>
 								{item.smallField}
@@ -196,7 +196,7 @@ function FieldCategoryInput({ onClose }) {
 						))}
 					</StyledSelect>
 					<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
-						<option value="">분야를 선택해주세요</option>
+						<option value="">세분류를 선택해주세요</option>
 						{detailFields.map((item) => (
 							<option key={item.fieldCode} value={JSON.stringify(item)}>
 								{item.detailField}
