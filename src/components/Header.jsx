@@ -81,12 +81,19 @@ function Header() {
 					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
 						Home
 					</HeaderLink>
-					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
-						KUMAP
+
+					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
+						Info
 					</HeaderLink>
+
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
 						Usage
 					</HeaderLink>
+
+					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
+						KUMAP
+					</HeaderLink>
+
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
 						About Us
 					</HeaderLink>

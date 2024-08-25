@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const ScrollContainer = styled.div`
+	width: 100%;
 	background-color: transparent;
 	padding: 0rem;
 	border-radius: 8px;
-	max-height: 80vh; /* 내용물의 최대 높이 설정 */
-	overflow-y: auto; /* 세로 스크롤바 표시 */
+	max-height: 80vh;
+	overflow-y: auto;
+	overflow-x: hidden;
 `;
 
 export const Title = styled.h1`
@@ -33,14 +35,13 @@ export const Subject = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-	color: #036b3f; /* main color */
+	color: #036b3f;
 	font-size: 1.5rem;
 	margin: 0.5rem 20px;
 	padding-top: 2rem;
 `;
 
 export const ModalContent = styled.div`
-	width: 49rem;
 	font-family: Arial;
 	font-size: 1rem;
 	margin: 10px 20px;
