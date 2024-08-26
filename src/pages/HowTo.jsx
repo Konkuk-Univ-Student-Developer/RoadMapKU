@@ -1,15 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import competencydetail from '../img/competencydetail.png';
 import detail from '../img/detail.png';
 import jobchoice from '../img/jobchoice.png';
 import myroadmap from '../img/myroadmap.png';
 import majorchoice from '../img/majorchoice.png';
+import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
 	font-family: 'Arial, sans-serif';
-	background-color: #e0f2f1;
-	color: #004d40;
+	//background-color: #e0f2f1;
+	//color: #004d40;
 `;
 
 const HeaderContainer = styled.header`
@@ -35,21 +37,23 @@ const Section = styled.section`
 `;
 
 const Step = styled.h2`
-	font-size: 1.6em;
+	font-size: 40px;
+	font-weight: 800;
 	margin-bottom: 20px;
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
-	font-weight: regular;
 `;
 
 const StepTitle = styled.h3`
-	font-size: 1.4em;
+	font-size: 30px;
+	font-weight: 500;
 	margin-bottom: 20px;
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
 `;
 const SubTitle = styled.h3`
-	font-size: 1.4em;
+	font-size: 30px;
+	font-weight: 500;
 	margin-bottom: 20px;
 	color: black
 	line-height: 1.5;
@@ -80,7 +84,33 @@ const FeatureItem = styled.div`
 	flex-direction: column;
 `;
 
+const LinkContainer = styled.div`
+	gap: 25px;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const LinkButton = styled.button`
+	width: 400px;
+	height: 100px;
+	padding: 10px 20px;
+	font-size: 30px;
+	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : '#036b3f')};
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: 0.1s ease-in;
+	&:hover {
+		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
+	}
+`;
+
 function HowTo() {
+	const navigate = useNavigate();
 	return (
 		<>
 			<Container>
@@ -113,7 +143,7 @@ function HowTo() {
 					<br />
 					<br />
 					<br />
-					<Step>자신의 로드맵을 완성시키고 공유해보세요!</Step>
+					<StepTitle>자신의 로드맵을 완성시키고 공유해보세요!</StepTitle>
 				</Section>
 
 				<Section bgColor="#ffffff">
@@ -136,15 +166,16 @@ function HowTo() {
 					</FeaturesContainer>
 				</Section>
 
-				{/* <FeaturesContainer>
-					<FeatureItem>
-						<Illustration src={competencydetail} alt="" />
-					</FeatureItem>
-					<FeatureItem>
-						<Illustration src={detail} alt="" />
-					</FeatureItem>
-				</FeaturesContainer> */}
+				<LinkContainer>
+					<LinkButton onClick={() => navigate('/about-us')} option={'white'}>
+						About Us
+					</LinkButton>
+					<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+						KUMAP 바로가기
+					</LinkButton>
+				</LinkContainer>
 			</Container>
+			<Footer />
 		</>
 	);
 }
