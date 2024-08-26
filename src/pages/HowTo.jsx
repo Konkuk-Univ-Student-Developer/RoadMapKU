@@ -51,6 +51,15 @@ const StepTitle = styled.h3`
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
 `;
+
+const StepTitle2 = styled.h3`
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	color: ${(props) => props.color || '#ffffff'};
+	line-height: 1.5;
+`;
 const SubTitle = styled.h3`
 	font-size: 30px;
 	font-weight: 500;
@@ -67,6 +76,7 @@ const Illustration = styled.img`
 	height: auto; //원본 비율 유지
 	max-width: 600px;
 	margin-top: 20px;
+	border-radius: 0.5rem;
 `;
 
 const FeaturesContainer = styled.section`
@@ -79,9 +89,11 @@ const FeaturesContainer = styled.section`
 
 const FeatureItem = styled.div`
 	display: flex;
-	margin-bottom: 20px;
+	//margin-bottom: 10px;
 	display: flex;
 	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 10px;
 `;
 
 const LinkContainer = styled.div`
@@ -151,17 +163,17 @@ function HowTo() {
 					<FeaturesContainer>
 						<FeatureItem>
 							<Illustration src={competencydetail} alt="" />
-							<StepTitle color="black">
+							<StepTitle2 color="black">
 								+ 전공 역량 옆 돋보기를 선택하면 <br />
 								해당 전공 역량의 상세 정보를 만나보실 수 있습니다!
-							</StepTitle>
+							</StepTitle2>
 						</FeatureItem>
 						<FeatureItem>
 							<Illustration src={detail} alt="" />
-							<StepTitle color="black">
+							<StepTitle2 color="black">
 								+ 과목 누르면 과목 상세정보를 확인하실 수 있고, <br />
 								오른쪽 화살표 를 눌러서 내 로드맵에 담을 수 있습니다!
-							</StepTitle>
+							</StepTitle2>
 						</FeatureItem>
 					</FeaturesContainer>
 				</Section>
