@@ -6,6 +6,7 @@ import Cell from './RoadMapCell';
 
 const RoadMapContainer = styled.div`
 	height: calc(45vh - 5rem);
+	min-height: 19rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;

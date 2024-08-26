@@ -46,7 +46,6 @@ function CourseDetail({ onClose, competencyData }) {
 		<Modal onClose={onClose}>
 			<ScrollContainer>
 				<Title>Competency Information</Title>
-
 				<SubjectContainer>
 					<Subject>{competencyDetail.competencyName}</Subject>
 				</SubjectContainer>
