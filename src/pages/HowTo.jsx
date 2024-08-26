@@ -155,7 +155,7 @@ function HowTo() {
 					<br />
 					<br />
 					<br />
-					<StepTitle>자신의 로드맵을 완성시키고 공유해보세요!</StepTitle>
+					<StepTitle>🌟 자신의 로드맵을 완성시키고 공유해보세요! 🌟</StepTitle>
 				</Section>
 
 				<Section bgColor="#ffffff">
