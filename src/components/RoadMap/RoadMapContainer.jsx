@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import html2canvas from 'html2canvas';
 import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
 import RoadMapTable from './RoadMapTable';
+import TotalRoadMapModal from '../TotalRoadMapContents/totalRoadMapModal';
 import useField from '../../hooks/useField';
 import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
@@ -106,12 +107,13 @@ const RoadMapContainer = () => {
 	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
 	const [competencyTable, setCompetencyTable] = useState([]);
+	const [totalRoadMapData, setTotalRoadMapData] = useState([]);
 	const roadmapContentRef = useRef(null);
 
 	// 다른 전공을 클릭했을 때 테이블 초기화
 	useEffect(() => {
 		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
-	}, [courseByCompetencyInSubject, subjectCode, totalRoadMap]);
+	}, [courseByCompetencyInSubject, subjectCode]);
 
 	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) {
@@ -196,9 +198,6 @@ const RoadMapContainer = () => {
 		if (!Array.isArray(totalRoadMap)) {
 			console.log('totalRoadMap is empty');
 		} else {
-			setCompetencyList([]);
-			let max_length = 0;
-
 			// 데이터 가공
 			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			totalRoadMap.forEach((course) => {
@@ -227,28 +226,8 @@ const RoadMapContainer = () => {
 						}
 					];
 				}
-
-				// 가장 긴 배열 탐색
-				if (updatedRoadMapTableData[index].length > max_length) {
-					max_length = updatedRoadMapTableData[index].length;
-				}
 			});
-
-			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
-			let delay = 200;
-			let animationTime = Math.floor(100 / max_length);
-			updatedRoadMapTableData.forEach((courseRow, index) => {
-				courseRow.slice(1).forEach((item) => {
-					setTimeout(() => {
-						setRoadMapTableData((prev) => {
-							const sortedTableData = [...prev];
-							sortedTableData[index].push(item);
-							return sortedTableData;
-						});
-					}, delay);
-					delay += animationTime;
-				});
-			});
+			setTotalRoadMapData(updatedRoadMapTableData);
 		}
 	}, [totalRoadMap]);
 
@@ -314,8 +293,10 @@ const RoadMapContainer = () => {
 		setMyTableData(updatedMyTableData);
 	};
 
+	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const showRoadMapHandler = () => {
 		fetchCoursesInSubject(subjectCode);
+		setIsDetailOpen(true);
 	};
 
 	const handleCaptureButtonClick = () => {
@@ -339,7 +320,16 @@ const RoadMapContainer = () => {
 		<Container>
 			<TitleWrapper>
 				<Title>학과 로드맵</Title>
-				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 로드맵 보기</Button>}
+				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 전체 로드맵 보기</Button>}
+				{isDetailOpen && (
+					<TotalRoadMapModal
+						onClose={() => {
+							setIsDetailOpen(false);
+						}}
+						roadMapData={totalRoadMapData}
+						subjectName={subjectName}
+					/>
+				)}
 			</TitleWrapper>
 			<RoadMapTable
 				competencyTableData={competencyList}
