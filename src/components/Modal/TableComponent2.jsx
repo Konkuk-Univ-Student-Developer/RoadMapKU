@@ -20,15 +20,20 @@ const Th = styled.th`
 	background-color: #036b3f;
 	text-align: center;
 	color: white;
-	font-size: 12px; /* 헤더의 폰트 크기 설정 */
+	font-size: 14px; /* 헤더의 폰트 크기 설정 */
 	border: 1px solid black; /* 테두리 추가 */
 `;
 
 const Td = styled.td`
 	padding: 8px;
 	text-align: center;
-	font-size: 12px; /* 셀의 폰트 크기 설정 */
+	font-size: 13px; /* 셀의 폰트 크기 설정 */
 	border: 1px solid black; /* 테두리 추가 */
+
+	/* competencyRemark 열에만 적용할 스타일 */
+	&.remark {
+		text-align: left;
+	}
 `;
 
 const TableComponent2 = ({ data }) => {
@@ -49,7 +54,9 @@ const TableComponent2 = ({ data }) => {
 						<tr key={i}>
 							<Td>{headers[i]}</Td>
 							{row.map((cell, j) => (
-								<Td key={j}>{cell}</Td>
+								<Td key={j} className={j === 1 ? 'remark' : ''}>
+									{cell}
+								</Td>
 							))}
 						</tr>
 					))}
