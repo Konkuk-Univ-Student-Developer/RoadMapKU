@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import KuLogo from '../components/LogoFile/Kulogo';
+import KUMAPLogo from '../components/LogoFile/Kulogo';
 
 const theme = {
 	active: {
@@ -24,7 +24,8 @@ const HeaderContainer = styled.nav`
 	box-sizing: border-box; /* Ensure padding does not cause overflow */
 `;
 
-const HeaderBrand = styled.div`
+const HeaderBrand = styled.a`
+	cursor: pointer;
 	display: flex;
 `;
 
@@ -36,6 +37,7 @@ const HeaderLinks = styled.div`
 `;
 
 const HeaderLink = styled.a`
+	cursor: pointer;
 	text-decoration: none;
 	user-select: none;
 	${(props) => (props.active ? theme.active.on : theme.active.off)}
@@ -75,8 +77,8 @@ function Header() {
 	return (
 		<>
 			<HeaderContainer>
-				<HeaderBrand>
-					<KuLogo />
+				<HeaderBrand onClick={() => navigate('/')}>
+					<KUMAPLogo />
 				</HeaderBrand>
 				<HeaderLinks>
 					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
@@ -100,7 +102,7 @@ function Header() {
 					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>
-					<HeaderBrand>
+					<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
 						<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem', marginRight: '1rem' }} />
 					</HeaderBrand>
 				</HeaderActions>

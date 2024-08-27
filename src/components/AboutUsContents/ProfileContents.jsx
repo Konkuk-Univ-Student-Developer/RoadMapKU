@@ -4,7 +4,7 @@ const Container = styled.div`
 	padding-top: 60px;
 	display: flex;
 	width: 300px;
-	height: 100%;
+	height: 80%;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;

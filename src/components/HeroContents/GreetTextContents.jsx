@@ -31,7 +31,7 @@ const GreetTextContents = () => {
 				<Text style={{ fontSize: '85px', color: '#036B3F' }}>건국대학교</Text>
 				<Text>에</Text>
 			</ContentsContainer>
-			<Text>입학한 것을 환영합니다!</Text>
+			<Text>입학하신 것을 환영합니다!</Text>
 		</TextContainer>
 	);
 };
