@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	largeFieldState,
@@ -81,7 +81,7 @@ function FieldCategoryInput({ onClose }) {
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
-	const setSelectedFields = useSetRecoilState(selectedFieldState);
+	const [selectedFields, setSelectedFields] = useRecoilState(selectedFieldState);
 	const setShowFieldInput = useSetRecoilState(showFieldInputState);
 	const setSubjectsState = useSetRecoilState(selectedSubjectState);
 	const {
@@ -170,7 +170,11 @@ function FieldCategoryInput({ onClose }) {
 					<StyledSelect ref={largeRef} onChange={selectLargeField}>
 						<option value="">대분류를 선택해주세요</option>
 						{largeFields.map((item) => (
-							<option key={item.fieldCode} value={JSON.stringify(item)}>
+							<option
+								key={item.fieldCode}
+								value={JSON.stringify(item)}
+								selected={item.largeField === selectedFields.largeField}
+							>
 								{item.largeField}
 							</option>
 						))}
@@ -182,7 +186,11 @@ function FieldCategoryInput({ onClose }) {
 					>
 						<option value="">중분류를 선택해주세요</option>
 						{middleFields.map((item) => (
-							<option key={item.fieldCode} value={JSON.stringify(item)}>
+							<option
+								key={item.fieldCode}
+								value={JSON.stringify(item)}
+								selected={item.middleField === selectedFields.middleField}
+							>
 								{item.middleField}
 							</option>
 						))}
@@ -190,7 +198,11 @@ function FieldCategoryInput({ onClose }) {
 					<StyledSelect ref={smallRef} onChange={selectSmallField} disabled={smallFields.length > 0 ? '' : 'disabled'}>
 						<option value="">소분류를 선택해주세요</option>
 						{smallFields.map((item) => (
-							<option key={item.fieldCode} value={JSON.stringify(item)}>
+							<option
+								key={item.fieldCode}
+								value={JSON.stringify(item)}
+								selected={item.smallField === selectedFields.smallField}
+							>
 								{item.smallField}
 							</option>
 						))}
@@ -198,7 +210,11 @@ function FieldCategoryInput({ onClose }) {
 					<StyledSelect ref={detailRef} disabled={detailFields.length > 0 ? '' : 'disabled'}>
 						<option value="">세분류를 선택해주세요</option>
 						{detailFields.map((item) => (
-							<option key={item.fieldCode} value={JSON.stringify(item)}>
+							<option
+								key={item.fieldCode}
+								value={JSON.stringify(item)}
+								selected={item.detailField === selectedFields.detailField}
+							>
 								{item.detailField}
 							</option>
 						))}

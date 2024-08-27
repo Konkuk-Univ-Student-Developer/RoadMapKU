@@ -91,7 +91,6 @@ const useField = () => {
 			.get(`/api/v1/fields/${fieldCode}/subjects`)
 			.then((res) => {
 				setSubjectsInFieldState(res.data);
-				resetFields('all');
 			})
 			.catch((error) => {
 				console.error(error);
