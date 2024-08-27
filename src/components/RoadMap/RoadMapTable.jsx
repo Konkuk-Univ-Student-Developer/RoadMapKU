@@ -24,7 +24,7 @@ const TableContainer = styled.div`
 `;
 
 const SemesterContainer = styled.div`
-	height: 2.1rem;
+	height: 2.2rem;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
