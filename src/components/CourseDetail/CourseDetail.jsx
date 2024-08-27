@@ -75,6 +75,7 @@ function CourseDetail({ onClose, HaksuId }) {
 	//API 연결 코드-------------------------
 
 	const tableData = [
+		['학수번호', HaksuId],
 		['개설대학', additionalInfo.openingCollegeName],
 		['개설학과', additionalInfo.openingSubjectName],
 		['강의유형', additionalInfo.lectureType],
