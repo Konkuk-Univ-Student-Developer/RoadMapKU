@@ -71,7 +71,7 @@ const FieldCategory = () => {
 				</ItemContainer>
 
 				<FixButton onClick={onClickHandler} style={{ width: '90%' }}>
-					설정 바꾸기
+					직군 선택하기
 				</FixButton>
 			</FieldCategoryContainer>
 		</>
