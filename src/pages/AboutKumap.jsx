@@ -30,7 +30,7 @@ const SubContainer = styled.div`
 
 const LinkContainer = styled.div`
 	gap: 25px;
-	height: 40vh;
+	height: 30rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

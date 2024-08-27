@@ -37,6 +37,7 @@ const HeaderLinks = styled.div`
 
 const HeaderLink = styled.a`
 	text-decoration: none;
+	user-select: none;
 	${(props) => (props.active ? theme.active.on : theme.active.off)}
 	&:hover {
 		color: black;

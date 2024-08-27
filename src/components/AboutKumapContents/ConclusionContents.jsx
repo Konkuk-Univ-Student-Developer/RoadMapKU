@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	width: 80%;
-	height: 20vh;
+	height: 10rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -12,7 +12,6 @@ const Container = styled.div`
 
 const SubContainer = styled.div`
 	width: 90%;
-	height: 20vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
