@@ -4,8 +4,8 @@ import { courseDetailState } from '../../recoils/atoms';
 import {
 	Title,
 	Subtitle,
-	ModalContent,
 	Subject,
+	ModalContent,
 	SubjectContainer,
 	TableContent,
 	ScrollContainer
@@ -119,16 +119,15 @@ function CourseDetail({ onClose, HaksuId }) {
 	return (
 		<Modal onClose={onClose}>
 			<ScrollContainer>
-				<Title>Course Information</Title>
+				<Title>{courseDetail.typicalKoreanName}</Title>
 
 				<SubjectContainer>
-					<Subject>
+					{/* <Subject>
 						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
-					</Subject>
+					</Subject> */}
 				</SubjectContainer>
-				<Subtitle>국문설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
-				<Subtitle>영문설명</Subtitle>
+				<Subject>{courseDetail.typicalEnglishName}</Subject>
 				<ModalContent>{courseDetail.englishDescription}</ModalContent>
 				<Subtitle>기본 정보</Subtitle>
 				<TableContent>
