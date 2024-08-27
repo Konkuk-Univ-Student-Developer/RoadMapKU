@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContens';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
-import MainContainer from '../components/MainContainer';
 import Footer from '../components/Footer/Footer';
+import { Header, SectionsContainer } from 'react-fullpage';
+import HeaderBar from '../components/HeaderBar';
+import { fullPageOptions } from './AboutUs';
 
 const HeaderContainer = styled.header`
 	width: fit-content;
@@ -37,6 +39,7 @@ const LinkContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-grow: 1;
 `;
 
 const LinkButton = styled.button`
@@ -58,32 +61,37 @@ const LinkButton = styled.button`
 const AboutKumap = () => {
 	const navigate = useNavigate();
 	return (
-		<MainContainer>
-			<SubContainer>
-				<HeaderContainer>
-					<Title>KUMAP 이란?</Title>
-				</HeaderContainer>
-				<AboutKumapContents />
-			</SubContainer>
-			<SubContainer>
-				<HeaderContainer>
-					<Title>전공역량이란?</Title>
-				</HeaderContainer>
-				<AboutCompetencyContents />
-			</SubContainer>
-			<SubContainer>
-				<ConclusionContents />
-				<LinkContainer>
-					<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
-						How to use?
-					</LinkButton>
-					<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-						KUMAP 바로가기
-					</LinkButton>
-				</LinkContainer>
-			</SubContainer>
-			<Footer />
-		</MainContainer>
+		<>
+			<Header>
+				<HeaderBar />
+			</Header>
+			<SectionsContainer {...fullPageOptions}>
+				<SubContainer>
+					<HeaderContainer>
+						<Title>KUMAP 이란?</Title>
+					</HeaderContainer>
+					<AboutKumapContents />
+				</SubContainer>
+				<SubContainer>
+					<HeaderContainer>
+						<Title>전공역량이란?</Title>
+					</HeaderContainer>
+					<AboutCompetencyContents />
+				</SubContainer>
+				<SubContainer>
+					<ConclusionContents />
+					<LinkContainer>
+						<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
+							How to use?
+						</LinkButton>
+						<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+							KUMAP 바로가기
+						</LinkButton>
+					</LinkContainer>
+					<Footer />
+				</SubContainer>
+			</SectionsContainer>
+		</>
 	);
 };
 

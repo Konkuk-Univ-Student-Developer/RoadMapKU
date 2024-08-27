@@ -4,23 +4,24 @@ import IntroductionContents from '../components/AboutUsContents/IntroductionCont
 import { SectionsContainer, Header } from 'react-fullpage';
 import HeaderBar from '../components/HeaderBar';
 
+export const fullPageOptions = {
+	sectionClassName: 'section',
+	anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
+	scrollBar: false,
+	navigation: true,
+	verticalAlign: false,
+	sectionPaddingTop: '50px',
+	sectionPaddingBottom: '50px',
+	arrowNavigation: true
+};
+
 const AboutUs = () => {
-	const options = {
-		sectionClassName: 'section',
-		anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
-		scrollBar: false,
-		navigation: true,
-		verticalAlign: false,
-		sectionPaddingTop: '50px',
-		sectionPaddingBottom: '50px',
-		arrowNavigation: true
-	};
 	return (
 		<>
 			<Header>
 				<HeaderBar />
 			</Header>
-			<SectionsContainer {...options}>
+			<SectionsContainer {...fullPageOptions}>
 				<LogoContents />
 				<AboutUsContents />
 				<IntroductionContents />

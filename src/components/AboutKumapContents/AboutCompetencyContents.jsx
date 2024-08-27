@@ -44,12 +44,15 @@ const Gap = styled.div`
 const AboutCompetencyContents = () => {
 	return (
 		<Container>
-			<MainTitle>특정 직군에 종사하기 위해 갖추어야 할</MainTitle>
+			<MainTitle>전공 분야와 관련된 학문적 지식을 활용함으로써 길러지는</MainTitle>
 			<MainTitle_impact>핵심 능력</MainTitle_impact>
 			<Gap></Gap>
 			<SubContainer>
-				<Description>현재 건국대학교 내 모든 학과의 수업은</Description>
-				<Description>진출 분야(직군)를 위해 필요한 전공역량을 바탕으로 구성되어 있어요.</Description>
+				<Description>건국대학교는 역량기반 교육과정을 운영하고 있으므로,</Description>
+				<Description>각 전공 교육과정은 전공역량을 기반으로 개발되었어요.</Description>
+				<Description></Description>
+				<Description>희망하는 진로 분야와 연관된 전공역량을 파악하고</Description>
+				<Description>필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾는 것이 KUMAP의 큰 프로세스에요!</Description>
 			</SubContainer>
 		</Container>
 	);
