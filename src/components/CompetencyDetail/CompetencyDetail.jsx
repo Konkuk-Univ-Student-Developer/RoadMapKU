@@ -27,7 +27,7 @@ function CourseDetail({ onClose, competencyData }) {
 
 	if (loading) {
 		return (
-			<Modal onClose={onClose}>
+			<Modal width="50%" onClose={onClose}>
 				<div>Loading...</div>
 			</Modal>
 		);
@@ -36,14 +36,14 @@ function CourseDetail({ onClose, competencyData }) {
 	//오류 처리
 	if (error) {
 		return (
-			<Modal onClose={onClose}>
+			<Modal width="50%" onClose={onClose}>
 				<div>{error}</div>
 			</Modal>
 		);
 	}
 
 	return (
-		<Modal onClose={onClose}>
+		<Modal width="30%" onClose={onClose}>
 			<ScrollContainer>
 				<Title>{competencyDetail.competencyName}</Title>
 				<Subtitle>설명</Subtitle>

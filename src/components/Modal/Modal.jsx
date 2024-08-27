@@ -4,7 +4,7 @@ import ModalContainer from './ModalContainer';
 import * as L from './ModalStyles';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-function Modal({ onClose, children }) {
+function Modal({ onClose, children, width }) {
 	const modalRef = useRef(null);
 	const handleClose = () => {
 		onClose?.();
@@ -25,7 +25,7 @@ function Modal({ onClose, children }) {
 	return (
 		<ModalContainer>
 			<L.Overlay>
-				<L.ModalWrap ref={modalRef}>
+				<L.ModalWrap ref={modalRef} width={width}>
 					<L.ButtonContainer>
 						<i className="fa-solid fa-xmark" onClick={handleClose} style={{ cursor: 'pointer', fontSize: '30px' }}></i>
 					</L.ButtonContainer>

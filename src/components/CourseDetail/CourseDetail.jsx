@@ -4,8 +4,8 @@ import { courseDetailState } from '../../recoils/atoms';
 import {
 	Title,
 	Subtitle,
-	ModalContent,
 	Subject,
+	ModalContent,
 	SubjectContainer,
 	TableContent,
 	ScrollContainer
@@ -16,28 +16,6 @@ import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
 
 function CourseDetail({ onClose, HaksuId }) {
-	//MockDATA 이용 -------------
-	// const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
-	// useEffect(() => {
-	// 	fetch('/data/courseDetail.json')
-	// 		.then((response) => response.json())
-	// 		.then((data) => setCourseDetail(data))
-	// 		.catch((error) => console.error('Error fetching course details:', error));
-	// }, [setCourseDetail]);
-
-	// const modalContent = courseDetail[1]; // 예시로 네 번째 데이터를 사용
-
-	// console.log('Course Detail:', courseDetail); // 데이터 확인
-	// console.log('modalContent :', modalContent);
-	// if (!courseDetail.length)
-	// 	return (
-	// 		<Modal onClose={onClose}>
-	// 			<div>Loading...</div>
-	// 		</Modal>
-	// 	); // 데이터가 없을 때 로딩 표시
-
-	//---------------------------
-
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useField();
 	const [loading, setLoading] = useState(true);
@@ -97,6 +75,7 @@ function CourseDetail({ onClose, HaksuId }) {
 	//API 연결 코드-------------------------
 
 	const tableData = [
+		['학수번호', HaksuId],
 		['개설대학', additionalInfo.openingCollegeName],
 		['개설학과', additionalInfo.openingSubjectName],
 		['강의유형', additionalInfo.lectureType],
@@ -119,18 +98,17 @@ function CourseDetail({ onClose, HaksuId }) {
 	return (
 		<Modal onClose={onClose}>
 			<ScrollContainer>
-				<Title>Course Information</Title>
+				<Title>{courseDetail.typicalKoreanName}</Title>
 
 				<SubjectContainer>
-					<Subject>
+					{/* <Subject>
 						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
-					</Subject>
+					</Subject> */}
 				</SubjectContainer>
-				<Subtitle>국문설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
-				<Subtitle>영문설명</Subtitle>
+				<Subject>{courseDetail.typicalEnglishName}</Subject>
 				<ModalContent>{courseDetail.englishDescription}</ModalContent>
-				<Subtitle>Additional Information</Subtitle>
+				<Subtitle>기본 정보</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />
 				</TableContent>

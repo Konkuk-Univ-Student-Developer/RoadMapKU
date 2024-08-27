@@ -22,6 +22,7 @@ const Th = styled.th`
 	color: white;
 	border: 1px solid black; /* 테두리 추가 */
 	font-size: 14px; /* 셀의 폰트 크기 설정 */
+	width: 50%;
 `;
 
 const Td = styled.td`
@@ -29,6 +30,7 @@ const Td = styled.td`
 	text-align: center;
 	border: 1px solid black; /* 테두리 추가 */
 	font-size: 14px; /* 셀의 폰트 크기 설정 */
+	width: 50%;
 `;
 
 const TableComponent = ({ data }) => {
@@ -37,8 +39,8 @@ const TableComponent = ({ data }) => {
 			<StyledTable>
 				<thead>
 					<tr>
-						<Th>분류</Th>
-						<Th>특징</Th>
+						<Th>구분</Th>
+						<Th>내용</Th>
 					</tr>
 				</thead>
 				<tbody>

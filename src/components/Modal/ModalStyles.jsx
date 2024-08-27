@@ -27,7 +27,7 @@ export const Overlay = styled.div`
 `;
 
 export const ModalWrap = styled.div`
-	width: 70%;
+	width: ${(props) => props.width || '70%'};
 	height: fit-content;
 	border-radius: 15px;
 	background-color: #fff;
