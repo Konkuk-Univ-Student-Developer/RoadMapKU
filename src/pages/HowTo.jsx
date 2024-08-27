@@ -159,7 +159,7 @@ function HowTo() {
 				</Section>
 
 				<Section bgColor="#ffffff">
-					<SubTitle>💡 추가 기능 💡</SubTitle>
+					<SubTitle>💡 상세 정보 열람 💡</SubTitle>
 					<FeaturesContainer>
 						<FeatureItem>
 							<Illustration src={competencydetail} alt="" />
