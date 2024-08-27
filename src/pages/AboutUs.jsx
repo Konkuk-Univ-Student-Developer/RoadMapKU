@@ -11,6 +11,7 @@ const SubContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-top: 70px;
+	gap: 30px;
 `;
 
 const AboutUs = () => {
