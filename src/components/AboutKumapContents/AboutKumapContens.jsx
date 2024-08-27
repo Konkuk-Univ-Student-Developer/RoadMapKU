@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-	width: 80%;
+	width: 90%;
 	height: 30rem;
 	display: flex;
 	flex-direction: column;
@@ -11,7 +11,6 @@ const Container = styled.div`
 `;
 
 const SubContainer = styled.div`
-	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -23,11 +22,10 @@ const MainTitle = styled.div`
 	font-size: 40px;
 	font-weight: 800;
 	color: #056a3f;
-	padding-bottom: 4rem;
+	padding-bottom: 5rem;
 `;
 
 const Description = styled.div`
-	width: 90%;
 	text-align: center;
 	font-size: 30px;
 	font-weight: 500;
