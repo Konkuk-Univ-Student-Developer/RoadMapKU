@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Header from './Header';
+import HeaderBar from './HeaderBar';
 
 const Container = styled.div`
 	min-width: 1200px;
@@ -11,7 +11,7 @@ const Container = styled.div`
 const MainContainer = ({ children }) => {
 	return (
 		<Container>
-			<Header />
+			<HeaderBar />
 			{children}
 		</Container>
 	);
