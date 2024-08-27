@@ -50,7 +50,7 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 
 	useEffect(() => {
 		if (!Array.isArray(competencyTableData) || competencyTableData.length === 0) {
-			console.log('competencyTableData is empty');
+			// console.log('competencyTableData is empty');
 			setCompetencyTable([]);
 			setRefs([]);
 			return;

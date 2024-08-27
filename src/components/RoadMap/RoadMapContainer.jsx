@@ -116,7 +116,7 @@ const RoadMapContainer = () => {
 
 	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) {
-			console.log('courseByCompetencyInSubject is empty');
+			// console.log('courseByCompetencyInSubject is empty');
 		} else {
 			setCompetencyList(courseByCompetencyInSubject);
 
@@ -195,7 +195,7 @@ const RoadMapContainer = () => {
 
 	useEffect(() => {
 		if (!Array.isArray(totalRoadMap)) {
-			console.log('totalRoadMap is empty');
+			// console.log('totalRoadMap is empty');
 		} else {
 			// 데이터 가공
 			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
