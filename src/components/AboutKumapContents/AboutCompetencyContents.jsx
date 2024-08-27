@@ -20,12 +20,14 @@ const SubContainer = styled.div`
 `;
 
 const MainTitle = styled.div`
+	font-family: 'Pretendard-bold', sans-serif;
 	font-size: 40px;
 	font-weight: 800;
 	color: #056a3f;
 `;
 
 const MainTitle_impact = styled.div`
+	font-family: 'Pretendard-bold', sans-serif;
 	font-size: 50px;
 	font-weight: 800;
 	color: #056a3f;
@@ -33,7 +35,7 @@ const MainTitle_impact = styled.div`
 
 const Description = styled.div`
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 500;
 `;
 

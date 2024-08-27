@@ -17,6 +17,7 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
+	font-family: 'Pretendard-bold', sans-serif;
 	font-size: 4em;
 	font-weight: bold;
 	text-align: left;
