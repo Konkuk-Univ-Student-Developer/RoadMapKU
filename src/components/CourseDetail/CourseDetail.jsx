@@ -16,28 +16,6 @@ import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
 
 function CourseDetail({ onClose, HaksuId }) {
-	//MockDATA 이용 -------------
-	// const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
-	// useEffect(() => {
-	// 	fetch('/data/courseDetail.json')
-	// 		.then((response) => response.json())
-	// 		.then((data) => setCourseDetail(data))
-	// 		.catch((error) => console.error('Error fetching course details:', error));
-	// }, [setCourseDetail]);
-
-	// const modalContent = courseDetail[1]; // 예시로 네 번째 데이터를 사용
-
-	// console.log('Course Detail:', courseDetail); // 데이터 확인
-	// console.log('modalContent :', modalContent);
-	// if (!courseDetail.length)
-	// 	return (
-	// 		<Modal onClose={onClose}>
-	// 			<div>Loading...</div>
-	// 		</Modal>
-	// 	); // 데이터가 없을 때 로딩 표시
-
-	//---------------------------
-
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useField();
 	const [loading, setLoading] = useState(true);
