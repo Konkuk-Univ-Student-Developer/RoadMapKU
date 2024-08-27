@@ -8,6 +8,7 @@ const Container = styled.div`
 	justify-content: center;
 	width: 100%;
 	flex-grow: 1;
+	height: ${(props) => (props.customHeight ? props.customHeight : '')};
 	background-color: #0a3711;
 `;
 
@@ -35,10 +36,10 @@ const Text = styled.div`
 	cursor: ${(props) => (props.pointer ? 'pointer' : '')};
 `;
 
-const Footer = () => {
+const Footer = ({ customHeight }) => {
 	const navigate = useNavigate();
 	return (
-		<Container>
+		<Container customHeight={customHeight}>
 			<SubContainer>
 				<TextContainer align={'center'}>
 					<Text size={'50px'}>KUMAP</Text>
