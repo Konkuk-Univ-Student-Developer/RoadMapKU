@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Header from '../components/Header';
+import HeaderBar from '../components/HeaderBar';
 import HowTo from './HowTo';
 
 // const Container = styled.a``;
@@ -13,7 +13,7 @@ const Container = styled.div`
 function HowToPage() {
 	return (
 		<>
-			<Header />
+			<HeaderBar />
 			<Container>
 				<HowTo />
 			</Container>

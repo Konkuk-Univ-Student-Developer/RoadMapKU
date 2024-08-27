@@ -102,7 +102,6 @@ const useField = () => {
 			.get(`/api/v1/courses/${subjectCode}/${fieldCode}`)
 			.then((res) => {
 				setCourseByCompetencyInSubjectState(res.data);
-				console.log(res.data);
 			})
 			.catch((error) => {
 				console.error(error);
@@ -114,7 +113,6 @@ const useField = () => {
 			.get(`/api/v1/courses/${fieldCode}/field`)
 			.then((res) => {
 				setCourseByCompetencyInSubjectState(res.data);
-				console.log(res.data);
 			})
 			.catch((error) => {
 				console.error(error);
@@ -126,7 +124,6 @@ const useField = () => {
 			.get(`/api/v1/courses/${subjectCode}/subject`)
 			.then((res) => {
 				setTotalRoadMapState(res.data);
-				console.log(res.data);
 			})
 			.catch((error) => {
 				console.error(error);

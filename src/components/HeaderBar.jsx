@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import KUMAPLogo from '../components/LogoFile/Kulogo';
+import KUMAPLogo from './LogoFile/Kulogo';
 
 const theme = {
 	active: {
@@ -70,7 +70,7 @@ export const Button = styled.button`
 	}
 `;
 
-function Header() {
+function HeaderBar() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 
@@ -111,4 +111,4 @@ function Header() {
 	);
 }
 
-export default Header;
+export default HeaderBar;

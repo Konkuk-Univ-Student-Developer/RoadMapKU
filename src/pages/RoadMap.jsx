@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Main from '../components/Main';
-import Header from '../components/Header';
+import HeaderBar from '../components/HeaderBar';
 
 const Container = styled.a``;
 
 function RoadMap() {
 	return (
 		<>
-			<Header />
+			<HeaderBar />
 			<Container>
 				<Main />
 			</Container>

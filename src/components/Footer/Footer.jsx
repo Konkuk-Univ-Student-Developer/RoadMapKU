@@ -7,14 +7,15 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 300px;
+	flex-grow: 1;
+	height: ${(props) => (props.customHeight ? props.customHeight : '')};
 	background-color: #0a3711;
 `;
 
 const SubContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	width: 70%;
 `;
@@ -35,33 +36,41 @@ const Text = styled.div`
 	cursor: ${(props) => (props.pointer ? 'pointer' : '')};
 `;
 
-const Footer = () => {
+const Footer = ({ customHeight }) => {
 	const navigate = useNavigate();
 	return (
-		<Container>
+		<Container customHeight={customHeight}>
 			<SubContainer>
 				<TextContainer align={'center'}>
 					<Text size={'50px'}>KUMAP</Text>
 					<Text size={'20px'}>꿈찾기 로드맵</Text>
 				</TextContainer>
 				<TextContainer>
-					<Text size={'20px'}>Learn More</Text>
+					<Text size={'20px'}>Konkuk</Text>
 					<Text size={'15px'} weight={'200'}>
 						<a style={{ color: 'white', textDecoration: 'none' }} href="https://www.konkuk.ac.kr/konkuk/index.do">
 							Konkuk University
 						</a>
 					</Text>
+					<Text size={'15px'} weight={'200'}>
+						<a style={{ color: 'white', textDecoration: 'none' }} href="https://bulletins.konkuk.ac.kr/ko-KR/">
+							건국대학교 온라인 요람
+						</a>
+					</Text>
+				</TextContainer>
+				<TextContainer>
+					<Text size={'20px'}>Learn More</Text>
 					<Text pointer={true} size={'15px'} weight={'200'} onClick={() => navigate('/')}>
 						KUMAP
 					</Text>
 					<Text pointer={true} size={'15px'} weight={'200'} onClick={() => navigate('/howtopage')}>
-						How to use
+						KUMAP 이란?
 					</Text>
 				</TextContainer>
 				<TextContainer>
 					<Text size={'20px'}>Contact Us</Text>
 					<Text size={'15px'} weight={'200'}>
-						정보운영팀 전화번호: 02-123-5432
+						정보운영팀 전화번호: 02-450-3905
 					</Text>
 				</TextContainer>
 			</SubContainer>
