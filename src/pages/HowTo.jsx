@@ -1,15 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import competencydetail from '../img/competencydetail.png';
 import detail from '../img/detail.png';
 import jobchoice from '../img/jobchoice.png';
 import myroadmap from '../img/myroadmap.png';
 import majorchoice from '../img/majorchoice.png';
+import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
 	font-family: 'Arial, sans-serif';
-	background-color: #e0f2f1;
-	color: #004d40;
+	//background-color: #e0f2f1;
+	//color: #004d40;
 `;
 
 const HeaderContainer = styled.header`
@@ -35,21 +37,32 @@ const Section = styled.section`
 `;
 
 const Step = styled.h2`
-	font-size: 1.6em;
+	font-size: 40px;
+	font-weight: 800;
 	margin-bottom: 20px;
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
-	font-weight: regular;
 `;
 
 const StepTitle = styled.h3`
-	font-size: 1.4em;
+	font-size: 30px;
+	font-weight: 500;
 	margin-bottom: 20px;
+	color: ${(props) => props.color || '#ffffff'};
+	line-height: 1.5;
+`;
+
+const StepTitle2 = styled.h3`
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 20px;
+	margin-top: 30px;
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
 `;
 const SubTitle = styled.h3`
-	font-size: 1.4em;
+	font-size: 30px;
+	font-weight: 500;
 	margin-bottom: 20px;
 	color: black
 	line-height: 1.5;
@@ -63,6 +76,7 @@ const Illustration = styled.img`
 	height: auto; //원본 비율 유지
 	max-width: 600px;
 	margin-top: 20px;
+	border-radius: 0.5rem;
 `;
 
 const FeaturesContainer = styled.section`
@@ -75,12 +89,40 @@ const FeaturesContainer = styled.section`
 
 const FeatureItem = styled.div`
 	display: flex;
-	margin-bottom: 20px;
+	//margin-bottom: 10px;
 	display: flex;
 	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 10px;
+`;
+
+const LinkContainer = styled.div`
+	gap: 25px;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const LinkButton = styled.button`
+	width: 400px;
+	height: 100px;
+	padding: 10px 20px;
+	font-size: 30px;
+	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : '#036b3f')};
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: 0.1s ease-in;
+	&:hover {
+		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
+	}
 `;
 
 function HowTo() {
+	const navigate = useNavigate();
 	return (
 		<>
 			<Container>
@@ -113,7 +155,7 @@ function HowTo() {
 					<br />
 					<br />
 					<br />
-					<Step>자신의 로드맵을 완성시키고 공유해보세요!</Step>
+					<StepTitle>🌟 자신의 로드맵을 완성시키고 공유해보세요! 🌟</StepTitle>
 				</Section>
 
 				<Section bgColor="#ffffff">
@@ -121,30 +163,31 @@ function HowTo() {
 					<FeaturesContainer>
 						<FeatureItem>
 							<Illustration src={competencydetail} alt="" />
-							<StepTitle color="black">
+							<StepTitle2 color="black">
 								+ 전공 역량 옆 돋보기를 선택하면 <br />
 								해당 전공 역량의 상세 정보를 만나보실 수 있습니다!
-							</StepTitle>
+							</StepTitle2>
 						</FeatureItem>
 						<FeatureItem>
 							<Illustration src={detail} alt="" />
-							<StepTitle color="black">
+							<StepTitle2 color="black">
 								+ 과목 누르면 과목 상세정보를 확인하실 수 있고, <br />
 								오른쪽 화살표 를 눌러서 내 로드맵에 담을 수 있습니다!
-							</StepTitle>
+							</StepTitle2>
 						</FeatureItem>
 					</FeaturesContainer>
 				</Section>
 
-				{/* <FeaturesContainer>
-					<FeatureItem>
-						<Illustration src={competencydetail} alt="" />
-					</FeatureItem>
-					<FeatureItem>
-						<Illustration src={detail} alt="" />
-					</FeatureItem>
-				</FeaturesContainer> */}
+				<LinkContainer>
+					<LinkButton onClick={() => navigate('/about-us')} option={'white'}>
+						About Us
+					</LinkButton>
+					<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+						KUMAP 바로가기
+					</LinkButton>
+				</LinkContainer>
 			</Container>
+			<Footer />
 		</>
 	);
 }

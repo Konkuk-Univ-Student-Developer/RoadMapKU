@@ -17,7 +17,6 @@ const Container = styled.div`
 
 const Content = styled.div`
 	padding-top: 10px;
-	background-color: #f9f9f9;
 `;
 const TitleWrapper = styled.div`
 	height: 4vh;
