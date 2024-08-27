@@ -37,8 +37,8 @@ const TableComponent = ({ data }) => {
 			<StyledTable>
 				<thead>
 					<tr>
-						<Th>분류</Th>
-						<Th>특징</Th>
+						<Th>구분</Th>
+						<Th>내용</Th>
 					</tr>
 				</thead>
 				<tbody>

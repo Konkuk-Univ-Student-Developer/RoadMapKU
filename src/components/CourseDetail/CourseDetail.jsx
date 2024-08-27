@@ -130,7 +130,7 @@ function CourseDetail({ onClose, HaksuId }) {
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
 				<Subtitle>영문설명</Subtitle>
 				<ModalContent>{courseDetail.englishDescription}</ModalContent>
-				<Subtitle>Additional Information</Subtitle>
+				<Subtitle>기본 정보</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />
 				</TableContent>

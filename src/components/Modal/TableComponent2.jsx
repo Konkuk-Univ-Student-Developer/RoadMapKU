@@ -40,8 +40,8 @@ const TableComponent2 = ({ data }) => {
 				<thead>
 					<tr>
 						<Th>분류</Th>
-						<Th>특징</Th>
-						<Th>설명</Th>
+						<Th>전공역량명</Th>
+						<Th>전공역량 정의</Th>
 					</tr>
 				</thead>
 				<tbody>
