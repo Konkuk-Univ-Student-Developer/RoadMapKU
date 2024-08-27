@@ -6,6 +6,7 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-self: center;
 	align-items: center;
 	gap: 20px;
 `;
@@ -22,7 +23,12 @@ const MainTitle = styled.div`
 	font-size: 40px;
 	font-weight: 800;
 	color: #056a3f;
-	padding-bottom: 5rem;
+`;
+
+const MainTitle_impact = styled.div`
+	font-size: 50px;
+	font-weight: 800;
+	color: #056a3f;
 `;
 
 const Description = styled.div`
@@ -31,15 +37,21 @@ const Description = styled.div`
 	font-weight: 500;
 `;
 
+const Gap = styled.div`
+	height: 5rem;
+`;
+
 const AboutKumapContents = () => {
 	return (
 		<Container>
-			<MainTitle>KUMAP 이란?</MainTitle>
+			<MainTitle>원하는 직업과 관련된 수업을 찾아 만드는</MainTitle>
+			<MainTitle_impact>나만의 로드맵</MainTitle_impact>
+			<Gap></Gap>
 			<SubContainer>
-				<Description>KUMAP은 내가 희망하는 직업과 관련된 학과의 수업을 찾아</Description>
-				<Description>나만의 수업 로드맵을 만들 수 있는 서비스 입니다.</Description>
+				<Description>KUMAP을 통해 꿈을 이루기 위한 수업을 찾을 수 있어요!</Description>
 				<Description></Description>
-				<Description>KUMAP을 통해 희망하는 직업에 필요한 전공 역량을 포함한 수업을 찾을 수 있습니다.</Description>
+				<Description>희망 직업이 요구하는 전공역량을 알아보고,</Description>
+				<Description>필요한 전공역량을 배울 수 있는 수업을 찾아보아요.</Description>
 			</SubContainer>
 		</Container>
 	);

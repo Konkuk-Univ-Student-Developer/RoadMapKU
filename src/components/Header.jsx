@@ -82,15 +82,15 @@ function Header() {
 				</HeaderBrand>
 				<HeaderLinks>
 					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
-						Home
+						홈
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
-						Info
+						KUMAP 이란?
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
-						Usage
+						사용법
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
@@ -98,7 +98,7 @@ function Header() {
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
-						About Us
+						KUSD는요..
 					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>

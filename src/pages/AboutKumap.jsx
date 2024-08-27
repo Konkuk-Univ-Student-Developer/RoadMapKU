@@ -7,6 +7,8 @@ import MainContainer from '../components/MainContainer';
 import Footer from '../components/Footer/Footer';
 
 const HeaderContainer = styled.header`
+	width: fit-content;
+	align-self: flex-start;
 	padding-top: 100px;
 	text-align: center;
 	margin-bottom: 0;
@@ -22,15 +24,15 @@ const Title = styled.h1`
 
 const SubContainer = styled.div`
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 `;
 
 const LinkContainer = styled.div`
 	gap: 25px;
-	height: 30rem;
+	height: 25rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -57,12 +59,19 @@ const AboutKumap = () => {
 	const navigate = useNavigate();
 	return (
 		<MainContainer>
-			<HeaderContainer>
-				<Title>KUMAP 소개</Title>
-			</HeaderContainer>
 			<SubContainer>
+				<HeaderContainer>
+					<Title>KUMAP 이란?</Title>
+				</HeaderContainer>
 				<AboutKumapContents />
+			</SubContainer>
+			<SubContainer>
+				<HeaderContainer>
+					<Title>전공역량이란?</Title>
+				</HeaderContainer>
 				<AboutCompetencyContents />
+			</SubContainer>
+			<SubContainer>
 				<ConclusionContents />
 				<LinkContainer>
 					<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
