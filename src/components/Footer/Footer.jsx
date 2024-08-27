@@ -7,7 +7,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 300px;
+	flex-grow: 1;
 	background-color: #0a3711;
 `;
 

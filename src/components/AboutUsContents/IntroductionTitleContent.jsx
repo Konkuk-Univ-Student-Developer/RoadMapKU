@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 const TitleContainer = styled.div`
 	width: 80%;
-	height: 300px;
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 10px;
+	margin-top: 50px;
+	gap: 5px;
 `;
 
 const HeaderTitle = styled.div`

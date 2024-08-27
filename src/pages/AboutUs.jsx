@@ -1,28 +1,31 @@
-import styled from 'styled-components';
 import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
 import LogoContents from '../components/AboutUsContents/LogoContents';
-import MainContainer from '../components/MainContainer';
 import IntroductionContents from '../components/AboutUsContents/IntroductionContents';
-
-const SubContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 70px;
-	gap: 30px;
-`;
+import { SectionsContainer, Header } from 'react-fullpage';
+import HeaderBar from '../components/HeaderBar';
 
 const AboutUs = () => {
+	const options = {
+		sectionClassName: 'section',
+		anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
+		scrollBar: false,
+		navigation: true,
+		verticalAlign: false,
+		sectionPaddingTop: '50px',
+		sectionPaddingBottom: '50px',
+		arrowNavigation: true
+	};
 	return (
-		<MainContainer>
-			<SubContainer>
+		<>
+			<Header>
+				<HeaderBar />
+			</Header>
+			<SectionsContainer {...options}>
 				<LogoContents />
 				<AboutUsContents />
 				<IntroductionContents />
-			</SubContainer>
-		</MainContainer>
+			</SectionsContainer>
+		</>
 	);
 };
 
