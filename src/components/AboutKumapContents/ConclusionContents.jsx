@@ -23,7 +23,7 @@ const SubContainer = styled.div`
 const Description = styled.div`
 	width: 90%;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 500;
 `;
 

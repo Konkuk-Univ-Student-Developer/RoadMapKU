@@ -5,10 +5,12 @@ import { RecoilRoot } from 'recoil';
 import HowToPage from './pages/HowToPage';
 import AboutUs from './pages/AboutUs';
 import AboutKumap from './pages/AboutKumap';
+import GlobalStyle from './components/GlobalStyle';
 
 function App() {
 	return (
 		<RecoilRoot>
+			<GlobalStyle />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/road-map" element={<RoadMap />} />
