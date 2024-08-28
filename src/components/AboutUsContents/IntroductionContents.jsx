@@ -12,11 +12,22 @@ const Container = styled.div`
 	align-items: center;
 `;
 
+const LastContainer = styled.div`
+	height: 85vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
 const IntroductionContents = () => {
 	return (
 		<Container>
-			<IntroductionTitleContent />
-			<IntroductionProfileContents />
+			<LastContainer>
+				<IntroductionTitleContent />
+				<IntroductionProfileContents />
+			</LastContainer>
 			<Footer />
 		</Container>
 	);
