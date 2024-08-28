@@ -8,7 +8,6 @@ const Container = styled.div`
 	align-self: center;
 	align-items: center;
 	gap: 20px;
-	flex-grow: 1;
 `;
 
 const SubContainer = styled.div`

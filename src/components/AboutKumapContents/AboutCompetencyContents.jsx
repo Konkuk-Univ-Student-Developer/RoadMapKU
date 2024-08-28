@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	width: 90%;
-	height: 30rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

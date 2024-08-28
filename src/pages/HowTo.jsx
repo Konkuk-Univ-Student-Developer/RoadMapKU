@@ -17,9 +17,15 @@ const Container = styled.div`
 const HeaderContainer = styled.header`
 	align-self: flex-start;
 	background-color: #036b3f;
-	padding-top: 40px;
+	padding-top: 100px;
 	text-align: center;
 	color: white;
+`;
+
+const SubContainerTitle = styled.div`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 `;
 
 const SubContainer = styled.div`
@@ -161,7 +167,7 @@ function HowTo() {
 	return (
 		<>
 			<Container>
-				<SubContainer>
+				<SubContainerTitle>
 					<HeaderContainer>
 						<Title>KUMAP 사용법</Title>
 					</HeaderContainer>
@@ -174,7 +180,7 @@ function HowTo() {
 						</StepTitle3>
 						<Illustration src={jobchoice} alt="Dropdown illustration" />
 					</Section>
-				</SubContainer>
+				</SubContainerTitle>
 
 				<SubContainer>
 					<Section bgColor="#036B3F">
