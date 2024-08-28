@@ -16,7 +16,6 @@ const Container = styled.div`
 
 const HeaderContainer = styled.header`
 	align-self: flex-start;
-	background-color: #036b3f;
 	padding-top: 100px;
 	text-align: center;
 	color: white;
@@ -62,7 +61,6 @@ const Title = styled.h1`
 `;
 
 const Section = styled.section`
-	padding-top: 30px;
 	background-color: ${(props) => props.bgColor || '#ffffff'};
 	text-align: center;
 `;
@@ -171,7 +169,6 @@ function HowTo() {
 					<HeaderContainer>
 						<Title>KUMAP 사용법</Title>
 					</HeaderContainer>
-
 					<Section bgColor="#036B3F">
 						<Step>Step 1.</Step>
 						<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
