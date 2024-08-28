@@ -43,7 +43,7 @@ function CourseDetail({ onClose, competencyData }) {
 	}
 
 	return (
-		<Modal width="30%" onClose={onClose}>
+		<Modal width="50%" onClose={onClose}>
 			<ScrollContainer>
 				<Title>{competencyDetail.competencyName}</Title>
 				<Subtitle>설명</Subtitle>

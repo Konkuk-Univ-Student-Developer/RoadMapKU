@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-	width: 80%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-self: center;
 	align-items: center;
 	gap: 20px;
-	flex-grow: 1;
 `;
 
 const SubContainer = styled.div`
-	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -21,21 +19,20 @@ const SubContainer = styled.div`
 `;
 
 const Description = styled.div`
-	width: 90%;
 	text-align: center;
 	font-size: 25px;
 	font-weight: 500;
 `;
 
 const Gap = styled.div`
-	height: 5rem;
+	height: 10rem;
 `;
 
 const ConclusionContents = () => {
 	return (
 		<Container>
 			<SubContainer>
-				<Gap></Gap>
+				<Gap />
 				<Description>전공역량을 기반으로 차곡차곡 수업을 들을수록,</Description>
 				<Description>나의 꿈에 한걸음 더 가까워질 수 있어요.</Description>
 				<Description></Description>

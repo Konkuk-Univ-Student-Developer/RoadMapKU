@@ -17,6 +17,7 @@ export const Title = styled.h1`
 	color: white;
 	margin: 0;
 	font-size: 2rem;
+	text-align: center;
 `;
 
 export const SubjectContainer = styled.div`

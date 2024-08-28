@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Pretendard-semiBold', sans-serif;
+    font-family: 'Pretendard-semiBold';
     margin: 0;
     padding: 0;
   }

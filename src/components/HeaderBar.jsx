@@ -98,7 +98,7 @@ function HeaderBar() {
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
-						KUSD는요..
+						쿠스디는요..
 					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>

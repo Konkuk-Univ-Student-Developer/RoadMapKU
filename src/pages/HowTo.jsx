@@ -9,18 +9,48 @@ import majorchoice from '../img/majorchoice.png';
 import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
-	font-family: 'Arial, sans-serif';
+	// font-family: 'Arial, sans-serif';
 	//background-color: #e0f2f1;
-	//color: #004d40;
+	background-color: #036b3f;
 `;
 
 const HeaderContainer = styled.header`
-	background-color: #036b3f;
-	padding-top: 40px;
-	padding-bottom: 10px; /* 패딩을 줄여 간격을 줄입니다 */
+	align-self: flex-start;
+	padding-top: 100px;
 	text-align: center;
 	color: white;
-	margin-bottom: 0; /* 불필요한 마진을 제거 */
+`;
+
+const SubContainerTitle = styled.div`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+`;
+
+const SubContainer = styled.div`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const SubContainerWhite = styled.div`
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+`;
+
+const LastContainer = styled.div`
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
 `;
 
 const Title = styled.h1`
@@ -31,7 +61,6 @@ const Title = styled.h1`
 `;
 
 const Section = styled.section`
-	padding: 30px;
 	background-color: ${(props) => props.bgColor || '#ffffff'};
 	text-align: center;
 `;
@@ -60,6 +89,17 @@ const StepTitle2 = styled.h3`
 	color: ${(props) => props.color || '#ffffff'};
 	line-height: 1.5;
 `;
+
+const StepTitle3 = styled.h3`
+	font-family: 'Pretendard-regular';
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	color: ${(props) => props.color || '#ffffff'};
+	line-height: 1.5;
+`;
+
 const SubTitle = styled.h3`
 	font-size: 30px;
 	font-weight: 500;
@@ -88,7 +128,6 @@ const FeaturesContainer = styled.section`
 `;
 
 const FeatureItem = styled.div`
-	display: flex;
 	//margin-bottom: 10px;
 	display: flex;
 	flex-direction: column;
@@ -98,7 +137,7 @@ const FeatureItem = styled.div`
 
 const LinkContainer = styled.div`
 	gap: 25px;
-	height: 40vh;
+	padding-bottom: 2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -115,6 +154,7 @@ const LinkButton = styled.button`
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
+	font-family: 'Pretendard-semiBold';
 	transition: 0.1s ease-in;
 	&:hover {
 		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
@@ -126,68 +166,77 @@ function HowTo() {
 	return (
 		<>
 			<Container>
-				<HeaderContainer>
-					<Title>How to Use?</Title>
-				</HeaderContainer>
+				<SubContainerTitle>
+					<HeaderContainer>
+						<Title>KUMAP 사용법</Title>
+					</HeaderContainer>
+					<Section bgColor="#036B3F">
+						<Step>Step 1.</Step>
+						<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
+						<StepTitle3>
+							💡 중요 Tip! 왼쪽 사이드바의 &quot;직군 선택하기&quot; 버튼을 클릭하면 직군을 바꿀 수 있답니다.
+						</StepTitle3>
+						<Illustration src={jobchoice} alt="Dropdown illustration" />
+					</Section>
+				</SubContainerTitle>
 
-				<Section bgColor="#036B3F">
-					<Step>Step 1.</Step>
-					<StepTitle>관심 있는 직군을 선택해주세요</StepTitle>
-					<Illustration src={jobchoice} alt="Dropdown illustration" />
-				</Section>
+				<SubContainer>
+					<Section bgColor="#036B3F">
+						<Step>Step 2.</Step>
+						<StepTitle>
+							왼쪽에 있는 사이드 바에서 직군을 확인하고
+							<br /> 관련 학과 중 관심 있는 학과를 클릭해보세요!
+						</StepTitle>
+						<StepTitle3>
+							💡 중요 Tip! 각 전공역량 옆 화살표를 클릭하면 해당 전공역량을 기를 수 있는 교과목을 확인할 수 있답니다.
+						</StepTitle3>
 
-				<Section bgColor="#036B3F">
-					<Step>Step 2.</Step>
-					<StepTitle>
-						왼쪽에 있는 사이드 바에서 직군을 확인하고
-						<br /> 관련 학과 중 관심 있는 학과를 클릭해주세요
-					</StepTitle>
+						<Illustration src={majorchoice} alt="Sidebar illustration" />
+					</Section>
+				</SubContainer>
 
-					<Illustration src={majorchoice} alt="Sidebar illustration" />
-				</Section>
+				<SubContainer>
+					<Section bgColor="#036B3F">
+						<Step>Step 3.</Step>
+						<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
+						<StepTitle3>
+							💡 중요 Tip! 각 교과목 옆 화살표를 클릭하면 해당 교과목을 내 로드맵에 담을 수 있답니다.
+						</StepTitle3>
 
-				<Section bgColor="#036B3F">
-					<Step>Step 3.</Step>
-					<StepTitle>관심 있는 과목을 클릭하여 내 로드맵에 추가해보세요!</StepTitle>
+						<Illustration src={myroadmap} alt="Roadmap illustration" />
+						<br />
+						<br />
+						<br />
+						<StepTitle>🌟 나만의 로드맵을 완성시키고 공유해보세요! 🌟</StepTitle>
+					</Section>
+				</SubContainer>
 
-					<Illustration src={myroadmap} alt="Roadmap illustration" />
-					<br />
-					<br />
-					<br />
-					<br />
-					<StepTitle>🌟 자신의 로드맵을 완성시키고 공유해보세요! 🌟</StepTitle>
-				</Section>
-
-				<Section bgColor="#ffffff">
-					<SubTitle>💡 상세 정보 열람 💡</SubTitle>
-					<FeaturesContainer>
-						<FeatureItem>
-							<Illustration src={competencydetail} alt="" />
+				<SubContainerWhite>
+					<LastContainer>
+						<Section bgColor="#ffffff">
+							<SubTitle>상세 정보 열람</SubTitle>
+							<FeaturesContainer>
+								<FeatureItem>
+									<Illustration src={competencydetail} alt="" />
+								</FeatureItem>
+								<FeatureItem>
+									<Illustration src={detail} alt="" />
+								</FeatureItem>
+							</FeaturesContainer>
 							<StepTitle2 color="black">
-								+ 전공 역량 옆 돋보기를 선택하면 <br />
-								해당 전공 역량의 상세 정보를 만나보실 수 있습니다!
+								+ 궁금한 전공역량 / 교과목이 있다면 클릭해보세요! <br />
+								해당 전공역량 / 교과목의 상세정보를 확인할 수 있답니다.
 							</StepTitle2>
-						</FeatureItem>
-						<FeatureItem>
-							<Illustration src={detail} alt="" />
-							<StepTitle2 color="black">
-								+ 과목 누르면 과목 상세정보를 확인하실 수 있고, <br />
-								오른쪽 화살표 를 눌러서 내 로드맵에 담을 수 있습니다!
-							</StepTitle2>
-						</FeatureItem>
-					</FeaturesContainer>
-				</Section>
-
-				<LinkContainer>
-					<LinkButton onClick={() => navigate('/about-us')} option={'white'}>
-						About Us
-					</LinkButton>
-					<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-						KUMAP 바로가기
-					</LinkButton>
-				</LinkContainer>
+						</Section>
+						<LinkContainer>
+							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+								KUMAP 바로가기
+							</LinkButton>
+						</LinkContainer>
+					</LastContainer>
+					<Footer />
+				</SubContainerWhite>
 			</Container>
-			<Footer />
 		</>
 	);
 }
