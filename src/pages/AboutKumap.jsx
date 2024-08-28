@@ -8,23 +8,6 @@ import { Header, SectionsContainer } from 'react-fullpage';
 import HeaderBar from '../components/HeaderBar';
 import { fullPageOptions } from './AboutUs';
 
-const HeaderContainer = styled.header`
-	width: fit-content;
-	align-self: flex-start;
-	padding-top: 100px;
-	text-align: center;
-	margin-bottom: 0;
-`;
-
-const Title = styled.h1`
-	font-family: 'Pretendard-bold', sans-serif;
-	font-size: 4em;
-	font-weight: bold;
-	text-align: left;
-	padding-left: 100px;
-	color: #056a3f;
-`;
-
 const SubContainer = styled.div`
 	width: 100%;
 	height: 100vh;
@@ -33,9 +16,17 @@ const SubContainer = styled.div`
 	align-items: stretch;
 `;
 
+const LastContainer = styled.div`
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+`;
+
 const LinkContainer = styled.div`
 	gap: 25px;
-	height: 25rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -68,27 +59,23 @@ const AboutKumap = () => {
 			</Header>
 			<SectionsContainer {...fullPageOptions}>
 				<SubContainer>
-					<HeaderContainer>
-						<Title>KUMAP 이란?</Title>
-					</HeaderContainer>
 					<AboutKumapContents />
 				</SubContainer>
 				<SubContainer>
-					<HeaderContainer>
-						<Title>전공역량이란?</Title>
-					</HeaderContainer>
 					<AboutCompetencyContents />
 				</SubContainer>
 				<SubContainer>
-					<ConclusionContents />
-					<LinkContainer>
-						<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
-							How to use?
-						</LinkButton>
-						<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-							KUMAP 바로가기
-						</LinkButton>
-					</LinkContainer>
+					<LastContainer>
+						<ConclusionContents />
+						<LinkContainer>
+							<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
+								How to use?
+							</LinkButton>
+							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+								KUMAP 바로가기
+							</LinkButton>
+						</LinkContainer>
+					</LastContainer>
 					<Footer />
 				</SubContainer>
 			</SectionsContainer>
