@@ -86,7 +86,7 @@ function HeaderBar() {
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
-						KUMAP 이란?
+						소개
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
@@ -98,7 +98,7 @@ function HeaderBar() {
 					</HeaderLink>
 
 					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
-						쿠스디는요..
+						쿠스디는?
 					</HeaderLink>
 				</HeaderLinks>
 				<HeaderActions>

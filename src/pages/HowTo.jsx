@@ -137,7 +137,7 @@ const FeatureItem = styled.div`
 
 const LinkContainer = styled.div`
 	gap: 25px;
-	padding-bottom: 2rem;
+	padding-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
