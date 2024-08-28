@@ -103,19 +103,18 @@ const StepTitle3 = styled.h3`
 const SubTitle = styled.h3`
 	font-size: 30px;
 	font-weight: 500;
-	margin-bottom: 20px;
 	color: black
 	line-height: 1.5;
     background-color: rgba(3, 107, 63, 0.1); /* 배경색을 텍스트 색상의 10% 투명도로 설정 */
     padding: 10px 200px; /* 텍스트와 배경색 간의 간격을 위해 패딩 추가 */
     border-radius: 5px; /* 모서리를 둥글게 */
     display: inline-block;
+	margin-top: 5rem;
 `;
 const Illustration = styled.img`
 	width: auto; // 원본 비율 유지
 	height: auto; //원본 비율 유지
 	max-width: 600px;
-	margin-top: 20px;
 	border-radius: 0.5rem;
 `;
 
@@ -227,12 +226,12 @@ function HowTo() {
 								+ 궁금한 전공역량 / 교과목이 있다면 클릭해보세요! <br />
 								해당 전공역량 / 교과목의 상세정보를 확인할 수 있답니다.
 							</StepTitle2>
+							<LinkContainer>
+								<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
+									KUMAP 바로가기
+								</LinkButton>
+							</LinkContainer>
 						</Section>
-						<LinkContainer>
-							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-								KUMAP 바로가기
-							</LinkButton>
-						</LinkContainer>
 					</LastContainer>
 					<Footer />
 				</SubContainerWhite>
