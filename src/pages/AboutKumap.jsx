@@ -44,6 +44,7 @@ const LinkButton = styled.button`
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
+	font-family: 'Pretendard-semiBold';
 	transition: 0.1s ease-in;
 	&:hover {
 		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
@@ -69,7 +70,7 @@ const AboutKumap = () => {
 						<ConclusionContents />
 						<LinkContainer>
 							<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
-								How to use?
+								KUMAP 사용법
 							</LinkButton>
 							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
 								KUMAP 바로가기
