@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContens';
+import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
 import Footer from '../components/Footer/Footer';
