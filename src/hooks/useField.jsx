@@ -8,7 +8,8 @@ import {
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState,
-	allFieldDataState
+	allFieldDataState,
+	dummyMiddleFieldState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -23,6 +24,7 @@ const useField = () => {
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
+	const setDummyMiddleFieldState = useSetRecoilState(dummyMiddleFieldState);
 
 	const resetFields = (selectedField) => {
 		if (selectedField === 'large' || selectedField === 'all') {
@@ -54,6 +56,7 @@ const useField = () => {
 	};
 
 	const fetchMiddleField = (requestMiddle) => {
+		console.log(requestMiddle);
 		serverApi
 			.post('/api/v1/fields/middle', requestMiddle)
 			.then((res) => {
@@ -152,6 +155,18 @@ const useField = () => {
 			});
 	};
 
+	const fetchMiddleFieldTest = () => {
+		fetch('/fieldsMiddle.json')
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('Data:', data);
+				setDummyMiddleFieldState(data);
+			})
+			.catch((error) => {
+				console.error('Error fetching the data:', error);
+			});
+	};
+
 	return {
 		fetchLargeField,
 		fetchMiddleField,
@@ -163,7 +178,8 @@ const useField = () => {
 		fetchCoursesInSubject,
 		fetchCourseDetail,
 		resetFields,
-		fetchAllFields
+		fetchAllFields,
+		fetchMiddleFieldTest
 	};
 };
 
