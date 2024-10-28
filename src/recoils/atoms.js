@@ -62,3 +62,8 @@ export const selectedSubjectState = atom({
 		subjectCode: -1
 	}
 });
+
+export const allFieldDataState = atom({
+	key: 'allFieldDataState',
+	default: []
+});
