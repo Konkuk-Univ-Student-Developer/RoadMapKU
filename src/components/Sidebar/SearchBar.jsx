@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import useField from '../../hooks/useField';
 
 const SearchBarContent = styled.input`
 	width: 90%;
@@ -20,6 +22,12 @@ const SearchBarContent = styled.input`
 `;
 
 const SearchBar = () => {
+	const { fetchAllFields } = useField();
+
+	useEffect(() => {
+		fetchAllFields();
+	}, []);
+
 	return <SearchBarContent type="text" placeholder="직군을 입력해주세요" />;
 };
 
