@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DepartmentList from './DepartmentList';
 import FieldCategory from './FieldCategory';
+import SearchBar from './SearchBar';
 
 const SidebarContainer = styled.div`
 	width: 85%;
@@ -10,7 +11,7 @@ const SidebarContainer = styled.div`
 	margin-top: 5rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	background-color: #e6f0ec;
 	border-radius: 10px;
@@ -20,6 +21,7 @@ const SidebarContainer = styled.div`
 const Sidebar = () => {
 	return (
 		<SidebarContainer>
+			<SearchBar />
 			<FieldCategory />
 			<DepartmentList />
 		</SidebarContainer>
