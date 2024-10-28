@@ -22,6 +22,9 @@ const DepartmentContainer = styled.div`
 	border-radius: 10px;
 	overflow: auto;
 	white-space: nowrap;
+	box-shadow:
+		0 2px 5px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.08);
 `;
 
 const TitleContainer = styled.div`
