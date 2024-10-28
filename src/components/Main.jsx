@@ -7,18 +7,15 @@ import { showFieldInputState } from '../recoils/atoms';
 import { useRecoilState } from 'recoil';
 
 const Container = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-`;
-
-const MainContent = styled.div`
-	min-width: 1200px;
-	display: flex;
+	align-items: center;
 `;
 
 const Content = styled.div`
 	padding-top: 5rem;
-	width: calc(100% - 330px);
+	width: 100%;
 `;
 
 const Main = () => {
@@ -39,12 +36,10 @@ const Main = () => {
 				/>
 			)}
 			<Container>
-				<MainContent>
-					<Sidebar show={showSidebar} toggleSidebar={toggleSidebar} />
-					<Content>
-						<RoadMapContainer />
-					</Content>
-				</MainContent>
+				<Sidebar show={showSidebar} toggleSidebar={toggleSidebar} />
+				<Content>
+					<RoadMapContainer />
+				</Content>
 			</Container>
 		</>
 	);
