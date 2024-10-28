@@ -4,8 +4,9 @@ import DepartmentList from './DepartmentList';
 import FieldCategory from './FieldCategory';
 
 const SidebarContainer = styled.div`
+	width: 85%;
 	gap: 10px;
-	min-width: 320px;
+	min-width: 600px;
 	margin-top: 5rem;
 	display: flex;
 	flex-direction: column;

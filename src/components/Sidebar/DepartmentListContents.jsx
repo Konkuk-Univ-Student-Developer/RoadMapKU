@@ -4,16 +4,16 @@ import { selectedFieldState, selectedSubjectState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
-	width: 95%;
-	height: 50px;
-	margin: 5px 0;
+	min-width: 250px;
+	height: 30px;
+	margin: 5px 5px;
 	font-size: 20px;
 	cursor: pointer;
 	font-weight: 600;
-	color: black;
 	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#ffffff')};
 	border: 1px solid #ccc;
 	border-radius: 10px;
+	width: auto;
 	&:hover {
 		background-color: #d3d3d3;
 	}

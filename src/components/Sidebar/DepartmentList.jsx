@@ -14,13 +14,14 @@ const Container = styled.div`
 const DepartmentContainer = styled.div`
 	margin: 10px 0;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
-	width: 95%;
-	background: #036b3f;
+	width: 90%;
+	background: white;
 	border-radius: 10px;
 	overflow: auto;
+	white-space: nowrap;
 `;
 
 const TitleContainer = styled.div`
