@@ -43,7 +43,8 @@ const FieldItem = styled.div`
 `;
 
 const FieldInput = () => {
-	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
+	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
+		useField();
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
@@ -75,11 +76,12 @@ const FieldInput = () => {
 
 	const handleDetailFieldClick = (field) => {
 		fetchSubjectsInField(field.fieldCode);
+		fetchCoursesInFields(field.fieldCode);
+		setSelectedField(field.fieldCode);
 		setSelectedFieldCodeList((prevState) => ({
 			...prevState,
 			detailFieldCode: field.fieldCode
 		}));
-		setSelectedField(field.fieldCode);
 	};
 
 	return (

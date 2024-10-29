@@ -41,7 +41,7 @@ function DepartmentListContents({ subjects }) {
 		<>
 			<SelectedDepartment
 				isSelected={selectedDepartment.subjectCode === -1}
-				onClick={() => handleDepartmentClick(selectedField.fieldCode, -1, '전체')}
+				onClick={() => handleDepartmentClick(selectedField, -1, '전체')}
 			>
 				전체 학과
 			</SelectedDepartment>
