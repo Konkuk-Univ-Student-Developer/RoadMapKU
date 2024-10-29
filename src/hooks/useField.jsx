@@ -44,7 +44,7 @@ const useField = () => {
 
 	const fetchLargeField = () => {
 		serverApi
-			.get('/api/v1/fields/large')
+			.get('/api/v1/field-search/large')
 			.then((res) => {
 				setLargeFieldState(res.data);
 			})
@@ -55,7 +55,7 @@ const useField = () => {
 
 	const fetchMiddleField = () => {
 		serverApi
-			.get('/api/v1/fields/middle')
+			.get('/api/v1/field-search/middle')
 			.then((res) => {
 				setMiddleFieldState(res.data);
 				resetFields('middle');
@@ -67,7 +67,7 @@ const useField = () => {
 
 	const fetchSmallField = (requestSmall) => {
 		serverApi
-			.post('/api/v1/fields/small', requestSmall)
+			.post('/api/v1/field-search/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
 				resetFields('small');
@@ -79,7 +79,7 @@ const useField = () => {
 
 	const fetchDetailField = (requestDetail) => {
 		serverApi
-			.post('/api/v1/fields/detail', requestDetail)
+			.post('/api/v1/field-search/detail', requestDetail)
 			.then((res) => {
 				setDetailFieldState(res.data);
 			})
