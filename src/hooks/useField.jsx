@@ -8,8 +8,7 @@ import {
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState,
-	allFieldDataState,
-	dummyMiddleFieldState
+	allFieldDataState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -24,7 +23,6 @@ const useField = () => {
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
-	const setDummyMiddleFieldState = useSetRecoilState(dummyMiddleFieldState);
 
 	const resetFields = (selectedField) => {
 		if (selectedField === 'large' || selectedField === 'all') {
@@ -55,10 +53,9 @@ const useField = () => {
 			});
 	};
 
-	const fetchMiddleField = (requestMiddle) => {
-		console.log(requestMiddle);
+	const fetchMiddleField = () => {
 		serverApi
-			.post('/api/v1/fields/middle', requestMiddle)
+			.get('/api/v1/fields/middle')
 			.then((res) => {
 				setMiddleFieldState(res.data);
 				resetFields('middle');
@@ -148,22 +145,10 @@ const useField = () => {
 
 	const fetchAllFields = () => {
 		serverApi
-			.get('/api/v1/fields/all')
+			.get('/api/v1/field-search/all')
 			.then((res) => setAllFieldState(res.data))
 			.catch((error) => {
 				console.error('Error fetching course details:', error);
-			});
-	};
-
-	const fetchMiddleFieldTest = () => {
-		fetch('/fieldsMiddle.json')
-			.then((res) => res.json())
-			.then((data) => {
-				console.log('Data:', data);
-				setDummyMiddleFieldState(data);
-			})
-			.catch((error) => {
-				console.error('Error fetching the data:', error);
 			});
 	};
 
@@ -178,8 +163,7 @@ const useField = () => {
 		fetchCoursesInSubject,
 		fetchCourseDetail,
 		resetFields,
-		fetchAllFields,
-		fetchMiddleFieldTest
+		fetchAllFields
 	};
 };
 

@@ -67,8 +67,3 @@ export const allFieldDataState = atom({
 	key: 'allFieldDataState',
 	default: []
 });
-
-export const dummyMiddleFieldState = atom({
-	key: 'dummyMiddleFieldState',
-	default: []
-});

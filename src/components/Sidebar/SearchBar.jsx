@@ -56,14 +56,13 @@ const SuggestionItem = styled.div`
 `;
 
 const SearchBar = () => {
-	const { fetchAllFields, fetchMiddleFieldTest } = useField();
+	const { fetchAllFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
 	const allFieldData = useRecoilValue(allFieldDataState);
 
 	useEffect(() => {
 		fetchAllFields();
-		fetchMiddleFieldTest();
 	}, []);
 
 	const filteredFields = allFieldData.filter((field) => field.includes(userInput));
