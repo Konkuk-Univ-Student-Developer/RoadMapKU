@@ -65,7 +65,9 @@ const SearchBar = () => {
 		fetchAllFields();
 	}, []);
 
-	const filteredFields = allFieldData.filter((field) => field.includes(userInput));
+	const filteredFields = allFieldData.filter(
+		(field) => field.includes(userInput) && (field.match(/>/g) || []).length >= 2
+	);
 
 	return (
 		<SearchBarContainer>

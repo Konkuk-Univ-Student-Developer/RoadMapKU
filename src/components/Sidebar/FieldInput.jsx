@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue } from 'recoil';
@@ -12,51 +12,97 @@ const FieldInputContainer = styled.div`
 	flex-direction: row;
 `;
 
+const FieldColumn = styled.div`
+	padding: 16px;
+	overflow-y: auto;
+	transition: width 0.3s ease;
+	width: ${({ width }) => width};
+`;
+
+const GridContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 8px;
+`;
+
+const ListContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+`;
+
+const FieldItem = styled.div`
+	padding: 8px;
+	cursor: pointer;
+	background-color: #f2f2f2;
+	border-radius: 4px;
+	text-align: center;
+	&:hover {
+		background-color: #e0e0e0;
+	}
+`;
+
 const FieldInput = () => {
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField } = useField();
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
+	const [isSmallFieldSelected, setIsSmallFieldSelected] = useState(false);
+
 	useEffect(() => {
 		fetchMiddleField();
 	}, []);
 
+	const handleMiddleFieldClick = (field) => {
+		fetchSmallField(field);
+		setIsSmallFieldSelected(false);
+	};
+
+	const handleSmallFieldClick = (field) => {
+		fetchDetailField(field);
+		setIsSmallFieldSelected(true);
+	};
+
 	return (
 		<FieldInputContainer>
-			<div>
-				{middleFields.map((field, index) => {
-					return (
-						<div
-							key={index}
-							onClick={() => {
-								console.log(field);
-								fetchSmallField(field);
-							}}
-						>
+			<FieldColumn width={isSmallFieldSelected ? '16.6%' : '33.3%'}>
+				<ListContainer>
+					{middleFields.map((field, index) => (
+						<FieldItem key={index} onClick={() => handleMiddleFieldClick(field)}>
 							{field.middleField}
-						</div>
-					);
-				})}
-			</div>
-			<div>
-				{smallFields.map((field, index) => {
-					return (
-						<div key={index} onClick={() => fetchDetailField(field)}>
-							{field.smallField}
-						</div>
-					);
-				})}
-			</div>
-			<div>
-				{detailFields.map((field, index) => {
-					return (
-						<div key={index} onClick={() => fetchSubjectsInField(field.fieldCode)}>
+						</FieldItem>
+					))}
+				</ListContainer>
+			</FieldColumn>
+			<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'}>
+				{isSmallFieldSelected ? (
+					<ListContainer>
+						{smallFields.map((field, index) => (
+							<FieldItem key={index} onClick={() => handleSmallFieldClick(field)}>
+								{field.smallField}
+							</FieldItem>
+						))}
+					</ListContainer>
+				) : (
+					<GridContainer>
+						{smallFields.map((field, index) => (
+							<FieldItem key={index} onClick={() => handleSmallFieldClick(field)}>
+								{field.smallField}
+							</FieldItem>
+						))}
+					</GridContainer>
+				)}
+			</FieldColumn>
+			<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
+				<GridContainer>
+					{detailFields.map((field, index) => (
+						<FieldItem key={index} onClick={() => fetchSubjectsInField(field.fieldCode)}>
 							{field.detailField}
-						</div>
-					);
-				})}
-			</div>
+						</FieldItem>
+					))}
+				</GridContainer>
+			</FieldColumn>
 		</FieldInputContainer>
 	);
 };
