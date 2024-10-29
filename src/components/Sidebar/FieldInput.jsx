@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
-import { useRecoilValue } from 'recoil';
-import { detailFieldState, middleFieldState, smallFieldState } from '../../recoils/atoms';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { detailFieldState, middleFieldState, selectedFieldState, smallFieldState } from '../../recoils/atoms';
 
 const FieldInputContainer = styled.div`
 	width: 100%;
@@ -34,7 +34,7 @@ const ListContainer = styled.div`
 const FieldItem = styled.div`
 	padding: 8px;
 	cursor: pointer;
-	background-color: #f2f2f2;
+	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
 	border-radius: 4px;
 	text-align: center;
 	&:hover {
@@ -48,6 +48,10 @@ const FieldInput = () => {
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
+	const setSelectedField = useSetRecoilState(selectedFieldState);
+	// TODO state 관리 좀 더 깔끔하게 바꿔야함.
+	const [selectedFieldCodeList, setSelectedFieldCodeList] = useState({ middleFieldCode: '' });
+
 	const [isSmallFieldSelected, setIsSmallFieldSelected] = useState(false);
 
 	useEffect(() => {
@@ -57,11 +61,25 @@ const FieldInput = () => {
 	const handleMiddleFieldClick = (field) => {
 		fetchSmallField(field);
 		setIsSmallFieldSelected(false);
+		setSelectedFieldCodeList({ middleFieldCode: field.fieldCode });
 	};
 
 	const handleSmallFieldClick = (field) => {
 		fetchDetailField(field);
 		setIsSmallFieldSelected(true);
+		setSelectedFieldCodeList((prevState) => ({
+			...prevState,
+			smallFieldCode: field.fieldCode
+		}));
+	};
+
+	const handleDetailFieldClick = (field) => {
+		fetchSubjectsInField(field.fieldCode);
+		setSelectedFieldCodeList((prevState) => ({
+			...prevState,
+			detailFieldCode: field.fieldCode
+		}));
+		setSelectedField(field.fieldCode);
 	};
 
 	return (
@@ -69,7 +87,11 @@ const FieldInput = () => {
 			<FieldColumn width={isSmallFieldSelected ? '16.6%' : '33.3%'}>
 				<ListContainer>
 					{middleFields.map((field, index) => (
-						<FieldItem key={index} onClick={() => handleMiddleFieldClick(field)}>
+						<FieldItem
+							key={index}
+							onClick={() => handleMiddleFieldClick(field)}
+							isSelected={selectedFieldCodeList.middleFieldCode === field.fieldCode}
+						>
 							{field.middleField}
 						</FieldItem>
 					))}
@@ -79,7 +101,11 @@ const FieldInput = () => {
 				{isSmallFieldSelected ? (
 					<ListContainer>
 						{smallFields.map((field, index) => (
-							<FieldItem key={index} onClick={() => handleSmallFieldClick(field)}>
+							<FieldItem
+								key={index}
+								onClick={() => handleSmallFieldClick(field)}
+								isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+							>
 								{field.smallField}
 							</FieldItem>
 						))}
@@ -87,7 +113,11 @@ const FieldInput = () => {
 				) : (
 					<GridContainer>
 						{smallFields.map((field, index) => (
-							<FieldItem key={index} onClick={() => handleSmallFieldClick(field)}>
+							<FieldItem
+								key={index}
+								onClick={() => handleSmallFieldClick(field)}
+								isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+							>
 								{field.smallField}
 							</FieldItem>
 						))}
@@ -97,7 +127,11 @@ const FieldInput = () => {
 			<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
 				<GridContainer>
 					{detailFields.map((field, index) => (
-						<FieldItem key={index} onClick={() => fetchSubjectsInField(field.fieldCode)}>
+						<FieldItem
+							key={index}
+							onClick={() => handleDetailFieldClick(field)}
+							isSelected={selectedFieldCodeList.detailFieldCode === field.fieldCode}
+						>
 							{field.detailField}
 						</FieldItem>
 					))}

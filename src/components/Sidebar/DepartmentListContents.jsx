@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedFieldState, selectedSubjectState } from '../../recoils/atoms';
+import { selectedSubjectState, selectedFieldState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
@@ -50,7 +50,7 @@ function DepartmentListContents({ subjects }) {
 					<SelectedDepartment
 						key={subject.subjectCode}
 						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
-						onClick={() => handleDepartmentClick(selectedField.fieldCode, subject.subjectCode, subject.subjectName)}
+						onClick={() => handleDepartmentClick(selectedField, subject.subjectCode, subject.subjectName)}
 					>
 						{subject.subjectName}
 					</SelectedDepartment>
