@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Sidebar from './Sidebar/Sidebar';
 import RoadMapContainer from './RoadMap/RoadMapContainer';
-import FieldCategoryInput from './Modal/FieldCategoryInput';
-import { showFieldInputState } from '../recoils/atoms';
-import { useRecoilState } from 'recoil';
 
 const Container = styled.div`
 	width: 100%;
@@ -20,7 +17,6 @@ const Content = styled.div`
 
 const Main = () => {
 	const [showSidebar, setShowSidebar] = useState(true);
-	const [isShowFieldCategoryInput, setIsShowFieldCategoryInput] = useRecoilState(showFieldInputState);
 
 	const toggleSidebar = () => {
 		setShowSidebar((prevShowSidebar) => !prevShowSidebar);
@@ -28,13 +24,6 @@ const Main = () => {
 
 	return (
 		<>
-			{isShowFieldCategoryInput && (
-				<FieldCategoryInput
-					onClose={() => {
-						setIsShowFieldCategoryInput(false);
-					}}
-				/>
-			)}
 			<Container>
 				<Sidebar show={showSidebar} toggleSidebar={toggleSidebar} />
 				<Content>

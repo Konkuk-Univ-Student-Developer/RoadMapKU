@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import DepartmentList from './DepartmentList';
-import FieldCategory from './FieldCategory';
 import SearchBar from './SearchBar';
+import FieldInput from './FieldInput';
 
 const SidebarContainer = styled.div`
 	width: 85%;
@@ -25,7 +25,7 @@ const Sidebar = () => {
 	return (
 		<SidebarContainer>
 			<SearchBar />
-			<FieldCategory />
+			<FieldInput />
 			<DepartmentList />
 		</SidebarContainer>
 	);
