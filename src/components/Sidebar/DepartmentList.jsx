@@ -17,7 +17,7 @@ const DepartmentContainer = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
-	width: 90%;
+	width: 95%;
 	background: white;
 	border-radius: 10px;
 	overflow: auto;
@@ -28,7 +28,7 @@ const DepartmentContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-	width: 90%;
+	width: 95%;
 	display: flex;
 	align-items: flex-start;
 `;

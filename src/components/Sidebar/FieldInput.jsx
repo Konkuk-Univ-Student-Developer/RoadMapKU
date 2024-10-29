@@ -3,10 +3,17 @@ import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { detailFieldState, middleFieldState, selectedFieldState, smallFieldState } from '../../recoils/atoms';
+import { Title } from './FieldCategory';
 
 const FieldInputContainer = styled.div`
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+`;
+const FieldInputContentsContainer = styled.div`
 	width: 100%;
-	height: 500px;
+	height: 300px;
 	background: white;
 	display: flex;
 	flex-direction: row;
@@ -86,59 +93,62 @@ const FieldInput = () => {
 
 	return (
 		<FieldInputContainer>
-			<FieldColumn width={isSmallFieldSelected ? '16.6%' : '33.3%'}>
-				<ListContainer>
-					{middleFields.map((field, index) => (
-						<FieldItem
-							key={index}
-							onClick={() => handleMiddleFieldClick(field)}
-							isSelected={selectedFieldCodeList.middleFieldCode === field.fieldCode}
-						>
-							{field.middleField}
-						</FieldItem>
-					))}
-				</ListContainer>
-			</FieldColumn>
-			<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'}>
-				{isSmallFieldSelected ? (
+			<Title>직군 찾아보기</Title>
+			<FieldInputContentsContainer>
+				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '33.3%'}>
 					<ListContainer>
-						{smallFields.map((field, index) => (
+						{middleFields.map((field, index) => (
 							<FieldItem
 								key={index}
-								onClick={() => handleSmallFieldClick(field)}
-								isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+								onClick={() => handleMiddleFieldClick(field)}
+								isSelected={selectedFieldCodeList.middleFieldCode === field.fieldCode}
 							>
-								{field.smallField}
+								{field.middleField}
 							</FieldItem>
 						))}
 					</ListContainer>
-				) : (
+				</FieldColumn>
+				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'}>
+					{isSmallFieldSelected ? (
+						<ListContainer>
+							{smallFields.map((field, index) => (
+								<FieldItem
+									key={index}
+									onClick={() => handleSmallFieldClick(field)}
+									isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+								>
+									{field.smallField}
+								</FieldItem>
+							))}
+						</ListContainer>
+					) : (
+						<GridContainer>
+							{smallFields.map((field, index) => (
+								<FieldItem
+									key={index}
+									onClick={() => handleSmallFieldClick(field)}
+									isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+								>
+									{field.smallField}
+								</FieldItem>
+							))}
+						</GridContainer>
+					)}
+				</FieldColumn>
+				<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
 					<GridContainer>
-						{smallFields.map((field, index) => (
+						{detailFields.map((field, index) => (
 							<FieldItem
 								key={index}
-								onClick={() => handleSmallFieldClick(field)}
-								isSelected={selectedFieldCodeList.smallFieldCode === field.fieldCode}
+								onClick={() => handleDetailFieldClick(field)}
+								isSelected={selectedFieldCodeList.detailFieldCode === field.fieldCode}
 							>
-								{field.smallField}
+								{field.detailField}
 							</FieldItem>
 						))}
 					</GridContainer>
-				)}
-			</FieldColumn>
-			<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
-				<GridContainer>
-					{detailFields.map((field, index) => (
-						<FieldItem
-							key={index}
-							onClick={() => handleDetailFieldClick(field)}
-							isSelected={selectedFieldCodeList.detailFieldCode === field.fieldCode}
-						>
-							{field.detailField}
-						</FieldItem>
-					))}
-				</GridContainer>
-			</FieldColumn>
+				</FieldColumn>
+			</FieldInputContentsContainer>
 		</FieldInputContainer>
 	);
 };

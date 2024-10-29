@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import DepartmentList from './DepartmentList';
 import SearchBar from './SearchBar';
 import FieldInput from './FieldInput';
+import SearchLog from './SearchLog';
 
 const SidebarContainer = styled.div`
 	width: 85%;
@@ -27,6 +28,7 @@ const Sidebar = () => {
 			<SearchBar />
 			<FieldInput />
 			<DepartmentList />
+			<SearchLog />
 		</SidebarContainer>
 	);
 };

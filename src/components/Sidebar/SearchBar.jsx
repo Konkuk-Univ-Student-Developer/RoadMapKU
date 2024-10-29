@@ -12,7 +12,7 @@ const SearchBarContainer = styled.div`
 `;
 
 const SearchBarContent = styled.input`
-	width: 90%;
+	width: 95%;
 	height: 40px;
 	padding: 0 12px;
 	margin-top: 10px;
