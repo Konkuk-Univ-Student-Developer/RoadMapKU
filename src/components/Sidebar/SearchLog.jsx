@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Title } from './FieldCategory';
+import { useRecoilValue } from 'recoil';
+import { selectedFieldLogState } from '../../recoils/atoms';
 
 const SearchLogContainer = styled.div`
 	width: 95%;
@@ -10,10 +12,17 @@ const SearchLogContainer = styled.div`
 `;
 
 const SearchLog = () => {
+	const selectedFieldLogList = useRecoilValue(selectedFieldLogState);
+
 	return (
 		<SearchLogContainer>
 			<Title>검색기록</Title>
-			<div>log</div>
+			<div>
+				{selectedFieldLogList.map((field, index) => {
+					const restructuredFieldName = `${field.middleField.name} > ${field.smallField.name} > ${field.detailField.name}`;
+					return <div key={index}>{restructuredFieldName}</div>;
+				})}
+			</div>
 		</SearchLogContainer>
 	);
 };

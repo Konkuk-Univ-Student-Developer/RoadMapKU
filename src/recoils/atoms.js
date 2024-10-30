@@ -67,3 +67,8 @@ export const allFieldDataState = atom({
 	key: 'allFieldDataState',
 	default: []
 });
+
+export const selectedFieldLogState = atom({
+	key: 'selectedFieldLogState',
+	default: []
+});

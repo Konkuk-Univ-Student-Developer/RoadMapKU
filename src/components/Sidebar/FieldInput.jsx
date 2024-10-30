@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { detailFieldState, middleFieldState, selectedFieldState, smallFieldState } from '../../recoils/atoms';
+import {
+	detailFieldState,
+	middleFieldState,
+	selectedFieldLogState,
+	selectedFieldState,
+	smallFieldState
+} from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 
 const FieldInputContainer = styled.div`
@@ -57,6 +63,7 @@ const FieldInput = () => {
 	const detailFields = useRecoilValue(detailFieldState);
 
 	const setSelectedField = useSetRecoilState(selectedFieldState);
+	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	// TODO state 관리 좀 더 깔끔하게 바꿔야함.
 	const [selectedFieldCodeList, setSelectedFieldCodeList] = useState({});
 
@@ -100,10 +107,15 @@ const FieldInput = () => {
 		fetchSubjectsInField(field.fieldCode);
 		fetchCoursesInFields(field.fieldCode);
 		setSelectedField(field.fieldCode);
-		setSelectedFieldCodeList((prevState) => ({
-			...prevState,
+
+		const updatedFieldCodeList = {
+			...selectedFieldCodeList,
 			detailField: detailField
-		}));
+		};
+
+		setSelectedFieldCodeList(updatedFieldCodeList);
+
+		setSelectedFieldLog((prevState) => [...prevState, updatedFieldCodeList]);
 	};
 
 	return (
