@@ -114,8 +114,14 @@ const FieldInput = () => {
 		};
 
 		setSelectedFieldCodeList(updatedFieldCodeList);
+		setSelectedFieldLog((prevState) => {
+			const newLog = [...prevState, updatedFieldCodeList];
+			if (newLog.length > 5) {
+				newLog.shift();
+			}
 
-		setSelectedFieldLog((prevState) => [...prevState, updatedFieldCodeList]);
+			return newLog;
+		});
 	};
 
 	return (
