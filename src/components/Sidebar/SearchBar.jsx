@@ -12,7 +12,7 @@ const SearchBarContainer = styled.div`
 `;
 
 const SearchBarContent = styled.input`
-	width: 95%;
+	width: 93%;
 	height: 40px;
 	padding: 0 12px;
 	margin-top: 10px;
@@ -33,8 +33,8 @@ const SearchBarContent = styled.input`
 const SuggestionsContainer = styled.div`
 	position: absolute;
 	top: 90%;
-	left: 5%;
-	width: 90%;
+	left: 3%;
+	width: 94%;
 	background-color: white;
 	border: 1px solid #ddd;
 	border-radius: 8px;
