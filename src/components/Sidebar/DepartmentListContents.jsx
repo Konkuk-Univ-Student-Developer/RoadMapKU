@@ -50,7 +50,9 @@ function DepartmentListContents({ subjects }) {
 					<SelectedDepartment
 						key={subject.subjectCode}
 						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
-						onClick={() => handleDepartmentClick(selectedField, subject.subjectCode, subject.subjectName)}
+						onClick={() =>
+							handleDepartmentClick(selectedField.detailField.code, subject.subjectCode, subject.subjectName)
+						}
 					>
 						{subject.subjectName}
 					</SelectedDepartment>

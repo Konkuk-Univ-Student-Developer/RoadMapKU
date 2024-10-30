@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	middleFieldState,
@@ -62,10 +62,9 @@ const FieldInput = () => {
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
-	const setSelectedField = useSetRecoilState(selectedFieldState);
+	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	// TODO state 관리 좀 더 깔끔하게 바꿔야함.
-	const [selectedFieldCodeList, setSelectedFieldCodeList] = useState({});
 
 	const [isSmallFieldSelected, setIsSmallFieldSelected] = useState(false);
 
@@ -81,7 +80,7 @@ const FieldInput = () => {
 
 		fetchSmallField(field);
 		setIsSmallFieldSelected(false);
-		setSelectedFieldCodeList({ middleField: middleField });
+		setSelectedField({ middleField: middleField });
 	};
 
 	const handleSmallFieldClick = (field) => {
@@ -92,7 +91,7 @@ const FieldInput = () => {
 
 		fetchDetailField(field);
 		setIsSmallFieldSelected(true);
-		setSelectedFieldCodeList((prevState) => ({
+		setSelectedField((prevState) => ({
 			...prevState,
 			smallField: smallField
 		}));
@@ -106,14 +105,13 @@ const FieldInput = () => {
 
 		fetchSubjectsInField(field.fieldCode);
 		fetchCoursesInFields(field.fieldCode);
-		setSelectedField(field.fieldCode);
 
 		const updatedFieldCodeList = {
-			...selectedFieldCodeList,
+			...selectedField,
 			detailField: detailField
 		};
 
-		setSelectedFieldCodeList(updatedFieldCodeList);
+		setSelectedField(updatedFieldCodeList);
 		setSelectedFieldLog((prevState) => {
 			const newLog = [...prevState, updatedFieldCodeList];
 			if (newLog.length > 5) {
@@ -134,7 +132,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleMiddleFieldClick(field)}
-								isSelected={selectedFieldCodeList.middleField?.code === field.fieldCode}
+								isSelected={selectedField.middleField?.code === field.fieldCode}
 							>
 								{field.middleField}
 							</FieldItem>
@@ -148,7 +146,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedFieldCodeList.smallField?.code === field.fieldCode}
+									isSelected={selectedField.smallField?.code === field.fieldCode}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -160,7 +158,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedFieldCodeList.smallField?.code === field.fieldCode}
+									isSelected={selectedField.smallField?.code === field.fieldCode}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -174,7 +172,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
-								isSelected={selectedFieldCodeList.detailField?.code === field.fieldCode}
+								isSelected={selectedField.detailField?.code === field.fieldCode}
 							>
 								{field.detailField}
 							</FieldItem>
