@@ -57,7 +57,7 @@ const useField = () => {
 
 	const fetchMiddleField = () => {
 		serverApi
-			.get('/api/v1/field-search/middle')
+			.get('/api/v2/field-search/middle')
 			.then((res) => {
 				setMiddleFieldState(res.data);
 				resetFields('middle');
@@ -69,7 +69,7 @@ const useField = () => {
 
 	const fetchSmallField = (requestSmall) => {
 		serverApi
-			.post('/api/v1/field-search/small', requestSmall)
+			.post('/api/v2/field-search/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
 				resetFields('small');
@@ -81,7 +81,7 @@ const useField = () => {
 
 	const fetchDetailField = (requestDetail) => {
 		serverApi
-			.post('/api/v1/field-search/detail', requestDetail)
+			.post('/api/v2/field-search/detail', requestDetail)
 			.then((res) => {
 				setDetailFieldState(res.data);
 				resetSelectedSubject();
@@ -148,7 +148,7 @@ const useField = () => {
 
 	const fetchAllFields = () => {
 		serverApi
-			.get('/api/v1/field-search/all')
+			.get('/api/v2/field-search/all')
 			.then((res) => setAllFieldState(res.data))
 			.catch((error) => {
 				console.error('Error fetching course details:', error);
