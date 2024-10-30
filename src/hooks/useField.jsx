@@ -1,4 +1,4 @@
-import { useSetRecoilState } from 'recoil';
+import { useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	largeFieldState,
@@ -8,7 +8,8 @@ import {
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState,
-	allFieldDataState
+	allFieldDataState,
+	selectedSubjectState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -23,6 +24,7 @@ const useField = () => {
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
+	const resetSelectedSubject = useResetRecoilState(selectedSubjectState);
 
 	const resetFields = (selectedField) => {
 		if (selectedField === 'large' || selectedField === 'all') {
@@ -82,6 +84,7 @@ const useField = () => {
 			.post('/api/v1/field-search/detail', requestDetail)
 			.then((res) => {
 				setDetailFieldState(res.data);
+				resetSelectedSubject();
 			})
 			.catch((error) => {
 				console.error(error);
