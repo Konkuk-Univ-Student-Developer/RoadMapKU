@@ -108,7 +108,7 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 						onClose={() => {
 							setIsDetailOpen(false);
 						}}
-						competencyData={cellData}
+						// competencyData={cellData}
 					/>
 				)}
 				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
