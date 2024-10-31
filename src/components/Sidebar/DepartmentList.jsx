@@ -1,6 +1,4 @@
-import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { subjectsInFieldState } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 import DepartmentListContents from './DepartmentListContents';
 
@@ -34,15 +32,13 @@ const TitleContainer = styled.div`
 `;
 
 const DepartmentList = () => {
-	const subjects = useRecoilValue(subjectsInFieldState);
-
 	return (
 		<Container>
 			<TitleContainer>
 				<Title style={{ marginBottom: '0' }}>학과 리스트</Title>
 			</TitleContainer>
 			<DepartmentContainer>
-				<DepartmentListContents subjects={subjects} />
+				<DepartmentListContents />
 			</DepartmentContainer>
 		</Container>
 	);

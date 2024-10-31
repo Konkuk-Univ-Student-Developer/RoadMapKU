@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedSubjectState, selectedFieldState } from '../../recoils/atoms';
+import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
@@ -19,10 +19,11 @@ const SelectedDepartment = styled.button`
 	}
 `;
 
-function DepartmentListContents({ subjects }) {
+function DepartmentListContents() {
 	const { fetchCoursesInFieldsAndSubjects, fetchCoursesInFields } = useField();
 	const selectedField = useRecoilValue(selectedFieldState);
 	const [selectedDepartment, setSelectedDepartment] = useRecoilState(selectedSubjectState);
+	const subjects = useRecoilValue(subjectsInFieldState);
 
 	const handleDepartmentClick = (fieldCode, subjectCode, subjectName) => {
 		setSelectedDepartment({ subjectCode, subjectName });
@@ -41,7 +42,7 @@ function DepartmentListContents({ subjects }) {
 		<>
 			<SelectedDepartment
 				isSelected={selectedDepartment.subjectCode === -1}
-				onClick={() => handleDepartmentClick(selectedField, -1, '전체')}
+				onClick={() => handleDepartmentClick(selectedField.detailField?.code, -1, '전체')}
 			>
 				전체 학과
 			</SelectedDepartment>
@@ -51,7 +52,7 @@ function DepartmentListContents({ subjects }) {
 						key={subject.subjectCode}
 						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
 						onClick={() =>
-							handleDepartmentClick(selectedField.detailField.code, subject.subjectCode, subject.subjectName)
+							handleDepartmentClick(selectedField.detailField?.code, subject.subjectCode, subject.subjectName)
 						}
 					>
 						{subject.subjectName}

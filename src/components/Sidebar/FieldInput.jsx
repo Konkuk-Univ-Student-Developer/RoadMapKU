@@ -93,7 +93,7 @@ const FieldInput = () => {
 		setIsSmallFieldSelected(true);
 		setSelectedField((prevState) => ({
 			...prevState,
-			smallField: smallField
+			smallField
 		}));
 	};
 
@@ -108,7 +108,7 @@ const FieldInput = () => {
 
 		const updatedFieldCodeList = {
 			...selectedField,
-			detailField: detailField
+			detailField
 		};
 
 		setSelectedField(updatedFieldCodeList);
