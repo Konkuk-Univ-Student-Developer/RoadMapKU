@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './RoadMapCell';
+import Cell2 from './RoadMapCell2';
 
 const TableContainer = styled.div`
 	flex: 1;
@@ -56,6 +57,17 @@ const defaultTable = [
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
 	const refs = useRef(roadMapTableData.map((row) => row.slice(1).map(() => React.createRef()))).current;
 
+	const [openDropdownIndex, setOpenDropdownIndex] = useState({ rowIndex: null, cellIndex: null });
+
+	// 현재 열려 있는 드롭다운을 클릭한 경우 닫기
+	const handleDropdownToggle = (rowIndex, cellIndex) => {
+		if (openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex) {
+			setOpenDropdownIndex({ rowIndex: null, cellIndex: null });
+		} else {
+			setOpenDropdownIndex({ rowIndex, cellIndex });
+		}
+	};
+
 	return (
 		<TableContainer>
 			<SemesterContainer>
@@ -77,13 +89,15 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 								classNames="Bounce"
 								nodeRef={refs[rowIndex][cellIndex]}
 							>
-								<Cell
+								<Cell2
 									ref={refs[rowIndex][cellIndex]}
 									cellData={cellData}
 									rowIndex={rowIndex}
 									onClick={onCellClick}
 									unclickable={unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)}
 									highlightedCompetency={highlightedCompetency}
+									isDropdownOpen={openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex} // 현재 드롭다운이 열려 있는지 확인
+									onDropdownToggle={() => handleDropdownToggle(rowIndex, cellIndex)} // 열고 닫는 함수 전달
 								/>
 							</CSSTransition>
 						))}
