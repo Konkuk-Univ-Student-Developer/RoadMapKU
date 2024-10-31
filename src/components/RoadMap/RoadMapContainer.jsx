@@ -315,10 +315,6 @@ const RoadMapContainer = () => {
 
 	// 학과 로드맵 Cell Click 이벤트
 	const handleCellClick_add = (cellData, rowIndex) => {
-		const updatedUnclickableCells = [...unclickableCells];
-		updatedUnclickableCells.push({ cellData: cellData });
-		setUnclickableCells(updatedUnclickableCells);
-
 		const updatedMyTableData = [...myTableData];
 		const copiedCellData = { ...cellData, isMyTable: true };
 		updatedMyTableData[rowIndex].push(copiedCellData);
@@ -326,7 +322,7 @@ const RoadMapContainer = () => {
 	};
 	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
-		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.cellData.haksuId === cellData.haksuId));
+		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
 		const updatedMyTableData = [...myTableData];
