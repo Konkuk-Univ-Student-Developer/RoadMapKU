@@ -117,7 +117,7 @@ const SaveButton = ({ onClickURL, onClickCapture }) => {
 			<CaptureBtn onClick={onClickCapture}>
 				<Icon icon={bxCamera} />
 			</CaptureBtn>
-			<DownloadBtn onClick={onClickURL}>
+			<DownloadBtn>
 				<IoMdDownload />
 			</DownloadBtn>
 		</Btn>

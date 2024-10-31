@@ -68,249 +68,6 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
-const data = [
-	[
-		{ haksuId: '0', courseName: '1 - 1' },
-		{
-			haksuId: 'BBAB05021',
-			courseName: '컴퓨터공학개론',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB61097',
-			courseName: '테크니컬영어발표',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '1 - 2' },
-		{
-			haksuId: 'BBAB61224',
-			courseName: '테크니컬영어말하기',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '2 - 1' },
-		{
-			haksuId: 'BBAB11792',
-			courseName: '객체지향프로그래밍',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB54724',
-			courseName: '웹프로그래밍',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB62244',
-			courseName: '전공기초프로젝트1(종합설계)',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB61096',
-			courseName: '오픈소스SW입문',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '2 - 2' },
-		{
-			haksuId: 'BBAB12016',
-			courseName: '소프트웨어공학',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB12022',
-			courseName: '시스템프로그래밍',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB62247',
-			courseName: '전공기초프로젝트2(종합설계)',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB51983',
-			courseName: '랜덤프로세스개론',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부2',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '3 - 1' },
-		{
-			haksuId: 'BBAB62251',
-			courseName: '객체지향개발방법론',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB12050',
-			courseName: '컴파일러',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB12111',
-			courseName: '프로그래밍언어론',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB12190',
-			courseName: '운영체제',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '3 - 2' },
-		{
-			haksuId: 'BBAB12017',
-			courseName: '소프트웨어아키텍처',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB59068',
-			courseName: '클라우드웹서비스',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB63052',
-			courseName: '멀티미디어공학',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB55842',
-			courseName: '산학협력프로젝트2(종합설계)',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부3',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '4 - 1' },
-		{
-			haksuId: 'BBAB62249',
-			courseName: '소프트웨어V&V',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB12012',
-			courseName: '분산시스템및컴퓨팅',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB51992',
-			courseName: '협동분산시스템',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB59069',
-			courseName: '클라우드IOT서비스',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		}
-	],
-	[
-		{ haksuId: '0', courseName: '4 - 2' },
-		{
-			haksuId: 'BBAB54782',
-			courseName: '웹기술및응용',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB54855',
-			courseName: '차세대분산시스템',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742801' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB55840',
-			courseName: '졸업프로젝트1(종합설계)',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		},
-		{
-			haksuId: 'BBAB55841',
-			courseName: '졸업프로젝트2(종합설계)',
-			courseCredit: '3',
-			subjectName: '컴퓨터공학부4',
-			competencyCodes: [{ competencyName: '전공역량', competencyCode: '12742802' }],
-			isMyTable: true
-		}
-	]
-];
-
 const RoadMapContainer = () => {
 	// courseByCompetencyInSubject: 전공 내 전공역량과 전공역량을 포함하는 교과목
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
@@ -334,6 +91,8 @@ const RoadMapContainer = () => {
 	const [totalRoadMapData, setTotalRoadMapData] = useState([]);
 	const roadmapContentRef = useRef(null);
 
+	const [unclickableCells, setUnclickableCells] = useState([]);
+
 	// courseCreditData: 내 로드맵의 학점 모음
 	const [courseCreditData, setCourseCreditData] = useState([]);
 
@@ -345,12 +104,6 @@ const RoadMapContainer = () => {
 	// URL을 통한 접속
 	const { key } = useParams();
 	useEffect(() => {
-		const myTableDataString = JSON.stringify(data);
-		const compressed = pako.deflate(myTableDataString, { to: 'string' });
-		const base64Compressed = toBase64(compressed);
-		const utf8Encoded = encodeURIComponent(base64Compressed);
-		console.log('url_data: ', utf8Encoded);
-
 		if (key) {
 			const utf8Decoded = decodeURIComponent(key);
 			const compressedData = fromBase64(utf8Decoded);
@@ -379,13 +132,14 @@ const RoadMapContainer = () => {
 
 			// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 			const haksuIdToCompetencyMap = new Map();
+			const tempUnclickableCells = [];
 			let max_length = 0;
 
 			// courseByCompetencyInSubject 데이터 가공
 			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			courseByCompetencyInSubject.forEach((competency) => {
 				competency.courseGetResponseList.forEach((course) => {
-					const { openingYear, openingSemester, haksuId, name, courseCredit } = course;
+					const { openingYear, openingSemester, haksuId, name, credit } = course;
 					const semesterIndex = openingSemester === '2학기' ? 1 : 0;
 					const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
 					const index = (openingYear_include9 - 1) * 2 + semesterIndex;
@@ -399,30 +153,27 @@ const RoadMapContainer = () => {
 						competencyCode: competency.competencyCode
 					});
 
-					updatedRoadMapTableData[index] = [
-						...updatedRoadMapTableData[index],
-						{
-							haksuId: haksuId,
-							courseName: name,
-							courseCredit: courseCredit,
-							subjectName: subjectName,
-							competencyCodes: haksuIdToCompetencyMap.get(haksuId),
-							isMyTable: false
-						}
-					];
+					// isMyTable 체크
+					const isMyTable = myTableData.some((row) => row.some((cell) => cell.haksuId === haksuId));
+
+					const cellData = {
+						haksuId: haksuId,
+						courseName: name,
+						courseCredit: credit,
+						subjectName: subjectName,
+						competencyCodes: haksuIdToCompetencyMap.get(haksuId),
+						isMyTable: isMyTable
+					};
+
+					// 이미 지정되어 있던 unclickableCell 추가
+					if (cellData.isMyTable) {
+						tempUnclickableCells.push(cellData);
+					}
+
+					updatedRoadMapTableData[index] = [...updatedRoadMapTableData[index], cellData];
 					// '1,2학기'에 대한 처리
 					if (openingSemester === '1,2학기') {
-						updatedRoadMapTableData[index + 1] = [
-							...updatedRoadMapTableData[index + 1],
-							{
-								haksuId: haksuId,
-								courseName: name,
-								courseCredit: courseCredit,
-								subjectName: subjectName,
-								competencyCodes: haksuIdToCompetencyMap.get(haksuId),
-								isMyTable: false
-							}
-						];
+						updatedRoadMapTableData[index + 1] = [...updatedRoadMapTableData[index + 1], cellData];
 					}
 
 					// 가장 긴 배열 탐색 (animation time)
@@ -431,6 +182,8 @@ const RoadMapContainer = () => {
 					}
 				});
 			});
+
+			setUnclickableCells(tempUnclickableCells);
 
 			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
 			let delay = 200;
@@ -448,7 +201,7 @@ const RoadMapContainer = () => {
 				});
 			});
 		}
-	}, [courseByCompetencyInSubject]);
+	}, [courseByCompetencyInSubject, myTableData]);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
 	useEffect(() => {
@@ -458,7 +211,7 @@ const RoadMapContainer = () => {
 			// totalRoadMap 데이터 가공
 			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			totalRoadMap.forEach((course) => {
-				const { openingYear, openingSemester, haksuId, name, courseCredit } = course;
+				const { openingYear, openingSemester, haksuId, name, credit } = course;
 				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
 				const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
 				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
@@ -468,7 +221,7 @@ const RoadMapContainer = () => {
 					{
 						haksuId: haksuId,
 						courseName: name,
-						courseCredit: courseCredit,
+						courseCredit: credit,
 						subjectName: subjectName,
 						competencyCodes: [],
 						isMyTable: false
@@ -480,7 +233,7 @@ const RoadMapContainer = () => {
 						{
 							haksuId: haksuId,
 							courseName: name,
-							courseCredit: courseCredit,
+							courseCredit: credit,
 							subjectName: subjectName,
 							competencyCodes: [],
 							isMyTable: false
@@ -511,7 +264,7 @@ const RoadMapContainer = () => {
 		myTableData.forEach((row) => {
 			row.forEach((cellData) => {
 				const subject = cellData.subjectName;
-				const credit = parseInt(cellData.courseCredit, 10);
+				const credit = cellData.courseCredit;
 
 				// 비어있는 값(학기 데이터) 처리
 				if (!subject) return;
@@ -528,10 +281,12 @@ const RoadMapContainer = () => {
 		});
 
 		// subjectCreditMap을 배열로 변환
-		const courseCreditArray = Object.entries(courseCreditMap).map(([subjectName, courseCredit]) => ({
-			subjectName,
-			courseCredit
-		}));
+		const courseCreditArray = Object.entries(courseCreditMap)
+			.map(([subjectName, courseCredit]) => ({
+				subjectName,
+				courseCredit
+			}))
+			.sort((a, b) => b.courseCredit - a.courseCredit);
 
 		setCourseCreditData(courseCreditArray);
 	}, [myTableData]);
@@ -559,10 +314,9 @@ const RoadMapContainer = () => {
 	}, [highlightedCompetencies]);
 
 	// 학과 로드맵 Cell Click 이벤트
-	const [unclickableCells, setUnclickableCells] = useState([]);
 	const handleCellClick_add = (cellData, rowIndex) => {
 		const updatedUnclickableCells = [...unclickableCells];
-		updatedUnclickableCells.push({ cellData: cellData, row: rowIndex });
+		updatedUnclickableCells.push({ cellData: cellData });
 		setUnclickableCells(updatedUnclickableCells);
 
 		const updatedMyTableData = [...myTableData];
