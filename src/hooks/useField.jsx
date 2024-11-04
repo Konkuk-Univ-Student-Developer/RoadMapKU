@@ -1,7 +1,6 @@
 import { useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
-	largeFieldState,
 	middleFieldState,
 	smallFieldState,
 	subjectsInFieldState,
@@ -9,13 +8,13 @@ import {
 	courseByCompetencyInSubjectState,
 	courseDetailState,
 	allFieldDataState,
-	selectedSubjectState
+	selectedSubjectState,
+	selectedFieldState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
 const useField = () => {
 	const { serverApi } = useApi();
-	const setLargeFieldState = useSetRecoilState(largeFieldState);
 	const setMiddleFieldState = useSetRecoilState(middleFieldState);
 	const setSmallFieldState = useSetRecoilState(smallFieldState);
 	const setDetailFieldState = useSetRecoilState(detailFieldState);
@@ -26,35 +25,7 @@ const useField = () => {
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
 	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
-
-	const resetFields = (selectedField) => {
-		if (selectedField === 'large' || selectedField === 'all') {
-			setMiddleFieldState([]);
-			setSmallFieldState([]);
-			setDetailFieldState([]);
-		}
-		if (selectedField === 'middle') {
-			setSmallFieldState([]);
-			setDetailFieldState([]);
-		}
-		if (selectedField === 'small') {
-			setDetailFieldState([]);
-		}
-		if (selectedField === 'all') {
-			setLargeFieldState([]);
-		}
-	};
-
-	const fetchLargeField = () => {
-		serverApi
-			.get('/api/v1/field-search/large')
-			.then((res) => {
-				setLargeFieldState(res.data);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	};
+	const setSelectedFieldtState = useSetRecoilState(selectedFieldState);
 
 	const fetchMiddleField = () => {
 		serverApi
@@ -156,8 +127,27 @@ const useField = () => {
 			});
 	};
 
+	const fetchLogFields = async ({ middleField, smallField, detailField }) => {
+		setSelectedFieldtState({ middleField });
+
+		// TODO 세분류 선택시 해당 직군에 대한 학과 및 전체 학과 데이터 가져오는거 개선 필요
+		await fetchSmallField(middleField);
+		setSelectedFieldtState((prevState) => ({
+			...prevState,
+			smallField
+		}));
+
+		await fetchDetailField(smallField);
+		setSelectedFieldtState((prevState) => ({
+			...prevState,
+			detailField
+		}));
+
+		fetchSubjectsInField(detailField.fieldCode);
+		fetchCoursesInFields(detailField.fieldCode);
+	};
+
 	return {
-		fetchLargeField,
 		fetchMiddleField,
 		fetchSmallField,
 		fetchDetailField,
@@ -166,8 +156,8 @@ const useField = () => {
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
 		fetchCourseDetail,
-		resetFields,
-		fetchAllFields
+		fetchAllFields,
+		fetchLogFields
 	};
 };
 
