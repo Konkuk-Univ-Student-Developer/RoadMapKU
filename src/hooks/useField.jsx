@@ -143,8 +143,8 @@ const useField = () => {
 			detailField
 		}));
 
-		fetchSubjectsInField(detailField.fieldCode);
-		fetchCoursesInFields(detailField.fieldCode);
+		fetchSubjectsInField(detailField.detailFieldCode);
+		fetchCoursesInFields(detailField.detailFieldCode);
 	};
 
 	return {

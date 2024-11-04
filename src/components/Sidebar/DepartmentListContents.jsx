@@ -42,7 +42,7 @@ function DepartmentListContents() {
 		<>
 			<SelectedDepartment
 				isSelected={selectedDepartment.subjectCode === -1}
-				onClick={() => handleDepartmentClick(selectedField.detailField?.code, -1, '전체')}
+				onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
 			>
 				전체 학과
 			</SelectedDepartment>
@@ -52,7 +52,11 @@ function DepartmentListContents() {
 						key={subject.subjectCode}
 						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
 						onClick={() =>
-							handleDepartmentClick(selectedField.detailField?.code, subject.subjectCode, subject.subjectName)
+							handleDepartmentClick(
+								selectedField.detailField?.detailFieldCode,
+								subject.subjectCode,
+								subject.subjectName
+							)
 						}
 					>
 						{subject.subjectName}

@@ -73,10 +73,7 @@ const FieldInput = () => {
 	}, []);
 
 	const handleMiddleFieldClick = (field) => {
-		const middleField = {
-			name: field.middleField,
-			code: field.fieldCode
-		};
+		const middleField = field;
 
 		fetchSmallField(field);
 		setIsSmallFieldSelected(false);
@@ -84,10 +81,7 @@ const FieldInput = () => {
 	};
 
 	const handleSmallFieldClick = (field) => {
-		const smallField = {
-			name: field.smallField,
-			code: field.fieldCode
-		};
+		const smallField = field;
 
 		fetchDetailField(field);
 		setIsSmallFieldSelected(true);
@@ -98,13 +92,10 @@ const FieldInput = () => {
 	};
 
 	const handleDetailFieldClick = (field) => {
-		const detailField = {
-			name: field.detailField,
-			code: field.fieldCode
-		};
+		const detailField = field;
 
-		fetchSubjectsInField(field.fieldCode);
-		fetchCoursesInFields(field.fieldCode);
+		fetchSubjectsInField(field.detailFieldCode);
+		fetchCoursesInFields(field.detailFieldCode);
 
 		const updatedFieldCodeList = {
 			...selectedField,
@@ -132,7 +123,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleMiddleFieldClick(field)}
-								isSelected={selectedField.middleField?.code === field.fieldCode}
+								isSelected={selectedField.middleField?.middleFieldCode === field.middleFieldCode}
 							>
 								{field.middleField}
 							</FieldItem>
@@ -146,7 +137,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.code === field.fieldCode}
+									isSelected={selectedField.smallField?.smallFieldCode === field.smallFieldCode}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -158,7 +149,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.code === field.fieldCode}
+									isSelected={selectedField.smallField?.smallFieldCode === field.smallFieldCode}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -172,7 +163,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
-								isSelected={selectedField.detailField?.code === field.fieldCode}
+								isSelected={selectedField.detailField?.detailFieldCode === field.detailFieldCode}
 							>
 								{field.detailField}
 							</FieldItem>
