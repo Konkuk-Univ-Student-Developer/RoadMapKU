@@ -130,6 +130,8 @@ const useField = () => {
 	const fetchLogFields = async ({ middleField, smallField, detailField }) => {
 		setSelectedFieldtState({ middleField });
 
+		Promise.all([fetchSubjectsInField(detailField.detailFieldCode), fetchCoursesInFields(detailField.detailFieldCode)]);
+
 		// TODO 세분류 선택시 해당 직군에 대한 학과 및 전체 학과 데이터 가져오는거 개선 필요
 		await fetchSmallField(middleField);
 		setSelectedFieldtState((prevState) => ({
@@ -142,9 +144,6 @@ const useField = () => {
 			...prevState,
 			detailField
 		}));
-
-		fetchSubjectsInField(detailField.detailFieldCode);
-		fetchCoursesInFields(detailField.detailFieldCode);
 	};
 
 	return {

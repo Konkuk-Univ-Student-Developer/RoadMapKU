@@ -89,8 +89,7 @@ const FieldInput = () => {
 	};
 
 	const handleDetailFieldClick = (field) => {
-		fetchSubjectsInField(field.detailFieldCode);
-		fetchCoursesInFields(field.detailFieldCode);
+		Promise.all([fetchSubjectsInField(field.detailFieldCode), fetchCoursesInFields(field.detailFieldCode)]);
 
 		const updatedFieldCodeList = {
 			...selectedField,
