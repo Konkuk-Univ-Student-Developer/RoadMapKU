@@ -32,32 +32,7 @@ const ButtonWrapper = styled.div`
 	height: 100%;
 `;
 
-// const LeftButton = styled.div`
-// 	font-family: 'Pretendard-regular';
-// 	width: 90%;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	cursor: pointer;
-// 	padding: 0.5rem;
-// 	transition: background-color 0.3s ease-out;
-
-// 	&:hover,
-// 	&:active {
-// 		background-color: #a9d1b3;
-// 	}
-
-// 	&.isHighlighted {
-// 		background-color: yellow;
-// 	}
-
-// 	&.isHighlighted:hover,
-// 	&.isHighlighted:active {
-// 		background-color: #a9d1b3;
-// 	}
-// `;
-
-const LeftButton = styled.div`
+const Button = styled.div`
 	font-family: 'Pretendard-regular';
 	width: 100%;
 	display: flex;
@@ -79,29 +54,6 @@ const LeftButton = styled.div`
 	}
 `;
 
-// const RightButton = styled.div`
-// 	width: 10%;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	cursor: pointer;
-// 	transition: background-color 0.3s ease-out;
-
-// 	&:hover,
-// 	&:active {
-// 		background-color: #a9d1b3;
-// 	}
-
-// 	&.isHighlighted {
-// 		background-color: yellow;
-// 	}
-
-// 	&.isHighlighted:hover,
-// 	&.isHighlighted:active {
-// 		background-color: #a9d1b3;
-// 	}
-// `;
-
 const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	const [isHighlighted, setIsHighlighted] = useState(false);
 
@@ -118,9 +70,9 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	return (
 		<StyledCell ref={ref}>
 			<ButtonWrapper>
-				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
+				<Button className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
 					{cellData.competencyName}
-				</LeftButton>
+				</Button>
 				{isDetailOpen && (
 					<CompetencyDetail
 						onClose={() => {
@@ -129,9 +81,6 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 						competencyData={cellData}
 					/>
 				)}
-				{/* <RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
-					<IoMdArrowDropright />
-				</RightButton> */}
 			</ButtonWrapper>
 		</StyledCell>
 	);

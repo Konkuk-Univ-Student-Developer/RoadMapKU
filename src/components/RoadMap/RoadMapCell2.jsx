@@ -15,7 +15,7 @@ const Dropdown = styled.div`
 	top: 100%;
 `;
 
-const ButtonWrapper = styled.div`
+const Button = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -112,7 +112,7 @@ const Cell2 = ({
 			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''}`}
 			onClick={onDropdownToggle}
 		>
-			<ButtonWrapper>
+			<Button>
 				<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
 				{isDropdownOpen && (
 					<Dropdown>
@@ -123,7 +123,7 @@ const Cell2 = ({
 					</Dropdown>
 				)}
 				{isDetailOpen && <CourseDetail onClose={() => setIsDetailOpen(false)} HaksuId={cellData.haksuId} />}
-			</ButtonWrapper>
+			</Button>
 		</StyledCell>
 	);
 };
