@@ -18,7 +18,7 @@ const SearchBarContent = styled.input`
 	margin-top: 10px;
 	border: 1px solid #ddd;
 	border-radius: 8px;
-	background-color: #f9f9f9;
+	background-color: white;
 	font-size: 16px;
 	outline: none;
 	transition: all 0.3s ease;
