@@ -79,7 +79,7 @@ const SearchBar = () => {
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 			/>
-			{isFocused && userInput && filteredFields.length > 0 && (
+			{isFocused && filteredFields.length > 0 && (
 				<SuggestionsContainer>
 					{filteredFields.map((field, index) => (
 						<SuggestionItem key={index}>{field}</SuggestionItem>
