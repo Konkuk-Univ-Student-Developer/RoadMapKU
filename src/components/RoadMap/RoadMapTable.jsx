@@ -82,7 +82,7 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 									cellData={cellData}
 									rowIndex={rowIndex}
 									onClick={onCellClick}
-									unclickable={unclickableCells.some((cell) => cell.cellData.haksuId === cellData.haksuId)}
+									unclickable={unclickableCells.some((cell) => cell.haksuId === cellData.haksuId)}
 									highlightedCompetency={highlightedCompetency}
 								/>
 							</CSSTransition>

@@ -14,6 +14,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/road-map" element={<RoadMap />} />
+				<Route path="/road-map/:key" element={<RoadMap />} />
 				<Route path="/howtopage" element={<HowToPage />} />
 				<Route path="/about-us" element={<AboutUs />} />
 				<Route path="/manual" element={<AboutKumap />} />

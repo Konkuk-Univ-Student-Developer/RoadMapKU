@@ -102,12 +102,13 @@ const Cell = forwardRef(({ cellData, rowIndex, onClick, unclickable, highlighted
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
+
 		if (Array.isArray(competencyCodes)) {
-			if (competencyCodes.includes(highlightedCompetency)) {
-				setIsHighlighted(true);
-			} else {
-				setIsHighlighted(false);
-			}
+			const hasHighlightedCompetency = competencyCodes.some(
+				(competency) => competency.competencyCode === highlightedCompetency
+			);
+
+			setIsHighlighted(hasHighlightedCompetency);
 		}
 	}, [cellData, highlightedCompetency]);
 
