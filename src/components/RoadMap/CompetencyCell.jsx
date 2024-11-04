@@ -1,6 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 
@@ -33,9 +32,34 @@ const ButtonWrapper = styled.div`
 	height: 100%;
 `;
 
+// const LeftButton = styled.div`
+// 	font-family: 'Pretendard-regular';
+// 	width: 90%;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	cursor: pointer;
+// 	padding: 0.5rem;
+// 	transition: background-color 0.3s ease-out;
+
+// 	&:hover,
+// 	&:active {
+// 		background-color: #a9d1b3;
+// 	}
+
+// 	&.isHighlighted {
+// 		background-color: yellow;
+// 	}
+
+// 	&.isHighlighted:hover,
+// 	&.isHighlighted:active {
+// 		background-color: #a9d1b3;
+// 	}
+// `;
+
 const LeftButton = styled.div`
 	font-family: 'Pretendard-regular';
-	width: 90%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -43,51 +67,45 @@ const LeftButton = styled.div`
 	padding: 0.5rem;
 	transition: background-color 0.3s ease-out;
 
-	&:hover,
+	&:hover {
+		background-color: #d9d9d9; /* Hover 시 회색 */
+	}
+
 	&:active {
-		background-color: #a9d1b3;
+		background-color: #fff9c4; /* Active 시 밝은 노란색 */
 	}
-
 	&.isHighlighted {
-		background-color: yellow;
-	}
-
-	&.isHighlighted:hover,
-	&.isHighlighted:active {
-		background-color: #a9d1b3;
+		background-color: #fff9c4; /* Highlighted 시 밝은 노란색 */
 	}
 `;
 
-const RightButton = styled.div`
-	width: 10%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: background-color 0.3s ease-out;
+// const RightButton = styled.div`
+// 	width: 10%;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	cursor: pointer;
+// 	transition: background-color 0.3s ease-out;
 
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
+// 	&:hover,
+// 	&:active {
+// 		background-color: #a9d1b3;
+// 	}
 
-	&.isHighlighted {
-		background-color: yellow;
-	}
+// 	&.isHighlighted {
+// 		background-color: yellow;
+// 	}
 
-	&.isHighlighted:hover,
-	&.isHighlighted:active {
-		background-color: #a9d1b3;
-	}
-`;
+// 	&.isHighlighted:hover,
+// 	&.isHighlighted:active {
+// 		background-color: #a9d1b3;
+// 	}
+// `;
 
 const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	const [isHighlighted, setIsHighlighted] = useState(false);
 
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
-	const onClickDetailButton = () => {
-		setIsDetailOpen(true);
-	};
 
 	useEffect(() => {
 		if (highlightedCompetency === cellData.competencyCode) {
@@ -100,7 +118,7 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	return (
 		<StyledCell ref={ref}>
 			<ButtonWrapper>
-				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
+				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
 					{cellData.competencyName}
 				</LeftButton>
 				{isDetailOpen && (
@@ -111,9 +129,9 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 						competencyData={cellData}
 					/>
 				)}
-				<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
+				{/* <RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
 					<IoMdArrowDropright />
-				</RightButton>
+				</RightButton> */}
 			</ButtonWrapper>
 		</StyledCell>
 	);
