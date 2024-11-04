@@ -17,6 +17,7 @@ const FieldInputContainer = styled.div`
 	flex-direction: column;
 	align-items: start;
 `;
+
 const FieldInputContentsContainer = styled.div`
 	width: 100%;
 	height: 300px;
@@ -30,6 +31,7 @@ const FieldColumn = styled.div`
 	overflow-y: auto;
 	transition: width 0.3s ease;
 	width: ${({ width }) => width};
+	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc;`}
 `;
 
 const GridContainer = styled.div`
@@ -64,7 +66,6 @@ const FieldInput = () => {
 
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
-	// TODO state 관리 좀 더 깔끔하게 바꿔야함.
 
 	const [isSmallFieldSelected, setIsSmallFieldSelected] = useState(false);
 
@@ -73,33 +74,27 @@ const FieldInput = () => {
 	}, []);
 
 	const handleMiddleFieldClick = (field) => {
-		const middleField = field;
-
 		fetchSmallField(field);
 		setIsSmallFieldSelected(false);
-		setSelectedField({ middleField: middleField });
+		setSelectedField({ middleField: field });
 	};
 
 	const handleSmallFieldClick = (field) => {
-		const smallField = field;
-
 		fetchDetailField(field);
 		setIsSmallFieldSelected(true);
 		setSelectedField((prevState) => ({
 			...prevState,
-			smallField
+			smallField: field
 		}));
 	};
 
 	const handleDetailFieldClick = (field) => {
-		const detailField = field;
-
 		fetchSubjectsInField(field.detailFieldCode);
 		fetchCoursesInFields(field.detailFieldCode);
 
 		const updatedFieldCodeList = {
 			...selectedField,
-			detailField
+			detailField: field
 		};
 
 		setSelectedField(updatedFieldCodeList);
@@ -108,7 +103,6 @@ const FieldInput = () => {
 			if (newLog.length > 5) {
 				newLog.shift();
 			}
-
 			return newLog;
 		});
 	};
@@ -130,7 +124,8 @@ const FieldInput = () => {
 						))}
 					</ListContainer>
 				</FieldColumn>
-				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'}>
+
+				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'} showBorder={isSmallFieldSelected}>
 					{isSmallFieldSelected ? (
 						<ListContainer>
 							{smallFields.map((field, index) => (
@@ -157,6 +152,7 @@ const FieldInput = () => {
 						</GridContainer>
 					)}
 				</FieldColumn>
+
 				<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
