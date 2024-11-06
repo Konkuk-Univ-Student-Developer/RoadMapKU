@@ -25,20 +25,12 @@ export const SubjectContainer = styled.div`
 	margin-top: 0rem;
 `;
 
-export const Subject = styled.div`
-	color: #036b3f; /* main color */
-	text-align: center;
-	font-size: 1.5rem;
-	margin: 0.5rem 20px;
-	padding-top: 2rem;
-	padding-bottom: 1rem;
-`;
-
 export const Subtitle = styled.h2`
 	color: #036b3f; /* main color */
 	font-size: 1.5rem;
-	margin: 0.5rem 20px;
-	padding-top: 2rem;
+	margin: 0rem 20px;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
 `;
 
 export const ModalContent = styled.div`
