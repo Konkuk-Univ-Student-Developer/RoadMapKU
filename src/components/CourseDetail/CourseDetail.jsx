@@ -14,6 +14,7 @@ import TableComponent from '../Modal/TableComponent';
 import TableComponent2 from '../Modal/TableComponent2';
 import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
+import MenuList from './MenuList';
 
 function CourseDetail({ onClose, HaksuId }) {
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
@@ -99,6 +100,7 @@ function CourseDetail({ onClose, HaksuId }) {
 		<Modal onClose={onClose}>
 			<ScrollContainer>
 				<Title>{courseDetail.typicalKoreanName}</Title>
+				<MenuList></MenuList>
 
 				<SubjectContainer>
 					{/* <Subject>

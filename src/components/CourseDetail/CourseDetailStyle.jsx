@@ -37,6 +37,7 @@ export const ModalContent = styled.div`
 	font-family: Arial;
 	font-size: 1rem;
 	margin: 10px 20px;
+	line-height: 1.5;
 `;
 
 export const TableContent = styled.div`
