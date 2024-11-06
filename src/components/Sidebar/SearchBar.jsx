@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
-import { useRecoilValue } from 'recoil';
-import { allFieldDataState } from '../../recoils/atoms';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { allFieldDataState, selectedFieldLogState } from '../../recoils/atoms';
 
 const SearchBarContainer = styled.div`
 	width: 100%;
@@ -60,6 +60,7 @@ const SearchBar = () => {
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
 	const allFieldData = useRecoilValue(allFieldDataState);
+	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	const containerRef = useRef(null);
 
 	useEffect(() => {
@@ -88,6 +89,13 @@ const SearchBar = () => {
 		};
 
 		fetchLogFields(restructuredFieldData);
+		setSelectedFieldLog((prevState) => {
+			const newLog = [...prevState, restructuredFieldData];
+			if (newLog.length > 5) {
+				newLog.shift();
+			}
+			return newLog;
+		});
 		setIsFocused(false);
 	};
 
