@@ -9,7 +9,8 @@ import {
 	courseDetailState,
 	allFieldDataState,
 	selectedSubjectState,
-	selectedFieldState
+	selectedFieldState,
+	isSmallFieldSelectedState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -26,6 +27,7 @@ const useField = () => {
 	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 	const setSelectedFieldtState = useSetRecoilState(selectedFieldState);
+	const setIsSmallFieldSelectedState = useSetRecoilState(isSmallFieldSelectedState);
 
 	const fetchMiddleField = () => {
 		serverApi
@@ -139,6 +141,8 @@ const useField = () => {
 			smallField,
 			detailField
 		});
+
+		setIsSmallFieldSelectedState(true);
 	};
 
 	return {

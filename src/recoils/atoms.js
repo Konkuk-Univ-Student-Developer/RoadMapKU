@@ -72,3 +72,8 @@ export const selectedFieldLogState = atom({
 	key: 'selectedFieldLogState',
 	default: []
 });
+
+export const isSmallFieldSelectedState = atom({
+	key: 'isSmallFieldSelectedState',
+	default: false
+});

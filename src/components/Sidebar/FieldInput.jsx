@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
@@ -7,7 +7,8 @@ import {
 	middleFieldState,
 	selectedFieldLogState,
 	selectedFieldState,
-	smallFieldState
+	smallFieldState,
+	isSmallFieldSelectedState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 
@@ -67,7 +68,7 @@ const FieldInput = () => {
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 
-	const [isSmallFieldSelected, setIsSmallFieldSelected] = useState(false);
+	const [isSmallFieldSelected, setIsSmallFieldSelected] = useRecoilState(isSmallFieldSelectedState);
 
 	useEffect(() => {
 		fetchMiddleField();
