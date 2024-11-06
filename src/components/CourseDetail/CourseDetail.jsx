@@ -6,7 +6,7 @@ import {
 	Subtitle,
 	// Subject,
 	ModalContent,
-	SubjectContainer,
+	//SubjectContainer,
 	TableContent,
 	ScrollContainer
 } from './CourseDetailStyle';
@@ -15,6 +15,7 @@ import TableComponent2 from '../Modal/TableComponent2';
 import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
 import MenuList from './MenuList';
+import CompetitionTable from './CompetitionTable';
 
 function CourseDetail({ onClose, HaksuId }) {
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
@@ -102,11 +103,11 @@ function CourseDetail({ onClose, HaksuId }) {
 				<Title>{courseDetail.typicalKoreanName}</Title>
 				<MenuList></MenuList>
 
-				<SubjectContainer>
-					{/* <Subject>
+				{/* <SubjectContainer>
+					<Subject>
 						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
-					</Subject> */}
-				</SubjectContainer>
+					</Subject>
+				</SubjectContainer> */}
 				<Subtitle>과목 설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
 				{/* <Subject>{courseDetail.typicalEnglishName}</Subject>
@@ -119,6 +120,7 @@ function CourseDetail({ onClose, HaksuId }) {
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
+				<CompetitionTable></CompetitionTable>
 			</ScrollContainer>
 		</Modal>
 	);
