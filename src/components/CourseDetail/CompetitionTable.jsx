@@ -22,6 +22,7 @@ const Table = styled.table`
 `;
 
 const Th = styled.th`
+	font-family: 'Pretendard-regular';
 	padding: 10px;
 	background-color: #f0f0f0;
 	border: 1px solid #ddd;
@@ -30,6 +31,7 @@ const Th = styled.th`
 `;
 
 const Td = styled.td`
+	font-family: 'Pretendard-regular';
 	padding: 10px;
 	border: 1px solid #ddd;
 	text-align: center;
@@ -37,6 +39,7 @@ const Td = styled.td`
 `;
 
 const ButtonContainer = styled.div`
+	font-family: 'Pretendard-regular';
 	display: flex;
 	gap: 10px;
 	margin: 0 auto 20px;
