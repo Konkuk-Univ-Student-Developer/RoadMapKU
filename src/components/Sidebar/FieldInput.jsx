@@ -116,7 +116,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleMiddleFieldClick(field)}
-								isSelected={selectedField.middleField?.middleFieldCode === field.middleFieldCode}
+								isSelected={selectedField.middleField?.middleField === field.middleField}
 							>
 								{field.middleField}
 							</FieldItem>
@@ -131,7 +131,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallFieldCode === field.smallFieldCode}
+									isSelected={selectedField.smallField?.smallField === field.smallField}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -143,7 +143,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallFieldCode === field.smallFieldCode}
+									isSelected={selectedField.smallField?.smallField === field.smallField}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -158,7 +158,7 @@ const FieldInput = () => {
 							<FieldItem
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
-								isSelected={selectedField.detailField?.detailFieldCode === field.detailFieldCode}
+								isSelected={selectedField.detailField?.detailField === field.detailField}
 							>
 								{field.detailField}
 							</FieldItem>

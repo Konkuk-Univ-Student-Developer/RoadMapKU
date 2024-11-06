@@ -63,9 +63,9 @@ const useField = () => {
 			});
 	};
 
-	const fetchSubjectsInField = (fieldCode) => {
+	const fetchSubjectsInField = (detailFieldCode) => {
 		serverApi
-			.get(`/api/v1/fields/${fieldCode}/subjects`)
+			.get(`/api/v1/fields/${detailFieldCode}/subjects`)
 			.then((res) => {
 				setSubjectsInFieldState(res.data);
 			})
