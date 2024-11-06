@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue } from 'recoil';
@@ -56,18 +56,40 @@ const SuggestionItem = styled.div`
 `;
 
 const SearchBar = () => {
-	const { fetchAllFields } = useField();
+	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
 	const allFieldData = useRecoilValue(allFieldDataState);
+	const containerRef = useRef(null);
 
 	useEffect(() => {
 		fetchAllFields();
+
+		const handleClickOutside = (event) => {
+			if (containerRef.current && !containerRef.current.contains(event.target)) {
+				setIsFocused(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
 	}, []);
 
-	const filteredFields = allFieldData.filter(
-		(field) => field.includes(userInput) && (field.match(/>/g) || []).length >= 2
-	);
+	const filteredFields = allFieldData.filter((field) => field.detailFieldCode && field.detailField.includes(userInput));
+
+	const onSuggestionItemClick = ({ middleField, smallField, detailField, detailFieldCode }) => {
+		const restructuredFieldData = {
+			middleField: { middleField },
+			smallField: { middleField, smallField },
+			detailField: { detailFieldCode, detailField }
+		};
+
+		fetchLogFields(restructuredFieldData);
+		setIsFocused(false);
+	};
 
 	return (
 		<SearchBarContainer>
@@ -77,12 +99,14 @@ const SearchBar = () => {
 				value={userInput}
 				onChange={(e) => setUserInput(e.target.value)}
 				onFocus={() => setIsFocused(true)}
-				onBlur={() => setIsFocused(false)}
 			/>
 			{isFocused && filteredFields.length > 0 && (
-				<SuggestionsContainer>
+				<SuggestionsContainer ref={containerRef}>
 					{filteredFields.map((field, index) => (
-						<SuggestionItem key={index}>{field}</SuggestionItem>
+						<SuggestionItem
+							key={index}
+							onClick={() => onSuggestionItemClick(field)}
+						>{`${field.middleField} > ${field.smallField} > ${field.detailField}`}</SuggestionItem>
 					))}
 				</SuggestionsContainer>
 			)}
