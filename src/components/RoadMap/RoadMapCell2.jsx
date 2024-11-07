@@ -34,10 +34,11 @@ const DropdownItem = styled.div`
 `;
 
 const StyledCell = styled.div`
+	font-family: 'Pretendard-regular';
+	font-size: small;
 	min-height: 2rem;
 	display: flex;
-	font-size: small;
-	border: 0.05rem solid black;
+	border: 1px solid #a4a4a4;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
@@ -67,7 +68,6 @@ const StyledCell = styled.div`
 `;
 
 const CourseTitle = styled.div`
-	font-family: 'Pretendard-regular';
 	padding: 0 0.7rem;
 	text-overflow: ellipsis;
 	white-space: nowrap;

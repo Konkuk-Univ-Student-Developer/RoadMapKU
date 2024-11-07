@@ -7,7 +7,7 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	font-size: small;
 	box-sizing: border-box;
-	border: 0.05rem solid black;
+	border: 1px solid #a4a4a4;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
