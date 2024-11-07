@@ -42,7 +42,7 @@ const Th = styled.th`
 	background-color: #036b3f;
 	color: #ffffff;
 	text-align: center;
-	width: 33.33%; /* 각 열의 너비를 전체의 1/3로 설정 */
+	width: 33.33%;
 `;
 
 const Td = styled.td`
@@ -51,7 +51,7 @@ const Td = styled.td`
 	padding: 10px;
 	border: 1px solid #ddd;
 	text-align: center;
-	width: 33.33%; /* 각 열의 너비를 전체의 1/3로 설정 */
+	width: 33.33%;
 `;
 
 const ButtonContainer = styled.div`
@@ -74,16 +74,6 @@ const GradeButton = styled.button`
 		color: white;
 	}
 `;
-//DummyData 이용
-// const data = {
-// 	total: { students: 100, capacity: 120, competitionRate: '0.83' },
-// 	grades: {
-// 		1: { students: 30, capacity: 35, competitionRate: '0.86' },
-// 		2: { students: 25, capacity: 30, competitionRate: '0.83' },
-// 		3: { students: 20, capacity: 25, competitionRate: '0.8' },
-// 		4: { students: 25, capacity: 30, competitionRate: '0.83' }
-// 	}
-// };
 
 const CompetitionTable = ({ haksuId }) => {
 	const { fetchCompetitionRate } = useField();

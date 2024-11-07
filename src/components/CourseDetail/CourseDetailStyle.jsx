@@ -4,8 +4,8 @@ export const ScrollContainer = styled.div`
 	background-color: transparent;
 	padding: 0rem;
 	border-radius: 8px;
-	max-height: 80vh; /* 내용물의 최대 높이 설정 */
-	overflow-y: auto; /* 세로 스크롤바 표시 */
+	max-height: 80vh;
+	overflow-y: auto;
 	width: 100%;
 `;
 
@@ -26,7 +26,7 @@ export const SubjectContainer = styled.div`
 `;
 
 export const Subtitle = styled.h2`
-	color: #036b3f; /* main color */
+	color: #036b3f;
 	font-size: 1.5rem;
 	margin: 0rem 20px;
 	padding-top: 1rem;

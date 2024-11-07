@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { courseDetailState } from '../../recoils/atoms';
-import {
-	Title,
-	Subtitle,
-	// Subject,
-	ModalContent,
-	//SubjectContainer,
-	TableContent,
-	ScrollContainer
-} from './CourseDetailStyle';
+import { Title, Subtitle, ModalContent, TableContent, ScrollContainer } from './CourseDetailStyle';
 import TableComponent from '../Modal/TableComponent';
 import TableComponent2 from '../Modal/TableComponent2';
 import Modal from '../Modal/Modal';
@@ -87,9 +79,6 @@ function CourseDetail({ onClose, HaksuId }) {
 		['학점', additionalInfo.time?.toString() || '-'],
 		['공학인증구분', additionalInfo.engineeringCertificationFlagCode === 0 ? 'N' : 'Y'],
 		['선수강과목', additionalInfo.preCourse || '-']
-		// ['MOOC 여부', additionalInfo.moocFlag === 0 ? 'N' : 'Y'],
-		// ['Selc 여부', additionalInfo.selcFlag === 0 ? 'N' : 'Y'],
-		// ['챌린저여부', additionalInfo.dreamSemesterFlag === 0 ? 'N' : 'Y']
 	];
 
 	console.log(HaksuId);
@@ -105,15 +94,8 @@ function CourseDetail({ onClose, HaksuId }) {
 			<ScrollContainer>
 				<Title>{courseDetail.typicalKoreanName}</Title>
 				<MenuList></MenuList>
-				{/* <SubjectContainer>
-					<Subject>
-						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
-					</Subject>
-				</SubjectContainer> */}
 				<Subtitle>과목 설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
-				{/* <Subject>{courseDetail.typicalEnglishName}</Subject>
-				<ModalContent>{courseDetail.englishDescription}</ModalContent> */}
 				<Subtitle>기본 정보</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />

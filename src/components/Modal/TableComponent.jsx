@@ -14,14 +14,14 @@ const StyledTable = styled.table`
 	margin: 0rem 20px;
 	border-radius: 5px;
 	overflow: hidden;
-	border: 0.5px solid gray; /* 테이블 전체 외곽 테두리 */
+	border: 0.5px solid gray;
 `;
 
 const Td = styled.td`
 	font-family: 'Pretendard-regular';
 	padding: 8px;
 	text-align: center;
-	border: 0.25px solid gray; /* 각 셀의 테두리 */
+	border: 0.25px solid gray;
 	font-size: 14px;
 	width: 8%;
 	background-color: ${({ isHeader }) => (isHeader ? '#036b3f' : 'white')};

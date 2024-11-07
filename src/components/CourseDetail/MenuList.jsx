@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	margin: 10px 20px;
-	background-color: #f0f0f0; /* 배경을 연한 회색으로 설정 */
-	border-radius: 8px; /* 둥근 테두리 */
-	border: 1px solid #f0f0f0; /* 테두리 색상 */
+	background-color: #f0f0f0;
+	border-radius: 8px;
+	border: 1px solid #f0f0f0;
 `;
 
 const Title = styled.div`
@@ -23,7 +23,7 @@ const ListContainer = styled.ul`
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
-	margin: 20px auto; /* 수평 중앙 정렬 */
+	margin: 20px auto;
 `;
 
 const ListItem = styled.li`

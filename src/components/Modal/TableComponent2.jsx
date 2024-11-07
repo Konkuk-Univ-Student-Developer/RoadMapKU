@@ -21,8 +21,8 @@ const Th = styled.th`
 	background-color: #036b3f;
 	text-align: center;
 	color: white;
-	font-size: 14px; /* 헤더의 폰트 크기 설정 */
-	border: 1px solid black; /* 테두리 추가 */
+	font-size: 14px;
+	border: 1px solid black;
 `;
 
 const Td = styled.td`
