@@ -40,7 +40,7 @@ const MenuList = () => {
 				<ListItem>과목 설명</ListItem>
 				<ListItem>기본 정보</ListItem>
 				<ListItem>전공 역량</ListItem>
-				<ListItem>수강 인원</ListItem>
+				<ListItem>수강 신청 경쟁률</ListItem>
 			</ListContainer>
 		</Container>
 	);
