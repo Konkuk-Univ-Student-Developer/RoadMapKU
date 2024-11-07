@@ -16,6 +16,15 @@ const TableContainer = styled.div`
 	justify-content: center;
 	margin-top: 20px;
 `;
+const TextContainer = styled.div`
+	font-family: 'Pretendard-regular';
+	margin: 0px 20px;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 10px;
+	color: #808080;
+	font-size: 0.8rem;
+`;
 
 const Table = styled.table`
 	width: 80%;
@@ -85,11 +94,11 @@ const CompetitionTable = ({ haksuId }) => {
 		const loadCompetitionRate = async () => {
 			if (haksuId) {
 				try {
-					const data = await fetchCompetitionRate(haksuId); // 비동기 함수로 데이터를 가져옴
-					setCompetitionRateState(data); // 가져온 데이터를 상태에 저장
+					const data = await fetchCompetitionRate(haksuId);
+					setCompetitionRateState(data);
 				} catch (error) {
 					console.error('Error fetching competition rate:', error);
-					setCompetitionRateState(null); // 에러가 발생한 경우 상태를 초기화
+					setCompetitionRateState(null);
 				}
 				console.log(competitionData);
 			}
@@ -129,7 +138,7 @@ const CompetitionTable = ({ haksuId }) => {
 	return (
 		<Container>
 			<L.Subtitle>수강 신청 경쟁률</L.Subtitle>
-
+			<TextContainer>* 2023,2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
 			{/* 전체 학년 정보 */}
 			<TableContainer>
 				<Table>
