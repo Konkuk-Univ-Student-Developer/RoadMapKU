@@ -7,7 +7,7 @@ import {
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState,
-	competitionRateState
+	competitionRateState,
 	allFieldDataState,
 	selectedSubjectState,
 	selectedFieldState,
@@ -30,7 +30,6 @@ const useField = () => {
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 	const setSelectedFieldtState = useSetRecoilState(selectedFieldState);
 	const setIsSmallFieldSelectedState = useSetRecoilState(isSmallFieldSelectedState);
-
 
 	const fetchMiddleField = () => {
 		serverApi
@@ -134,7 +133,6 @@ const useField = () => {
 			});
 	};
 
-
 	const fetchAllFields = () => {
 		serverApi
 			.get('/api/v2/field-search/all')
@@ -169,8 +167,7 @@ const useField = () => {
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
 		fetchCourseDetail,
-		resetFields,
-		fetchCompetitionRate
+		fetchCompetitionRate,
 		fetchAllFields,
 		fetchLogFields
 	};
