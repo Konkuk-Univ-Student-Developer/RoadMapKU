@@ -37,8 +37,10 @@ const Th = styled.th`
 	font-family: 'Pretendard-regular';
 	font-size: 14px;
 	padding: 10px;
-	background-color: #f0f0f0;
-	border: 1px solid #ddd;
+	// background-color: #f0f0f0;
+	// border: 1px solid #ddd;
+	background-color: #036b3f;
+	color: #ffffff;
 	text-align: center;
 	width: 33.33%; /* 각 열의 너비를 전체의 1/3로 설정 */
 `;
@@ -144,7 +146,7 @@ const CompetitionTable = ({ haksuId }) => {
 				<Table>
 					<thead>
 						<tr>
-							<Th>실 수강인원</Th>
+							<Th>수강 바구니</Th>
 							<Th>수강 정원</Th>
 							<Th>경쟁률</Th>
 						</tr>
@@ -173,7 +175,7 @@ const CompetitionTable = ({ haksuId }) => {
 				<Table>
 					<thead>
 						<tr>
-							<Th>실 수강인원</Th>
+							<Th>수강 바구니</Th>
 							<Th>수강 정원</Th>
 							<Th>경쟁률</Th>
 						</tr>
