@@ -136,6 +136,7 @@ const CompetitionTable = ({ haksuId }) => {
 				<Table>
 					<thead>
 						<tr>
+							<Th>실 수강인원</Th>
 							<Th>수강 바구니</Th>
 							<Th>수강 정원</Th>
 							<Th>경쟁률</Th>
@@ -143,6 +144,7 @@ const CompetitionTable = ({ haksuId }) => {
 					</thead>
 					<tbody>
 						<tr>
+							<Td>{competitionData?.totalApplicationNumber || '-'}</Td>
 							<Td>{gradeMapping['total'].capacity}</Td>
 							<Td>{gradeMapping['total'].students}</Td>
 							<Td>{gradeMapping['total'].rate}</Td>
