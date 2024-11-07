@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Tooltip } from 'react-tooltip';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
 import { IoMdDownload } from 'react-icons/io';
@@ -114,7 +115,9 @@ const SaveButton = ({ onClickURL, onClickCapture }) => {
 		<>
 			<Btn>
 				<UrlBtn data-tooltip-content="Copy URL" data-tooltip-id="url" onClick={onClickURL}>
-					<FaLink />
+					<CopyToClipboard text={onClickURL()}>
+						<FaLink />
+					</CopyToClipboard>
 				</UrlBtn>
 				<CaptureBtn data-tooltip-content="Save as PNG" data-tooltip-id="capture" onClick={onClickCapture}>
 					<Icon icon={bxCamera} />

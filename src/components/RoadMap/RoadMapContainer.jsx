@@ -347,8 +347,9 @@ const RoadMapContainer = () => {
 		const compressed = pako.deflate(myTableDataString, { to: 'string' });
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
-		notify_url('URL 복사 완료');
-		console.log('RoadMapURL: ', utf8Encoded);
+		const newUrl = `http://203.252.168.41:3000/road-map/${utf8Encoded}`;
+		notify_url('주소가 복사되었습니다.');
+		return newUrl;
 	};
 
 	// 스크린샷 Button Click 이벤트
@@ -367,7 +368,7 @@ const RoadMapContainer = () => {
 		} else {
 			console.error('Roadmap content is not available');
 		}
-		notify_url('스크린샷 저장 완료');
+		notify_url('스크린샷을 저장하였습니다.');
 	};
 
 	const notify_url = (text) => toast.success(text);
@@ -418,6 +419,7 @@ const RoadMapContainer = () => {
 				hideProgressBar
 				newestOnTop
 				pauseOnHover={false}
+				pauseOnFocusLoss={false}
 			/>
 		</Container>
 	);
