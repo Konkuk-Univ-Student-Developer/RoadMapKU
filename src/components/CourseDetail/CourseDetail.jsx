@@ -18,6 +18,7 @@ import MenuList from './MenuList';
 import CompetitionTable from './CompetitionTable';
 
 function CourseDetail({ onClose, HaksuId }) {
+	console.log(HaksuId);
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useField();
 	const [loading, setLoading] = useState(true);
@@ -91,6 +92,8 @@ function CourseDetail({ onClose, HaksuId }) {
 		// ['챌린저여부', additionalInfo.dreamSemesterFlag === 0 ? 'N' : 'Y']
 	];
 
+	console.log(HaksuId);
+
 	const tableData2 = [
 		[competency.competencyName1 || '-', competency.competencyRemark1 || '-'],
 		[competency.competencyName2 || '-', competency.competencyRemark2 || '-'],
@@ -102,7 +105,6 @@ function CourseDetail({ onClose, HaksuId }) {
 			<ScrollContainer>
 				<Title>{courseDetail.typicalKoreanName}</Title>
 				<MenuList></MenuList>
-
 				{/* <SubjectContainer>
 					<Subject>
 						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
@@ -120,7 +122,7 @@ function CourseDetail({ onClose, HaksuId }) {
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
-				<CompetitionTable></CompetitionTable>
+				<CompetitionTable haksuId={HaksuId} />
 			</ScrollContainer>
 		</Modal>
 	);

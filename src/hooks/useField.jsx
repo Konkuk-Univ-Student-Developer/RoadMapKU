@@ -7,7 +7,8 @@ import {
 	subjectsInFieldState,
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
-	courseDetailState
+	courseDetailState,
+	competitionRateState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -21,6 +22,7 @@ const useField = () => {
 	const setTotalRoadMapState = useSetRecoilState(totalRoadMapState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
+	const setCompetitionRateState = useSetRecoilState(competitionRateState);
 
 	const resetFields = (selectedField) => {
 		if (selectedField === 'large' || selectedField === 'all') {
@@ -140,6 +142,17 @@ const useField = () => {
 			});
 	};
 
+	const fetchCompetitionRate = (haksuId) => {
+		serverApi
+			.get(`/api/v1/competition-rate/${haksuId}`)
+			.then((res) => {
+				setCompetitionRateState(res.data);
+			})
+			.catch((error) => {
+				console.error('Error fetching competition rate:', error);
+			});
+	};
+
 	return {
 		fetchLargeField,
 		fetchMiddleField,
@@ -150,7 +163,8 @@ const useField = () => {
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
 		fetchCourseDetail,
-		resetFields
+		resetFields,
+		fetchCompetitionRate
 	};
 };
 
