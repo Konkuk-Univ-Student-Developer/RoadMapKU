@@ -3,14 +3,15 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import pako from 'pako';
-// import queryString from 'query-string';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
 import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
 import RoadMapContents from './RoadMapContents';
 import CourseCreditTable from './CourseCreditTable';
 import TotalRoadMapModal from '../TotalRoadMapContents/totalRoadMapModal';
 import useField from '../../hooks/useField';
-import SaveButton from './SaveButton';
+import SaveButton from '../FloatButton/SaveButton';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -346,6 +347,7 @@ const RoadMapContainer = () => {
 		const compressed = pako.deflate(myTableDataString, { to: 'string' });
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
+		notify_url('URL 복사 완료');
 		console.log('RoadMapURL: ', utf8Encoded);
 	};
 
@@ -365,7 +367,10 @@ const RoadMapContainer = () => {
 		} else {
 			console.error('Roadmap content is not available');
 		}
+		notify_url('스크린샷 저장 완료');
 	};
+
+	const notify_url = (text) => toast.success(text);
 
 	return (
 		<Container>
@@ -405,6 +410,15 @@ const RoadMapContainer = () => {
 				<CourseCreditTable courseCreditData={courseCreditData} />
 			</Content>
 			<SaveButton onClickURL={handleURLButtonClick} onClickCapture={handleCaptureButtonClick}></SaveButton>
+			<ToastContainer
+				position="bottom-center"
+				limit={2}
+				closeButton={false}
+				autoClose={2000}
+				hideProgressBar
+				newestOnTop
+				pauseOnHover={false}
+			/>
 		</Container>
 	);
 };
