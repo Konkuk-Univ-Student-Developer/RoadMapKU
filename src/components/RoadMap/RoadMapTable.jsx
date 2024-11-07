@@ -21,6 +21,15 @@ const SemesterContainer = styled.div`
 	overflow-x: hidden;
 `;
 
+const SemesterColumn = styled.div`
+	min-width: 0;
+	height: fit-content;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+`;
+
 const CourseContainer = styled.div`
 	flex: 1;
 	display: flex;
@@ -32,10 +41,12 @@ const CourseContainer = styled.div`
 
 const CourseColumn = styled.div`
 	min-width: 0;
+	height: fit-content;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	padding-bottom: 0.5rem;
 `;
 
 const animationTiming = {
@@ -72,11 +83,11 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 		<TableContainer>
 			<SemesterContainer>
 				{defaultTable.map((row, rowIndex) => (
-					<CourseColumn key={rowIndex}>
+					<SemesterColumn key={rowIndex}>
 						{row.map((cellData) => (
 							<Cell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
 						))}
-					</CourseColumn>
+					</SemesterColumn>
 				))}
 			</SemesterContainer>
 			<CourseContainer>

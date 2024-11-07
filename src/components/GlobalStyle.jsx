@@ -7,9 +7,9 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Pretendard-regular';
     src: url(${Pretendard_regular}) format('opentype');
-    font-weight: normal;
+    font-weight: 100;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     src: url(${Pretendard_semiBold}) format('opentype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   @font-face {
@@ -25,11 +25,11 @@ const GlobalStyle = createGlobalStyle`
     src: url(${Pretendard_bold}) format('opentype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   body {
-    font-family: 'Pretendard-semiBold';
+    font-family: 'Pretendard-bold';
     margin: 0;
     padding: 0;
   }
