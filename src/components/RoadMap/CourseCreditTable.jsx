@@ -9,7 +9,7 @@ const CourseCreditContainer = styled.div`
 	align-items: center;
 	gap: 0.5rem;
 	box-sizing: border-box;
-	border: 0.05rem solid black;
+	border: 0.05rem solid gray;
 	border-radius: 0.2rem;
 	background-color: #f4f4f4;
 `;
