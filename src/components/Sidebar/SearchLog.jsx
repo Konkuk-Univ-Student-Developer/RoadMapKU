@@ -3,7 +3,7 @@ import { Title } from './FieldCategory';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFieldLogState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaX } from 'react-icons/fa6';
 
 const Container = styled.div`
 	width: 95%;
@@ -62,9 +62,10 @@ const DeleteButton = styled.button`
 	font-size: 16px;
 	display: flex;
 	align-items: center;
+	transition: transform 0.2s ease;
 
 	&:hover {
-		color: #c9302c;
+		transform: scale(1.3);
 	}
 `;
 
@@ -111,7 +112,7 @@ const SearchLog = () => {
 									handleDelete(index);
 								}}
 							>
-								<FaTrashAlt />
+								<FaX />
 							</DeleteButton>
 						</LogItem>
 					);
