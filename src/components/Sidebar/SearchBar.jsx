@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { allFieldDataState, selectedFieldLogState } from '../../recoils/atoms';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
 	width: 100%;
@@ -11,35 +12,43 @@ const SearchBarContainer = styled.div`
 	position: relative;
 `;
 
-const SearchBarContent = styled.input`
-	width: 93%;
+const SearchBarContent = styled.div`
+	width: 95%;
 	height: 40px;
-	padding: 0 12px;
+	padding: 0 5px;
 	margin-top: 10px;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+`;
+
+const SearchBarInput = styled.input`
+	border: none;
+	border-radius: 8px;
+	background-color: white;
+	width: 100%;
 	font-size: 16px;
 	outline: none;
-	transition: all 0.3s ease;
+`;
 
-	&:focus {
-		border-color: #4a90e2;
-		background-color: #fff;
-		box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-	}
+const SearchIcon = styled(FaSearch)`
+	width: 40px;
 `;
 
 const SuggestionsContainer = styled.div`
 	position: absolute;
 	top: 90%;
-	left: 3%;
-	width: 94%;
+	left: 2%;
+	width: 96%;
 	background-color: white;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	margin-top: 5px;
+	margin-top: 4px;
 	max-height: 200px;
 	overflow-y: auto;
 	z-index: 1000;
@@ -107,13 +116,16 @@ const SearchBar = () => {
 
 	return (
 		<SearchBarContainer>
-			<SearchBarContent
-				type="text"
-				placeholder="직군을 입력해주세요"
-				value={userInput}
-				onChange={(e) => setUserInput(e.target.value)}
-				onFocus={() => setIsFocused(true)}
-			/>
+			<SearchBarContent>
+				<SearchBarInput
+					type="text"
+					placeholder="직군을 입력해주세요"
+					value={userInput}
+					onChange={(e) => setUserInput(e.target.value)}
+					onFocus={() => setIsFocused(true)}
+				/>
+				<SearchIcon />
+			</SearchBarContent>
 			{isFocused && filteredFields.length > 0 && (
 				<SuggestionsContainer ref={containerRef}>
 					{filteredFields.map((field, index) => (
