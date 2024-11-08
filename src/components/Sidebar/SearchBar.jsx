@@ -90,6 +90,12 @@ const SearchBar = () => {
 
 		fetchLogFields(restructuredFieldData);
 		setSelectedFieldLog((prevState) => {
+			const isDuplicate = prevState.some(
+				(item) => item.detailField.detailFieldCode === restructuredFieldData.detailField.detailFieldCode
+			);
+
+			if (isDuplicate) return prevState;
+
 			const newLog = [...prevState, restructuredFieldData];
 			if (newLog.length > 5) {
 				newLog.shift();

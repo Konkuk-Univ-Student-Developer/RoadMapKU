@@ -99,6 +99,12 @@ const FieldInput = () => {
 
 		setSelectedField(updatedFieldCodeList);
 		setSelectedFieldLog((prevState) => {
+			const isDuplicate = prevState.some(
+				(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
+			);
+
+			if (isDuplicate) return prevState;
+
 			const newLog = [...prevState, updatedFieldCodeList];
 			if (newLog.length > 5) {
 				newLog.shift();
