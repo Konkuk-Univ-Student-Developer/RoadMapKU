@@ -13,6 +13,8 @@ const Container = styled.div`
 const Content = styled.div`
 	padding-top: 5rem;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 `;
 
 const Main = () => {
