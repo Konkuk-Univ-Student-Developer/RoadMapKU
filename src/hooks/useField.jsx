@@ -131,6 +131,8 @@ const useField = () => {
 
 	const fetchLogFields = async ({ middleField, smallField, detailField }) => {
 		try {
+			resetSelectedSubjectState();
+
 			const smallFieldResponse = await serverApi.post('/api/v2/field-search/small', middleField);
 			setSmallFieldState(smallFieldResponse.data);
 			setIsSmallFieldSelectedState(true);
