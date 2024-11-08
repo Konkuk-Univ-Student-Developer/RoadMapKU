@@ -16,6 +16,7 @@ const TitleContainer = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: flex-start;
+	justify-content: space-between;
 `;
 
 const SearchLogContainer = styled.div`
@@ -67,6 +68,20 @@ const DeleteButton = styled.button`
 	}
 `;
 
+const DeleteAllButton = styled.button`
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #d9534f;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+
+	&:hover {
+		color: #c9300b;
+	}
+`;
+
 const SearchLog = () => {
 	const selectedFieldLogList = useRecoilValue(selectedFieldLogState);
 	const setSelectedFieldLogList = useSetRecoilState(selectedFieldLogState);
@@ -76,10 +91,13 @@ const SearchLog = () => {
 		setSelectedFieldLogList((prevLog) => prevLog.filter((_, logIndex) => logIndex !== index));
 	};
 
+	const onClickDeleteAllLogs = () => setSelectedFieldLogList([]);
+
 	return (
 		<Container>
 			<TitleContainer>
 				<Title>검색기록</Title>
+				<DeleteAllButton onClick={onClickDeleteAllLogs}>모든 검색기록 삭제</DeleteAllButton>
 			</TitleContainer>
 			<SearchLogContainer>
 				{selectedFieldLogList.map((field, index) => {
