@@ -130,19 +130,27 @@ const useField = () => {
 	};
 
 	const fetchLogFields = async ({ middleField, smallField, detailField }) => {
-		Promise.all([fetchSubjectsInField(detailField.detailFieldCode), fetchCoursesInFields(detailField.detailFieldCode)]);
+		try {
+			const smallFieldResponse = await serverApi.post('/api/v2/field-search/small', middleField);
+			setSmallFieldState(smallFieldResponse.data);
+			setIsSmallFieldSelectedState(true);
 
-		// TODO 세분류 선택시 해당 직군에 대한 학과 및 전체 학과 데이터 가져오는거 개선 필요
-		await fetchSmallField(middleField);
-		await fetchDetailField(smallField);
+			const detailFieldResponse = await serverApi.post('/api/v2/field-search/detail', smallField);
+			setDetailFieldState(detailFieldResponse.data);
+			setSelectedFieldtState({
+				middleField,
+				smallField,
+				detailField
+			});
 
-		setSelectedFieldtState({
-			middleField,
-			smallField,
-			detailField
-		});
-
-		setIsSmallFieldSelectedState(true);
+			const [subjectsResponse] = await Promise.all([
+				serverApi.get(`/api/v1/fields/${detailField.detailFieldCode}/subjects`),
+				fetchCoursesInFields(detailField.detailFieldCode)
+			]);
+			setSubjectsInFieldState(subjectsResponse.data);
+		} catch (error) {
+			console.error('Error fetching log fields:', error);
+		}
 	};
 
 	return {
