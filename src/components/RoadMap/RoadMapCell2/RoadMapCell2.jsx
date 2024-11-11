@@ -87,8 +87,8 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 		const element = event.currentTarget; // 클릭한 셀 요소
 		const rect = element.getBoundingClientRect(); // 요소의 위치 정보
 
-		// 요소 위치 정보를 바탕으로 드롭다운 위치 설정
-		setDropdownPosition({ x: rect.left, y: rect.bottom + window.scrollY }); // 셀 바로 아래 위치 고정
+		// 오른쪽 끝에 -0.5rem 추가하여 드롭다운 위치 설정
+		setDropdownPosition({ x: rect.right - 110, y: rect.bottom + window.scrollY });
 		setIsDropdownOpen((prev) => !prev);
 	};
 

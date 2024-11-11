@@ -11,9 +11,8 @@ const DropdownContainer = styled.div`
 	border-radius: 4px;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
-	min-width: 150px;
+	width: 90px; // 고정 너비 설정
 	padding: 10px;
-	width: 1rem;
 `;
 
 const DropdownPortal = ({ x, y, children, onClose, cellRef }) => {
