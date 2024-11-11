@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './RoadMapCell';
-import Cell2 from './RoadMapCell2';
+import Cell2 from './RoadMapCell2/RoadMapCell2';
 
 const TableContainer = styled.div`
 	flex: 1;
