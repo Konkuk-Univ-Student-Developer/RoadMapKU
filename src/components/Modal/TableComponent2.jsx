@@ -16,19 +16,25 @@ const StyledTable = styled.table`
 `;
 
 const Th = styled.th`
+	font-family: 'Pretendard-regular';
 	padding: 8px;
 	background-color: #036b3f;
 	text-align: center;
 	color: white;
-	font-size: 14px; /* 헤더의 폰트 크기 설정 */
-	border: 1px solid black; /* 테두리 추가 */
+	font-size: 14px;
+	border: 1px solid black;
 `;
 
 const Td = styled.td`
 	padding: 8px;
 	text-align: center;
-	font-size: 13px; /* 셀의 폰트 크기 설정 */
-	border: 1px solid black; /* 테두리 추가 */
+	font-size: 13px;
+	border: 1px solid black;
+
+	/* "-" 값일 때 중앙 정렬 */
+	&.centered {
+		text-align: center;
+	}
 
 	/* competencyRemark 열에만 적용할 스타일 */
 	&.remark {
@@ -54,7 +60,7 @@ const TableComponent2 = ({ data }) => {
 						<tr key={i}>
 							<Td>{headers[i]}</Td>
 							{row.map((cell, j) => (
-								<Td key={j} className={j === 1 ? 'remark' : ''}>
+								<Td key={j} className={cell === '-' ? 'centered' : j === 1 ? 'remark' : ''}>
 									{cell}
 								</Td>
 							))}

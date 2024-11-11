@@ -7,6 +7,7 @@ import {
 	totalRoadMapState,
 	courseByCompetencyInSubjectState,
 	courseDetailState,
+	competitionRateState,
 	allFieldDataState,
 	selectedSubjectState,
 	selectedFieldState,
@@ -23,6 +24,7 @@ const useField = () => {
 	const setTotalRoadMapState = useSetRecoilState(totalRoadMapState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
+	const setCompetitionRateState = useSetRecoilState(competitionRateState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
 	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
@@ -120,6 +122,17 @@ const useField = () => {
 			});
 	};
 
+	const fetchCompetitionRate = (haksuId) => {
+		serverApi
+			.get(`/api/v1/competition-rate/${haksuId}`)
+			.then((res) => {
+				setCompetitionRateState(res.data);
+			})
+			.catch((error) => {
+				console.error('Error fetching competition rate:', error);
+			});
+	};
+
 	const fetchAllFields = () => {
 		serverApi
 			.get('/api/v2/field-search/all')
@@ -164,6 +177,7 @@ const useField = () => {
 		fetchCoursesInFields,
 		fetchCoursesInSubject,
 		fetchCourseDetail,
+		fetchCompetitionRate,
 		fetchAllFields,
 		fetchLogFields
 	};

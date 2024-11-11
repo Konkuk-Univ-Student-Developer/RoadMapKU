@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { courseDetailState } from '../../recoils/atoms';
-import {
-	Title,
-	Subtitle,
-	Subject,
-	ModalContent,
-	SubjectContainer,
-	TableContent,
-	ScrollContainer
-} from './CourseDetailStyle';
+import { Title, Subtitle, ModalContent, TableContent, ScrollContainer } from './CourseDetailStyle';
 import TableComponent from '../Modal/TableComponent';
 import TableComponent2 from '../Modal/TableComponent2';
 import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
+import MenuList from './MenuList';
+import CompetitionTable from './CompetitionTable';
 
 function CourseDetail({ onClose, HaksuId }) {
+	console.log(HaksuId);
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useField();
 	const [loading, setLoading] = useState(true);
@@ -75,39 +70,32 @@ function CourseDetail({ onClose, HaksuId }) {
 	//API 연결 코드-------------------------
 
 	const tableData = [
-		['학수번호', HaksuId],
-		['개설대학', additionalInfo.openingCollegeName],
-		['개설학과', additionalInfo.openingSubjectName],
-		['강의유형', additionalInfo.lectureType],
-		['학년', additionalInfo.openingSchoolYear.toString()],
-		['학기', additionalInfo.openingSemesterTerm],
-		['학점', additionalInfo.time.toString()],
+		['학수번호', HaksuId || '-'],
+		['개설대학', additionalInfo.openingCollegeName || '-'],
+		['개설학과', additionalInfo.openingSubjectName || '-'],
+		['강의유형', additionalInfo.lectureType || '-'],
+		['학년', additionalInfo.openingSchoolYear?.toString() || '-'],
+		['학기', additionalInfo.openingSemesterTerm || '-'],
+		['학점', additionalInfo.time?.toString() || '-'],
 		['공학인증구분', additionalInfo.engineeringCertificationFlagCode === 0 ? 'N' : 'Y'],
-		['선수강과목', additionalInfo.preCourse],
-		['MOOC 여부', additionalInfo.moocFlag === 0 ? 'N' : 'Y'],
-		['Selc 여부', additionalInfo.selcFlag === 0 ? 'N' : 'Y'],
-		['챌린저여부', additionalInfo.dreamSemesterFlag === 0 ? 'N' : 'Y']
+		['선수강과목', additionalInfo.preCourse || '-']
 	];
 
+	console.log(HaksuId);
+
 	const tableData2 = [
-		[competency.competencyName1, competency.competencyRemark1],
-		[competency.competencyName2, competency.competencyRemark2],
-		[competency.competencyName3, competency.competencyRemark3]
+		[competency.competencyName1 || '-', competency.competencyRemark1 || '-'],
+		[competency.competencyName2 || '-', competency.competencyRemark2 || '-'],
+		[competency.competencyName3 || '-', competency.competencyRemark3 || '-']
 	];
 
 	return (
 		<Modal onClose={onClose}>
 			<ScrollContainer>
 				<Title>{courseDetail.typicalKoreanName}</Title>
-
-				<SubjectContainer>
-					{/* <Subject>
-						{courseDetail.typicalKoreanName} ({courseDetail.typicalEnglishName})
-					</Subject> */}
-				</SubjectContainer>
+				<MenuList></MenuList>
+				<Subtitle>과목 설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
-				<Subject>{courseDetail.typicalEnglishName}</Subject>
-				<ModalContent>{courseDetail.englishDescription}</ModalContent>
 				<Subtitle>기본 정보</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />
@@ -116,6 +104,7 @@ function CourseDetail({ onClose, HaksuId }) {
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
+				<CompetitionTable haksuId={HaksuId} />
 			</ScrollContainer>
 		</Modal>
 	);
