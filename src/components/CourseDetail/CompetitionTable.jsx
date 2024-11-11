@@ -139,7 +139,7 @@ const CompetitionTable = ({ haksuId }) => {
 							<Th>실 수강인원</Th>
 							<Th>수강 바구니</Th>
 							<Th>수강 정원</Th>
-							<Th>경쟁률</Th>
+							<Th>전체 경쟁률</Th>
 						</tr>
 					</thead>
 					<tbody>
