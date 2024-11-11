@@ -15,6 +15,7 @@ import SaveButton from '../FloatButton/SaveButton';
 
 const Container = styled.div`
 	min-width: 50rem;
+	width: 87%;
 	display: flex;
 	flex-direction: column;
 `;

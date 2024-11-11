@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	middleFieldState,
 	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	isSmallFieldSelectedState
+	isSmallFieldSelectedState,
+	selectedSubjectState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 
@@ -67,6 +68,7 @@ const FieldInput = () => {
 
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
+	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 
 	const [isSmallFieldSelected, setIsSmallFieldSelected] = useRecoilState(isSmallFieldSelectedState);
 
@@ -90,6 +92,8 @@ const FieldInput = () => {
 	};
 
 	const handleDetailFieldClick = (field) => {
+		resetSelectedSubjectState();
+
 		Promise.all([fetchSubjectsInField(field.detailFieldCode), fetchCoursesInFields(field.detailFieldCode)]);
 
 		const updatedFieldCodeList = {
@@ -99,6 +103,12 @@ const FieldInput = () => {
 
 		setSelectedField(updatedFieldCodeList);
 		setSelectedFieldLog((prevState) => {
+			const isDuplicate = prevState.some(
+				(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
+			);
+
+			if (isDuplicate) return prevState;
+
 			const newLog = [...prevState, updatedFieldCodeList];
 			if (newLog.length > 5) {
 				newLog.shift();
