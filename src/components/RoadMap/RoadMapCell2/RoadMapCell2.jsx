@@ -84,10 +84,9 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 	}, [cellData, highlightedCompetency]);
 
 	const handleDropdownToggle = (event) => {
-		const element = event.currentTarget; // 클릭한 셀 요소
-		const rect = element.getBoundingClientRect(); // 요소의 위치 정보
+		const element = event.currentTarget;
+		const rect = element.getBoundingClientRect();
 
-		// 오른쪽 끝에 -0.5rem 추가하여 드롭다운 위치 설정
 		setDropdownPosition({ x: rect.right - 110, y: rect.bottom + window.scrollY });
 		setIsDropdownOpen((prev) => !prev);
 	};
@@ -117,7 +116,6 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 						onClose={() => setIsDropdownOpen(false)}
 						cellRef={cellRef}
 					>
-						{/* Dropdown 메뉴 항목 추가 */}
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
 						<DropdownItem onClick={onClickRoadmapButton}>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
