@@ -61,7 +61,11 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		// Update competencyTable with delays
 		setCompetencyTable([]);
 		sortedCompetencyTable.forEach((competency) => {
-			setCompetencyTable((prevItems) => [...prevItems, competency]);
+			setCompetencyTable((prevItems) => {
+				const isDuplicate = prevItems.some((item) => item.competencyName === competency.competencyName);
+
+				return isDuplicate ? prevItems : [...prevItems, competency];
+			});
 		});
 	}, [competencyTableData]);
 
