@@ -350,7 +350,8 @@ const RoadMapContainer = () => {
 		const utf8Encoded = encodeURIComponent(base64Compressed);
 		const newUrl = `http://203.252.168.41:3000/road-map/${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
-		return newUrl;
+
+		navigator.clipboard.writeText(newUrl);
 	};
 
 	// 스크린샷 Button Click 이벤트
