@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../../Animation/Animation';
 import CourseDetail from '../../CourseDetail/CourseDetail';
-import DropdownPortal from './DropdownPortal';
 
 const Button = styled.div`
 	width: 100%;
@@ -15,8 +14,7 @@ const Button = styled.div`
 `;
 
 const DropdownItem = styled.div`
-	font-family: 'Pretendard-regular';
-	font-size: 12px; // 글자 크기 설정
+	font-size: 12px;
 	padding: 5px;
 	cursor: pointer;
 	&:hover {
@@ -25,7 +23,6 @@ const DropdownItem = styled.div`
 `;
 
 const StyledCell = styled.div`
-	font-family: 'Pretendard-regular';
 	font-size: small;
 	min-height: 2rem;
 	display: flex;
@@ -71,32 +68,54 @@ const CourseTitle = styled.div`
 	}
 `;
 
+const DropdownContainer = styled.div`
+	position: absolute;
+	cursor: pointer;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	width: 90px;
+	padding: 10px;
+`;
+
 const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, highlightedCompetency }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
-	const [dropdownPosition, setDropdownPosition] = useState({ x: 0, y: 0 });
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const cellRef = useRef(null);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
 		setIsHighlighted(Array.isArray(competencyCodes) && competencyCodes.includes(highlightedCompetency));
+
+		const handleClickOutside = (event) => {
+			if (cellRef.current && !cellRef.current.contains(event.target)) {
+				setIsDropdownOpen(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
 	}, [cellData, highlightedCompetency]);
 
 	const handleDropdownToggle = (event) => {
-		const element = event.currentTarget;
-		const rect = element.getBoundingClientRect();
-
-		setDropdownPosition({ x: rect.right - 110, y: rect.bottom + window.scrollY });
+		event.stopPropagation();
 		setIsDropdownOpen((prev) => !prev);
 	};
 
-	const onClickDetailButton = () => {
+	const onClickDetailButton = (event) => {
+		event.stopPropagation();
 		setIsDetailOpen(true);
+		setIsDropdownOpen(false);
 		onDropdownToggle();
 	};
 
-	const onClickRoadmapButton = () => {
+	const onClickRoadmapButton = (event) => {
+		event.stopPropagation();
 		onClick(cellData, rowIndex);
 		setIsDropdownOpen(false);
 	};
@@ -110,17 +129,12 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 			<Button>
 				<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
 				{isDropdownOpen && (
-					<DropdownPortal
-						x={dropdownPosition.x}
-						y={dropdownPosition.y}
-						onClose={() => setIsDropdownOpen(false)}
-						cellRef={cellRef}
-					>
+					<DropdownContainer>
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
 						<DropdownItem onClick={onClickRoadmapButton}>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
 						</DropdownItem>
-					</DropdownPortal>
+					</DropdownContainer>
 				)}
 				{isDetailOpen && <CourseDetail onClose={() => setIsDetailOpen(false)} HaksuId={cellData.haksuId} />}
 			</Button>
