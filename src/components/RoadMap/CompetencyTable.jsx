@@ -72,7 +72,7 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 				<CompetencyColumn>
 					{competencyTable.map((competency, index) => (
 						<Cell
-							key={competency.competencyCode}
+							key={index}
 							ref={refs[index]}
 							cellData={competency}
 							onClick={onClick}

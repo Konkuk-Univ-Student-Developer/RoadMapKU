@@ -89,7 +89,7 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 					<CourseColumn key={rowIndex}>
 						{row.slice(1).map((cellData, cellIndex) => (
 							<Cell2
-								key={cellData.haksuId}
+								key={cellIndex}
 								ref={refs[rowIndex][cellIndex]}
 								cellData={cellData}
 								rowIndex={rowIndex}
