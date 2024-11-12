@@ -187,19 +187,13 @@ const RoadMapContainer = () => {
 
 			setUnclickableCells(tempUnclickableCells);
 
-			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
-			let delay = 200;
-			let animationTime = Math.floor(100 / max_length);
 			updatedRoadMapTableData.forEach((courseRow, index) => {
 				courseRow.slice(1).forEach((item) => {
-					setTimeout(() => {
-						setRoadMapTableData((prev) => {
-							const sortedTableData = [...prev];
-							sortedTableData[index].push(item);
-							return sortedTableData;
-						});
-					}, delay);
-					delay += animationTime;
+					setRoadMapTableData((prev) => {
+						const sortedTableData = [...prev];
+						sortedTableData[index].push(item);
+						return sortedTableData;
+					});
 				});
 			});
 		}

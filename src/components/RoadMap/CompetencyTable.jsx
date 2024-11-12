@@ -59,13 +59,9 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
 		// Update competencyTable with delays
-		let delay = 0;
 		setCompetencyTable([]);
 		sortedCompetencyTable.forEach((competency) => {
-			setTimeout(() => {
-				setCompetencyTable((prevItems) => [...prevItems, competency]);
-			}, delay);
-			delay += 50;
+			setCompetencyTable((prevItems) => [...prevItems, competency]);
 		});
 	}, [competencyTableData]);
 
