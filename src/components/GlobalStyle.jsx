@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard-regular';
     margin: 0;
     padding: 0;
+    word-break: keep-all;
   }
 `;
 
