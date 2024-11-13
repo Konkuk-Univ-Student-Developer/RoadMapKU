@@ -186,16 +186,13 @@ const RoadMapContainer = () => {
 			});
 
 			setUnclickableCells(tempUnclickableCells);
-
-			updatedRoadMapTableData.forEach((courseRow, index) => {
-				courseRow.slice(1).forEach((item) => {
-					setRoadMapTableData((prev) => {
-						const sortedTableData = [...prev];
-						sortedTableData[index].push(item);
-						return sortedTableData;
-					});
-				});
+			const updatedData = updatedRoadMapTableData.map((courseRow) => {
+				const row = [[]];
+				row.push(...courseRow.slice(1));
+				return row;
 			});
+
+			setRoadMapTableData(updatedData);
 		}
 	}, [courseByCompetencyInSubject, myTableData]);
 
