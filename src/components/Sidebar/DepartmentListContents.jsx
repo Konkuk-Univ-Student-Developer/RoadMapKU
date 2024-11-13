@@ -35,7 +35,7 @@ function DepartmentListContents() {
 	};
 
 	if (!subjects.length) {
-		return <SelectedDepartment isSelected={true}>해당하는 학과가 없습니다</SelectedDepartment>;
+		return <SelectedDepartment isSelected={true} />;
 	}
 
 	return (
