@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
@@ -59,6 +59,11 @@ const FieldItem = styled.div`
 	}
 `;
 
+const scrollOption = {
+	behavior: 'smooth',
+	block: 'center'
+};
+
 const FieldInput = () => {
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
@@ -69,12 +74,23 @@ const FieldInput = () => {
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
-
 	const [isSmallFieldSelected, setIsSmallFieldSelected] = useRecoilState(isSmallFieldSelectedState);
+
+	const fieldRefs = {
+		middle: useRef({}),
+		small: useRef({}),
+		detail: useRef({})
+	};
 
 	useEffect(() => {
 		fetchMiddleField();
 	}, []);
+
+	if (selectedField) {
+		fieldRefs.middle.current[selectedField.middleField?.middleField]?.scrollIntoView(scrollOption);
+		fieldRefs.small.current[selectedField.smallField?.smallField]?.scrollIntoView(scrollOption);
+		fieldRefs.detail.current[selectedField.detailField?.detailField]?.scrollIntoView(scrollOption);
+	}
 
 	const handleMiddleFieldClick = (field) => {
 		fetchSmallField(field);
@@ -128,6 +144,7 @@ const FieldInput = () => {
 								key={index}
 								onClick={() => handleMiddleFieldClick(field)}
 								isSelected={selectedField.middleField?.middleField === field.middleField}
+								ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
 							>
 								{field.middleField}
 							</FieldItem>
@@ -143,6 +160,7 @@ const FieldInput = () => {
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
 									isSelected={selectedField.smallField?.smallField === field.smallField}
+									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -155,6 +173,7 @@ const FieldInput = () => {
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
 									isSelected={selectedField.smallField?.smallField === field.smallField}
+									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
 								</FieldItem>
@@ -170,6 +189,7 @@ const FieldInput = () => {
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
 								isSelected={selectedField.detailField?.detailField === field.detailField}
+								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
 							>
 								{field.detailField}
 							</FieldItem>
