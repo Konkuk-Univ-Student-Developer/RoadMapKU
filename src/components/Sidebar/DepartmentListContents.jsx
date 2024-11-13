@@ -4,12 +4,12 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
+	font-family: inherit;
 	min-width: 250px;
 	height: 30px;
 	margin: 5px 5px;
 	font-size: 20px;
 	cursor: pointer;
-	font-weight: 600;
 	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#ffffff')};
 	border: 1px solid #ccc;
 	border-radius: 10px;
@@ -35,7 +35,7 @@ function DepartmentListContents() {
 	};
 
 	if (!subjects.length) {
-		return <SelectedDepartment isSelected={true}>해당하는 학과가 없습니다</SelectedDepartment>;
+		return <SelectedDepartment isSelected={true} />;
 	}
 
 	return (

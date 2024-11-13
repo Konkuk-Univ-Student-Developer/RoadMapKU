@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import * as L from './CourseDetailStyle';
 import { competitionRateState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
@@ -17,7 +16,6 @@ const TableContainer = styled.div`
 	margin-top: 20px;
 `;
 const TextContainer = styled.div`
-	font-family: 'Pretendard-regular';
 	margin: 0px 20px;
 	display: flex;
 	justify-content: flex-start;
@@ -34,7 +32,6 @@ const Table = styled.table`
 `;
 
 const Th = styled.th`
-	font-family: 'Pretendard-regular';
 	font-size: 14px;
 	padding: 10px;
 	// background-color: #f0f0f0;
@@ -46,7 +43,6 @@ const Th = styled.th`
 `;
 
 const Td = styled.td`
-	font-family: 'Pretendard-regular';
 	font-size: 13px;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -55,7 +51,6 @@ const Td = styled.td`
 `;
 
 const ButtonContainer = styled.div`
-	font-family: 'Pretendard-regular';
 	display: flex;
 	gap: 10px;
 	margin: 0 auto 20px;
@@ -129,7 +124,6 @@ const CompetitionTable = ({ haksuId }) => {
 
 	return (
 		<Container>
-			<L.Subtitle>수강 신청 경쟁률</L.Subtitle>
 			<TextContainer>* 2023,2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
 			{/* 전체 학년 정보 */}
 			<TableContainer>

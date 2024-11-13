@@ -105,7 +105,7 @@ const SearchBar = () => {
 
 			if (isDuplicate) return prevState;
 
-			const newLog = [...prevState, restructuredFieldData];
+			const newLog = [restructuredFieldData, ...prevState];
 			if (newLog.length > 5) {
 				newLog.shift();
 			}

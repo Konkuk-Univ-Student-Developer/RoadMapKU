@@ -18,7 +18,6 @@ const StyledTable = styled.table`
 `;
 
 const Td = styled.td`
-	font-family: 'Pretendard-regular';
 	padding: 8px;
 	text-align: center;
 	border: 0.25px solid gray;

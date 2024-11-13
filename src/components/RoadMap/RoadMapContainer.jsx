@@ -186,22 +186,13 @@ const RoadMapContainer = () => {
 			});
 
 			setUnclickableCells(tempUnclickableCells);
-
-			// 애니메이션이 적용되도록 배열에 내용을 시간차로 insert
-			let delay = 200;
-			let animationTime = Math.floor(100 / max_length);
-			updatedRoadMapTableData.forEach((courseRow, index) => {
-				courseRow.slice(1).forEach((item) => {
-					setTimeout(() => {
-						setRoadMapTableData((prev) => {
-							const sortedTableData = [...prev];
-							sortedTableData[index].push(item);
-							return sortedTableData;
-						});
-					}, delay);
-					delay += animationTime;
-				});
+			const updatedData = updatedRoadMapTableData.map((courseRow) => {
+				const row = [[]];
+				row.push(...courseRow.slice(1));
+				return row;
 			});
+
+			setRoadMapTableData(updatedData);
 		}
 	}, [courseByCompetencyInSubject, myTableData]);
 
@@ -350,7 +341,8 @@ const RoadMapContainer = () => {
 		const utf8Encoded = encodeURIComponent(base64Compressed);
 		const newUrl = `http://203.252.168.41:3000/road-map/${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
-		return newUrl;
+
+		navigator.clipboard.writeText(newUrl);
 	};
 
 	// 스크린샷 Button Click 이벤트

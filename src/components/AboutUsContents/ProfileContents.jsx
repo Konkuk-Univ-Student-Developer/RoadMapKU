@@ -21,25 +21,21 @@ const LabelContainer = styled.div`
 const NameLabel = styled.div`
 	font-size: 30px;
 	font-weight: 600;
-	font-family: 'Pretendard-regular';
 `;
 
 const DepartLabel = styled.div`
 	margin: 5px 0;
 	font-size: 18px;
 	font-weight: 600;
-	font-family: 'Pretendard-regular';
 `;
 
 const RoleLabel = styled.div`
 	font-size: 18px;
-	font-family: 'Pretendard-regular';
 `;
 
 const ProfileUl = styled.ul`
 	margin-top: 30px;
 	width: 60%;
-	font-family: 'Pretendard-regular';
 `;
 
 const ProfileLi = styled.li`

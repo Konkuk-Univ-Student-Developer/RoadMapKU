@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './CompetencyCell';
 
 const Container = styled.div`
@@ -39,11 +38,6 @@ const CompetencyColumn = styled.div`
 	gap: 0.5rem;
 `;
 
-const animationTiming = {
-	enter: 400,
-	exit: 0
-};
-
 const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
 	const [refs, setRefs] = useState([]);
@@ -65,13 +59,13 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
 		// Update competencyTable with delays
-		let delay = 0;
 		setCompetencyTable([]);
 		sortedCompetencyTable.forEach((competency) => {
-			setTimeout(() => {
-				setCompetencyTable((prevItems) => [...prevItems, competency]);
-			}, delay);
-			delay += 50;
+			setCompetencyTable((prevItems) => {
+				const isDuplicate = prevItems.some((item) => item.competencyName === competency.competencyName);
+
+				return isDuplicate ? prevItems : [...prevItems, competency];
+			});
 		});
 	}, [competencyTableData]);
 
@@ -79,23 +73,17 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		<Container>
 			<Title>전공역량</Title>
 			<CompetencyContainer>
-				<TransitionGroup component={CompetencyColumn}>
+				<CompetencyColumn>
 					{competencyTable.map((competency, index) => (
-						<CSSTransition
-							key={competency.competencyCode}
-							timeout={animationTiming}
-							classNames="Bounce"
-							nodeRef={refs[index]}
-						>
-							<Cell
-								ref={refs[index]}
-								cellData={competency}
-								onClick={onClick}
-								highlightedCompetency={highlightedCompetency}
-							/>
-						</CSSTransition>
+						<Cell
+							key={index}
+							ref={refs[index]}
+							cellData={competency}
+							onClick={onClick}
+							highlightedCompetency={highlightedCompetency}
+						/>
 					))}
-				</TransitionGroup>
+				</CompetencyColumn>
 			</CompetencyContainer>
 		</Container>
 	);

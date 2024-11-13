@@ -9,7 +9,7 @@ import majorchoice from '../img/majorchoice.png';
 import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
-	// font-family: 'Arial, sans-serif';
+	// : 'Arial, sans-serif';
 	//background-color: #e0f2f1;
 	background-color: #036b3f;
 `;
@@ -91,7 +91,6 @@ const StepTitle2 = styled.h3`
 `;
 
 const StepTitle3 = styled.h3`
-	font-family: 'Pretendard-regular';
 	font-size: 15px;
 	font-weight: 500;
 	margin-bottom: 10px;
@@ -153,7 +152,6 @@ const LinkButton = styled.button`
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
-	font-family: 'Pretendard-semiBold';
 	transition: 0.1s ease-in;
 	&:hover {
 		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};

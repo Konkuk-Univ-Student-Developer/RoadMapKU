@@ -9,7 +9,6 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-	font-family: 'Pretendard-regular';
 	font-size: 16px;
 	font-weight: bold;
 	border-bottom: 1px solid #ccc;
@@ -18,7 +17,6 @@ const Title = styled.div`
 	text-align: center;
 `;
 const ListContainer = styled.ul`
-	font-family: 'Pretendard-regular';
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
@@ -27,20 +25,20 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-	font-family: 'Pretendard-regular';
 	font-size: 14px;
 	color: #666;
+	cursor: pointer;
 `;
 
-const MenuList = () => {
+const MenuList = ({ descriptionHandler, informationHandler, competencyHandler, competitionHandler }) => {
 	return (
 		<Container>
 			<Title>목차</Title>
 			<ListContainer>
-				<ListItem>과목 설명</ListItem>
-				<ListItem>기본 정보</ListItem>
-				<ListItem>전공 역량</ListItem>
-				<ListItem>수강 신청 경쟁률</ListItem>
+				<ListItem onClick={descriptionHandler}>과목 설명</ListItem>
+				<ListItem onClick={informationHandler}>기본 정보</ListItem>
+				<ListItem onClick={competencyHandler}>전공 역량</ListItem>
+				<ListItem onClick={competitionHandler}>수강 신청 경쟁률</ListItem>
 			</ListContainer>
 		</Container>
 	);

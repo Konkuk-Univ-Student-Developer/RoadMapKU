@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Cell from './RoadMapCell';
 import Cell2 from './RoadMapCell2/RoadMapCell2';
 
@@ -49,11 +48,6 @@ const CourseColumn = styled.div`
 	padding-bottom: 0.5rem;
 `;
 
-const animationTiming = {
-	enter: 400,
-	exit: 400
-};
-
 const defaultTable = [
 	[{ haksuId: '0', courseName: '1 - 1' }],
 	[{ haksuId: '0', courseName: '1 - 2' }],
@@ -92,27 +86,21 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 			</SemesterContainer>
 			<CourseContainer>
 				{roadMapTableData.map((row, rowIndex) => (
-					<TransitionGroup component={CourseColumn} key={rowIndex}>
+					<CourseColumn key={rowIndex}>
 						{row.slice(1).map((cellData, cellIndex) => (
-							<CSSTransition
-								key={cellData.haksuId}
-								timeout={animationTiming}
-								classNames="Bounce"
-								nodeRef={refs[rowIndex][cellIndex]}
-							>
-								<Cell2
-									ref={refs[rowIndex][cellIndex]}
-									cellData={cellData}
-									rowIndex={rowIndex}
-									onClick={onCellClick}
-									unclickable={unclickableCells.some((cell) => cell.haksuId === cellData.haksuId)}
-									highlightedCompetency={highlightedCompetency}
-									isDropdownOpen={openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex} // 현재 드롭다운이 열려 있는지 확인
-									onDropdownToggle={() => handleDropdownToggle(rowIndex, cellIndex)} // 열고 닫는 함수 전달
-								/>
-							</CSSTransition>
+							<Cell2
+								key={cellIndex}
+								ref={refs[rowIndex][cellIndex]}
+								cellData={cellData}
+								rowIndex={rowIndex}
+								onClick={onCellClick}
+								unclickable={unclickableCells.some((cell) => cell.haksuId === cellData.haksuId)}
+								highlightedCompetency={highlightedCompetency}
+								isDropdownOpen={openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex} // 현재 드롭다운이 열려 있는지 확인
+								onDropdownToggle={() => handleDropdownToggle(rowIndex, cellIndex)} // 열고 닫는 함수 전달
+							/>
 						))}
-					</TransitionGroup>
+					</CourseColumn>
 				))}
 			</CourseContainer>
 		</TableContainer>

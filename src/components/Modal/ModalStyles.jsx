@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ModalContent = styled.div`
-	font-family: Arial;
 	font-size: 1rem;
 	margin: 10px 0;
 `;

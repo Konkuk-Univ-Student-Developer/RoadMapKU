@@ -33,7 +33,6 @@ const ButtonWrapper = styled.div`
 `;
 
 const Button = styled.div`
-	font-family: 'Pretendard-regular';
 	width: 100%;
 	display: flex;
 	align-items: center;

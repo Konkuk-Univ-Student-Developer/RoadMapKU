@@ -31,7 +31,7 @@ const Card = styled.div`
 	width: 10rem;
 	min-width: 10rem;
 	font-size: small;
-	font-family: 'Pretendard-regular';
+
 	box-sizing: border-box;
 	border: 0.05rem solid black;
 	border-radius: 0.2rem;
