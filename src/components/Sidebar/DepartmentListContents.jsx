@@ -4,6 +4,7 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
+	font-family: inherit;
 	min-width: 250px;
 	height: 30px;
 	margin: 5px 5px;
