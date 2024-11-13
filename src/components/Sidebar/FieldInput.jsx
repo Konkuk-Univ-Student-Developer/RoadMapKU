@@ -59,7 +59,7 @@ const FieldItem = styled.div`
 	}
 `;
 
-const scrollOption = {
+export const scrollOption = {
 	behavior: 'smooth',
 	block: 'center'
 };

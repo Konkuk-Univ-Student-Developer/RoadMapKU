@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { courseDetailState } from '../../recoils/atoms';
 import { Title, Subtitle, ModalContent, TableContent, ScrollContainer } from './CourseDetailStyle';
@@ -8,13 +8,17 @@ import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
 import MenuList from './MenuList';
 import CompetitionTable from './CompetitionTable';
+import { scrollOption } from '../Sidebar/FieldInput';
 
 function CourseDetail({ onClose, HaksuId }) {
-	console.log(HaksuId);
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);
 	const { fetchCourseDetail } = useField();
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const descriptionRef = useRef();
+	const informationRef = useRef();
+	const competencyRef = useRef();
+	const competitionnRef = useRef();
 
 	useEffect(() => {
 		const loadData = async () => {
@@ -81,29 +85,49 @@ function CourseDetail({ onClose, HaksuId }) {
 		['선수강과목', additionalInfo.preCourse || '-']
 	];
 
-	console.log(HaksuId);
-
 	const tableData2 = [
 		[competency.competencyName1 || '-', competency.competencyRemark1 || '-'],
 		[competency.competencyName2 || '-', competency.competencyRemark2 || '-'],
 		[competency.competencyName3 || '-', competency.competencyRemark3 || '-']
 	];
 
+	const onDescriptonClickHandler = () => {
+		descriptionRef.current?.scrollIntoView(scrollOption);
+	};
+
+	const onCompetencyClickHandler = () => {
+		competencyRef.current?.scrollIntoView(scrollOption);
+	};
+
+	const onInforamtionClickHandler = () => {
+		informationRef.current?.scrollIntoView(scrollOption);
+	};
+
+	const onCompetitionClickHandler = () => {
+		competitionnRef.current?.scrollIntoView(scrollOption);
+	};
+
 	return (
 		<Modal onClose={onClose}>
 			<ScrollContainer>
 				<Title>{courseDetail.typicalKoreanName}</Title>
-				<MenuList></MenuList>
-				<Subtitle>과목 설명</Subtitle>
+				<MenuList
+					descriptionHandler={onDescriptonClickHandler}
+					competencyHandler={onCompetencyClickHandler}
+					informationHandler={onInforamtionClickHandler}
+					competitionHandler={onCompetitionClickHandler}
+				/>
+				<Subtitle ref={descriptionRef}>과목 설명</Subtitle>
 				<ModalContent>{courseDetail.koreanDescription}</ModalContent>
-				<Subtitle>기본 정보</Subtitle>
+				<Subtitle ref={informationRef}>기본 정보</Subtitle>
 				<TableContent>
 					<TableComponent data={tableData} />
 				</TableContent>
-				<Subtitle>전공역량</Subtitle>
+				<Subtitle ref={competencyRef}>전공역량</Subtitle>
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
+				<Subtitle ref={competitionnRef}>수강 신청 경쟁률</Subtitle>
 				<CompetitionTable haksuId={HaksuId} />
 			</ScrollContainer>
 		</Modal>

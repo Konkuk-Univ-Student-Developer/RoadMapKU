@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import * as L from './CourseDetailStyle';
 import { competitionRateState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
@@ -129,7 +128,6 @@ const CompetitionTable = ({ haksuId }) => {
 
 	return (
 		<Container>
-			<L.Subtitle>수강 신청 경쟁률</L.Subtitle>
 			<TextContainer>* 2023,2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
 			{/* 전체 학년 정보 */}
 			<TableContainer>
