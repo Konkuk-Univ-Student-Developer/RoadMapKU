@@ -100,7 +100,7 @@ function CourseDetail({ onClose, HaksuId }) {
 				<TableContent>
 					<TableComponent data={tableData} />
 				</TableContent>
-				<Subtitle>전공 역량</Subtitle>
+				<Subtitle>전공역량</Subtitle>
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
