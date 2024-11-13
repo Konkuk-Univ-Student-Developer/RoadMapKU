@@ -69,7 +69,7 @@ const CourseTitle = styled.div`
 `;
 
 const DropdownContainer = styled.div`
-	top: 25px;
+	top: 30px;
 	position: absolute;
 	cursor: pointer;
 	background-color: white;
