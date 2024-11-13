@@ -91,7 +91,6 @@ const StepTitle2 = styled.h3`
 `;
 
 const StepTitle3 = styled.h3`
-	: 'Pretendard-regular';
 	font-size: 15px;
 	font-weight: 500;
 	margin-bottom: 10px;

@@ -16,7 +16,6 @@ const TableContainer = styled.div`
 	margin-top: 20px;
 `;
 const TextContainer = styled.div`
-	: 'Pretendard-regular';
 	margin: 0px 20px;
 	display: flex;
 	justify-content: flex-start;
@@ -33,7 +32,6 @@ const Table = styled.table`
 `;
 
 const Th = styled.th`
-	: 'Pretendard-regular';
 	font-size: 14px;
 	padding: 10px;
 	// background-color: #f0f0f0;
@@ -45,7 +43,6 @@ const Th = styled.th`
 `;
 
 const Td = styled.td`
-	: 'Pretendard-regular';
 	font-size: 13px;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -54,7 +51,6 @@ const Td = styled.td`
 `;
 
 const ButtonContainer = styled.div`
-	: 'Pretendard-regular';
 	display: flex;
 	gap: 10px;
 	margin: 0 auto 20px;

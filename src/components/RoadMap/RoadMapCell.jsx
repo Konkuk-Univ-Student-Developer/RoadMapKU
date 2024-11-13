@@ -35,7 +35,6 @@ const ButtonWrapper = styled.div`
 `;
 
 const LeftButton = styled.div`
-	: 'Pretendard-regular';
 	width: 100%;
 	display: flex;
 	align-items: center;

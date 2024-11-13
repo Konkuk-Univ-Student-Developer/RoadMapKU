@@ -16,7 +16,6 @@ const StyledTable = styled.table`
 `;
 
 const Th = styled.th`
-	: 'Pretendard-regular';
 	padding: 8px;
 	background-color: #036b3f;
 	text-align: center;
