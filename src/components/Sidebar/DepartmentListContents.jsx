@@ -9,7 +9,6 @@ const SelectedDepartment = styled.button`
 	margin: 5px 5px;
 	font-size: 20px;
 	cursor: pointer;
-	font-weight: 600;
 	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#ffffff')};
 	border: 1px solid #ccc;
 	border-radius: 10px;
