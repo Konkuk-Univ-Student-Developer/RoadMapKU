@@ -43,12 +43,10 @@ export const Subtitle = styled.h2`
 `;
 
 export const ModalContent = styled.div`
-	:arial;
 	font-size: 1rem;
 	margin: 10px 20px;
 `;
 
 export const TableContent = styled.div`
-	:arial;
 	margin: 10px 0;
 `;

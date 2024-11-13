@@ -27,7 +27,6 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
-	: 'Pretendard-bold', sans-serif;
 	font-size: 4em;
 	font-weight: bold;
 	text-align: left;
@@ -36,14 +35,12 @@ const Title = styled.h1`
 `;
 
 const MainTitle = styled.div`
-	: 'Pretendard-bold', sans-serif;
 	font-size: 40px;
 	font-weight: 800;
 	color: #056a3f;
 `;
 
 const MainTitle_impact = styled.div`
-	: 'Pretendard-bold', sans-serif;
 	font-size: 50px;
 	font-weight: 800;
 	color: #056a3f;

@@ -44,7 +44,6 @@ const LinkButton = styled.button`
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
-	: 'Pretendard-semiBold';
 	transition: 0.1s ease-in;
 	&:hover {
 		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
