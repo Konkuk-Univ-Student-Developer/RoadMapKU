@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const DropdownContainer = styled.div`
 	position: absolute;
-	font-family: 'Pretendard-regular';
+	: 'Pretendard-regular';
 	cursor: pointer;
 	background-color: white;
 	border: 1px solid #ccc;

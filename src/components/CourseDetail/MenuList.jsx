@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-	font-family: 'Pretendard-regular';
+	: 'Pretendard-regular';
 	font-size: 16px;
 	font-weight: bold;
 	border-bottom: 1px solid #ccc;
@@ -18,7 +18,7 @@ const Title = styled.div`
 	text-align: center;
 `;
 const ListContainer = styled.ul`
-	font-family: 'Pretendard-regular';
+	: 'Pretendard-regular';
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
@@ -27,7 +27,7 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-	font-family: 'Pretendard-regular';
+	: 'Pretendard-regular';
 	font-size: 14px;
 	color: #666;
 `;

@@ -34,7 +34,7 @@ const Text = styled.div`
 	font-size: ${(props) => props.size || '30px'};
 	font-weight: ${(props) => props.weight || '600'};
 	cursor: ${(props) => (props.pointer ? 'pointer' : '')};
-	font-family: 'Pretendard-regular';
+	: 'Pretendard-regular';
 `;
 
 const Footer = ({ customHeight }) => {
