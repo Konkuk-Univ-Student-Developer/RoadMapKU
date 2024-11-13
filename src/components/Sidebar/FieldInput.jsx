@@ -125,7 +125,7 @@ const FieldInput = () => {
 
 			if (isDuplicate) return prevState;
 
-			const newLog = [...prevState, updatedFieldCodeList];
+			const newLog = [updatedFieldCodeList, ...prevState];
 			if (newLog.length > 5) {
 				newLog.shift();
 			}
