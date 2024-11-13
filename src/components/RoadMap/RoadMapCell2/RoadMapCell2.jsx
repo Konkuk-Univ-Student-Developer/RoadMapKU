@@ -69,7 +69,7 @@ const CourseTitle = styled.div`
 `;
 
 const DropdownContainer = styled.div`
-	top: 20px;
+	top: 25px;
 	position: absolute;
 	cursor: pointer;
 	background-color: white;
@@ -77,11 +77,11 @@ const DropdownContainer = styled.div`
 	border-radius: 4px;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
-	width: 100px;
-	padding: 10px;
+	width: 100%;
+	padding: 10px 0;
 `;
 
-const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, highlightedCompetency }) => {
+const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -111,14 +111,12 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 	const onClickDetailButton = (event) => {
 		event.stopPropagation();
 		setIsDetailOpen(true);
-		setIsDropdownOpen(false);
-		onDropdownToggle();
 	};
 
 	const onClickRoadmapButton = (event) => {
 		event.stopPropagation();
 		onClick(cellData, rowIndex);
-		setIsDropdownOpen(false);
+		setIsDropdownOpen((prev) => !prev);
 	};
 
 	return (
@@ -137,7 +135,15 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, onDropdownToggle, hig
 						</DropdownItem>
 					</DropdownContainer>
 				)}
-				{isDetailOpen && <CourseDetail onClose={() => setIsDetailOpen(false)} HaksuId={cellData.haksuId} />}
+				{isDetailOpen && (
+					<CourseDetail
+						onClose={() => {
+							setIsDetailOpen((prev) => !prev);
+							setIsDropdownOpen((prev) => !prev);
+						}}
+						HaksuId={cellData.haksuId}
+					/>
+				)}
 			</Button>
 		</StyledCell>
 	);
