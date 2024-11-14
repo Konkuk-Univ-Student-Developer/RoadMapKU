@@ -142,7 +142,7 @@ const RoadMapContainer = () => {
 			const { competencyName, competencyCode } = competency;
 
 			competency.courseGetResponseList.forEach((course) => {
-				const { openingYear, openingSemester, haksuId, name, credit } = course;
+				const { openingYear, openingSemester, haksuId, name, credit, openingSubject } = course;
 				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
 				const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
 				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
@@ -166,7 +166,7 @@ const RoadMapContainer = () => {
 					haksuId: haksuId,
 					courseName: name,
 					courseCredit: credit,
-					subjectName: subjectName,
+					subjectName: openingSubject,
 					competencyCodes: haksuIdToCompetencyMap.get(haksuId),
 					isMyTable: isMyTable
 				};
@@ -201,44 +201,43 @@ const RoadMapContainer = () => {
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
 	useEffect(() => {
-		if (!Array.isArray(totalRoadMap)) {
-			// console.log('totalRoadMap is empty');
-		} else {
-			// totalRoadMap 데이터 가공
-			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
-			totalRoadMap.forEach((course) => {
-				const { openingYear, openingSemester, haksuId, name, credit } = course;
-				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
-				const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
-				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+		if (!Array.isArray(totalRoadMap)) return;
 
-				updatedRoadMapTableData[index] = [
-					...updatedRoadMapTableData[index],
+		// totalRoadMap 데이터 가공
+		const updatedRoadMapTableData = [...defaultTable];
+		totalRoadMap.forEach((course) => {
+			const { openingYear, openingSemester, haksuId, name, credit, openigSubject } = course;
+			const semesterIndex = openingSemester === '2학기' ? 1 : 0;
+			const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
+			const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+
+			updatedRoadMapTableData[index] = [
+				...updatedRoadMapTableData[index],
+				{
+					haksuId: haksuId,
+					courseName: name,
+					courseCredit: credit,
+					subjectName: openigSubject,
+					competencyCodes: [],
+					isMyTable: false
+				}
+			];
+			if (openingSemester === '1,2학기') {
+				updatedRoadMapTableData[index + 1] = [
+					...updatedRoadMapTableData[index + 1],
 					{
 						haksuId: haksuId,
 						courseName: name,
 						courseCredit: credit,
-						subjectName: subjectName,
+						subjectName: openigSubject,
 						competencyCodes: [],
 						isMyTable: false
 					}
 				];
-				if (openingSemester === '1,2학기') {
-					updatedRoadMapTableData[index + 1] = [
-						...updatedRoadMapTableData[index + 1],
-						{
-							haksuId: haksuId,
-							courseName: name,
-							courseCredit: credit,
-							subjectName: subjectName,
-							competencyCodes: [],
-							isMyTable: false
-						}
-					];
-				}
-			});
-			setTotalRoadMapData(updatedRoadMapTableData);
-		}
+			}
+		});
+
+		setTotalRoadMapData(updatedRoadMapTableData);
 	}, [totalRoadMap]);
 
 	// 내 로드맵 교과목들의 전공역량을 myCompetencyList에 저장
@@ -255,8 +254,10 @@ const RoadMapContainer = () => {
 		setMyCompetencyList(uniqueCompetencyArray);
 	}, [myTableData]);
 
+	// 담은 학점 계산 하는 로직
 	useEffect(() => {
 		const courseCreditMap = {};
+
 		myTableData.forEach((row) => {
 			row.forEach((cellData) => {
 				const subject = cellData.subjectName;
