@@ -26,6 +26,7 @@ const Td = styled.td`
 	border: 1px solid #ddd;
 	text-align: center;
 	width: 10%;
+	word-wrap: break-word;
 	&:nth-child(1) {
 		background-color: #036b3f;
 		color: #ffffff;
