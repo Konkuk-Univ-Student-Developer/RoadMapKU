@@ -65,7 +65,6 @@ const ListContainer = styled.ul`
 	justify-content: space-between;
 	width: 80%;
 	margin: 20px auto;
-	display: flex; /* 추가 */
 `;
 
 const ListItem = styled.li`
