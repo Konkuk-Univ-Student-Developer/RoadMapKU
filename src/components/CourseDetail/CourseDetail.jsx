@@ -69,7 +69,6 @@ function CourseDetail({ onClose, HaksuId }) {
 	// 데이터가 정상적으로 로드된 경우
 	const additionalInfo = courseDetail.addInformationGetResponse;
 	const competency = courseDetail.competencyInCourseGetResponse;
-	console.log('Course Detail:', courseDetail);
 
 	//API 연결 코드-------------------------
 
