@@ -107,7 +107,7 @@ const SearchBar = () => {
 
 			const newLog = [restructuredFieldData, ...prevState];
 			if (newLog.length > 5) {
-				newLog.shift();
+				newLog.pop();
 			}
 			return newLog;
 		});
