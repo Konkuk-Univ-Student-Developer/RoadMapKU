@@ -61,7 +61,7 @@ const CourseCreditTable = ({ courseCreditData }) => {
 		return;
 	}
 
-	let courseCreditSum = courseCreditData.reduce((sum, data) => sum + data.courseCredit, 0);
+	const courseCreditSum = courseCreditData.reduce((sum, data) => sum + data.courseCredit, 0);
 
 	return (
 		<CourseCreditContainer>
