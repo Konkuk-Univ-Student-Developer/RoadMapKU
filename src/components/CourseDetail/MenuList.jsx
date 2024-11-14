@@ -39,6 +39,7 @@ const Container = styled.div`
 const TableContainer = styled.div`
 	width: 90%;
 	background-color: rgba(3, 107, 63, 0.1);
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
