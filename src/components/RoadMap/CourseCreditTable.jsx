@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CourseCreditContainer = styled.div`
-	height: 3rem;
+	height: 6rem;
 	margin: 0rem 1rem 1rem 1rem;
 	display: flex;
 	flex-direction: row;
@@ -12,6 +12,13 @@ const CourseCreditContainer = styled.div`
 	border: 0.05rem solid gray;
 	border-radius: 0.2rem;
 	background-color: #f4f4f4;
+`;
+
+const TitleContainer = styled.div`
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 
 const Title = styled.div`
@@ -26,12 +33,18 @@ const Title = styled.div`
 	justify-content: center;
 `;
 
+const CardContainer = styled.div`
+	display: flex;
+	align-items: center;
+	overflow: auto;
+`;
+
 const Card = styled.div`
 	height: 2rem;
 	width: 10rem;
 	min-width: 10rem;
 	font-size: small;
-
+	margin: 0 10px;
 	box-sizing: border-box;
 	border: 0.05rem solid black;
 	border-radius: 0.2rem;
@@ -48,14 +61,21 @@ const CourseCreditTable = ({ courseCreditData }) => {
 		return;
 	}
 
+	let courseCreditSum = courseCreditData.reduce((sum, data) => sum + data.courseCredit, 0);
+
 	return (
 		<CourseCreditContainer>
-			<Title>학과 별 담은 학점</Title>
-			{courseCreditData.map((data, index) => (
-				<Card key={index}>
-					{data.subjectName}: {data.courseCredit}학점
-				</Card>
-			))}
+			<TitleContainer>
+				<Title>총 담은 학점</Title>
+				<Title>{courseCreditSum}</Title>
+			</TitleContainer>
+			<CardContainer>
+				{courseCreditData.map((data, index) => (
+					<Card key={index}>
+						{data.subjectName}: {data.courseCredit}학점
+					</Card>
+				))}
+			</CardContainer>
 		</CourseCreditContainer>
 	);
 };
