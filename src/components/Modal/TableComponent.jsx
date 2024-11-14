@@ -20,24 +20,6 @@ const Table = styled.table`
 	table-layout: fixed;
 `;
 
-// const Th = styled.th`
-// 	font-size: 14px;
-// 	padding: 10px;
-// 	background-color: #036b3f;
-// 	color: #ffffff;
-// 	text-align: center;
-
-// 	&:nth-child(1) {
-// 		width: 20%;
-// 	}
-// 	&:nth-child(2) {
-// 		width: 30%;
-// 	}
-// 	&:nth-child(3) {
-// 		width: 50%;
-// 	}
-// `;
-
 const Td = styled.td`
 	font-size: 11.5px;
 	padding: 10px;
