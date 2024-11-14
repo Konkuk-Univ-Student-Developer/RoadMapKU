@@ -89,7 +89,13 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
-		setIsHighlighted(Array.isArray(competencyCodes) && competencyCodes.includes(highlightedCompetency));
+		if (Array.isArray(competencyCodes)) {
+			const hasHighlightedCompetency = competencyCodes.some(
+				(competency) => competency.competencyCode === highlightedCompetency
+			);
+
+			setIsHighlighted(hasHighlightedCompetency);
+		}
 
 		const handleClickOutside = (event) => {
 			if (cellRef.current && !cellRef.current.contains(event.target)) {
