@@ -25,7 +25,7 @@ const TextContainer = styled.div`
 `;
 
 const Table = styled.table`
-	width: 80%;
+	width: 90%;
 	border-collapse: collapse;
 	margin-bottom: 20px;
 	table-layout: fixed;
@@ -34,8 +34,6 @@ const Table = styled.table`
 const Th = styled.th`
 	font-size: 14px;
 	padding: 10px;
-	// background-color: #f0f0f0;
-	// border: 1px solid #ddd;
 	background-color: #036b3f;
 	color: #ffffff;
 	text-align: center;
