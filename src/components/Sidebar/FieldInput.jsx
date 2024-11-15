@@ -127,7 +127,7 @@ const FieldInput = () => {
 
 			const newLog = [updatedFieldCodeList, ...prevState];
 			if (newLog.length > 5) {
-				newLog.shift();
+				newLog.pop();
 			}
 			return newLog;
 		});
