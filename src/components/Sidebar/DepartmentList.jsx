@@ -17,7 +17,7 @@ const DepartmentContainer = styled.div`
 	justify-content: flex-start;
 	width: 95%;
 	background: white;
-	border-radius: 10px;
+	border-radius: 4px;
 	overflow: auto;
 	white-space: nowrap;
 	box-shadow:
