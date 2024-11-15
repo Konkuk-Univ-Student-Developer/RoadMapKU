@@ -36,7 +36,7 @@ function DepartmentListContents() {
 	};
 
 	if (!subjects.length) {
-		return <SelectedDepartment isSelected={true} />;
+		return <SelectedDepartment style={{ height: '37.5px' }} isSelected={true} />;
 	}
 
 	return (

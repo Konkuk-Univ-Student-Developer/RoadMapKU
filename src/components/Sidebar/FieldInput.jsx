@@ -26,6 +26,8 @@ const FieldInputContentsContainer = styled.div`
 	background: white;
 	display: flex;
 	flex-direction: row;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
 `;
 
 const FieldColumn = styled.div`
