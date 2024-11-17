@@ -135,7 +135,7 @@ const CompetitionTable = ({ haksuId }) => {
 
 	return (
 		<Container>
-			<TextContainer>* 2023,2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
+			<TextContainer>* 2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
 			{errorMessage ? (
 				<MessageContainer>{errorMessage}</MessageContainer>
 			) : (
