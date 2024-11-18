@@ -23,7 +23,6 @@ const useField = () => {
 	const setTotalRoadMapState = useSetRecoilState(totalRoadMapState);
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
-	// const setCompetitionRateState = useSetRecoilState(competitionRateState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
 	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
