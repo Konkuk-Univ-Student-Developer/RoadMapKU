@@ -68,24 +68,37 @@ const GradeButton = styled.button`
 	}
 `;
 
+const MessageContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #036b3f;
+`;
+
 const CompetitionTable = ({ haksuId }) => {
 	const { fetchCompetitionRate } = useField();
 	const [selectedGrade, setSelectedGrade] = useState(1);
+	const [errorMessage, setErrorMessage] = useState(null);
 	const setCompetitionRateState = useSetRecoilState(competitionRateState);
 	const competitionData = useRecoilValue(competitionRateState);
 
-	//API 이용
 	useEffect(() => {
 		const loadCompetitionRate = async () => {
 			if (haksuId) {
 				try {
 					const data = await fetchCompetitionRate(haksuId);
 					setCompetitionRateState(data);
+					setErrorMessage(null);
+					console.log('수강 경쟁률:', data);
 				} catch (error) {
-					console.error('Error fetching competition rate:', error);
+					if (error.response && error.response.status === 404) {
+						setErrorMessage('해당 학기 미개설');
+					} else {
+						setErrorMessage('데이터를 불러오는 중 문제가 발생했습니다.');
+					}
 					setCompetitionRateState(null);
 				}
-				console.log(competitionData);
 			}
 		};
 
@@ -122,57 +135,63 @@ const CompetitionTable = ({ haksuId }) => {
 
 	return (
 		<Container>
-			<TextContainer>* 2023,2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
-			{/* 전체 학년 정보 */}
-			<TableContainer>
-				<Table>
-					<thead>
-						<tr>
-							<Th>실 수강인원</Th>
-							<Th>수강 바구니</Th>
-							<Th>수강 정원</Th>
-							<Th>전체 경쟁률</Th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<Td>{competitionData?.totalApplicationNumber || '-'}</Td>
-							<Td>{gradeMapping['total'].capacity}</Td>
-							<Td>{gradeMapping['total'].students}</Td>
-							<Td>{gradeMapping['total'].rate}</Td>
-						</tr>
-					</tbody>
-				</Table>
-			</TableContainer>
+			<TextContainer>* 2024학년도 데이터를 기준으로 산출하였습니다.</TextContainer>
+			{errorMessage ? (
+				<MessageContainer>{errorMessage}</MessageContainer>
+			) : (
+				<>
+					{/* 전체 학년 정보 */}
+					<TableContainer>
+						<Table>
+							<thead>
+								<tr>
+									<Th>실 수강인원</Th>
+									<Th>수강 바구니</Th>
+									<Th>수강 정원</Th>
+									<Th>전체 경쟁률</Th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<Td>{competitionData?.totalApplicationNumber || '-'}</Td>
+									<Td>{gradeMapping['total'].capacity}</Td>
+									<Td>{gradeMapping['total'].students}</Td>
+									<Td>{gradeMapping['total'].rate}</Td>
+								</tr>
+							</tbody>
+						</Table>
+					</TableContainer>
 
-			{/* 학년 선택 버튼 */}
-			<ButtonContainer>
-				{[1, 2, 3, 4].map((grade) => (
-					<GradeButton key={grade} active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
-						{grade}학년
-					</GradeButton>
-				))}
-			</ButtonContainer>
+					{/* 학년 선택 버튼 */}
+					<ButtonContainer>
+						{[1, 2, 3, 4].map((grade) => (
+							<GradeButton key={grade} active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
+								{grade}학년
+							</GradeButton>
+						))}
+					</ButtonContainer>
 
-			{/* 선택된 학년 정보 */}
-			<TableContainer>
-				<Table>
-					<thead>
-						<tr>
-							<Th>수강 바구니</Th>
-							<Th>수강 정원</Th>
-							<Th>경쟁률</Th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<Td>{gradeMapping[selectedGrade].capacity}</Td>
-							<Td>{gradeMapping[selectedGrade].students}</Td>
-							<Td>{gradeMapping[selectedGrade].rate}</Td>
-						</tr>
-					</tbody>
-				</Table>
-			</TableContainer>
+					{/* 선택된 학년 정보 */}
+					<TableContainer>
+						<Table>
+							<thead>
+								<tr>
+									<Th>수강 바구니</Th>
+									<Th>수강 정원</Th>
+									<Th>경쟁률</Th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<Td>{gradeMapping[selectedGrade].capacity}</Td>
+									<Td>{gradeMapping[selectedGrade].students}</Td>
+									<Td>{gradeMapping[selectedGrade].rate}</Td>
+								</tr>
+							</tbody>
+						</Table>
+					</TableContainer>
+				</>
+			)}
 		</Container>
 	);
 };
