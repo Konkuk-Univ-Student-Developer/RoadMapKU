@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { allFieldDataState, selectedFieldLogState } from '../../recoils/atoms';
+import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '../../recoils/atoms';
 import { FaSearch } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
@@ -69,6 +69,7 @@ const SearchBar = () => {
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
 	const allFieldData = useRecoilValue(allFieldDataState);
+	const selectedField = useRecoilValue(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	const containerRef = useRef(null);
 
@@ -91,6 +92,11 @@ const SearchBar = () => {
 	const filteredFields = allFieldData.filter((field) => field.detailFieldCode && field.detailField.includes(userInput));
 
 	const onSuggestionItemClick = ({ middleField, smallField, detailField, detailFieldCode }) => {
+		if (selectedField?.detailField?.detailFieldCode === detailFieldCode) {
+			setIsFocused(false);
+			return;
+		}
+
 		const restructuredFieldData = {
 			middleField: { middleField },
 			smallField: { middleField, smallField },

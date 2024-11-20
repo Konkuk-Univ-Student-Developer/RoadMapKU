@@ -107,6 +107,8 @@ const FieldInput = () => {
 	};
 
 	const handleDetailFieldClick = async (field) => {
+		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) return;
+
 		const updatedFieldCodeList = {
 			...selectedField,
 			detailField: field
