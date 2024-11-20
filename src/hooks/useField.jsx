@@ -10,8 +10,7 @@ import {
 	competitionRateState,
 	allFieldDataState,
 	selectedSubjectState,
-	selectedFieldState,
-	isSmallFieldSelectedState
+	selectedFieldState
 } from '../recoils/atoms';
 import useApi from './useApi';
 
@@ -29,7 +28,6 @@ const useField = () => {
 	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 	const setSelectedFieldtState = useSetRecoilState(selectedFieldState);
-	const setIsSmallFieldSelectedState = useSetRecoilState(isSmallFieldSelectedState);
 
 	const fetchMiddleField = () => {
 		serverApi
@@ -148,7 +146,6 @@ const useField = () => {
 
 			const smallFieldResponse = await serverApi.post('/api/v2/field-search/small', middleField);
 			setSmallFieldState(smallFieldResponse.data);
-			setIsSmallFieldSelectedState(true);
 
 			const detailFieldResponse = await serverApi.post('/api/v2/field-search/detail', smallField);
 			setDetailFieldState(detailFieldResponse.data);
