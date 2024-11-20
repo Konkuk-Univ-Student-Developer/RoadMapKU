@@ -93,24 +93,20 @@ const FieldInput = () => {
 		fieldRefs.detail.current[selectedField.detailField?.detailField]?.scrollIntoView(scrollOption);
 	}
 
-	const handleMiddleFieldClick = (field) => {
-		fetchSmallField(field);
+	const handleMiddleFieldClick = async (field) => {
+		await fetchSmallField(field);
 		setSelectedField({ middleField: field });
 	};
 
-	const handleSmallFieldClick = (field) => {
-		fetchDetailField(field);
+	const handleSmallFieldClick = async (field) => {
+		await fetchDetailField(field);
 		setSelectedField((prevState) => ({
 			...prevState,
 			smallField: field
 		}));
 	};
 
-	const handleDetailFieldClick = (field) => {
-		resetSelectedSubjectState();
-
-		Promise.all([fetchSubjectsInField(field.detailFieldCode), fetchCoursesInFields(field.detailFieldCode)]);
-
+	const handleDetailFieldClick = async (field) => {
 		const updatedFieldCodeList = {
 			...selectedField,
 			detailField: field
@@ -130,6 +126,10 @@ const FieldInput = () => {
 			}
 			return newLog;
 		});
+
+		resetSelectedSubjectState();
+		await fetchSubjectsInField(field.detailFieldCode);
+		await fetchCoursesInFields(field.detailFieldCode);
 	};
 
 	return (
