@@ -3,7 +3,8 @@ import { Title } from './FieldCategory';
 import DepartmentListContents from './DepartmentListContents';
 
 const Container = styled.div`
-	width: 100%;
+	width: 20%;
+	height: 200px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -11,8 +12,10 @@ const Container = styled.div`
 
 const DepartmentContainer = styled.div`
 	margin: 10px 0;
+	min-height: 200px;
+	padding: 0 2px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	width: 95%;

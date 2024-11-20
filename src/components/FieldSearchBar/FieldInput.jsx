@@ -13,7 +13,7 @@ import {
 import { Title } from './FieldCategory';
 
 const FieldInputContainer = styled.div`
-	width: 95%;
+	width: 75%;
 	display: flex;
 	flex-direction: column;
 	align-items: start;

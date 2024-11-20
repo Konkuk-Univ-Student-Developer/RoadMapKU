@@ -22,12 +22,21 @@ const FieldSearchBarContainer = styled.div`
 		0 1px 3px rgba(0, 0, 0, 0.08);
 `;
 
+const ListContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+`;
+
 const FieldSearchBar = () => {
 	return (
 		<FieldSearchBarContainer>
 			<SearchBar />
-			<FieldInput />
-			<DepartmentList />
+			<ListContainer>
+				<FieldInput />
+				<DepartmentList />
+			</ListContainer>
 			<SearchLog />
 		</FieldSearchBarContainer>
 	);

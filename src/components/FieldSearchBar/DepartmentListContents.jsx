@@ -4,10 +4,10 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.button`
-	min-width: 250px;
-	margin: 5px 5px;
+	width: 100%;
+	margin: 5px 0;
 	font-family: inherit;
-	padding: 8px;
+	padding: 8px 0;
 	cursor: pointer;
 	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
 	border-radius: 4px;
