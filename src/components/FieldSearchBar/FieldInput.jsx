@@ -21,7 +21,7 @@ const FieldInputContainer = styled.div`
 
 const FieldInputContentsContainer = styled.div`
 	width: 100%;
-	height: 300px;
+	height: 200px;
 	background: white;
 	display: flex;
 	flex-direction: row;
