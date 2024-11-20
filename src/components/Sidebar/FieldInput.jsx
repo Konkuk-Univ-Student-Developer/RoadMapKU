@@ -8,7 +8,6 @@ import {
 	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	isSmallFieldSelectedState,
 	selectedSubjectState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
@@ -36,7 +35,7 @@ const FieldColumn = styled.div`
 	transition: width 0.3s ease;
 	width: ${({ width }) => width};
 	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc`};
-	${({ isSmallFieldSelected }) => isSmallFieldSelected && `display: block`};
+	display: ${({ isShowFieldColumn }) => (isShowFieldColumn ? 'block' : 'none')};
 `;
 
 const GridContainer = styled.div`
@@ -77,7 +76,6 @@ const FieldInput = () => {
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
-	const [isSmallFieldSelected, setIsSmallFieldSelected] = useRecoilState(isSmallFieldSelectedState);
 
 	const fieldRefs = {
 		middle: useRef({}),
@@ -97,13 +95,11 @@ const FieldInput = () => {
 
 	const handleMiddleFieldClick = (field) => {
 		fetchSmallField(field);
-		setIsSmallFieldSelected(false);
 		setSelectedField({ middleField: field });
 	};
 
 	const handleSmallFieldClick = (field) => {
 		fetchDetailField(field);
-		setIsSmallFieldSelected(true);
 		setSelectedField((prevState) => ({
 			...prevState,
 			smallField: field
@@ -141,8 +137,8 @@ const FieldInput = () => {
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
 				<FieldColumn
-					width={selectedField.middleField ? (isSmallFieldSelected ? '16.6%' : '33.3%') : '100%'}
-					isSmallFieldSelected={isSmallFieldSelected}
+					width={selectedField.middleField ? (selectedField.smallField ? '16.6%' : '33.3%') : '100%'}
+					isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
 						<ListContainer>
@@ -174,11 +170,11 @@ const FieldInput = () => {
 				</FieldColumn>
 
 				<FieldColumn
-					width={isSmallFieldSelected ? '16.6%' : '66.6%'}
-					showBorder={isSmallFieldSelected}
-					style={{ display: selectedField.middleField ? 'block' : 'none' }}
+					width={selectedField.smallField ? '16.6%' : '66.6%'}
+					showBorder={selectedField.smallField}
+					isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
 				>
-					{isSmallFieldSelected ? (
+					{selectedField.smallField ? (
 						<ListContainer>
 							{smallFields.map((field, index) => (
 								<FieldItem
@@ -207,7 +203,7 @@ const FieldInput = () => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="66.6%" style={{ display: isSmallFieldSelected ? 'block' : 'none' }}>
+				<FieldColumn width="66.6%" isShowFieldColumn={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem
