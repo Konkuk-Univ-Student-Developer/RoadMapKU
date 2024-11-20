@@ -35,7 +35,8 @@ const FieldColumn = styled.div`
 	overflow-y: auto;
 	transition: width 0.3s ease;
 	width: ${({ width }) => width};
-	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc;`}
+	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc`};
+	${({ isSmallFieldSelected }) => isSmallFieldSelected && `display: block`};
 `;
 
 const GridContainer = styled.div`
@@ -139,22 +140,44 @@ const FieldInput = () => {
 		<FieldInputContainer>
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
-				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '33.3%'}>
-					<ListContainer>
-						{middleFields.map((field, index) => (
-							<FieldItem
-								key={index}
-								onClick={() => handleMiddleFieldClick(field)}
-								isSelected={selectedField.middleField?.middleField === field.middleField}
-								ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
-							>
-								{field.middleField}
-							</FieldItem>
-						))}
-					</ListContainer>
+				<FieldColumn
+					width={selectedField.middleField ? (isSmallFieldSelected ? '16.6%' : '33.3%') : '100%'}
+					isSmallFieldSelected={isSmallFieldSelected}
+				>
+					{selectedField.middleField ? (
+						<ListContainer>
+							{middleFields.map((field, index) => (
+								<FieldItem
+									key={index}
+									onClick={() => handleMiddleFieldClick(field)}
+									isSelected={selectedField.middleField?.middleField === field.middleField}
+									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
+								>
+									{field.middleField}
+								</FieldItem>
+							))}
+						</ListContainer>
+					) : (
+						<GridContainer>
+							{middleFields.map((field, index) => (
+								<FieldItem
+									key={index}
+									onClick={() => handleMiddleFieldClick(field)}
+									isSelected={selectedField.middleField?.middleField === field.middleField}
+									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
+								>
+									{field.middleField}
+								</FieldItem>
+							))}
+						</GridContainer>
+					)}
 				</FieldColumn>
 
-				<FieldColumn width={isSmallFieldSelected ? '16.6%' : '66.6%'} showBorder={isSmallFieldSelected}>
+				<FieldColumn
+					width={isSmallFieldSelected ? '16.6%' : '66.6%'}
+					showBorder={isSmallFieldSelected}
+					style={{ display: selectedField.middleField ? 'block' : 'none' }}
+				>
 					{isSmallFieldSelected ? (
 						<ListContainer>
 							{smallFields.map((field, index) => (
