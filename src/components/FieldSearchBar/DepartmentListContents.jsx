@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
-const SelectedDepartment = styled.button`
+const SelectedDepartment = styled.div`
 	min-width: 250px;
 	margin: 5px 5px;
 	font-family: inherit;
@@ -36,7 +36,7 @@ function DepartmentListContents() {
 	};
 
 	if (!subjects.length) {
-		return <SelectedDepartment style={{ height: '37.5px' }} isSelected={true} />;
+		return <SelectedDepartment style={{ height: '21px' }} isSelected={true} />;
 	}
 
 	return (
