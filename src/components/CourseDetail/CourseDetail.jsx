@@ -8,7 +8,7 @@ import Modal from '../Modal/Modal';
 import useField from '../../hooks/useField';
 import MenuList from './MenuList';
 import CompetitionTable from './CompetitionTable';
-import { scrollOption } from '../Sidebar/FieldInput';
+import { scrollOption } from '../FieldSearchBar/FieldInput';
 
 function CourseDetail({ onClose, HaksuId }) {
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);

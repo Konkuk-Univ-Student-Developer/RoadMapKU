@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 import FieldInput from './FieldInput';
 import SearchLog from './SearchLog';
 
-const SidebarContainer = styled.div`
+const FieldSearchBarContainer = styled.div`
 	width: 85%;
 	gap: 10px;
 	min-width: 600px;
@@ -22,15 +22,15 @@ const SidebarContainer = styled.div`
 		0 1px 3px rgba(0, 0, 0, 0.08);
 `;
 
-const Sidebar = () => {
+const FieldSearchBar = () => {
 	return (
-		<SidebarContainer>
+		<FieldSearchBarContainer>
 			<SearchBar />
 			<FieldInput />
 			<DepartmentList />
 			<SearchLog />
-		</SidebarContainer>
+		</FieldSearchBarContainer>
 	);
 };
 
-export default Sidebar;
+export default FieldSearchBar;

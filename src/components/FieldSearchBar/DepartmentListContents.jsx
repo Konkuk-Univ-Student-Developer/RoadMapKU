@@ -3,19 +3,20 @@ import styled from 'styled-components';
 import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 
-const SelectedDepartment = styled.button`
-	font-family: inherit;
+const SelectedDepartment = styled.div`
 	min-width: 250px;
-	height: 30px;
 	margin: 5px 5px;
-	font-size: 20px;
+	font-family: inherit;
+	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#ffffff')};
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	width: auto;
+	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
+	border-radius: 4px;
+	text-align: center;
+	font-size: large;
+	border: none;
+
 	&:hover {
-		background-color: #d3d3d3;
+		background-color: #e0e0e0;
 	}
 `;
 
@@ -35,7 +36,7 @@ function DepartmentListContents() {
 	};
 
 	if (!subjects.length) {
-		return <SelectedDepartment isSelected={true} />;
+		return <SelectedDepartment style={{ height: '21px' }} isSelected={true} />;
 	}
 
 	return (

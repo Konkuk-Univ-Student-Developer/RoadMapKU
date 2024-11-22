@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Sidebar from './Sidebar/Sidebar';
+import FieldSearchBar from './FieldSearchBar/FieldSearchBar';
 import RoadMapContainer from './RoadMap/RoadMapContainer';
 
 const Container = styled.div`
@@ -18,16 +18,16 @@ const Content = styled.div`
 `;
 
 const Main = () => {
-	const [showSidebar, setShowSidebar] = useState(true);
+	const [showFieldSearchBar, setShowFieldSearchBar] = useState(true);
 
-	const toggleSidebar = () => {
-		setShowSidebar((prevShowSidebar) => !prevShowSidebar);
+	const toggleFieldSearchBar = () => {
+		setShowFieldSearchBar((prevShowFieldSearchBar) => !prevShowFieldSearchBar);
 	};
 
 	return (
 		<>
 			<Container>
-				<Sidebar show={showSidebar} toggleSidebar={toggleSidebar} />
+				<FieldSearchBar show={showFieldSearchBar} toggleFieldSearchBar={toggleFieldSearchBar} />
 				<Content>
 					<RoadMapContainer />
 				</Content>

@@ -188,7 +188,7 @@ function HowTo() {
 							💡 중요 Tip! 각 전공역량 옆 화살표를 클릭하면 해당 전공역량을 기를 수 있는 교과목을 확인할 수 있답니다.
 						</StepTitle3>
 
-						<Illustration src={majorchoice} alt="Sidebar illustration" />
+						<Illustration src={majorchoice} alt="FieldSearchBar illustration" />
 					</Section>
 				</SubContainer>
 
