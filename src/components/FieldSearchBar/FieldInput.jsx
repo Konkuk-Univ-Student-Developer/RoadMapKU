@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
@@ -11,16 +11,7 @@ import {
 	selectedSubjectState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
-
-const fadeIn = keyframes`
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-`;
+import { fadeIn } from '../../style/Frames';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
