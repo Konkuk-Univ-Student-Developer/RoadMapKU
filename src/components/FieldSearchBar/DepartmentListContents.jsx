@@ -9,7 +9,7 @@ const SelectedDepartment = styled.div`
 	font-family: inherit;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : 'white')};
+	background-color: ${({ $isSelected }) => ($isSelected ? '#d3d3d3' : 'white')};
 	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
@@ -39,7 +39,7 @@ function DepartmentListContents() {
 		<>
 			{subjects.length > 0 && (
 				<SelectedDepartment
-					isSelected={selectedDepartment.subjectCode === -1}
+					$isSelected={selectedDepartment.subjectCode === -1}
 					onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
 				>
 					전체 학과
@@ -49,7 +49,7 @@ function DepartmentListContents() {
 				return (
 					<SelectedDepartment
 						key={subject.subjectCode}
-						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
+						$isSelected={selectedDepartment.subjectCode === subject.subjectCode}
 						onClick={() =>
 							handleDepartmentClick(
 								selectedField.detailField?.detailFieldCode,

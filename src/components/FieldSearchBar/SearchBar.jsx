@@ -25,7 +25,7 @@ const SearchBarContent = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	border: 1.5px solid #036b3f;
+	border: ${({ $isFocused }) => $isFocused && '1px solid #036b3f'};
 `;
 
 const SearchBarInput = styled.input`
@@ -125,7 +125,7 @@ const SearchBar = ({ showHandler }) => {
 
 	return (
 		<SearchBarContainer>
-			<SearchBarContent>
+			<SearchBarContent $isFocused={isFocused}>
 				<SearchBarInput
 					type="text"
 					placeholder="직군을 입력해주세요"

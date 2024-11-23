@@ -36,8 +36,8 @@ const FieldColumn = styled.div`
 	overflow-y: auto;
 	transition: width 0.3s ease;
 	width: ${({ width }) => width};
-	${({ showBorder }) => showBorder && `box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1)`};
-	display: ${({ isShowFieldColumn }) => (isShowFieldColumn ? 'block' : 'none')};
+	${({ $showBorder }) => $showBorder && `box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1)`};
+	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
 
 const GridContainer = styled.div`
@@ -58,7 +58,7 @@ const FieldItem = styled.div`
 	justify-content: center;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : 'white')};
+	background-color: ${(props) => (props.$isSelected ? '#d3d3d3' : 'white')};
 	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
@@ -148,7 +148,7 @@ const FieldInput = ({ showHandler }) => {
 			<FieldInputContentsContainer>
 				<FieldColumn
 					width={selectedField.middleField ? (selectedField.smallField ? '16.6%' : '33.3%') : '100%'}
-					isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
+					$isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
 						<ListContainer>
@@ -156,7 +156,7 @@ const FieldInput = ({ showHandler }) => {
 								<FieldItem
 									key={index}
 									onClick={() => handleMiddleFieldClick(field)}
-									isSelected={selectedField.middleField?.middleField === field.middleField}
+									$isSelected={selectedField.middleField?.middleField === field.middleField}
 									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
 								>
 									{field.middleField}
@@ -169,7 +169,7 @@ const FieldInput = ({ showHandler }) => {
 								<FieldItem
 									key={index}
 									onClick={() => handleMiddleFieldClick(field)}
-									isSelected={selectedField.middleField?.middleField === field.middleField}
+									$isSelected={selectedField.middleField?.middleField === field.middleField}
 									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
 								>
 									{field.middleField}
@@ -181,8 +181,8 @@ const FieldInput = ({ showHandler }) => {
 
 				<FieldColumn
 					width={selectedField.smallField ? '16.6%' : '66.6%'}
-					isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
-					showBorder={selectedField.middleField}
+					$isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
+					$showBorder={selectedField.middleField}
 				>
 					{selectedField.smallField ? (
 						<ListContainer>
@@ -190,7 +190,7 @@ const FieldInput = ({ showHandler }) => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallField === field.smallField}
+									$isSelected={selectedField.smallField?.smallField === field.smallField}
 									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
@@ -203,7 +203,7 @@ const FieldInput = ({ showHandler }) => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallField === field.smallField}
+									$isSelected={selectedField.smallField?.smallField === field.smallField}
 									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
@@ -213,13 +213,13 @@ const FieldInput = ({ showHandler }) => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="66.6%" isShowFieldColumn={selectedField.smallField} showBorder={selectedField.smallField}>
+				<FieldColumn width="66.6%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
-								isSelected={selectedField.detailField?.detailField === field.detailField}
+								$isSelected={selectedField.detailField?.detailField === field.detailField}
 								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
 							>
 								{field.detailField}
