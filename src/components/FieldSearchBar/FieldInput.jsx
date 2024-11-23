@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
@@ -12,11 +12,22 @@ import {
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+`;
+
 const FieldInputContainer = styled.div`
 	width: 95%;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
+	animation: ${fadeIn} 0.2s ease-in-out;
 `;
 
 const FieldInputContentsContainer = styled.div`
@@ -70,7 +81,7 @@ export const scrollOption = {
 	block: 'center'
 };
 
-const FieldInput = () => {
+const FieldInput = ({ showHandler }) => {
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
 	const middleFields = useRecoilValue(middleFieldState);
@@ -136,6 +147,8 @@ const FieldInput = () => {
 		resetSelectedSubjectState();
 		await fetchSubjectsInField(field.detailFieldCode);
 		await fetchCoursesInFields(field.detailFieldCode);
+
+		showHandler(true);
 	};
 
 	return (

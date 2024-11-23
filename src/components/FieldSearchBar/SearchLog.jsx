@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Title } from './FieldCategory';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFieldLogState } from '../../recoils/atoms';
@@ -6,11 +6,22 @@ import useField from '../../hooks/useField';
 import { FaX } from 'react-icons/fa6';
 import { FaTrash } from 'react-icons/fa';
 
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+	}
+		
+	to {
+		opacity: 1;
+	}
+`;
+
 const Container = styled.div`
 	width: 95%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	animation: ${fadeIn} 0.2s ease-in-out;
 `;
 
 const TitleContainer = styled.div`

@@ -1,12 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Title } from './FieldCategory';
 import DepartmentListContents from './DepartmentListContents';
+
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+	}
+		
+	to {
+		opacity: 1;
+	}
+`;
 
 const Container = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	animation: ${fadeIn} 0.2s ease-in-out;
 `;
 
 const DepartmentContainer = styled.div`

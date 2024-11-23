@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import DepartmentList from './DepartmentList';
 import SearchBar from './SearchBar';
@@ -23,12 +23,18 @@ const FieldSearchBarContainer = styled.div`
 `;
 
 const FieldSearchBar = () => {
+	const [isShowDepartAndLog, setIsShowDepartAndLog] = useState(false);
+
 	return (
 		<FieldSearchBarContainer>
-			<SearchBar />
-			<FieldInput />
-			<DepartmentList />
-			<SearchLog />
+			<SearchBar showHandler={setIsShowDepartAndLog} />
+			<FieldInput showHandler={setIsShowDepartAndLog} />
+			{isShowDepartAndLog && (
+				<>
+					<DepartmentList />
+					<SearchLog />
+				</>
+			)}
 		</FieldSearchBarContainer>
 	);
 };

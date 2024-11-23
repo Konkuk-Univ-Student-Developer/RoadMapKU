@@ -66,7 +66,7 @@ const SuggestionItem = styled.div`
 	}
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ showHandler }) => {
 	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
@@ -120,6 +120,7 @@ const SearchBar = () => {
 			return newLog;
 		});
 		setIsFocused(false);
+		showHandler(true);
 	};
 
 	return (
