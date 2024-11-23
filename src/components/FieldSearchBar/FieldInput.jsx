@@ -34,7 +34,7 @@ const FieldColumn = styled.div`
 	overflow-y: auto;
 	transition: width 0.3s ease;
 	width: ${({ width }) => width};
-	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc`};
+	${({ showBorder }) => showBorder && `box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1)`};
 	display: ${({ isShowFieldColumn }) => (isShowFieldColumn ? 'block' : 'none')};
 `;
 
@@ -176,8 +176,8 @@ const FieldInput = () => {
 
 				<FieldColumn
 					width={selectedField.smallField ? '16.6%' : '66.6%'}
-					showBorder={selectedField.smallField}
 					isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
+					showBorder={selectedField.middleField}
 				>
 					{selectedField.smallField ? (
 						<ListContainer>
@@ -208,7 +208,7 @@ const FieldInput = () => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="66.6%" isShowFieldColumn={selectedField.smallField}>
+				<FieldColumn width="66.6%" isShowFieldColumn={selectedField.smallField} showBorder={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem
