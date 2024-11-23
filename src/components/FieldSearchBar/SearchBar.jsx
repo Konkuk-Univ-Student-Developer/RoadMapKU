@@ -24,6 +24,8 @@ const SearchBarContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	border: 1.5px solid #036b3f;
 `;
 
 const SearchBarInput = styled.input`
