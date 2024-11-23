@@ -14,12 +14,12 @@ const FieldSearchBarContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #e6f0ec;
 	border-radius: 10px;
 	height: fit-content;
 	box-shadow:
 		0 2px 5px rgba(0, 0, 0, 0.1),
 		0 1px 3px rgba(0, 0, 0, 0.08);
+	border: 1px solid silver;
 `;
 
 const FieldSearchBar = () => {
