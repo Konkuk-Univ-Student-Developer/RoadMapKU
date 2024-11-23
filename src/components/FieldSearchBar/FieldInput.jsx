@@ -56,7 +56,8 @@ const FieldItem = styled.div`
 	justify-content: center;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
+	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : 'white')};
+	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
 	&:hover {
