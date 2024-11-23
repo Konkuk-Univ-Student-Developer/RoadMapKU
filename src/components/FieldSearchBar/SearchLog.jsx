@@ -4,6 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFieldLogState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 import { FaX } from 'react-icons/fa6';
+import { FaTrash } from 'react-icons/fa';
 
 const Container = styled.div`
 	width: 95%;
@@ -15,31 +16,33 @@ const Container = styled.div`
 const TitleContainer = styled.div`
 	width: 100%;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
 `;
 
 const SearchLogContainer = styled.div`
-	width: 100%;
+	gap: 5px;
+	width: 98%;
+	min-height: 75px;
 	margin-bottom: 10px;
+	padding: 0.5% 1%;
 	background-color: white;
 	border-radius: 4px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
+	align-items: start;
+	flex-wrap: wrap;
 `;
 
 const LogItem = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 8px 10px;
-	margin: 5px 0;
-	width: 95%;
-	background-color: #ffffff;
-	border: 1px solid #e0e0e0;
-	border-radius: 4px;
+	padding: 8px;
+	background-color: white;
+	border: 1.5px solid #c0c0c0;
+	border-radius: 20px;
 	cursor: pointer;
 
 	&:hover {
@@ -48,7 +51,7 @@ const LogItem = styled.div`
 `;
 
 const LogText = styled.span`
-	font-size: 14px;
+	font-size: 13px;
 	color: black;
 `;
 
@@ -56,28 +59,29 @@ const DeleteButton = styled.button`
 	background: none;
 	border: none;
 	cursor: pointer;
-	color: #d9534f;
-	font-size: 16px;
+	font-size: 13px;
 	display: flex;
 	align-items: center;
 	transition: transform 0.2s ease;
+	color: #8e8e8e;
 
 	&:hover {
 		transform: scale(1.3);
 	}
 `;
 
-const DeleteAllButton = styled.button`
-	background: none;
-	border: none;
+const DeleteAllButton = styled.div`
+	width: 140px;
 	cursor: pointer;
-	color: #d9534f;
-	font-size: 16px;
+	color: #036b3f;
+	font-size: 15px;
+	font-weight: 700;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 
 	&:hover {
-		color: #c9300b;
+		color: #d9534f;
 	}
 `;
 
@@ -96,7 +100,10 @@ const SearchLog = () => {
 		<Container>
 			<TitleContainer>
 				<Title>검색기록</Title>
-				<DeleteAllButton onClick={onClickDeleteAllLogs}>모든 검색기록 삭제</DeleteAllButton>
+				<DeleteAllButton onClick={onClickDeleteAllLogs}>
+					모든 검색기록 삭제
+					<FaTrash />
+				</DeleteAllButton>
 			</TitleContainer>
 			<SearchLogContainer>
 				{selectedFieldLogList.map((field, index) => {
