@@ -24,15 +24,20 @@ const FieldSearchBarContainer = styled.div`
 
 const FieldSearchBar = () => {
 	const [isShowDepartAndLog, setIsShowDepartAndLog] = useState(false);
+	const [isToggleOn, setIsToggleOn] = useState(true);
 
 	return (
 		<FieldSearchBarContainer>
-			<SearchBar showHandler={setIsShowDepartAndLog} />
-			<FieldInput showHandler={setIsShowDepartAndLog} isShowDepartAndLog={isShowDepartAndLog} />
-			{isShowDepartAndLog && (
+			<SearchBar showHandler={setIsShowDepartAndLog} isToggleOn={isToggleOn} setIsToggleOn={setIsToggleOn} />
+			{isToggleOn && (
 				<>
-					<DepartmentList />
-					<SearchLog />
+					<FieldInput showHandler={setIsShowDepartAndLog} isShowDepartAndLog={isShowDepartAndLog} />
+					{isShowDepartAndLog && (
+						<>
+							<DepartmentList />
+							<SearchLog />
+						</>
+					)}
 				</>
 			)}
 		</FieldSearchBarContainer>
