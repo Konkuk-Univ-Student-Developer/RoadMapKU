@@ -19,6 +19,7 @@ const FieldInputContainer = styled.div`
 	flex-direction: column;
 	align-items: start;
 	animation: ${fadeIn} 0.2s ease-in-out;
+	margin-bottom: ${({ isShowDepartAndLog }) => !isShowDepartAndLog && '15px'};
 `;
 
 const FieldInputContentsContainer = styled.div`
@@ -72,7 +73,7 @@ export const scrollOption = {
 	block: 'center'
 };
 
-const FieldInput = ({ showHandler }) => {
+const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
 	const middleFields = useRecoilValue(middleFieldState);
@@ -143,7 +144,7 @@ const FieldInput = ({ showHandler }) => {
 	};
 
 	return (
-		<FieldInputContainer>
+		<FieldInputContainer isShowDepartAndLog={isShowDepartAndLog}>
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
 				<FieldColumn

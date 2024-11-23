@@ -28,7 +28,7 @@ const FieldSearchBar = () => {
 	return (
 		<FieldSearchBarContainer>
 			<SearchBar showHandler={setIsShowDepartAndLog} />
-			<FieldInput showHandler={setIsShowDepartAndLog} />
+			<FieldInput showHandler={setIsShowDepartAndLog} isShowDepartAndLog={isShowDepartAndLog} />
 			{isShowDepartAndLog && (
 				<>
 					<DepartmentList />
