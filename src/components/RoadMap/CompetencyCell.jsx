@@ -1,7 +1,16 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const StyledCell = styled.div`
 	min-height: 2rem;
@@ -16,6 +25,9 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+
+	opacity: 1;
+	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;

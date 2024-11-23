@@ -1,7 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../../Animation/Animation';
 import CourseDetail from '../../CourseDetail/CourseDetail';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const Button = styled.div`
 	width: 100%;
@@ -32,6 +41,9 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	position: relative;
+
+	opacity: 1;
+	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
 		background-color: #d9d9d9;
