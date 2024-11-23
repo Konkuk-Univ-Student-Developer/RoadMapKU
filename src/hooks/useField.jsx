@@ -23,7 +23,6 @@ const useField = () => {
 	const setCourseByCompetencyInSubjectState = useSetRecoilState(courseByCompetencyInSubjectState);
 	const setCourseDetailState = useSetRecoilState(courseDetailState);
 	const setAllFieldState = useSetRecoilState(allFieldDataState);
-	const resetSubjectsInFieldState = useResetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 	const setSelectedFieldState = useSetRecoilState(selectedFieldState);
 
@@ -32,7 +31,6 @@ const useField = () => {
 			.get('/api/v2/field-search/middle')
 			.then((res) => {
 				setMiddleFieldState(res.data);
-				resetSubjectsInFieldState();
 			})
 			.catch((error) => {
 				console.error(error);
@@ -44,7 +42,6 @@ const useField = () => {
 			.post('/api/v2/field-search/small', requestSmall)
 			.then((res) => {
 				setSmallFieldState(res.data);
-				resetSubjectsInFieldState();
 			})
 			.catch((error) => {
 				console.error(error);
@@ -56,7 +53,6 @@ const useField = () => {
 			.post('/api/v2/field-search/detail', requestDetail)
 			.then((res) => {
 				setDetailFieldState(res.data);
-				resetSubjectsInFieldState();
 			})
 			.catch((error) => {
 				console.error(error);

@@ -8,7 +8,8 @@ import {
 	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	selectedSubjectState
+	selectedSubjectState,
+	subjectsInFieldState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
 import { fadeIn } from '../../style/Frames';
@@ -19,7 +20,7 @@ const FieldInputContainer = styled.div`
 	flex-direction: column;
 	align-items: start;
 	animation: ${fadeIn} 0.2s ease-in-out;
-	margin-bottom: ${({ isShowDepartAndLog }) => !isShowDepartAndLog && '15px'};
+	margin-bottom: ${({ $isShowDepartAndLog }) => !$isShowDepartAndLog && '15px'};
 `;
 
 const FieldInputContentsContainer = styled.div`
@@ -36,7 +37,7 @@ const FieldColumn = styled.div`
 	padding: 16px;
 	overflow-y: auto;
 	transition: width 0.3s ease;
-	width: ${({ width }) => width};
+	width: ${({ $width }) => $width};
 	${({ $showBorder }) => $showBorder && `box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1)`};
 	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
@@ -86,6 +87,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
+	const setSubjectsInField = useSetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 
 	const fieldRefs = {
@@ -107,6 +109,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	const handleMiddleFieldClick = async (field) => {
 		await fetchSmallField(field);
 		setSelectedField({ middleField: field });
+		setSubjectsInField([]);
 	};
 
 	const handleSmallFieldClick = async (field) => {
@@ -115,6 +118,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 			...prevState,
 			smallField: field
 		}));
+		setSubjectsInField([]);
 	};
 
 	const handleDetailFieldClick = async (field) => {
@@ -148,11 +152,11 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	};
 
 	return (
-		<FieldInputContainer isShowDepartAndLog={isShowDepartAndLog}>
+		<FieldInputContainer $isShowDepartAndLog={isShowDepartAndLog}>
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
 				<FieldColumn
-					width={selectedField.middleField ? (selectedField.smallField ? '20%' : '40%') : '100%'}
+					$width={selectedField.middleField ? (selectedField.smallField ? '20%' : '40%') : '100%'}
 					$isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
@@ -185,7 +189,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 				</FieldColumn>
 
 				<FieldColumn
-					width={selectedField.smallField ? '20%' : '60%'}
+					$width={selectedField.smallField ? '20%' : '60%'}
 					$isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
 					$showBorder={selectedField.middleField}
 				>
@@ -218,7 +222,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
+				<FieldColumn $width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem
