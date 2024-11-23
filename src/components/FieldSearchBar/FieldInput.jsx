@@ -24,7 +24,7 @@ const FieldInputContainer = styled.div`
 
 const FieldInputContentsContainer = styled.div`
 	width: 100%;
-	height: 200px;
+	height: 210px;
 	background: white;
 	display: flex;
 	flex-direction: row;
@@ -43,17 +43,20 @@ const FieldColumn = styled.div`
 
 const GridContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	gap: 8px;
+	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
+	gap: 10px;
 `;
 
 const ListContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 8px;
 `;
 
 const FieldItem = styled.div`
+	width: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -63,6 +66,7 @@ const FieldItem = styled.div`
 	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
+
 	&:hover {
 		background-color: #e0e0e0;
 	}
@@ -148,7 +152,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
 				<FieldColumn
-					width={selectedField.middleField ? (selectedField.smallField ? '16.6%' : '33.3%') : '100%'}
+					width={selectedField.middleField ? (selectedField.smallField ? '20%' : '40%') : '100%'}
 					$isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
@@ -165,7 +169,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 							))}
 						</ListContainer>
 					) : (
-						<GridContainer>
+						<GridContainer $columnCount={'5'}>
 							{middleFields.map((field, index) => (
 								<FieldItem
 									key={index}
@@ -181,7 +185,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 				</FieldColumn>
 
 				<FieldColumn
-					width={selectedField.smallField ? '16.6%' : '66.6%'}
+					width={selectedField.smallField ? '20%' : '60%'}
 					$isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
 					$showBorder={selectedField.middleField}
 				>
@@ -214,7 +218,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="66.6%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
+				<FieldColumn width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem

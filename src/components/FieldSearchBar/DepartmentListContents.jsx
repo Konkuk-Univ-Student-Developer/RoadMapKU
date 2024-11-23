@@ -4,9 +4,8 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.div`
-	min-width: 250px;
+	width: 15.2%;
 	margin: 5px 5px;
-	font-family: inherit;
 	padding: 8px;
 	cursor: pointer;
 	background-color: ${({ $isSelected }) => ($isSelected ? '#d3d3d3' : 'white')};
@@ -14,6 +13,8 @@ const SelectedDepartment = styled.div`
 	border-radius: 4px;
 	text-align: center;
 	font-size: large;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
 	&:hover {
 		background-color: #e0e0e0;
