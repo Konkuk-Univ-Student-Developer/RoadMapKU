@@ -6,6 +6,7 @@ import HowToPage from './pages/HowToPage';
 import AboutUs from './pages/AboutUs';
 import AboutKumap from './pages/AboutKumap';
 import GlobalStyle from './components/GlobalStyle';
+import '../src/font/font.css';
 
 function App() {
 	return (
