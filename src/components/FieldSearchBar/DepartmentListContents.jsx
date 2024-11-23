@@ -35,18 +35,16 @@ function DepartmentListContents() {
 		}
 	};
 
-	if (!subjects.length) {
-		return <SelectedDepartment style={{ height: '21px' }} isSelected={true} />;
-	}
-
 	return (
 		<>
-			<SelectedDepartment
-				isSelected={selectedDepartment.subjectCode === -1}
-				onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
-			>
-				전체 학과
-			</SelectedDepartment>
+			{subjects.length > 0 && (
+				<SelectedDepartment
+					isSelected={selectedDepartment.subjectCode === -1}
+					onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
+				>
+					전체 학과
+				</SelectedDepartment>
+			)}
 			{subjects.map((subject) => {
 				return (
 					<SelectedDepartment
