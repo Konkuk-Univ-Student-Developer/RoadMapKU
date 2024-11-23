@@ -4,6 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFieldLogState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 import { FaX } from 'react-icons/fa6';
+import { FaTrash } from 'react-icons/fa';
 
 const Container = styled.div`
 	width: 95%;
@@ -15,7 +16,7 @@ const Container = styled.div`
 const TitleContainer = styled.div`
 	width: 100%;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
 `;
 
@@ -68,17 +69,18 @@ const DeleteButton = styled.button`
 	}
 `;
 
-const DeleteAllButton = styled.button`
-	background: none;
-	border: none;
+const DeleteAllButton = styled.div`
+	width: 140px;
 	cursor: pointer;
-	color: #d9534f;
-	font-size: 16px;
+	color: #036b3f;
+	font-size: 15px;
+	font-weight: 700;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 
 	&:hover {
-		color: #c9300b;
+		color: #d9534f;
 	}
 `;
 
@@ -97,7 +99,10 @@ const SearchLog = () => {
 		<Container>
 			<TitleContainer>
 				<Title>검색기록</Title>
-				<DeleteAllButton onClick={onClickDeleteAllLogs}>모든 검색기록 삭제</DeleteAllButton>
+				<DeleteAllButton onClick={onClickDeleteAllLogs}>
+					모든 검색기록 삭제
+					<FaTrash />
+				</DeleteAllButton>
 			</TitleContainer>
 			<SearchLogContainer>
 				{selectedFieldLogList.map((field, index) => {
