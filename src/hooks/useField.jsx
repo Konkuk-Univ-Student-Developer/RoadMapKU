@@ -55,8 +55,8 @@ const useField = () => {
 		serverApi
 			.post('/api/v2/field-search/detail', requestDetail)
 			.then((res) => {
-				resetSelectedSubjectState();
 				setDetailFieldState(res.data);
+				resetSubjectsInFieldState();
 			})
 			.catch((error) => {
 				console.error(error);
