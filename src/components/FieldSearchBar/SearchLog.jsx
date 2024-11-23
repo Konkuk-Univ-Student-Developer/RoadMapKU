@@ -63,6 +63,7 @@ const DeleteButton = styled.button`
 	display: flex;
 	align-items: center;
 	transition: transform 0.2s ease;
+	color: #8e8e8e;
 
 	&:hover {
 		transform: scale(1.3);
