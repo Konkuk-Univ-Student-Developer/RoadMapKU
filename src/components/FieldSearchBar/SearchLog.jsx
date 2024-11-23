@@ -3,18 +3,8 @@ import { Title } from './FieldCategory';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFieldLogState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
-import { FaX } from 'react-icons/fa6';
-import { FaTrash } from 'react-icons/fa';
-
-const fadeIn = keyframes`
-	from {
-		opacity: 0;
-	}
-		
-	to {
-		opacity: 1;
-	}
-`;
+import { FaX, FaTrash } from 'react-icons/fa6';
+import { fadeIn } from '../../style/Frames';
 
 const Container = styled.div`
 	width: 95%;
