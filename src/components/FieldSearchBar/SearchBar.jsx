@@ -25,7 +25,7 @@ const SearchBarContent = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	border: ${({ $isFocused }) => $isFocused && '1px solid #036b3f'};
+	border: ${({ $isFocused }) => ($isFocused ? '1px solid #036b3f' : '1px solid silver')};
 `;
 
 const SearchBarInput = styled.input`
