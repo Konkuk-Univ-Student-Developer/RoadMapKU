@@ -40,7 +40,7 @@ const HeaderLink = styled.a`
 	cursor: pointer;
 	text-decoration: none;
 	user-select: none;
-	${(props) => (props.active ? theme.active.on : theme.active.off)}
+	${({ $active }) => ($active ? theme.active.on : theme.active.off)}
 	&:hover {
 		color: black;
 	}
@@ -81,23 +81,23 @@ function HeaderBar() {
 					<KUMAPLogo />
 				</HeaderBrand>
 				<HeaderLinks>
-					<HeaderLink onClick={() => navigate('/')} active={pathname === '/'}>
+					<HeaderLink onClick={() => navigate('/')} $active={pathname === '/'}>
 						홈
 					</HeaderLink>
 
-					<HeaderLink onClick={() => navigate('/manual')} active={pathname === '/manual'}>
+					<HeaderLink onClick={() => navigate('/manual')} $active={pathname === '/manual'}>
 						소개
 					</HeaderLink>
 
-					<HeaderLink onClick={() => navigate('/howtopage')} active={pathname === '/howtopage'}>
+					<HeaderLink onClick={() => navigate('/howtopage')} $active={pathname === '/howtopage'}>
 						사용법
 					</HeaderLink>
 
-					<HeaderLink onClick={() => navigate('/road-map')} active={pathname === '/road-map'}>
+					<HeaderLink onClick={() => navigate('/road-map')} $active={pathname === '/road-map'}>
 						KUMAP
 					</HeaderLink>
 
-					<HeaderLink onClick={() => navigate('/about-us')} active={pathname === '/about-us'}>
+					<HeaderLink onClick={() => navigate('/about-us')} $active={pathname === '/about-us'}>
 						쿠스디는?
 					</HeaderLink>
 				</HeaderLinks>

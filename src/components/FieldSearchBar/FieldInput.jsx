@@ -8,20 +8,24 @@ import {
 	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	selectedSubjectState
+	selectedSubjectState,
+	subjectsInFieldState
 } from '../../recoils/atoms';
 import { Title } from './FieldCategory';
+import { fadeIn } from '../../style/Frames';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
+	animation: ${fadeIn} 0.2s ease-in-out;
+	margin-bottom: ${({ $isShowDepartAndLog }) => !$isShowDepartAndLog && '15px'};
 `;
 
 const FieldInputContentsContainer = styled.div`
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	background: white;
 	display: flex;
 	flex-direction: row;
@@ -33,32 +37,38 @@ const FieldColumn = styled.div`
 	padding: 16px;
 	overflow-y: auto;
 	transition: width 0.3s ease;
-	width: ${({ width }) => width};
-	${({ showBorder }) => showBorder && `border-right: 2px solid #ccc`};
-	display: ${({ isShowFieldColumn }) => (isShowFieldColumn ? 'block' : 'none')};
+	width: ${({ $width }) => $width};
+	${({ $showBorder }) => $showBorder && `box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1)`};
+	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
 
 const GridContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	gap: 8px;
+	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
+	gap: 10px;
 `;
 
 const ListContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 8px;
 `;
 
 const FieldItem = styled.div`
+	width: 90%;
+	min-height: 35px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
+	background-color: ${(props) => (props.$isSelected ? '#d3d3d3' : 'white')};
+	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
+
 	&:hover {
 		background-color: #e0e0e0;
 	}
@@ -69,7 +79,7 @@ export const scrollOption = {
 	block: 'center'
 };
 
-const FieldInput = () => {
+const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
 	const middleFields = useRecoilValue(middleFieldState);
@@ -78,6 +88,7 @@ const FieldInput = () => {
 
 	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
+	const setSubjectsInField = useSetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 
 	const fieldRefs = {
@@ -99,6 +110,7 @@ const FieldInput = () => {
 	const handleMiddleFieldClick = async (field) => {
 		await fetchSmallField(field);
 		setSelectedField({ middleField: field });
+		setSubjectsInField([]);
 	};
 
 	const handleSmallFieldClick = async (field) => {
@@ -107,6 +119,7 @@ const FieldInput = () => {
 			...prevState,
 			smallField: field
 		}));
+		setSubjectsInField([]);
 	};
 
 	const handleDetailFieldClick = async (field) => {
@@ -135,15 +148,17 @@ const FieldInput = () => {
 		resetSelectedSubjectState();
 		await fetchSubjectsInField(field.detailFieldCode);
 		await fetchCoursesInFields(field.detailFieldCode);
+
+		showHandler(true);
 	};
 
 	return (
-		<FieldInputContainer>
+		<FieldInputContainer $isShowDepartAndLog={isShowDepartAndLog}>
 			<Title>직군 찾아보기</Title>
 			<FieldInputContentsContainer>
 				<FieldColumn
-					width={selectedField.middleField ? (selectedField.smallField ? '16.6%' : '33.3%') : '100%'}
-					isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
+					$width={selectedField.middleField ? (selectedField.smallField ? '20%' : '40%') : '100%'}
+					$isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
 						<ListContainer>
@@ -151,7 +166,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleMiddleFieldClick(field)}
-									isSelected={selectedField.middleField?.middleField === field.middleField}
+									$isSelected={selectedField.middleField?.middleField === field.middleField}
 									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
 								>
 									{field.middleField}
@@ -159,12 +174,12 @@ const FieldInput = () => {
 							))}
 						</ListContainer>
 					) : (
-						<GridContainer>
+						<GridContainer $columnCount={'5'}>
 							{middleFields.map((field, index) => (
 								<FieldItem
 									key={index}
 									onClick={() => handleMiddleFieldClick(field)}
-									isSelected={selectedField.middleField?.middleField === field.middleField}
+									$isSelected={selectedField.middleField?.middleField === field.middleField}
 									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
 								>
 									{field.middleField}
@@ -175,9 +190,9 @@ const FieldInput = () => {
 				</FieldColumn>
 
 				<FieldColumn
-					width={selectedField.smallField ? '16.6%' : '66.6%'}
-					showBorder={selectedField.smallField}
-					isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
+					$width={selectedField.smallField ? '20%' : '60%'}
+					$isShowFieldColumn={!!selectedField.smallField || !!selectedField.middleField}
+					$showBorder={selectedField.middleField}
 				>
 					{selectedField.smallField ? (
 						<ListContainer>
@@ -185,7 +200,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallField === field.smallField}
+									$isSelected={selectedField.smallField?.smallField === field.smallField}
 									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
@@ -198,7 +213,7 @@ const FieldInput = () => {
 								<FieldItem
 									key={index}
 									onClick={() => handleSmallFieldClick(field)}
-									isSelected={selectedField.smallField?.smallField === field.smallField}
+									$isSelected={selectedField.smallField?.smallField === field.smallField}
 									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
 								>
 									{field.smallField}
@@ -208,13 +223,13 @@ const FieldInput = () => {
 					)}
 				</FieldColumn>
 
-				<FieldColumn width="66.6%" isShowFieldColumn={selectedField.smallField}>
+				<FieldColumn $width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
 					<GridContainer>
 						{detailFields.map((field, index) => (
 							<FieldItem
 								key={index}
 								onClick={() => handleDetailFieldClick(field)}
-								isSelected={selectedField.detailField?.detailField === field.detailField}
+								$isSelected={selectedField.detailField?.detailField === field.detailField}
 								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
 							>
 								{field.detailField}

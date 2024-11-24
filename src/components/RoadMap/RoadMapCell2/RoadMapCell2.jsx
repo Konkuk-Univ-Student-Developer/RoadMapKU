@@ -1,16 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../../Animation/Animation';
 import CourseDetail from '../../CourseDetail/CourseDetail';
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import { fadeIn } from '../../../style/Frames';
 
 const Button = styled.div`
 	width: 100%;

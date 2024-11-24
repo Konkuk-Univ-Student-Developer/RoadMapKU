@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import useField from '../../hooks/useField';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '../../recoils/atoms';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	position: relative;
+	margin-bottom: ${({ $isToggleOn }) => !$isToggleOn && '10px'};
 `;
 
 const SearchBarContent = styled.div`
@@ -24,6 +25,8 @@ const SearchBarContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	border: ${({ $isFocused }) => ($isFocused ? '1px solid #036b3f' : '1px solid silver')};
 `;
 
 const SearchBarInput = styled.input`
@@ -37,6 +40,24 @@ const SearchBarInput = styled.input`
 
 const SearchIcon = styled(FaSearch)`
 	width: 40px;
+`;
+
+const ToggleDownIcon = styled(FaAngleDoubleDown)`
+	width: 40px;
+	cursor: pointer;
+
+	&:hover {
+		transform: scale(1.3);
+	}
+`;
+
+const ToggleUpIcon = styled(FaAngleDoubleUp)`
+	width: 40px;
+	cursor: pointer;
+
+	&:hover {
+		transform: scale(1.3);
+	}
 `;
 
 const SuggestionsContainer = styled.div`
@@ -64,7 +85,7 @@ const SuggestionItem = styled.div`
 	}
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
@@ -118,11 +139,17 @@ const SearchBar = () => {
 			return newLog;
 		});
 		setIsFocused(false);
+		showHandler(true);
+		setIsToggleOn(true);
+	};
+
+	const toggleClickHandler = () => {
+		setIsToggleOn((prev) => !prev);
 	};
 
 	return (
-		<SearchBarContainer>
-			<SearchBarContent>
+		<SearchBarContainer $isToggleOn={isToggleOn}>
+			<SearchBarContent $isFocused={isFocused}>
 				<SearchBarInput
 					type="text"
 					placeholder="직군을 입력해주세요"
@@ -131,6 +158,7 @@ const SearchBar = () => {
 					onFocus={() => setIsFocused(true)}
 				/>
 				<SearchIcon />
+				{!isToggleOn ? <ToggleDownIcon onClick={toggleClickHandler} /> : <ToggleUpIcon onClick={toggleClickHandler} />}
 			</SearchBarContent>
 			{isFocused && filteredFields.length > 0 && (
 				<SuggestionsContainer ref={containerRef}>

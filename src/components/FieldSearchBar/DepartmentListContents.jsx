@@ -4,16 +4,17 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../hooks/useField';
 
 const SelectedDepartment = styled.div`
-	min-width: 250px;
+	width: 15.2%;
 	margin: 5px 5px;
-	font-family: inherit;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${(props) => (props.isSelected ? '#d3d3d3' : '#f2f2f2')};
+	background-color: ${({ $isSelected }) => ($isSelected ? '#d3d3d3' : 'white')};
+	border: 0.1px solid #989898;
 	border-radius: 4px;
 	text-align: center;
 	font-size: large;
-	border: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
 	&:hover {
 		background-color: #e0e0e0;
@@ -35,23 +36,21 @@ function DepartmentListContents() {
 		}
 	};
 
-	if (!subjects.length) {
-		return <SelectedDepartment style={{ height: '21px' }} isSelected={true} />;
-	}
-
 	return (
 		<>
-			<SelectedDepartment
-				isSelected={selectedDepartment.subjectCode === -1}
-				onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
-			>
-				전체 학과
-			</SelectedDepartment>
+			{subjects.length > 0 && (
+				<SelectedDepartment
+					$isSelected={selectedDepartment.subjectCode === -1}
+					onClick={() => handleDepartmentClick(selectedField.detailField?.detailFieldCode, -1, '전체')}
+				>
+					전체 학과
+				</SelectedDepartment>
+			)}
 			{subjects.map((subject) => {
 				return (
 					<SelectedDepartment
 						key={subject.subjectCode}
-						isSelected={selectedDepartment.subjectCode === subject.subjectCode}
+						$isSelected={selectedDepartment.subjectCode === subject.subjectCode}
 						onClick={() =>
 							handleDepartmentClick(
 								selectedField.detailField?.detailFieldCode,
