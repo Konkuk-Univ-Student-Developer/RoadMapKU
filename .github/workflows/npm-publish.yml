@@ -19,6 +19,7 @@ jobs:
             git commit -m "temp"
             git fetch origin develop
             git merge origin/develop
-            yarn build
             yarn install
-            nohup yarn start >> output.log 2>&1 &
+            yarn build
+            # serve library를 통한 빌드
+            nohup npx serve -s build >> output.log 2>&1 &
