@@ -16,35 +16,31 @@ jobs:
           script: |
             cd ~/RoadMapKU
 
-            # 환경 정보 출력
-            echo "Current directory: $(pwd)"
-            echo "Node version: $(node -v)"
-            echo "NPM version: $(npm -v)"
-            echo "Yarn version: $(yarn -v)"
-
+           # 1. 기존 3000 포트 프로세스 종료
+            sudo kill -9 $(sudo lsof -t -i:3000) || true
+            
+            # 2. git 작업
             git add .
-            git commit -m "temp"
+            git commit -m "temp" || true
             git fetch origin develop
             git merge origin/develop
-
+            
+            # 3. 빌드
             yarn install
             yarn build
-
-            # build 디렉토리 확인
-            echo "Build directory contents:"
-            ls -la build/
-
+            
+            # 5. 새로운 포트(3001)로 실행
             PORT=3000
             echo "Starting serve on port $PORT..."
-            serve -s build -l $PORT >> output.log 2>&1 &
-
-            # 상세한 프로세스 정보 출력
+            nohup serve -s build -l $PORT >> output.log 2>&1 &
+            
+            # 6. 프로세스 확인
             sleep 5
-            echo "Process info:"
-            ps aux | grep serve
-
-            echo "Port usage:"
-            netstat -tulpn | grep :3000
-
-            echo "Log contents:"
-            tail -n 50 output.log
+            if pgrep -f "serve -s build" > /dev/null; then
+              echo "Serve process is running successfully"
+              ps aux | grep serve
+            else
+              echo "Failed to start serve process"
+              cat output.log
+              exit 1
+            fi
