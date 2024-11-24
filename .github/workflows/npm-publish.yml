@@ -16,25 +16,25 @@ jobs:
           script: |
             cd ~/RoadMapKU
 
-           # 1. 기존 3000 포트 프로세스 종료
+            # 기존 3000 포트 프로세스 종료
             sudo kill -9 $(sudo lsof -t -i:3000) || true
-            
-            # 2. git 작업
+
+            # git 작업
             git add .
             git commit -m "temp" || true
             git fetch origin develop
             git merge origin/develop
-            
-            # 3. 빌드
+
+            # 빌드
             yarn install
             yarn build
-            
-            # 5. 새로운 포트(3001)로 실행
+
+            # serve로 실행
             PORT=3000
             echo "Starting serve on port $PORT..."
             nohup serve -s build -l $PORT >> output.log 2>&1 &
-            
-            # 6. 프로세스 확인
+
+            # 프로세스 확인
             sleep 5
             if pgrep -f "serve -s build" > /dev/null; then
               echo "Serve process is running successfully"
