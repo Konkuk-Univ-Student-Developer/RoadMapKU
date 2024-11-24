@@ -19,6 +19,9 @@ jobs:
             git commit -m "temp"
             git fetch origin develop
             git merge origin/develop
+            npm -v
+            npx -v
+            yarn add serve
             yarn install
             yarn build
             # serve library를 통한 빌드
