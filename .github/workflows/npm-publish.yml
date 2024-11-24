@@ -19,10 +19,19 @@ jobs:
             git commit -m "temp"
             git fetch origin develop
             git merge origin/develop
-            npm -v
-            npx -v
-            yarn add serve
             yarn install
             yarn build
-            # serve library를 통한 빌드
-            nohup npx serve -s build >> output.log 2>&1 &
+
+            # 새로운 serve 프로세스 시작 (포트 3000 사용)
+            PORT=3000
+            echo "Starting serve on port $PORT..."
+            nohup yarn serve -s build -l $PORT >> output.log 2>&1 &
+
+            # 프로세스가 정상적으로 시작되었는지 확인
+            sleep 5
+            if pgrep -f "serve -s build" > /dev/null; then
+              echo "Serve process is running successfully"
+            else
+              echo "Failed to start serve process"
+              exit 1
+            fi
