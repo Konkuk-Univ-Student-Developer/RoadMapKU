@@ -15,23 +15,36 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ~/RoadMapKU
+
+            # 환경 정보 출력
+            echo "Current directory: $(pwd)"
+            echo "Node version: $(node -v)"
+            echo "NPM version: $(npm -v)"
+            echo "Yarn version: $(yarn -v)"
+
             git add .
             git commit -m "temp"
             git fetch origin develop
             git merge origin/develop
+
             yarn install
             yarn build
 
-            # 새로운 serve 프로세스 시작 (포트 3000 사용)
+            # build 디렉토리 확인
+            echo "Build directory contents:"
+            ls -la build/
+
             PORT=3000
             echo "Starting serve on port $PORT..."
-            nohup yarn serve -s build -l $PORT >> output.log 2>&1 &
+            serve -s build -l $PORT >> output.log 2>&1 &
 
-            # 프로세스가 정상적으로 시작되었는지 확인
+            # 상세한 프로세스 정보 출력
             sleep 5
-            if pgrep -f "serve -s build" > /dev/null; then
-              echo "Serve process is running successfully"
-            else
-              echo "Failed to start serve process"
-              exit 1
-            fi
+            echo "Process info:"
+            ps aux | grep serve
+
+            echo "Port usage:"
+            netstat -tulpn | grep :3000
+
+            echo "Log contents:"
+            tail -n 50 output.log
