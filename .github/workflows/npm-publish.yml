@@ -16,8 +16,12 @@ jobs:
           script: |
             cd ~/RoadMapKU
 
-            # 기존 3000 포트 프로세스 종료
-            sudo kill -9 $(sudo lsof -t -i:3000) || true
+            # 기존 프로세스 종료 (sudo 없이)
+            pid=$(lsof -t -i:3000)
+            if [ ! -z "$pid" ]; then
+              echo "Killing process on port 3000..."
+              kill -9 $pid || true
+            fi
 
             # git 작업
             git add .
@@ -32,7 +36,7 @@ jobs:
             # serve로 실행
             PORT=3000
             echo "Starting serve on port $PORT..."
-            nohup serve -s build -l $PORT >> output.log 2>&1 &
+            nohup yarn serve -s build -l $PORT >> output.log 2>&1 &
 
             # 프로세스 확인
             sleep 5
