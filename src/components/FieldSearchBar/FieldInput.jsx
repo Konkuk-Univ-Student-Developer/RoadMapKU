@@ -25,7 +25,7 @@ const FieldInputContainer = styled.div`
 
 const FieldInputContentsContainer = styled.div`
 	width: 100%;
-	height: 210px;
+	height: 300px;
 	background: white;
 	display: flex;
 	flex-direction: row;
@@ -58,6 +58,7 @@ const ListContainer = styled.div`
 
 const FieldItem = styled.div`
 	width: 90%;
+	min-height: 35px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
