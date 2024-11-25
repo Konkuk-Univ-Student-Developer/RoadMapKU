@@ -112,16 +112,19 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 
 	const filteredFields = allFieldData.filter((field) => field.detailFieldCode && field.detailField.includes(userInput));
 
-	const onSuggestionItemClick = ({ middleField, smallField, detailField, detailFieldCode }) => {
-		if (selectedField?.detailField?.detailFieldCode === detailFieldCode) {
+	const onSuggestionItemClick = (field) => {
+		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) {
 			setIsFocused(false);
 			return;
 		}
 
 		const restructuredFieldData = {
-			middleField: { middleField },
-			smallField: { middleField, smallField },
-			detailField: { detailFieldCode, detailField }
+			middleField: {
+				middleField: field.middleField,
+				middleFieldCode: field.middleFieldCode
+			},
+			smallField: { smallField: field.smallField, smallFieldCode: field.smallFieldCode },
+			detailField: { detailField: field.detailField, detailFieldCode: field.detailFieldCode }
 		};
 
 		fetchLogFields(restructuredFieldData);
