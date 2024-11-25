@@ -17,6 +17,7 @@ const Button = styled.div`
 const DropdownItem = styled.div`
 	font-size: 12px;
 	padding: 5px;
+	color: black;
 	cursor: pointer;
 	&:hover {
 		background-color: #f0f0f0;
@@ -27,18 +28,25 @@ const StyledCell = styled.div`
 	font-size: small;
 	min-height: 2rem;
 	display: flex;
-	border: 1px solid #a4a4a4;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
 	user-select: none;
 	position: relative;
+	// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	transition:
+		background-color 0.2s ease-out,
+		color 0.2s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		background-color: #d9d9d9;
+		background-color: #036b3f;
+		color: white;
+		transition:
+			background-color 0.2s ease-out,
+			color 0.2s ease-out;
 	}
 
 	&.unclickable {

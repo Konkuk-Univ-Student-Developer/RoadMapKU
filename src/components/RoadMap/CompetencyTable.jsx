@@ -6,7 +6,6 @@ const Container = styled.div`
 	width: 15%;
 	height: auto;
 	box-sizing: border-box;
-	border: 1px solid gray;
 	border-radius: 0.2rem;
 	background-color: #f4f4f4;
 	display: flex;

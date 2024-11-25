@@ -8,7 +8,6 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
-	border: 1px solid gray;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
