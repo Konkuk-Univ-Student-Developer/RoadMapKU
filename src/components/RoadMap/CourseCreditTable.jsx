@@ -60,6 +60,7 @@ const Card = styled.div`
 	box-sizing: border-box;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
+	color: #1c1c1c;
 	user-select: none;
 	display: flex;
 	align-items: center;

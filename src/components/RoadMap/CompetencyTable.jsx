@@ -24,11 +24,14 @@ const CompetencyContainer = styled.div`
 `;
 
 const Title = styled.div`
+	height: 1.7rem;
 	user-select: none;
-	font-size: x-large;
+	font-size: 15px;
 	font-weight: bolder;
 	color: #036b3f;
 	padding-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
 `;
 
 const CompetencyColumn = styled.div`

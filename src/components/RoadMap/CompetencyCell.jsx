@@ -10,20 +10,24 @@ const StyledCell = styled.div`
 	box-sizing: border-box;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
+	color: #2e2e2e;
 	cursor: pointer;
 	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.3s ease-out;
+	transition:
+		color 0.1s ease-out,
+		font 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		background-color: #effbef;
-		transition: background-color 0.3s ease-out;
+		color: #036b3f;
+		font-family: 'Pretendard-semiBold';
+		transition: color 0.1s ease-out;
 	}
 
 	&.Bounce-enter {

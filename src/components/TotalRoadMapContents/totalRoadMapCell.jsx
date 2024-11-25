@@ -1,34 +1,20 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
-	border: 0.05rem solid black;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #fafafa;
+	color: #2e2e2e;
 	user-select: none;
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #f4f4f4;
+		background-color: #e6e6e6;
+		font-family: 'Pretendard-semiBold';
 	}
-
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 400ms ease-out forwards;
-	}
-`;
-
-const ButtonWrapper = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: row;
 `;
 
 const LeftButton = styled.div`
@@ -38,17 +24,18 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.3s ease-out;
-	overflow: hidden;
 	padding: 0.5rem;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
 `;
 
 const Cell = forwardRef(({ cellData, unclickable }, ref) => {
 	return (
 		<StyledCell ref={ref} className={unclickable ? 'unclickable' : ''}>
-			<ButtonWrapper>
-				<LeftButton>{cellData.courseName}</LeftButton>
-			</ButtonWrapper>
+			<LeftButton>{cellData.courseName}</LeftButton>
 		</StyledCell>
 	);
 });

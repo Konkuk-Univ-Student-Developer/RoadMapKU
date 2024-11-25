@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { immergeBounce, dismissBounce } from '../../../Animation/Animation';
 import CourseDetail from '../../CourseDetail/CourseDetail';
 import { fadeIn } from '../../../style/Frames';
 
@@ -20,18 +19,25 @@ const StyledCell = styled.div`
 	display: flex;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
+	color: #2e2e2e;
 	cursor: pointer;
 	user-select: none;
 	position: relative;
 	// box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.2s ease-out;
+	transition:
+		background-color 0.1s ease-out,
+		color 0.1s ease-out,
+		font 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		background-color: #d9d9d9;
-		transition: background-color 0.2s ease-out;
+		color: #036b3f;
+		font-family: 'Pretendard-semiBold';
+		transition:
+			background-color 0.1s ease-out,
+			color 0.1s ease-out;
 	}
 
 	&.unclickable {
@@ -41,19 +47,10 @@ const StyledCell = styled.div`
 
 	&.isHighlighted {
 		background-color: #effbef;
-
-		&:hover {
-			background-color: #d9d9d9;
-			transition: background-color 0.2s ease-out;
-		}
 	}
 
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 400ms ease-out forwards;
+	&.isUnclickableHighlighted {
+		background-color: #d0f5a9;
 	}
 `;
 
@@ -78,12 +75,13 @@ const DropdownContainer = styled.div`
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
+	z-index: 1;
 	width: 100%;
 	padding: 10px 0;
 `;
 
 const DropdownItem = styled.div`
+	font-family: 'Pretendard-regular';
 	font-size: 12px;
 	padding: 5px;
 	color: black;
@@ -93,11 +91,20 @@ const DropdownItem = styled.div`
 	}
 `;
 
-const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }) => {
+const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency, onClickSendRef }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const [cellTop, setCellTop] = useState(0); // 셀의 top 위치를 저장
 	const cellRef = useRef(null);
+
+	useEffect(() => {
+		if (cellRef.current) {
+			const cellElement = cellRef.current;
+			const buttonBottom = cellElement.offsetTop;
+			setCellTop(buttonBottom);
+		}
+	}, []);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -124,6 +131,10 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 	const handleDropdownToggle = (event) => {
 		event.stopPropagation();
 		setIsDropdownOpen((prev) => !prev);
+
+		if (onClickSendRef) {
+			onClickSendRef(cellTop);
+		}
 	};
 
 	const onClickDetailButton = (event) => {
@@ -139,7 +150,7 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 
 	return (
 		<StyledCell
-			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''}`}
+			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${unclickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>

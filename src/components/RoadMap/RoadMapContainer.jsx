@@ -50,6 +50,7 @@ const Button = styled.button`
 	padding: 0.5rem;
 	cursor: pointer;
 	user-select: none;
+	font-family: 'Pretendard-semiBold';
 	font-size: small;
 	transition: background-color 0.3s ease-out;
 
