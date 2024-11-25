@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Cell from './RoadMapCell';
 import Cell2 from './RoadMapCell2/RoadMapCell2';
@@ -41,6 +41,7 @@ const CourseContainer = styled.div`
 const CourseColumn = styled.div`
 	min-width: 0;
 	height: fit-content;
+	margin-bottom: 70px;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -60,16 +61,40 @@ const defaultTable = [
 ];
 
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
-	const refs = useRef(roadMapTableData.map((row) => row.slice(1).map(() => React.createRef()))).current;
+	const containerRef = useRef(null);
+	const [containerScrollTopPosition, setContainerScrollTopPosition] = useState(null);
 
-	const [openDropdownIndex, setOpenDropdownIndex] = useState({ rowIndex: null, cellIndex: null });
+	useEffect(() => {
+		const container = containerRef.current;
 
-	// 현재 열려 있는 드롭다운을 클릭한 경우 닫기
-	const handleDropdownToggle = (rowIndex, cellIndex) => {
-		if (openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex) {
-			setOpenDropdownIndex({ rowIndex: null, cellIndex: null });
-		} else {
-			setOpenDropdownIndex({ rowIndex, cellIndex });
+		if (container) {
+			container.addEventListener('scroll', handleScroll);
+			handleScroll();
+
+			return () => container.removeEventListener('scroll', handleScroll);
+		}
+	}, []);
+
+	const handleScroll = () => {
+		if (containerRef.current) {
+			const container = containerRef.current;
+
+			// 현재 컨테이너의 뷰포트 기준 바닥(top)의 위치 계산
+			const containerOffsetTop = container.scrollTop;
+			setContainerScrollTopPosition(containerOffsetTop);
+		}
+	};
+
+	const handleCellClickSendRef = (top) => {
+		if (top - 816 > containerScrollTopPosition + 320) {
+			if (containerRef.current) {
+				setTimeout(() => {
+					containerRef.current.scrollBy({
+						top: 100,
+						behavior: 'smooth' // 부드러운 스크롤
+					});
+				}, 10);
+			}
 		}
 	};
 
@@ -84,20 +109,18 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 					</SemesterColumn>
 				))}
 			</SemesterContainer>
-			<CourseContainer>
+			<CourseContainer ref={containerRef}>
 				{roadMapTableData.map((row, rowIndex) => (
 					<CourseColumn key={rowIndex}>
 						{row.slice(1).map((cellData, cellIndex) => (
 							<Cell2
 								key={cellIndex}
-								ref={refs[rowIndex][cellIndex]}
 								cellData={cellData}
 								rowIndex={rowIndex}
 								onClick={onCellClick}
 								unclickable={unclickableCells.some((cell) => cell.haksuId === cellData.haksuId)}
 								highlightedCompetency={highlightedCompetency}
-								isDropdownOpen={openDropdownIndex.rowIndex === rowIndex && openDropdownIndex.cellIndex === cellIndex} // 현재 드롭다운이 열려 있는지 확인
-								onDropdownToggle={() => handleDropdownToggle(rowIndex, cellIndex)} // 열고 닫는 함수 전달
+								onClickSendRef={handleCellClickSendRef}
 							/>
 						))}
 					</CourseColumn>
