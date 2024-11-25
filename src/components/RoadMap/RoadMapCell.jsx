@@ -1,37 +1,15 @@
-import React, { useState, useEffect, forwardRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
-import { immergeBounce, dismissBounce } from '../../Animation/Animation';
-import CourseDetail from '../CourseDetail/CourseDetail';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #e6e6e6;
 	color: #1c1c1c;
-	cursor: pointer;
 	user-select: none;
-
-	&.unclickable {
-		pointer-events: none;
-		background-color: #e6e6e6;
-	}
-
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 400ms ease-out forwards;
-	}
-`;
-
-const ButtonWrapper = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: row;
+	pointer-events: none;
 `;
 
 const LeftButton = styled.div`
@@ -43,20 +21,6 @@ const LeftButton = styled.div`
 	cursor: pointer;
 	transition: background-color 0.3s ease-out;
 	overflow: hidden;
-
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
-
-	&.isHighlighted {
-		background-color: yellow;
-	}
-
-	&.isHighlighted:hover,
-	&.isHighlighted:active {
-		background-color: #a9d1b3;
-	}
 `;
 
 const CourseTitle = styled.div`
@@ -70,70 +34,15 @@ const CourseTitle = styled.div`
 	}
 `;
 
-const RightButton = styled.div`
-	width: 10%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: background-color 0.3s ease-out;
-
-	&:hover,
-	&:active {
-		background-color: #a9d1b3;
-	}
-
-	&.isHighlighted {
-		background-color: yellow;
-	}
-
-	&.isHighlighted:hover,
-	&.isHighlighted:active {
-		background-color: #a9d1b3;
-	}
-`;
-
-const Cell = forwardRef(({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }, ref) => {
-	const [isDetailOpen, setIsDetailOpen] = useState(false);
-	const onClickDetailButton = () => {
-		setIsDetailOpen(true);
-	};
-	const [isHighlighted, setIsHighlighted] = useState(false);
-
-	useEffect(() => {
-		const competencyCodes = cellData.competencyCodes;
-
-		if (Array.isArray(competencyCodes)) {
-			const hasHighlightedCompetency = competencyCodes.some(
-				(competency) => competency.competencyCode === highlightedCompetency
-			);
-
-			setIsHighlighted(hasHighlightedCompetency);
-		}
-	}, [cellData, highlightedCompetency]);
-
+const Cell = ({ cellData }) => {
 	return (
-		<StyledCell ref={ref} className={unclickable ? 'unclickable' : ''}>
-			<ButtonWrapper>
-				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={onClickDetailButton}>
-					<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
-				</LeftButton>
-				{isDetailOpen && (
-					<CourseDetail
-						onClose={() => {
-							setIsDetailOpen(false);
-						}}
-						HaksuId={cellData.haksuId}
-					/>
-				)}
-				{!(cellData.haksuId === '0') && (
-					<RightButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData, rowIndex)}>
-						{cellData.isMyTable ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
-					</RightButton>
-				)}
-			</ButtonWrapper>
+		<StyledCell>
+			<LeftButton>
+				<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
+			</LeftButton>
 		</StyledCell>
 	);
-});
+};
 
 Cell.displayName = 'Cell';
 

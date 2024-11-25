@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { immergeBounce, dismissBounce } from '../../../Animation/Animation';
 import CourseDetail from '../../CourseDetail/CourseDetail';
 import { fadeIn } from '../../../style/Frames';
 
@@ -53,14 +52,6 @@ const StyledCell = styled.div`
 	&.isUnclickableHighlighted {
 		background-color: #d0f5a9;
 	}
-
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 400ms ease-out forwards;
-	}
 `;
 
 const CourseTitle = styled.div`
@@ -84,7 +75,7 @@ const DropdownContainer = styled.div`
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
+	z-index: 1;
 	width: 100%;
 	padding: 10px 0;
 `;
