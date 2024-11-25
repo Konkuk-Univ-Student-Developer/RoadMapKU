@@ -6,14 +6,14 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
-	border: 0.05rem solid black;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #fafafa;
+	color: #1c1c1c;
 	user-select: none;
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #f4f4f4;
+		background-color: #e6e6e6;
 	}
 
 	&.Bounce-enter {
@@ -38,9 +38,12 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition: background-color 0.3s ease-out;
-	overflow: hidden;
 	padding: 0.5rem;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
 `;
 
 const Cell = forwardRef(({ cellData, unclickable }, ref) => {

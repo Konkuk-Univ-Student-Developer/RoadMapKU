@@ -10,6 +10,7 @@ const StyledCell = styled.div`
 	font-size: small;
 	border-radius: 0.2rem;
 	background-color: white;
+	color: #1c1c1c;
 	cursor: pointer;
 	user-select: none;
 

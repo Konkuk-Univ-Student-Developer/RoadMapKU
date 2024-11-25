@@ -20,18 +20,25 @@ const StyledCell = styled.div`
 	display: flex;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
+	color: #1c1c1c;
 	cursor: pointer;
 	user-select: none;
 	position: relative;
 	// box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.2s ease-out;
+	transition:
+		background-color 0.1s ease-out,
+		color 0.1s ease-out,
+		font 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		background-color: #d9d9d9;
-		transition: background-color 0.2s ease-out;
+		color: #036b3f;
+		font-family: 'Pretendard-semiBold';
+		transition:
+			background-color 0.1s ease-out,
+			color 0.1s ease-out;
 	}
 
 	&.unclickable {
@@ -41,11 +48,6 @@ const StyledCell = styled.div`
 
 	&.isHighlighted {
 		background-color: #effbef;
-
-		&:hover {
-			background-color: #d9d9d9;
-			transition: background-color 0.2s ease-out;
-		}
 	}
 
 	&.Bounce-enter {
