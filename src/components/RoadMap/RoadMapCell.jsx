@@ -5,6 +5,7 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
+	font-family: 'Pretendard-semiBold';
 	border-radius: 0.2rem;
 	background-color: #e6e6e6;
 	color: #1c1c1c;
