@@ -14,16 +14,6 @@ const Button = styled.div`
 	text-align: center;
 `;
 
-const DropdownItem = styled.div`
-	font-size: 12px;
-	padding: 5px;
-	color: black;
-	cursor: pointer;
-	&:hover {
-		background-color: #f0f0f0;
-	}
-`;
-
 const StyledCell = styled.div`
 	font-size: small;
 	min-height: 2rem;
@@ -33,20 +23,15 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	position: relative;
-	// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-	transition:
-		background-color 0.2s ease-out,
-		color 0.2s ease-out;
+	// box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.2s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		background-color: #036b3f;
-		color: white;
-		transition:
-			background-color 0.2s ease-out,
-			color 0.2s ease-out;
+		background-color: #d9d9d9;
+		transition: background-color 0.2s ease-out;
 	}
 
 	&.unclickable {
@@ -56,6 +41,11 @@ const StyledCell = styled.div`
 
 	&.isHighlighted {
 		background-color: #fff9c4;
+
+		&:hover {
+			background-color: #d9d9d9;
+			transition: background-color 0.2s ease-out;
+		}
 	}
 
 	&.Bounce-enter {
@@ -91,6 +81,16 @@ const DropdownContainer = styled.div`
 	z-index: 1000;
 	width: 100%;
 	padding: 10px 0;
+`;
+
+const DropdownItem = styled.div`
+	font-size: 12px;
+	padding: 5px;
+	color: black;
+	cursor: pointer;
+	&:hover {
+		background-color: #f0f0f0;
+	}
 `;
 
 const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency }) => {

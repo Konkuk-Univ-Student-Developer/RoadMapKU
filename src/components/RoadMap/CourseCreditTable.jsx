@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { fadeIn } from '../../style/Frames';
 
 const CourseCreditContainer = styled.div`
-	height: 6rem;
+	height: 4rem;
 	margin: 0rem 1rem 1rem 1rem;
 	display: flex;
 	flex-direction: row;
@@ -16,12 +17,24 @@ const CourseCreditContainer = styled.div`
 const TitleContainer = styled.div`
 	padding: 0 20px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 `;
 
 const Title = styled.div`
 	min-width: 8rem;
+	width: 15%;
+	user-select: none;
+	font-size: large;
+	font-weight: bolder;
+	color: #036b3f;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
+const TitleNumber = styled.div`
+	min-width: 4rem;
 	width: 15%;
 	user-select: none;
 	font-size: large;
@@ -40,7 +53,7 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
 	height: 2rem;
-	width: 10rem;
+	width: 12rem;
 	min-width: 10rem;
 	font-size: small;
 	margin: 0 10px;
@@ -52,6 +65,7 @@ const Card = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	animation: ${fadeIn} 0.2s ease-in-out;
 `;
 
 const CourseCreditTable = ({ courseCreditData }) => {
@@ -65,7 +79,7 @@ const CourseCreditTable = ({ courseCreditData }) => {
 		<CourseCreditContainer>
 			<TitleContainer>
 				<Title>총 담은 학점</Title>
-				<Title>{courseCreditSum}</Title>
+				<TitleNumber>{courseCreditSum}</TitleNumber>
 			</TitleContainer>
 			<CardContainer>
 				{courseCreditData.map((data, index) => (

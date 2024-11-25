@@ -50,12 +50,13 @@ const Button = styled.div`
 	padding: 0.5rem;
 	transition: background-color 0.3s ease-out;
 
-	// &:hover {
-	// 	background-color: #d9d9d9; /* Hover 시 회색 */
-	// }
-
 	&.isHighlighted {
 		background-color: #fff9c4; /* Highlighted 시 밝은 노란색 */
+
+		&:hover {
+			background-color: #d9d9d9;
+			transition: background-color 0.2s ease-out;
+		}
 	}
 `;
 
