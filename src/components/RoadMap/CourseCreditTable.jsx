@@ -11,7 +11,7 @@ const CourseCreditContainer = styled.div`
 	gap: 0.5rem;
 	box-sizing: border-box;
 	border-radius: 0.2rem;
-	background-color: #f4f4f4;
+	background-color: #e6e6e6;
 `;
 
 const TitleContainer = styled.div`
@@ -59,7 +59,7 @@ const Card = styled.div`
 	margin: 0 10px;
 	box-sizing: border-box;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #fafafa;
 	user-select: none;
 	display: flex;
 	align-items: center;

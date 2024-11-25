@@ -19,7 +19,7 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #fafafa;
 	cursor: pointer;
 	user-select: none;
 	position: relative;
@@ -36,11 +36,11 @@ const StyledCell = styled.div`
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #f4f4f4;
+		background-color: #d9d9d9;
 	}
 
 	&.isHighlighted {
-		background-color: #fff9c4;
+		background-color: #effbef;
 
 		&:hover {
 			background-color: #d9d9d9;

@@ -15,7 +15,7 @@ const StyledCell = styled.div`
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #f4f4f4;
+		background-color: #e6e6e6;
 	}
 
 	&.Bounce-enter {
