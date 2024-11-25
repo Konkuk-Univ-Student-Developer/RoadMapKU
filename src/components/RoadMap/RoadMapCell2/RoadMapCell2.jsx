@@ -50,6 +50,10 @@ const StyledCell = styled.div`
 		background-color: #effbef;
 	}
 
+	&.isUnclickableHighlighted {
+		background-color: #d0f5a9;
+	}
+
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
 	}
@@ -142,7 +146,7 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 
 	return (
 		<StyledCell
-			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''}`}
+			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${unclickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>
