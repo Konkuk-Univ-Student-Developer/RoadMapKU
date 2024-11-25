@@ -22,7 +22,6 @@ const DepartmentContainer = styled.div`
 	border-radius: 4px;
 	overflow: auto;
 	white-space: nowrap;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const TitleContainer = styled.div`
@@ -35,7 +34,7 @@ const DepartmentList = () => {
 	return (
 		<Container>
 			<TitleContainer>
-				<Title style={{ marginBottom: '0' }}>학과 리스트</Title>
+				<Title style={{ marginBottom: '0' }}>학과선택</Title>
 			</TitleContainer>
 			<DepartmentContainer>
 				<DepartmentListContents />
