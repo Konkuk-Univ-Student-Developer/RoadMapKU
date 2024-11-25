@@ -86,6 +86,7 @@ const DropdownContainer = styled.div`
 `;
 
 const DropdownItem = styled.div`
+	font-family: 'Pretendard-regular';
 	font-size: 12px;
 	padding: 5px;
 	color: black;
