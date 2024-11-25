@@ -8,18 +8,23 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	font-size: small;
 	box-sizing: border-box;
-	border: 1px solid #a4a4a4;
 	border-radius: 0.2rem;
-	background-color: white;
+	background-color: #fafafa;
 	cursor: pointer;
 	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	transition: background-color 0.3s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
+
+	&:hover {
+		background-color: #effbef;
+		transition: background-color 0.3s ease-out;
+	}
 
 	&.Bounce-enter {
 		animation: ${immergeBounce} 400ms ease-out forwards;
@@ -45,15 +50,9 @@ const Button = styled.div`
 	padding: 0.5rem;
 	transition: background-color 0.3s ease-out;
 
-	&:hover {
-		background-color: #d9d9d9; /* Hover 시 회색 */
-	}
-
-	&:active {
-		background-color: #fff9c4; /* Active 시 밝은 노란색 */
-	}
 	&.isHighlighted {
-		background-color: #fff9c4; /* Highlighted 시 밝은 노란색 */
+		background-color: #effbef;
+		transition: background-color 0.3s ease-out;
 	}
 `;
 

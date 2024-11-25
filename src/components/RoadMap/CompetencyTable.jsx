@@ -6,9 +6,8 @@ const Container = styled.div`
 	width: 15%;
 	height: auto;
 	box-sizing: border-box;
-	border: 1px solid gray;
 	border-radius: 0.2rem;
-	background-color: #f4f4f4;
+	background-color: #e6e6e6;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

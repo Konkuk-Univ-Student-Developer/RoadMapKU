@@ -8,7 +8,6 @@ const StyledCell = styled.div`
 	min-height: 2rem;
 	display: flex;
 	font-size: small;
-	border: 1px solid gray;
 	border-radius: 0.2rem;
 	background-color: white;
 	cursor: pointer;
@@ -16,7 +15,7 @@ const StyledCell = styled.div`
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #f4f4f4;
+		background-color: #e6e6e6;
 	}
 
 	&.Bounce-enter {
