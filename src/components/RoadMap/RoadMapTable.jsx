@@ -86,9 +86,6 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 	const handleCellClickSendRef = (top) => {
 		const buttonTopPosition = top - 818;
 		const containerBottomPosition = containerScrollTopPosition + 300;
-
-		console.log('button bottom: ', buttonTopPosition);
-		console.log('container bottom: ', containerBottomPosition);
 		if (buttonTopPosition > containerBottomPosition) {
 			if (containerRef.current) {
 				setTimeout(() => {
