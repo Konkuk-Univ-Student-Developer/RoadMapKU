@@ -78,19 +78,22 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 	const handleScroll = () => {
 		if (containerRef.current) {
 			const container = containerRef.current;
-
-			// 현재 컨테이너의 뷰포트 기준 바닥(top)의 위치 계산
 			const containerOffsetTop = container.scrollTop;
 			setContainerScrollTopPosition(containerOffsetTop);
 		}
 	};
 
 	const handleCellClickSendRef = (top) => {
-		if (top - 816 > containerScrollTopPosition + 320) {
+		const buttonTopPosition = top - 818;
+		const containerBottomPosition = containerScrollTopPosition + 300;
+
+		console.log('button bottom: ', buttonTopPosition);
+		console.log('container bottom: ', containerBottomPosition);
+		if (buttonTopPosition > containerBottomPosition) {
 			if (containerRef.current) {
 				setTimeout(() => {
 					containerRef.current.scrollBy({
-						top: 100,
+						top: buttonTopPosition - containerBottomPosition,
 						behavior: 'smooth' // 부드러운 스크롤
 					});
 				}, 10);

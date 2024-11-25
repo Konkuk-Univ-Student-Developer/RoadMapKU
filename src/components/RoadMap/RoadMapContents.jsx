@@ -4,7 +4,7 @@ import CompetencyTable from './CompetencyTable';
 import RoadMapTable from './RoadMapTable';
 
 const RoadMapContainer = styled.div`
-	height: calc(45vh - 5rem);
+	height: 21rem;
 	min-height: 19rem;
 	display: flex;
 	flex-direction: row;
