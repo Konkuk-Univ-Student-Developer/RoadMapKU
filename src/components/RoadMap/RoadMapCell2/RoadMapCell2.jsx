@@ -19,7 +19,7 @@ const StyledCell = styled.div`
 	display: flex;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
-	color: #1c1c1c;
+	color: #2e2e2e;
 	cursor: pointer;
 	user-select: none;
 	position: relative;

@@ -7,12 +7,13 @@ const StyledCell = styled.div`
 	font-size: small;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
-	color: #1c1c1c;
+	color: #2e2e2e;
 	user-select: none;
 
 	&.unclickable {
 		pointer-events: none;
 		background-color: #e6e6e6;
+		font-family: 'Pretendard-semiBold';
 	}
 `;
 

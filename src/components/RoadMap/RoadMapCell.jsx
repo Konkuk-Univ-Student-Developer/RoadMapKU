@@ -8,7 +8,7 @@ const StyledCell = styled.div`
 	font-family: 'Pretendard-semiBold';
 	border-radius: 0.2rem;
 	background-color: #e6e6e6;
-	color: #1c1c1c;
+	color: #2e2e2e;
 	user-select: none;
 	pointer-events: none;
 `;
