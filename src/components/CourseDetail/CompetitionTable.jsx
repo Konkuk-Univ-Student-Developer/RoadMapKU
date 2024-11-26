@@ -57,8 +57,8 @@ const ButtonContainer = styled.div`
 `;
 const GradeButton = styled.button`
 	padding: 8px 16px;
-	background-color: ${({ active }) => (active ? '#036b3f' : '#ddd')};
-	color: ${({ active }) => (active ? 'white' : 'black')};
+	background-color: ${({ $active }) => ($active ? '#036b3f' : '#ddd')};
+	color: ${({ $active }) => ($active ? 'white' : 'black')};
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -165,7 +165,7 @@ const CompetitionTable = ({ haksuId }) => {
 					{/* 학년 선택 버튼 */}
 					<ButtonContainer>
 						{[1, 2, 3, 4].map((grade) => (
-							<GradeButton key={grade} active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
+							<GradeButton key={grade} $active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
 								{grade}학년
 							</GradeButton>
 						))}
