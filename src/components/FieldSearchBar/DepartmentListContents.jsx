@@ -8,6 +8,7 @@ const SelectedDepartment = styled.div`
 	margin: 5px 5px;
 	padding: 8px;
 	cursor: pointer;
+	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
 	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : '#black')};
 	font-weight: ${({ $isSelected }) => ($isSelected ? '700' : '')};
 	border-radius: 4px;
