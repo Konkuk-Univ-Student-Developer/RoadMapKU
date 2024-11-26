@@ -72,8 +72,6 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 		const container = containerRef.current;
 		const containerBottom = container.scrollTop + container.offsetHeight;
 
-		console.log('cellBottom: ', cellBottom, ' containerBottom: ', containerBottom);
-
 		if (cellBottom > containerBottom) {
 			setTimeout(() => {
 				container.scrollBy({
