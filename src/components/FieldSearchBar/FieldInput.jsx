@@ -42,9 +42,12 @@ const FieldColumn = styled.div`
 `;
 
 const GridContainer = styled.div`
+	height: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '95%' : '')};
 	display: grid;
 	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
-	gap: 10px;
+	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '0.2px solid #e0e0e0' : 'none')};
+	border-radius: 4px;
+	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
 `;
 
 const ListContainer = styled.div`
@@ -65,9 +68,21 @@ const FieldItem = styled.div`
 	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
 	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : 'black')};
 	font-weight: ${({ $isSelected }) => ($isSelected ? '700' : '')};
-	border: ${({ $isList }) => ($isList ? 'none' : '0.2px solid #e0e0e0')};
-	border-radius: 4px;
-	text-align: 'start';
+
+	&:hover {
+		background-color: #036b3f17;
+	}
+`;
+
+const MiddleGridItem = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	border-right: ${({ $isLastColumn }) => ($isLastColumn ? 'none' : '1px solid #e4e4e4')};
+	border-bottom: ${({ $isLastRow }) => ($isLastRow ? 'none' : '1px solid #e4e4e4')};
 
 	&:hover {
 		background-color: #036b3f17;
@@ -167,24 +182,22 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 									onClick={() => handleMiddleFieldClick(field)}
 									$isSelected={selectedField.middleField?.middleField === field.middleField}
 									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
-									$isList={selectedField.middleField}
 								>
 									{field.middleField}
 								</FieldItem>
 							))}
 						</ListContainer>
 					) : (
-						<GridContainer>
+						<GridContainer $isMiddleGrid={true}>
 							{middleFields.map((field, index) => (
-								<FieldItem
+								<MiddleGridItem
 									key={index}
 									onClick={() => handleMiddleFieldClick(field)}
-									$isSelected={selectedField.middleField?.middleField === field.middleField}
-									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
-									$isList={selectedField.middleField}
+									$isLastColumn={(index + 1) % 4 === 0}
+									$isLastRow={Math.floor(index / 4) === Math.floor((middleFields.length - 1) / 4)}
 								>
 									{field.middleField}
-								</FieldItem>
+								</MiddleGridItem>
 							))}
 						</GridContainer>
 					)}
