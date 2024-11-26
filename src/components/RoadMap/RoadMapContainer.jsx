@@ -116,14 +116,11 @@ const RoadMapContainer = () => {
 		}
 	}, [key]);
 
-	// 다른 전공을 클릭했을 때 테이블 초기화
-	useEffect(() => {
-		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
-	}, [courseByCompetencyInSubject, subjectCode]);
-
 	// courseByCompetencyInSubject을 가공하여 roadMapTableData의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
 	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) return;
+
+		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
 
 		// setCompetencyList(courseByCompetencyInSubject);
 		const competencyList = courseByCompetencyInSubject.map((competency) => ({
@@ -197,7 +194,9 @@ const RoadMapContainer = () => {
 			return row;
 		});
 
-		setRoadMapTableData(updatedData);
+		setTimeout(() => {
+			setRoadMapTableData(updatedData);
+		}, 10);
 	}, [courseByCompetencyInSubject, myTableData]);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
