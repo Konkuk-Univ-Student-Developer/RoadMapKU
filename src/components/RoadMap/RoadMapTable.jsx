@@ -39,6 +39,7 @@ const CourseContainer = styled.div`
 `;
 
 const CourseColumn = styled.div`
+	position: relative;
 	min-width: 0;
 	height: fit-content;
 	margin-bottom: 70px;
@@ -63,20 +64,23 @@ const defaultTable = [
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
 	const containerRef = useRef(null);
 
-	const handleCellClickSendRef = (top) => {
-		if (!containerRef.current) return;
+	const handleCellClickSendRef = (cellElement) => {
+		if (!containerRef.current || !cellElement) return;
 
-		const buttonTopPosition = top - 818;
-		const containerBottomPosition = containerRef.current.scrollTop + 300;
-		if (buttonTopPosition > containerBottomPosition) {
-			if (containerRef.current) {
-				setTimeout(() => {
-					containerRef.current.scrollBy({
-						top: buttonTopPosition - containerBottomPosition,
-						behavior: 'smooth' // 부드러운 스크롤
-					});
-				}, 10);
-			}
+		const cellBottom = cellElement.offsetTop + cellElement.offsetHeight + 80;
+
+		const container = containerRef.current;
+		const containerBottom = container.scrollTop + container.offsetHeight;
+
+		console.log('cellBottom: ', cellBottom, ' containerBottom: ', containerBottom);
+
+		if (cellBottom > containerBottom) {
+			setTimeout(() => {
+				container.scrollBy({
+					top: cellBottom - containerBottom,
+					behavior: 'smooth'
+				});
+			}, 10);
 		}
 	};
 
