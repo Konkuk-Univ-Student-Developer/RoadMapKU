@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Cell from './RoadMapCell';
 import Cell2 from './RoadMapCell2/RoadMapCell2';
@@ -60,46 +60,14 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
-// 스크롤 감지 성능 개선을 위한 함수
-const debounce = (func, delay) => {
-	let timeout;
-	return (...args) => {
-		clearTimeout(timeout);
-		timeout = setTimeout(() => func(...args), delay);
-	};
-};
-
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
 	const containerRef = useRef(null);
-	const [containerScrollTopPosition, setContainerScrollTopPosition] = useState(null);
-
-	const handleScroll = () => {
-		if (containerRef.current) {
-			const container = containerRef.current;
-			const containerOffsetTop = container.scrollTop;
-			setContainerScrollTopPosition(containerOffsetTop);
-		}
-	};
-
-	const debouncedHandleScroll = useRef(debounce(handleScroll, 100)).current;
-
-	useEffect(() => {
-		const container = containerRef.current;
-
-		if (container) {
-			container.addEventListener('scroll', debouncedHandleScroll);
-			debouncedHandleScroll();
-
-			return () => container.removeEventListener('scroll', debouncedHandleScroll);
-		}
-	}, [debouncedHandleScroll]);
 
 	const handleCellClickSendRef = (top) => {
-	        if (!containerRef.current) return;
-	        
-	        const containerScrollTopPosition = containerRef.current.scrollTop;
+		if (!containerRef.current) return;
+
 		const buttonTopPosition = top - 818;
-		const containerBottomPosition = containerScrollTopPosition + 300;
+		const containerBottomPosition = containerRef.current.scrollTop + 300;
 		if (buttonTopPosition > containerBottomPosition) {
 			if (containerRef.current) {
 				setTimeout(() => {
