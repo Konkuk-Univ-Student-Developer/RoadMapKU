@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Cell from './RoadMapCell';
 import Cell2 from './RoadMapCell2/RoadMapCell2';
@@ -39,6 +39,7 @@ const CourseContainer = styled.div`
 `;
 
 const CourseColumn = styled.div`
+	position: relative;
 	min-width: 0;
 	height: fit-content;
 	margin-bottom: 70px;
@@ -62,39 +63,22 @@ const defaultTable = [
 
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
 	const containerRef = useRef(null);
-	const [containerScrollTopPosition, setContainerScrollTopPosition] = useState(null);
 
-	useEffect(() => {
+	const handleCellClickSendRef = (cellElement) => {
+		if (!containerRef.current || !cellElement) return;
+
+		const cellBottom = cellElement.offsetTop + cellElement.offsetHeight + 80;
+
 		const container = containerRef.current;
+		const containerBottom = container.scrollTop + container.offsetHeight;
 
-		if (container) {
-			container.addEventListener('scroll', handleScroll);
-			handleScroll();
-
-			return () => container.removeEventListener('scroll', handleScroll);
-		}
-	}, []);
-
-	const handleScroll = () => {
-		if (containerRef.current) {
-			const container = containerRef.current;
-			const containerOffsetTop = container.scrollTop;
-			setContainerScrollTopPosition(containerOffsetTop);
-		}
-	};
-
-	const handleCellClickSendRef = (top) => {
-		const buttonTopPosition = top - 818;
-		const containerBottomPosition = containerScrollTopPosition + 300;
-		if (buttonTopPosition > containerBottomPosition) {
-			if (containerRef.current) {
-				setTimeout(() => {
-					containerRef.current.scrollBy({
-						top: buttonTopPosition - containerBottomPosition,
-						behavior: 'smooth' // 부드러운 스크롤
-					});
-				}, 10);
-			}
+		if (cellBottom > containerBottom) {
+			setTimeout(() => {
+				container.scrollBy({
+					top: cellBottom - containerBottom,
+					behavior: 'smooth'
+				});
+			}, 10);
 		}
 	};
 

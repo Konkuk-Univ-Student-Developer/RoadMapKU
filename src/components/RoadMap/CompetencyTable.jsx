@@ -16,7 +16,8 @@ const Container = styled.div`
 `;
 
 const CompetencyContainer = styled.div`
-	width: 100%;
+	width: 96%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;

@@ -95,16 +95,7 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-	const [cellTop, setCellTop] = useState(0); // 셀의 top 위치를 저장
 	const cellRef = useRef(null);
-
-	useEffect(() => {
-		if (cellRef.current) {
-			const cellElement = cellRef.current;
-			const buttonBottom = cellElement.offsetTop;
-			setCellTop(buttonBottom);
-		}
-	}, []);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -132,8 +123,8 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 		event.stopPropagation();
 		setIsDropdownOpen((prev) => !prev);
 
-		if (onClickSendRef) {
-			onClickSendRef(cellTop);
+		if (onClickSendRef && cellRef.current) {
+			onClickSendRef(cellRef.current);
 		}
 	};
 

@@ -116,7 +116,6 @@ const RoadMapContainer = () => {
 		}
 	}, [key]);
 
-	// 다른 전공을 클릭했을 때 테이블 초기화
 	useEffect(() => {
 		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
 	}, [courseByCompetencyInSubject, subjectCode]);
@@ -197,7 +196,9 @@ const RoadMapContainer = () => {
 			return row;
 		});
 
-		setRoadMapTableData(updatedData);
+		setTimeout(() => {
+			setRoadMapTableData(updatedData);
+		}, 10);
 	}, [courseByCompetencyInSubject, myTableData]);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
