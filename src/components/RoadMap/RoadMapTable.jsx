@@ -60,20 +60,18 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
+// 스크롤 감지 성능 개선을 위한 함수
+const debounce = (func, delay) => {
+	let timeout;
+	return (...args) => {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => func(...args), delay);
+	};
+};
+
 const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
 	const containerRef = useRef(null);
 	const [containerScrollTopPosition, setContainerScrollTopPosition] = useState(null);
-
-	useEffect(() => {
-		const container = containerRef.current;
-
-		if (container) {
-			container.addEventListener('scroll', handleScroll);
-			handleScroll();
-
-			return () => container.removeEventListener('scroll', handleScroll);
-		}
-	}, []);
 
 	const handleScroll = () => {
 		if (containerRef.current) {
@@ -82,6 +80,19 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 			setContainerScrollTopPosition(containerOffsetTop);
 		}
 	};
+
+	const debouncedHandleScroll = useRef(debounce(handleScroll, 100)).current;
+
+	useEffect(() => {
+		const container = containerRef.current;
+
+		if (container) {
+			container.addEventListener('scroll', debouncedHandleScroll);
+			debouncedHandleScroll();
+
+			return () => container.removeEventListener('scroll', debouncedHandleScroll);
+		}
+	}, [debouncedHandleScroll]);
 
 	const handleCellClickSendRef = (top) => {
 		const buttonTopPosition = top - 818;
