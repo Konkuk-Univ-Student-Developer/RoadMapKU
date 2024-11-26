@@ -95,6 +95,9 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 	}, [debouncedHandleScroll]);
 
 	const handleCellClickSendRef = (top) => {
+	        if (!containerRef.current) return;
+	        
+	        const containerScrollTopPosition = containerRef.current.scrollTop;
 		const buttonTopPosition = top - 818;
 		const containerBottomPosition = containerScrollTopPosition + 300;
 		if (buttonTopPosition > containerBottomPosition) {
