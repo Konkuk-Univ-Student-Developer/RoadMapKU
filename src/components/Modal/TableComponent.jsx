@@ -53,9 +53,7 @@ const TableComponent = ({ data }) => {
 						{transposedData.map((row, i) => (
 							<tr key={i}>
 								{row.map((cell, j) => (
-									<Td key={j} isHeader={j === 0}>
-										{cell}
-									</Td>
+									<Td key={j}>{cell}</Td>
 								))}
 							</tr>
 						))}
