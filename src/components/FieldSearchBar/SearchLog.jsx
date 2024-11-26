@@ -23,13 +23,11 @@ const TitleContainer = styled.div`
 
 const SearchLogContainer = styled.div`
 	gap: 5px;
-	width: 98%;
+	width: 100%;
 	min-height: 75px;
 	margin-bottom: 10px;
-	padding: 0.5% 1%;
 	background-color: white;
 	border-radius: 4px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: row;
 	align-items: start;
@@ -42,7 +40,6 @@ const LogItem = styled.div`
 	justify-content: space-between;
 	padding: 8px;
 	background-color: white;
-	border: 1.5px solid #c0c0c0;
 	border-radius: 20px;
 	cursor: pointer;
 
@@ -72,11 +69,10 @@ const DeleteButton = styled.button`
 `;
 
 const DeleteAllButton = styled.div`
-	width: 140px;
+	width: 60px;
 	cursor: pointer;
-	color: #036b3f;
+	color: silver;
 	font-size: 15px;
-	font-weight: 700;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -102,7 +98,7 @@ const SearchLog = () => {
 			<TitleContainer>
 				<Title>검색기록</Title>
 				<DeleteAllButton onClick={onClickDeleteAllLogs}>
-					모든 검색기록 삭제
+					초기화
 					<FaTrash />
 				</DeleteAllButton>
 			</TitleContainer>

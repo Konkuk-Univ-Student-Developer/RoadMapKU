@@ -8,16 +8,16 @@ const SelectedDepartment = styled.div`
 	margin: 5px 5px;
 	padding: 8px;
 	cursor: pointer;
-	background-color: ${({ $isSelected }) => ($isSelected ? '#d3d3d3' : 'white')};
-	border: 0.1px solid #989898;
+	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
+	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : '#black')};
 	border-radius: 4px;
 	text-align: center;
-	font-size: large;
+	font-size: 14px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 
 	&:hover {
-		background-color: #e0e0e0;
+		background-color: #036b3f17;
 	}
 `;
 

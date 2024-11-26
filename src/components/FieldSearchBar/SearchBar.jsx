@@ -6,7 +6,7 @@ import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '..
 import { FaSearch, FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
-	width: 100%;
+	width: 95%;
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -14,7 +14,7 @@ const SearchBarContainer = styled.div`
 `;
 
 const SearchBarContent = styled.div`
-	width: 95%;
+	width: 100%;
 	height: 40px;
 	padding: 0 5px;
 	margin-top: 10px;
@@ -63,8 +63,7 @@ const ToggleUpIcon = styled(FaAngleDoubleUp)`
 const SuggestionsContainer = styled.div`
 	position: absolute;
 	top: 90%;
-	left: 2%;
-	width: 96%;
+	width: 100%;
 	background-color: white;
 	border: 1px solid #ddd;
 	border-radius: 8px;
