@@ -48,11 +48,11 @@ const IconStyled = styled(Icon)`
 `;
 
 const LeftArrow = styled(ArrowButton)`
-	left: 7px; /* 버튼이 왼쪽에 위치하도록 설정 */
+	left: 6%; /* 버튼이 왼쪽에 위치하도록 설정 */
 `;
 
 const RightArrow = styled(ArrowButton)`
-	right: 7px; /* 버튼이 오른쪽에 위치하도록 설정 */
+	right: 6%; /* 버튼이 오른쪽에 위치하도록 설정 */
 `;
 
 const Caption = styled.p`
@@ -117,7 +117,7 @@ function TutorialModal({ onClose }) {
 	};
 
 	return (
-		<Modal onClose={onClose} width="70%" height="70%">
+		<Modal onClose={onClose} width="60%" height="70%">
 			<ContentWrapper>
 				<ImageWrapper>
 					<Caption>{steps[currentStep].caption}</Caption>
