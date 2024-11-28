@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-	padding-top: 5rem;
+	padding-top: 30px;
 	width: 100%;
 	display: flex;
 	justify-content: center;

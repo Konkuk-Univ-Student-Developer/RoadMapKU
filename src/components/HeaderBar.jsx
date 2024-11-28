@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import KUMAPLogo from './LogoFile/Kulogo';
+import TutorialModal from '../components/Tutorial/TutorialModal';
 
 const theme = {
 	active: {
@@ -73,6 +75,15 @@ const HeaderActions = styled.div`
 function HeaderBar() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
+	const [showModal, setShowModal] = useState(false);
+
+	const handleHomeClick = () => {
+		setShowModal(true);
+	};
+
+	const closeModal = () => {
+		setShowModal(false);
+	};
 
 	return (
 		<>
@@ -98,6 +109,9 @@ function HeaderBar() {
 							<HeaderLink onClick={() => navigate('/about-us')} $active={pathname === '/about-us'}>
 								쿠스디는?
 							</HeaderLink>
+							<HeaderLink onClick={handleHomeClick} $active={pathname === '/'}>
+								팝업
+							</HeaderLink>
 						</HeaderLinks>
 					</ContentContainer>
 
@@ -107,6 +121,7 @@ function HeaderBar() {
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>
+				{showModal && <TutorialModal onClose={closeModal} />}
 			</HeaderContainer>
 		</>
 	);
