@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import character_circle_url from '../../img/kumap_logo_circle.png';
+import { trembleBounce, trembleRotate } from '../../style/Frames';
 
 const LinkContainer = styled.div`
 	transform: translate(-6rem, 0);
@@ -10,6 +12,7 @@ const LinkContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 4rem;
+	z-index: 1;
 `;
 
 const CharacterContainer = styled.div`
@@ -17,6 +20,13 @@ const CharacterContainer = styled.div`
 	top: -4.5rem;
 	left: 8.5rem;
 	z-index: -1;
+	user-select: none;
+
+	${(props) =>
+		props.$isHovered &&
+		css`
+			animation: ${trembleRotate} 0.4s ease-in-out;
+		`}
 `;
 
 const LinkButton = styled.button`
@@ -32,19 +42,27 @@ const LinkButton = styled.button`
 	cursor: pointer;
 	transition: 0.1s ease-in;
 	&:hover {
-		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
-		border: 2px solid #02472a;
+		animation: ${trembleBounce} 0.4s ease-in-out;
 	}
 `;
 const LinkContents = () => {
 	const navigate = useNavigate();
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleMouseEnter = () => setIsHovered(true);
+	const handleMouseLeave = () => setIsHovered(false);
 	return (
 		<LinkContainer>
-			<CharacterContainer>
+			<CharacterContainer $isHovered={isHovered}>
 				<img alt="Kumap Character" src={character_circle_url} style={{ width: '7rem' }} />
 			</CharacterContainer>
 
-			<LinkButton onClick={() => navigate('/manual')} option={'white'}>
+			<LinkButton
+				onClick={() => navigate('/manual')}
+				option={'white'}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
+			>
 				KUMAP 설명보기
 			</LinkButton>
 			<LinkButton onClick={() => navigate('/road-map')} option={'green'}>

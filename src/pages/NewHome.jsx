@@ -14,7 +14,7 @@ const PageContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
+	gap: 2rem;
 `;
 
 const TitleContainer = styled.div`
@@ -23,7 +23,7 @@ const TitleContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	animation: ${fadeIn} 1s ease-in-out;
-	z-index: 1;
+	z-index: 2;
 `;
 
 const SubTitleContainer = styled.div`
@@ -35,26 +35,34 @@ const SubTitleContainer = styled.div`
 	font-size: 1.5rem;
 	user-select: none;
 	gap: 0.5rem;
-	z-index: 1;
+	z-index: 2;
 `;
 
 const RoadContainer = styled.div`
-	transform: translate(-24rem, -16rem);
+	transform: translate(-25rem, -18rem);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	animation: ${fadeIn} 1s ease-in-out;
-	z-index: -1;
+	z-index: 0;
 `;
 
 function NewHome() {
 	return (
 		<MainContainer>
-			<CircleStyle color={'rgba(234, 247, 239, 0.8)'} size={'50rem'} top={'-30%'} left={'-15%'} time={'8'} />
-			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16rem'} top={'22%'} left={'25%'} time={'6'} />
-			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10rem'} top={'30%'} left={'32%'} time={'5'} />
-			<CircleStyle color={'rgba(232, 247, 238, 0.7)'} size={'25rem'} top={'5%'} left={'74%'} time={'7'} />
-			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6rem'} top={'25%'} left={'70%'} time={'4'} />
+			<CircleStyle color={'rgba(234, 247, 239, 0.8)'} size={'50rem'} top={'-30%'} left={'-15%'} time={'8'} zIndex={1} />
+			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16rem'} top={'22%'} left={'25%'} time={'6'} zIndex={1} />
+			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10rem'} top={'30%'} left={'32%'} time={'5'} zIndex={1} />
+			<CircleStyle color={'rgba(232, 247, 238, 0.7)'} size={'25rem'} top={'5%'} left={'74%'} time={'7'} zIndex={1} />
+			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6rem'} top={'25%'} left={'70%'} time={'4'} zIndex={1} />
+			<CircleStyle
+				color={'rgba(214, 239, 224, 0.6)'}
+				size={'100rem'}
+				top={'70%'}
+				left={'-20%'}
+				time={'10'}
+				zIndex={0}
+			/>
 
 			<PageContainer>
 				<TitleContainer>

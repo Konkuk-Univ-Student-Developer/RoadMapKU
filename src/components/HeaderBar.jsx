@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import KUMAPLogo from './LogoFile/Kulogo';
 import TutorialModal from '../components/Tutorial/TutorialModal';
+import { tremble } from '../style/Frames';
 
 const theme = {
 	active: {
@@ -42,6 +43,10 @@ const ContentContainer = styled.div`
 const HeaderBrand = styled.a`
 	cursor: pointer;
 	display: flex;
+
+	&:hover {
+		animation: ${tremble} 0.2s ease-in-out;
+	}
 `;
 
 const HeaderLinks = styled.div`
