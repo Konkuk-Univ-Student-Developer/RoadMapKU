@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 import MainContainer from '../components/MainContainer';
-import CircleStyle from '../style/CircleStyle';
 import logo_url from '../img/kumap_logo.png';
 import character_url from './../img/KU_character.png';
 import road_url from './../img/road.png';
 import LinkContents from '../components/HomeContents/LinkContents';
-import { fadeIn } from '../style/Frames';
+import BackgroundContents from '../components/HomeContents/BackgroundContents';
+import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
+import { fadeIn, fadeInRoad } from '../style/Frames';
 
 const PageContainer = styled.div`
+	position: relative;
 	width: 100%;
 	height: 100vh;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
+	gap: 1.5rem;
 `;
 
 const TitleContainer = styled.div`
@@ -22,8 +25,11 @@ const TitleContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	animation: ${fadeIn} 1s ease-in-out;
+	user-select: none;
 	z-index: 2;
+	opacity: 0;
+	animation: ${fadeIn} 1s ease-in-out forwards;
+	animation-delay: 0.3s;
 `;
 
 const SubTitleContainer = styled.div`
@@ -35,7 +41,11 @@ const SubTitleContainer = styled.div`
 	font-size: 1.5rem;
 	user-select: none;
 	gap: 0.5rem;
+	animation-delay: 0.5s;
 	z-index: 2;
+	opacity: 0;
+	animation: ${fadeIn} 1s ease-in-out forwards;
+	animation-delay: 0.6s;
 `;
 
 const RoadContainer = styled.div`
@@ -43,28 +53,18 @@ const RoadContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	animation: ${fadeIn} 1s ease-in-out;
-	z-index: 0;
+	animation-delay: 1s;
+	z-index: 1;
+	opacity: 0;
+	animation: ${fadeInRoad} 1s ease-in-out forwards;
+	animation-delay: 0.9s;
 `;
 
 function NewHome() {
 	return (
 		<MainContainer>
-			<CircleStyle color={'rgba(234, 247, 239, 0.8)'} size={'50rem'} top={'-30%'} left={'-15%'} time={'8'} zIndex={1} />
-			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16rem'} top={'22%'} left={'25%'} time={'6'} zIndex={1} />
-			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10rem'} top={'30%'} left={'32%'} time={'5'} zIndex={1} />
-			<CircleStyle color={'rgba(232, 247, 238, 0.7)'} size={'25rem'} top={'5%'} left={'74%'} time={'7'} zIndex={1} />
-			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6rem'} top={'25%'} left={'70%'} time={'4'} zIndex={1} />
-			<CircleStyle
-				color={'rgba(214, 239, 224, 0.6)'}
-				size={'100rem'}
-				top={'70%'}
-				left={'-20%'}
-				time={'10'}
-				zIndex={0}
-			/>
-
 			<PageContainer>
+				<BackgroundContents />
 				<TitleContainer>
 					<img alt="Kumap Logo" src={logo_url} style={{ width: '30rem', height: '10rem' }} />
 					<img alt="Kumap Character" src={character_url} style={{ width: '8rem', height: '9rem' }} />
@@ -77,6 +77,7 @@ function NewHome() {
 				<RoadContainer>
 					<img alt="Road Image" src={road_url} style={{ width: '120rem', height: '20rem' }} />
 				</RoadContainer>
+				<ImmergeBackgroundContents />
 			</PageContainer>
 		</MainContainer>
 	);

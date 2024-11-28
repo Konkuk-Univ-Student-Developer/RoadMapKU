@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import character_circle_url from '../../img/kumap_logo_circle.png';
-import { trembleBounce, trembleRotate } from '../../style/Frames';
+import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
 
 const LinkContainer = styled.div`
 	transform: translate(-6rem, 0);
@@ -12,7 +12,10 @@ const LinkContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 4rem;
-	z-index: 1;
+	z-index: 2;
+	opacity: 0;
+	animation: ${fadeIn} 1s ease-in-out forwards;
+	animation-delay: 1.2s;
 `;
 
 const CharacterContainer = styled.div`
@@ -40,6 +43,7 @@ const LinkButton = styled.button`
 	border: 2px solid #036b3f;
 	border-radius: 20px;
 	cursor: pointer;
+	user-select: none;
 	transition: 0.1s ease-in;
 	&:hover {
 		animation: ${trembleBounce} 0.4s ease-in-out;

@@ -10,6 +10,18 @@ export const fadeIn = keyframes`
 	}
 `;
 
+export const fadeInRoad = keyframes`
+	from {
+		transform: translateX(-35rem) translateY(-18rem);
+		opacity: 0;
+	}
+		
+	to {
+		transform: translateX(-25rem) translateY(-18rem);
+		opacity: 1;
+	}
+`;
+
 export const tremble = keyframes`
 	0% {
 		transform: translateX(0);
