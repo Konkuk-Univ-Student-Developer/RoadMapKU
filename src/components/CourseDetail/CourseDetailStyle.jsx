@@ -9,27 +9,27 @@ export const ScrollContainer = styled.div`
 	width: 100%;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.div`
 	background-color: #036b3f;
 	text-align: center;
 	padding: 1rem;
 	border-radius: 8px;
 	color: white;
 	margin: 0;
+	margin-bottom: 10px;
 	font-size: 2rem;
 `;
-
 export const SubjectContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-top: 0rem;
+	margin: 0rem;
 `;
 
 export const Subtitle = styled.h2`
 	color: #036b3f;
 	font-size: 1.5rem;
 	margin: 0rem 20px;
-	padding-top: 1rem;
+	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 `;
 
