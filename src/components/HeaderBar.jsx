@@ -44,15 +44,18 @@ const HeaderBrand = styled.a`
 
 const HeaderLinks = styled.div`
 	width: 70%;
+	padding-left: 1rem;
 	display: flex;
 	align-items: start;
 	gap: 2rem;
 `;
 
 const HeaderLink = styled.a`
+	padding: 0 5px;
 	cursor: pointer;
 	text-decoration: none;
 	user-select: none;
+	font-family: Pretendard-semiBold;
 	${({ $active }) => ($active ? theme.active.on : theme.active.off)}
 
 	&:hover {
