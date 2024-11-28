@@ -21,7 +21,7 @@ const PageContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-	padding-top: 16%;
+	padding-top: 20rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
