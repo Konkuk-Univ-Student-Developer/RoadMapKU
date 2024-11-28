@@ -133,22 +133,72 @@ const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
 	);
 };
 
-function TutorialModal({ onClose }) {
+function TutorialModal({ onClose, onDismissForAWeek }) {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const steps = [
 		{
 			image: './img/tutorial1.png',
-			caption: 'KUMAP의 시작페이지는 이렇게 구성되어 있어요!'
+			caption: (
+				<>
+					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+						<img
+							src="./img/ku_tutorial.png"
+							alt="황소"
+							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
+						/>
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							<p style={{ margin: '2px', fontSize: '25px' }}>안녕? 쿠맵은 처음이지?</p>
+							<p style={{ margin: '2px', fontSize: '25px' }}>내가 쿠맵에 대해 알려줄게쿠!</p>
+						</div>
+					</div>
+
+					<p style={{ margin: 0, fontSize: '20px' }}>여기는 직군을 선택하는 칸이야. 너의 희망직군을 선택해봐!</p>
+				</>
+			)
 		},
 		{
 			image: './img/tutorial2.png',
-			caption: '관심 있는 직군을 선택해 주세요!'
+			caption: (
+				<>
+					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+						<img
+							src="./img/ku_tutorial.png"
+							alt="황소"
+							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
+						/>
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							<p style={{ margin: '2px', fontSize: '25px' }}>각 전공 역량을 선택하면 해당 역량을</p>
+							<p style={{ margin: '2px', fontSize: '25px' }}>가진 수업이 초록색으로 표시된다쿠~</p>
+						</div>
+					</div>
+
+					<p style={{ margin: 0, fontSize: '20px' }}>너에게 필요한 전공 역량을 가진 수업을 선택해봐!</p>
+				</>
+			)
 		},
 		{
 			image: './img/tutorial3.png',
-			caption: '나만의 로드맵에 과목을 추가하고 주도적인 대학 생활을 만들어나가요!'
+			caption: (
+				<>
+					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+						<img
+							src="./img/ku_tutorial.png"
+							alt="황소"
+							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
+						/>
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							<p style={{ margin: '2px', fontSize: '25px' }}>내 로드맵에 수업을</p>
+							<p style={{ margin: '2px', fontSize: '25px' }}>추가해서 나만의 로드맵을 만들어봐~ </p>
+						</div>
+					</div>
+
+					<p style={{ margin: 0, fontSize: '20px' }}>
+						더 자세한 설명은 상단의 ‘사용법’을 참고해줘! 이제 나만의 로드맵을 만들어볼까?
+					</p>
+				</>
+			)
 		}
 	];
 
@@ -183,7 +233,7 @@ function TutorialModal({ onClose }) {
 					</Slider>
 				</SliderWrapper>
 				<ButtonWrapper>
-					<StyledButton onClick={onClose}>일주일간 보지 않기 X</StyledButton>
+					<StyledButton onClick={onDismissForAWeek}>일주일간 보지 않기 X</StyledButton>
 					{currentSlide === steps.length - 1 && (
 						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
 					)}
