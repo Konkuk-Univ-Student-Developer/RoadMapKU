@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { competitionRateState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	background-color: transparent;
@@ -34,7 +35,7 @@ const Table = styled.table`
 const Th = styled.th`
 	font-size: 14px;
 	padding: 10px;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: #ffffff;
 	text-align: center;
 	width: 33.33%;
@@ -57,13 +58,13 @@ const ButtonContainer = styled.div`
 `;
 const GradeButton = styled.button`
 	padding: 8px 16px;
-	background-color: ${({ $active }) => ($active ? '#036b3f' : '#ddd')};
+	background-color: ${({ $active }) => ($active ? Color.GREEN : '#ddd')};
 	color: ${({ $active }) => ($active ? 'white' : 'black')};
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	&:hover {
-		background-color: #036b3f;
+		background-color: ${Color.GREEN};
 		color: white;
 	}
 `;
@@ -73,7 +74,7 @@ const MessageContainer = styled.div`
 	justify-content: center;
 	margin-top: 20px;
 	font-size: 14px;
-	color: #036b3f;
+	color: ${Color.GREEN};
 `;
 
 const CompetitionTable = ({ haksuId }) => {
@@ -90,7 +91,6 @@ const CompetitionTable = ({ haksuId }) => {
 					const data = await fetchCompetitionRate(haksuId);
 					setCompetitionRateState(data);
 					setErrorMessage(null);
-					console.log('수강 경쟁률:', data);
 				} catch (error) {
 					if (error.response && error.response.status === 404) {
 						setErrorMessage('해당 학기 미개설');

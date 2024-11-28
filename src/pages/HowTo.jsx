@@ -7,11 +7,10 @@ import jobchoice from '../img/jobchoice.png';
 import myroadmap from '../img/myroadmap.png';
 import majorchoice from '../img/majorchoice.png';
 import Footer from '../components/Footer/Footer';
+import { Color } from '../style/Color';
 
 const Container = styled.div`
-	// : 'Arial, sans-serif';
-	//background-color: #e0f2f1;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 `;
 
 const HeaderContainer = styled.header`
@@ -147,8 +146,8 @@ const LinkButton = styled.button`
 	height: 100px;
 	padding: 10px 20px;
 	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : '#036b3f')};
+	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : Color.GREEN)};
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
@@ -167,7 +166,7 @@ function HowTo() {
 					<HeaderContainer>
 						<Title>KUMAP 사용법</Title>
 					</HeaderContainer>
-					<Section bgColor="#036B3F">
+					<Section bgColor={Color.GREEN}>
 						<Step>Step 1.</Step>
 						<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
 						<StepTitle3>
@@ -178,7 +177,7 @@ function HowTo() {
 				</SubContainerTitle>
 
 				<SubContainer>
-					<Section bgColor="#036B3F">
+					<Section bgColor={Color.GREEN}>
 						<Step>Step 2.</Step>
 						<StepTitle>
 							왼쪽에 있는 사이드 바에서 직군을 확인하고
@@ -193,7 +192,7 @@ function HowTo() {
 				</SubContainer>
 
 				<SubContainer>
-					<Section bgColor="#036B3F">
+					<Section bgColor={Color.GREEN}>
 						<Step>Step 3.</Step>
 						<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
 						<StepTitle3>

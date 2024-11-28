@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import CourseDetail from '../../CourseDetail/CourseDetail';
 import { fadeIn } from '../../../style/Frames';
+import { Color } from '../../../style/Color';
 
 const Button = styled.div`
 	width: 100%;
@@ -33,7 +34,7 @@ const StyledCell = styled.div`
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		color: #036b3f;
+		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
 		transition:
 			background-color 0.1s ease-out,

@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import Modal from '../../components/Modal/Modal';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Color } from '../../style/Color';
 
 const ModalContentWrapper = styled.div`
 	display: flex;
@@ -89,7 +90,7 @@ const StyledButton = styled.button`
 `;
 
 const MoveToKumapButton = styled(StyledButton)`
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: white;
 
 	&:hover {
@@ -106,7 +107,7 @@ const Arrow = styled.div`
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 40px;
-	color: #036b3f;
+	color: ${Color.GREEN};
 	cursor: pointer;
 	z-index: 1000;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	background-color: transparent;
@@ -28,7 +29,7 @@ const Td = styled.td`
 	width: 10%;
 	word-wrap: break-word;
 	&:nth-child(1) {
-		background-color: #036b3f;
+		background-color: ${Color.GREEN};
 		color: #ffffff;
 	}
 `;

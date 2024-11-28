@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 export const ScrollContainer = styled.div`
 	width: 100%;
@@ -11,7 +12,7 @@ export const ScrollContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	padding: 1rem;
 	border-radius: 8px;
 	color: white;
@@ -36,7 +37,7 @@ export const Subject = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-	color: #036b3f;
+	color: ${Color.GREEN};
 	font-size: 1.5rem;
 	margin: 0.5rem 20px;
 	padding-top: 2rem;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal/Modal';
 import Cell from './totalRoadMapCell';
+import { Color } from '../../style/Color';
 
 const ScrollContainer = styled.div`
 	width: 100%;
@@ -14,7 +15,7 @@ const ScrollContainer = styled.div`
 `;
 
 const Title = styled.h1`
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	padding: 1rem;
 	border-radius: 8px;
 	color: white;

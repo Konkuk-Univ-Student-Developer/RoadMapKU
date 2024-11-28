@@ -13,6 +13,7 @@ import styled from 'styled-components';
 
 import Modal from './Modal';
 import useField from '../../hooks/useField';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 90%;
@@ -42,7 +43,7 @@ const StyledSelect = styled.select`
 `;
 
 export const Title = styled.h2`
-	color: #036b3f; /* main color */
+	color: ${Color.GREEN}
 	font-size: 1.7rem;
 	margin: 1rem;
 	padding-bottom: 2rem;
@@ -63,7 +64,7 @@ const Button = styled.button`
 	padding: 10px 20px;
 	font-size: 16px;
 	color: #fff;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;

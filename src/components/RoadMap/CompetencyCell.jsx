@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 import { fadeIn } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
@@ -25,7 +26,7 @@ const StyledCell = styled.div`
 	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
-		color: #036b3f;
+		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
 		transition: color 0.1s ease-out;
 	}

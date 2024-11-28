@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { fadeIn } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const CourseCreditContainer = styled.div`
 	height: 4rem;
@@ -27,7 +28,7 @@ const Title = styled.div`
 	user-select: none;
 	font-size: large;
 	font-weight: bolder;
-	color: #036b3f;
+	color: ${Color.GREEN};
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,7 +40,7 @@ const TitleNumber = styled.div`
 	user-select: none;
 	font-size: large;
 	font-weight: bolder;
-	color: #036b3f;
+	color: ${Color.GREEN};
 	display: flex;
 	align-items: center;
 	justify-content: center;

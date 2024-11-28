@@ -12,6 +12,7 @@ import CourseCreditTable from './CourseCreditTable';
 import TotalRoadMapModal from '../TotalRoadMapContents/totalRoadMapModal';
 import useField from '../../hooks/useField';
 import SaveButton from '../FloatButton/SaveButton';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -37,13 +38,13 @@ const Title = styled.div`
 	user-select: none;
 	font-size: 25px;
 	font-weight: bolder;
-	color: #036b3f;
+	color: ${Color.GREEN};
 `;
 
 const Button = styled.button`
 	height: 2rem;
 	width: 25rem;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: white;
 	border: none;
 	border-radius: 0.2rem;

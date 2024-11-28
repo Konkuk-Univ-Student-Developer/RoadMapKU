@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const TextContainer = styled.div`
 	display: flex;
@@ -28,7 +29,7 @@ const GreetTextContents = () => {
 		<TextContainer>
 			<Text>2025학년도</Text>
 			<ContentsContainer>
-				<Text style={{ fontSize: '85px', color: '#036B3F' }}>건국대학교</Text>
+				<Text style={{ fontSize: '85px', color: Color.GREEN }}>건국대학교</Text>
 				<Text>에</Text>
 			</ContentsContainer>
 			<Text>입학하신 것을 환영합니다!</Text>

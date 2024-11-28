@@ -12,6 +12,7 @@ import {
 	subjectsInFieldState
 } from '../../recoils/atoms';
 import { fadeIn } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -66,7 +67,7 @@ const FieldItem = styled.div`
 	font-size: 14px;
 	cursor: pointer;
 	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : 'black')};
+	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : 'black')};
 
 	&:hover {
 		background-color: #036b3f17;

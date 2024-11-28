@@ -2,6 +2,7 @@ import React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { selectedFieldState, showFieldInputState } from '../../recoils/atoms';
+import { Color } from '../../style/Color';
 
 const FieldCategoryContainer = styled.div`
 	display: flex;
@@ -20,7 +21,7 @@ const ItemContainer = styled.div`
 `;
 export const Title = styled.h2`
 	font-size: 15px;
-	color: #036b3f;
+	color: ${Color.GREEN};
 	margin-bottom: 10px;
 `;
 const Description = styled.div`
@@ -35,7 +36,7 @@ export const FixButton = styled.button`
 	padding: 10px 20px;
 	font-size: 16px;
 	color: #fff;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;

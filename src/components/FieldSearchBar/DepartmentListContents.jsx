@@ -2,6 +2,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
+import { Color } from '../../style/Color';
 
 const SelectedDepartment = styled.div`
 	width: 15.2%;
@@ -9,13 +10,12 @@ const SelectedDepartment = styled.div`
 	padding: 8px;
 	cursor: pointer;
 	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : '#black')};
+	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : '#black')};
 	border-radius: 4px;
 	text-align: center;
 	font-size: 14px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-
 	&:hover {
 		background-color: #036b3f17;
 	}
