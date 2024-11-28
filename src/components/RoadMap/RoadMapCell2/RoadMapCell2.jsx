@@ -85,7 +85,7 @@ const DropdownItem = styled.div`
 	font-family: 'Pretendard-regular';
 	font-size: 12px;
 	padding: 5px;
-	color: black;
+	color: ${Color.BLACK};
 	cursor: pointer;
 	&:hover {
 		background-color: #f0f0f0;

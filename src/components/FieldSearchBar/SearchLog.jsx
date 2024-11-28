@@ -51,7 +51,7 @@ const LogItem = styled.div`
 
 const LogText = styled.span`
 	font-size: 13px;
-	color: black;
+	color: ${Color.BLACK};
 `;
 
 const DeleteButton = styled.button`

@@ -101,12 +101,12 @@ const StepTitle3 = styled.h3`
 const SubTitle = styled.h3`
 	font-size: 30px;
 	font-weight: 500;
-	color: black
+	color: ${Color.BLACK};
 	line-height: 1.5;
-    background-color: rgba(3, 107, 63, 0.1); /* 배경색을 텍스트 색상의 10% 투명도로 설정 */
-    padding: 10px 200px; /* 텍스트와 배경색 간의 간격을 위해 패딩 추가 */
-    border-radius: 5px; /* 모서리를 둥글게 */
-    display: inline-block;
+	background-color: rgba(3, 107, 63, 0.1); /* 배경색을 텍스트 색상의 10% 투명도로 설정 */
+	padding: 10px 200px; /* 텍스트와 배경색 간의 간격을 위해 패딩 추가 */
+	border-radius: 5px; /* 모서리를 둥글게 */
+	display: inline-block;
 	margin-top: 5rem;
 `;
 const Illustration = styled.img`

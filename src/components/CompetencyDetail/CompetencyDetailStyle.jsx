@@ -30,7 +30,7 @@ export const SubjectContainer = styled.div`
 export const Subject = styled.h1`
 	justify-content: center;
 	border-radius: 8px;
-	color: black;
+	color: ${Color.BLACK};
 	margin: 0;
 	font-size: 1.7rem;
 	padding: 0rem;

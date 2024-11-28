@@ -2,10 +2,11 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import KUMAPLogo from './LogoFile/Kulogo';
+import { Color } from '../style/Color';
 
 const theme = {
 	active: {
-		on: 'color: black; font-weight: bold;',
+		on: `color: ${Color.BLACK}; font-weight: bold;`,
 		off: 'color: gray; font-weight: normal;'
 	}
 };
@@ -60,7 +61,7 @@ const HeaderLink = styled.a`
 	${({ $active }) => ($active ? theme.active.on : theme.active.off)}
 
 	&:hover {
-		color: black;
+		color: ${Color.BLACK};
 	}
 `;
 

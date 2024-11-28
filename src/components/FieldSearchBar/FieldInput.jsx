@@ -67,7 +67,7 @@ const FieldItem = styled.div`
 	font-size: 14px;
 	cursor: pointer;
 	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : 'black')};
+	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
 
 	&:hover {
 		background-color: #036b3f17;

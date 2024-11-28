@@ -59,7 +59,7 @@ const ButtonContainer = styled.div`
 const GradeButton = styled.button`
 	padding: 8px 16px;
 	background-color: ${({ $active }) => ($active ? Color.GREEN : '#ddd')};
-	color: ${({ $active }) => ($active ? 'white' : 'black')};
+	color: ${({ $active }) => ($active ? 'white' : Color.BLACK)};
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;

@@ -26,7 +26,7 @@ export const Title = styled.h2`
 `;
 const Description = styled.div`
 	font-size: 20px;
-	color: black;
+	color: ${Color.BLACK};
 	font-weight: 600;
 `;
 
