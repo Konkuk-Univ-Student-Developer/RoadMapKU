@@ -6,7 +6,7 @@ import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
 
 const LinkContainer = styled.div`
 	transform: translate(-6rem, 0);
-	padding-top: 4rem;
+	padding-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
