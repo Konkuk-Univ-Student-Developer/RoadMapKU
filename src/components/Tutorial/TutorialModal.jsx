@@ -75,8 +75,8 @@ const ButtonWrapper = styled.div`
 	padding: 0 0px;
 `;
 const StyledButton = styled.button`
-	background-color: ${(props) => props.bgColor || 'transparent'};
-	color: ${(props) => props.color || '#666'};
+	background-color: transparent;
+	color: #666;
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -84,7 +84,7 @@ const StyledButton = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		color: ${({ $color }) => $color || '#333'};
+		color: #333;
 	}
 `;
 
