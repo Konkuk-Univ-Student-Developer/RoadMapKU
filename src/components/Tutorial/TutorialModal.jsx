@@ -84,8 +84,7 @@ const StyledButton = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		background-color: ${(props) => props.hoverBgColor || 'transparent'};
-		color: ${(props) => props.hoverColor || '#333'};
+		color: ${({ $color }) => $color || '#333'};
 	}
 `;
 
@@ -95,6 +94,7 @@ const MoveToKumapButton = styled(StyledButton)`
 
 	&:hover {
 		background-color: #024e2d;
+		color: white;
 	}
 `;
 
