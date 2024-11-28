@@ -165,7 +165,6 @@ function TutorialModal({ onClose }) {
 	};
 
 	const handleMoveToKumap = () => {
-		console.log('KUMAP으로 이동');
 		onClose();
 		navigate('/road-map');
 	};
