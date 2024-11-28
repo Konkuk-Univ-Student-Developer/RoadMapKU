@@ -133,7 +133,7 @@ const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
 	);
 };
 
-function TutorialModal({ onClose }) {
+function TutorialModal({ onClose, onDismissForAWeek }) {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -233,7 +233,7 @@ function TutorialModal({ onClose }) {
 					</Slider>
 				</SliderWrapper>
 				<ButtonWrapper>
-					<StyledButton onClick={onClose}>일주일간 보지 않기 X</StyledButton>
+					<StyledButton onClick={onDismissForAWeek}>일주일간 보지 않기 X</StyledButton>
 					{currentSlide === steps.length - 1 && (
 						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
 					)}
