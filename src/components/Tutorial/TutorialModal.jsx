@@ -1,96 +1,79 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Slider from 'react-slick';
 import Modal from '../../components/Modal/Modal';
-import { Icon } from '@iconify/react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const ContentWrapper = styled.div`
-	position: relative;
-	width: 100%;
-	height: auto;
-	padding: 5px;
-	overflow: auto;
-`;
-
-const ImageWrapper = styled.div`
-	position: relative;
-	text-align: center;
-	img {
-		width: 600px;
-		height: auto;
-		object-fit: contain;
-		margin: 15px;
-	}
-`;
-
-const ArrowButton = styled.button`
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: none;
-	border: none;
-	cursor: pointer;
+const ModalContentWrapper = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100px;
-	heigt: 100px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+`;
 
-	&:hover {
-		svg {
-			color: #036b3f;
-		}
+const SliderWrapper = styled.div`
+	display: flex !important;
+	width: 80%;
+	max-width: 800px;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	.slick-slider {
+		display: flex !important;
+		width: 100%;
+		height: 100%;
+	}
+
+	.slick-list {
+		overflow: hidden;
+	}
+
+	.slick-track {
+		display: flex;
+		align-items: center;
 	}
 `;
 
-const IconStyled = styled(Icon)`
-	color: gray;
-	font-size: 60px;
+const SlideContainer = styled.div`
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+	margin-bottom: 10px;
 `;
 
-const LeftArrow = styled(ArrowButton)`
-	left: 5%;
-`;
-
-const RightArrow = styled(ArrowButton)`
-	right: 5%;
+const Image = styled.img`
+	margin-top: 30px;
+	margin-top: auto !important;
+	width: auto !important;
+	max-width: 100%;
+	height: auto;
 `;
 
 const Caption = styled.p`
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
-	margin-top: 10px;
-`;
-
-const Footer = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: 20px;
-`;
-
-const DotsWrapper = styled.div`
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	gap: 5px;
-`;
-
-const Dot = styled.div`
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background: ${(props) => (props.active ? '#036b3f' : '#ccc')};
+	margin: 0;
+	margin-bottom: 30px;
 `;
 
 const ButtonWrapper = styled.div`
 	display: flex;
-	justify-content: space-between; /* 왼쪽과 오른쪽으로 버튼 배치 */
+	justify-content: space-between;
 	align-items: center;
-	margin-top: 20px;
+	width: 90%;
+	margin-top: 50px;
+	padding: 0 0px;
 `;
-
 const StyledButton = styled.button`
 	background-color: ${(props) => props.bgColor || 'transparent'};
 	color: ${(props) => props.color || '#666'};
@@ -115,9 +98,44 @@ const MoveToKumapButton = styled(StyledButton)`
 	}
 `;
 
+const Arrow = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 40px;
+	color: #036b3f;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:hover {
+		color: #024e2d;
+	}
+`;
+
+const CustomPrevArrow = ({ className, onClick, currentSlide }) => {
+	if (currentSlide === 0) return null; // 첫 번째 슬라이드에서 화살표 숨기기
+	return (
+		<Arrow className={className} style={{ left: '-70px' }} onClick={onClick}>
+			❮
+		</Arrow>
+	);
+};
+
+const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
+	if (currentSlide === slideCount - 1) return null; // 마지막 슬라이드에서 화살표 숨기기
+	return (
+		<Arrow className={className} style={{ right: '-55px' }} onClick={onClick}>
+			❯
+		</Arrow>
+	);
+};
+
 function TutorialModal({ onClose }) {
-	const [currentStep, setCurrentStep] = useState(0);
 	const navigate = useNavigate();
+	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const steps = [
 		{
@@ -134,12 +152,16 @@ function TutorialModal({ onClose }) {
 		}
 	];
 
-	const handleNext = () => {
-		if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
-	};
-
-	const handlePrevious = () => {
-		if (currentStep > 0) setCurrentStep(currentStep - 1);
+	const settings = {
+		dots: true,
+		infinite: false,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		prevArrow: <CustomPrevArrow currentSlide={currentSlide} />,
+		nextArrow: <CustomNextArrow currentSlide={currentSlide} slideCount={steps.length} />,
+		afterChange: (current) => setCurrentSlide(current)
 	};
 
 	const handleMoveToKumap = () => {
@@ -149,36 +171,25 @@ function TutorialModal({ onClose }) {
 	};
 
 	return (
-		<Modal onClose={onClose} width="60%" height="70%">
-			<ContentWrapper>
-				<ImageWrapper>
-					<Caption>{steps[currentStep].caption}</Caption>
-					{currentStep > 0 && (
-						<LeftArrow onClick={handlePrevious}>
-							<IconStyled icon="ic:round-navigate-before" />
-						</LeftArrow>
-					)}
-					<img src={steps[currentStep].image} alt={`Step ${currentStep + 1}`} />
-					{currentStep < steps.length - 1 && (
-						<RightArrow onClick={handleNext}>
-							<IconStyled icon="ic:round-navigate-next" />
-						</RightArrow>
-					)}
-				</ImageWrapper>
-				<Footer>
-					<DotsWrapper>
-						{steps.map((_, index) => (
-							<Dot key={index} active={index === currentStep} />
+		<Modal onClose={onClose} width="80%" height="90%">
+			<ModalContentWrapper>
+				<SliderWrapper>
+					<Slider {...settings}>
+						{steps.map((step, index) => (
+							<SlideContainer key={index}>
+								<Caption>{step.caption}</Caption>
+								<Image src={step.image} alt={`Step ${index + 1}`} />
+							</SlideContainer>
 						))}
-					</DotsWrapper>
-				</Footer>
+					</Slider>
+				</SliderWrapper>
 				<ButtonWrapper>
-					<StyledButton onClick={onClose}>일주일간 보지 않기</StyledButton>
-					{currentStep === steps.length - 1 && (
+					<StyledButton onClick={onClose}>일주일간 보지 않기 X</StyledButton>
+					{currentSlide === steps.length - 1 && (
 						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
 					)}
 				</ButtonWrapper>
-			</ContentWrapper>
+			</ModalContentWrapper>
 		</Modal>
 	);
 }
