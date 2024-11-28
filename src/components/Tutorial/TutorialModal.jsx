@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from '../../components/Modal/Modal';
 import { Icon } from '@iconify/react';
@@ -37,7 +38,7 @@ const ArrowButton = styled.button`
 
 	&:hover {
 		svg {
-			color: #036b3f; // 아이콘 색상을 초록색으로 변경
+			color: #036b3f;
 		}
 	}
 `;
@@ -48,11 +49,11 @@ const IconStyled = styled(Icon)`
 `;
 
 const LeftArrow = styled(ArrowButton)`
-	left: 6%; /* 버튼이 왼쪽에 위치하도록 설정 */
+	left: 5%;
 `;
 
 const RightArrow = styled(ArrowButton)`
-	right: 6%; /* 버튼이 오른쪽에 위치하도록 설정 */
+	right: 5%;
 `;
 
 const Caption = styled.p`
@@ -66,13 +67,6 @@ const Footer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 20px;
-`;
-
-const SkipOption = styled.div`
-	font-size: 14px;
-	color: #666;
-	cursor: pointer;
-	margin-left: 10px;
 `;
 
 const DotsWrapper = styled.div`
@@ -90,8 +84,40 @@ const Dot = styled.div`
 	background: ${(props) => (props.active ? '#036b3f' : '#ccc')};
 `;
 
+const ButtonWrapper = styled.div`
+	display: flex;
+	justify-content: space-between; /* 왼쪽과 오른쪽으로 버튼 배치 */
+	align-items: center;
+	margin-top: 20px;
+`;
+
+const StyledButton = styled.button`
+	background-color: ${(props) => props.bgColor || 'transparent'};
+	color: ${(props) => props.color || '#666'};
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 14px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: ${(props) => props.hoverBgColor || 'transparent'};
+		color: ${(props) => props.hoverColor || '#333'};
+	}
+`;
+
+const MoveToKumapButton = styled(StyledButton)`
+	background-color: #036b3f;
+	color: white;
+
+	&:hover {
+		background-color: #024e2d;
+	}
+`;
+
 function TutorialModal({ onClose }) {
 	const [currentStep, setCurrentStep] = useState(0);
+	const navigate = useNavigate();
 
 	const steps = [
 		{
@@ -114,6 +140,12 @@ function TutorialModal({ onClose }) {
 
 	const handlePrevious = () => {
 		if (currentStep > 0) setCurrentStep(currentStep - 1);
+	};
+
+	const handleMoveToKumap = () => {
+		console.log('KUMAP으로 이동');
+		onClose();
+		navigate('/road-map');
 	};
 
 	return (
@@ -140,7 +172,12 @@ function TutorialModal({ onClose }) {
 						))}
 					</DotsWrapper>
 				</Footer>
-				<SkipOption onClick={onClose}>일주일간 보지 않기 X</SkipOption>
+				<ButtonWrapper>
+					<StyledButton onClick={onClose}>일주일간 보지 않기</StyledButton>
+					{currentStep === steps.length - 1 && (
+						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
+					)}
+				</ButtonWrapper>
 			</ContentWrapper>
 		</Modal>
 	);
