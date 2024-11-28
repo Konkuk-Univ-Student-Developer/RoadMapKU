@@ -35,7 +35,7 @@ const TitleWrapper = styled.div`
 
 const Title = styled.div`
 	user-select: none;
-	font-size: xx-large;
+	font-size: 25px;
 	font-weight: bolder;
 	color: #036b3f;
 `;
