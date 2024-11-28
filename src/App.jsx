@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import NewHome from './pages/NewHome';
 import RoadMap from './pages/RoadMap';
 import { RecoilRoot } from 'recoil';
 import HowToPage from './pages/HowToPage';
@@ -13,7 +13,7 @@ function App() {
 		<RecoilRoot>
 			<GlobalStyle />
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/" element={<NewHome />} />
 				<Route path="/road-map" element={<RoadMap />} />
 				<Route path="/road-map/:key" element={<RoadMap />} />
 				<Route path="/howtopage" element={<HowToPage />} />
