@@ -346,7 +346,7 @@ const RoadMapContainer = () => {
 		const compressed = pako.deflate(myTableDataString, { to: 'string' });
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
-		const newUrl = `https://kumap.konkuk.ac.kr/road-map/${utf8Encoded}`;
+		const newUrl = `http://203.252.168.41:8080/road-map/${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
