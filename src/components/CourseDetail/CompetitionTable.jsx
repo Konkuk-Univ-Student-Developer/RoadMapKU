@@ -9,6 +9,15 @@ const Container = styled.div`
 	background-color: transparent;
 	padding: 0rem;
 	width: 100%;
+	justify-content: center;
+`;
+
+const Subtitle = styled.h2`
+	color: ${Color.GREEN};
+	font-size: 1.5rem;
+	margin: 0rem 20px;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 `;
 
 const TableContainer = styled.div`
@@ -18,19 +27,22 @@ const TableContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-	margin: 0px 20px;
-	display: flex;
-	justify-content: flex-start;
 	margin-top: 10px;
 	color: #808080;
 	font-size: 0.8rem;
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+	margin: 0 auto 20px;
+	width: 90%;
 `;
-
 const SemesterButtonContainer = styled.div`
 	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
+	margin-right: 5%;
+	justify-content: flex-end;
+	//margin-bottom: 20px;
 	gap: 10px;
+	//width: 95%;
 `;
 
 const SemesterButton = styled.button`
@@ -99,12 +111,13 @@ const MessageContainer = styled.div`
 	color: ${Color.GREEN};
 `;
 
-const BeigeContainer = styled.div`
-	background-color: white; /* 베이지색 */
-	padding: 0px;
-	border-radius: 10px;
-	padding-top: 10px;
-	margin-top: 10px;
+const SubtitleWithButtons = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
 `;
 
 const CompetitionTable = ({ haksuId }) => {
@@ -171,80 +184,81 @@ const CompetitionTable = ({ haksuId }) => {
 
 	return (
 		<Container>
-			{competitionData && competitionData.length > 1 && (
-				<SemesterButtonContainer>
-					{competitionData.map((semester) => (
-						<SemesterButton
-							key={semester.openingSemester}
-							$active={selectedSemester === semester.openingSemester}
-							onClick={() => setSelectedSemester(semester.openingSemester)}
-						>
-							{semester.openingSemester}
-						</SemesterButton>
-					))}
-				</SemesterButtonContainer>
-			)}
+			<SubtitleWithButtons>
+				<Subtitle>수강 신청 경쟁률</Subtitle>
+				{competitionData && competitionData.length > 1 && (
+					<SemesterButtonContainer>
+						{competitionData.map((semester) => (
+							<SemesterButton
+								key={semester.openingSemester}
+								$active={selectedSemester === semester.openingSemester}
+								onClick={() => setSelectedSemester(semester.openingSemester)}
+							>
+								{semester.openingSemester}
+							</SemesterButton>
+						))}
+					</SemesterButtonContainer>
+				)}
+			</SubtitleWithButtons>
 
-			<BeigeContainer>
-				<TextContainer>* 2024학년도 {selectedSemester} 데이터를 기준으로 산출하였습니다.</TextContainer>
+			<TextContainer>* 2024학년도 {selectedSemester} 데이터를 기준으로 산출하였습니다.</TextContainer>
 
-				{errorMessage ? (
-					<MessageContainer>{errorMessage}</MessageContainer>
-				) : filteredData ? (
-					<>
-						{/* 전체 학년 정보 */}
-						<TableContainer>
-							<Table>
-								<thead>
-									<tr>
-										<Th>실 수강인원</Th>
-										<Th>수강 바구니</Th>
-										<Th>수강 정원</Th>
-										<Th>전체 경쟁률</Th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<Td>{filteredData.totalApplicationNumber || '-'}</Td>
-										<Td>{gradeMapping['total'].capacity}</Td>
-										<Td>{gradeMapping['total'].students}</Td>
-										<Td>{gradeMapping['total'].rate}</Td>
-									</tr>
-								</tbody>
-							</Table>
-						</TableContainer>
+			{errorMessage ? (
+				<MessageContainer>{errorMessage}</MessageContainer>
+			) : filteredData ? (
+				<>
+					{/* 전체 학년 정보 */}
+					<TableContainer>
+						<Table>
+							<thead>
+								<tr>
+									<Th>실 수강인원</Th>
+									<Th>수강 바구니</Th>
+									<Th>수강 정원</Th>
+									<Th>전체 경쟁률</Th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<Td>{filteredData.totalApplicationNumber || '-'}</Td>
+									<Td>{gradeMapping['total'].capacity}</Td>
+									<Td>{gradeMapping['total'].students}</Td>
+									<Td>{gradeMapping['total'].rate}</Td>
+								</tr>
+							</tbody>
+						</Table>
+					</TableContainer>
 
-						{/* 학년 선택 버튼 */}
-						<ButtonContainer>
-							{[1, 2, 3, 4].map((grade) => (
-								<GradeButton key={grade} $active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
-									{grade}학년
-								</GradeButton>
-							))}
-						</ButtonContainer>
+					{/* 학년 선택 버튼 */}
+					<ButtonContainer>
+						{[1, 2, 3, 4].map((grade) => (
+							<GradeButton key={grade} $active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
+								{grade}학년
+							</GradeButton>
+						))}
+					</ButtonContainer>
 
-						{/* 선택된 학년 정보 */}
-						<TableContainer>
-							<Table>
-								<thead>
-									<tr>
-										<Th>수강 바구니</Th>
-										<Th>수강 정원</Th>
-										<Th>경쟁률</Th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<Td>{gradeMapping[selectedGrade].capacity}</Td>
-										<Td>{gradeMapping[selectedGrade].students}</Td>
-										<Td>{gradeMapping[selectedGrade].rate}</Td>
-									</tr>
-								</tbody>
-							</Table>
-						</TableContainer>
-					</>
-				) : null}
-			</BeigeContainer>
+					{/* 선택된 학년 정보 */}
+					<TableContainer>
+						<Table>
+							<thead>
+								<tr>
+									<Th>수강 바구니</Th>
+									<Th>수강 정원</Th>
+									<Th>경쟁률</Th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<Td>{gradeMapping[selectedGrade].capacity}</Td>
+									<Td>{gradeMapping[selectedGrade].students}</Td>
+									<Td>{gradeMapping[selectedGrade].rate}</Td>
+								</tr>
+							</tbody>
+						</Table>
+					</TableContainer>
+				</>
+			) : null}
 		</Container>
 	);
 };
