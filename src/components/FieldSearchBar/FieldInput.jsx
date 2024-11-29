@@ -12,6 +12,7 @@ import {
 	subjectsInFieldState
 } from '../../recoils/atoms';
 import { fadeIn } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -37,7 +38,7 @@ const FieldColumn = styled.div`
 	overflow-y: auto;
 	transition: width 0.3s ease;
 	width: ${({ $width }) => $width};
-	${({ $showBorder }) => $showBorder && `border-left: 0.1px solid #e4e2e2`};
+	${({ $showBorder }) => $showBorder && `border-left: 0.1px solid ${Color.LIGHT_GREY}`};
 	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
 
@@ -45,7 +46,7 @@ const GridContainer = styled.div`
 	height: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '95%' : '')};
 	display: grid;
 	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
-	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '0.2px solid #e0e0e0' : 'none')};
+	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? `0.2px solid ${Color.LIGHT_GREY}` : 'none')};
 	border-radius: 4px;
 	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
 `;
@@ -66,7 +67,7 @@ const FieldItem = styled.div`
 	font-size: 14px;
 	cursor: pointer;
 	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? '#036b3f' : 'black')};
+	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
 
 	&:hover {
 		background-color: #036b3f17;
@@ -80,8 +81,8 @@ const MiddleGridItem = styled.div`
 	padding: 4px;
 	cursor: pointer;
 	font-size: 14px;
-	border-right: ${({ $isLastColumn }) => ($isLastColumn ? 'none' : '1px solid #e4e4e4')};
-	border-bottom: ${({ $isLastRow }) => ($isLastRow ? 'none' : '1px solid #e4e4e4')};
+	border-right: ${({ $isLastColumn }) => ($isLastColumn ? 'none' : `1px solid ${Color.LIGHT_GREY}`)};
+	border-bottom: ${({ $isLastRow }) => ($isLastRow ? 'none' : `1px solid ${Color.LIGHT_GREY}`)};
 
 	&:hover {
 		background-color: #036b3f17;

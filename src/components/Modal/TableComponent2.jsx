@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	background-color: transparent;
@@ -23,7 +24,7 @@ const Table = styled.table`
 const Th = styled.th`
 	font-size: 14px;
 	padding: 10px;
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: #ffffff;
 	text-align: center;
 

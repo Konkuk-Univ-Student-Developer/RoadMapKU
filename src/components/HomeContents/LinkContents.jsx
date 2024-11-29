@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import icon_url from '../../img/KU_search_icon.png';
 import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
 	transform: translate(-6rem, 0);
@@ -38,9 +39,9 @@ const LinkButton = styled.button`
 	padding: 10px 20px;
 	font-family: 'Pretendard-semiBold';
 	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? 'white' : '#036b3f')};
-	border: 2px solid #036b3f;
+	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? 'white' : Color.GREEN)};
+	border: 2px solid ${Color.GREEN};
 	border-radius: 20px;
 	cursor: pointer;
 	user-select: none;

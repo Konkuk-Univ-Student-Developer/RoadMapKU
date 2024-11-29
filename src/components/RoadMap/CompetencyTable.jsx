@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Cell from './CompetencyCell';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 15%;
@@ -29,7 +30,7 @@ const Title = styled.div`
 	user-select: none;
 	font-size: 15px;
 	font-weight: bolder;
-	color: #036b3f;
+	color: ${Color.GREEN};
 	padding-bottom: 0.5rem;
 	display: flex;
 	align-items: center;

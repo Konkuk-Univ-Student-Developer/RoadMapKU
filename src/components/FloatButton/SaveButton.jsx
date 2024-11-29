@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
 import { IoMdDownload } from 'react-icons/io';
 import { FaLink } from 'react-icons/fa6';
+import { Color } from '../../style/Color';
 
 const Btn = styled.button`
 	position: fixed;
@@ -33,7 +34,7 @@ const DownloadBtn = styled.div`
 	justify-content: center;
 	transition-duration: 0.3s;
 
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: white;
 	border: none;
 	border-radius: 50%;
@@ -46,7 +47,7 @@ const DownloadBtn = styled.div`
 	/* Hover effect on sign */
 	${Btn}:hover & {
 		margin-top: 9rem;
-		color: #036b3f;
+		color: ${Color.GREEN};
 		background-color: #f4f4f4;
 		cursor: default;
 	}
@@ -60,7 +61,7 @@ const CaptureBtn = styled.div`
 	opacity: 0;
 	transition-duration: 0.3s;
 
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: white;
 	border: none;
 	border-radius: 50%;
@@ -89,7 +90,7 @@ const UrlBtn = styled.div`
 	opacity: 0;
 	transition-duration: 0.3s;
 
-	background-color: #036b3f;
+	background-color: ${Color.GREEN};
 	color: white;
 	border: none;
 	border-radius: 50%;

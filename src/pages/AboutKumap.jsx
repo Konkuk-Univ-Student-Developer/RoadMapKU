@@ -7,6 +7,7 @@ import Footer from '../components/Footer/Footer';
 import { Header, SectionsContainer } from 'react-fullpage';
 import HeaderBar from '../components/HeaderBar';
 import { fullPageOptions } from './AboutUs';
+import { Color } from '../style/Color';
 
 const SubContainer = styled.div`
 	width: 100%;
@@ -39,8 +40,8 @@ const LinkButton = styled.button`
 	height: 100px;
 	padding: 10px 20px;
 	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : '#036b3f')};
+	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : Color.GREEN)};
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;

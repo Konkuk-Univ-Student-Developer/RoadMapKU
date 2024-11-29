@@ -5,6 +5,7 @@ import { selectedFieldLogState } from '../../recoils/atoms';
 import useField from '../../hooks/useField';
 import { FaX, FaTrash } from 'react-icons/fa6';
 import { fadeIn } from '../../style/Frames';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 95%;
@@ -50,7 +51,7 @@ const LogItem = styled.div`
 
 const LogText = styled.span`
 	font-size: 13px;
-	color: black;
+	color: ${Color.BLACK};
 `;
 
 const DeleteButton = styled.button`
@@ -61,7 +62,7 @@ const DeleteButton = styled.button`
 	display: flex;
 	align-items: center;
 	transition: transform 0.2s ease;
-	color: #8e8e8e;
+	color: ${Color.LIGHT_GREY};
 
 	&:hover {
 		transform: scale(1.3);
@@ -71,7 +72,7 @@ const DeleteButton = styled.button`
 const DeleteAllButton = styled.div`
 	width: 60px;
 	cursor: pointer;
-	color: silver;
+	color: ${Color.LIGHT_GREY};
 	font-size: 15px;
 	display: flex;
 	align-items: center;

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
 	gap: 25px;
@@ -15,8 +16,8 @@ const LinkButton = styled.button`
 	height: 100px;
 	padding: 10px 20px;
 	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? '#036b3f' : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? 'white' : '#036b3f')};
+	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
+	background-color: ${(props) => (props.option === 'white' ? 'white' : Color.GREEN)};
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;

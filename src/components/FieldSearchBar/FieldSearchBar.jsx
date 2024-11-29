@@ -4,6 +4,7 @@ import DepartmentList from './DepartmentList';
 import SearchBar from './SearchBar';
 import FieldInput from './FieldInput';
 import SearchLog from './SearchLog';
+import { Color } from '../../style/Color';
 
 const FieldSearchBarContainer = styled.div`
 	width: 85%;
@@ -16,7 +17,7 @@ const FieldSearchBarContainer = styled.div`
 	align-items: center;
 	border-radius: 10px;
 	height: fit-content;
-	border: 1px solid silver;
+	border: 1px solid ${Color.LIGHT_GREY};
 `;
 
 const FieldSearchBar = () => {
