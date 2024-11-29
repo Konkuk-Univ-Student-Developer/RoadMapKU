@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import Modal from '../../components/Modal/Modal';
@@ -89,16 +88,6 @@ const StyledButton = styled.button`
 	}
 `;
 
-const MoveToKumapButton = styled(StyledButton)`
-	background-color: ${Color.GREEN};
-	color: white;
-
-	&:hover {
-		background-color: #024e2d;
-		color: white;
-	}
-`;
-
 const Arrow = styled.div`
 	display: flex;
 	justify-content: center;
@@ -135,7 +124,6 @@ const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
 };
 
 function TutorialModal({ onClose, onDismissForAWeek }) {
-	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const steps = [
@@ -150,8 +138,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>안녕? 쿠맵은 처음이지?</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>내가 쿠맵에 대해 알려줄게쿠!</p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>안녕? 쿠맵은 처음이지?</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>내가 쿠맵에 대해 알려줄게쿠!</div>
 						</div>
 					</div>
 
@@ -170,8 +158,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>각 전공 역량을 선택하면 해당 역량을</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>가진 수업이 초록색으로 표시된다쿠~</p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>각 전공 역량을 선택하면 해당 역량을</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>가진 수업이 초록색으로 표시된다쿠~</div>
 						</div>
 					</div>
 
@@ -190,8 +178,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>내 로드맵에 수업을</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>추가해서 나만의 로드맵을 만들어봐~ </p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>내 로드맵에 수업을</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>추가해서 나만의 로드맵을 만들어봐~ </div>
 						</div>
 					</div>
 
@@ -215,11 +203,6 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 		afterChange: (current) => setCurrentSlide(current)
 	};
 
-	const handleMoveToKumap = () => {
-		onClose();
-		navigate('/road-map');
-	};
-
 	return (
 		<Modal onClose={onClose} width="80%" height="90%">
 			<ModalContentWrapper>
@@ -235,9 +218,6 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 				</SliderWrapper>
 				<ButtonWrapper>
 					<StyledButton onClick={onDismissForAWeek}>일주일간 보지 않기 X</StyledButton>
-					{currentSlide === steps.length - 1 && (
-						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
-					)}
 				</ButtonWrapper>
 			</ModalContentWrapper>
 		</Modal>
