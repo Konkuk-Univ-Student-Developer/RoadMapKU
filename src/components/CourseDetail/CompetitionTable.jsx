@@ -16,6 +16,7 @@ const TableContainer = styled.div`
 	justify-content: center;
 	margin-top: 20px;
 `;
+
 const TextContainer = styled.div`
 	margin: 0px 20px;
 	display: flex;
@@ -23,6 +24,26 @@ const TextContainer = styled.div`
 	margin-top: 10px;
 	color: #808080;
 	font-size: 0.8rem;
+`;
+
+const SemesterButtonContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	gap: 10px;
+`;
+
+const SemesterButton = styled.button`
+	padding: 8px 16px;
+	background-color: ${({ $active }) => ($active ? Color.GREEN : '#ddd')};
+	color: ${({ $active }) => ($active ? 'white' : Color.BLACK)};
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	&:hover {
+		background-color: ${Color.GREEN};
+		color: white;
+	}
 `;
 
 const Table = styled.table`
@@ -56,6 +77,7 @@ const ButtonContainer = styled.div`
 	width: 80%;
 	justify-content: center;
 `;
+
 const GradeButton = styled.button`
 	padding: 8px 16px;
 	background-color: ${({ $active }) => ($active ? Color.GREEN : '#ddd')};
@@ -76,12 +98,22 @@ const MessageContainer = styled.div`
 	font-size: 14px;
 	color: ${Color.GREEN};
 `;
+
+const BeigeContainer = styled.div`
+	background-color: white; /* 베이지색 */
+	padding: 0px;
+	border-radius: 10px;
+	padding-top: 10px;
+	margin-top: 10px;
+`;
+
 const CompetitionTable = ({ haksuId }) => {
 	const { fetchCompetitionRate } = useField();
+	const [selectedSemester, setSelectedSemester] = useState(null); // 학기 선택 상태 추가
+	const [selectedGrade, setSelectedGrade] = useState(1);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const setCompetitionRateState = useSetRecoilState(competitionRateState);
 	const competitionData = useRecoilValue(competitionRateState);
-	const [selectedGrades, setSelectedGrades] = useState([]);
 
 	useEffect(() => {
 		const loadCompetitionRate = async () => {
@@ -89,8 +121,8 @@ const CompetitionTable = ({ haksuId }) => {
 				try {
 					const data = await fetchCompetitionRate(haksuId);
 					setCompetitionRateState(data);
+					setSelectedSemester(data[0]?.openingSemester); // 기본값: 첫 번째 학기
 					setErrorMessage(null);
-					setSelectedGrades(Array(data.length).fill(1)); // Initialize selectedGrades with '1학년' for each semester
 				} catch (error) {
 					if (error.response && error.response.status === 404) {
 						setErrorMessage('해당 학기 미개설');
@@ -105,113 +137,114 @@ const CompetitionTable = ({ haksuId }) => {
 		loadCompetitionRate();
 	}, [haksuId]);
 
-	const handleGradeChange = (index, grade) => {
-		const updatedGrades = [...selectedGrades];
-		updatedGrades[index] = grade;
-		setSelectedGrades(updatedGrades);
-	};
+	const filteredData = competitionData?.find((semester) => semester.openingSemester === selectedSemester) || null;
 
-	const renderTablesForSemesters = () => {
-		if (!competitionData || competitionData.length === 0) {
-			return null;
-		}
-
-		return competitionData.map((semesterData, index) => {
-			const gradeMapping = {
+	const gradeMapping = filteredData
+		? {
 				total: {
-					students: semesterData?.competitionRates?.totalNumber || '-',
-					capacity: semesterData?.competitionRates?.totalCourseBasketNumber || '-',
-					rate: semesterData?.competitionRates?.totalCompetitionRate || '-'
+					students: filteredData?.competitionRates?.totalNumber || '-',
+					capacity: filteredData?.competitionRates?.totalCourseBasketNumber || '-',
+					rate: filteredData?.competitionRates?.totalCompetitionRate || '-'
 				},
 				1: {
-					students: semesterData?.competitionRates?.freshmanTotalNumber || '-',
-					capacity: semesterData?.competitionRates?.freshmanCourseBasketNumber || '-',
-					rate: semesterData?.competitionRates?.freshmanCompetitionRate || '-'
+					students: filteredData?.competitionRates?.freshmanTotalNumber || '-',
+					capacity: filteredData?.competitionRates?.freshmanCourseBasketNumber || '-',
+					rate: filteredData?.competitionRates?.freshmanCompetitionRate || '-'
 				},
 				2: {
-					students: semesterData?.competitionRates?.sophomoreTotalNumber || '-',
-					capacity: semesterData?.competitionRates?.sophomoreCourseBasketNumber || '-',
-					rate: semesterData?.competitionRates?.sophomoreCompetitionRate || '-'
+					students: filteredData?.competitionRates?.sophomoreTotalNumber || '-',
+					capacity: filteredData?.competitionRates?.sophomoreCourseBasketNumber || '-',
+					rate: filteredData?.competitionRates?.sophomoreCompetitionRate || '-'
 				},
 				3: {
-					students: semesterData?.competitionRates?.juniorTotalNumber || '-',
-					capacity: semesterData?.competitionRates?.juniorCourseBasketNumber || '-',
-					rate: semesterData?.competitionRates?.juniorCompetitionRate || '-'
+					students: filteredData?.competitionRates?.juniorTotalNumber || '-',
+					capacity: filteredData?.competitionRates?.juniorCourseBasketNumber || '-',
+					rate: filteredData?.competitionRates?.juniorCompetitionRate || '-'
 				},
 				4: {
-					students: semesterData?.competitionRates?.seniorTotalNumber || '-',
-					capacity: semesterData?.competitionRates?.seniorCourseBasketNumber || '-',
-					rate: semesterData?.competitionRates?.seniorCompetitionRate || '-'
+					students: filteredData?.competitionRates?.seniorTotalNumber || '-',
+					capacity: filteredData?.competitionRates?.seniorCourseBasketNumber || '-',
+					rate: filteredData?.competitionRates?.seniorCompetitionRate || '-'
 				}
-			};
-
-			const selectedGrade = selectedGrades[index] || 1; // 기본값 설정
-
-			return (
-				<div key={index}>
-					<TextContainer>* 2024년 {semesterData.openingSemester} 데이터를 기준으로 산출하였습니다.</TextContainer>
-					{/* 전체 학년 정보 */}
-					<TableContainer>
-						<Table>
-							<thead>
-								<tr>
-									<Th>실 수강인원</Th>
-									<Th>수강 바구니</Th>
-									<Th>수강 정원</Th>
-									<Th>전체 경쟁률</Th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<Td>{semesterData.totalApplicationNumber || '-'}</Td>
-									<Td>{gradeMapping['total'].capacity}</Td>
-									<Td>{gradeMapping['total'].students}</Td>
-									<Td>{gradeMapping['total'].rate}</Td>
-								</tr>
-							</tbody>
-						</Table>
-					</TableContainer>
-
-					{/* 학년 선택 버튼 */}
-					<ButtonContainer>
-						{[1, 2, 3, 4].map((grade) => (
-							<GradeButton
-								key={grade}
-								$active={selectedGrades[index] === grade}
-								onClick={() => handleGradeChange(index, grade)}
-							>
-								{grade}학년
-							</GradeButton>
-						))}
-					</ButtonContainer>
-
-					{/* 선택된 학년 정보 */}
-					<TableContainer>
-						<Table>
-							<thead>
-								<tr>
-									<Th>수강 바구니</Th>
-									<Th>수강 정원</Th>
-									<Th>경쟁률</Th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<Td>{gradeMapping[selectedGrade]?.capacity || '-'}</Td>
-									<Td>{gradeMapping[selectedGrade]?.students || '-'}</Td>
-									<Td>{gradeMapping[selectedGrade]?.rate || '-'}</Td>
-								</tr>
-							</tbody>
-						</Table>
-					</TableContainer>
-				</div>
-			);
-		});
-	};
+			}
+		: null;
 
 	return (
 		<Container>
-			{errorMessage ? <MessageContainer>{errorMessage}</MessageContainer> : renderTablesForSemesters()}
+			{competitionData && competitionData.length > 1 && (
+				<SemesterButtonContainer>
+					{competitionData.map((semester) => (
+						<SemesterButton
+							key={semester.openingSemester}
+							$active={selectedSemester === semester.openingSemester}
+							onClick={() => setSelectedSemester(semester.openingSemester)}
+						>
+							{semester.openingSemester}
+						</SemesterButton>
+					))}
+				</SemesterButtonContainer>
+			)}
+
+			<BeigeContainer>
+				<TextContainer>* 2024학년도 {selectedSemester} 데이터를 기준으로 산출하였습니다.</TextContainer>
+
+				{errorMessage ? (
+					<MessageContainer>{errorMessage}</MessageContainer>
+				) : filteredData ? (
+					<>
+						{/* 전체 학년 정보 */}
+						<TableContainer>
+							<Table>
+								<thead>
+									<tr>
+										<Th>실 수강인원</Th>
+										<Th>수강 바구니</Th>
+										<Th>수강 정원</Th>
+										<Th>전체 경쟁률</Th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<Td>{filteredData.totalApplicationNumber || '-'}</Td>
+										<Td>{gradeMapping['total'].capacity}</Td>
+										<Td>{gradeMapping['total'].students}</Td>
+										<Td>{gradeMapping['total'].rate}</Td>
+									</tr>
+								</tbody>
+							</Table>
+						</TableContainer>
+
+						{/* 학년 선택 버튼 */}
+						<ButtonContainer>
+							{[1, 2, 3, 4].map((grade) => (
+								<GradeButton key={grade} $active={selectedGrade === grade} onClick={() => setSelectedGrade(grade)}>
+									{grade}학년
+								</GradeButton>
+							))}
+						</ButtonContainer>
+
+						{/* 선택된 학년 정보 */}
+						<TableContainer>
+							<Table>
+								<thead>
+									<tr>
+										<Th>수강 바구니</Th>
+										<Th>수강 정원</Th>
+										<Th>경쟁률</Th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<Td>{gradeMapping[selectedGrade].capacity}</Td>
+										<Td>{gradeMapping[selectedGrade].students}</Td>
+										<Td>{gradeMapping[selectedGrade].rate}</Td>
+									</tr>
+								</tbody>
+							</Table>
+						</TableContainer>
+					</>
+				) : null}
+			</BeigeContainer>
 		</Container>
 	);
 };
