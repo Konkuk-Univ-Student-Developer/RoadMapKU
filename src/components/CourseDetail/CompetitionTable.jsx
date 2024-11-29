@@ -109,7 +109,7 @@ const BeigeContainer = styled.div`
 
 const CompetitionTable = ({ haksuId }) => {
 	const { fetchCompetitionRate } = useField();
-	const [selectedSemester, setSelectedSemester] = useState(null); // 학기 선택 상태 추가
+	const [selectedSemester, setSelectedSemester] = useState(null);
 	const [selectedGrade, setSelectedGrade] = useState(1);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const setCompetitionRateState = useSetRecoilState(competitionRateState);
