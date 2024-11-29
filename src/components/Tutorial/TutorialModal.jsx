@@ -150,8 +150,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>안녕? 쿠맵은 처음이지?</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>내가 쿠맵에 대해 알려줄게쿠!</p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>안녕? 쿠맵은 처음이지?</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>내가 쿠맵에 대해 알려줄게쿠!</div>
 						</div>
 					</div>
 
@@ -170,8 +170,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>각 전공 역량을 선택하면 해당 역량을</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>가진 수업이 초록색으로 표시된다쿠~</p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>각 전공 역량을 선택하면 해당 역량을</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>가진 수업이 초록색으로 표시된다쿠~</div>
 						</div>
 					</div>
 
@@ -190,8 +190,8 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 							style={{ width: '100px', margin: '5px', marginRight: '10px' }}
 						/>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							<p style={{ margin: '2px', fontSize: '25px' }}>내 로드맵에 수업을</p>
-							<p style={{ margin: '2px', fontSize: '25px' }}>추가해서 나만의 로드맵을 만들어봐~ </p>
+							<div style={{ margin: '2px', fontSize: '25px' }}>내 로드맵에 수업을</div>
+							<div style={{ margin: '2px', fontSize: '25px' }}>추가해서 나만의 로드맵을 만들어봐~ </div>
 						</div>
 					</div>
 
