@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import Modal from '../../components/Modal/Modal';
@@ -89,16 +88,6 @@ const StyledButton = styled.button`
 	}
 `;
 
-const MoveToKumapButton = styled(StyledButton)`
-	background-color: ${Color.GREEN};
-	color: white;
-
-	&:hover {
-		background-color: #024e2d;
-		color: white;
-	}
-`;
-
 const Arrow = styled.div`
 	display: flex;
 	justify-content: center;
@@ -135,7 +124,6 @@ const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
 };
 
 function TutorialModal({ onClose, onDismissForAWeek }) {
-	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const steps = [
@@ -215,11 +203,6 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 		afterChange: (current) => setCurrentSlide(current)
 	};
 
-	const handleMoveToKumap = () => {
-		onClose();
-		navigate('/road-map');
-	};
-
 	return (
 		<Modal onClose={onClose} width="80%" height="90%">
 			<ModalContentWrapper>
@@ -235,9 +218,6 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 				</SliderWrapper>
 				<ButtonWrapper>
 					<StyledButton onClick={onDismissForAWeek}>일주일간 보지 않기 X</StyledButton>
-					{currentSlide === steps.length - 1 && (
-						<MoveToKumapButton onClick={handleMoveToKumap}>KUMAP으로 이동</MoveToKumapButton>
-					)}
 				</ButtonWrapper>
 			</ModalContentWrapper>
 		</Modal>
