@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import MainContainer from '../components/MainContainer';
 import logo_url from '../img/kumap_logo.png';
@@ -8,8 +8,6 @@ import LinkContents from '../components/HomeContents/LinkContents';
 import BackgroundContents from '../components/HomeContents/BackgroundContents';
 import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
 import { fadeIn, fadeInRoad } from '../style/Frames';
-import TutorialModal from '../components/Tutorial/TutorialModal';
-
 const PageContainer = styled.div`
 	position: relative;
 	width: 100%;
@@ -63,41 +61,8 @@ const RoadContainer = styled.div`
 `;
 
 function NewHome() {
-	const [showModal, setShowModal] = useState(false);
-
-	useEffect(() => {
-		const dismissedUntil = localStorage.getItem('dismissedUntil');
-		const today = new Date();
-
-		if (!dismissedUntil) {
-			setShowModal(true);
-			return;
-		}
-
-		const storedDate = new Date(dismissedUntil);
-		if (storedDate < today) {
-			setShowModal(true);
-		} else {
-			setShowModal(false);
-		}
-	}, []);
-
-	// 팝업 닫기
-	const handleCloseModal = () => {
-		setShowModal(false);
-	};
-
-	// 일주일 동안 보지 않기
-	const handleDismissForAWeek = () => {
-		const nextWeek = new Date();
-		nextWeek.setDate(nextWeek.getDate() + 7); // 오늘 날짜 + 7일
-		localStorage.setItem('dismissedUntil', nextWeek.toISOString()); // 로컬 스토리지에 저장
-		setShowModal(false);
-	};
-
 	return (
 		<MainContainer>
-			{showModal && <TutorialModal onClose={handleCloseModal} onDismissForAWeek={handleDismissForAWeek} />}
 			<PageContainer>
 				<BackgroundContents />
 				<TitleContainer>
