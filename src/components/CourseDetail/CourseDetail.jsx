@@ -16,7 +16,6 @@ function CourseDetail({ onClose, HaksuId }) {
 	const descriptionRef = useRef();
 	const informationRef = useRef();
 	const competencyRef = useRef();
-	const competitionnRef = useRef();
 
 	useEffect(() => {
 		const loadData = async () => {
@@ -102,7 +101,6 @@ function CourseDetail({ onClose, HaksuId }) {
 				<TableContent>
 					<TableComponent2 data={tableData2} />
 				</TableContent>
-				<Subtitle ref={competitionnRef}>수강 신청 경쟁률</Subtitle>
 				<CompetitionTable haksuId={HaksuId} />
 			</ScrollContainer>
 		</Modal>
