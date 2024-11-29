@@ -51,7 +51,6 @@ const SubTitleContainer = styled.div`
 `;
 
 const RoadContainer = styled.div`
-	transform: translate(-25rem, -18rem);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -105,7 +104,7 @@ function NewHome() {
 					<img alt="Kumap Character" src={character_url} style={{ width: '8rem', height: '9rem' }} />
 				</TitleContainer>
 				<SubTitleContainer>
-					<div>진로를 탐색하고 추가하여</div>
+					<div>진로를 탐색하고 수업을 추가하여</div>
 					<div>나만의 로드맵을 만들어 보세요!</div>
 				</SubTitleContainer>
 				<LinkContents />
