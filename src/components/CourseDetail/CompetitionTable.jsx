@@ -10,6 +10,7 @@ const Container = styled.div`
 	padding: 0rem;
 	width: 100%;
 `;
+
 const TableContainer = styled.div`
 	display: flex;
 	justify-content: center;
@@ -67,6 +68,7 @@ const GradeButton = styled.button`
 		color: white;
 	}
 `;
+
 const MessageContainer = styled.div`
 	display: flex;
 	justify-content: center;
@@ -74,7 +76,6 @@ const MessageContainer = styled.div`
 	font-size: 14px;
 	color: ${Color.GREEN};
 `;
-
 const CompetitionTable = ({ haksuId }) => {
 	const { fetchCompetitionRate } = useField();
 	const [errorMessage, setErrorMessage] = useState(null);
@@ -83,18 +84,13 @@ const CompetitionTable = ({ haksuId }) => {
 	const [selectedGrades, setSelectedGrades] = useState([]);
 
 	useEffect(() => {
-		if (competitionData && competitionData.length > 0) {
-			setSelectedGrades(Array(competitionData.length).fill(1)); // 학기별로 초기값 설정 (1학년)
-		}
-	}, [competitionData]);
-
-	useEffect(() => {
 		const loadCompetitionRate = async () => {
 			if (haksuId) {
 				try {
 					const data = await fetchCompetitionRate(haksuId);
 					setCompetitionRateState(data);
 					setErrorMessage(null);
+					setSelectedGrades(Array(data.length).fill(1)); // Initialize selectedGrades with '1학년' for each semester
 				} catch (error) {
 					if (error.response && error.response.status === 404) {
 						setErrorMessage('해당 학기 미개설');
@@ -149,9 +145,11 @@ const CompetitionTable = ({ haksuId }) => {
 				}
 			};
 
+			const selectedGrade = selectedGrades[index] || 1; // 기본값 설정
+
 			return (
 				<div key={index}>
-					<TextContainer>* {semesterData.openingSemester}학기 데이터를 기준으로 산출하였습니다.</TextContainer>
+					<TextContainer>* 2024년 {semesterData.openingSemester} 데이터를 기준으로 산출하였습니다.</TextContainer>
 					{/* 전체 학년 정보 */}
 					<TableContainer>
 						<Table>
@@ -180,7 +178,7 @@ const CompetitionTable = ({ haksuId }) => {
 							<GradeButton
 								key={grade}
 								$active={selectedGrades[index] === grade}
-								onClick={() => handleGradeChange(index, grade)} // 학기별 상태 변경
+								onClick={() => handleGradeChange(index, grade)}
 							>
 								{grade}학년
 							</GradeButton>
@@ -199,9 +197,9 @@ const CompetitionTable = ({ haksuId }) => {
 							</thead>
 							<tbody>
 								<tr>
-									<Td>{gradeMapping[selectedGrades[index]].capacity}</Td>
-									<Td>{gradeMapping[selectedGrades[index]].students}</Td>
-									<Td>{gradeMapping[selectedGrades[index]].rate}</Td>
+									<Td>{gradeMapping[selectedGrade]?.capacity || '-'}</Td>
+									<Td>{gradeMapping[selectedGrade]?.students || '-'}</Td>
+									<Td>{gradeMapping[selectedGrade]?.rate || '-'}</Td>
 								</tr>
 							</tbody>
 						</Table>
