@@ -207,28 +207,6 @@ const CompetitionTable = ({ haksuId }) => {
 				<MessageContainer>{errorMessage}</MessageContainer>
 			) : filteredData ? (
 				<>
-					{/* 전체 학년 정보 */}
-					<TableContainer>
-						<Table>
-							<thead>
-								<tr>
-									<Th>실 수강인원</Th>
-									<Th>수강 바구니</Th>
-									<Th>수강 정원</Th>
-									<Th>전체 경쟁률</Th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<Td>{filteredData.totalApplicationNumber || '-'}</Td>
-									<Td>{gradeMapping['total'].capacity}</Td>
-									<Td>{gradeMapping['total'].students}</Td>
-									<Td>{gradeMapping['total'].rate}</Td>
-								</tr>
-							</tbody>
-						</Table>
-					</TableContainer>
-
 					{/* 학년 선택 버튼 */}
 					<ButtonContainer>
 						{[1, 2, 3, 4].map((grade) => (
@@ -253,6 +231,28 @@ const CompetitionTable = ({ haksuId }) => {
 									<Td>{gradeMapping[selectedGrade].capacity}</Td>
 									<Td>{gradeMapping[selectedGrade].students}</Td>
 									<Td>{gradeMapping[selectedGrade].rate}</Td>
+								</tr>
+							</tbody>
+						</Table>
+					</TableContainer>
+
+					{/* 전체 학년 정보 */}
+					<TableContainer>
+						<Table>
+							<thead>
+								<tr>
+									<Th>실 수강인원</Th>
+									<Th>수강 바구니</Th>
+									<Th>수강 정원</Th>
+									<Th>전체 경쟁률</Th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<Td>{filteredData.totalApplicationNumber || '-'}</Td>
+									<Td>{gradeMapping['total'].capacity}</Td>
+									<Td>{gradeMapping['total'].students}</Td>
+									<Td>{gradeMapping['total'].rate}</Td>
 								</tr>
 							</tbody>
 						</Table>
