@@ -33,18 +33,7 @@ jobs:
             yarn install
             yarn build
 
-            # serve로 실행
-            PORT=3000
-            echo "Starting serve on port $PORT..."
-            nohup yarn serve -s build -l $PORT >> output.log 2>&1 &
-
-            # 프로세스 확인
-            sleep 5
-            if pgrep -f "serve -s build" > /dev/null; then
-              echo "Serve process is running successfully"
-              ps aux | grep serve
-            else
-              echo "Failed to start serve process"
-              cat output.log
-              exit 1
-            fi
+            docker rm -f ku-dream-front-1
+            docker rmi ku-dream-front
+            cd ..
+            docker-compose up -d
