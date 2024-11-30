@@ -66,11 +66,11 @@ const FieldItem = styled.div`
 	padding: 8px;
 	font-size: 14px;
 	cursor: pointer;
-	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
+	background: ${({ $isSelected }) => ($isSelected ? Color.HOVER_GREEN : 'white')};
 	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
 
 	&:hover {
-		background-color: #036b3f17;
+		background-color: ${Color.HOVER_GREEN};
 	}
 `;
 
@@ -85,7 +85,7 @@ const MiddleGridItem = styled.div`
 	border-bottom: ${({ $isLastRow }) => ($isLastRow ? 'none' : `1px solid ${Color.LIGHT_GREY}`)};
 
 	&:hover {
-		background-color: #036b3f17;
+		background-color: ${Color.HOVER_GREEN};
 	}
 `;
 

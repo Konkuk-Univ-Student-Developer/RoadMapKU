@@ -9,7 +9,7 @@ const SelectedDepartment = styled.div`
 	margin: 5px 5px;
 	padding: 8px;
 	cursor: pointer;
-	background: ${({ $isSelected }) => ($isSelected ? '#036b3f17' : 'white')};
+	background: ${({ $isSelected }) => ($isSelected ? Color.HOVER_GREEN : 'white')};
 	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
 	border-radius: 4px;
 	text-align: center;
@@ -17,7 +17,7 @@ const SelectedDepartment = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 	&:hover {
-		background-color: #036b3f17;
+		background-color: ${Color.HOVER_GREEN};
 	}
 `;
 
