@@ -72,3 +72,8 @@ export const selectedFieldLogState = atom({
 	key: 'selectedFieldLogState',
 	default: []
 });
+
+export const selectedMyTableContentsState = atom({
+	key: 'selectedMyTableContentsState',
+	default: []
+});

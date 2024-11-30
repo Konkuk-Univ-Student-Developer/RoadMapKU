@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import pako from 'pako';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
-import { courseByCompetencyInSubjectState, selectedSubjectState, totalRoadMapState } from '../../recoils/atoms';
+import {
+	courseByCompetencyInSubjectState,
+	selectedSubjectState,
+	totalRoadMapState,
+	selectedMyTableContentsState
+} from '../../recoils/atoms';
 import RoadMapContents from './RoadMapContents';
 import CourseCreditTable from './CourseCreditTable';
 import TotalRoadMapModal from '../TotalRoadMapContents/totalRoadMapModal';
@@ -77,6 +82,9 @@ const RoadMapContainer = () => {
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	// totalRoadMap: 학과 전체 로드맵(교과목)
 	const totalRoadMap = useRecoilValue(totalRoadMapState);
+	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
+
+	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 	const { fetchCoursesInSubject } = useField();
@@ -88,8 +96,6 @@ const RoadMapContainer = () => {
 
 	// myCompetencyList: 내 로드맵의 전공역량 목록
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
-	// myTableData: 내 로드맵에 포함되는 교과목 정보
-	const [myTableData, setMyTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 
 	// totalRoadMapData: 학과 전체 로드맵에 표함되는 교과목 목록
 	const [totalRoadMapData, setTotalRoadMapData] = useState([]);
@@ -105,6 +111,11 @@ const RoadMapContainer = () => {
 	// Base64 디코딩 함수
 	const fromBase64 = (base64) => Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
 
+	useEffect(() => {
+		if (Array.isArray(selectedMyTableContents) && selectedMyTableContents.length == 0)
+			setSelectedMyTableContentsState(JSON.parse(JSON.stringify(defaultTable)));
+	}, []);
+
 	// URL을 통한 접속
 	const { key } = useParams();
 	useEffect(() => {
@@ -113,7 +124,7 @@ const RoadMapContainer = () => {
 			const compressedData = fromBase64(utf8Decoded);
 			const decompressed = pako.inflate(compressedData, { to: 'string' });
 			const loadedTableData = JSON.parse(decompressed);
-			setMyTableData(loadedTableData);
+			setSelectedMyTableContentsState(loadedTableData);
 		}
 	}, [key]);
 
@@ -125,13 +136,12 @@ const RoadMapContainer = () => {
 	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) return;
 
-		// setCompetencyList(courseByCompetencyInSubject);
-		const competencyList = courseByCompetencyInSubject.map((competency) => ({
+		const competencyContents = courseByCompetencyInSubject.map((competency) => ({
 			competencyName: competency.competencyName,
 			competencyCode: competency.competencyCode
 		}));
-		console.log('competencyList: ', competencyList);
-		setCompetencyList(competencyList);
+		console.log('competencyContents: ', competencyContents);
+		setCompetencyList(competencyContents);
 
 		// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 		const haksuIdToCompetencyMap = new Map();
@@ -154,7 +164,7 @@ const RoadMapContainer = () => {
 				}
 
 				// isMyTable 체크
-				const isMyTable = myTableData.some((row) => row.some((cell) => cell.haksuId === haksuId));
+				const isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
 
 				const cellData = {
 					haksuId: haksuId,
@@ -188,7 +198,7 @@ const RoadMapContainer = () => {
 		setTimeout(() => {
 			setRoadMapTableData(updatedData);
 		}, 10);
-	}, [courseByCompetencyInSubject, myTableData]);
+	}, [courseByCompetencyInSubject, selectedMyTableContents]);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
 	useEffect(() => {
@@ -234,7 +244,7 @@ const RoadMapContainer = () => {
 	// 내 로드맵 교과목들의 전공역량을 myCompetencyList에 저장
 	useEffect(() => {
 		const competencyArray = [];
-		myTableData.forEach((row) => {
+		selectedMyTableContents.forEach((row) => {
 			row.forEach((cellData) => {
 				if (Array.isArray(cellData.competencyCodes)) {
 					competencyArray.push(...cellData.competencyCodes);
@@ -243,13 +253,13 @@ const RoadMapContainer = () => {
 		});
 		const uniqueCompetencyArray = Array.from(new Set(competencyArray));
 		setMyCompetencyList(uniqueCompetencyArray);
-	}, [myTableData]);
+	}, [selectedMyTableContents]);
 
 	// 담은 학점 계산 하는 로직
 	useEffect(() => {
 		const courseCreditMap = {};
 
-		myTableData.forEach((row) => {
+		selectedMyTableContents.forEach((row) => {
 			row.forEach((cellData) => {
 				const subject = cellData.subjectName;
 				const credit = cellData.courseCredit;
@@ -277,7 +287,7 @@ const RoadMapContainer = () => {
 			.sort((a, b) => b.courseCredit - a.courseCredit);
 
 		setCourseCreditData(courseCreditArray);
-	}, [myTableData]);
+	}, [selectedMyTableContents]);
 
 	// 선택된 전공역량에 해당하는 교과목들을 하이라이트하는 기능
 	const [highlightedCompetencies, setHighlightedCompetencies] = useState({});
@@ -303,22 +313,22 @@ const RoadMapContainer = () => {
 
 	// 학과 로드맵 Cell Click 이벤트
 	const handleCellClick_add = (cellData, rowIndex) => {
-		const updatedMyTableData = [...myTableData];
+		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
 		const copiedCellData = { ...cellData, isMyTable: true };
 		updatedMyTableData[rowIndex].push(copiedCellData);
-		setMyTableData(updatedMyTableData);
+		setSelectedMyTableContentsState(updatedMyTableData);
 	};
 	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
 		const updatedUnclickableCells = unclickableCells.filter((cell) => !(cell.haksuId === cellData.haksuId));
 		setUnclickableCells(updatedUnclickableCells);
 
-		const updatedMyTableData = [...myTableData];
+		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
 		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
 		if (cellIndex !== -1) {
 			updatedMyTableData[rowIndex].splice(cellIndex, 1);
 		}
-		setMyTableData(updatedMyTableData);
+		setSelectedMyTableContentsState(updatedMyTableData);
 	};
 
 	// 학과 전체 로드맵 Button Click 이벤트
@@ -330,7 +340,7 @@ const RoadMapContainer = () => {
 
 	// URL Button Click 이벤트
 	const handleURLButtonClick = () => {
-		const myTableDataString = JSON.stringify(myTableData);
+		const myTableDataString = JSON.stringify(selectedMyTableContents);
 		const compressed = pako.deflate(myTableDataString, { to: 'string' });
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
@@ -390,7 +400,7 @@ const RoadMapContainer = () => {
 				</TitleWrapper>
 				<RoadMapContents
 					competencyTableData={myCompetencyList}
-					roadMapTableData={myTableData}
+					roadMapTableData={selectedMyTableContents}
 					onCellClick={handleCellClick_remove}
 					unclickableCells={[]}
 					onCompetencyClick={handleCellClick_highlight}
