@@ -62,11 +62,9 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		// Update refs
 		setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
-		// Update competencyTable with delays
-		setCompetencyTable([]);
 		sortedCompetencyTable.forEach((competency) => {
 			setCompetencyTable((prevItems) => {
-				const isDuplicate = prevItems.some((item) => item.competencyName === competency.competencyName);
+				const isDuplicate = prevItems.some((item) => item.competencyCode === competency.competencyCode);
 
 				return isDuplicate ? prevItems : [...prevItems, competency];
 			});
