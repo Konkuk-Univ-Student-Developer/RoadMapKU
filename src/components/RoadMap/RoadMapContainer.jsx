@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import pako from 'pako';
@@ -108,6 +108,7 @@ const RoadMapContainer = () => {
 	const [courseCreditData, setCourseCreditData] = useState([]);
 
 	const { serverApi } = useApi();
+	const navigate = useNavigate();
 
 	// Base64 인코딩 함수
 	const toBase64 = (uint8Array) => btoa(String.fromCharCode(...uint8Array));
@@ -128,6 +129,7 @@ const RoadMapContainer = () => {
 			const decompressed = pako.inflate(compressedData, { to: 'string' });
 			const loadedTableData = JSON.parse(decompressed);
 			setSelectedMyTableContentsState(loadedTableData);
+			navigate('/road-map');
 		}
 	}, [key]);
 
