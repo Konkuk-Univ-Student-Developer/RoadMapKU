@@ -130,12 +130,12 @@ const RoadMapContainer = () => {
 			competencyName: competency.competencyName,
 			competencyCode: competency.competencyCode
 		}));
+		console.log('competencyList: ', competencyList);
 		setCompetencyList(competencyList);
 
 		// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 		const haksuIdToCompetencyMap = new Map();
 		const tempUnclickableCells = [];
-		let max_length = 0;
 
 		// courseByCompetencyInSubject 데이터 가공
 		const updatedRoadMapTableData = [...defaultTable];
@@ -151,13 +151,6 @@ const RoadMapContainer = () => {
 				// 여러개의 전공역량을 가지는 교과목에 대한 처리
 				if (!haksuIdToCompetencyMap.has(haksuId)) {
 					haksuIdToCompetencyMap.set(haksuId, [{ competencyName, competencyCode }]);
-				} else {
-					const competencies = haksuIdToCompetencyMap.get(haksuId);
-					// 중복 역량 방지 후 추가
-					if (!competencies.some((comp) => comp.competencyCode === competencyCode)) {
-						competencies.push({ competencyName, competencyCode });
-					}
-					return; // 중복 학수 ID일 경우 이후 로직 스킵
 				}
 
 				// isMyTable 체크
@@ -181,11 +174,6 @@ const RoadMapContainer = () => {
 				// '1,2학기'에 대한 처리
 				if (openingSemester === '1,2학기') {
 					updatedRoadMapTableData[index + 1] = [...updatedRoadMapTableData[index + 1], cellData];
-				}
-
-				// 가장 긴 배열 탐색 (animation time)
-				if (updatedRoadMapTableData[index].length > max_length) {
-					max_length = updatedRoadMapTableData[index].length;
 				}
 			});
 		});
