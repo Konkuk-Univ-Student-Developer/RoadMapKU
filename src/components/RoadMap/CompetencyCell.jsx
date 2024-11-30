@@ -1,6 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 import { fadeIn } from '../../style/Frames';
 import { Color } from '../../style/Color';
@@ -29,14 +28,6 @@ const StyledCell = styled.div`
 		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
 		transition: color 0.1s ease-out;
-	}
-
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 0ms ease-out forwards;
 	}
 `;
 
