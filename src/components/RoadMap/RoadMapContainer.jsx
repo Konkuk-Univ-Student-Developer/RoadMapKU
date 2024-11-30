@@ -140,7 +140,6 @@ const RoadMapContainer = () => {
 			competencyName: competency.competencyName,
 			competencyCode: competency.competencyCode
 		}));
-		console.log('competencyContents: ', competencyContents);
 		setCompetencyList(competencyContents);
 
 		// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
