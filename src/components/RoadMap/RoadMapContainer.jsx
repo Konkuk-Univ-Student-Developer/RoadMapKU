@@ -17,6 +17,7 @@ import CourseCreditTable from './CourseCreditTable';
 import TotalRoadMapModal from '../TotalRoadMapContents/totalRoadMapModal';
 import useField from '../../hooks/useField';
 import SaveButton from '../FloatButton/SaveButton';
+import useApi from '../../hooks/useApi';
 import { Color } from '../../style/Color';
 
 const Container = styled.div`
@@ -105,6 +106,8 @@ const RoadMapContainer = () => {
 
 	// courseCreditData: 내 로드맵의 학점 모음
 	const [courseCreditData, setCourseCreditData] = useState([]);
+
+	const { serverApi } = useApi();
 
 	// Base64 인코딩 함수
 	const toBase64 = (uint8Array) => btoa(String.fromCharCode(...uint8Array));
@@ -343,7 +346,8 @@ const RoadMapContainer = () => {
 		const compressed = pako.deflate(myTableDataString, { to: 'string' });
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
-		const newUrl = `http://203.252.168.41:8080/road-map/${utf8Encoded}`;
+		const baseURL = serverApi.defaults.baseURL;
+		const newUrl = `${baseURL}road-map/${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
