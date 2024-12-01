@@ -27,8 +27,8 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
+	font-family: 'Pretendard-bold';
 	font-size: 4em;
-	font-weight: bold;
 	text-align: left;
 	padding-left: 100px;
 	color: #056a3f;
@@ -36,13 +36,12 @@ const Title = styled.h1`
 
 const MainTitle = styled.div`
 	font-size: 40px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 
 const MainTitle_impact = styled.div`
+	font-family: 'Pretendard-bold';
 	font-size: 50px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 

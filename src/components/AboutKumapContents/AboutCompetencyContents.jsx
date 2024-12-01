@@ -27,8 +27,8 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
+	font-family: 'Pretendard-bold';
 	font-size: 4em;
-	font-weight: bold;
 	text-align: left;
 	padding-left: 100px;
 	color: #056a3f;
@@ -36,13 +36,12 @@ const Title = styled.h1`
 
 const MainTitle = styled.div`
 	font-size: 40px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 
 const MainTitle_impact = styled.div`
+	font-family: 'Pretendard-bold';
 	font-size: 50px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 
@@ -60,7 +59,7 @@ const AboutCompetencyContents = () => {
 	return (
 		<>
 			<HeaderContainer>
-				<Title>KUMAP 이란?</Title>
+				<Title>전공역량 이란?</Title>
 			</HeaderContainer>
 			<Container>
 				<MainTitle>전공 분야와 관련된 학문적 지식을 활용함으로써 길러지는</MainTitle>
