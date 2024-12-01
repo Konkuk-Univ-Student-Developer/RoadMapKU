@@ -47,7 +47,7 @@ const Button = styled.div`
 	transition: background-color 0.3s ease-out;
 
 	&.isHighlighted {
-		background-color: #effbef;
+		background-color: ${Color.HOVER_GREEN};
 		transition: background-color 0.3s ease-out;
 	}
 `;
