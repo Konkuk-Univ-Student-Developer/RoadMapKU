@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import KUMAPLogo from './LogoFile/Kulogo';
 import { Color } from '../style/Color';
+import ku_logo from '../img/ku-logo.png';
 
 const theme = {
 	active: {
@@ -105,7 +106,7 @@ function HeaderBar() {
 
 					<HeaderActions>
 						<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
-							<img src="img/ku-logo.png" alt="KU Logo" style={{ height: '3rem' }} />
+							<img src={ku_logo} alt="KU Logo" style={{ height: '3rem' }} />
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>
