@@ -11,7 +11,8 @@ import {
 	selectedSubjectState,
 	totalRoadMapState,
 	selectedMyTableContentsState,
-	selectedFieldState
+	selectedFieldState,
+	isShowDepartAndLogState
 } from '../../recoils/atoms';
 import RoadMapContents from './RoadMapContents';
 import CourseCreditTable from './CourseCreditTable';
@@ -111,6 +112,9 @@ const RoadMapContainer = () => {
 	// 선택된 직군 데이터
 	const selectedFieldData = useRecoilValue(selectedFieldState);
 
+	// 학과 및 로그 데이터 보여주는 recoil
+	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
+
 	const { serverApi } = useApi();
 	const navigate = useNavigate();
 
@@ -154,6 +158,7 @@ const RoadMapContainer = () => {
 
 			const decodedSelectedFieldData = decodeData(selectedFieldData);
 			fetchLogFields(decodedSelectedFieldData);
+			setIsShowDepartAndLog(true);
 		}
 	}, []);
 
