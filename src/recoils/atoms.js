@@ -77,3 +77,8 @@ export const selectedMyTableContentsState = atom({
 	key: 'selectedMyTableContentsState',
 	default: []
 });
+
+export const isShowDepartAndLogState = atom({
+	key: 'isShowDepartAndLogState',
+	default: false
+});

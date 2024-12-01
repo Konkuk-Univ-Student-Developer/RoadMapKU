@@ -5,6 +5,8 @@ import SearchBar from './SearchBar';
 import FieldInput from './FieldInput';
 import SearchLog from './SearchLog';
 import { Color } from '../../style/Color';
+import { useRecoilState } from 'recoil';
+import { isShowDepartAndLogState } from '../../recoils/atoms';
 
 const FieldSearchBarContainer = styled.div`
 	width: 85%;
@@ -21,7 +23,7 @@ const FieldSearchBarContainer = styled.div`
 `;
 
 const FieldSearchBar = () => {
-	const [isShowDepartAndLog, setIsShowDepartAndLog] = useState(false);
+	const [isShowDepartAndLog, setIsShowDepartAndLog] = useRecoilState(isShowDepartAndLogState);
 	const [isToggleOn, setIsToggleOn] = useState(true);
 
 	return (
