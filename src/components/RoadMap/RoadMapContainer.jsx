@@ -349,7 +349,7 @@ const RoadMapContainer = () => {
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
 		const baseURL = serverApi.defaults.baseURL;
-		const newUrl = `${baseURL}road-map/${utf8Encoded}`;
+		const newUrl = `${baseURL}/road-map/${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
