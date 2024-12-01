@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import MainContainer from '../components/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
 import LinkContents from '../components/AboutKumapContents/LinkContents';
+import BackgroundContents from '../components/HomeContents/BackgroundContents';
+import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
 import Footer from '../components/Footer/Footer';
-import { Header, SectionsContainer } from 'react-fullpage';
-import HeaderBar from '../components/HeaderBar';
+import { SectionsContainer } from 'react-fullpage';
 import { fullPageOptions } from './AboutUs';
 
 const SubContainer = styled.div`
@@ -23,7 +25,6 @@ const LastContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
 `;
 
 const AboutKumap = () => {
@@ -32,10 +33,9 @@ const AboutKumap = () => {
 	}, []);
 
 	return (
-		<>
-			<Header>
-				<HeaderBar />
-			</Header>
+		<MainContainer>
+			<BackgroundContents />
+			<ImmergeBackgroundContents />
 			<SectionsContainer {...fullPageOptions}>
 				<SubContainer>
 					<AboutKumapContents />
@@ -51,7 +51,7 @@ const AboutKumap = () => {
 					<Footer />
 				</SubContainer>
 			</SectionsContainer>
-		</>
+		</MainContainer>
 	);
 };
 

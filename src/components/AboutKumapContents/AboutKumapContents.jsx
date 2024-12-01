@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+	z-index: 3;
+`;
+
+const ContentsContainer = styled.div`
 	width: 90%;
 	display: flex;
 	flex-direction: column;
@@ -57,11 +61,11 @@ const Gap = styled.div`
 
 const AboutKumapContents = () => {
 	return (
-		<>
+		<Container>
 			<HeaderContainer>
 				<Title>KUMAP 이란?</Title>
 			</HeaderContainer>
-			<Container>
+			<ContentsContainer>
 				<MainTitle>원하는 직업과 관련된 수업을 찾아 만드는</MainTitle>
 				<MainTitle_impact>나만의 로드맵</MainTitle_impact>
 				<Gap></Gap>
@@ -71,8 +75,8 @@ const AboutKumapContents = () => {
 					<Description>희망 직업이 요구하는 전공역량을 알아보고,</Description>
 					<Description>필요한 전공역량을 배울 수 있는 수업을 찾아보아요.</Description>
 				</SubContainer>
-			</Container>
-		</>
+			</ContentsContainer>
+		</Container>
 	);
 };
 
