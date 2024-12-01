@@ -165,12 +165,18 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 			</SearchBarContent>
 			{isFocused && filteredFields.length > 0 && (
 				<SuggestionsContainer ref={containerRef}>
-					{filteredFields.map((field, index) => (
-						<SuggestionItem
-							key={index}
-							onClick={() => onSuggestionItemClick(field)}
-						>{`${field.middleField} > ${field.smallField} > ${field.detailField}`}</SuggestionItem>
-					))}
+					{filteredFields.map((field, index) => {
+						const middleFieldName = String(field.middleField).trim();
+						const smallFieldName = String(field.smallField).trim();
+						const detailFieldName = String(field.detailField).trim();
+
+						return (
+							<SuggestionItem
+								key={index}
+								onClick={() => onSuggestionItemClick(field)}
+							>{`${middleFieldName} > ${smallFieldName} > ${detailFieldName}`}</SuggestionItem>
+						);
+					})}
 				</SuggestionsContainer>
 			)}
 		</SearchBarContainer>

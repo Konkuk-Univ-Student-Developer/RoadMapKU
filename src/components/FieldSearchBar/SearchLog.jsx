@@ -105,7 +105,12 @@ const SearchLog = () => {
 			</TitleContainer>
 			<SearchLogContainer>
 				{selectedFieldLogList.map((field, index) => {
-					const restructuredFieldName = `${field.middleField.middleField} > ${field.smallField.smallField} > ${field.detailField.detailField}`;
+					const middleFieldName = String(field.middleField.middleField).trim();
+					const smallFieldName = String(field.smallField.smallField).trim();
+					const detailFieldName = String(field.detailField.detailField).trim();
+
+					const restructuredFieldName = `${middleFieldName} > ${smallFieldName} > ${detailFieldName}`;
+
 					return (
 						<LogItem key={index} onClick={() => fetchLogFields(field)}>
 							<LogText>{restructuredFieldName}</LogText>
