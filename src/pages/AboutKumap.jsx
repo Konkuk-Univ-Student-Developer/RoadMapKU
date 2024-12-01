@@ -1,13 +1,13 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
+import LinkContents from '../components/AboutKumapContents/LinkContents';
 import Footer from '../components/Footer/Footer';
 import { Header, SectionsContainer } from 'react-fullpage';
 import HeaderBar from '../components/HeaderBar';
 import { fullPageOptions } from './AboutUs';
-import { Color } from '../style/Color';
 
 const SubContainer = styled.div`
 	width: 100%;
@@ -18,7 +18,7 @@ const SubContainer = styled.div`
 `;
 
 const LastContainer = styled.div`
-	height: 85vh;
+	height: 80vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -26,33 +26,11 @@ const LastContainer = styled.div`
 	background-color: white;
 `;
 
-const LinkContainer = styled.div`
-	gap: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
-`;
-
-const LinkButton = styled.button`
-	width: 400px;
-	height: 100px;
-	padding: 10px 20px;
-	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : Color.GREEN)};
-	border: none;
-	border-radius: 20px;
-	cursor: pointer;
-	transition: 0.1s ease-in;
-	&:hover {
-		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
-	}
-`;
-
 const AboutKumap = () => {
-	const navigate = useNavigate();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<>
 			<Header>
@@ -68,14 +46,7 @@ const AboutKumap = () => {
 				<SubContainer>
 					<LastContainer>
 						<ConclusionContents />
-						<LinkContainer>
-							<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
-								KUMAP 사용법
-							</LinkButton>
-							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-								KUMAP 바로가기
-							</LinkButton>
-						</LinkContainer>
+						<LinkContents />
 					</LastContainer>
 					<Footer />
 				</SubContainer>
