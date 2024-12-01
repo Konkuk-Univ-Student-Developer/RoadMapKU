@@ -69,10 +69,10 @@ const LinkContents = () => {
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
-				KUMAP 설명보기
+				KUMAP 이란?
 			</LinkButton>
 			<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-				KUMAP 바로가기
+				KUMAP 바로가기!
 			</LinkButton>
 		</LinkContainer>
 	);
