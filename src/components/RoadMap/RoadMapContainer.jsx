@@ -375,13 +375,12 @@ const RoadMapContainer = () => {
 	const handleURLButtonClick = () => {
 		const myTableDataString = JSON.stringify(selectedMyTableContents);
 		const encodedMyTableData = encodeData(myTableDataString);
-		console.log(selectedFieldData);
+
 		const selectedFieldDataString = JSON.stringify(selectedFieldData);
 		const encodedSelectedFieldData = encodeData(selectedFieldDataString);
 
 		const baseURL = serverApi.defaults.baseURL;
-		console.log(baseURL);
-		const newUrl = `localhost:3000/road-map?myTableData=${encodedMyTableData}&selectedFieldData=${encodedSelectedFieldData}`;
+		const newUrl = `${baseURL}/road-map?myTableData=${encodedMyTableData}&selectedFieldData=${encodedSelectedFieldData}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
