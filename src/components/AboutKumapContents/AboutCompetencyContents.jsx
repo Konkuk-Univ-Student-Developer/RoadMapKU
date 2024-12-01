@@ -70,11 +70,10 @@ const AboutCompetencyContents = () => {
 				<MainTitle_impact>핵심 능력</MainTitle_impact>
 				<Gap></Gap>
 				<SubContainer>
-					<Description>건국대학교는 역량기반 교육과정을 운영하고 있어서,</Description>
-					<Description>각 전공 교육과정은 전공역량을 기반으로 개발되었어요.</Description>
+					<Description>건국대학교의 전공 교육과정은 전공역량을 기반으로 설계되어 있어요.</Description>
 					<Description></Description>
 					<Description>희망하는 진로 분야와 연관된 전공역량을 파악하고</Description>
-					<Description>필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾는 것이 KUMAP의 큰 목표에요!</Description>
+					<Description>이를 키울 수 있는 교과목과 전공을 찾는 것이 KUMAP의 큰 목표에요!</Description>
 				</SubContainer>
 			</ContentsContainer>
 		</Container>
