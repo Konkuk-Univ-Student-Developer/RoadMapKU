@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import pako from 'pako';
@@ -110,6 +110,8 @@ const RoadMapContainer = () => {
 	const { serverApi } = useApi();
 	const navigate = useNavigate();
 
+	const [searchParams] = useSearchParams();
+
 	// Base64 인코딩 함수
 	const toBase64 = (uint8Array) => btoa(String.fromCharCode(...uint8Array));
 	// Base64 디코딩 함수
@@ -121,17 +123,17 @@ const RoadMapContainer = () => {
 	}, []);
 
 	// URL을 통한 접속
-	const { key } = useParams();
 	useEffect(() => {
-		if (key) {
-			const utf8Decoded = decodeURIComponent(key);
+		const encodedData = searchParams.get('encodedData');
+		if (encodedData) {
+			const utf8Decoded = decodeURIComponent(encodedData);
 			const compressedData = fromBase64(utf8Decoded);
 			const decompressed = pako.inflate(compressedData, { to: 'string' });
 			const loadedTableData = JSON.parse(decompressed);
 			setSelectedMyTableContentsState(loadedTableData);
 			navigate('/road-map');
 		}
-	}, [key]);
+	}, []);
 
 	useEffect(() => {
 		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
@@ -349,7 +351,7 @@ const RoadMapContainer = () => {
 		const base64Compressed = toBase64(compressed);
 		const utf8Encoded = encodeURIComponent(base64Compressed);
 		const baseURL = serverApi.defaults.baseURL;
-		const newUrl = `${baseURL}/road-map/${utf8Encoded}`;
+		const newUrl = `${baseURL}/road-map?encodedData=${utf8Encoded}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
