@@ -116,11 +116,13 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		fetchMiddleField();
 	}, []);
 
-	if (selectedField) {
-		fieldRefs.middle.current[selectedField.middleField?.middleField]?.scrollIntoView(scrollOption);
-		fieldRefs.small.current[selectedField.smallField?.smallField]?.scrollIntoView(scrollOption);
-		fieldRefs.detail.current[selectedField.detailField?.detailField]?.scrollIntoView(scrollOption);
-	}
+	useEffect(() => {
+		if (selectedField) {
+			fieldRefs.middle.current[selectedField.middleField?.middleField]?.scrollIntoView(scrollOption);
+			fieldRefs.small.current[selectedField.smallField?.smallField]?.scrollIntoView(scrollOption);
+			fieldRefs.detail.current[selectedField.detailField?.detailField]?.scrollIntoView(scrollOption);
+		}
+	}, [selectedField]);
 
 	const handleMiddleFieldClick = async (field) => {
 		await fetchSmallField(field);
