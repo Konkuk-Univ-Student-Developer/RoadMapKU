@@ -17,12 +17,13 @@ const Container = styled.div`
 `;
 
 const CompetencyContainer = styled.div`
-	width: 96%;
+	width: calc(100% - 14px);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-contents: right;
 	overflow-y: scroll;
-	padding-left: 0.9rem;
+	padding-left: 14px;
 `;
 
 const Title = styled.div`
