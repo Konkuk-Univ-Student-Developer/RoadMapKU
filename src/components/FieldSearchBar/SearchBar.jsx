@@ -162,9 +162,13 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 		setIsToggleOn((prev) => !prev);
 	};
 
+	const onSearchBarContentClickHandler = () => {
+		setIsFocused(true);
+	};
+
 	return (
 		<SearchBarContainer $isToggleOn={isToggleOn}>
-			<SearchBarContent $isFocused={isFocused}>
+			<SearchBarContent $isFocused={isFocused} onClick={onSearchBarContentClickHandler}>
 				<SearchBarInput
 					type="text"
 					placeholder="직군을 입력해주세요"
