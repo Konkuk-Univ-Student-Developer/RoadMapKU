@@ -7,7 +7,7 @@ import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
 	width: 100%;
-	transform: translate(-6rem, 0);
+	transform: translate(-5rem, 0);
 	padding-top: 8rem;
 	display: flex;
 	flex-direction: row;
