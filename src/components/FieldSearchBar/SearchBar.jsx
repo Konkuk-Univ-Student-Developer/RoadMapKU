@@ -85,6 +85,18 @@ const SuggestionItem = styled.div`
 	}
 `;
 
+const HighlightedText = styled.span`
+	background-color: yellow;
+	color: black;
+`;
+
+const highlightText = (text, query) => {
+	if (!query) return text;
+
+	const parts = text.split(new RegExp(`(${query})`, 'gi'));
+	return parts.map((part, index) => (part === query ? <HighlightedText key={index}>{part}</HighlightedText> : part));
+};
+
 const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
@@ -150,9 +162,13 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 		setIsToggleOn((prev) => !prev);
 	};
 
+	const onSearchBarContentClickHandler = () => {
+		setIsFocused(true);
+	};
+
 	return (
 		<SearchBarContainer $isToggleOn={isToggleOn}>
-			<SearchBarContent $isFocused={isFocused}>
+			<SearchBarContent $isFocused={isFocused} onClick={onSearchBarContentClickHandler}>
 				<SearchBarInput
 					type="text"
 					placeholder="직군을 입력해주세요"
@@ -163,14 +179,22 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 				<SearchIcon />
 				{!isToggleOn ? <ToggleDownIcon onClick={toggleClickHandler} /> : <ToggleUpIcon onClick={toggleClickHandler} />}
 			</SearchBarContent>
+
 			{isFocused && filteredFields.length > 0 && (
 				<SuggestionsContainer ref={containerRef}>
-					{filteredFields.map((field, index) => (
-						<SuggestionItem
-							key={index}
-							onClick={() => onSuggestionItemClick(field)}
-						>{`${field.middleField} > ${field.smallField} > ${field.detailField}`}</SuggestionItem>
-					))}
+					{filteredFields.map((field, index) => {
+						const middleFieldName = String(field.middleField).trim();
+						const smallFieldName = String(field.smallField).trim();
+						const detailFieldName = String(field.detailField).trim();
+
+						const structuredField = `${middleFieldName} > ${smallFieldName} > ${detailFieldName}`;
+
+						return (
+							<SuggestionItem key={index} onClick={() => onSuggestionItemClick(field)}>
+								{highlightText(structuredField, userInput)}
+							</SuggestionItem>
+						);
+					})}
 				</SuggestionsContainer>
 			)}
 		</SearchBarContainer>
