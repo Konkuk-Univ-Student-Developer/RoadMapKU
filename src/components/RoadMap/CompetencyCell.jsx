@@ -18,8 +18,8 @@ const StyledCell = styled.div`
 	justify-content: center;
 	text-align: center;
 	transition:
-		color 0.1s ease-out,
-		font 0.1s ease-out;
+		background-color 0.3s ease-out,
+		color 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
@@ -28,6 +28,11 @@ const StyledCell = styled.div`
 		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
 		transition: color 0.1s ease-out;
+	}
+
+	&.isHighlighted {
+		background-color: ${Color.HOVER_GREEN};
+		transition: background-color 0.3s ease-out;
 	}
 `;
 
@@ -43,13 +48,7 @@ const Button = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding: 0.3rem;
-	transition: background-color 0.3s ease-out;
-
-	&.isHighlighted {
-		background-color: ${Color.HOVER_GREEN};
-		transition: background-color 0.3s ease-out;
-	}
+	padding: 0.5rem;
 `;
 
 const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
@@ -66,11 +65,9 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	}, [cellData, highlightedCompetency]);
 
 	return (
-		<StyledCell ref={ref}>
+		<StyledCell ref={ref} className={isHighlighted ? 'isHighlighted' : ''}>
 			<ButtonWrapper>
-				<Button className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
-					{cellData.competencyName}
-				</Button>
+				<Button onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</Button>
 				{isDetailOpen && (
 					<CompetencyDetail
 						onClose={() => {
