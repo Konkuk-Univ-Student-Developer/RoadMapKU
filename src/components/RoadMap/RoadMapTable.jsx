@@ -12,12 +12,11 @@ const TableContainer = styled.div`
 `;
 
 const SemesterContainer = styled.div`
-	height: 2.2rem;
+	height: 33px;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	margin-right: 14px;
 `;
 
 const SemesterColumn = styled.div`

@@ -7,7 +7,7 @@ import road_url from './../img/road.png';
 import LinkContents from '../components/HomeContents/LinkContents';
 import BackgroundContents from '../components/HomeContents/BackgroundContents';
 import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
-import { fadeIn, fadeInRoad } from '../style/Frames';
+import { fadeIn } from '../style/Frames';
 const PageContainer = styled.div`
 	position: relative;
 	width: 100%;
@@ -21,7 +21,8 @@ const PageContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-	padding-top: 20rem;
+	width: 100%;
+	padding-top: 15%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,6 +34,7 @@ const TitleContainer = styled.div`
 `;
 
 const SubTitleContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -49,13 +51,14 @@ const SubTitleContainer = styled.div`
 `;
 
 const RoadContainer = styled.div`
+	transform: translateX(-15%) translateY(-85%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	animation-delay: 1s;
 	z-index: 1;
 	opacity: 0;
-	animation: ${fadeInRoad} 1s ease-in-out forwards;
+	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 0.9s;
 `;
 
@@ -65,8 +68,8 @@ function NewHome() {
 			<PageContainer>
 				<BackgroundContents />
 				<TitleContainer>
-					<img alt="Kumap Logo" src={logo_url} style={{ width: '30rem', height: '10rem' }} />
-					<img alt="Kumap Character" src={character_url} style={{ width: '8rem', height: '9rem' }} />
+					<img alt="Kumap Logo" src={logo_url} style={{ width: '25%' }} />
+					<img alt="Kumap Character" src={character_url} style={{ width: '7%' }} />
 				</TitleContainer>
 				<SubTitleContainer>
 					<div>진로를 탐색하고 수업을 추가하여</div>
@@ -74,7 +77,7 @@ function NewHome() {
 				</SubTitleContainer>
 				<LinkContents />
 				<RoadContainer>
-					<img alt="Road Image" src={road_url} style={{ width: '120rem', height: '20rem' }} />
+					<img alt="Road Image" src={road_url} style={{ width: '100%' }} />
 				</RoadContainer>
 				<ImmergeBackgroundContents />
 			</PageContainer>

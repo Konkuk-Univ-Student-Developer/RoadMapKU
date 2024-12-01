@@ -6,6 +6,7 @@ import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
 import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
+	width: 100%;
 	transform: translate(-6rem, 0);
 	padding-top: 2rem;
 	display: flex;
@@ -34,8 +35,8 @@ const CharacterContainer = styled.div`
 `;
 
 const LinkButton = styled.button`
-	width: 350px;
-	height: 100px;
+	width: 18%;
+	height: 100%;
 	padding: 10px 20px;
 	font-family: 'Pretendard-semiBold';
 	font-size: 30px;

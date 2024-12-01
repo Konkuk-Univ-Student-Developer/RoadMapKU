@@ -43,15 +43,16 @@ const StyledCell = styled.div`
 
 	&.unclickable {
 		pointer-events: none;
-		background-color: #d9d9d9;
+		background-color: ${Color.DIM_GREY};
 	}
 
 	&.isHighlighted {
-		background-color: #effbef;
+		background-color: ${Color.HOVER_GREEN};
 	}
 
 	&.isUnclickableHighlighted {
-		background-color: #d0f5a9;
+		pointer-events: none;
+		background-color: ${Color.DIM_GREY};
 	}
 `;
 

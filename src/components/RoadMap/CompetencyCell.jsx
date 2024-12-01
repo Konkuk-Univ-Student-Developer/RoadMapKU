@@ -1,6 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import { immergeBounce, dismissBounce } from '../../Animation/Animation';
 import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
 import { fadeIn } from '../../style/Frames';
 import { Color } from '../../style/Color';
@@ -19,8 +18,8 @@ const StyledCell = styled.div`
 	justify-content: center;
 	text-align: center;
 	transition:
-		color 0.1s ease-out,
-		font 0.1s ease-out;
+		background-color 0.3s ease-out,
+		color 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
@@ -31,12 +30,9 @@ const StyledCell = styled.div`
 		transition: color 0.1s ease-out;
 	}
 
-	&.Bounce-enter {
-		animation: ${immergeBounce} 400ms ease-out forwards;
-	}
-
-	&.Bounce-exit {
-		animation: ${dismissBounce} 0ms ease-out forwards;
+	&.isHighlighted {
+		background-color: ${Color.HOVER_GREEN};
+		transition: background-color 0.3s ease-out;
 	}
 `;
 
@@ -53,12 +49,6 @@ const Button = styled.div`
 	justify-content: center;
 	cursor: pointer;
 	padding: 0.5rem;
-	transition: background-color 0.3s ease-out;
-
-	&.isHighlighted {
-		background-color: #effbef;
-		transition: background-color 0.3s ease-out;
-	}
 `;
 
 const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
@@ -75,11 +65,9 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	}, [cellData, highlightedCompetency]);
 
 	return (
-		<StyledCell ref={ref}>
+		<StyledCell ref={ref} className={isHighlighted ? 'isHighlighted' : ''}>
 			<ButtonWrapper>
-				<Button className={isHighlighted ? 'isHighlighted' : ''} onClick={() => onClick(cellData.competencyCode)}>
-					{cellData.competencyName}
-				</Button>
+				<Button onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</Button>
 				{isDetailOpen && (
 					<CompetencyDetail
 						onClose={() => {

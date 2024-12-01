@@ -17,12 +17,13 @@ const Container = styled.div`
 `;
 
 const CompetencyContainer = styled.div`
-	width: 96%;
+	width: calc(100% - 14px);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-contents: right;
 	overflow-y: scroll;
-	padding-left: 0.9rem;
+	padding-left: 14px;
 `;
 
 const Title = styled.div`
@@ -62,11 +63,10 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 		// Update refs
 		setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
-		// Update competencyTable with delays
 		setCompetencyTable([]);
 		sortedCompetencyTable.forEach((competency) => {
 			setCompetencyTable((prevItems) => {
-				const isDuplicate = prevItems.some((item) => item.competencyName === competency.competencyName);
+				const isDuplicate = prevItems.some((item) => item.competencyCode === competency.competencyCode);
 
 				return isDuplicate ? prevItems : [...prevItems, competency];
 			});

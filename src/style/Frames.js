@@ -12,12 +12,12 @@ export const fadeIn = keyframes`
 
 export const fadeInRoad = keyframes`
 	from {
-		transform: translateX(-35rem) translateY(-16rem);
+		transform: translateX(-25%) translateY(-65%);
 		opacity: 0;
 	}
 		
 	to {
-		transform: translateX(-25rem) translateY(-16rem);
+		transform: translateX(-15%) translateY(-85%);
 		opacity: 1;
 	}
 `;
