@@ -10,7 +10,8 @@ import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
 	totalRoadMapState,
-	selectedMyTableContentsState
+	selectedMyTableContentsState,
+	selectedFieldState
 } from '../../recoils/atoms';
 import RoadMapContents from './RoadMapContents';
 import CourseCreditTable from './CourseCreditTable';
@@ -88,7 +89,7 @@ const RoadMapContainer = () => {
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-	const { fetchCoursesInSubject } = useField();
+	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
 	// competencyList: 학과 로드맵의 전공역량 목록
 	const [competencyList, setCompetencyList] = useState(courseByCompetencyInSubjectState);
@@ -107,6 +108,9 @@ const RoadMapContainer = () => {
 	// courseCreditData: 내 로드맵의 학점 모음
 	const [courseCreditData, setCourseCreditData] = useState([]);
 
+	// 선택된 직군 데이터
+	const selectedFieldData = useRecoilValue(selectedFieldState);
+
 	const { serverApi } = useApi();
 	const navigate = useNavigate();
 
@@ -117,6 +121,23 @@ const RoadMapContainer = () => {
 	// Base64 디코딩 함수
 	const fromBase64 = (base64) => Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
 
+	const encodeData = (data) => {
+		const compressed = pako.deflate(data, { to: 'string' });
+		const base64Compressed = toBase64(compressed);
+		const utf8Encoded = encodeURIComponent(base64Compressed);
+
+		return utf8Encoded;
+	};
+
+	const decodeData = (data) => {
+		const utf8Decoded = decodeURIComponent(data);
+		const compressedData = fromBase64(utf8Decoded);
+		const decompressed = pako.inflate(compressedData, { to: 'string' });
+		const loadedTableData = JSON.parse(decompressed);
+
+		return loadedTableData;
+	};
+
 	useEffect(() => {
 		if (Array.isArray(selectedMyTableContents) && selectedMyTableContents.length == 0)
 			setSelectedMyTableContentsState(JSON.parse(JSON.stringify(defaultTable)));
@@ -124,14 +145,15 @@ const RoadMapContainer = () => {
 
 	// URL을 통한 접속
 	useEffect(() => {
-		const encodedData = searchParams.get('encodedData');
-		if (encodedData) {
-			const utf8Decoded = decodeURIComponent(encodedData);
-			const compressedData = fromBase64(utf8Decoded);
-			const decompressed = pako.inflate(compressedData, { to: 'string' });
-			const loadedTableData = JSON.parse(decompressed);
-			setSelectedMyTableContentsState(loadedTableData);
+		const myTableData = searchParams.get('myTableData');
+		const selectedFieldData = searchParams.get('selectedFieldData');
+		if (myTableData && selectedFieldData) {
 			navigate('/road-map');
+			const decodedMyTableData = decodeData(myTableData);
+			setSelectedMyTableContentsState(decodedMyTableData);
+
+			const decodedSelectedFieldData = decodeData(selectedFieldData);
+			fetchLogFields(decodedSelectedFieldData);
 		}
 	}, []);
 
@@ -347,11 +369,14 @@ const RoadMapContainer = () => {
 	// URL Button Click 이벤트
 	const handleURLButtonClick = () => {
 		const myTableDataString = JSON.stringify(selectedMyTableContents);
-		const compressed = pako.deflate(myTableDataString, { to: 'string' });
-		const base64Compressed = toBase64(compressed);
-		const utf8Encoded = encodeURIComponent(base64Compressed);
+		const encodedMyTableData = encodeData(myTableDataString);
+		console.log(selectedFieldData);
+		const selectedFieldDataString = JSON.stringify(selectedFieldData);
+		const encodedSelectedFieldData = encodeData(selectedFieldDataString);
+
 		const baseURL = serverApi.defaults.baseURL;
-		const newUrl = `${baseURL}/road-map?encodedData=${utf8Encoded}`;
+		console.log(baseURL);
+		const newUrl = `localhost:3000/road-map?myTableData=${encodedMyTableData}&selectedFieldData=${encodedSelectedFieldData}`;
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
