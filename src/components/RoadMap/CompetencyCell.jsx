@@ -43,7 +43,7 @@ const Button = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding: 0.5rem;
+	padding: 0.3rem;
 	transition: background-color 0.3s ease-out;
 
 	&.isHighlighted {
