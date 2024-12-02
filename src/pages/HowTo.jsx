@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import competencydetail from '../img/competencydetail.png';
 import detail from '../img/detail.png';
@@ -7,23 +6,16 @@ import jobchoice from '../img/jobchoice.png';
 import myroadmap from '../img/myroadmap.png';
 import majorchoice from '../img/majorchoice.png';
 import Footer from '../components/Footer/Footer';
-import { Color } from '../style/Color';
 
 const Container = styled.div`
-	background-color: ${Color.GREEN};
+	background-color: white;
 `;
 
 const HeaderContainer = styled.header`
 	align-self: flex-start;
-	padding-top: 100px;
+	padding-top: 0vh;
 	text-align: center;
-	color: white;
-`;
-
-const SubContainerTitle = styled.div`
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+	color: black;
 `;
 
 const SubContainer = styled.div`
@@ -32,6 +24,7 @@ const SubContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: white;
 `;
 
 const SubContainerWhite = styled.div`
@@ -44,7 +37,7 @@ const SubContainerWhite = styled.div`
 `;
 
 const LastContainer = styled.div`
-	height: 85vh;
+	height: 80vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -53,181 +46,184 @@ const LastContainer = styled.div`
 `;
 
 const Title = styled.h1`
-	font-size: 4em;
+	font-size: 4.44vh;
 	font-weight: bold;
 	text-align: left;
-	padding-left: 100px;
+	padding-left: 11.11vh;
+	color: black;
 `;
 
-const Section = styled.section`
-	background-color: ${(props) => props.bgColor || '#ffffff'};
+const Section = styled.div`
+	background-color: white;
 	text-align: center;
+	justify-content: center;
 `;
 
 const Step = styled.h2`
-	font-size: 40px;
+	font-size: 4.44vh;
 	font-weight: 800;
-	margin-bottom: 20px;
-	color: ${(props) => props.color || '#ffffff'};
+	margin-bottom: 2.22vh;
+	color: black;
 	line-height: 1.5;
 `;
 
-const StepTitle = styled.h3`
-	font-size: 30px;
+const StepTitle = styled.div`
+	font-size: 3.33vh;
 	font-weight: 500;
-	margin-bottom: 20px;
-	color: ${(props) => props.color || '#ffffff'};
+	margin-top: 0px;
+	margin-bottom: 2.22vh;
+	color: black;
 	line-height: 1.5;
 `;
 
 const StepTitle2 = styled.h3`
-	font-size: 25px;
+	font-size: 2.78vh;
 	font-weight: 500;
-	margin-bottom: 20px;
-	margin-top: 30px;
-	color: ${(props) => props.color || '#ffffff'};
+	margin-bottom: 1vh;
+	margin-top: 1vh;
+	color: black;
 	line-height: 1.5;
 `;
 
 const StepTitle3 = styled.h3`
-	font-size: 15px;
+	font-size: 2.22vh;
 	font-weight: 500;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	color: ${(props) => props.color || '#ffffff'};
+	margin-bottom: 1.11vh;
+	margin-top: 2.22vh;
+	color: black;
 	line-height: 1.5;
 `;
 
-const SubTitle = styled.h3`
-	font-size: 30px;
+const SubTitle = styled.div`
+	font-size: 3.33vh;
 	font-weight: 500;
-	color: ${Color.BLACK};
+	color: black;
 	line-height: 1.5;
-	background-color: rgba(3, 107, 63, 0.1); /* 배경색을 텍스트 색상의 10% 투명도로 설정 */
-	padding: 10px 200px; /* 텍스트와 배경색 간의 간격을 위해 패딩 추가 */
-	border-radius: 5px; /* 모서리를 둥글게 */
+	margin-bottom: 0.8vh;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 1.11vh 22.22vh;
+	border-radius: 0.56vh;
 	display: inline-block;
-	margin-top: 5rem;
+	margin-top: 2vh;
 `;
+
 const Illustration = styled.img`
-	width: auto; // 원본 비율 유지
-	height: auto; //원본 비율 유지
-	max-width: 600px;
-	border-radius: 0.5rem;
+	width: 100%;
+	height: auto;
+	max-width: 66.67vh;
+	border-radius: 0.56vh;
 `;
 
 const FeaturesContainer = styled.section`
-	//padding: 40px;
-	background-color: #ffffff;
 	display: flex;
-	justify-content: center; /* 가로 정렬 */
-	align-items: flex-start; /* 상단 정렬 */
+	justify-content: center;
+	align-items: center;
+	gap: 11.11%;
+	background-color: white;
+	padding: 2.22vh;
+	width: 100%;
+	max-width: none;
+	box-sizing: border-box;
 `;
 
 const FeatureItem = styled.div`
-	//margin-bottom: 10px;
+	width: 35%;
 	display: flex;
 	flex-direction: column;
-	margin-left: 10px;
-	margin-right: 10px;
-`;
-
-const LinkContainer = styled.div`
-	gap: 25px;
-	padding-top: 2rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-`;
-
-const LinkButton = styled.button`
-	width: 400px;
-	height: 100px;
-	padding: 10px 20px;
-	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : Color.GREEN)};
-	border: none;
-	border-radius: 20px;
-	cursor: pointer;
-	transition: 0.1s ease-in;
-	&:hover {
-		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
-	}
+	text-align: center;
 `;
 
 function HowTo() {
-	const navigate = useNavigate();
 	return (
 		<>
 			<Container>
-				<SubContainerTitle>
+				<SubContainer>
 					<HeaderContainer>
-						<Title>KUMAP 사용법</Title>
+						<Title>KUMAP 사용법</Title>{' '}
 					</HeaderContainer>
-					<Section bgColor={Color.GREEN}>
+					<Section>
 						<Step>Step 1.</Step>
 						<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
-						<StepTitle3>
-							💡 중요 Tip! 왼쪽 사이드바의 &quot;직군 선택하기&quot; 버튼을 클릭하면 직군을 바꿀 수 있답니다.
-						</StepTitle3>
-						<Illustration src={jobchoice} alt="Dropdown illustration" />
-					</Section>
-				</SubContainerTitle>
+						<FeaturesContainer>
+							<FeatureItem>
+								<Illustration src="/img/dummy.gif" alt="Animated illustration" />
+							</FeatureItem>{' '}
+							<FeatureItem>
+								<Illustration src={jobchoice} alt="Dropdown illustration" />
+							</FeatureItem>
+						</FeaturesContainer>
 
-				<SubContainer>
-					<Section bgColor={Color.GREEN}>
-						<Step>Step 2.</Step>
-						<StepTitle>
-							왼쪽에 있는 사이드 바에서 직군을 확인하고
-							<br /> 관련 학과 중 관심 있는 학과를 클릭해보세요!
-						</StepTitle>
-						<StepTitle3>
-							💡 중요 Tip! 각 전공역량 옆 화살표를 클릭하면 해당 전공역량을 기를 수 있는 교과목을 확인할 수 있답니다.
-						</StepTitle3>
-
-						<Illustration src={majorchoice} alt="FieldSearchBar illustration" />
+						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5vh' }}>
+							<StepTitle3>
+								💡 중요 Tip! 왼쪽 사이드바의 &quot;직군 선택하기&quot; 버튼을 클릭하면 직군을 바꿀 수 있답니다.
+							</StepTitle3>
+							<img src="./img/KU1.png" alt="황소" style={{ width: '100px', margin: '10px', marginLeft: '10px' }} />
+						</div>
 					</Section>
 				</SubContainer>
 
 				<SubContainer>
-					<Section bgColor={Color.GREEN}>
+					<Section>
+						<Step>Step 2.</Step>
+						<StepTitle>
+							검색 창에서 직군을 확인하고
+							<br /> 관련 학과 중 관심 있는 학과를 클릭해보세요!
+						</StepTitle>
+
+						<Illustration src={majorchoice} alt="FieldSearchBar illustration" />
+						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5vh' }}>
+							<img src="./img/KU2.png" alt="황소" style={{ width: '100px', margin: '5px', marginRight: '10px' }} />
+							<StepTitle3>
+								각 전공 역량을 클릭하면 해당
+								<br /> 전공 역량을 포함한 수업을 확인할 수 있습니다.
+							</StepTitle3>
+						</div>
+					</Section>
+				</SubContainer>
+
+				<SubContainer>
+					<Section>
 						<Step>Step 3.</Step>
 						<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
-						<StepTitle3>
-							💡 중요 Tip! 각 교과목 옆 화살표를 클릭하면 해당 교과목을 내 로드맵에 담을 수 있답니다.
-						</StepTitle3>
 
 						<Illustration src={myroadmap} alt="Roadmap illustration" />
+						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5vh' }}>
+							<StepTitle3>
+								각 수업 옆 버튼을 누르면 수업 상세정보를 볼 수 있고,
+								<br />
+								해당 교과목을 내 로드맵에 추가할 수 있습니다.
+							</StepTitle3>
+							<img src="./img/KU1.png" alt="황소" style={{ width: '100px', margin: '5px' }} />
+						</div>
 						<br />
 						<br />
 						<br />
-						<StepTitle>🌟 나만의 로드맵을 완성시키고 공유해보세요! 🌟</StepTitle>
 					</Section>
 				</SubContainer>
 
 				<SubContainerWhite>
 					<LastContainer>
 						<Section bgColor="#ffffff">
-							<SubTitle>상세 정보 열람</SubTitle>
+							<SubTitle>추가 기능</SubTitle>
 							<FeaturesContainer>
+								{/* 첫 번째 항목 */}
 								<FeatureItem>
-									<Illustration src={competencydetail} alt="" />
+									<StepTitle2>상세정보 열람</StepTitle2>
+									<Illustration src={competencydetail} alt="Competency Detail" />
+
+									<StepTitle3>수업을 클릭하면 해당 수업 정보와 수강바구니 경쟁률을 확인할 수 있습니다.</StepTitle3>
 								</FeatureItem>
+
+								{/* 두 번째 항목 */}
 								<FeatureItem>
-									<Illustration src={detail} alt="" />
+									<StepTitle2>사진 저장과 공유</StepTitle2>
+									<Illustration src={detail} alt="Detail" />
+									<StepTitle3>
+										하단 사진 버튼을 클릭해 내 로드맵을 사진으로 저장할 수 있으며, URL로 공유도 가능합니다.
+									</StepTitle3>
 								</FeatureItem>
 							</FeaturesContainer>
-							<StepTitle2 color="black">
-								+ 궁금한 전공역량 / 교과목이 있다면 클릭해보세요! <br />
-								해당 전공역량 / 교과목의 상세정보를 확인할 수 있답니다.
-							</StepTitle2>
-							<LinkContainer>
-								<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-									KUMAP 바로가기
-								</LinkButton>
-							</LinkContainer>
 						</Section>
 					</LastContainer>
 					<Footer />
