@@ -29,10 +29,6 @@ jobs:
             git fetch origin develop
             git merge origin/develop
 
-            # 빌드
-            yarn install
-            yarn build
-
             docker rm -f ku-dream-front-1
             docker rmi ku-dream-front
             cd ..
