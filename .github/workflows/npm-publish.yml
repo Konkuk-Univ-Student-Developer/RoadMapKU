@@ -1,13 +1,14 @@
 name: deploy-react
 on:
   push:
-    branches: develop
+    branches:
+      - develop
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy RoadMapKU Frontend
+      - name: Deploy spring MainServer(master)
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -16,17 +17,25 @@ jobs:
           script: |
             cd ~/RoadMapKU
 
-            # 기존 프로세스 종료
+            # 기존 프로세스 종료 (sudo 없이)
             pid=$(lsof -t -i:3000)
             if [ ! -z "$pid" ]; then
               echo "Killing process on port 3000..."
               kill -9 $pid || true
             fi
 
-            # 소스 업데이트
+            # git 작업
+            git add .
+            git commit -m "temp" || true
             git fetch origin develop
-            git reset --hard origin/develop
+            git merge origin/develop
 
-            # Docker 이미지 재생성 및 실행
-            docker-compose down
-            docker-compose up -d --build
+            # 빌드
+            yarn install
+            yarn build
+
+            # Docker 작업
+            docker rm -f ku-dream-front-1
+            docker rmi ku-dream-front
+            cd ..
+            docker-compose up --build -d
