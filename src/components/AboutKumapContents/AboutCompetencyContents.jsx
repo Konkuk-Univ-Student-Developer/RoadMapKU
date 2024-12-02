@@ -69,14 +69,19 @@ const AboutCompetencyContents = () => {
 				<Title>전공역량 이란?</Title>
 			</HeaderContainer>
 			<ContentsContainer>
-				<MainTitle>전공 분야와 관련된 학문적 지식을 활용함으로써 길러지는</MainTitle>
-				<MainTitle_impact>핵심 능력</MainTitle_impact>
+				<MainTitle>전공 분야에서 필요한</MainTitle>
+				<MainTitle_impact>핵심적인 역량</MainTitle_impact>
 				<Gap></Gap>
 				<SubContainer>
-					<Description>건국대학교의 전공 교육과정은 전공역량을 기반으로 설계되어 있어요.</Description>
+					<Description>건국대학교의 각 전공은 전공역량을 기반으로 개발되었어요.</Description>
+					<Description>
+						전공역량은 전공 분야에서 필요한 지식 뿐만 아니라 기술과 태도까지 모두 포함하는 개념이에요.
+					</Description>
 					<Description></Description>
 					<Description>희망하는 진로 분야와 연관된 전공역량을 파악하고</Description>
-					<Description>이를 키울 수 있는 교과목과 전공을 찾는 것이 KUMAP의 큰 목표에요!</Description>
+					<Description>
+						필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾도록 돕는 것이 KUMAP의 큰 목표에요!
+					</Description>
 				</SubContainer>
 			</ContentsContainer>
 		</Container>

@@ -33,10 +33,10 @@ const ConclusionContents = () => {
 		<Container>
 			<SubContainer>
 				<Gap />
-				<Description>전공역량을 기반으로 차곡차곡 수업을 들을수록,</Description>
-				<Description>나의 꿈에 한걸음 더 가까워질 수 있어요.</Description>
+				<Description>나의 꿈에 한 걸음 더 가까워질수 있게,</Description>
+				<Description>전공역량별 교과목을 쉽고 편하게 찾을 수 있도록</Description>
 				<Description></Description>
-				<Description>KUMAP과 함께 나만의 로드맵을 만들어 보세요!</Description>
+				<Description>나만의 로드맵 만들기에 KUMAP이 함께할게요!</Description>
 			</SubContainer>
 		</Container>
 	);
