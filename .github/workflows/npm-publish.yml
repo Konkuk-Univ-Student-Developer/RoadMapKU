@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy spring MainServer(master)
+      - name: Deploy RoadMapKU Frontend
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -16,20 +16,17 @@ jobs:
           script: |
             cd ~/RoadMapKU
 
-            # 기존 프로세스 종료 (sudo 없이)
+            # 기존 프로세스 종료
             pid=$(lsof -t -i:3000)
             if [ ! -z "$pid" ]; then
               echo "Killing process on port 3000..."
               kill -9 $pid || true
             fi
 
-            # git 작업
-            git add .
-            git commit -m "temp" || true
+            # 소스 업데이트
             git fetch origin develop
-            git merge origin/develop
+            git reset --hard origin/develop
 
-            docker rm -f ku-dream-front-1
-            docker rmi ku-dream-front
-            cd ..
-            docker-compose up -d
+            # Docker 이미지 재생성 및 실행
+            docker-compose down
+            docker-compose up -d --build
