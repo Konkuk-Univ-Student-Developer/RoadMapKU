@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Tooltip } from 'react-tooltip';
 import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
-import { IoMdDownload } from 'react-icons/io';
+import { FaShareSquare } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
 import { Color } from '../../style/Color';
 
@@ -121,7 +121,7 @@ const SaveButton = ({ onClickURL, onClickCapture }) => {
 					<Icon icon={bxCamera} />
 				</CaptureBtn>
 				<DownloadBtn>
-					<IoMdDownload />
+					<FaShareSquare />
 				</DownloadBtn>
 			</Btn>
 			<Tooltip id="url" place="left" opacity={0.6} />
