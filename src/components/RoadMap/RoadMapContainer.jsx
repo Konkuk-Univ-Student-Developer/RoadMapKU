@@ -194,6 +194,8 @@ const RoadMapContainer = () => {
 				// 여러개의 전공역량을 가지는 교과목에 대한 처리
 				if (!haksuIdToCompetencyMap.has(haksuId)) {
 					haksuIdToCompetencyMap.set(haksuId, [{ competencyName, competencyCode }]);
+				} else {
+					return; // 중복 학수 ID일 경우 이후 로직 스킵
 				}
 
 				// isMyTable 체크
