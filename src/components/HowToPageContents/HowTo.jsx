@@ -104,8 +104,8 @@ const Illustration = styled.img`
 	height: auto;
 	max-width: 60%;
 	margin-bottom: 1rem;
-	border-radius: 0.2rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+	border-radius: 0.4rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const IllustrationVideo = styled.video.attrs({
@@ -115,8 +115,8 @@ const IllustrationVideo = styled.video.attrs({
 })`
 	width: 100%;
 	height: auto;
-	border-radius: 0.2rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+	border-radius: 0.4rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
 const FeaturesContainer = styled.section`

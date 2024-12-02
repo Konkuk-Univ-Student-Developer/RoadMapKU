@@ -55,8 +55,10 @@ const Image = styled.img`
 	margin-top: 3.33vh;
 	margin-top: auto !important;
 	width: auto !important;
-	max-width: 100%;
+	max-width: 95%;
+	border-radius: 5px;
 	height: auto;
+	box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const Caption = styled.p`
