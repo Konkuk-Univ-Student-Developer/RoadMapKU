@@ -44,7 +44,6 @@ const Section = styled.div`
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	text-align: center;
 `;
@@ -86,6 +85,7 @@ const StepTitle3 = styled.h3`
 
 const SubTitle = styled.div`
 	width: 20rem;
+	margin-top: 10%;
 	font-size: 2rem;
 	font-weight: 600;
 	color: black;
@@ -95,13 +95,13 @@ const SubTitle = styled.div`
 	padding: 1rem;
 	border-radius: 0.5rem;
 	display: inline-block;
-	margin-top: 1rem;
 `;
 
 const Illustration = styled.img`
 	width: 100%;
 	height: auto;
 	max-width: 60%;
+	margin-bottom: 1rem;
 	border-radius: 0.2rem;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 `;
@@ -123,7 +123,7 @@ const FeaturesContainer = styled.section`
 	align-items: center;
 	gap: 2rem;
 	padding: 1rem;
-	width: 60%;
+	width: 70%;
 	max-width: none;
 	box-sizing: border-box;
 `;
@@ -234,7 +234,7 @@ function HowTo() {
 
 			<SubContainer>
 				<LastContainer>
-					<Section bgColor="#ffffff">
+					<Section>
 						<SubTitle>추가 기능</SubTitle>
 						<FeaturesPictureContainer>
 							{/* 첫 번째 항목 */}
