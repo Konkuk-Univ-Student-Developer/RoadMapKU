@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import KumapWhiteImage from '../../img/kumapWhite.png';
 
 const Container = styled.div`
+	height: 20vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -8,13 +8,13 @@ import SungjongProfile from '../../img/SungjongProfile.png';
 import SeungraeProfile from '../../img/SeungraeProfile.png';
 
 const Container = styled.div`
+	height: 50vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	flex-grow: 1;
-	background-color: #e2efd3;
+	background-color: rgba(214, 239, 224, 0.4);
 	z-index: 3;
 `;
 
