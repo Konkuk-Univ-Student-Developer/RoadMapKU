@@ -85,7 +85,7 @@ const StepTitle3 = styled.h3`
 
 const SubTitle = styled.div`
 	width: 20rem;
-	margin-top: 10%;
+	margin-top: 5%;
 	font-size: 2rem;
 	font-weight: 600;
 	color: black;
