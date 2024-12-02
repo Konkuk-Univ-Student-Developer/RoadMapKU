@@ -1,12 +1,11 @@
+import MainContainer from '../components/MainContainer';
 import Main from '../components/Main';
-import HeaderBar from '../components/HeaderBar';
 
 function RoadMap() {
 	return (
-		<>
-			<HeaderBar />
+		<MainContainer>
 			<Main />
-		</>
+		</MainContainer>
 	);
 }
 
