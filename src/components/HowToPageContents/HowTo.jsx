@@ -30,6 +30,7 @@ const HeaderContainer = styled.header`
 	align-self: flex-start;
 	padding-top: 50px;
 	text-align: center;
+	z-index: 3;
 `;
 
 const Title = styled.h1`
@@ -46,6 +47,7 @@ const Section = styled.div`
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	z-index: 3;
 `;
 
 const Step = styled.h2`

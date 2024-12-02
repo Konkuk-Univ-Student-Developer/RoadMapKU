@@ -1,7 +1,10 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../style/Frames';
 import CircleStyle from '../../style/CircleStyle';
 
 const BackgroundContainer = styled.div`
+	opacity: 0;
+	animation: ${fadeIn} 0.5s ease-in-out forwards;
 	z-index: -1;
 `;
 
