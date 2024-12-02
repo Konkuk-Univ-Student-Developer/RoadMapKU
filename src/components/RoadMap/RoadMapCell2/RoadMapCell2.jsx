@@ -20,11 +20,10 @@ const StyledCell = styled.div`
 	display: flex;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
-	color: #2e2e2e;
+	color: #1e1e1e;
 	cursor: pointer;
 	user-select: none;
 	position: relative;
-	// box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
 	transition:
 		background-color 0.1s ease-out,
 		color 0.1s ease-out,

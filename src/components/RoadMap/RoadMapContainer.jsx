@@ -61,11 +61,15 @@ const Button = styled.button`
 	user-select: none;
 	font-family: 'Pretendard-semiBold';
 	font-size: small;
-	transition: background-color 0.3s ease-out;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition:
+		background-color 0.2s ease-out,
+		box-shadow 0.2s ease-out;
 
 	&:hover,
 	&:active {
 		background-color: #02472a;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 	}
 `;
 
