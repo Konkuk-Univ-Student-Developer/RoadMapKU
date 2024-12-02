@@ -11,19 +11,19 @@ import Footer from '../components/Footer/Footer';
 const Container = styled.div`
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 `;
 
 const ContentsContainer = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	overflow-y: auto;
 `;
 
 const SubContainer = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -31,7 +31,7 @@ const SubContainer = styled.div`
 
 const LastContainer = styled.div`
 	width: 100%;
-	height: 85vh;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

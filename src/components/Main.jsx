@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import FieldSearchBar from './FieldSearchBar/FieldSearchBar';
 import RoadMapContainer from './RoadMap/RoadMapContainer';
 import TutorialModal from './Tutorial/TutorialModal';
+
 const Container = styled.div`
-	width: 100%;
+	position: relative;
+	height: 100%;
+	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -57,15 +60,13 @@ const Main = () => {
 	};
 
 	return (
-		<>
-			<Container>
-				{showModal && <TutorialModal onClose={handleCloseModal} onDismissForAWeek={handleDismissForAWeek} />}
-				<FieldSearchBar show={showFieldSearchBar} toggleFieldSearchBar={toggleFieldSearchBar} />
-				<Content>
-					<RoadMapContainer />
-				</Content>
-			</Container>
-		</>
+		<Container>
+			{showModal && <TutorialModal onClose={handleCloseModal} onDismissForAWeek={handleDismissForAWeek} />}
+			<FieldSearchBar show={showFieldSearchBar} toggleFieldSearchBar={toggleFieldSearchBar} />
+			<Content>
+				<RoadMapContainer />
+			</Content>
+		</Container>
 	);
 };
 

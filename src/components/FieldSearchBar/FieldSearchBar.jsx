@@ -12,7 +12,7 @@ const FieldSearchBarContainer = styled.div`
 	width: 85%;
 	gap: 10px;
 	min-width: 600px;
-	margin-top: 5rem;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
