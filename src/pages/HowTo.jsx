@@ -11,13 +11,6 @@ const Container = styled.div`
 	background-color: white;
 `;
 
-const HeaderContainer = styled.header`
-	align-self: flex-start;
-	padding-top: 0vh;
-	text-align: center;
-	color: black;
-`;
-
 const SubContainer = styled.div`
 	height: 100vh;
 	display: flex;
@@ -45,14 +38,22 @@ const LastContainer = styled.div`
 	background-color: white;
 `;
 
-const Title = styled.h1`
-	font-size: 4.44vh;
-	font-weight: bold;
-	text-align: left;
-	padding-left: 11.11vh;
-	color: black;
+const HeaderContainer = styled.header`
+	width: fit-content;
+	align-self: flex-start;
+	padding-top: 12vh;
+	text-align: center;
+	margin-bottom: 0px;
 `;
 
+const Title = styled.h1`
+	font-size: 3.5rem;
+	ont-family: 'Pretendard-regular';
+	font-weight: bold;
+	text-align: left;
+	padding-left: 11vh;
+	color: #056a3f;
+`;
 const Section = styled.div`
 	background-color: white;
 	text-align: center;
@@ -140,7 +141,7 @@ function HowTo() {
 			<Container>
 				<SubContainer>
 					<HeaderContainer>
-						<Title>KUMAP 사용법</Title>{' '}
+						<Title>KUMAP 사용법</Title>
 					</HeaderContainer>
 					<Section>
 						<Step>Step 1.</Step>
@@ -148,7 +149,7 @@ function HowTo() {
 						<FeaturesContainer>
 							<FeatureItem>
 								<Illustration src="/img/dummy.gif" alt="Animated illustration" />
-							</FeatureItem>{' '}
+							</FeatureItem>
 							<FeatureItem>
 								<Illustration src={jobchoice} alt="Dropdown illustration" />
 							</FeatureItem>
