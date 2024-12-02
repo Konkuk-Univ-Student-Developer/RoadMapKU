@@ -1,10 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import competencydetail from '../img/competencydetail.png';
-import detail from '../img/detail.png';
-import jobchoice from '../img/jobchoice.png';
-import myroadmap from '../img/myroadmap.png';
-import majorchoice from '../img/majorchoice.png';
 import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
@@ -115,6 +110,16 @@ const Illustration = styled.img`
 	border-radius: 0.56vh;
 `;
 
+const IllustrationVideo = styled.video.attrs({
+	autoPlay: true,
+	loop: true,
+	muted: true
+})`
+	width: 100%;
+	height: auto;
+	max-width: 66.67vh;
+	border-radius: 0.56vh;
+`;
 const FeaturesContainer = styled.section`
 	display: flex;
 	justify-content: center;
@@ -148,10 +153,10 @@ function HowTo() {
 						<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
 						<FeaturesContainer>
 							<FeatureItem>
-								<Illustration src="/img/dummy.gif" alt="Animated illustration" />
+								<IllustrationVideo src="/img/video1.mp4" alt="Animated illustration" />
 							</FeatureItem>
 							<FeatureItem>
-								<Illustration src={jobchoice} alt="Dropdown illustration" />
+								<IllustrationVideo src="/img/video2.mp4" alt="Animated illustration" />
 							</FeatureItem>
 						</FeaturesContainer>
 
@@ -172,7 +177,7 @@ function HowTo() {
 							<br /> 관련 학과 중 관심 있는 학과를 클릭해보세요!
 						</StepTitle>
 
-						<Illustration src={majorchoice} alt="FieldSearchBar illustration" />
+						<IllustrationVideo src="/img/video3.mp4" alt="Animated illustration" />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5vh' }}>
 							<img src="./img/KU2.png" alt="황소" style={{ width: '100px', margin: '5px', marginRight: '10px' }} />
 							<StepTitle3>
@@ -188,7 +193,7 @@ function HowTo() {
 						<Step>Step 3.</Step>
 						<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
 
-						<Illustration src={myroadmap} alt="Roadmap illustration" />
+						<IllustrationVideo src="/img/video4.mp4" alt="Animated illustration" />
 						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '1.5vh' }}>
 							<StepTitle3>
 								각 수업 옆 버튼을 누르면 수업 상세정보를 볼 수 있고,
@@ -211,7 +216,7 @@ function HowTo() {
 								{/* 첫 번째 항목 */}
 								<FeatureItem>
 									<StepTitle2>상세정보 열람</StepTitle2>
-									<Illustration src={competencydetail} alt="Competency Detail" />
+									<Illustration src="/img/pic1.png" alt="Competency Detail" />
 
 									<StepTitle3>수업을 클릭하면 해당 수업 정보와 수강바구니 경쟁률을 확인할 수 있습니다.</StepTitle3>
 								</FeatureItem>
@@ -219,7 +224,7 @@ function HowTo() {
 								{/* 두 번째 항목 */}
 								<FeatureItem>
 									<StepTitle2>사진 저장과 공유</StepTitle2>
-									<Illustration src={detail} alt="Detail" />
+									<Illustration src="/img/pic2.png" alt="Detail" />
 									<StepTitle3>
 										하단 사진 버튼을 클릭해 내 로드맵을 사진으로 저장할 수 있으며, URL로 공유도 가능합니다.
 									</StepTitle3>
