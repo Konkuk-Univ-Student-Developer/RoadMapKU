@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	z-index: 3;
+`;
+
+const ContentsContainer = styled.div`
 	width: 90%;
 	display: flex;
 	flex-direction: column;
@@ -27,8 +34,8 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
+	font-family: 'Pretendard-bold';
 	font-size: 4em;
-	font-weight: bold;
 	text-align: left;
 	padding-left: 100px;
 	color: #056a3f;
@@ -36,13 +43,12 @@ const Title = styled.h1`
 
 const MainTitle = styled.div`
 	font-size: 40px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 
 const MainTitle_impact = styled.div`
+	font-family: 'Pretendard-bold';
 	font-size: 50px;
-	font-weight: 800;
 	color: #056a3f;
 `;
 
@@ -58,23 +64,27 @@ const Gap = styled.div`
 
 const AboutCompetencyContents = () => {
 	return (
-		<>
+		<Container>
 			<HeaderContainer>
-				<Title>KUMAP 이란?</Title>
+				<Title>전공역량 이란?</Title>
 			</HeaderContainer>
-			<Container>
-				<MainTitle>전공 분야와 관련된 학문적 지식을 활용함으로써 길러지는</MainTitle>
-				<MainTitle_impact>핵심 능력</MainTitle_impact>
+			<ContentsContainer>
+				<MainTitle>전공 분야에서 필요한</MainTitle>
+				<MainTitle_impact>핵심적인 역량</MainTitle_impact>
 				<Gap></Gap>
 				<SubContainer>
-					<Description>건국대학교는 역량기반 교육과정을 운영하고 있어서,</Description>
-					<Description>각 전공 교육과정은 전공역량을 기반으로 개발되었어요.</Description>
+					<Description>건국대학교의 각 전공은 전공역량을 기반으로 개발되었어요.</Description>
+					<Description>
+						전공역량은 전공 분야에서 필요한 지식 뿐만 아니라 기술과 태도까지 모두 포함하는 개념이에요.
+					</Description>
 					<Description></Description>
 					<Description>희망하는 진로 분야와 연관된 전공역량을 파악하고</Description>
-					<Description>필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾는 것이 KUMAP의 큰 목표에요!</Description>
+					<Description>
+						필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾도록 돕는 것이 KUMAP의 큰 목표에요!
+					</Description>
 				</SubContainer>
-			</Container>
-		</>
+			</ContentsContainer>
+		</Container>
 	);
 };
 
