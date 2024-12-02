@@ -2,22 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import icon_url from '../../img/KU_search_icon.png';
-import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
+import { trembleBounce, trembleRotate } from '../../style/Frames';
 import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
 	width: 100%;
-	transform: translate(-6rem, 0);
-	padding-top: 2rem;
+	transform: translate(-5rem, 0);
+	padding-top: 6rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 4rem;
-	z-index: 2;
-	opacity: 0;
-	animation: ${fadeIn} 1s ease-in-out forwards;
-	animation-delay: 1.2s;
 `;
 
 const CharacterContainer = styled.div`
@@ -64,12 +60,12 @@ const LinkContents = () => {
 			</CharacterContainer>
 
 			<LinkButton
-				onClick={() => navigate('/manual')}
+				onClick={() => navigate('/howtopage')}
 				option={'white'}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
-				KUMAP 이란?
+				KUMAP 사용법
 			</LinkButton>
 			<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
 				KUMAP 바로가기!

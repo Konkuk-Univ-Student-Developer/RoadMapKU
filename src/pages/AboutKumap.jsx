@@ -1,96 +1,72 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import MainContainer from '../components/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
+import LinkContents from '../components/AboutKumapContents/LinkContents';
+import BackgroundContents from '../components/HomeContents/BackgroundContents';
+import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
 import Footer from '../components/Footer/Footer';
-import { Header, SectionsContainer } from 'react-fullpage';
-import HeaderBar from '../components/HeaderBar';
-import { Color } from '../style/Color';
 
-export const fullPageOptions = {
-	sectionClassName: 'section',
-	anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
-	scrollBar: false,
-	navigation: true,
-	verticalAlign: false,
-	sectionPaddingTop: '50px',
-	sectionPaddingBottom: '50px',
-	arrowNavigation: true
-};
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow-y: hidden;
+`;
+
+const ContentsContainer = styled.div`
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+`;
 
 const SubContainer = styled.div`
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch;
+	align-items: center;
 `;
 
 const LastContainer = styled.div`
+	width: 100%;
 	height: 85vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
-`;
-
-const LinkContainer = styled.div`
-	gap: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
-`;
-
-const LinkButton = styled.button`
-	width: 400px;
-	height: 100px;
-	padding: 10px 20px;
-	font-size: 30px;
-	color: ${(props) => (props.option === 'white' ? Color.GREEN : 'white')};
-	background-color: ${(props) => (props.option === 'white' ? '#eeeeee' : Color.GREEN)};
-	border: none;
-	border-radius: 20px;
-	cursor: pointer;
-	transition: 0.1s ease-in;
-	&:hover {
-		background-color: ${(props) => (props.option === 'white' ? '#d3d3d3' : '#02472a')};
-	}
+	z-index: 3;
 `;
 
 const AboutKumap = () => {
-	const navigate = useNavigate();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
-		<>
-			<Header>
-				<HeaderBar />
-			</Header>
-			<SectionsContainer {...fullPageOptions}>
-				<SubContainer>
-					<AboutKumapContents />
-				</SubContainer>
-				<SubContainer>
-					<AboutCompetencyContents />
-				</SubContainer>
-				<SubContainer>
-					<LastContainer>
-						<ConclusionContents />
-						<LinkContainer>
-							<LinkButton onClick={() => navigate('/howtopage')} option={'white'}>
-								KUMAP 사용법
-							</LinkButton>
-							<LinkButton onClick={() => navigate('/road-map')} option={'green'}>
-								KUMAP 바로가기
-							</LinkButton>
-						</LinkContainer>
-					</LastContainer>
-					<Footer />
-				</SubContainer>
-			</SectionsContainer>
-		</>
+		<MainContainer>
+			<Container>
+				<BackgroundContents />
+				<ImmergeBackgroundContents />
+				<ContentsContainer>
+					<SubContainer>
+						<AboutKumapContents />
+					</SubContainer>
+					<SubContainer>
+						<AboutCompetencyContents />
+					</SubContainer>
+					<SubContainer>
+						<LastContainer>
+							<ConclusionContents />
+							<LinkContents />
+						</LastContainer>
+						<Footer />
+					</SubContainer>
+				</ContentsContainer>
+			</Container>
+		</MainContainer>
 	);
 };
 
