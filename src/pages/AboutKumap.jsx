@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import MainContainer from '../components/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
@@ -38,10 +38,6 @@ const LastContainer = styled.div`
 `;
 
 const AboutKumap = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
 	return (
 		<MainContainer>
 			<Container>
