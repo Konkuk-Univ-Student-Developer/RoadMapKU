@@ -16,7 +16,7 @@ const SemesterContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-	margin-right: 14px;
+	margin-right: 8px;
 `;
 
 const SemesterColumn = styled.div`

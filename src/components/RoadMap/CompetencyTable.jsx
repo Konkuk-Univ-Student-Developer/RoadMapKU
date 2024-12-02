@@ -23,7 +23,7 @@ const CompetencyContainer = styled.div`
 	flex-direction: column;
 	justify-contents: right;
 	overflow-y: scroll;
-	padding-left: 14px;
+	padding-left: 5px;
 `;
 
 const Title = styled.div`
@@ -38,6 +38,7 @@ const Title = styled.div`
 `;
 
 const CompetencyColumn = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
