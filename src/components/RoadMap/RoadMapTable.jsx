@@ -35,6 +35,7 @@ const CourseContainer = styled.div`
 	gap: 0.5rem;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	margin-right: 14px;
 `;
 
 const CourseColumn = styled.div`
