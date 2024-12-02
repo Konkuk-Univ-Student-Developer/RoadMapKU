@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
-	height: 20vh;
+	height: 15vh;
 	width: 80%;
 	display: flex;
 	flex-direction: column;
