@@ -69,7 +69,7 @@ const AboutKumapContents = () => {
 				<Title>KUMAP 이란?</Title>
 			</HeaderContainer>
 			<ContentsContainer>
-				<MainTitle>원하는 직로와 관련된 수업을 찾아 만드는</MainTitle>
+				<MainTitle>원하는 진로와 관련된 수업을 찾아 만드는</MainTitle>
 				<MainTitle_impact>나만의 전공 로드맵</MainTitle_impact>
 				<Gap></Gap>
 				<SubContainer>
