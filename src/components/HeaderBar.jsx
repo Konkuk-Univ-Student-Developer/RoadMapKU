@@ -80,6 +80,11 @@ const KumapLogo = styled.img`
 	margin-right: 20px;
 `;
 
+const KonkukUnivLogo = styled.img`
+	height: 50px;
+	width: 140px;
+`;
+
 function HeaderBar() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
@@ -113,7 +118,7 @@ function HeaderBar() {
 
 					<HeaderActions>
 						<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
-							<img src={ku_logo} alt="KU Logo" style={{ height: '3rem' }} />
+							<KonkukUnivLogo src={ku_logo} />
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>
