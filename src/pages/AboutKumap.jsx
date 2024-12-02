@@ -35,6 +35,7 @@ const LastContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: 3;
 `;
 
 const AboutKumap = () => {

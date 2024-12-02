@@ -15,6 +15,7 @@ const Container = styled.div`
 	width: 100%;
 	flex-grow: 1;
 	background-color: #e2efd3;
+	z-index: 3;
 `;
 
 const IntroductionProfileContents = () => {

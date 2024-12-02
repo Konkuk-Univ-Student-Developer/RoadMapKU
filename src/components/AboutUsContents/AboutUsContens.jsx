@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 const ContentsContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -47,6 +48,7 @@ const AboutUsContents = () => {
 					&apos;문제 제기부터 기획, 개발 및 사용자 테스트로 인한 서비스 분석까지 학생들이 직접 해보면 어떨까?&apos;
 				</Description>
 				<Description>라는 궁금증과 기대감으로 시작했습니다.</Description>
+				<Description></Description>
 				<Description>
 					학교에게는 학생들의 니즈와 인사이트를 전달, 학생들이 학교 생활에 불편함을 해소할 수 있도록 저희가 뛰겠습니다.
 				</Description>
