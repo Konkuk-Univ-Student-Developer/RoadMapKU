@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
-	height: 15vh;
+	height: fit-content;
 	width: 80%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	margin-top: 40px;
+	margin: 40px 0;
 	gap: 5px;
 	z-index: 3;
 `;
