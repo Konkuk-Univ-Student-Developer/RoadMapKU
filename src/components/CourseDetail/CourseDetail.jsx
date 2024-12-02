@@ -40,7 +40,7 @@ function CourseDetail({ onClose, HaksuId }) {
 	if (loading) {
 		return (
 			<Modal onClose={onClose}>
-				<div>Loading...</div>
+				<div> </div>
 			</Modal>
 		);
 	}
@@ -58,7 +58,7 @@ function CourseDetail({ onClose, HaksuId }) {
 	if (!courseDetail || Object.keys(courseDetail).length === 0) {
 		return (
 			<Modal onClose={onClose}>
-				<div>No course details found.</div>
+				<div> </div>
 			</Modal>
 		);
 	}
