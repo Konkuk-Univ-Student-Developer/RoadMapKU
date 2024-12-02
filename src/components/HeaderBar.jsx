@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import KUMAPLogo from './LogoFile/Kulogo';
 import { Color } from '../style/Color';
 import ku_logo from '../img/ku-logo.png';
+import kumap_logo from '../img/kumap_logo.png';
+import styled from 'styled-components';
 
 const theme = {
 	active: {
@@ -74,6 +74,17 @@ const HeaderActions = styled.div`
 	overflow: hidden;
 `;
 
+const KumapLogo = styled.img`
+	width: 140px;
+	height: 50px;
+	margin-right: 20px;
+`;
+
+const KonkukUnivLogo = styled.img`
+	height: 50px;
+	width: 140px;
+`;
+
 function HeaderBar() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
@@ -84,7 +95,7 @@ function HeaderBar() {
 				<HeaderContent>
 					<ContentContainer>
 						<HeaderBrand onClick={() => navigate('/')}>
-							<KUMAPLogo />
+							<KumapLogo src={kumap_logo} />
 						</HeaderBrand>
 						<HeaderLinks>
 							<HeaderLink onClick={() => navigate('/manual')} $active={pathname === '/manual'}>
@@ -107,7 +118,7 @@ function HeaderBar() {
 
 					<HeaderActions>
 						<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
-							<img src={ku_logo} alt="KU Logo" style={{ height: '3rem' }} />
+							<KonkukUnivLogo src={ku_logo} />
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>
