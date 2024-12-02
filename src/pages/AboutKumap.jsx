@@ -5,8 +5,7 @@ import AboutKumapContents from '../components/AboutKumapContents/AboutKumapConte
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
 import LinkContents from '../components/AboutKumapContents/LinkContents';
-import BackgroundContents from '../components/HomeContents/BackgroundContents';
-import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
+import BackgroundContents from '../components/AboutKumapContents/BackgroundContents';
 import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
@@ -35,9 +34,7 @@ const LastContainer = styled.div`
 	height: 85vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	z-index: 3;
 `;
 
 const AboutKumap = () => {
@@ -49,7 +46,6 @@ const AboutKumap = () => {
 		<MainContainer>
 			<Container>
 				<BackgroundContents />
-				<ImmergeBackgroundContents />
 				<ContentsContainer>
 					<SubContainer>
 						<AboutKumapContents />
