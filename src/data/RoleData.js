@@ -2,13 +2,7 @@ export const JiaRole = ['기획', '사업기획서 작성', '회의록 작성 �
 
 export const SejoonRole = ['서버구축', '데이터베이스 설계 및 구축', '프로젝트 QA'];
 
-export const YeuenRole = [
-	'모달 컴포넌트 개발',
-	'학사 안내 정보 API 연결',
-	'페이지 디자인',
-	'공유 기능 개발',
-	'How To Use 페이지 개발'
-];
+export const YeuenRole = ['모달 컴포넌트 개발', '학사 안내 정보 API 연결', '페이지 디자인', 'How To Use 페이지 개발'];
 
 export const SungjongRole = [
 	'직군 입력창 개발',
