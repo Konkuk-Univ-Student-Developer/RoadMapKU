@@ -43,10 +43,20 @@ const ProfileLi = styled.li`
 	font-size: 15px;
 `;
 
-const ProfileContents = ({ name, role, roleDatas, srcUrl, depart }) => {
+const ProfileContents = ({
+	name,
+	role,
+	roleDatas,
+	srcUrl,
+	depart,
+	imageSize = {
+		width: '150px',
+		height: '150px'
+	}
+}) => {
 	return (
 		<Container>
-			<img width={'150px'} height={'150px'} src={srcUrl} alt="팀원 이미지" />
+			<img {...imageSize} src={srcUrl} alt="팀원 이미지" />
 			<LabelContainer>
 				<NameLabel>{name}</NameLabel>
 				<DepartLabel>{depart}</DepartLabel>
