@@ -7,7 +7,7 @@ const StyledCell = styled.div`
 	font-size: small;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
-	color: #2e2e2e;
+	color: #1e1e1e;
 	user-select: none;
 
 	&.unclickable {

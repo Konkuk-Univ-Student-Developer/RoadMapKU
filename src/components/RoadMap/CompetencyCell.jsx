@@ -10,7 +10,7 @@ const StyledCell = styled.div`
 	box-sizing: border-box;
 	border-radius: 0.2rem;
 	background-color: #fafafa;
-	color: #2e2e2e;
+	color: #1e1e1e;
 	cursor: pointer;
 	user-select: none;
 	display: flex;
