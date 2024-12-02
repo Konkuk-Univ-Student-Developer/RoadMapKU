@@ -34,7 +34,7 @@ const IntroductionProfileContents = () => {
 				role={'프론트엔드'}
 				roleDatas={YeuenRole}
 				depart={'스마트ICT융합공학과'}
-				imageSize={{ width: '130px', height: '150px' }}
+				imageSize={{ width: '120px', height: '150px' }}
 			/>
 			<ProfileContents
 				srcUrl={SungjongProfile}
