@@ -28,7 +28,7 @@ const SubContainer = styled.div`
 const HeaderContainer = styled.header`
 	width: fit-content;
 	align-self: flex-start;
-	padding-top: 100px;
+	padding-top: 50px;
 	text-align: center;
 	margin-bottom: 0;
 `;
