@@ -6,8 +6,18 @@ import ConclusionContents from '../components/AboutKumapContents/ConclusionConte
 import Footer from '../components/Footer/Footer';
 import { Header, SectionsContainer } from 'react-fullpage';
 import HeaderBar from '../components/HeaderBar';
-import { fullPageOptions } from './AboutUs';
 import { Color } from '../style/Color';
+
+export const fullPageOptions = {
+	sectionClassName: 'section',
+	anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
+	scrollBar: false,
+	navigation: true,
+	verticalAlign: false,
+	sectionPaddingTop: '50px',
+	sectionPaddingBottom: '50px',
+	arrowNavigation: true
+};
 
 const SubContainer = styled.div`
 	width: 100%;
