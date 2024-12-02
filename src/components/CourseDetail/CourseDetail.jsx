@@ -40,7 +40,7 @@ function CourseDetail({ onClose, HaksuId }) {
 	if (loading) {
 		return (
 			<Modal onClose={onClose}>
-				<div>Loading...</div>
+				<div> </div>
 			</Modal>
 		);
 	}
