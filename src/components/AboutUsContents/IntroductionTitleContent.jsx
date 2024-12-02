@@ -3,12 +3,11 @@ import styled from 'styled-components';
 const TitleContainer = styled.div`
 	height: 20vh;
 	width: 80%;
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	margin-top: 50px;
+	margin-top: 40px;
 	gap: 5px;
 `;
 
@@ -19,7 +18,7 @@ const HeaderTitle = styled.div`
 `;
 
 const Title = styled.div`
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: 400;
 `;
 

@@ -3,12 +3,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	flex-grow: 1;
-	height: ${({ $customHeight }) => $customHeight || '200px'};
+	height: ${({ $customHeight }) => $customHeight || '150px'};
 	background-color: #0a3711;
 	z-index: 3;
 `;
