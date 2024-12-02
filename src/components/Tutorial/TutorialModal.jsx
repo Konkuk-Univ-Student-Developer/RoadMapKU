@@ -18,9 +18,9 @@ const ModalContentWrapper = styled.div`
 
 const SliderWrapper = styled.div`
 	display: flex !important;
-	width: 80%;
-	max-width: 800px;
-	height: 80%;
+	width: 100%;
+	max-width: 88.89vh;
+	height: 50%;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -48,11 +48,11 @@ const SlideContainer = styled.div`
 	justify-content: center;
 	height: 100%;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 1.11vh;
 `;
 
 const Image = styled.img`
-	margin-top: 30px;
+	margin-top: 3.33vh;
 	margin-top: auto !important;
 	width: auto !important;
 	max-width: 100%;
@@ -60,10 +60,10 @@ const Image = styled.img`
 `;
 
 const Caption = styled.p`
-	font-size: 16px;
+	font-size: 2.22vh;
 	font-weight: bold;
 	margin: 0;
-	margin-bottom: 30px;
+	margin-bottom: 3.33vh;
 `;
 
 const ButtonWrapper = styled.div`
@@ -71,16 +71,17 @@ const ButtonWrapper = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 90%;
-	margin-top: 50px;
-	padding: 0 0px;
+	margin-top: 5.56vh;
+	padding: 0;
 `;
+
 const StyledButton = styled.button`
 	background-color: transparent;
 	color: #666;
 	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 14px;
+	border-radius: 0.56vh;
+	padding: 1.11vh 2.22vh;
+	font-size: 1.56vh;
 	cursor: pointer;
 
 	&:hover {
@@ -95,7 +96,7 @@ const Arrow = styled.div`
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	font-size: 40px;
+	font-size: 4.44vh;
 	color: ${Color.GREEN};
 	cursor: pointer;
 	z-index: 1000;
@@ -104,20 +105,19 @@ const Arrow = styled.div`
 		color: #024e2d;
 	}
 `;
-
 const CustomPrevArrow = ({ className, onClick, currentSlide }) => {
-	if (currentSlide === 0) return null; // 첫 번째 슬라이드에서 화살표 숨기기
+	if (currentSlide === 0) return null;
 	return (
-		<Arrow className={className} style={{ left: '-70px' }} onClick={onClick}>
+		<Arrow className={className} style={{ left: '-7.78vh' }} onClick={onClick}>
 			❮
 		</Arrow>
 	);
 };
 
 const CustomNextArrow = ({ className, onClick, currentSlide, slideCount }) => {
-	if (currentSlide === slideCount - 1) return null; // 마지막 슬라이드에서 화살표 숨기기
+	if (currentSlide === slideCount - 1) return null;
 	return (
-		<Arrow className={className} style={{ right: '-55px' }} onClick={onClick}>
+		<Arrow className={className} style={{ right: '-6.11vh' }} onClick={onClick}>
 			❯
 		</Arrow>
 	);
@@ -128,7 +128,7 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 
 	const steps = [
 		{
-			image: './img/tutorial1.png',
+			image: './img/tutorial11.jpeg',
 			caption: (
 				<>
 					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
@@ -148,7 +148,7 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 			)
 		},
 		{
-			image: './img/tutorial2.png',
+			image: './img/tutorial22.jpeg',
 			caption: (
 				<>
 					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
@@ -168,7 +168,7 @@ function TutorialModal({ onClose, onDismissForAWeek }) {
 			)
 		},
 		{
-			image: './img/tutorial3.png',
+			image: './img/tutorial33.jpeg',
 			caption: (
 				<>
 					<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
