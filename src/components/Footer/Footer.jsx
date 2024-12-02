@@ -10,6 +10,7 @@ const Container = styled.div`
 	flex-grow: 1;
 	height: ${(props) => (props.customHeight ? props.customHeight : '')};
 	background-color: #0a3711;
+	z-index: 3;
 `;
 
 const SubContainer = styled.div`

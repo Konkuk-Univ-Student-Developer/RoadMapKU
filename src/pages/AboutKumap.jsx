@@ -8,8 +8,19 @@ import LinkContents from '../components/AboutKumapContents/LinkContents';
 import BackgroundContents from '../components/HomeContents/BackgroundContents';
 import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
 import Footer from '../components/Footer/Footer';
-import { SectionsContainer } from 'react-fullpage';
-import { fullPageOptions } from './AboutUs';
+
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow-y: hidden;
+`;
+
+const ContentsContainer = styled.div`
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+`;
 
 const SubContainer = styled.div`
 	width: 100%;
@@ -36,23 +47,25 @@ const AboutKumap = () => {
 
 	return (
 		<MainContainer>
-			<BackgroundContents />
-			<ImmergeBackgroundContents />
-			<SectionsContainer {...fullPageOptions}>
-				<SubContainer>
-					<AboutKumapContents />
-				</SubContainer>
-				<SubContainer>
-					<AboutCompetencyContents />
-				</SubContainer>
-				<SubContainer>
-					<LastContainer>
-						<ConclusionContents />
-						<LinkContents />
-					</LastContainer>
-					<Footer />
-				</SubContainer>
-			</SectionsContainer>
+			<Container>
+				<BackgroundContents />
+				<ImmergeBackgroundContents />
+				<ContentsContainer>
+					<SubContainer>
+						<AboutKumapContents />
+					</SubContainer>
+					<SubContainer>
+						<AboutCompetencyContents />
+					</SubContainer>
+					<SubContainer>
+						<LastContainer>
+							<ConclusionContents />
+							<LinkContents />
+						</LastContainer>
+						<Footer />
+					</SubContainer>
+				</ContentsContainer>
+			</Container>
 		</MainContainer>
 	);
 };
