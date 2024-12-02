@@ -1,15 +1,23 @@
-import HeaderBar from '../components/HeaderBar';
-import HowTo from './HowTo';
-import { Header } from 'react-fullpage';
+import styled from 'styled-components';
+import MainContainer from '../components/MainContainer';
+import HowTo from '../components/HowToPageContents/HowTo';
+import BackgroundContents from '../components/HowToPageContents/BackgroundContents';
+
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+`;
 
 function HowToPage() {
 	return (
-		<>
-			<Header>
-				<HeaderBar />
-			</Header>
-			<HowTo />
-		</>
+		<MainContainer>
+			<Container>
+				<BackgroundContents />
+				<HowTo />
+			</Container>
+		</MainContainer>
 	);
 }
 
