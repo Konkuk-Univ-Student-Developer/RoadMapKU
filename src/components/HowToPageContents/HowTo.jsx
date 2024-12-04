@@ -222,7 +222,7 @@ function HowTo() {
 					</FeatureItem>
 
 					<StepContainer>
-						<KuImage src={kuSearch2} />
+						<KuImage src={kuSearch2} alt="돋보기 쿠" />
 						<StepTitle3>
 							각 전공 역량을 클릭하면 해당
 							<br /> 전공 역량을 포함한 수업을 확인할 수 있습니다.
