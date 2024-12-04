@@ -40,7 +40,7 @@ const ContentContainer = styled.div`
 	justify-content: center;
 `;
 
-const HeaderBrand = styled.a`
+const HeaderBrand = styled.div`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
@@ -54,7 +54,7 @@ const HeaderLinks = styled.div`
 	gap: 2rem;
 `;
 
-const HeaderLink = styled.a`
+const HeaderLink = styled.div`
 	padding: 0 5px;
 	cursor: pointer;
 	text-decoration: none;
