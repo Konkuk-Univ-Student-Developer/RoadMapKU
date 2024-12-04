@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import KumapWhiteImage from '../../img/kumapWhite.png';
+import KumapWhiteImage from '../../img/KumapWhiteLogo.png';
 
 const Container = styled.div`
 	height: 20vh;
@@ -52,12 +52,12 @@ const Footer = ({ customHeight }) => {
 				<TextContainer>
 					<Text $size={'20px'}>Konkuk</Text>
 					<Text $size={'15px'} $weight={'200'}>
-						<a style={{ color: 'white', textDecoration: 'none' }} href="https://www.konkuk.ac.kr/konkuk/index.do">
+						<a href="https://www.konkuk.ac.kr/konkuk/index.do" style={{ color: 'white', textDecoration: 'none' }}>
 							Konkuk University
 						</a>
 					</Text>
 					<Text $size={'15px'} $weight={'200'}>
-						<a style={{ color: 'white', textDecoration: 'none' }} href="https://bulletins.konkuk.ac.kr/ko-KR/">
+						<a href="https://bulletins.konkuk.ac.kr/ko-KR/" style={{ color: 'white', textDecoration: 'none' }}>
 							건국대학교 온라인 요람
 						</a>
 					</Text>

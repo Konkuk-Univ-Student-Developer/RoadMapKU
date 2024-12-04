@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Color } from '../style/Color';
-import ku_logo from '../img/ku-logo.png';
-import kumap_logo from '../img/kumap_logo.png';
+import kuLogo from '../img/KonkukUnivLogo.png';
+import kumapLogo from '../img/KumapLogo.png';
 import styled from 'styled-components';
 
 const theme = {
@@ -40,7 +40,7 @@ const ContentContainer = styled.div`
 	justify-content: center;
 `;
 
-const HeaderBrand = styled.a`
+const HeaderBrand = styled.div`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
@@ -54,7 +54,7 @@ const HeaderLinks = styled.div`
 	gap: 2rem;
 `;
 
-const HeaderLink = styled.a`
+const HeaderLink = styled.div`
 	padding: 0 5px;
 	cursor: pointer;
 	text-decoration: none;
@@ -74,13 +74,13 @@ const HeaderActions = styled.div`
 	overflow: hidden;
 `;
 
-const KumapLogo = styled.img`
+const KumapLogo = styled.img.attrs({ src: kumapLogo, alt: '쿠맵 로고' })`
 	width: 140px;
 	height: 50px;
 	margin-right: 20px;
 `;
 
-const KonkukUnivLogo = styled.img`
+const KonkukUnivLogo = styled.img.attrs({ src: kuLogo, alt: '건국대학교 로고' })`
 	height: 50px;
 	width: 140px;
 `;
@@ -95,7 +95,7 @@ function HeaderBar() {
 				<HeaderContent>
 					<ContentContainer>
 						<HeaderBrand onClick={() => navigate('/')}>
-							<KumapLogo src={kumap_logo} />
+							<KumapLogo />
 						</HeaderBrand>
 						<HeaderLinks>
 							<HeaderLink onClick={() => navigate('/manual')} $active={pathname === '/manual'}>
@@ -118,7 +118,7 @@ function HeaderBar() {
 
 					<HeaderActions>
 						<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
-							<KonkukUnivLogo src={ku_logo} />
+							<KonkukUnivLogo />
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>

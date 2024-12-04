@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SubTitle } from './AboutUsContens';
+import kusdLogo from '../../img/KusdLogo.svg';
 
 const LogoContainer = styled.div`
 	width: 100%;
@@ -11,10 +12,15 @@ const LogoContainer = styled.div`
 	z-index: 3;
 `;
 
+const KusdLogo = styled.img.attrs({ src: kusdLogo, alt: '학생개발팀 로고' })`
+	width: 300px;
+	height: 300px;
+`;
+
 const LogoContents = () => {
 	return (
 		<LogoContainer>
-			<img width={'300px'} height={'300px'} src="./../img/KusdLogo.svg" alt="학생개발팀 로고" />
+			<KusdLogo />
 			<SubTitle>학생들을 위해 학생들이 뜁니다!</SubTitle>
 		</LogoContainer>
 	);
