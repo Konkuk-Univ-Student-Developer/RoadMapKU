@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainContainer from '../components/MainContainer';
-import logo_url from '../img/kumap_logo.png';
-import character_url from './../img/KU_character.png';
-import road_url from './../img/road.png';
+import kumapLogo from '../img/KumapLogo.png';
+import kuLogo from '../img/KUBook.png';
+import roadImage from '../img/Road.png';
 import LinkContents from '../components/HomeContents/LinkContents';
 import BackgroundContents from '../components/HomeContents/BackgroundContents';
 import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
@@ -68,8 +68,8 @@ function NewHome() {
 			<PageContainer>
 				<BackgroundContents />
 				<TitleContainer>
-					<img alt="Kumap Logo" src={logo_url} style={{ width: '25%' }} />
-					<img alt="Kumap Character" src={character_url} style={{ width: '7%' }} />
+					<img alt="Kumap Logo" src={kumapLogo} style={{ width: '25%' }} />
+					<img alt="Kumap Character" src={kuLogo} style={{ width: '7%' }} />
 				</TitleContainer>
 				<SubTitleContainer>
 					<div>진로를 탐색하고 수업을 추가하여</div>
@@ -77,7 +77,7 @@ function NewHome() {
 				</SubTitleContainer>
 				<LinkContents />
 				<RoadContainer>
-					<img alt="Road Image" src={road_url} style={{ width: '100%' }} />
+					<img alt="Road Image" src={roadImage} style={{ width: '100%' }} />
 				</RoadContainer>
 				<ImmergeBackgroundContents />
 			</PageContainer>

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import KumapWhiteImage from '../../img/kumapWhite.png';
+import KumapWhiteImage from '../../img/KumapWhiteLogo.png';
 
 const Container = styled.div`
 	height: 20vh;

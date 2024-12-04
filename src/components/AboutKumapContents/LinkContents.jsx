@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import icon_url from '../../img/KU_search_icon.png';
+import icon_url from '../../img/KUSearch1.png';
 import { trembleBounce, trembleRotate } from '../../style/Frames';
 import { Color } from '../../style/Color';
 
