@@ -1,5 +1,4 @@
 User-agent: *
 Sitemap: https://kumap.konkuk.ac.kr/sitemap.xml
 
-Allow: /$
-Disallow: /
+Allow: /
