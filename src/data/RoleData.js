@@ -1,4 +1,4 @@
-export const JiaRole = ['기획', '사업기획서 작성', '회의록 작성 및 최종 PT 준비', '페이지 디자인'];
+export const JiaRole = ['기획', '사업기획서 작성', '회의록 작성 및 최종 PT', '페이지 디자인'];
 
 export const SejoonRole = ['서버구축', '데이터베이스 설계 및 구축', '프로젝트 QA'];
 
