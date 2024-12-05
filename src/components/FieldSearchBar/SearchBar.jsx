@@ -158,7 +158,8 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 		setIsToggleOn(true);
 	};
 
-	const toggleClickHandler = () => {
+	const toggleClickHandler = (event) => {
+		event.stopPropagation();
 		setIsToggleOn((prev) => !prev);
 	};
 
