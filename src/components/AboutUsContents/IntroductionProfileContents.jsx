@@ -15,7 +15,6 @@ const Container = styled.div`
 	align-items: center;
 	width: 100%;
 	background-color: rgba(214, 239, 224, 0.4);
-	z-index: 3;
 `;
 
 const IntroductionProfileContents = () => {

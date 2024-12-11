@@ -17,7 +17,6 @@ const ContentsContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
-	z-index: 3;
 `;
 
 const MainTitle = styled.div`

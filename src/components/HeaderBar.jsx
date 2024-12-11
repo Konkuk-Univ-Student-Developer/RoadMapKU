@@ -40,7 +40,7 @@ const ContentContainer = styled.div`
 	justify-content: center;
 `;
 
-const HeaderBrand = styled.div`
+const HeaderBrand = styled.a`
 	cursor: pointer;
 	user-select: none;
 	display: flex;
