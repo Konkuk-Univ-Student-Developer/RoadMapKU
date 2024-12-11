@@ -16,9 +16,11 @@ const Container = styled.div`
 `;
 
 const ContentsContainer = styled.div`
+	position: relative;
 	width: 100%;
 	height: 100%;
 	overflow-y: auto;
+	z-index: 1;
 `;
 
 const SubContainer = styled.div`
@@ -35,7 +37,6 @@ const LastContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	z-index: 3;
 `;
 
 const AboutKumap = () => {

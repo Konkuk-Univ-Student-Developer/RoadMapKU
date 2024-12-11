@@ -10,7 +10,7 @@ const Container = styled.div`
 	width: 100%;
 	height: ${({ $customHeight }) => $customHeight || '150px'};
 	background-color: #0a3711;
-	z-index: 3;
+	z-index: 1;
 `;
 
 const SubContainer = styled.div`

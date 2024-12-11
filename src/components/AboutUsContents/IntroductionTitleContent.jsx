@@ -9,7 +9,6 @@ const TitleContainer = styled.div`
 	justify-content: center;
 	margin: 40px 0;
 	gap: 5px;
-	z-index: 3;
 `;
 
 const HeaderTitle = styled.div`

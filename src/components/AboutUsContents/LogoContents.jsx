@@ -9,7 +9,6 @@ const LogoContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 3;
 `;
 
 const KusdLogo = styled.img.attrs({ src: kusdLogo, alt: '학생개발팀 로고' })`

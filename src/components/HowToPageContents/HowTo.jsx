@@ -11,9 +11,11 @@ import picImage1 from '../../img/Pic1.png';
 import picImage2 from '../../img/Pic2.png';
 
 const Container = styled.div`
+	position: relative;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+	z-index: 1;
 `;
 
 const SubContainer = styled.div`
@@ -38,7 +40,6 @@ const HeaderContainer = styled.header`
 	align-self: flex-start;
 	padding-top: 50px;
 	text-align: center;
-	z-index: 3;
 `;
 
 const Title = styled.h1`
@@ -55,7 +56,6 @@ const Section = styled.div`
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	z-index: 3;
 `;
 
 const Step = styled.h2`
