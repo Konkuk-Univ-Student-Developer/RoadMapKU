@@ -8,6 +8,13 @@ import LinkContents from '../components/Common/LinkContents';
 import BackgroundContents from '../components/Common/Background/BackgroundContents';
 import Footer from '../components/Common/Footer';
 
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+`;
+
 const ContentsContainer = styled.div`
 	position: relative;
 	width: 100%;
@@ -35,23 +42,25 @@ const LastContainer = styled.div`
 const AboutKumap = () => {
 	return (
 		<MainContainer>
-			<BackgroundContents />
-			<ContentsContainer>
-				<SubContainer>
-					<AboutKumapContents />
-				</SubContainer>
-				<SubContainer>
-					<AboutCompetencyContents />
-				</SubContainer>
+			<Container>
+				<BackgroundContents />
+				<ContentsContainer>
+					<SubContainer>
+						<AboutKumapContents />
+					</SubContainer>
+					<SubContainer>
+						<AboutCompetencyContents />
+					</SubContainer>
 
-				<SubContainer>
-					<LastContainer>
-						<ConclusionContents />
-						<LinkContents />
-					</LastContainer>
-					<Footer />
-				</SubContainer>
-			</ContentsContainer>
+					<SubContainer>
+						<LastContainer>
+							<ConclusionContents />
+							<LinkContents />
+						</LastContainer>
+						<Footer />
+					</SubContainer>
+				</ContentsContainer>
+			</Container>
 		</MainContainer>
 	);
 };

@@ -1,12 +1,22 @@
 import MainContainer from '../components/Common/MainContainer';
 import HowToUseContents from '../components/HowToUse/HowToUseContents';
 import BackgroundContents from '../components/Common/Background/BackgroundContents';
+import styled from 'styled-components';
+
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+`;
 
 function HowToUse() {
 	return (
 		<MainContainer>
-			<BackgroundContents />
-			<HowToUseContents />
+			<Container>
+				<BackgroundContents />
+				<HowToUseContents />
+			</Container>
 		</MainContainer>
 	);
 }
