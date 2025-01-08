@@ -1,8 +1,8 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../recoils/atoms';
-import useField from '../../hooks/useField';
-import { Color } from '../../style/Color';
+import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../../recoils/atoms';
+import useField from '../../../hooks/useField';
+import { Color } from '../../../style/Color';
 
 const SelectedDepartment = styled.div`
 	width: 15.2%;

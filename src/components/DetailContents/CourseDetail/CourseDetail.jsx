@@ -1,12 +1,51 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { courseDetailState } from '../../recoils/atoms';
-import { Title, Subtitle, ModalContent, TableContent, ScrollContainer } from './CourseDetailStyle';
-import TableComponent from '../Modal/TableComponent';
-import TableComponent2 from '../Modal/TableComponent2';
-import Modal from '../Modal/Modal';
-import useField from '../../hooks/useField';
+import { courseDetailState } from '../../../recoils/atoms';
+import TableComponent from '../../Modal/TableComponent';
+import TableComponent2 from '../../Modal/TableComponent2';
+import Modal from '../../Modal/Modal';
+import useField from '../../../hooks/useField';
 import CompetitionTable from './CompetitionTable';
+import styled from 'styled-components';
+import { Color } from '../../../style/Color';
+
+const ScrollContainer = styled.div`
+	background-color: transparent;
+	padding: 0rem;
+	border-radius: 8px;
+	max-height: 80vh;
+	overflow-y: auto;
+	width: 100%;
+`;
+
+const Title = styled.div`
+	background-color: ${Color.GREEN};
+	text-align: center;
+	padding: 1rem;
+	border-radius: 8px;
+	color: white;
+	margin: 0;
+	margin-bottom: 10px;
+	font-size: 2rem;
+`;
+
+const Subtitle = styled.h2`
+	color: ${Color.GREEN};
+	font-size: 1.5rem;
+	margin: 0rem 20px;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+`;
+
+const ModalContent = styled.div`
+	font-size: 1rem;
+	margin: 10px 20px;
+	line-height: 1.5;
+`;
+
+const TableContent = styled.div`
+	margin: 10px 0;
+`;
 
 function CourseDetail({ onClose, HaksuId }) {
 	const [courseDetail, setCourseDetail] = useRecoilState(courseDetailState);

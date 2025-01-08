@@ -1,6 +1,6 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import CompetencyDetail from '../CompetencyDetail/CompetencyDetail';
+import CompetencyDetail from '../DetailContents/CompetencyDetail/CompetencyDetail';
 import { fadeIn } from '../../style/Frames';
 import { Color } from '../../style/Color';
 

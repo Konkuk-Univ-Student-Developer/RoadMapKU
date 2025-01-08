@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import IntroductionTitleContent from './IntroductionTitleContent';
 import IntroductionProfileContents from './IntroductionProfileContents';
-import Footer from '../Footer/Footer';
+import Footer from '../Common/Footer';
 
 const Container = styled.div`
 	width: 100%;

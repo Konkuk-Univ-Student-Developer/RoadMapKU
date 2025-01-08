@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { Title } from './FieldCategory';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedFieldLogState } from '../../recoils/atoms';
-import useField from '../../hooks/useField';
+import { selectedFieldLogState } from '../../../recoils/atoms';
+import useField from '../../../hooks/useField';
 import { FaX, FaTrash } from 'react-icons/fa6';
-import { fadeIn } from '../../style/Frames';
-import { Color } from '../../style/Color';
+import { fadeIn } from '../../../style/Frames';
+import { Color } from '../../../style/Color';
 
 const Container = styled.div`
 	width: 95%;
@@ -20,6 +19,12 @@ const TitleContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+`;
+
+const Title = styled.h2`
+	font-size: 15px;
+	color: ${Color.GREEN};
+	margin-bottom: 10px;
 `;
 
 const SearchLogContainer = styled.div`

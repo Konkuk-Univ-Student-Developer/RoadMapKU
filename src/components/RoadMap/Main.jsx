@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import FieldSearchBar from './FieldSearchBar/FieldSearchBar';
-import RoadMapContainer from './RoadMap/RoadMapContainer';
-import TutorialModal from './Tutorial/TutorialModal';
+import FieldSearchBar from '../FieldSearchBar/FieldSearchBar';
+import RoadMapContainer from './RoadMapContainer';
+import TutorialModal from '../Modal/TutorialModal';
 
 const Container = styled.div`
 	position: relative;

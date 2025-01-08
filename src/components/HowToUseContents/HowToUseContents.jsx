@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footer from '../Footer/Footer';
+import Footer from '../Common/Footer';
 import video1 from '../../img/video1.mp4';
 import video2 from '../../img/video2.mp4';
 import video3 from '../../img/video3.mp4';

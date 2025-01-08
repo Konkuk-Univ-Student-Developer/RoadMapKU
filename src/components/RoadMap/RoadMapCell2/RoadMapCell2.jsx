@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import CourseDetail from '../../CourseDetail/CourseDetail';
+import CourseDetail from '../../DetailContents/CourseDetail/CourseDetail';
 import { fadeIn } from '../../../style/Frames';
 import { Color } from '../../../style/Color';
 

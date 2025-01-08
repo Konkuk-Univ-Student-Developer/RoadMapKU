@@ -1,6 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { Title, Subtitle, ModalContent, ScrollContainer } from './CompetencyDetailStyle';
-import Modal from '../Modal/Modal';
+import styled from 'styled-components';
+import { Color } from '../../../style/Color';
+import Modal from '../../Modal/Modal';
+
+const ScrollContainer = styled.div`
+	width: 100%;
+	background-color: transparent;
+	padding: 0rem;
+	border-radius: 8px;
+	max-height: 80vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+`;
+
+const Title = styled.h1`
+	background-color: ${Color.GREEN};
+	padding: 1rem;
+	border-radius: 8px;
+	color: white;
+	margin: 0;
+	font-size: 2rem;
+	text-align: center;
+`;
+
+const Subtitle = styled.h2`
+	color: ${Color.GREEN};
+	font-size: 1.5rem;
+	margin: 0.5rem 20px;
+	padding-top: 2rem;
+`;
+
+const ModalContent = styled.div`
+	font-size: 1rem;
+	margin: 10px 20px;
+`;
 
 function CourseDetail({ onClose, competencyData }) {
 	const [competencyDetail, setCompetencyDetail] = useState(null);

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Title } from './FieldCategory';
+import { fadeIn } from '../../../style/Frames';
 import DepartmentListContents from './DepartmentListContents';
-import { fadeIn } from '../../style/Frames';
+import { Color } from '../../../style/Color';
 
 const Container = styled.div`
 	width: 100%;
@@ -28,6 +28,12 @@ const TitleContainer = styled.div`
 	width: 95%;
 	display: flex;
 	align-items: flex-start;
+`;
+
+const Title = styled.h2`
+	font-size: 15px;
+	color: ${Color.GREEN};
+	margin-bottom: 10px;
 `;
 
 const DepartmentList = () => {

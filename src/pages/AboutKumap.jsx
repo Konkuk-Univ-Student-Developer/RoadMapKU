@@ -4,9 +4,9 @@ import MainContainer from '../components/Common/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
-import LinkContents from '../components/LinkContents/LinkContents';
-import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
-import Footer from '../components/Footer/Footer';
+import LinkContents from '../components/Common/LinkContents';
+import BackgroundContents from '../components/Common/BackgroundContents/BackgroundContents';
+import Footer from '../components/Common/Footer';
 
 const ContentsContainer = styled.div`
 	position: relative;

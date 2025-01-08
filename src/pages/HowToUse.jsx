@@ -1,12 +1,12 @@
 import MainContainer from '../components/Common/MainContainer';
-import HowToContents from '../components/HowToPageContents/HowToContents';
-import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
+import HowToUseContents from '../components/HowToUseContents/HowToUseContents';
+import BackgroundContents from '../components/Common/BackgroundContents/BackgroundContents';
 
 function HowToUse() {
 	return (
 		<MainContainer>
 			<BackgroundContents />
-			<HowToContents />
+			<HowToUseContents />
 		</MainContainer>
 	);
 }
