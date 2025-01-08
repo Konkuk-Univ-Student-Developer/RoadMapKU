@@ -4,8 +4,8 @@ import MainContainer from '../components/MainContainer';
 import kumapLogo from '../img/KumapLogo.png';
 import kuLogo from '../img/KUBook.png';
 import roadImage from '../img/Road.png';
-import LinkContents from '../components/HomeContents/LinkContents';
-import BackgroundContents from '../components/HomeContents/BackgroundContents';
+import LinkContents from '../components/LinkContents/LinkContents';
+import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 import ImmergeBackgroundContents from '../components/BackgroundContents/ImmergeBackgroundContents';
 import { fadeIn } from '../style/Frames';
 

@@ -4,16 +4,9 @@ import MainContainer from '../components/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
-import LinkContents from '../components/AboutKumapContents/LinkContents';
+import LinkContents from '../components/LinkContents/LinkContents';
 import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 import Footer from '../components/Footer/Footer';
-
-const Container = styled.div`
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-`;
 
 const ContentsContainer = styled.div`
 	position: relative;
@@ -42,24 +35,23 @@ const LastContainer = styled.div`
 const AboutKumap = () => {
 	return (
 		<MainContainer>
-			<Container>
-				<BackgroundContents />
-				<ContentsContainer>
-					<SubContainer>
-						<AboutKumapContents />
-					</SubContainer>
-					<SubContainer>
-						<AboutCompetencyContents />
-					</SubContainer>
-					<SubContainer>
-						<LastContainer>
-							<ConclusionContents />
-							<LinkContents />
-						</LastContainer>
-						<Footer />
-					</SubContainer>
-				</ContentsContainer>
-			</Container>
+			<BackgroundContents />
+			<ContentsContainer>
+				<SubContainer>
+					<AboutKumapContents />
+				</SubContainer>
+				<SubContainer>
+					<AboutCompetencyContents />
+				</SubContainer>
+
+				<SubContainer>
+					<LastContainer>
+						<ConclusionContents />
+						<LinkContents />
+					</LastContainer>
+					<Footer />
+				</SubContainer>
+			</ContentsContainer>
 		</MainContainer>
 	);
 };
