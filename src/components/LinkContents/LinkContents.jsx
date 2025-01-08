@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import icon_url from '../../img/KUSearch1.png';
-import { trembleBounce, trembleRotate } from '../../style/Frames';
+import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
 import { Color } from '../../style/Color';
 
 const LinkContainer = styled.div`
 	width: 100%;
-	transform: translate(-5rem, 0);
-	padding-top: 6rem;
+	transform: translate(-6rem, 0);
+	padding-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 4rem;
+	z-index: 2;
+	opacity: 0;
+	animation: ${fadeIn} 1s ease-in-out forwards;
+	animation-delay: 1.2s;
 `;
 
 const CharacterContainer = styled.div`
@@ -47,6 +51,7 @@ const LinkButton = styled.button`
 		animation: ${trembleBounce} 0.4s ease-in-out;
 	}
 `;
+
 const LinkContents = () => {
 	const navigate = useNavigate();
 	const [isHovered, setIsHovered] = useState(false);
