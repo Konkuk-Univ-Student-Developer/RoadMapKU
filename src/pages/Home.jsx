@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/Common/MainContainer';
 import kumapLogo from '../img/KumapLogo.png';
 import kuLogo from '../img/KUBook.png';
 import roadImage from '../img/Road.png';

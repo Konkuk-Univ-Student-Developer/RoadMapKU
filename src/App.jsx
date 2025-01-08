@@ -5,7 +5,7 @@ import { RecoilRoot } from 'recoil';
 import HowToUse from './pages/HowToUse';
 import AboutUs from './pages/AboutUs';
 import AboutKumap from './pages/AboutKumap';
-import GlobalStyle from './components/GlobalStyle';
+import GlobalStyle from './style/GlobalStyle';
 import '../src/font/font.css';
 
 function App() {

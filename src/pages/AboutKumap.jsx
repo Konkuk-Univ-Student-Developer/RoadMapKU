@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/Common/MainContainer';
 import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';

@@ -1,4 +1,4 @@
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/Common/MainContainer';
 import Main from '../components/Main';
 
 function RoadMap() {

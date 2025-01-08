@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Color } from '../style/Color';
-import kuLogo from '../img/KonkukUnivLogo.png';
-import kumapLogo from '../img/KumapLogo.png';
+import kuLogo from '../../img/KonkukUnivLogo.png';
+import kumapLogo from '../../img/KumapLogo.png';
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const theme = {
 	active: {

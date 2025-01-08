@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/Common/MainContainer';
 import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
 import LogoContents from '../components/AboutUsContents/LogoContents';
 import IntroductionContents from '../components/AboutUsContents/IntroductionContents';

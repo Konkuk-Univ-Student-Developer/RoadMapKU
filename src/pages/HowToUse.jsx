@@ -1,4 +1,4 @@
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/Common/MainContainer';
 import HowToContents from '../components/HowToPageContents/HowToContents';
 import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 
