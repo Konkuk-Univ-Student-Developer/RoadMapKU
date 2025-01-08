@@ -6,8 +6,9 @@ import kuLogo from '../img/KUBook.png';
 import roadImage from '../img/Road.png';
 import LinkContents from '../components/HomeContents/LinkContents';
 import BackgroundContents from '../components/HomeContents/BackgroundContents';
-import ImmergeBackgroundContents from '../components/HomeContents/ImmergeBackgroundContents';
+import ImmergeBackgroundContents from '../components/BackgroundContents/ImmergeBackgroundContents';
 import { fadeIn } from '../style/Frames';
+
 const PageContainer = styled.div`
 	position: relative;
 	width: 100%;
@@ -62,7 +63,7 @@ const RoadContainer = styled.div`
 	animation-delay: 0.9s;
 `;
 
-function NewHome() {
+function Home() {
 	return (
 		<MainContainer>
 			<PageContainer>
@@ -85,4 +86,4 @@ function NewHome() {
 	);
 }
 
-export default NewHome;
+export default Home;
