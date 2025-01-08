@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const TitleContainer = styled.div`
 	height: fit-content;
 	width: 80%;
+	height: 10%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -14,7 +16,7 @@ const TitleContainer = styled.div`
 const HeaderTitle = styled.div`
 	font-size: 20px;
 	font-weight: 800;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const Title = styled.div`
