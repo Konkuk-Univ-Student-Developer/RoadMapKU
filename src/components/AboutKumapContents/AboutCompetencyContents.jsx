@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 100%;
@@ -37,28 +38,24 @@ const Title = styled.h1`
 	font-weight: 800;
 	text-align: left;
 	padding-left: 100px;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const MainTitle = styled.div`
 	font-size: 40px;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const MainTitle_impact = styled.div`
 	font-size: 50px;
 	font-weight: 800;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const Description = styled.div`
 	text-align: center;
 	font-size: 25px;
 	font-weight: 500;
-`;
-
-const Gap = styled.div`
-	height: 5rem;
 `;
 
 const AboutCompetencyContents = () => {
@@ -70,7 +67,7 @@ const AboutCompetencyContents = () => {
 			<ContentsContainer>
 				<MainTitle>전공 분야에서 필요한</MainTitle>
 				<MainTitle_impact>핵심적인 역량</MainTitle_impact>
-				<Gap></Gap>
+
 				<SubContainer>
 					<Description>건국대학교의 각 전공은 전공역량을 기반으로 개발되었어요.</Description>
 					<Description>

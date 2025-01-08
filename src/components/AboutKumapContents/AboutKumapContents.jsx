@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 100%;
@@ -37,28 +38,24 @@ const Title = styled.h1`
 	font-weight: 800;
 	text-align: left;
 	padding-left: 100px;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const MainTitle = styled.div`
 	font-size: 40px;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const MainTitle_impact = styled.div`
 	font-size: 50px;
 	font-weight: 800;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const Description = styled.div`
 	text-align: center;
 	font-size: 25px;
 	font-weight: 500;
-`;
-
-const Gap = styled.div`
-	height: 5rem;
 `;
 
 const AboutKumapContents = () => {
@@ -70,7 +67,7 @@ const AboutKumapContents = () => {
 			<ContentsContainer>
 				<MainTitle>원하는 진로와 관련된 수업을 찾아 만드는</MainTitle>
 				<MainTitle_impact>나만의 전공 로드맵</MainTitle_impact>
-				<Gap></Gap>
+
 				<SubContainer>
 					<Description>KUMAP을 통해 꿈을 이루기 위한 수업을 찾을 수 있어요!</Description>
 					<Description></Description>
