@@ -32,7 +32,7 @@ const LeftButton = styled.div`
 	display: inline-block;
 `;
 
-const Cell = forwardRef(({ cellData, unclickable }, ref) => {
+const TotalRoadMapCell = forwardRef(({ cellData, unclickable }, ref) => {
 	return (
 		<StyledCell ref={ref} className={unclickable ? 'unclickable' : ''}>
 			<LeftButton>{cellData.courseName}</LeftButton>
@@ -40,6 +40,6 @@ const Cell = forwardRef(({ cellData, unclickable }, ref) => {
 	);
 });
 
-Cell.displayName = 'Cell';
+TotalRoadMapCell.displayName = 'Cell';
 
-export default Cell;
+export default TotalRoadMapCell;

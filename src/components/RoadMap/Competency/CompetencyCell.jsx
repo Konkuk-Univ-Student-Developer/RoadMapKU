@@ -1,8 +1,7 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import CompetencyDetail from '../DetailContents/CompetencyDetail/CompetencyDetail';
-import { fadeIn } from '../../style/Frames';
-import { Color } from '../../style/Color';
+import { Color } from '../../../style/Color';
+import { fadeIn } from '../../../style/Frames';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
@@ -51,10 +50,8 @@ const Button = styled.div`
 	padding: 0.5rem;
 `;
 
-const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
+const CompetencyCell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	const [isHighlighted, setIsHighlighted] = useState(false);
-
-	const [isDetailOpen, setIsDetailOpen] = useState(false);
 
 	useEffect(() => {
 		if (highlightedCompetency === cellData.competencyCode) {
@@ -68,19 +65,11 @@ const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 		<StyledCell ref={ref} className={isHighlighted ? 'isHighlighted' : ''}>
 			<ButtonWrapper>
 				<Button onClick={() => onClick(cellData.competencyCode)}>{cellData.competencyName}</Button>
-				{isDetailOpen && (
-					<CompetencyDetail
-						onClose={() => {
-							setIsDetailOpen(false);
-						}}
-						// competencyData={cellData}
-					/>
-				)}
 			</ButtonWrapper>
 		</StyledCell>
 	);
 });
 
-Cell.displayName = 'Cell';
+CompetencyCell.displayName = 'CompetencyCell';
 
-export default Cell;
+export default CompetencyCell;

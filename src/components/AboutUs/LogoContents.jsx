@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { SubTitle } from './AboutUsContens';
 import kusdLogo from '../../img/KusdLogo.svg';
+import { Color } from '../../style/Color';
 
 const LogoContainer = styled.div`
 	width: 100%;
@@ -9,6 +9,12 @@ const LogoContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+`;
+
+const SubTitle = styled.p`
+	font-size: 30px;
+	font-weight: 700;
+	color: ${Color.GREEN};
 `;
 
 const KusdLogo = styled.img.attrs({ src: kusdLogo, alt: '학생개발팀 로고' })`

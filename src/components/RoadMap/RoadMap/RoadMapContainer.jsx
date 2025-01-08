@@ -14,13 +14,13 @@ import {
 	selectedMyTableContentsState,
 	selectedFieldState,
 	isShowDepartAndLogState
-} from '../../recoils/atoms';
-import { Color } from '../../style/Color';
-import useApi from '../../hooks/useApi';
-import useField from '../../hooks/useField';
-import TotalRoadMapModal from './TotalRoadMapContents/totalRoadMapModal';
+} from '../../../recoils/atoms';
+import { Color } from '../../../style/Color';
+import useApi from '../../../hooks/useApi';
+import useField from '../../../hooks/useField';
 import CourseCreditTable from './CourseCreditTable';
-import SaveButton from '../Common/SaveButton';
+import SaveButton from '../../Common/SaveButton';
+import TotalRoadMapModal from '../TotalRoadMap/TotalRoadMapModal';
 
 const Container = styled.div`
 	min-width: 50rem;

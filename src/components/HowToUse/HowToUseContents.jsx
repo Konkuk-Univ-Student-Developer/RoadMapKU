@@ -184,7 +184,7 @@ const StepContainer = styled.div`
 	justify-content: center;
 `;
 
-function HowToContents() {
+function HowToUseContents() {
 	return (
 		<Container>
 			<SubContainer>
@@ -280,4 +280,4 @@ function HowToContents() {
 	);
 }
 
-export default HowToContents;
+export default HowToUseContents;

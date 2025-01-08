@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import Modal from '../../components/Modal/Modal';
+import Modal from '../../Common/Modal/Modal';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Color } from '../../style/Color';
-import kuSearch from '../../img/KUSearch1.png';
-import tutorialImage1 from '../../img/TutorialImage1.jpeg';
-import tutorialImage2 from '../../img/TutorialImage2.jpeg';
-import tutorialImage3 from '../../img/TutorialImage3.jpeg';
+import kuSearch from '../../../img/KUSearch1.png';
+import tutorialImage1 from '../../../img/TutorialImage1.jpeg';
+import tutorialImage2 from '../../../img/TutorialImage2.jpeg';
+import tutorialImage3 from '../../../img/TutorialImage3.jpeg';
+import { Color } from '../../../style/Color';
 
 const ModalContentWrapper = styled.div`
 	display: flex;

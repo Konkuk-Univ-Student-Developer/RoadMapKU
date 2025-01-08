@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import useOutSideClick from '../../hooks/useOutsideClick';
+import useOutSideClick from '../../../hooks/useOutsideClick';
 import ModalContainer from './ModalContainer';
 import * as L from './ModalStyles';
 import '@fortawesome/fontawesome-free/css/all.min.css';

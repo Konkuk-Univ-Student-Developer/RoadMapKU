@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import MainContainer from '../components/Common/MainContainer';
-import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
-import LogoContents from '../components/AboutUsContents/LogoContents';
-import IntroductionContents from '../components/AboutUsContents/IntroductionContents';
-import BackgroundContents from '../components/Common/BackgroundContents/BackgroundContents';
+import LogoContents from '../components/AboutUs/LogoContents';
+import IntroductionContents from '../components/AboutUs/IntroductionContents';
+import BackgroundContents from '../components/Common/Background/BackgroundContents';
+import AboutUsContents from '../components/AboutUs/AboutUsContents';
 
 const Container = styled.div`
 	position: relative;

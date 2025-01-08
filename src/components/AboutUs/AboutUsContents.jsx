@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	width: 100%;
@@ -24,10 +25,10 @@ const MainTitle = styled.div`
 	font-weight: 800;
 `;
 
-export const SubTitle = styled.p`
+const SubTitle = styled.p`
 	font-size: 30px;
 	font-weight: 700;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 
 const Description = styled.div`

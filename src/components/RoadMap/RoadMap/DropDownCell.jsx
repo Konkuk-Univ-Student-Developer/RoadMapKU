@@ -92,7 +92,7 @@ const DropdownItem = styled.div`
 	}
 `;
 
-const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency, onClickSendRef }) => {
+const DropDownCell = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency, onClickSendRef }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -170,5 +170,5 @@ const Cell2 = ({ cellData, rowIndex, onClick, unclickable, highlightedCompetency
 	);
 };
 
-Cell2.displayName = 'Cell2';
-export default Cell2;
+DropDownCell.displayName = 'Cell2';
+export default DropDownCell;

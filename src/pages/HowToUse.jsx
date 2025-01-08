@@ -1,6 +1,6 @@
 import MainContainer from '../components/Common/MainContainer';
-import HowToUseContents from '../components/HowToUseContents/HowToUseContents';
-import BackgroundContents from '../components/Common/BackgroundContents/BackgroundContents';
+import HowToUseContents from '../components/HowToUse/HowToUseContents';
+import BackgroundContents from '../components/Common/Background/BackgroundContents';
 
 function HowToUse() {
 	return (

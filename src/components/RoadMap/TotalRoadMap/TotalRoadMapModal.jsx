@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Cell from './totalRoadMapCell';
-import Modal from '../../Modal/Modal';
+import Modal from '../../Common/Modal/Modal';
 import { Color } from '../../../style/Color';
+import TotalRoadMapCell from '../TotalRoadMap/TotalRoadMapCell';
 
 const ScrollContainer = styled.div`
 	width: 100%;
@@ -117,7 +117,7 @@ function TotalRoadMapModal({ onClose, roadMapData, subjectName }) {
 						{defaultTable.map((row, rowIndex) => (
 							<CourseColumn key={rowIndex}>
 								{row.map((cellData) => (
-									<Cell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
+									<TotalRoadMapCell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
 								))}
 							</CourseColumn>
 						))}
@@ -126,7 +126,7 @@ function TotalRoadMapModal({ onClose, roadMapData, subjectName }) {
 						{totalRoadMap.map((row, rowIndex) => (
 							<CourseColumn key={rowIndex}>
 								{row.slice(1).map((cellData) => (
-									<Cell
+									<TotalRoadMapCell
 										key={cellData.haksuId}
 										cellData={cellData}
 										rowIndex={rowIndex}

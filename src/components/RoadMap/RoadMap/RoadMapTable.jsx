@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Cell from './RoadMapCell';
-import Cell2 from './RoadMapCell2/RoadMapCell2';
+import DropDownCell from './DropDownCell';
 
 const TableContainer = styled.div`
 	flex: 1;
@@ -96,7 +96,7 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 				{roadMapTableData.map((row, rowIndex) => (
 					<CourseColumn key={rowIndex}>
 						{row.slice(1).map((cellData, cellIndex) => (
-							<Cell2
+							<DropDownCell
 								key={cellIndex}
 								cellData={cellData}
 								rowIndex={rowIndex}

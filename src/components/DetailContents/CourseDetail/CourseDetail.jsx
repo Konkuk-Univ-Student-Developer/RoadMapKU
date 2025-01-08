@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { courseDetailState } from '../../../recoils/atoms';
-import TableComponent from '../../Modal/TableComponent';
-import TableComponent2 from '../../Modal/TableComponent2';
-import Modal from '../../Modal/Modal';
+import TableComponent from '../../Common/Modal/TableComponent';
+import TableComponent2 from '../../Common/Modal/TableComponent2';
+import Modal from '../../Common/Modal/Modal';
 import useField from '../../../hooks/useField';
-import CompetitionTable from './CompetitionTable';
+import CompetitionTable from '../../DetailContents/CourseDetail/CompetitionTable';
 import styled from 'styled-components';
 import { Color } from '../../../style/Color';
 

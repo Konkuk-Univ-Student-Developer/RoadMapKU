@@ -5,8 +5,8 @@ import kumapLogo from '../img/KumapLogo.png';
 import kuLogo from '../img/KUBook.png';
 import roadImage from '../img/Road.png';
 import LinkContents from '../components/Common/LinkContents';
-import BackgroundContents from '../components/Common/BackgroundContents/BackgroundContents';
-import ImmergeBackgroundContents from '../components/Common/BackgroundContents/ImmergeBackgroundContents';
+import BackgroundContents from '../components/Common/Background/BackgroundContents';
+import ImmergeBackgroundContents from '../components/Common/Background/ImmergeBackgroundContents';
 import { fadeIn } from '../style/Frames';
 
 const PageContainer = styled.div`
