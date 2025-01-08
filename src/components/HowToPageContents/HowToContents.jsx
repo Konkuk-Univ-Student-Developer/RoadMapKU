@@ -9,6 +9,7 @@ import kuBook from '../../img/KUBook.png';
 import kuSearch2 from '../../img/KUSearch2.png';
 import picImage1 from '../../img/Pic1.png';
 import picImage2 from '../../img/Pic2.png';
+import { Color } from '../../style/Color';
 
 const Container = styled.div`
 	position: relative;
@@ -47,7 +48,7 @@ const Title = styled.h1`
 	font-weight: bold;
 	text-align: left;
 	padding-left: 100px;
-	color: #056a3f;
+	color: ${Color.GREEN};
 `;
 const Section = styled.div`
 	width: 80%;
@@ -183,7 +184,7 @@ const StepContainer = styled.div`
 	justify-content: center;
 `;
 
-function HowTo() {
+function HowToContents() {
 	return (
 		<Container>
 			<SubContainer>
@@ -256,7 +257,6 @@ function HowTo() {
 					<Section>
 						<SubTitle>추가 기능</SubTitle>
 						<FeaturesPictureContainer>
-							{/* 첫 번째 항목 */}
 							<FeaturePicture>
 								<StepTitle2>상세정보 열람</StepTitle2>
 								<Illustration src={picImage1} alt="상세정보 소개" />
@@ -264,7 +264,6 @@ function HowTo() {
 								<StepTitle3>수업을 클릭하면 해당 수업 정보와 수강바구니 경쟁률을 확인할 수 있습니다.</StepTitle3>
 							</FeaturePicture>
 
-							{/* 두 번째 항목 */}
 							<FeaturePicture>
 								<StepTitle2>사진 저장과 공유</StepTitle2>
 								<Illustration src={picImage2} alt="공유기능 소개" />
@@ -281,4 +280,4 @@ function HowTo() {
 	);
 }
 
-export default HowTo;
+export default HowToContents;
