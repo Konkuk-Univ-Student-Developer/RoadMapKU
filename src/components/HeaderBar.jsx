@@ -102,7 +102,7 @@ function HeaderBar() {
 								소개
 							</HeaderLink>
 
-							<HeaderLink onClick={() => navigate('/howtopage')} $active={pathname === '/howtopage'}>
+							<HeaderLink onClick={() => navigate('/how-to-use')} $active={pathname === '/how-to-use'}>
 								사용법
 							</HeaderLink>
 

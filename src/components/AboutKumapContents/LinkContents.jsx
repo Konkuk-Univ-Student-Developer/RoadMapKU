@@ -60,7 +60,7 @@ const LinkContents = () => {
 			</CharacterContainer>
 
 			<LinkButton
-				onClick={() => navigate('/howtopage')}
+				onClick={() => navigate('/how-to-use')}
 				option={'white'}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}

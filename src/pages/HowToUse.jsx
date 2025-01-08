@@ -2,7 +2,7 @@ import MainContainer from '../components/MainContainer';
 import HowToContents from '../components/HowToPageContents/HowToContents';
 import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 
-function HowToPage() {
+function HowToUse() {
 	return (
 		<MainContainer>
 			<BackgroundContents />
@@ -11,4 +11,4 @@ function HowToPage() {
 	);
 }
 
-export default HowToPage;
+export default HowToUse;

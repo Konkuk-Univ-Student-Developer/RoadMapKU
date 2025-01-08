@@ -67,7 +67,7 @@ const Footer = ({ customHeight }) => {
 					<Text $pointer={true} $size={'15px'} $weight={'200'} onClick={() => navigate('/')}>
 						KUMAP
 					</Text>
-					<Text $pointer={true} $size={'15px'} $weight={'200'} onClick={() => navigate('/howtopage')}>
+					<Text $pointer={true} $size={'15px'} $weight={'200'} onClick={() => navigate('/how-to-use')}>
 						KUMAP 이란?
 					</Text>
 				</TextContainer>
