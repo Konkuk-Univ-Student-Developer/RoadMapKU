@@ -3,7 +3,7 @@ import MainContainer from '../components/MainContainer';
 import AboutUsContents from '../components/AboutUsContents/AboutUsContens';
 import LogoContents from '../components/AboutUsContents/LogoContents';
 import IntroductionContents from '../components/AboutUsContents/IntroductionContents';
-import BackgroundContents from '../components/AboutUsContents/BackgroundContents';
+import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 
 const Container = styled.div`
 	position: relative;

@@ -5,7 +5,7 @@ import AboutKumapContents from '../components/AboutKumapContents/AboutKumapConte
 import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
 import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
 import LinkContents from '../components/AboutKumapContents/LinkContents';
-import BackgroundContents from '../components/AboutKumapContents/BackgroundContents';
+import BackgroundContents from '../components/BackgroundContents/BackgroundContents';
 import Footer from '../components/Footer/Footer';
 
 const Container = styled.div`
