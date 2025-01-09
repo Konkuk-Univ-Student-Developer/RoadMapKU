@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import NewHome from './pages/NewHome';
+import Home from './pages/Home';
 import RoadMap from './pages/RoadMap';
 import { RecoilRoot } from 'recoil';
-import HowToPage from './pages/HowToPage';
+import HowToUse from './pages/HowToUse';
 import AboutUs from './pages/AboutUs';
 import AboutKumap from './pages/AboutKumap';
-import GlobalStyle from './components/GlobalStyle';
+import GlobalStyle from './style/GlobalStyle';
 import '../src/font/font.css';
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
 		<RecoilRoot>
 			<GlobalStyle />
 			<Routes>
-				<Route path="/" element={<NewHome />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/road-map" element={<RoadMap />} />
 				<Route path="/road-map/:key" element={<RoadMap />} />
-				<Route path="/howtopage" element={<HowToPage />} />
+				<Route path="/how-to-use" element={<HowToUse />} />
 				<Route path="/about-us" element={<AboutUs />} />
 				<Route path="/manual" element={<AboutKumap />} />
 			</Routes>

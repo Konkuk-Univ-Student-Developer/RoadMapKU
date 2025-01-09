@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainContainer from '../components/MainContainer';
-import AboutKumapContents from '../components/AboutKumapContents/AboutKumapContents';
-import AboutCompetencyContents from '../components/AboutKumapContents/AboutCompetencyContents';
-import ConclusionContents from '../components/AboutKumapContents/ConclusionContents';
-import LinkContents from '../components/AboutKumapContents/LinkContents';
-import BackgroundContents from '../components/AboutKumapContents/BackgroundContents';
-import Footer from '../components/Footer/Footer';
+import MainContainer from '../components/Common/MainContainer';
+import AboutKumapContents from '../components/AboutKumap/AboutKumapContents';
+import AboutCompetencyContents from '../components/AboutKumap/AboutCompetencyContents';
+import ConclusionContents from '../components/AboutKumap/ConclusionContents';
+import LinkContents from '../components/Common/LinkContents';
+import BackgroundContents from '../components/Common/Background/BackgroundContents';
+import Footer from '../components/Common/Footer';
 
 const Container = styled.div`
 	position: relative;
@@ -51,6 +51,7 @@ const AboutKumap = () => {
 					<SubContainer>
 						<AboutCompetencyContents />
 					</SubContainer>
+
 					<SubContainer>
 						<LastContainer>
 							<ConclusionContents />

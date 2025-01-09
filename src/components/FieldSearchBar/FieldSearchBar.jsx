@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import DepartmentList from './DepartmentList';
-import SearchBar from './SearchBar';
+import DepartmentList from './DepartmentList/DepartmentList';
+import SearchBar from './SearchBar/SearchBar';
 import FieldInput from './FieldInput';
-import SearchLog from './SearchLog';
+import SearchLog from './SearchLog/SearchLog';
 import { Color } from '../../style/Color';
 import { useRecoilState } from 'recoil';
 import { isShowDepartAndLogState } from '../../recoils/atoms';
