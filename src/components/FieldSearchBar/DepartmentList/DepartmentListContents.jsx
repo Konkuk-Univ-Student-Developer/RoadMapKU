@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '../../../recoils/atoms';
 import useField from '../../../hooks/useField';
 import { Color } from '../../../style/Color';
+import useGA from '../../../hooks/useGA';
 
 const SelectedDepartment = styled.div`
 	width: 15.2%;
@@ -22,12 +23,15 @@ const SelectedDepartment = styled.div`
 `;
 
 function DepartmentListContents() {
+	const { sendSelectDept } = useGA();
 	const { fetchCoursesInFieldsAndSubjects, fetchCoursesInFields } = useField();
 	const selectedField = useRecoilValue(selectedFieldState);
 	const [selectedDepartment, setSelectedDepartment] = useRecoilState(selectedSubjectState);
 	const subjects = useRecoilValue(subjectsInFieldState);
 
 	const handleDepartmentClick = (fieldCode, subjectCode, subjectName) => {
+		sendSelectDept({ subjectName, fieldCode, subjectCode });
+
 		setSelectedDepartment({ subjectCode, subjectName });
 		if (subjectCode > 0) {
 			fetchCoursesInFieldsAndSubjects(fieldCode, subjectCode);

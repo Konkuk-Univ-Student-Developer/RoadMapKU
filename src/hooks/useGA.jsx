@@ -61,13 +61,28 @@ const useGA = () => {
 		});
 	};
 
+	const sendSelectDept = ({ subjectName, fieldCode, subjectCode }) => {
+		ReactGA.send({
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'select_dept',
+			eventLabel: `${subjectName} 선택`,
+			customData: {
+				subjectName,
+				subjectCode,
+				fieldCode
+			}
+		});
+	};
+
 	return {
 		sendClickShareUrl,
 		sendClickShareScreenshot,
 		sendAddMyRoadMap,
 		sendRemoveMyRoadMap,
 		sendSearchField,
-		sendSelectField
+		sendSelectField,
+		sendSelectDept
 	};
 };
 
