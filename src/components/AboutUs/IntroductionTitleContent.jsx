@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../style/Color';
 
 const TitleContainer = styled.div`
+	flex: 1;
 	height: fit-content;
 	width: 80%;
 	height: 10%;

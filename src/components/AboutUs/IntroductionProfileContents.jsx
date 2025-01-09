@@ -8,6 +8,7 @@ import SungjongProfile from '../../img/SungjongProfile.png';
 import SeungraeProfile from '../../img/SeungraeProfile.png';
 
 const Container = styled.div`
+	flex: 4;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
