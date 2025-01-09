@@ -2,76 +2,65 @@ import ReactGA from 'react-ga4';
 
 const useGA = () => {
 	const sendClickShareUrl = (selectedMyTableContents) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'share_url',
-			eventLabel: '링크로 공유',
-			customData: selectedMyTableContents
+		ReactGA.event({
+			category: 'Button',
+			action: 'share_url',
+			label: '링크로 공유',
+			...selectedMyTableContents
 		});
 	};
 
 	const sendClickShareScreenshot = (selectedMyTableContents) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'share_screenshot',
-			eventLabel: '스크린샷으로 저장',
-			customData: selectedMyTableContents
+		ReactGA.event({
+			category: 'Button',
+			action: 'share_screenshot',
+			label: '스크린샷으로 저장',
+			...selectedMyTableContents
 		});
 	};
 
 	const sendAddMyRoadMap = (cellData) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'add_my_roadmap',
-			eventLabel: `${cellData.courseName} 추가`,
-			customData: cellData
+		ReactGA.event({
+			category: 'Button',
+			action: 'add_my_roadmap',
+			label: `${cellData.courseName} 추가`,
+			...cellData
 		});
 	};
 
 	const sendRemoveMyRoadMap = (cellData) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'remove_my_roadmap',
-			eventLabel: `${cellData.courseName} 삭제`,
-			customData: cellData
+		ReactGA.event({
+			category: 'Button',
+			action: 'remove_my_roadmap',
+			label: `${cellData.courseName} 삭제`,
+			...cellData
 		});
 	};
 
 	const sendSearchField = (fieldData) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'search_field',
-			eventLabel: `${fieldData.detailField} 검색`,
-			customData: fieldData
+		ReactGA.event({
+			category: 'Button',
+			action: 'search_field',
+			label: `${fieldData.detailField} 검색`,
+			...fieldData
 		});
 	};
 
 	const sendSelectField = (fieldData) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'select_field',
-			eventLabel: `${fieldData.detailField} 선택`,
-			customData: fieldData
+		ReactGA.event({
+			category: 'Button',
+			action: 'select_field',
+			label: `${fieldData.detailField} 선택`,
+			...fieldData
 		});
 	};
 
-	const sendSelectDept = ({ subjectName, fieldCode, subjectCode }) => {
-		ReactGA.send({
-			hitType: 'event',
-			eventCategory: 'Button',
-			eventAction: 'select_dept',
-			eventLabel: `${subjectName} 선택`,
-			customData: {
-				subjectName,
-				subjectCode,
-				fieldCode
-			}
+	const sendSelectDept = (deptData) => {
+		ReactGA.event({
+			category: 'Button',
+			action: 'select_dept!',
+			label: `${deptData.subjectName} 선택`,
+			...deptData
 		});
 	};
 
