@@ -5,6 +5,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '../../../recoils/atoms';
 import { FaSearch, FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa';
 import { Color } from '../../../style/Color';
+import useGA from '../../../hooks/useGA';
 
 const SearchBarContainer = styled.div`
 	width: 95%;
@@ -98,6 +99,7 @@ const highlightText = (text, query) => {
 };
 
 const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
+	const { sendSearchField } = useGA();
 	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
@@ -129,7 +131,7 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 			setIsFocused(false);
 			return;
 		}
-
+		sendSearchField(field);
 		const restructuredFieldData = {
 			middleField: {
 				middleField: field.middleField,

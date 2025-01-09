@@ -7,7 +7,7 @@ const useGA = () => {
 			eventCategory: 'Button',
 			eventAction: 'share_url',
 			eventLabel: '링크로 공유',
-			value: selectedMyTableContents
+			customData: selectedMyTableContents
 		});
 	};
 
@@ -17,7 +17,7 @@ const useGA = () => {
 			eventCategory: 'Button',
 			eventAction: 'share_screenshot',
 			eventLabel: '스크린샷으로 저장',
-			value: selectedMyTableContents
+			customData: selectedMyTableContents
 		});
 	};
 
@@ -27,7 +27,7 @@ const useGA = () => {
 			eventCategory: 'Button',
 			eventAction: 'add_my_roadmap',
 			eventLabel: `${cellData.courseName} 추가`,
-			value: cellData
+			customData: cellData
 		});
 	};
 
@@ -37,11 +37,21 @@ const useGA = () => {
 			eventCategory: 'Button',
 			eventAction: 'remove_my_roadmap',
 			eventLabel: `${cellData.courseName} 삭제`,
-			value: cellData
+			customData: cellData
 		});
 	};
 
-	return { sendClickShareUrl, sendClickShareScreenshot, sendAddMyRoadMap, sendRemoveMyRoadMap };
+	const sendSearchField = (fieldData) => {
+		ReactGA.send({
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'search_field',
+			eventLabel: `${fieldData.detailField} 검색`,
+			customData: fieldData
+		});
+	};
+
+	return { sendClickShareUrl, sendClickShareScreenshot, sendAddMyRoadMap, sendRemoveMyRoadMap, sendSearchField };
 };
 
 export default useGA;
