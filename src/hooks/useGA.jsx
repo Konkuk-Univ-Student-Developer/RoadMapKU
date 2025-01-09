@@ -51,7 +51,24 @@ const useGA = () => {
 		});
 	};
 
-	return { sendClickShareUrl, sendClickShareScreenshot, sendAddMyRoadMap, sendRemoveMyRoadMap, sendSearchField };
+	const sendSelectField = (fieldData) => {
+		ReactGA.send({
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'select_field',
+			eventLabel: `${fieldData.detailField} 선택`,
+			customData: fieldData
+		});
+	};
+
+	return {
+		sendClickShareUrl,
+		sendClickShareScreenshot,
+		sendAddMyRoadMap,
+		sendRemoveMyRoadMap,
+		sendSearchField,
+		sendSelectField
+	};
 };
 
 export default useGA;
