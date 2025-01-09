@@ -5,9 +5,9 @@ import kumapLogo from '../img/KumapLogo.png';
 import kuLogo from '../img/KUBook.png';
 import roadImage from '../img/Road.png';
 import LinkContents from '../components/Common/LinkContents';
-import BackgroundContents from '../components/Common/Background/BackgroundContents';
 import ImmergeBackgroundContents from '../components/Common/Background/ImmergeBackgroundContents';
 import { fadeIn } from '../style/Frames';
+import HomeBackgroundContents from '../components/Common/Background/HomeBackGroundContents';
 
 const PageContainer = styled.div`
 	position: relative;
@@ -67,7 +67,7 @@ function Home() {
 	return (
 		<MainContainer>
 			<PageContainer>
-				<BackgroundContents />
+				<HomeBackgroundContents />
 				<TitleContainer>
 					<img alt="Kumap Logo" src={kumapLogo} style={{ width: '25%' }} />
 					<img alt="Kumap Character" src={kuLogo} style={{ width: '7%' }} />
