@@ -7,26 +7,26 @@
 	],
 	"plugins": ["react", "react-hooks"],
 	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module",
 		"ecmaFeatures": {
 			"jsx": true
-		},
-		"ecmaVersion": 2021,
-		"sourceType": "module"
-	},
-	"settings": {
-		"react": {
-			"version": "detect"
 		}
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
 	},
 	"rules": {
 		"react/react-in-jsx-scope": "off",
+		"no-unused-vars": "error",
 		"prettier/prettier": [
 			"error",
 			{
 				"endOfLine": "auto"
 			}
 		],
-		"no-unused-vars": "error",
 		"react/prop-types": "off",
 		"react-hooks/exhaustive-deps": "off"
 	}
