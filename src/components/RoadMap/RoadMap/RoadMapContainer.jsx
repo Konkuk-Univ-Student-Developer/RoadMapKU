@@ -21,6 +21,7 @@ import useField from '../../../hooks/useField';
 import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../../Common/SaveButton';
 import TotalRoadMapModal from '../TotalRoadMap/TotalRoadMapModal';
+import useGA from '../../../hooks/useGA';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -123,6 +124,9 @@ const RoadMapContainer = () => {
 	const navigate = useNavigate();
 
 	const [searchParams] = useSearchParams();
+
+	// GA
+	const { sendClickShareUrl, sendClickShareScreenshot } = useGA();
 
 	// Base64 인코딩 함수
 	const toBase64 = (uint8Array) => btoa(String.fromCharCode(...uint8Array));
@@ -390,6 +394,10 @@ const RoadMapContainer = () => {
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
+		sendClickShareUrl({
+			category: 'Button',
+			label: 'URL Share'
+		});
 	};
 
 	// 스크린샷 Button Click 이벤트
@@ -409,6 +417,10 @@ const RoadMapContainer = () => {
 			console.error('Roadmap content is not available');
 		}
 		notify_url('스크린샷을 저장하였습니다.');
+		sendClickShareScreenshot({
+			category: 'Button',
+			label: 'Screenshot Share'
+		});
 	};
 
 	const notify_url = (text) => toast.success(text);
