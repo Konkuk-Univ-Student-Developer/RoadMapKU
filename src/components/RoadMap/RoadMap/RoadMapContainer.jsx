@@ -396,7 +396,7 @@ const RoadMapContainer = () => {
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
-		sendClickShareUrl(selectedMyTableContents);
+		sendClickShareUrl();
 	};
 
 	// 스크린샷 Button Click 이벤트
@@ -416,7 +416,7 @@ const RoadMapContainer = () => {
 			console.error('Roadmap content is not available');
 		}
 		notify_url('스크린샷을 저장하였습니다.');
-		sendClickShareScreenshot(selectedMyTableContents);
+		sendClickShareScreenshot();
 	};
 
 	const notify_url = (text) => toast.success(text);

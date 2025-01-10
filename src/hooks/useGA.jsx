@@ -1,21 +1,19 @@
 import ReactGA from 'react-ga4';
 
 const useGA = () => {
-	const sendClickShareUrl = (selectedMyTableContents) => {
+	const sendClickShareUrl = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'share_url',
-			label: '링크로 공유',
-			...selectedMyTableContents
+			label: '링크로 공유'
 		});
 	};
 
-	const sendClickShareScreenshot = (selectedMyTableContents) => {
+	const sendClickShareScreenshot = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'share_screenshot',
-			label: '스크린샷으로 저장',
-			...selectedMyTableContents
+			label: '스크린샷으로 저장'
 		});
 	};
 
@@ -23,8 +21,7 @@ const useGA = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'add_my_roadmap',
-			label: `${cellData.courseName} 추가`,
-			...cellData
+			label: `${cellData.courseName} 추가`
 		});
 	};
 
@@ -32,8 +29,7 @@ const useGA = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'remove_my_roadmap',
-			label: `${cellData.courseName} 삭제`,
-			...cellData
+			label: `${cellData.courseName} 삭제`
 		});
 	};
 
@@ -41,8 +37,7 @@ const useGA = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'search_field',
-			label: `${fieldData.detailField} 검색`,
-			...fieldData
+			label: `${fieldData.detailField} 검색`
 		});
 	};
 
@@ -50,17 +45,15 @@ const useGA = () => {
 		ReactGA.event({
 			category: 'Button',
 			action: 'select_field',
-			label: `${fieldData.detailField} 선택`,
-			...fieldData
+			label: `${fieldData.detailField} 선택`
 		});
 	};
 
 	const sendSelectDept = (deptData) => {
 		ReactGA.event({
 			category: 'Button',
-			action: 'select_dept!',
-			label: `${deptData.subjectName} 선택`,
-			...deptData
+			action: 'select_dept',
+			label: `${deptData.subjectName} 선택`
 		});
 	};
 
