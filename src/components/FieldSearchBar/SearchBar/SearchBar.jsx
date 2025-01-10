@@ -5,7 +5,6 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '../../../recoils/atoms';
 import { FaSearch, FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa';
 import { Color } from '../../../style/Color';
-import useGA from '../../../hooks/useGA';
 
 const SearchBarContainer = styled.div`
 	width: 95%;
@@ -76,7 +75,9 @@ const SuggestionsContainer = styled.div`
 	z-index: 1000;
 `;
 
-const SuggestionItem = styled.div`
+const SuggestionItem = styled.div.attrs(({ searchField }) => ({
+	id: `field_name_${searchField}`
+}))`
 	padding: 10px;
 	cursor: pointer;
 	transition: background-color 0.2s;
@@ -99,7 +100,6 @@ const highlightText = (text, query) => {
 };
 
 const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
-	const { sendSearchField } = useGA();
 	const { fetchAllFields, fetchLogFields } = useField();
 	const [userInput, setUserInput] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
@@ -131,7 +131,6 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 			setIsFocused(false);
 			return;
 		}
-		sendSearchField(field);
 		const restructuredFieldData = {
 			middleField: {
 				middleField: field.middleField,
@@ -193,7 +192,7 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 						const structuredField = `${middleFieldName} > ${smallFieldName} > ${detailFieldName}`;
 
 						return (
-							<SuggestionItem key={index} onClick={() => onSuggestionItemClick(field)}>
+							<SuggestionItem searchField={field.detailField} key={index} onClick={() => onSuggestionItemClick(field)}>
 								{highlightText(structuredField, userInput)}
 							</SuggestionItem>
 						);

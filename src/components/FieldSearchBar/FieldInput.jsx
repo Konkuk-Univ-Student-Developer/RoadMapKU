@@ -13,7 +13,6 @@ import {
 } from '../../recoils/atoms';
 import { fadeIn } from '../../style/Frames';
 import { Color } from '../../style/Color';
-import useGA from '../../hooks/useGA';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -60,7 +59,9 @@ const ListContainer = styled.div`
 	gap: 8px;
 `;
 
-const FieldItem = styled.div`
+const FieldItem = styled.div.attrs(({ selectedField, isDetailField }) => ({
+	id: isDetailField ? `field_name_${selectedField.detailField} - field_code_${selectedField.detailFieldCode}` : ''
+}))`
 	display: flex;
 	align-items: center;
 	width: 90%;
@@ -96,7 +97,6 @@ export const scrollOption = {
 };
 
 const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
-	const { sendSelectField } = useGA();
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
 	const middleFields = useRecoilValue(middleFieldState);
@@ -143,8 +143,6 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 
 	const handleDetailFieldClick = async (field) => {
 		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) return;
-
-		sendSelectField(field);
 
 		const updatedFieldCodeList = {
 			...selectedField,
@@ -250,6 +248,8 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 						{detailFields.map((field, index) => (
 							<FieldItem
 								key={index}
+								selectedField={field}
+								isDetailField={field.detailField}
 								onClick={() => handleDetailFieldClick(field)}
 								$isSelected={selectedField.detailField?.detailField === field.detailField}
 								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}

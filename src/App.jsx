@@ -7,14 +7,8 @@ import AboutUs from './pages/AboutUs';
 import AboutKumap from './pages/AboutKumap';
 import GlobalStyle from './style/GlobalStyle';
 import '../src/font/font.css';
-import ReactGA from 'react-ga4';
-import { useEffect } from 'react';
 
 function App() {
-	useEffect(() => {
-		ReactGA.initialize('G-K35WNRJ5GG');
-	}, []);
-
 	return (
 		<RecoilRoot>
 			<GlobalStyle />
