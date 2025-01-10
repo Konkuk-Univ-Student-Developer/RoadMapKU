@@ -2,59 +2,38 @@ import ReactGA from 'react-ga4';
 
 const useGA = () => {
 	const sendClickShareUrl = () => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'share_url',
-			label: '링크로 공유'
-		});
+		const params = { category: 'Button', label: '링크로 공유' };
+		ReactGA.event('share_url', params);
 	};
 
 	const sendClickShareScreenshot = () => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'share_screenshot',
-			label: '스크린샷으로 저장'
-		});
+		const params = { category: 'Button', label: '스크린샷으로 저장' };
+		ReactGA.event('share_screenshot', params);
 	};
 
 	const sendAddMyRoadMap = (cellData) => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'add_my_roadmap',
-			label: `${cellData.courseName} 추가`
-		});
+		const params = { category: 'Button', label: `${cellData.courseName} 추가`, ...cellData };
+		ReactGA.event('add_my_roadmap', params);
 	};
 
 	const sendRemoveMyRoadMap = (cellData) => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'remove_my_roadmap',
-			label: `${cellData.courseName} 삭제`
-		});
+		const params = { category: 'Button', label: `${cellData.courseName} 삭제`, ...cellData };
+		ReactGA.event('remove_my_roadmap', params);
 	};
 
 	const sendSearchField = (fieldData) => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'search_field',
-			label: `${fieldData.detailField} 검색`
-		});
+		const params = { category: 'Button', label: `${fieldData.detailField} 검색`, ...fieldData };
+		ReactGA.event('search_field', params);
 	};
 
 	const sendSelectField = (fieldData) => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'select_field',
-			label: `${fieldData.detailField} 선택`
-		});
+		const params = { category: 'Button', label: `${fieldData.detailField} 선택`, ...fieldData };
+		ReactGA.event('select_field', params);
 	};
 
 	const sendSelectDept = (deptData) => {
-		ReactGA.event({
-			category: 'Button',
-			action: 'select_dept',
-			label: `${deptData.subjectName} 선택`
-		});
+		const params = { category: 'Button', label: `${deptData.subjectName} 선택`, ...deptData };
+		ReactGA.event('select_dept', params);
 	};
 
 	return {
