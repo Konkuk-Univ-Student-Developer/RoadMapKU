@@ -119,10 +119,10 @@ const SaveButton = ({ onClickURL, onClickCapture }) => {
 		<>
 			<Btn>
 				<UrlBtn data-tooltip-content="Copy URL" data-tooltip-id="url" onClick={onClickURL}>
-					<FaLink />
+					<FaLink style={{ pointerEvents: 'none' }} />
 				</UrlBtn>
 				<CaptureBtn data-tooltip-content="Save as PNG" data-tooltip-id="capture" onClick={onClickCapture}>
-					<Icon icon={bxCamera} />
+					<Icon style={{ pointerEvents: 'none' }} icon={bxCamera} />
 				</CaptureBtn>
 				<DownloadBtn>
 					<FaShareSquare />

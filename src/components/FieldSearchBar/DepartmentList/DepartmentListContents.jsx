@@ -4,7 +4,9 @@ import { selectedSubjectState, selectedFieldState, subjectsInFieldState } from '
 import useField from '../../../hooks/useField';
 import { Color } from '../../../style/Color';
 
-const SelectedDepartment = styled.div`
+const SelectedDepartment = styled.div.attrs(({ subjectName, fieldCode }) => ({
+	id: `selected_dept_${subjectName} - field_code_${fieldCode}`
+}))`
 	width: 15.2%;
 	margin: 5px 5px;
 	padding: 8px;
@@ -51,6 +53,8 @@ function DepartmentListContents() {
 					<SelectedDepartment
 						key={subject.subjectCode}
 						$isSelected={selectedDepartment.subjectCode === subject.subjectCode}
+						subjectName={subject.subjectName}
+						fieldCode={selectedField.detailField?.detailFieldCode}
 						onClick={() =>
 							handleDepartmentClick(
 								selectedField.detailField?.detailFieldCode,
