@@ -53,7 +53,9 @@ const DownloadBtn = styled.div`
 	}
 `;
 
-const CaptureBtn = styled.div`
+const CaptureBtn = styled.div.attrs({
+	id: 'share_capture_screenshot'
+})`
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -82,7 +84,9 @@ const CaptureBtn = styled.div`
 	}
 `;
 
-const UrlBtn = styled.div`
+const UrlBtn = styled.div.attrs({
+	id: 'share_copy_url'
+})`
 	position: absolute;
 	display: flex;
 	align-items: center;

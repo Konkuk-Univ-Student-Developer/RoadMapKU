@@ -13,7 +13,6 @@ import {
 } from '../../recoils/atoms';
 import { fadeIn } from '../../style/Frames';
 import { Color } from '../../style/Color';
-import useGA from '../../hooks/useGA';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -96,7 +95,6 @@ export const scrollOption = {
 };
 
 const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
-	const { sendSelectField } = useGA();
 	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
 		useField();
 	const middleFields = useRecoilValue(middleFieldState);
@@ -143,8 +141,6 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 
 	const handleDetailFieldClick = async (field) => {
 		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) return;
-
-		sendSelectField(field);
 
 		const updatedFieldCodeList = {
 			...selectedField,
