@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
-import { selectedCompetencyState } from '../../../recoils/atoms';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { selectedCompetencyState, selectedCoursesState } from '../../../recoils/atoms';
 import CourseDetail from '../../DetailContents/CourseDetail/CourseDetail';
 import { fadeIn } from '../../../style/Frames';
 import { Color } from '../../../style/Color';
@@ -100,6 +100,8 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const cellRef = useRef(null);
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
+	const selectedCourses = useRecoilValue(selectedCoursesState);
+	const setSelectedCompetency = useSetRecoilState(selectedCoursesState);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -123,6 +125,15 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 		};
 	}, [cellData, selectedCompetency]);
 
+	// 학과 로드맵 Cell Click 이벤트
+	const handleCellClick_add = (cellData, rowIndex) => {
+		// selectedCourses 검사 추가
+		const updatedMyTableData = selectedCourses.map((row) => [...row]);
+		const copiedCellData = { ...cellData, isMyTable: true, isClickable: false };
+		updatedMyTableData[rowIndex].push(copiedCellData);
+		setSelectedCompetency(updatedMyTableData);
+	};
+
 	const handleDropdownToggle = (event) => {
 		event.stopPropagation();
 		setIsDropdownOpen((prev) => !prev);
@@ -139,13 +150,13 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	const onClickRoadmapButton = (event) => {
 		event.stopPropagation();
-		onClick(cellData, rowIndex);
+		handleCellClick_add(cellData, rowIndex);
 		setIsDropdownOpen((prev) => !prev);
 	};
 
 	return (
 		<StyledCell
-			className={`${unclickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${unclickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
+			className={`${cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${cellData.isClickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>
