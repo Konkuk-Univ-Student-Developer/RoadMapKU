@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedFieldLogState } from '../../../recoils/atoms';
-import useField from '../../../hooks/useField';
+import { selectedFieldLogState } from '@recoils';
+import { useField } from '@hooks';
 import { FaX, FaTrash } from 'react-icons/fa6';
-import { fadeIn } from '../../../style/Frames';
-import { Color } from '../../../style/Color';
+import { Color, fadeIn } from '@styles';
 
 const Container = styled.div`
 	width: 95%;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fadeIn } from '../../../style/Frames';
-import { Color } from '../../../style/Color';
+import { Color, fadeIn } from '@styles';
 
 const CourseCreditContainer = styled.div`
 	height: 4rem;

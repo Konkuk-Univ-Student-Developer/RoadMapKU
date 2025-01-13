@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import DepartmentList from './DepartmentList/DepartmentList';
-import SearchBar from './SearchBar/SearchBar';
-import FieldInput from './FieldInput';
-import SearchLog from './SearchLog/SearchLog';
-import { Color } from '../../style/Color';
+import { SearchLog, DepartmentList, SearchBar, FieldInput } from '@FieldSearchBar';
+import { Color } from '@styles';
 import { useRecoilState } from 'recoil';
-import { isShowDepartAndLogState } from '../../recoils/atoms';
+import { isShowDepartAndLogState } from '@recoils';
 
 const FieldSearchBarContainer = styled.div`
 	width: 85%;

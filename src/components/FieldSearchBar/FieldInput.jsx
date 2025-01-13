@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import useField from '../../hooks/useField';
+import useField from '@hooks/useField';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
@@ -10,9 +10,8 @@ import {
 	smallFieldState,
 	selectedSubjectState,
 	subjectsInFieldState
-} from '../../recoils/atoms';
-import { fadeIn } from '../../style/Frames';
-import { Color } from '../../style/Color';
+} from '@recoils';
+import { Color, fadeIn } from '@styles';
 
 const FieldInputContainer = styled.div`
 	width: 95%;

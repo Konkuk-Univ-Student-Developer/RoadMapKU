@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import CourseDetail from '../../DetailContents/CourseDetail/CourseDetail';
-import { fadeIn } from '../../../style/Frames';
-import { Color } from '../../../style/Color';
+import { CourseDetail } from '@CourseDetail';
+import { Color, fadeIn } from '@styles';
 
 const Button = styled.div`
 	width: 100%;

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import icon_url from '../../img/KUSearch1.png';
-import { fadeIn, trembleBounce, trembleRotate } from '../../style/Frames';
-import { Color } from '../../style/Color';
+import { KUSearch1 } from '@img';
+import { Color, fadeIn, trembleBounce, trembleRotate } from '@styles';
 
 const LinkContainer = styled.div`
 	width: 100%;
@@ -61,7 +60,7 @@ const LinkContents = () => {
 	return (
 		<LinkContainer>
 			<CharacterContainer $isHovered={isHovered}>
-				<img alt="Kumap Character" src={icon_url} style={{ width: '7rem' }} />
+				<img alt="Kumap Character" src={KUSearch1} style={{ width: '7rem' }} />
 			</CharacterContainer>
 
 			<LinkButton

@@ -1,5 +1,5 @@
-import MainContainer from '../components/Common/MainContainer';
-import Main from '../components/RoadMap/RoadMap/Main';
+import { MainContainer } from '@Common';
+import { Main } from '@RoadMapContents';
 
 function RoadMap() {
 	return (

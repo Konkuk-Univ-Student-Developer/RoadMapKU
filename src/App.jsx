@@ -1,12 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import RoadMap from './pages/RoadMap';
 import { RecoilRoot } from 'recoil';
-import HowToUse from './pages/HowToUse';
-import AboutUs from './pages/AboutUs';
-import AboutKumap from './pages/AboutKumap';
-import GlobalStyle from './style/GlobalStyle';
-import '../src/font/font.css';
+import { Home, RoadMap, HowToUse, AboutUs, AboutKumap } from '@pages';
+import { GlobalStyle } from '@styles';
+import '@font/font.css';
 
 function App() {
 	return (

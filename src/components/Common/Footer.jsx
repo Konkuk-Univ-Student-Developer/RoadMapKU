@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import KumapWhiteImage from '../../img/KumapWhiteLogo.png';
+import { KumapWhiteLogo } from '@img';
 
 const Container = styled.div`
 	height: 150px;
@@ -37,7 +37,7 @@ const Text = styled.div`
 	cursor: ${({ $pointer }) => ($pointer ? 'pointer' : '')};
 `;
 
-const KumapWhiteLogo = styled.img`
+const KumapWhiteLogoImage = styled.img`
 	width: 180px;
 	height: 80px;
 	margin-right: 20px;
@@ -48,7 +48,7 @@ const Footer = ({ customHeight }) => {
 	return (
 		<Container $customHeight={customHeight}>
 			<SubContainer>
-				<KumapWhiteLogo src={KumapWhiteImage} alt="Kumap White Logo" />
+				<KumapWhiteLogoImage src={KumapWhiteLogo} alt="Kumap White Logo" />
 				<TextContainer>
 					<Text $size={'20px'}>Konkuk</Text>
 					<Text $size={'15px'} $weight={'200'}>

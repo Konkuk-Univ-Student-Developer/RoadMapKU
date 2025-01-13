@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { fadeIn } from '../../../style/Frames';
-import CircleStyle from '../../../style/CircleStyle';
+import { CircleStyle, fadeIn } from '@styles';
 
 const BackgroundContainer = styled.div`
 	opacity: 0;

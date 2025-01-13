@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { competitionRateState } from '../../../recoils/atoms';
-import useField from '../../../hooks/useField';
-import { Color } from '../../../style/Color';
+import { competitionRateState } from '@recoils';
+import { useField } from '@hooks';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	background-color: transparent;

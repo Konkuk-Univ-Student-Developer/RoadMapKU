@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import MainContainer from '../components/Common/MainContainer';
-import LogoContents from '../components/AboutUs/LogoContents';
-import IntroductionContents from '../components/AboutUs/IntroductionContents';
-import BackgroundContents from '../components/Common/Background/BackgroundContents';
-import AboutUsContents from '../components/AboutUs/AboutUsContents';
+import { MainContainer } from '@Common';
+import { BackgroundContents } from '@Background';
+import { LogoContents, IntroductionContents, AboutUsContents } from '@AboutUs';
 
 const Container = styled.div`
 	position: relative;
