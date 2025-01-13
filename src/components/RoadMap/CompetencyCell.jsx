@@ -1,6 +1,6 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedCompetencyState } from '../../../recoils/atoms';
 import { Color } from '../../../style/Color';
 import { fadeIn } from '../../../style/Frames';
@@ -54,6 +54,7 @@ const Button = styled.div`
 
 const CompetencyCell = forwardRef(({ cellData }, ref) => {
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
+	const setSelectedCompetencyState = useSetRecoilState(selectedCompetencyState);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 
 	useEffect(() => {
@@ -65,26 +66,14 @@ const CompetencyCell = forwardRef(({ cellData }, ref) => {
 	}, [cellData, selectedCompetency]);
 
 	// 선택된 전공역량에 해당하는 교과목들을 하이라이트하는 기능
-	const [highlightedCompetencies, setHighlightedCompetencies] = useState({});
 	const handleCellClick_highlight = (selectedCompetencyCode) => {
-		setHighlightedCompetencies((prev) => {
-			const updatedHighlightedCompetencies = {};
-			for (let competencyCode in prev) {
-				updatedHighlightedCompetencies[competencyCode] = false;
+		setSelectedCompetencyState((prevCompetency) => {
+			if (prevCompetency === selectedCompetencyCode) {
+				return 'default';
 			}
-			updatedHighlightedCompetencies[selectedCompetencyCode] = !prev[selectedCompetencyCode];
-			return updatedHighlightedCompetencies;
+			return selectedCompetencyCode;
 		});
 	};
-	const [highlightedCompetency, setHighlightedCompetency] = useState('');
-	useEffect(() => {
-		const highlightedCode = Object.keys(highlightedCompetencies).find((code) => highlightedCompetencies[code] === true);
-		if (highlightedCode) {
-			setHighlightedCompetency(highlightedCode);
-		} else {
-			setHighlightedCompetency('no_highlight');
-		}
-	}, [highlightedCompetencies]);
 
 	return (
 		<StyledCell ref={ref} className={isHighlighted ? 'isHighlighted' : ''}>
