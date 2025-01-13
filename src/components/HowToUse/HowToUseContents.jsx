@@ -1,15 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footer from '../Common/Footer';
-import video1 from '../../img/video1.mp4';
-import video2 from '../../img/video2.mp4';
-import video3 from '../../img/video3.mp4';
-import video4 from '../../img/video4.mp4';
-import kuBook from '../../img/KUBook.png';
-import kuSearch2 from '../../img/KUSearch2.png';
-import picImage1 from '../../img/Pic1.png';
-import picImage2 from '../../img/Pic2.png';
-import { Color } from '../../style/Color';
+
+import { Footer } from '@Common';
+import { Video1, Video2, Video3, Video4, KUBook, KUSearch2, Pic1, Pic2 } from '@img';
+import { Color } from '@styles/Color';
 
 const Container = styled.div`
 	position: relative;
@@ -196,16 +190,16 @@ function HowToUseContents() {
 					<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
 					<FeaturesContainer>
 						<FeatureItems>
-							<IllustrationVideo src={video1} alt="소개 영상 1" />
+							<IllustrationVideo src={Video1} alt="소개 영상 1" />
 						</FeatureItems>
 						<FeatureItems>
-							<IllustrationVideo src={video2} alt="소개 영상 2" />
+							<IllustrationVideo src={Video2} alt="소개 영상 2" />
 						</FeatureItems>
 					</FeaturesContainer>
 
 					<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0rem' }}>
 						<StepTitle3>💡 중요 Tip! 직군은 언제든지 바꿀 수 있답니다.</StepTitle3>
-						<KuImage src={kuBook} alt="책을 든 쿠" />
+						<KuImage src={KUBook} alt="책을 든 쿠" />
 					</div>
 				</Section>
 			</SubContainer>
@@ -219,11 +213,11 @@ function HowToUseContents() {
 					</StepTitle>
 
 					<FeatureItem>
-						<IllustrationVideo src={video3} alt="소개 영상 3" />
+						<IllustrationVideo src={Video3} alt="소개 영상 3" />
 					</FeatureItem>
 
 					<StepContainer>
-						<KuImage src={kuSearch2} alt="돋보기 쿠" />
+						<KuImage src={KUSearch2} alt="돋보기 쿠" />
 						<StepTitle3>
 							각 전공 역량을 클릭하면 해당
 							<br /> 전공 역량을 포함한 수업을 확인할 수 있습니다.
@@ -238,7 +232,7 @@ function HowToUseContents() {
 					<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
 
 					<FeatureItem>
-						<IllustrationVideo src={video4} alt="소개 영상 4" />
+						<IllustrationVideo src={Video4} alt="소개 영상 4" />
 					</FeatureItem>
 
 					<StepContainer>
@@ -247,7 +241,7 @@ function HowToUseContents() {
 							<br />
 							해당 교과목을 내 로드맵에 추가할 수 있습니다.
 						</StepTitle3>
-						<KuImage src={kuBook} alt="책 든 쿠" style={{ width: '100px', margin: '5px' }} />
+						<KuImage src={KUBook} alt="책 든 쿠" style={{ width: '100px', margin: '5px' }} />
 					</StepContainer>
 				</Section>
 			</SubContainer>
@@ -259,14 +253,14 @@ function HowToUseContents() {
 						<FeaturesPictureContainer>
 							<FeaturePicture>
 								<StepTitle2>상세정보 열람</StepTitle2>
-								<Illustration src={picImage1} alt="상세정보 소개" />
+								<Illustration src={Pic1} alt="상세정보 소개" />
 
 								<StepTitle3>수업을 클릭하면 해당 수업 정보와 수강바구니 경쟁률을 확인할 수 있습니다.</StepTitle3>
 							</FeaturePicture>
 
 							<FeaturePicture>
 								<StepTitle2>사진 저장과 공유</StepTitle2>
-								<Illustration src={picImage2} alt="공유기능 소개" />
+								<Illustration src={Pic2} alt="공유기능 소개" />
 								<StepTitle3>
 									하단 사진 버튼을 클릭해 내 로드맵을 사진으로 저장할 수 있으며, URL로 공유도 가능합니다.
 								</StepTitle3>

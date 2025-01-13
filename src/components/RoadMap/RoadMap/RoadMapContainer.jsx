@@ -6,7 +6,7 @@ import pako from 'pako';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
-import RoadMapContents from './RoadMapContents';
+import { RoadMapContents, CourseCreditTable } from '@RoadMapContents';
 import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
@@ -14,13 +14,11 @@ import {
 	selectedMyTableContentsState,
 	selectedFieldState,
 	isShowDepartAndLogState
-} from '../../../recoils/atoms';
-import { Color } from '../../../style/Color';
-import useApi from '../../../hooks/useApi';
-import useField from '../../../hooks/useField';
-import CourseCreditTable from './CourseCreditTable';
-import SaveButton from '../../Common/SaveButton';
-import TotalRoadMapModal from '../TotalRoadMap/TotalRoadMapModal';
+} from '@recoils';
+import { Color } from '@styles';
+import { useField, useApi } from '@hooks';
+import { SaveButton } from '@Common';
+import { TotalRoadMapModal } from '@TotalRoadMap';
 
 const Container = styled.div`
 	min-width: 50rem;

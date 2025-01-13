@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import useOutSideClick from '../../../hooks/useOutsideClick';
-import ModalContainer from './ModalContainer';
-import * as L from './ModalStyles';
+import { useOutsideClick } from '@hooks';
+import { ModalContainer } from '@Modal';
+import * as L from '@Common/Modal/ModalStyles';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Modal({ onClose, children, width }) {
@@ -10,7 +10,7 @@ function Modal({ onClose, children, width }) {
 		onClose?.();
 	};
 
-	useOutSideClick(modalRef, handleClose);
+	useOutsideClick(modalRef, handleClose);
 
 	useEffect(() => {
 		const $body = document.querySelector('body');

@@ -1,6 +1,6 @@
-import MainContainer from '../components/Common/MainContainer';
-import HowToUseContents from '../components/HowToUse/HowToUseContents';
-import BackgroundContents from '../components/Common/Background/BackgroundContents';
+import { MainContainer } from '@Common';
+import { HowToUseContents } from '@HowToUse';
+import { BackgroundContents } from '@Background';
 import styled from 'styled-components';
 
 const Container = styled.div`

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import IntroductionTitleContent from './IntroductionTitleContent';
-import IntroductionProfileContents from './IntroductionProfileContents';
-import Footer from '../Common/Footer';
+import { IntroductionTitleContent, IntroductionProfileContents } from '@AboutUs';
+import { Footer } from '@Common';
 
 const Container = styled.div`
 	width: 100%;

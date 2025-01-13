@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from '../../style/Color';
+import { Color } from '@styles';
 
 const TitleContainer = styled.div`
 	flex: 1;

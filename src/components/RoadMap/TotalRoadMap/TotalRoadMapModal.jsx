@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Modal from '../../Common/Modal/Modal';
-import { Color } from '../../../style/Color';
-import TotalRoadMapCell from '../TotalRoadMap/TotalRoadMapCell';
+import { Modal } from '@Modal';
+import { Color } from '@styles';
+import { TotalRoadMapCell } from '@TotalRoadMap';
 
 const ScrollContainer = styled.div`
 	width: 100%;

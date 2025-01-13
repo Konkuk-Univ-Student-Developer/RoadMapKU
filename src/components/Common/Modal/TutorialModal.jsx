@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import Modal from '../../Common/Modal/Modal';
+import { Modal } from '@Modal';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import kuSearch from '../../../img/KUSearch1.png';
-import tutorialImage1 from '../../../img/TutorialImage1.jpeg';
-import tutorialImage2 from '../../../img/TutorialImage2.jpeg';
-import tutorialImage3 from '../../../img/TutorialImage3.jpeg';
-import { Color } from '../../../style/Color';
+import { KUSearch1, TutorialImage1, TutorialImage2, TutorialImage3 } from '@img';
+import { Color } from '@styles';
 
 const ModalContentWrapper = styled.div`
 	display: flex;
@@ -119,7 +116,7 @@ const FlexContainer = styled.div`
 `;
 
 // TODO: 왜 width, height 속성이 적용 안되는지 알아내기. To not use !important
-const KuImage = styled.img.attrs({ src: kuSearch, alt: '쿠 이미지' })`
+const KuImage = styled.img.attrs({ src: KUSearch1, alt: '쿠 이미지' })`
 	width: 70px !important;
 	height: 60px !important;
 	margin-right: 10px;
@@ -156,7 +153,7 @@ const CustomNextArrow = ({ onClick, currentSlide, slideCount }) => {
 
 const steps = [
 	{
-		image: tutorialImage1,
+		image: TutorialImage1,
 		captionContents: (
 			<>
 				<FlexContainer>
@@ -171,7 +168,7 @@ const steps = [
 		)
 	},
 	{
-		image: tutorialImage2,
+		image: TutorialImage2,
 		captionContents: (
 			<>
 				<FlexContainer>
@@ -186,7 +183,7 @@ const steps = [
 		)
 	},
 	{
-		image: tutorialImage3,
+		image: TutorialImage3,
 		captionContents: (
 			<>
 				<FlexContainer>

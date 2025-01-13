@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
 import { FaShareSquare } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
-import { Color } from '../../style/Color';
+import { Color } from '@styles';
 
 const Btn = styled.button`
 	position: fixed;

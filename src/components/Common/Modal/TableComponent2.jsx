@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Color } from '../../../style/Color';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	background-color: transparent;

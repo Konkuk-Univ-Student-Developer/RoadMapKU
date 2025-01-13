@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainContainer from '../components/Common/MainContainer';
-import kumapLogo from '../img/KumapLogo.png';
-import kuLogo from '../img/KUBook.png';
-import roadImage from '../img/Road.png';
-import LinkContents from '../components/Common/LinkContents';
-import ImmergeBackgroundContents from '../components/Common/Background/ImmergeBackgroundContents';
-import { fadeIn } from '../style/Frames';
-import HomeBackgroundContents from '../components/Common/Background/HomeBackGroundContents';
+import { MainContainer, LinkContents } from '@Common';
+import { KumapLogo, KUBook, Road } from '@img';
+import { ImmergeBackgroundContents, HomeBackGroundContents } from '@Background';
+import { fadeIn } from '@styles';
 
 const PageContainer = styled.div`
 	position: relative;
@@ -67,10 +63,10 @@ function Home() {
 	return (
 		<MainContainer>
 			<PageContainer>
-				<HomeBackgroundContents />
+				<HomeBackGroundContents />
 				<TitleContainer>
-					<img alt="Kumap Logo" src={kumapLogo} style={{ width: '25%' }} />
-					<img alt="Kumap Character" src={kuLogo} style={{ width: '7%' }} />
+					<img alt="Kumap Logo" src={KumapLogo} style={{ width: '25%' }} />
+					<img alt="Kumap Character" src={KUBook} style={{ width: '7%' }} />
 				</TitleContainer>
 				<SubTitleContainer>
 					<div>진로를 탐색하고 수업을 추가하여</div>
@@ -78,7 +74,7 @@ function Home() {
 				</SubTitleContainer>
 				<LinkContents />
 				<RoadContainer>
-					<img alt="Road Image" src={roadImage} style={{ width: '100%' }} />
+					<img alt="Road Image" src={Road} style={{ width: '100%' }} />
 				</RoadContainer>
 				<ImmergeBackgroundContents />
 			</PageContainer>

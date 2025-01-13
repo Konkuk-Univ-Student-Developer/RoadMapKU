@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { fadeIn } from '../../../style/Frames';
-import DepartmentListContents from './DepartmentListContents';
-import { Color } from '../../../style/Color';
+import { DepartmentListContents } from '@FieldSearchBar';
+import { Color, fadeIn } from '@styles';
 
 const Container = styled.div`
 	width: 100%;

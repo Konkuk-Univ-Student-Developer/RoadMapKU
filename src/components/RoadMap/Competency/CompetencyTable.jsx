@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Cell from './CompetencyCell';
-import { Color } from '../../../style/Color';
+import { CompetencyCell } from '@Competency';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	width: 15%;
@@ -79,7 +79,7 @@ const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }
 			<CompetencyContainer>
 				<CompetencyColumn>
 					{competencyTable.map((competency, index) => (
-						<Cell
+						<CompetencyCell
 							key={index}
 							ref={refs[index]}
 							cellData={competency}

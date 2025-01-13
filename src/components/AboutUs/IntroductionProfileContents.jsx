@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import ProfileContents from './ProfileContents';
-import { JiaRole, SejoonRole, SeugraeRole, SungjongRole, YeuenRole } from '../../data/RoleData';
-import JiaProfile from '../../img/JiaProfile.png';
-import SejoonProfile from '../../img/SejoonProfile.png';
-import YeeunProfile from '../../img/YeeunProfile.png';
-import SungjongProfile from '../../img/SungjongProfile.png';
-import SeungraeProfile from '../../img/SeungraeProfile.png';
+import { JiaRole, SejoonRole, SeugraeRole, SungjongRole, YeuenRole } from '@data';
+import { JiaProfile, SejoonProfile, YeeunProfile, SungjongProfile, SeungraeProfile } from '@img';
 
 const Container = styled.div`
 	flex: 4;
