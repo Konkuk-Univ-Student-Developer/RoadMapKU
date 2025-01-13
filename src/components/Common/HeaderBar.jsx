@@ -1,9 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import kuLogo from '../../img/KonkukUnivLogo.png';
-import kumapLogo from '../../img/KumapLogo.png';
+import { KonkukUnivLogo, KumapLogo } from '@img';
 import styled from 'styled-components';
-import { Color } from '../../style/Color';
+import { Color } from '@styles';
 
 const theme = {
 	active: {
@@ -74,13 +73,13 @@ const HeaderActions = styled.div`
 	overflow: hidden;
 `;
 
-const KumapLogo = styled.img.attrs({ src: kumapLogo, alt: '쿠맵 로고' })`
+const KumapLogoImage = styled.img.attrs({ src: KumapLogo, alt: '쿠맵 로고' })`
 	width: 140px;
 	height: 50px;
 	margin-right: 20px;
 `;
 
-const KonkukUnivLogo = styled.img.attrs({ src: kuLogo, alt: '건국대학교 로고' })`
+const KonkukUnivLogoImage = styled.img.attrs({ src: KonkukUnivLogo, alt: '건국대학교 로고' })`
 	height: 50px;
 	width: 140px;
 `;
@@ -95,7 +94,7 @@ function HeaderBar() {
 				<HeaderContent>
 					<ContentContainer>
 						<HeaderBrand onClick={() => navigate('/')}>
-							<KumapLogo />
+							<KumapLogoImage />
 						</HeaderBrand>
 						<HeaderLinks>
 							<HeaderLink onClick={() => navigate('/manual')} $active={pathname === '/manual'}>
@@ -118,7 +117,7 @@ function HeaderBar() {
 
 					<HeaderActions>
 						<HeaderBrand href="https://www.konkuk.ac.kr/konkuk/index.do">
-							<KonkukUnivLogo />
+							<KonkukUnivLogoImage />
 						</HeaderBrand>
 					</HeaderActions>
 				</HeaderContent>

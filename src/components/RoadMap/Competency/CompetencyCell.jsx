@@ -1,7 +1,6 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
-import { Color } from '../../../style/Color';
-import { fadeIn } from '../../../style/Frames';
+import { Color, fadeIn } from '@styles';
 
 const StyledCell = styled.div`
 	min-height: 2rem;

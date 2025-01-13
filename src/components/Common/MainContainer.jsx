@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import HeaderBar from './HeaderBar';
+import { HeaderBar } from '@Common';
 
 const Container = styled.div`
 	min-width: 1200px;

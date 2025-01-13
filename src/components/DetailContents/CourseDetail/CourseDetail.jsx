@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { courseDetailState } from '../../../recoils/atoms';
-import TableComponent from '../../Common/Modal/TableComponent';
-import TableComponent2 from '../../Common/Modal/TableComponent2';
-import Modal from '../../Common/Modal/Modal';
-import useField from '../../../hooks/useField';
-import CompetitionTable from '../../DetailContents/CourseDetail/CompetitionTable';
 import styled from 'styled-components';
-import { Color } from '../../../style/Color';
+import { courseDetailState } from '@recoils';
+import { Modal, TableComponent, TableComponent2 } from '@Modal';
+import { useField } from '@hooks';
+import { CompetitionTable } from '@CourseDetail';
+import { Color } from '@styles';
 
 const ScrollContainer = styled.div`
 	background-color: transparent;

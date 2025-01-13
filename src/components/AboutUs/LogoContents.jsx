@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import kusdLogo from '../../img/KusdLogo.svg';
-import { Color } from '../../style/Color';
+import { KusdLogo } from '@img';
+import { Color } from '@styles';
 
 const LogoContainer = styled.div`
 	width: 100%;
@@ -17,7 +17,7 @@ const SubTitle = styled.p`
 	color: ${Color.GREEN};
 `;
 
-const KusdLogo = styled.img.attrs({ src: kusdLogo, alt: '학생개발팀 로고' })`
+const KusdLogoImage = styled.img.attrs({ src: KusdLogo, alt: '학생개발팀 로고' })`
 	width: 300px;
 	height: 300px;
 `;
@@ -25,7 +25,7 @@ const KusdLogo = styled.img.attrs({ src: kusdLogo, alt: '학생개발팀 로고'
 const LogoContents = () => {
 	return (
 		<LogoContainer>
-			<KusdLogo />
+			<KusdLogoImage />
 			<SubTitle>학생들을 위해 학생들이 뜁니다!</SubTitle>
 		</LogoContainer>
 	);

@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import bxCamera from '@iconify-icons/bx/bx-camera';
 import { FaShareSquare } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
-import { Color } from '../../style/Color';
+import { Color } from '@styles';
 
 const Btn = styled.button`
 	position: fixed;
@@ -53,7 +53,9 @@ const DownloadBtn = styled.div`
 	}
 `;
 
-const CaptureBtn = styled.div`
+const CaptureBtn = styled.div.attrs({
+	id: 'share_capture_screenshot'
+})`
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -82,7 +84,9 @@ const CaptureBtn = styled.div`
 	}
 `;
 
-const UrlBtn = styled.div`
+const UrlBtn = styled.div.attrs({
+	id: 'share_copy_url'
+})`
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -115,10 +119,10 @@ const SaveButton = ({ onClickURL, onClickCapture }) => {
 		<>
 			<Btn>
 				<UrlBtn data-tooltip-content="Copy URL" data-tooltip-id="url" onClick={onClickURL}>
-					<FaLink />
+					<FaLink style={{ pointerEvents: 'none' }} />
 				</UrlBtn>
 				<CaptureBtn data-tooltip-content="Save as PNG" data-tooltip-id="capture" onClick={onClickCapture}>
-					<Icon icon={bxCamera} />
+					<Icon style={{ pointerEvents: 'none' }} icon={bxCamera} />
 				</CaptureBtn>
 				<DownloadBtn>
 					<FaShareSquare />

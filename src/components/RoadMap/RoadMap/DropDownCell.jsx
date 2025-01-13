@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import CourseDetail from '../../DetailContents/CourseDetail/CourseDetail';
-import { fadeIn } from '../../../style/Frames';
-import { Color } from '../../../style/Color';
+import { CourseDetail } from '@CourseDetail';
+import { Color, fadeIn } from '@styles';
 
 const Button = styled.div`
 	width: 100%;
@@ -32,14 +31,6 @@ const StyledCell = styled.div`
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
 
-	&:hover {
-		color: ${Color.GREEN};
-		font-family: 'Pretendard-semiBold';
-		transition:
-			background-color 0.1s ease-out,
-			color 0.1s ease-out;
-	}
-
 	&.unclickable {
 		pointer-events: none;
 		background-color: ${Color.DIM_GREY};
@@ -63,6 +54,11 @@ const CourseTitle = styled.div`
 	display: inline-block;
 	width: 100%;
 
+	&:hover {
+		font-family: 'Pretendard-semiBold';
+		color: ${Color.GREEN};
+	}
+
 	&.semesterCell {
 		padding-left: 0;
 	}
@@ -81,8 +77,21 @@ const DropdownContainer = styled.div`
 	padding: 10px 0;
 `;
 
-const DropdownItem = styled.div`
-	font-family: 'Pretendard-regular';
+const DropdownMyRoadMapItem = styled.div.attrs(({ isAdd, courseName }) => ({
+	id: isAdd ? `add_${courseName}` : `remove_${courseName}`
+}))`
+	font-size: 12px;
+	padding: 5px;
+	color: ${Color.BLACK};
+	cursor: pointer;
+	&:hover {
+		background-color: #f0f0f0;
+	}
+`;
+
+const DropdownCourseDetailItem = styled.div.attrs(({ courseName }) => ({
+	id: `course_detail_${courseName}`
+}))`
 	font-size: 12px;
 	padding: 5px;
 	color: ${Color.BLACK};
@@ -150,10 +159,16 @@ const DropDownCell = ({ cellData, rowIndex, onClick, unclickable, highlightedCom
 				<CourseTitle className={cellData.haksuId === '0' ? 'semesterCell' : ''}>{cellData.courseName}</CourseTitle>
 				{isDropdownOpen && (
 					<DropdownContainer>
-						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
-						<DropdownItem onClick={onClickRoadmapButton}>
+						<DropdownCourseDetailItem courseName={cellData.courseName} onClick={onClickDetailButton}>
+							상세 정보
+						</DropdownCourseDetailItem>
+						<DropdownMyRoadMapItem
+							courseName={cellData.courseName}
+							isAdd={!cellData.isMyTable}
+							onClick={onClickRoadmapButton}
+						>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
-						</DropdownItem>
+						</DropdownMyRoadMapItem>
 					</DropdownContainer>
 				)}
 				{isDetailOpen && (

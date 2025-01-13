@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainContainer from '../components/Common/MainContainer';
-import AboutKumapContents from '../components/AboutKumap/AboutKumapContents';
-import AboutCompetencyContents from '../components/AboutKumap/AboutCompetencyContents';
-import ConclusionContents from '../components/AboutKumap/ConclusionContents';
-import LinkContents from '../components/Common/LinkContents';
-import BackgroundContents from '../components/Common/Background/BackgroundContents';
-import Footer from '../components/Common/Footer';
+import { MainContainer, LinkContents, Footer } from '@Common';
+import { BackgroundContents } from '@Background';
+import { AboutKumapContents, AboutCompetencyContents, ConclusionContents } from '@AboutKumap';
 
 const Container = styled.div`
 	position: relative;

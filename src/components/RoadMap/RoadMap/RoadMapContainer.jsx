@@ -6,7 +6,7 @@ import pako from 'pako';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
-import RoadMapContents from './RoadMapContents';
+import { RoadMapContents, CourseCreditTable } from '@RoadMapContents';
 import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
@@ -14,14 +14,11 @@ import {
 	selectedMyTableContentsState,
 	selectedFieldState,
 	isShowDepartAndLogState
-} from '../../../recoils/atoms';
-import { Color } from '../../../style/Color';
-import useApi from '../../../hooks/useApi';
-import useField from '../../../hooks/useField';
-import CourseCreditTable from './CourseCreditTable';
-import SaveButton from '../../Common/SaveButton';
-import TotalRoadMapModal from '../TotalRoadMap/TotalRoadMapModal';
-import useGA from '../../../hooks/useGA';
+} from '@recoils';
+import { Color } from '@styles';
+import { useField, useApi } from '@hooks';
+import { SaveButton } from '@Common';
+import { TotalRoadMapModal } from '@TotalRoadMap';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -43,7 +40,7 @@ const TitleWrapper = styled.div`
 	align-items: center;
 `;
 
-const Title = styled.div`
+const Title = styled.div.attrs({ id: 'dept_roadmap' })`
 	user-select: none;
 	font-size: 25px;
 	font-weight: bolder;
@@ -126,7 +123,6 @@ const RoadMapContainer = () => {
 	const [searchParams] = useSearchParams();
 
 	// GA
-	const { sendClickShareUrl, sendClickShareScreenshot, sendAddMyRoadMap, sendRemoveMyRoadMap } = useGA();
 
 	// Base64 인코딩 함수
 	const toBase64 = (uint8Array) => btoa(String.fromCharCode(...uint8Array));
@@ -361,7 +357,6 @@ const RoadMapContainer = () => {
 		const copiedCellData = { ...cellData, isMyTable: true };
 		updatedMyTableData[rowIndex].push(copiedCellData);
 		setSelectedMyTableContentsState(updatedMyTableData);
-		sendAddMyRoadMap(cellData);
 	};
 	// 내 로드맵 Cell Click 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
@@ -374,7 +369,6 @@ const RoadMapContainer = () => {
 			updatedMyTableData[rowIndex].splice(cellIndex, 1);
 		}
 		setSelectedMyTableContentsState(updatedMyTableData);
-		sendRemoveMyRoadMap(cellData);
 	};
 
 	// 학과 전체 로드맵 Button Click 이벤트
@@ -397,7 +391,6 @@ const RoadMapContainer = () => {
 		notify_url('주소가 복사되었습니다.');
 
 		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
-		sendClickShareUrl();
 	};
 
 	// 스크린샷 Button Click 이벤트
@@ -417,7 +410,6 @@ const RoadMapContainer = () => {
 			console.error('Roadmap content is not available');
 		}
 		notify_url('스크린샷을 저장하였습니다.');
-		sendClickShareScreenshot();
 	};
 
 	const notify_url = (text) => toast.success(text);
