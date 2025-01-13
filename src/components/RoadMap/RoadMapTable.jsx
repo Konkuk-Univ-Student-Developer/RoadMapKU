@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CourseTable from './RoadMapTable';
-import CompetencyTable from '../Competency/CompetencyTable';
+import CourseTable from './CourseTable';
+import CompetencyTable from './CompetencyTable';
 
 const Container = styled.div`
 	height: 21rem;

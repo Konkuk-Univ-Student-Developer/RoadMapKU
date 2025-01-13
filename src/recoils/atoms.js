@@ -82,3 +82,13 @@ export const isShowDepartAndLogState = atom({
 	key: 'isShowDepartAndLogState',
 	default: false
 });
+
+export const selectedCoursesState = atom({
+	key: 'selectedCoursesState',
+	default: []
+});
+
+export const selectedCompetencyState = atom({
+	key: 'selectedCompetencyState',
+	default: 'default'
+});
