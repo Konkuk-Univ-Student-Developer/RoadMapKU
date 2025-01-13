@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"~/*": ["./*"],
+			"@components/*": ["components/*"],
+			"@AboutKumap/*": ["components/AboutKumap/*"],
+			"@AboutUs/*": ["components/AboutUs/*"],
+			"@Common/*": ["components/Common/*"],
+			"@Background/*": ["components/Common/Background/*"],
+			"@Modal/*": ["components/Common/Modal/*"],
+			"@DetailContents/*": ["components/DetailContents/*"],
+			"@CourseDetail/*": ["components/DetailContents/CourseDetail/*"],
+			"@FieldSearchBar/*": ["components/FieldSearchBar/*"],
+			"@DepartmentList/*": ["components/FieldSearchBar/DepartmentList/*"],
+			"@SearchBar/*": ["components/FieldSearchBar/SearchBar/*"],
+			"@SearchLog/*": ["components/FieldSearchBar/SearchLog/*"],
+			"@HowToUse/*": ["components/HowToUse/*"],
+			"@RoadMap/*": ["components/RoadMap/*"],
+			"@RoadMapContents/*": ["components/RoadMap/RoadMap/*"],
+			"@Competency/*": ["components/RoadMap/Competency/*"],
+			"@TotalRoadMap/*": ["components/RoadMap/TotalRoadMap/*"],
+			"@hooks/*": ["hooks/*"],
+			"@recoils/*": ["recoils/*"],
+			"@pages/*": ["pages/*"],
+			"@styles/*": ["styles/*"],
+			"@assets/*": ["assets/*"],
+			"@data/*": ["assets/data/*"],
+			"@font/*": ["assets/font/*"],
+			"@img/*": ["assets/img/*"]
+		}
+	}
+}
