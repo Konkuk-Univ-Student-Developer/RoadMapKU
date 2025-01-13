@@ -2,7 +2,6 @@
 	"compilerOptions": {
 		"baseUrl": "./src",
 		"paths": {
-			"~/*": ["./*"],
 			"@components/*": ["components/*"],
 			"@AboutKumap/*": ["components/AboutKumap/*"],
 			"@AboutUs/*": ["components/AboutUs/*"],
