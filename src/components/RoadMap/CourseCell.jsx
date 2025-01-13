@@ -101,7 +101,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	const cellRef = useRef(null);
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
 	const selectedCourses = useRecoilValue(selectedCoursesState);
-	const setSelectedCompetency = useSetRecoilState(selectedCoursesState);
+	const setSelectedCourses = useSetRecoilState(selectedCoursesState);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -125,13 +125,26 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 		};
 	}, [cellData, selectedCompetency]);
 
-	// 학과 로드맵 Cell Click 이벤트
+	// 교과목 담기 이벤트
 	const handleCellClick_add = (cellData, rowIndex) => {
 		// selectedCourses 검사 추가
 		const updatedMyTableData = selectedCourses.map((row) => [...row]);
-		const copiedCellData = { ...cellData, isMyTable: true, isClickable: false };
-		updatedMyTableData[rowIndex].push(copiedCellData);
-		setSelectedCompetency(updatedMyTableData);
+		cellData.isMyTable = true;
+		cellData.isClickable = false;
+		updatedMyTableData[rowIndex].push(cellData);
+		setSelectedCourses(updatedMyTableData);
+	};
+
+	// 교과목 버리기 이벤트
+	const handleCellClick_remove = (cellData, rowIndex) => {
+		const updatedMyTableData = selectedCourses.map((row) => [...row]);
+		cellData.isMyTable = false;
+		cellData.isClickable = true;
+		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
+		if (cellIndex !== -1) {
+			updatedMyTableData[rowIndex].splice(cellIndex, 1); // cellData 제거
+		}
+		setSelectedCourses(updatedMyTableData);
 	};
 
 	const handleDropdownToggle = (event) => {
@@ -148,9 +161,14 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 		setIsDetailOpen(true);
 	};
 
-	const onClickRoadmapButton = (event) => {
+	const onClickRoadmapButton = (event, isMyTable) => {
 		event.stopPropagation();
-		handleCellClick_add(cellData, rowIndex);
+
+		if (isMyTable) {
+			handleCellClick_remove(cellData, rowIndex);
+		} else {
+			handleCellClick_add(cellData, rowIndex);
+		}
 		setIsDropdownOpen((prev) => !prev);
 	};
 
@@ -165,7 +183,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 				{isDropdownOpen && (
 					<DropdownContainer>
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
-						<DropdownItem onClick={onClickRoadmapButton}>
+						<DropdownItem onClick={onClickRoadmapButton(cellData.isMyTable)}>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
 						</DropdownItem>
 					</DropdownContainer>
