@@ -163,7 +163,6 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	const onClickRoadmapButton = (event, isMyTable) => {
 		event.stopPropagation();
-
 		if (isMyTable) {
 			handleCellClick_remove(cellData, rowIndex);
 		} else {
@@ -183,7 +182,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 				{isDropdownOpen && (
 					<DropdownContainer>
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
-						<DropdownItem onClick={onClickRoadmapButton(cellData.isMyTable)}>
+						<DropdownItem onClick={() => onClickRoadmapButton(cellData.isMyTable)}>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
 						</DropdownItem>
 					</DropdownContainer>
@@ -202,5 +201,5 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	);
 };
 
-CourseCell.displayName = 'Cell2';
+CourseCell.displayName = 'CourseCell';
 export default CourseCell;
