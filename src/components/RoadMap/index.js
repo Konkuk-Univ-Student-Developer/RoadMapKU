@@ -1,8 +1,4 @@
-export * from './old/Competency';
-export * from './old/RoadMap';
-export * from './old/TotalRoadMap';
 export { default as Main } from './Main';
-
 export { default as CompetencyCell } from './CompetencyCell';
 export { default as CompetencyTable } from './CompetencyTable';
 export { default as CourseCell } from './CourseCell';
