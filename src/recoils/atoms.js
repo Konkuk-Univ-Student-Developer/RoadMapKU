@@ -85,7 +85,16 @@ export const isShowDepartAndLogState = atom({
 
 export const selectedCoursesState = atom({
 	key: 'selectedCoursesState',
-	default: []
+	default: [
+		[{ haksuId: '0', courseName: '1 - 1' }],
+		[{ haksuId: '0', courseName: '1 - 2' }],
+		[{ haksuId: '0', courseName: '2 - 1' }],
+		[{ haksuId: '0', courseName: '2 - 2' }],
+		[{ haksuId: '0', courseName: '3 - 1' }],
+		[{ haksuId: '0', courseName: '3 - 2' }],
+		[{ haksuId: '0', courseName: '4 - 1' }],
+		[{ haksuId: '0', courseName: '4 - 2' }]
+	]
 });
 
 export const selectedCompetencyState = atom({

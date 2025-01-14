@@ -51,7 +51,7 @@ const StyledCell = styled.div`
 		background-color: ${Color.HOVER_GREEN};
 	}
 
-	&.isUnclickableHighlighted {
+	&.isMyCell {
 		pointer-events: none;
 		background-color: ${Color.DIM_GREY};
 	}
@@ -128,17 +128,18 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	// 교과목 담기 이벤트
 	const handleCellClick_add = (cellData, rowIndex) => {
 		// selectedCourses 검사 추가
+		console.log(selectedCourses);
+
 		const updatedMyTableData = selectedCourses.map((row) => [...row]);
-		cellData.isMyTable = true;
 		cellData.isClickable = false;
-		updatedMyTableData[rowIndex].push(cellData);
+		const copiedCellData = { ...cellData, isMyTable: true, isClickable: true };
+		updatedMyTableData[rowIndex].push(copiedCellData);
 		setSelectedCourses(updatedMyTableData);
 	};
 
 	// 교과목 버리기 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
 		const updatedMyTableData = selectedCourses.map((row) => [...row]);
-		cellData.isMyTable = false;
 		cellData.isClickable = true;
 		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
 		if (cellIndex !== -1) {
