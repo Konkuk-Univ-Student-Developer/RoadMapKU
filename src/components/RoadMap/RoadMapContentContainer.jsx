@@ -15,7 +15,7 @@ import { useField } from '../../hooks/';
 import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../Common/SaveButton';
 import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
-import { decodeData } from '../Common/Utils';
+import { decodeData, parseCourseData } from '../Common/Utils';
 import RoadMapTable from './RoadMapTable';
 import MyMapTable from './MyMapTable';
 
@@ -93,6 +93,7 @@ const RoadMapContentContainer = () => {
 
 	const [competencyListData, setCompetencyListData] = useState(courseByCompetencyInSubjectState);
 	const [courseTableData, setCourseTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
+	const [isDetailOpen, setIsDetailOpen] = useState(false);
 
 	const roadmapContentRef = useRef(null);
 	const navigate = useNavigate();
@@ -116,6 +117,7 @@ const RoadMapContentContainer = () => {
 		}
 	}, []);
 
+	// 새로운 데이터가 들어오면 학과 로드맵 clear
 	useEffect(() => {
 		setCourseTableData(JSON.parse(JSON.stringify(defaultTable)));
 	}, [courseByCompetencyInSubject, subjectCode]);
@@ -130,62 +132,12 @@ const RoadMapContentContainer = () => {
 		}));
 		setCompetencyListData(competencyContents);
 
-		// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
-		const haksuIdToCompetencyMap = new Map();
-
-		// courseByCompetencyInSubject 데이터 가공
-		const updatedRoadMapTableData = [...defaultTable];
-		courseByCompetencyInSubject.forEach((competency) => {
-			const { competencyName, competencyCode } = competency;
-
-			competency.courseGetResponseList.forEach((course) => {
-				const { openingYear, openingSemester, haksuId, name, credit, openingSubject } = course;
-				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
-				const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
-				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
-
-				// 여러개의 전공역량을 가지는 교과목에 대한 처리
-				if (!haksuIdToCompetencyMap.has(haksuId)) {
-					haksuIdToCompetencyMap.set(haksuId, [{ competencyName, competencyCode }]);
-				} else {
-					return; // 중복 학수 ID일 경우 이후 로직 스킵
-				}
-
-				// isMyTable 체크
-				const isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
-
-				const cellData = {
-					haksuId: haksuId,
-					courseName: name,
-					courseCredit: credit,
-					subjectName: openingSubject,
-					competencyCodes: haksuIdToCompetencyMap.get(haksuId),
-					isMyTable: isMyTable,
-					isClickable: !isMyTable
-				};
-
-				updatedRoadMapTableData[index] = [...updatedRoadMapTableData[index], cellData];
-				// '1,2학기'에 대한 처리
-				if (openingSemester === '1,2학기') {
-					updatedRoadMapTableData[index + 1] = [...updatedRoadMapTableData[index + 1], cellData];
-				}
-			});
-		});
-
-		// setUnclickableCells(tempUnclickableCells);
-		const updatedData = updatedRoadMapTableData.map((courseRow) => {
-			const row = [[]];
-			row.push(...courseRow.slice(1));
-			return row;
-		});
-
 		setTimeout(() => {
-			setCourseTableData(updatedData);
+			setCourseTableData(parseCourseData(courseByCompetencyInSubject, selectedMyTableContents));
 		}, 10);
 	}, [courseByCompetencyInSubject, selectedMyTableContents]);
 
 	// 학과 전체 로드맵 Button Click 이벤트
-	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const showRoadMapHandler = () => {
 		fetchCoursesInSubject(subjectCode);
 		setIsDetailOpen(true);
