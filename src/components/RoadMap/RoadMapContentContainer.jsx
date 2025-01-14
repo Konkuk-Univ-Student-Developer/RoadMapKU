@@ -187,7 +187,6 @@ const RoadMapContentContainer = () => {
 		}, 10);
 	}, [courseByCompetencyInSubject, selectedMyTableContents]);
 
-	// 분리하기
 	// 학과 전체 로드맵 Button Click 이벤트
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const showRoadMapHandler = () => {
@@ -202,7 +201,9 @@ const RoadMapContentContainer = () => {
 				{subjectCode > 0 && <Button onClick={showRoadMapHandler}>{subjectName} 전체 로드맵 보기</Button>}
 				{isDetailOpen && (
 					<TotalRoadMapModal
-					// 학과 코드
+						onClose={() => {
+							setIsDetailOpen(false);
+						}}
 					/>
 				)}
 			</TitleWrapper>
