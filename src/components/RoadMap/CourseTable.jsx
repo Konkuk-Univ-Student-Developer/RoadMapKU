@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import Cell from './RoadMapCell';
+import Cell from './RoadMap/RoadMapCell';
 import CourseCell from './CourseCell';
 
 const TableContainer = styled.div`

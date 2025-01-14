@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedCompetencyState, selectedCoursesState } from '../../../recoils/atoms';
-import CourseDetail from '../../DetailContents/CourseDetail/CourseDetail';
-import { fadeIn } from '../../../style/Frames';
-import { Color } from '../../../style/Color';
+import { selectedCompetencyState, selectedCoursesState } from '../../recoils/atoms';
+import CourseDetail from '../DetailContents/CourseDetail/CourseDetail';
+import { fadeIn } from '../../styles/Frames';
+import { Color } from '../../styles/Color';
 
 const Button = styled.div`
 	width: 100%;
