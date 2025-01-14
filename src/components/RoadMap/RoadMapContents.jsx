@@ -71,16 +71,15 @@ const Button = styled.button`
 const RoadMapContents = () => {
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
-	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
-	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
-	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-
-	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
-	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
-
-	const [competencyListData, setCompetencyListData] = useState(courseByCompetencyInSubjectState);
+	const [competencyListData, setCompetencyListData] = useState([]);
 	const [courseTableData, setCourseTableData] = useState(defaultTable);
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
+
+	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
+	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
+	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
+	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
+	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
 
 	const roadmapContentRef = useRef(null);
 	const navigate = useNavigate();
@@ -103,6 +102,7 @@ const RoadMapContents = () => {
 
 	// 새로운 데이터가 들어오면 학과 로드맵 clear
 	useEffect(() => {
+		setCompetencyListData([]);
 		setCourseTableData(defaultTable);
 	}, [courseByCompetencyInSubject, subjectCode]);
 
