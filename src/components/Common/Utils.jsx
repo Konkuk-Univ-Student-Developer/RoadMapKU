@@ -26,4 +26,4 @@ const decodeData = (data) => {
 };
 
 // 함수들을 export
-export { toBase64, fromBase64, encodeData, decodeData };
+export { encodeData, decodeData };
