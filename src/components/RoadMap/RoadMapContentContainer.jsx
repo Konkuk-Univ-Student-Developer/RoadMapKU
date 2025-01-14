@@ -155,6 +155,7 @@ const RoadMapContentContainer = () => {
 
 				// isMyTable 체크
 				const isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
+				console.log(selectedMyTableContents);
 
 				const cellData = {
 					haksuId: haksuId,
@@ -163,13 +164,8 @@ const RoadMapContentContainer = () => {
 					subjectName: openingSubject,
 					competencyCodes: haksuIdToCompetencyMap.get(haksuId),
 					isMyTable: isMyTable,
-					isClickable: true
+					isClickable: !isMyTable
 				};
-
-				// 이미 지정되어 있던 unclickableCell 추가
-				if (cellData.isMyTable) {
-					cellData.isClickable = false;
-				}
 
 				updatedRoadMapTableData[index] = [...updatedRoadMapTableData[index], cellData];
 				// '1,2학기'에 대한 처리

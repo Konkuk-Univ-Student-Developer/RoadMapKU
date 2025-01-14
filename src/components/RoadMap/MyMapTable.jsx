@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import CourseTable from './RoadMapTable';
 import CompetencyTable from './CompetencyTable';
-import { selectedCoursesState } from '../../recoils/atoms';
+import { selectedMyTableContentsState } from '../../recoils/atoms';
 
 const Container = styled.div`
 	height: 21rem;
@@ -18,13 +18,13 @@ const Container = styled.div`
 
 const MyMapTable = () => {
 	// myCompetencyList: 내 로드맵의 전공역량 목록
-	const selectedCourses = useRecoilValue(selectedCoursesState);
+	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
 
 	// 내 로드맵 교과목들의 전공역량을 myCompetencyList에 저장
 	useEffect(() => {
 		const competencyArray = [];
-		selectedCourses.forEach((row) => {
+		selectedMyTableContents.forEach((row) => {
 			row.forEach((cellData) => {
 				if (Array.isArray(cellData.competencyCodes)) {
 					competencyArray.push(...cellData.competencyCodes);
@@ -33,12 +33,12 @@ const MyMapTable = () => {
 		});
 		const uniqueCompetencyArray = Array.from(new Set(competencyArray));
 		setMyCompetencyList(uniqueCompetencyArray);
-	}, [selectedCourses]);
+	}, [selectedMyTableContents]);
 
 	return (
 		<Container>
 			<CompetencyTable competencyTableData={myCompetencyList} />
-			<CourseTable courseTableData={selectedCourses} />
+			<CourseTable courseTableData={selectedMyTableContents} />
 		</Container>
 	);
 };

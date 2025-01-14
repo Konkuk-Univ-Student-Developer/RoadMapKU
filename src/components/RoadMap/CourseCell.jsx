@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedCompetencyState, selectedCoursesState } from '../../recoils/atoms';
+import { selectedCompetencyState, selectedMyTableContentsState } from '../../recoils/atoms';
 import CourseDetail from '../DetailContents/CourseDetail/CourseDetail';
 import { fadeIn } from '../../styles/Frames';
 import { Color } from '../../styles/Color';
@@ -100,8 +100,8 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const cellRef = useRef(null);
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
-	const selectedCourses = useRecoilValue(selectedCoursesState);
-	const setSelectedCourses = useSetRecoilState(selectedCoursesState);
+	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
+	const setSelectedCourses = useSetRecoilState(selectedMyTableContentsState);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;
@@ -128,10 +128,10 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	// 교과목 담기 이벤트
 	const handleCellClick_add = (cellData, rowIndex) => {
 		// selectedCourses 검사 추가
-		console.log(selectedCourses);
+		console.log(selectedMyTableContents);
 
-		const updatedMyTableData = selectedCourses.map((row) => [...row]);
 		cellData.isClickable = false;
+		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
 		const copiedCellData = { ...cellData, isMyTable: true, isClickable: true };
 		updatedMyTableData[rowIndex].push(copiedCellData);
 		setSelectedCourses(updatedMyTableData);
@@ -139,8 +139,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	// 교과목 버리기 이벤트
 	const handleCellClick_remove = (cellData, rowIndex) => {
-		const updatedMyTableData = selectedCourses.map((row) => [...row]);
-		cellData.isClickable = true;
+		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
 		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
 		if (cellIndex !== -1) {
 			updatedMyTableData[rowIndex].splice(cellIndex, 1); // cellData 제거
