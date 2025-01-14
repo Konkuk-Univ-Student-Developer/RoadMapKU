@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import CourseTable from './RoadMapTable';
+import CourseTable from './CourseTable';
 import CompetencyTable from './CompetencyTable';
 import { selectedMyTableContentsState } from '../../recoils/atoms';
 
