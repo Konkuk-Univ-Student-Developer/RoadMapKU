@@ -69,8 +69,6 @@ const CourseTable = ({ courseTableData }) => {
 		}
 	};
 
-	console.log(courseTableData);
-
 	return (
 		<TableContainer>
 			<SemesterContainer>
