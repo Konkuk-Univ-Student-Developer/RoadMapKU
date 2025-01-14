@@ -9,15 +9,13 @@ import {
 	selectedSubjectState,
 	selectedMyTableContentsState,
 	isShowDepartAndLogState
-} from '../../recoils/atoms';
-import { Color } from '../../styles/Color';
-import { useField } from '../../hooks/';
-import CourseCreditTable from './CourseCreditTable';
-import SaveButton from '../Common/SaveButton';
-import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
-import { defaultTable, decodeData, parseCourseData } from '../Common/Utils';
-import RoadMapTable from './RoadMapTable';
-import MyMapTable from './MyMapTable';
+} from '@recoils';
+import { Color } from '@styles';
+import { useField } from '@hooks';
+import { SaveButton } from '@Common';
+import { TotalRoadMapModal } from '@TotalRoadMap';
+import { defaultTable, decodeData, parseCourseData } from '@Common/Utils';
+import { MyMapTable, RoadMapTable, CourseCreditTable } from '@Table';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -70,7 +68,7 @@ const Button = styled.button`
 	}
 `;
 
-const RoadMapContentContainer = () => {
+const RoadMapContents = () => {
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
@@ -165,4 +163,4 @@ const RoadMapContentContainer = () => {
 	);
 };
 
-export default RoadMapContentContainer;
+export default RoadMapContents;

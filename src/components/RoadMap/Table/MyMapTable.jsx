@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import CourseTable from './CourseTable';
-import CompetencyTable from './CompetencyTable';
-import { selectedMyTableContentsState } from '../../recoils/atoms';
+import { CourseTable } from '@Course';
+import { CompetencyTable } from '@Competency';
+import { selectedMyTableContentsState } from '@recoils';
 
 const Container = styled.div`
 	height: 21rem;

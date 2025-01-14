@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { selectedMyTableContentsState } from '../../recoils/atoms';
 import { useRecoilValue } from 'recoil';
+import { selectedMyTableContentsState } from '@recoils';
 import { Color, fadeIn } from '@styles';
 
 const CourseCreditContainer = styled.div`

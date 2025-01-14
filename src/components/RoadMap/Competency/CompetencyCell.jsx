@@ -1,9 +1,8 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedCompetencyState } from '../../recoils/atoms';
-import { Color } from '../../styles/Color';
-import { fadeIn } from '../../styles/Frames';
+import { selectedCompetencyState } from '@recoils';
+import { Color, fadeIn } from '@styles';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
