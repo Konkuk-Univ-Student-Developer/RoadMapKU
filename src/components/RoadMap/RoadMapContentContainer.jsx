@@ -2,22 +2,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { ToastContainer, toast } from 'react-toastify';
-import html2canvas from 'html2canvas';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
 	selectedMyTableContentsState,
-	selectedFieldState,
 	isShowDepartAndLogState
 } from '../../recoils/atoms';
 import { Color } from '../../styles/Color';
-import { useField, useApi } from '../../hooks/';
+import { useField } from '../../hooks/';
 import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../Common/SaveButton';
 import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
-import { encodeData, decodeData } from '../Common/Utils';
+import { decodeData } from '../Common/Utils';
 import RoadMapTable from './RoadMapTable';
 import MyMapTable from './MyMapTable';
 
@@ -89,7 +87,6 @@ const RoadMapContentContainer = () => {
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-	const selectedFieldData = useRecoilValue(selectedFieldState);
 
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
@@ -99,7 +96,6 @@ const RoadMapContentContainer = () => {
 
 	const roadmapContentRef = useRef(null);
 	const navigate = useNavigate();
-	const { serverApi } = useApi();
 	const [searchParams] = useSearchParams();
 
 	// URL을 통한 접속
@@ -195,42 +191,6 @@ const RoadMapContentContainer = () => {
 		setIsDetailOpen(true);
 	};
 
-	// URL Button Click 이벤트
-	const handleURLButtonClick = () => {
-		const myTableDataString = JSON.stringify(selectedMyTableContents);
-		const encodedMyTableData = encodeData(myTableDataString);
-
-		const selectedFieldDataString = JSON.stringify(selectedFieldData);
-		const encodedSelectedFieldData = encodeData(selectedFieldDataString);
-
-		const baseURL = serverApi.defaults.baseURL;
-		const newUrl = `${baseURL}/road-map?myTableData=${encodedMyTableData}&selectedFieldData=${encodedSelectedFieldData}`;
-		notify_url('주소가 복사되었습니다.');
-
-		navigator.clipboard.writeText(newUrl).catch((error) => console.log(error));
-	};
-
-	// 스크린샷 Button Click 이벤트
-	const handleCaptureButtonClick = () => {
-		if (roadmapContentRef.current) {
-			html2canvas(roadmapContentRef.current)
-				.then((canvas) => {
-					const link = document.createElement('a');
-					link.href = canvas.toDataURL('image/png');
-					link.download = 'roadmap.png';
-					link.click();
-				})
-				.catch((error) => {
-					console.error('Error capturing the element:', error);
-				});
-		} else {
-			console.error('Roadmap content is not available');
-		}
-		notify_url('스크린샷을 저장하였습니다.');
-	};
-
-	const notify_url = (text) => toast.success(text);
-
 	return (
 		<Container>
 			<TitleWrapper>
@@ -252,7 +212,7 @@ const RoadMapContentContainer = () => {
 				<MyMapTable />
 				<CourseCreditTable />
 			</Content>
-			<SaveButton onClickURL={handleURLButtonClick} onClickCapture={handleCaptureButtonClick}></SaveButton>
+			<SaveButton roadmapContentRef={roadmapContentRef}></SaveButton>
 			<ToastContainer
 				position="bottom-center"
 				limit={2}
