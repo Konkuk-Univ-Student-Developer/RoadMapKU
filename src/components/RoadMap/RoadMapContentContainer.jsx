@@ -14,7 +14,7 @@ import {
 } from '../../recoils/atoms';
 import { Color } from '../../styles/Color';
 import { useField, useApi } from '../../hooks/';
-import CourseCreditTable from './RoadMap/CourseCreditTable';
+import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../Common/SaveButton';
 import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
 import { encodeData, decodeData } from '../Common/Utils';
@@ -124,7 +124,7 @@ const RoadMapContentContainer = () => {
 		setCourseTableData(JSON.parse(JSON.stringify(defaultTable)));
 	}, [courseByCompetencyInSubject, subjectCode]);
 
-	// courseByCompetencyInSubject을 가공하여 roadMapTableData의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
+	// courseByCompetencyInSubject을 가공하여 roadMapTable의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
 	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) return;
 
@@ -244,19 +244,13 @@ const RoadMapContentContainer = () => {
 					/>
 				)}
 			</TitleWrapper>
-			<RoadMapTable
-				// 직무 교과목 학기별 배열
-				competencyTableData={competencyListData}
-				courseTableData={courseTableData}
-			/>
+			<RoadMapTable competencyTableData={competencyListData} courseTableData={courseTableData} />
 			<Content ref={roadmapContentRef} id="roadmap-content">
 				<TitleWrapper>
 					<Title>내 로드맵</Title>
 				</TitleWrapper>
 				<MyMapTable />
-				<CourseCreditTable
-				// 로드맵에 담은 학점
-				/>
+				<CourseCreditTable />
 			</Content>
 			<SaveButton onClickURL={handleURLButtonClick} onClickCapture={handleCaptureButtonClick}></SaveButton>
 			<ToastContainer
