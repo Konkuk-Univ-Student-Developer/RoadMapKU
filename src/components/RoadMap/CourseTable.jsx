@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import Cell from './RoadMap/RoadMapCell';
+import SemesterCell from './SemesterCell';
 import CourseCell from './CourseCell';
 import { SemesterTable } from '../Common/Utils';
 
@@ -78,7 +78,7 @@ const CourseTable = ({ courseTableData }) => {
 				{SemesterTable.map((row, rowIndex) => (
 					<SemesterColumn key={rowIndex}>
 						{row.map((cellData) => (
-							<Cell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
+							<SemesterCell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
 						))}
 					</SemesterColumn>
 				))}
