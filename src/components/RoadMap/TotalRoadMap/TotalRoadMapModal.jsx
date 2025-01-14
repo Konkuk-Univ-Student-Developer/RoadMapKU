@@ -5,6 +5,7 @@ import { totalRoadMapState } from '@recoils';
 import { Modal } from '@Modal';
 import { Color } from '@styles';
 import { TotalRoadMapCell } from '@TotalRoadMap';
+import { parseCourseData } from '@Common/Utils';
 
 const ScrollContainer = styled.div`
 	width: 100%;
@@ -80,46 +81,12 @@ function TotalRoadMapModal({ onClose, subjectName }) {
 	useEffect(() => {
 		if (!Array.isArray(totalRoadMapData)) return;
 
-		// totalRoadMap 데이터 가공
-		const updatedRoadMapTableData = [...defaultTable];
-		totalRoadMapData.forEach((course) => {
-			const { openingYear, openingSemester, haksuId, name, credit, openigSubject } = course;
-			const semesterIndex = openingSemester === '2학기' ? 1 : 0;
-			const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
-			const index = (openingYear_include9 - 1) * 2 + semesterIndex;
-
-			updatedRoadMapTableData[index] = [
-				...updatedRoadMapTableData[index],
-				{
-					haksuId: haksuId,
-					courseName: name,
-					courseCredit: credit,
-					subjectName: openigSubject,
-					competencyCodes: [],
-					isMyTable: false
-				}
-			];
-			if (openingSemester === '1,2학기') {
-				updatedRoadMapTableData[index + 1] = [
-					...updatedRoadMapTableData[index + 1],
-					{
-						haksuId: haksuId,
-						courseName: name,
-						courseCredit: credit,
-						subjectName: openigSubject,
-						competencyCodes: [],
-						isMyTable: false
-					}
-				];
-			}
-		});
-
 		const loadData = async () => {
 			if (totalRoadMapData) {
 				try {
 					setLoading(true);
 					setError(null);
-					setTotalRoadMap(updatedRoadMapTableData);
+					setTotalRoadMap(parseCourseData(totalRoadMapData, null, 0));
 				} catch (error) {
 					console.error('Error fetching road map:', error);
 					setError('Failed to fetch road map');

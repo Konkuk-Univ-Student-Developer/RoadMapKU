@@ -37,16 +37,19 @@ const decodeData = (data) => {
 };
 
 // 전공역량 별 교과목 데이터 파싱하는 함수
-const parseCourseData = (courseByCompetencyInSubject, selectedMyTableContents) => {
+const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
+	if (!Array.isArray(coursesData)) return;
+
 	// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 	const haksuIdToCompetencyMap = new Map();
 
 	// courseByCompetencyInSubject 데이터 가공
 	const updatedRoadMapTableData = [...defaultTable];
-	courseByCompetencyInSubject.forEach((competency) => {
-		const { competencyName, competencyCode } = competency;
 
-		competency.courseGetResponseList.forEach((course) => {
+	console.log(coursesData);
+
+	const refactorCourseData = (courses, competencyName, competencyCode) => {
+		courses.forEach((course) => {
 			const { openingYear, openingSemester, haksuId, name, credit, openingSubject } = course;
 			const semesterIndex = openingSemester === '2학기' ? 1 : 0;
 			const openingYear_include9 = openingYear > 4 ? 4 : openingYear;
@@ -60,7 +63,9 @@ const parseCourseData = (courseByCompetencyInSubject, selectedMyTableContents) =
 			}
 
 			// isMyTable 체크
-			const isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
+			var isMyTable = true;
+			if (Array.isArray(selectedMyTableContents))
+				isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
 
 			const cellData = {
 				haksuId: haksuId,
@@ -78,7 +83,20 @@ const parseCourseData = (courseByCompetencyInSubject, selectedMyTableContents) =
 				updatedRoadMapTableData[index + 1] = [...updatedRoadMapTableData[index + 1], cellData];
 			}
 		});
-	});
+	};
+
+	// 학과 전체 교과목 파싱
+	if (dataNum == 0) {
+		refactorCourseData(coursesData, null, null);
+	}
+
+	// 직군 별 교과목 파싱
+	if (dataNum == 1) {
+		coursesData.forEach((competency) => {
+			const { competencyName, competencyCode } = competency;
+			refactorCourseData(competency.courseGetResponseList, competencyName, competencyCode);
+		});
+	}
 
 	return updatedRoadMapTableData;
 };

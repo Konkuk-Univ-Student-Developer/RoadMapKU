@@ -133,7 +133,7 @@ const RoadMapContentContainer = () => {
 		setCompetencyListData(competencyContents);
 
 		setTimeout(() => {
-			setCourseTableData(parseCourseData(courseByCompetencyInSubject, selectedMyTableContents));
+			setCourseTableData(parseCourseData(courseByCompetencyInSubject, selectedMyTableContents, 1));
 		}, 10);
 	}, [courseByCompetencyInSubject, selectedMyTableContents]);
 
