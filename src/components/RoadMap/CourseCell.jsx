@@ -125,28 +125,6 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 		};
 	}, [cellData, selectedCompetency]);
 
-	// 교과목 담기 이벤트
-	const handleCellClick_add = (cellData, rowIndex) => {
-		// selectedCourses 검사 추가
-		console.log(selectedMyTableContents);
-
-		cellData.isClickable = false;
-		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
-		const copiedCellData = { ...cellData, isMyTable: true, isClickable: true };
-		updatedMyTableData[rowIndex].push(copiedCellData);
-		setSelectedCourses(updatedMyTableData);
-	};
-
-	// 교과목 버리기 이벤트
-	const handleCellClick_remove = (cellData, rowIndex) => {
-		const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
-		const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
-		if (cellIndex !== -1) {
-			updatedMyTableData[rowIndex].splice(cellIndex, 1); // cellData 제거
-		}
-		setSelectedCourses(updatedMyTableData);
-	};
-
 	const handleDropdownToggle = (event) => {
 		event.stopPropagation();
 		setIsDropdownOpen((prev) => !prev);
@@ -164,9 +142,20 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	const onClickRoadmapButton = (event, isMyTable) => {
 		event.stopPropagation();
 		if (isMyTable) {
-			handleCellClick_remove(cellData, rowIndex);
+			// 교과목 버리기 이벤트
+			const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
+			const cellIndex = updatedMyTableData[rowIndex].indexOf(cellData);
+			if (cellIndex !== -1) {
+				updatedMyTableData[rowIndex].splice(cellIndex, 1); // cellData 제거
+			}
+			setSelectedCourses(updatedMyTableData);
 		} else {
-			handleCellClick_add(cellData, rowIndex);
+			// 교과목 담기 이벤트
+			cellData.isClickable = false;
+			const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
+			const copiedCellData = { ...cellData, isMyTable: true, isClickable: true };
+			updatedMyTableData[rowIndex].push(copiedCellData);
+			setSelectedCourses(updatedMyTableData);
 		}
 		setIsDropdownOpen((prev) => !prev);
 	};
