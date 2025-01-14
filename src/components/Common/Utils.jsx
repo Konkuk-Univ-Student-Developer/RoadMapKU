@@ -1,6 +1,8 @@
 import pako from 'pako';
 
-const defaultTable = [
+const defaultTable = [[], [], [], [], [], [], [], []];
+
+const SemesterTable = [
 	[{ haksuId: '0', courseName: '1 - 1' }],
 	[{ haksuId: '0', courseName: '1 - 2' }],
 	[{ haksuId: '0', courseName: '2 - 1' }],
@@ -36,7 +38,7 @@ const decodeData = (data) => {
 	return loadedTableData;
 };
 
-// 전공역량 별 교과목 데이터 파싱하는 함수
+//  교과목 데이터 파싱하는 함수
 const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
 	if (!Array.isArray(coursesData)) return;
 
@@ -44,9 +46,7 @@ const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
 	const haksuIdToCompetencyMap = new Map();
 
 	// courseByCompetencyInSubject 데이터 가공
-	const updatedRoadMapTableData = [...defaultTable];
-
-	console.log(coursesData);
+	const updatedRoadMapTableData = [[], [], [], [], [], [], [], []];
 
 	const refactorCourseData = (courses, competencyName, competencyCode) => {
 		courses.forEach((course) => {
@@ -102,4 +102,4 @@ const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
 };
 
 // 함수들을 export
-export { encodeData, decodeData, parseCourseData };
+export { defaultTable, SemesterTable, encodeData, decodeData, parseCourseData };

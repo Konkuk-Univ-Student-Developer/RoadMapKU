@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Cell from './RoadMap/RoadMapCell';
 import CourseCell from './CourseCell';
+import { SemesterTable } from '../Common/Utils';
 
 const TableContainer = styled.div`
 	flex: 1;
@@ -49,17 +50,6 @@ const CourseColumn = styled.div`
 	padding-bottom: 0.5rem;
 `;
 
-const defaultTable = [
-	[{ haksuId: '0', courseName: '1 - 1' }],
-	[{ haksuId: '0', courseName: '1 - 2' }],
-	[{ haksuId: '0', courseName: '2 - 1' }],
-	[{ haksuId: '0', courseName: '2 - 2' }],
-	[{ haksuId: '0', courseName: '3 - 1' }],
-	[{ haksuId: '0', courseName: '3 - 2' }],
-	[{ haksuId: '0', courseName: '4 - 1' }],
-	[{ haksuId: '0', courseName: '4 - 2' }]
-];
-
 const CourseTable = ({ courseTableData }) => {
 	const containerRef = useRef(null);
 
@@ -67,7 +57,6 @@ const CourseTable = ({ courseTableData }) => {
 		if (!containerRef.current || !cellElement) return;
 
 		const cellBottom = cellElement.offsetTop + cellElement.offsetHeight + 80;
-
 		const container = containerRef.current;
 		const containerBottom = container.scrollTop + container.offsetHeight;
 
@@ -81,10 +70,12 @@ const CourseTable = ({ courseTableData }) => {
 		}
 	};
 
+	console.log(courseTableData);
+
 	return (
 		<TableContainer>
 			<SemesterContainer>
-				{defaultTable.map((row, rowIndex) => (
+				{SemesterTable.map((row, rowIndex) => (
 					<SemesterColumn key={rowIndex}>
 						{row.map((cellData) => (
 							<Cell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
@@ -95,7 +86,7 @@ const CourseTable = ({ courseTableData }) => {
 			<CourseContainer ref={containerRef}>
 				{courseTableData.map((row, rowIndex) => (
 					<CourseColumn key={rowIndex}>
-						{row.slice(1).map((cellData, cellIndex) => (
+						{row.map((cellData, cellIndex) => (
 							<CourseCell
 								key={cellIndex}
 								cellData={cellData}

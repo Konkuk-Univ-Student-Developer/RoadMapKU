@@ -5,7 +5,7 @@ import { totalRoadMapState } from '@recoils';
 import { Modal } from '@Modal';
 import { Color } from '@styles';
 import { TotalRoadMapCell } from '@TotalRoadMap';
-import { parseCourseData } from '@Common/Utils';
+import { SemesterTable, parseCourseData } from '@Common/Utils';
 
 const ScrollContainer = styled.div`
 	width: 100%;
@@ -60,17 +60,6 @@ const CourseColumn = styled.div`
 	gap: 0.5rem;
 `;
 
-const defaultTable = [
-	[{ haksuId: '0', courseName: '1 - 1' }],
-	[{ haksuId: '0', courseName: '1 - 2' }],
-	[{ haksuId: '0', courseName: '2 - 1' }],
-	[{ haksuId: '0', courseName: '2 - 2' }],
-	[{ haksuId: '0', courseName: '3 - 1' }],
-	[{ haksuId: '0', courseName: '3 - 2' }],
-	[{ haksuId: '0', courseName: '4 - 1' }],
-	[{ haksuId: '0', courseName: '4 - 2' }]
-];
-
 function TotalRoadMapModal({ onClose, subjectName }) {
 	const totalRoadMapData = useRecoilValue(totalRoadMapState);
 	const [totalRoadMap, setTotalRoadMap] = useState([]);
@@ -121,7 +110,7 @@ function TotalRoadMapModal({ onClose, subjectName }) {
 				<Title>{subjectName} 전체 로드맵</Title>
 				<TableContainer>
 					<SemesterContainer>
-						{defaultTable.map((row, rowIndex) => (
+						{SemesterTable.map((row, rowIndex) => (
 							<CourseColumn key={rowIndex}>
 								{row.map((cellData) => (
 									<TotalRoadMapCell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
@@ -132,7 +121,7 @@ function TotalRoadMapModal({ onClose, subjectName }) {
 					<CourseContainer>
 						{totalRoadMap.map((row, rowIndex) => (
 							<CourseColumn key={rowIndex}>
-								{row.slice(1).map((cellData) => (
+								{row.map((cellData) => (
 									<TotalRoadMapCell
 										key={cellData.haksuId}
 										cellData={cellData}

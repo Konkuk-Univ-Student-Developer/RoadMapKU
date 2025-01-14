@@ -15,7 +15,7 @@ import { useField } from '../../hooks/';
 import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../Common/SaveButton';
 import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
-import { decodeData, parseCourseData } from '../Common/Utils';
+import { defaultTable, decodeData, parseCourseData } from '../Common/Utils';
 import RoadMapTable from './RoadMapTable';
 import MyMapTable from './MyMapTable';
 
@@ -70,17 +70,6 @@ const Button = styled.button`
 	}
 `;
 
-const defaultTable = [
-	[{ haksuId: '0', courseName: '1 - 1' }],
-	[{ haksuId: '0', courseName: '1 - 2' }],
-	[{ haksuId: '0', courseName: '2 - 1' }],
-	[{ haksuId: '0', courseName: '2 - 2' }],
-	[{ haksuId: '0', courseName: '3 - 1' }],
-	[{ haksuId: '0', courseName: '3 - 2' }],
-	[{ haksuId: '0', courseName: '4 - 1' }],
-	[{ haksuId: '0', courseName: '4 - 2' }]
-];
-
 const RoadMapContentContainer = () => {
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
@@ -92,7 +81,7 @@ const RoadMapContentContainer = () => {
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
 
 	const [competencyListData, setCompetencyListData] = useState(courseByCompetencyInSubjectState);
-	const [courseTableData, setCourseTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
+	const [courseTableData, setCourseTableData] = useState(defaultTable);
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 
 	const roadmapContentRef = useRef(null);
@@ -111,15 +100,12 @@ const RoadMapContentContainer = () => {
 			const decodedSelectedFieldData = decodeData(selectedFieldData);
 			fetchLogFields(decodedSelectedFieldData);
 			setIsShowDepartAndLog(true);
-		} else {
-			if (Array.isArray(selectedMyTableContents) && selectedMyTableContents.length == 0)
-				setSelectedMyTableContentsState(JSON.parse(JSON.stringify(defaultTable)));
 		}
 	}, []);
 
 	// 새로운 데이터가 들어오면 학과 로드맵 clear
 	useEffect(() => {
-		setCourseTableData(JSON.parse(JSON.stringify(defaultTable)));
+		setCourseTableData(defaultTable);
 	}, [courseByCompetencyInSubject, subjectCode]);
 
 	// courseByCompetencyInSubject을 가공하여 roadMapTable의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
