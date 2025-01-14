@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FieldSearchBar } from '@FieldSearchBar';
-import { RoadMapContainer } from '@RoadMapContents';
+import { RoadMapContentContainer } from '@RoadMap';
 import { TutorialModal } from '@Modal';
 
 const Container = styled.div`
@@ -64,7 +64,7 @@ const Main = () => {
 			{showModal && <TutorialModal onClose={handleCloseModal} onDismissForAWeek={handleDismissForAWeek} />}
 			<FieldSearchBar show={showFieldSearchBar} toggleFieldSearchBar={toggleFieldSearchBar} />
 			<Content>
-				<RoadMapContainer />
+				<RoadMapContentContainer />
 			</Content>
 		</Container>
 	);

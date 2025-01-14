@@ -9,12 +9,12 @@ import {
 	selectedSubjectState,
 	selectedMyTableContentsState,
 	isShowDepartAndLogState
-} from '../../../recoils/atoms';
-import { Color } from '../../../style/Color';
-import useField from '../../../hooks/useField';
-import CourseCreditTable from './CourseCreditTable';
-import SaveButton from '../../Common/SaveButton';
-import TotalRoadMapModal from '../TotalRoadMap/TotalRoadMapModal';
+} from '../../recoils/atoms';
+import { Color } from '../../styles/Color';
+import useField from '../../hooks/useField';
+import CourseCreditTable from './RoadMap/CourseCreditTable';
+import SaveButton from '../Common/SaveButton';
+import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
 import { decodeData } from '../Common/Utils';
 import RoadMapTable from './RoadMapTable';
 import MyMapTable from './MyMapTable';
@@ -81,22 +81,18 @@ const defaultTable = [
 	[{ haksuId: '0', courseName: '4 - 2' }]
 ];
 
-const RoadMapContainer = () => {
+const RoadMapContentContainer = () => {
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
-	// courseByCompetencyInSubject: 전공 내 전공역량과 전공역량을 포함하는 교과목
 	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
-	// 학과 및 로그 데이터 보여주는 recoil
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
 
-	// competencyList: 학과 로드맵의 전공역량 목록
-	const [competencyListData, setCompetencyListData] = useState(courseByCompetencyInSubjectState); //eslint-disable-line no-unused-vars
-	// roadMapTableData: 학과 로드맵에 포함되는 교과목 정보
-	const [courseTableData, setCourseTableData] = useState(JSON.parse(JSON.stringify(defaultTable))); //eslint-disable-line no-unused-vars
+	const [competencyListData, setCompetencyListData] = useState(courseByCompetencyInSubjectState);
+	const [courseTableData, setCourseTableData] = useState(JSON.parse(JSON.stringify(defaultTable)));
 
 	const roadmapContentRef = useRef(null);
 
@@ -138,7 +134,6 @@ const RoadMapContainer = () => {
 
 		// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 		const haksuIdToCompetencyMap = new Map();
-		// const tempUnclickableCells = [];
 
 		// courseByCompetencyInSubject 데이터 가공
 		const updatedRoadMapTableData = [...defaultTable];
@@ -173,7 +168,6 @@ const RoadMapContainer = () => {
 
 				// 이미 지정되어 있던 unclickableCell 추가
 				if (cellData.isMyTable) {
-					// tempUnclickableCells.push(cellData);
 					cellData.isClickable = false;
 				}
 
@@ -245,4 +239,4 @@ const RoadMapContainer = () => {
 	);
 };
 
-export default RoadMapContainer;
+export default RoadMapContentContainer;

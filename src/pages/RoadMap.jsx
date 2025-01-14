@@ -1,5 +1,5 @@
 import { MainContainer } from '@Common';
-import { Main } from '@RoadMapContents';
+import { Main } from '@RoadMap';
 
 function RoadMap() {
 	return (
