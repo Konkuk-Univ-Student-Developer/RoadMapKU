@@ -58,13 +58,13 @@ const Button = styled.button`
 	font-size: small;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	transition:
-		background-color 0.2s ease-out,
-		box-shadow 0.2s ease-out;
+		background-color 0.1s ease-out,
+		box-shadow 0.1s ease-out;
 
 	&:hover,
 	&:active {
 		background-color: #02472a;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 	}
 `;
 
