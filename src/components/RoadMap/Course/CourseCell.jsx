@@ -5,16 +5,6 @@ import { selectedCompetencyState, selectedMyTableContentsState } from '@recoils'
 import { Color, fadeIn } from '@styles';
 import { CourseDetail } from '@CourseDetail';
 
-const Button = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-`;
-
 const StyledCell = styled.div`
 	font-size: small;
 	min-height: 2rem;
@@ -25,10 +15,7 @@ const StyledCell = styled.div`
 	cursor: pointer;
 	user-select: none;
 	position: relative;
-	transition:
-		background-color 0.1s ease-out,
-		color 0.1s ease-out,
-		font 0.1s ease-out;
+	transition: background-color 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
@@ -36,9 +23,6 @@ const StyledCell = styled.div`
 	&:hover {
 		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
-		transition:
-			background-color 0.1s ease-out,
-			color 0.1s ease-out;
 	}
 
 	&.unclickable {
@@ -49,11 +33,14 @@ const StyledCell = styled.div`
 	&.isHighlighted {
 		background-color: ${Color.HOVER_GREEN};
 	}
+`;
 
-	&.isUnclickableHighlighted {
-		pointer-events: none;
-		background-color: ${Color.DIM_GREY};
-	}
+const Button = styled.div`
+	width: 100%;
+	display: flex;
+	position: relative;
+	align-items: center;
+	text-align: center;
 `;
 
 const CourseTitle = styled.div`
@@ -163,7 +150,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	return (
 		<StyledCell
-			className={`${!cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${!cellData.isClickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
+			className={`${!cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${!cellData.isClickable && isHighlighted ? 'unclickable' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>

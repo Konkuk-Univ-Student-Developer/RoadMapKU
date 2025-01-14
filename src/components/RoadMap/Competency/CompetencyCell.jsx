@@ -17,9 +17,7 @@ const StyledCell = styled.div`
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transition:
-		background-color 0.3s ease-out,
-		color 0.1s ease-out;
+	transition: background-color 0.1s ease-out;
 
 	opacity: 1;
 	animation: ${fadeIn} 0.2s ease-in-out;
@@ -27,19 +25,11 @@ const StyledCell = styled.div`
 	&:hover {
 		color: ${Color.GREEN};
 		font-family: 'Pretendard-semiBold';
-		transition: color 0.1s ease-out;
 	}
 
 	&.isHighlighted {
 		background-color: ${Color.HOVER_GREEN};
-		transition: background-color 0.3s ease-out;
 	}
-`;
-
-const ButtonWrapper = styled.div`
-	display: flex;
-	width: 100%;
-	height: 100%;
 `;
 
 const Button = styled.div`
@@ -47,7 +37,6 @@ const Button = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
 	padding: 0.5rem;
 `;
 
@@ -77,9 +66,7 @@ const CompetencyCell = forwardRef(({ cellData }, ref) => {
 
 	return (
 		<StyledCell ref={ref} className={isHighlighted ? 'isHighlighted' : ''}>
-			<ButtonWrapper>
-				<Button onClick={() => handleCellClick_highlight(cellData.competencyCode)}>{cellData.competencyName}</Button>
-			</ButtonWrapper>
+			<Button onClick={() => handleCellClick_highlight(cellData.competencyCode)}>{cellData.competencyName}</Button>
 		</StyledCell>
 	);
 });
