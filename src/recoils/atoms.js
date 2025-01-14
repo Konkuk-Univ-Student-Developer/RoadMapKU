@@ -75,10 +75,15 @@ export const selectedFieldLogState = atom({
 
 export const selectedMyTableContentsState = atom({
 	key: 'selectedMyTableContentsState',
-	default: []
+	default: [[], [], [], [], [], [], [], []]
 });
 
 export const isShowDepartAndLogState = atom({
 	key: 'isShowDepartAndLogState',
 	default: false
+});
+
+export const selectedCompetencyState = atom({
+	key: 'selectedCompetencyState',
+	default: 'default'
 });

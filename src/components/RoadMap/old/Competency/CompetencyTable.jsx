@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { CompetencyCell } from '@components/RoadMap/old/Competency';
 import { Color } from '@styles';
-import { CompetencyCell } from '@Competency';
 
 const Container = styled.div`
 	width: 15%;
@@ -43,7 +43,7 @@ const CompetencyColumn = styled.div`
 	gap: 0.5rem;
 `;
 
-const CompetencyTable = ({ competencyTableData }) => {
+const CompetencyTable = ({ competencyTableData, onClick, highlightedCompetency }) => {
 	const [competencyTable, setCompetencyTable] = useState([]);
 	const [refs, setRefs] = useState([]);
 
@@ -79,7 +79,13 @@ const CompetencyTable = ({ competencyTableData }) => {
 			<CompetencyContainer>
 				<CompetencyColumn>
 					{competencyTable.map((competency, index) => (
-						<CompetencyCell key={index} ref={refs[index]} cellData={competency} />
+						<CompetencyCell
+							key={index}
+							ref={refs[index]}
+							cellData={competency}
+							onClick={onClick}
+							highlightedCompetency={highlightedCompetency}
+						/>
 					))}
 				</CompetencyColumn>
 			</CompetencyContainer>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { RoadMapCell, DropDownCell } from '@RoadMapContents';
+import { SemesterTable } from '@Common/Utils';
+import { SemesterCell, CourseCell } from '@Course';
 
 const TableContainer = styled.div`
 	flex: 1;
@@ -48,25 +49,13 @@ const CourseColumn = styled.div`
 	padding-bottom: 0.5rem;
 `;
 
-const defaultTable = [
-	[{ haksuId: '0', courseName: '1 - 1' }],
-	[{ haksuId: '0', courseName: '1 - 2' }],
-	[{ haksuId: '0', courseName: '2 - 1' }],
-	[{ haksuId: '0', courseName: '2 - 2' }],
-	[{ haksuId: '0', courseName: '3 - 1' }],
-	[{ haksuId: '0', courseName: '3 - 2' }],
-	[{ haksuId: '0', courseName: '4 - 1' }],
-	[{ haksuId: '0', courseName: '4 - 2' }]
-];
-
-const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlightedCompetency }) => {
+const CourseTable = ({ courseTableData }) => {
 	const containerRef = useRef(null);
 
 	const handleCellClickSendRef = (cellElement) => {
 		if (!containerRef.current || !cellElement) return;
 
 		const cellBottom = cellElement.offsetTop + cellElement.offsetHeight + 80;
-
 		const container = containerRef.current;
 		const containerBottom = container.scrollTop + container.offsetHeight;
 
@@ -83,25 +72,22 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 	return (
 		<TableContainer>
 			<SemesterContainer>
-				{defaultTable.map((row, rowIndex) => (
+				{SemesterTable.map((row, rowIndex) => (
 					<SemesterColumn key={rowIndex}>
 						{row.map((cellData) => (
-							<RoadMapCell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
+							<SemesterCell key={cellData.haksuId} cellData={cellData} rowIndex={rowIndex} unclickable={true} />
 						))}
 					</SemesterColumn>
 				))}
 			</SemesterContainer>
 			<CourseContainer ref={containerRef}>
-				{roadMapTableData.map((row, rowIndex) => (
+				{courseTableData.map((row, rowIndex) => (
 					<CourseColumn key={rowIndex}>
-						{row.slice(1).map((cellData, cellIndex) => (
-							<DropDownCell
+						{row.map((cellData, cellIndex) => (
+							<CourseCell
 								key={cellIndex}
 								cellData={cellData}
 								rowIndex={rowIndex}
-								onClick={onCellClick}
-								unclickable={unclickableCells.some((cell) => cell.haksuId === cellData.haksuId)}
-								highlightedCompetency={highlightedCompetency}
 								onClickSendRef={handleCellClickSendRef}
 							/>
 						))}
@@ -112,4 +98,4 @@ const RoadMapTable = ({ roadMapTableData, onCellClick, unclickableCells, highlig
 	);
 };
 
-export default RoadMapTable;
+export default CourseTable;

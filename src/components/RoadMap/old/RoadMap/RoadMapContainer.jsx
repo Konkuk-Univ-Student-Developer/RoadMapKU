@@ -6,7 +6,7 @@ import pako from 'pako';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
-import { RoadMapContents, CourseCreditTable } from '@RoadMapContents';
+import { RoadMapContents, CourseCreditTable } from '@components/RoadMap/old/RoadMap';
 import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
@@ -18,7 +18,7 @@ import {
 import { Color } from '@styles';
 import { useField, useApi } from '@hooks';
 import { SaveButton } from '@Common';
-import { TotalRoadMapModal } from '@TotalRoadMap';
+import { TotalRoadMapModal } from '@components/RoadMap/old/TotalRoadMap';
 
 const Container = styled.div`
 	min-width: 50rem;
@@ -168,6 +168,7 @@ const RoadMapContainer = () => {
 
 	useEffect(() => {
 		setRoadMapTableData(JSON.parse(JSON.stringify(defaultTable)));
+		console.log(courseByCompetencyInSubject);
 	}, [courseByCompetencyInSubject, subjectCode]);
 
 	// courseByCompetencyInSubject을 가공하여 roadMapTableData의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)

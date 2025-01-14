@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RoadMapTable } from '@RoadMapContents';
-import { CompetencyTable } from '@Competency';
+import { RoadMapTable } from '@components/RoadMap/old/RoadMap';
+import { CompetencyTable } from '@components/RoadMap/old/Competency';
 
 const RoadMapContainer = styled.div`
 	height: 21rem;
