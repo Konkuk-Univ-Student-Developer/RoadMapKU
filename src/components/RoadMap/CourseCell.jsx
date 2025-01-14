@@ -182,7 +182,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 				{isDropdownOpen && (
 					<DropdownContainer>
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
-						<DropdownItem onClick={() => onClickRoadmapButton(cellData.isMyTable)}>
+						<DropdownItem onClick={(event) => onClickRoadmapButton(event, cellData.isMyTable)}>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
 						</DropdownItem>
 					</DropdownContainer>
