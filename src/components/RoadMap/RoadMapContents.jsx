@@ -100,23 +100,20 @@ const RoadMapContents = () => {
 		}
 	}, []);
 
-	// 새로운 데이터가 들어오면 학과 로드맵 clear
+	// courseByCompetencyInSubject을 가공하여 roadMapTable의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
 	useEffect(() => {
 		setCompetencyListData([]);
 		setCourseTableData(defaultTable);
-	}, [courseByCompetencyInSubject, subjectCode]);
 
-	// courseByCompetencyInSubject을 가공하여 roadMapTable의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
-	useEffect(() => {
 		if (!Array.isArray(courseByCompetencyInSubject)) return;
 
 		const competencyContents = courseByCompetencyInSubject.map((competency) => ({
 			competencyName: competency.competencyName,
 			competencyCode: competency.competencyCode
 		}));
-		setCompetencyListData(competencyContents);
 
 		setTimeout(() => {
+			setCompetencyListData(competencyContents);
 			setCourseTableData(parseCourseData(courseByCompetencyInSubject, selectedMyTableContents, 1));
 		}, 10);
 	}, [courseByCompetencyInSubject, selectedMyTableContents]);
