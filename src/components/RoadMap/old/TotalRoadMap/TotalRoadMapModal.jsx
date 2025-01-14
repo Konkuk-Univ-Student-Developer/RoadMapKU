@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { totalRoadMapState } from '@recoils';
 import { Modal } from '@Modal';
 import { Color } from '@styles';
-import { TotalRoadMapCell } from '@components/RoadMap/old/TotalRoadMap';
+import { TotalRoadMapCell } from '@RoadMap/TotalRoadMap';
 import { SemesterTable, parseCourseData } from '@Common/Utils';
 
 const ScrollContainer = styled.div`
