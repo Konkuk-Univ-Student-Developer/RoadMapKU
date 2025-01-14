@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CourseTable } from '@Course';
 import { CompetencyTable } from '@Competency';
+import { CourseTable } from '@Course';
 
 const Container = styled.div`
 	height: 21rem;

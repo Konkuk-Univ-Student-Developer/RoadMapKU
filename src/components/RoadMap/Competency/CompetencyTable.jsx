@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { CompetencyCell } from '@Competency';
 import { Color } from '@styles';
+import { CompetencyCell } from '@Competency';
 
 const Container = styled.div`
 	width: 15%;

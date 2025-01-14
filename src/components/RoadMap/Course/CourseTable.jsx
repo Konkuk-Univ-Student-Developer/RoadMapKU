@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { SemesterCell, CourseCell } from '@Course';
 import { SemesterTable } from '@Common/Utils';
+import { SemesterCell, CourseCell } from '@Course';
 
 const TableContainer = styled.div`
 	flex: 1;

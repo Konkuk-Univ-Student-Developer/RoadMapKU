@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useField } from '@hooks';
 import {
 	courseByCompetencyInSubjectState,
 	selectedSubjectState,
@@ -11,11 +12,10 @@ import {
 	isShowDepartAndLogState
 } from '@recoils';
 import { Color } from '@styles';
-import { useField } from '@hooks';
 import { SaveButton } from '@Common';
-import { TotalRoadMapModal } from '@TotalRoadMap';
 import { defaultTable, decodeData, parseCourseData } from '@Common/Utils';
 import { MyMapTable, RoadMapTable, CourseCreditTable } from '@Table';
+import { TotalRoadMapModal } from '@TotalRoadMap';
 
 const Container = styled.div`
 	min-width: 50rem;

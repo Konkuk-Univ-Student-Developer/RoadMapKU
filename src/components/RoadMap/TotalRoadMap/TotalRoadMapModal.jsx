@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { totalRoadMapState } from '@recoils';
-import { Modal } from '@Modal';
 import { Color } from '@styles';
-import { TotalRoadMapCell } from '@TotalRoadMap';
 import { SemesterTable, parseCourseData } from '@Common/Utils';
+import { Modal } from '@Modal';
+import { TotalRoadMapCell } from '@TotalRoadMap';
 
 const ScrollContainer = styled.div`
 	width: 100%;

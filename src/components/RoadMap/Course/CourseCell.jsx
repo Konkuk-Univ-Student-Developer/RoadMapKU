@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedCompetencyState, selectedMyTableContentsState } from '@recoils';
-import { CourseDetail } from '@CourseDetail';
 import { Color, fadeIn } from '@styles';
+import { CourseDetail } from '@CourseDetail';
 
 const Button = styled.div`
 	width: 100%;
