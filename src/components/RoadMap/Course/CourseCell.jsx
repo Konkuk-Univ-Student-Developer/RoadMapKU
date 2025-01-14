@@ -25,13 +25,13 @@ const StyledCell = styled.div`
 		font-family: 'Pretendard-semiBold';
 	}
 
+	&.isHighlighted {
+		background-color: ${Color.HOVER_GREEN};
+	}
+
 	&.unclickable {
 		pointer-events: none;
 		background-color: ${Color.DIM_GREY};
-	}
-
-	&.isHighlighted {
-		background-color: ${Color.HOVER_GREEN};
 	}
 `;
 
@@ -150,7 +150,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	return (
 		<StyledCell
-			className={`${!cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${!cellData.isClickable && isHighlighted ? 'unclickable' : ''}`}
+			className={`${!cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>
