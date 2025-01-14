@@ -14,7 +14,7 @@ import { Color } from '../../styles/Color';
 import { useField } from '../../hooks/';
 import CourseCreditTable from './CourseCreditTable';
 import SaveButton from '../Common/SaveButton';
-import TotalRoadMapModal from './TotalRoadMap/TotalRoadMapModal';
+import TotalRoadMapModal from './old/TotalRoadMap/TotalRoadMapModal';
 import { defaultTable, decodeData, parseCourseData } from '../Common/Utils';
 import RoadMapTable from './RoadMapTable';
 import MyMapTable from './MyMapTable';

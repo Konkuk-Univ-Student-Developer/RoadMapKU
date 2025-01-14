@@ -1,6 +1,6 @@
-export * from './Competency';
-export * from './RoadMap';
-export * from './TotalRoadMap';
+export * from './old/Competency';
+export * from './old/RoadMap';
+export * from './old/TotalRoadMap';
 export { default as Main } from './Main';
 
 export { default as CompetencyCell } from './CompetencyCell';

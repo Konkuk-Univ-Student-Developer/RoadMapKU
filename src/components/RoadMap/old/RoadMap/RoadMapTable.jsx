@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { RoadMapCell, DropDownCell } from '@RoadMapContents';
+import { RoadMapCell, DropDownCell } from '@components/RoadMap/old/RoadMap';
 
 const TableContainer = styled.div`
 	flex: 1;

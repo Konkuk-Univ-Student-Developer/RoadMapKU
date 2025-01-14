@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { CompetencyCell } from '@Competency';
+import { CompetencyCell } from '@components/RoadMap/old/Competency';
 import { Color } from '@styles';
 
 const Container = styled.div`
