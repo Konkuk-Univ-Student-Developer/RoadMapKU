@@ -174,7 +174,7 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 
 	return (
 		<StyledCell
-			className={`${cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${cellData.isClickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
+			className={`${!cellData.isClickable ? 'unclickable' : ''} ${isHighlighted ? 'isHighlighted' : ''} ${cellData.isClickable && isHighlighted ? 'isUnclickableHighlighted' : ''}`}
 			onClick={handleDropdownToggle}
 			ref={cellRef}
 		>
