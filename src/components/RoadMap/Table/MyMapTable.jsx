@@ -17,9 +17,9 @@ const Container = styled.div`
 `;
 
 const MyMapTable = () => {
-	// myCompetencyList: 내 로드맵의 전공역량 목록
-	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 	const [myCompetencyList, setMyCompetencyList] = useState([]);
+
+	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 
 	// 내 로드맵 교과목들의 전공역량을 myCompetencyList에 저장
 	useEffect(() => {

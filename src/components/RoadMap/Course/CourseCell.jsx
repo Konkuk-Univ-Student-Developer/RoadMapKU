@@ -97,10 +97,12 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-	const cellRef = useRef(null);
+
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 	const setSelectedCourses = useSetRecoilState(selectedMyTableContentsState);
+
+	const cellRef = useRef(null);
 
 	useEffect(() => {
 		const competencyCodes = cellData.competencyCodes;

@@ -61,10 +61,11 @@ const CourseColumn = styled.div`
 `;
 
 function TotalRoadMapModal({ onClose, subjectName }) {
-	const totalRoadMapData = useRecoilValue(totalRoadMapState);
 	const [totalRoadMap, setTotalRoadMap] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+
+	const totalRoadMapData = useRecoilValue(totalRoadMapState);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
 	useEffect(() => {

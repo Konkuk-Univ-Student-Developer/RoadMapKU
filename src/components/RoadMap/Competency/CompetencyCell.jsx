@@ -52,9 +52,10 @@ const Button = styled.div`
 `;
 
 const CompetencyCell = forwardRef(({ cellData }, ref) => {
+	const [isHighlighted, setIsHighlighted] = useState(false);
+
 	const selectedCompetency = useRecoilValue(selectedCompetencyState);
 	const setSelectedCompetencyState = useSetRecoilState(selectedCompetencyState);
-	const [isHighlighted, setIsHighlighted] = useState(false);
 
 	useEffect(() => {
 		if (selectedCompetency === cellData.competencyCode) {
