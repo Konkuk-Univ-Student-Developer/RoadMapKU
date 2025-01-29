@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { CompetencyTable } from '@Competency';
 import { CourseTable } from '@Course';
+import { competencyListSelector, courseTableDataSelector } from '@recoils';
+import { useRecoilValue } from 'recoil';
 
 const Container = styled.div`
 	height: 21rem;
@@ -14,7 +16,10 @@ const Container = styled.div`
 	padding-bottom: 1rem;
 `;
 
-const RoadMapTable = ({ competencyTableData, courseTableData }) => {
+const RoadMapTable = () => {
+	const courseTableData = useRecoilValue(courseTableDataSelector);
+	const competencyTableData = useRecoilValue(competencyListSelector);
+
 	return (
 		<Container>
 			<CompetencyTable competencyTableData={competencyTableData} />
