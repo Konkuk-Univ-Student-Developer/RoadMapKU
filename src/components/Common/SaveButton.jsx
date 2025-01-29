@@ -7,10 +7,10 @@ import { FaLink } from 'react-icons/fa6';
 import { Color } from '@styles';
 import { encodeData } from '../Common/Utils';
 import { toast } from 'react-toastify';
-import { useApi } from '../../hooks/';
 import { useRecoilValue } from 'recoil';
-import { selectedMyTableContentsState, selectedFieldState } from '../../recoils/atoms';
 import html2canvas from 'html2canvas';
+import { useApi } from '@hooks';
+import { selectedMyTableContentsState, selectedFieldState } from '@recoils';
 
 const Btn = styled.button`
 	position: fixed;
