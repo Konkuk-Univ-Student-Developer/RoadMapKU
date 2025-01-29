@@ -21,7 +21,7 @@ const CompetencyContainer = styled.div`
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-contents: right;
+	justify-content: right;
 	overflow-y: scroll;
 	padding-left: 14px;
 `;

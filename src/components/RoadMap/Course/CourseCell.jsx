@@ -139,9 +139,9 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 			setSelectedCourses(updatedMyTableData);
 		} else {
 			// 교과목 담기 이벤트
-			cellData.isClickable = false;
+			const newCellData = { ...cellData, isClickable: false };
 			const updatedMyTableData = selectedMyTableContents.map((row) => [...row]);
-			const copiedCellData = { ...cellData, isMyTable: true, isClickable: true };
+			const copiedCellData = { ...newCellData, isMyTable: true, isClickable: true };
 			updatedMyTableData[rowIndex].push(copiedCellData);
 			setSelectedCourses(updatedMyTableData);
 		}
