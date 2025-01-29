@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { myCompetencyListSelector, selectedMyTableContentsState } from '@recoils';
 import { CompetencyTable } from '@Competency';
 import { CourseTable } from '@Course';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	height: 21rem;
@@ -16,15 +17,37 @@ const Container = styled.div`
 	padding-bottom: 1rem;
 `;
 
+const TitleWrapper = styled.div`
+	height: 4vh;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const Title = styled.div`
+	user-select: none;
+	font-size: 25px;
+	font-weight: bolder;
+	color: ${Color.GREEN};
+`;
+
 const MyMapTable = () => {
 	const myCompetencyList = useRecoilValue(myCompetencyListSelector);
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 
 	return (
-		<Container>
-			<CompetencyTable competencyTableData={myCompetencyList} />
-			<CourseTable courseTableData={selectedMyTableContents} />
-		</Container>
+		<>
+			<TitleWrapper>
+				<Title>내 로드맵</Title>
+			</TitleWrapper>
+			<Container>
+				<CompetencyTable competencyTableData={myCompetencyList} />
+				<CourseTable courseTableData={selectedMyTableContents} />
+			</Container>
+		</>
 	);
 };
 

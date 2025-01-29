@@ -120,7 +120,7 @@ const UrlBtn = styled.div.attrs({
 	}
 `;
 
-const SaveButton = ({ roadmapContentRef }) => {
+const SaveButton = ({ myRoadmapContentRef }) => {
 	const { serverApi } = useApi();
 
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
@@ -143,8 +143,8 @@ const SaveButton = ({ roadmapContentRef }) => {
 
 	// 스크린샷 Button Click 이벤트
 	const handleCaptureButtonClick = () => {
-		if (roadmapContentRef.current) {
-			html2canvas(roadmapContentRef.current)
+		if (myRoadmapContentRef.current) {
+			html2canvas(myRoadmapContentRef.current)
 				.then((canvas) => {
 					const link = document.createElement('a');
 					link.href = canvas.toDataURL('image/png');
