@@ -5,15 +5,10 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useField } from '@hooks';
-import {
-	courseByCompetencyInSubjectState,
-	selectedSubjectState,
-	selectedMyTableContentsState,
-	isShowDepartAndLogState
-} from '@recoils';
+import { selectedSubjectState, selectedMyTableContentsState, isShowDepartAndLogState } from '@recoils';
 import { Color } from '@styles';
 import { SaveButton } from '@Common';
-import { defaultTable, decodeData, parseCourseData } from '@Common/Utils';
+import { decodeData } from '@Common/Utils';
 import { MyMapTable, RoadMapTable, CourseCreditTable } from '@Table';
 import { TotalRoadMapModal } from '@TotalRoadMap';
 
@@ -71,13 +66,10 @@ const Button = styled.button`
 const RoadMapContents = () => {
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
-	const [competencyListData, setCompetencyListData] = useState([]);
-	const [courseTableData, setCourseTableData] = useState(defaultTable);
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 
-	const courseByCompetencyInSubject = useRecoilValue(courseByCompetencyInSubjectState);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
-	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
+
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
 
@@ -100,26 +92,6 @@ const RoadMapContents = () => {
 		}
 	}, []);
 
-	useEffect(() => {
-		setCompetencyListData([]);
-		setCourseTableData(defaultTable);
-	}, [courseByCompetencyInSubject]);
-
-	// courseByCompetencyInSubject을 가공하여 roadMapTable의 데이터 (직군 또는 학과 변경으로 인한 courseByCompetencyInSubject 변동)
-	useEffect(() => {
-		if (!Array.isArray(courseByCompetencyInSubject)) return;
-
-		const competencyContents = courseByCompetencyInSubject.map((competency) => ({
-			competencyName: competency.competencyName,
-			competencyCode: competency.competencyCode
-		}));
-
-		setTimeout(() => {
-			setCompetencyListData(competencyContents);
-			setCourseTableData(parseCourseData(courseByCompetencyInSubject, selectedMyTableContents, 1));
-		}, 10);
-	}, [courseByCompetencyInSubject, selectedMyTableContents]);
-
 	// 학과 전체 로드맵 Button Click 이벤트
 	const showRoadMapHandler = () => {
 		fetchCoursesInSubject(subjectCode);
@@ -139,7 +111,7 @@ const RoadMapContents = () => {
 					/>
 				)}
 			</TitleWrapper>
-			<RoadMapTable competencyTableData={competencyListData} courseTableData={courseTableData} />
+			<RoadMapTable />
 			<Content ref={roadmapContentRef} id="roadmap-content">
 				<TitleWrapper>
 					<Title>내 로드맵</Title>
