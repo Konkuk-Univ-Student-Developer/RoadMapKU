@@ -40,7 +40,7 @@ const decodeData = (data) => {
 
 //  교과목 데이터 파싱하는 함수
 const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
-	if (!Array.isArray(coursesData)) return;
+	if (!Array.isArray(coursesData)) return [];
 
 	// haksuIdToCompetencyMap: 하나의 교과목이 가지는 전공역량들을 Map으로 저장
 	const haksuIdToCompetencyMap = new Map();
@@ -63,7 +63,7 @@ const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
 			}
 
 			// isMyTable 체크
-			var isMyTable = true;
+			let isMyTable = true;
 			if (Array.isArray(selectedMyTableContents))
 				isMyTable = selectedMyTableContents.some((row) => row.some((cell) => cell.haksuId === haksuId));
 

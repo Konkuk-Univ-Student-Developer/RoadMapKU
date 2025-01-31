@@ -1,4 +1,5 @@
-import { atom } from 'recoil';
+import { parseCourseData } from '@components/Common/Utils';
+import { atom, selector } from 'recoil';
 
 export const middleFieldState = atom({
 	key: 'middleFieldState',
@@ -32,7 +33,49 @@ export const competencyListInSubjectState = atom({
 
 export const courseByCompetencyInSubjectState = atom({
 	key: 'courseByCompetencyInSubjectState',
-	default: {}
+	default: []
+});
+
+export const competencyListSelector = selector({
+	key: 'competencyListSelector',
+	get: ({ get }) => {
+		const courseByCompetencyInSubject = get(courseByCompetencyInSubjectState);
+
+		return courseByCompetencyInSubject.map((competency) => ({
+			competencyName: competency.competencyName,
+			competencyCode: competency.competencyCode
+		}));
+	}
+});
+
+export const courseTableDataSelector = selector({
+	key: 'courseTableDataSelector',
+	get: ({ get }) => {
+		const courseByCompetencyInSubject = get(courseByCompetencyInSubjectState);
+		const selectedMyTableContents = get(selectedMyTableContentsState);
+
+		return parseCourseData(courseByCompetencyInSubject, selectedMyTableContents, 1);
+	}
+});
+
+export const myCompetencyListSelector = selector({
+	key: 'myCompetencyListSelector',
+	get: ({ get }) => {
+		const selectedMyTableContents = get(selectedMyTableContentsState);
+
+		const competencyArray = [];
+		selectedMyTableContents.forEach((row) => {
+			row.forEach((cellData) => {
+				if (Array.isArray(cellData.competencyCodes)) {
+					competencyArray.push(...cellData.competencyCodes);
+				}
+			});
+		});
+
+		const uniqueCompetencyArray = Array.from(new Set(competencyArray));
+
+		return uniqueCompetencyArray;
+	}
 });
 
 export const courseDetailState = atom({

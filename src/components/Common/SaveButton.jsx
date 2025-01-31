@@ -7,10 +7,10 @@ import { FaLink } from 'react-icons/fa6';
 import { Color } from '@styles';
 import { encodeData } from '../Common/Utils';
 import { toast } from 'react-toastify';
-import { useApi } from '../../hooks/';
 import { useRecoilValue } from 'recoil';
-import { selectedMyTableContentsState, selectedFieldState } from '../../recoils/atoms';
 import html2canvas from 'html2canvas';
+import { useApi } from '@hooks';
+import { selectedMyTableContentsState, selectedFieldState } from '@recoils';
 
 const Btn = styled.button`
 	position: fixed;
@@ -120,7 +120,7 @@ const UrlBtn = styled.div.attrs({
 	}
 `;
 
-const SaveButton = ({ roadmapContentRef }) => {
+const SaveButton = ({ myRoadmapContentRef }) => {
 	const { serverApi } = useApi();
 
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
@@ -143,8 +143,8 @@ const SaveButton = ({ roadmapContentRef }) => {
 
 	// 스크린샷 Button Click 이벤트
 	const handleCaptureButtonClick = () => {
-		if (roadmapContentRef.current) {
-			html2canvas(roadmapContentRef.current)
+		if (myRoadmapContentRef.current) {
+			html2canvas(myRoadmapContentRef.current)
 				.then((canvas) => {
 					const link = document.createElement('a');
 					link.href = canvas.toDataURL('image/png');

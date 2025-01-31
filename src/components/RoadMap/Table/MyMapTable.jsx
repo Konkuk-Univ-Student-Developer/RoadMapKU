@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { selectedMyTableContentsState } from '@recoils';
+import { myCompetencyListSelector, selectedMyTableContentsState } from '@recoils';
 import { CompetencyTable } from '@Competency';
 import { CourseTable } from '@Course';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	height: 21rem;
@@ -16,30 +17,37 @@ const Container = styled.div`
 	padding-bottom: 1rem;
 `;
 
-const MyMapTable = () => {
-	const [myCompetencyList, setMyCompetencyList] = useState([]);
+const TitleWrapper = styled.div`
+	height: 4vh;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
 
+const Title = styled.div`
+	user-select: none;
+	font-size: 25px;
+	font-weight: bolder;
+	color: ${Color.GREEN};
+`;
+
+const MyMapTable = () => {
+	const myCompetencyList = useRecoilValue(myCompetencyListSelector);
 	const selectedMyTableContents = useRecoilValue(selectedMyTableContentsState);
 
-	// 내 로드맵 교과목들의 전공역량을 myCompetencyList에 저장
-	useEffect(() => {
-		const competencyArray = [];
-		selectedMyTableContents.forEach((row) => {
-			row.forEach((cellData) => {
-				if (Array.isArray(cellData.competencyCodes)) {
-					competencyArray.push(...cellData.competencyCodes);
-				}
-			});
-		});
-		const uniqueCompetencyArray = Array.from(new Set(competencyArray));
-		setMyCompetencyList(uniqueCompetencyArray);
-	}, [selectedMyTableContents]);
-
 	return (
-		<Container>
-			<CompetencyTable competencyTableData={myCompetencyList} />
-			<CourseTable courseTableData={selectedMyTableContents} />
-		</Container>
+		<>
+			<TitleWrapper>
+				<Title>내 로드맵</Title>
+			</TitleWrapper>
+			<Container>
+				<CompetencyTable competencyTableData={myCompetencyList} />
+				<CourseTable courseTableData={selectedMyTableContents} />
+			</Container>
+		</>
 	);
 };
 
