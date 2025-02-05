@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 const HeaderContainer = styled.header`
+	height: 6rem;
 	width: 85%;
 	align-self: center;
 `;
@@ -86,7 +87,7 @@ const FeatureItems = styled.div`
 `;
 
 const KuImage = styled.img`
-	width: 100px;
+	width: 80px;
 	margin: 5px;
 	margin-right: 10px;
 `;

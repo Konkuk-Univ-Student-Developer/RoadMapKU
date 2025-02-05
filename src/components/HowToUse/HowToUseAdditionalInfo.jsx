@@ -56,6 +56,7 @@ const FeaturesContainer = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 80%;
 	box-sizing: border-box;
 `;
 
