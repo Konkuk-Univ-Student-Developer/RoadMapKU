@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { SemesterTable } from '@Common/Utils';
 import { SemesterCell, CourseCell } from '@Course';
@@ -51,17 +51,6 @@ const CourseColumn = styled.div`
 
 const CourseTable = ({ courseTableData }) => {
 	const containerRef = useRef(null);
-	const [displayData, setDisplayData] = useState(courseTableData);
-
-	useEffect(() => {
-		// courseTableData가 변경될 때 초기화 후 10ms 뒤에 반영
-		setDisplayData([]); // 초기화
-		const timer = setTimeout(() => {
-			setDisplayData(courseTableData); // 10ms 후 업데이트
-		}, 10);
-
-		return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
-	}, [courseTableData]);
 
 	const handleCellClickSendRef = (cellElement) => {
 		if (!containerRef.current || !cellElement) return;
@@ -92,7 +81,7 @@ const CourseTable = ({ courseTableData }) => {
 				))}
 			</SemesterContainer>
 			<CourseContainer ref={containerRef}>
-				{displayData.map((row, rowIndex) => (
+				{courseTableData.map((row, rowIndex) => (
 					<CourseColumn key={rowIndex}>
 						{row.map((cellData, cellIndex) => (
 							<CourseCell

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
@@ -83,6 +83,10 @@ const RoadMapTable = () => {
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
 
+	const prevSubjectCode = useRef(subjectCode);
+	const [displayCourseData, setDisplayCourseData] = useState(courseTableData);
+	const [displayCompetencyData, setDisplayCompetencyData] = useState(competencyListSelector);
+
 	// URL을 통한 접속
 	useEffect(() => {
 		const myTableData = searchParams.get('myTableData');
@@ -99,8 +103,28 @@ const RoadMapTable = () => {
 		}
 	}, []);
 
+	useEffect(() => {
+		if (prevSubjectCode.current !== subjectCode) {
+			setDisplayCompetencyData([]);
+			setDisplayCourseData([]);
+
+			const timer = setTimeout(() => {
+				setDisplayCompetencyData(competencyTableData);
+				setDisplayCourseData(courseTableData);
+			}, 10);
+
+			prevSubjectCode.current = subjectCode;
+
+			return () => clearTimeout(timer);
+		} else {
+			setDisplayCompetencyData(competencyTableData);
+			setDisplayCourseData(courseTableData);
+		}
+	}, [subjectCode, competencyTableData, courseTableData]);
+
 	// 학과 전체 로드맵 Button Click 이벤트
 	const showRoadMapHandler = () => {
+		if (!subjectCode) return;
 		fetchCoursesInSubject(subjectCode);
 		setIsDetailOpen(true);
 	};
@@ -119,8 +143,8 @@ const RoadMapTable = () => {
 				)}
 			</TitleWrapper>
 			<Container>
-				<CompetencyTable competencyTableData={competencyTableData} />
-				<CourseTable courseTableData={courseTableData} />
+				<CompetencyTable competencyTableData={displayCompetencyData} />
+				<CourseTable courseTableData={displayCourseData} />
 			</Container>
 		</>
 	);

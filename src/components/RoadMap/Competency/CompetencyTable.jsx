@@ -64,15 +64,13 @@ const CompetencyTable = ({ competencyTableData }) => {
 		setRefs(sortedCompetencyTable.map(() => React.createRef()));
 
 		setCompetencyTable([]);
-		setTimeout(() => {
-			sortedCompetencyTable.forEach((competency) => {
-				setCompetencyTable((prevItems) => {
-					const isDuplicate = prevItems.some((item) => item.competencyCode === competency.competencyCode);
+		sortedCompetencyTable.forEach((competency) => {
+			setCompetencyTable((prevItems) => {
+				const isDuplicate = prevItems.some((item) => item.competencyCode === competency.competencyCode);
 
-					return isDuplicate ? prevItems : [...prevItems, competency];
-				});
+				return isDuplicate ? prevItems : [...prevItems, competency];
 			});
-		}, 10);
+		});
 	}, [competencyTableData]);
 
 	return (

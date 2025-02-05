@@ -39,6 +39,7 @@ const decodeData = (data) => {
 };
 
 //  교과목 데이터 파싱하는 함수
+// dataNum = { 0 : 학과 전체 교과목, 1: 직군 별 교과목}
 const parseCourseData = (coursesData, selectedMyTableContents, dataNum) => {
 	if (!Array.isArray(coursesData)) return [];
 
