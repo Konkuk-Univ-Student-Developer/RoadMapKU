@@ -2,12 +2,26 @@ import styled from 'styled-components';
 import { Color } from '@styles';
 
 const Container = styled.div`
+	height: 100vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 `;
 
+const HeaderContainer = styled.header`
+	width: 90%;
+	align-self: center;
+`;
+
+const Title = styled.h1`
+	font-size: 4em;
+	font-weight: 800;
+	text-align: left;
+	color: ${Color.GREEN};
+`;
+
 const ContentsContainer = styled.div`
+	height: fit-content;
 	width: 90%;
 	display: flex;
 	flex-direction: column;
@@ -15,6 +29,8 @@ const ContentsContainer = styled.div`
 	align-self: center;
 	align-items: center;
 	gap: 20px;
+	flex-grow: 1;
+	margin-bottom: 10rem;
 `;
 
 const SubContainer = styled.div`
@@ -22,23 +38,8 @@ const SubContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 2rem;
 	gap: 20px;
-`;
-
-const HeaderContainer = styled.header`
-	width: fit-content;
-	align-self: flex-start;
-	padding-top: 50px;
-	text-align: center;
-	margin-bottom: 0;
-`;
-
-const Title = styled.h1`
-	font-size: 4em;
-	font-weight: 800;
-	text-align: left;
-	padding-left: 100px;
-	color: ${Color.GREEN};
 `;
 
 const MainTitle = styled.div`
@@ -73,7 +74,7 @@ const AboutCompetencyContents = () => {
 					<Description>
 						전공역량은 전공 분야에서 필요한 지식 뿐만 아니라 기술과 태도까지 모두 포함하는 개념이에요.
 					</Description>
-					<Description></Description>
+					<div></div>
 					<Description>희망하는 진로 분야와 연관된 전공역량을 파악하고</Description>
 					<Description>
 						필요한 전공역량을 함양할 수 있는 교과목과 전공을 찾도록 돕는 것이 KUMAP의 큰 목표에요!
