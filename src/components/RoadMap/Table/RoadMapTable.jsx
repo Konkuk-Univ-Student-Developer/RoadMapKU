@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
@@ -73,8 +73,8 @@ const RoadMapTable = () => {
 	const [isDetailOpen, setIsDetailOpen] = useState(false);
 	const { fetchCoursesInSubject, fetchLogFields } = useField();
 
-	const courseTableData = useRecoilValue(courseTableDataSelector);
 	const competencyTableData = useRecoilValue(competencyListSelector);
+	const courseTableData = useRecoilValue(courseTableDataSelector);
 	const { subjectName, subjectCode } = useRecoilValue(selectedSubjectState);
 
 	const navigate = useNavigate();
@@ -82,10 +82,6 @@ const RoadMapTable = () => {
 
 	const setSelectedMyTableContentsState = useSetRecoilState(selectedMyTableContentsState);
 	const setIsShowDepartAndLog = useSetRecoilState(isShowDepartAndLogState);
-
-	const prevSubjectCode = useRef(subjectCode);
-	const [displayCourseData, setDisplayCourseData] = useState(courseTableData);
-	const [displayCompetencyData, setDisplayCompetencyData] = useState(competencyListSelector);
 
 	// URL을 통한 접속
 	useEffect(() => {
@@ -102,25 +98,6 @@ const RoadMapTable = () => {
 			setIsShowDepartAndLog(true);
 		}
 	}, []);
-
-	useEffect(() => {
-		if (prevSubjectCode.current !== subjectCode) {
-			setDisplayCompetencyData([]);
-			setDisplayCourseData([]);
-
-			const timer = setTimeout(() => {
-				setDisplayCompetencyData(competencyTableData);
-				setDisplayCourseData(courseTableData);
-			}, 10);
-
-			prevSubjectCode.current = subjectCode;
-
-			return () => clearTimeout(timer);
-		} else {
-			setDisplayCompetencyData(competencyTableData);
-			setDisplayCourseData(courseTableData);
-		}
-	}, [subjectCode, competencyTableData, courseTableData]);
 
 	// 학과 전체 로드맵 Button Click 이벤트
 	const showRoadMapHandler = () => {
@@ -143,8 +120,8 @@ const RoadMapTable = () => {
 				)}
 			</TitleWrapper>
 			<Container>
-				<CompetencyTable competencyTableData={displayCompetencyData} />
-				<CourseTable courseTableData={displayCourseData} />
+				<CompetencyTable competencyTableData={competencyTableData} />
+				<CourseTable courseTableData={courseTableData} />
 			</Container>
 		</>
 	);
