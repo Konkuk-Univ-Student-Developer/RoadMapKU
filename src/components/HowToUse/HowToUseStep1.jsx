@@ -29,6 +29,7 @@ const ContentsContainer = styled.div`
 	align-self: center;
 	align-items: center;
 	flex-grow: 1;
+	padding-bottom: 10rem;
 `;
 
 const Step = styled.h2`
@@ -36,16 +37,14 @@ const Step = styled.h2`
 	font-weight: 800;
 	margin-bottom: 1rem;
 	color: black;
-	line-height: 1.5;
 `;
 
 const StepTitle = styled.div`
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	font-weight: 500;
 	margin-top: 0px;
 	margin-bottom: 1rem;
 	color: black;
-	line-height: 1.5;
 	text-align: center;
 `;
 
@@ -55,7 +54,6 @@ const StepContent = styled.h3`
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	color: black;
-	line-height: 1.5;
 	text-align: center;
 `;
 

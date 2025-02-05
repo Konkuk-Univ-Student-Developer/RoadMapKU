@@ -23,16 +23,14 @@ const Step = styled.h2`
 	font-weight: 800;
 	margin-bottom: 1rem;
 	color: black;
-	line-height: 1.5;
 `;
 
 const StepTitle2 = styled.h3`
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	font-weight: 600;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	color: black;
-	line-height: 1.5;
 `;
 
 const StepContent = styled.h3`
@@ -46,7 +44,6 @@ const StepContent = styled.h3`
 `;
 
 const Illustration = styled.img`
-	width: 100%;
 	height: auto;
 	max-width: 60%;
 	margin-bottom: 1rem;
@@ -58,9 +55,6 @@ const FeaturesContainer = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	padding: 1rem;
-	max-width: none;
 	box-sizing: border-box;
 `;
 
