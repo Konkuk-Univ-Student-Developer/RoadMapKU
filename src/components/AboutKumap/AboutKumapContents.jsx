@@ -21,7 +21,6 @@ const Title = styled.h1`
 `;
 
 const ContentsContainer = styled.div`
-	height: fit-content;
 	width: 90%;
 	display: flex;
 	flex-direction: column;
