@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 
 const TitleContainer = styled.div`
 	width: 100%;
-	padding-top: 15%;
+	padding-top: 17rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -65,8 +65,8 @@ function Home() {
 			<PageContainer>
 				<HomeBackGroundContents />
 				<TitleContainer>
-					<img alt="Kumap Logo" src={KumapLogo} style={{ width: '25%' }} />
-					<img alt="Kumap Character" src={KUBook} style={{ width: '7%' }} />
+					<img alt="Kumap Logo" src={KumapLogo} style={{ width: '25vw' }} />
+					<img alt="Kumap Character" src={KUBook} style={{ width: '7vw' }} />
 				</TitleContainer>
 				<SubTitleContainer>
 					<div>진로를 탐색하고 수업을 추가하여</div>
@@ -74,7 +74,7 @@ function Home() {
 				</SubTitleContainer>
 				<LinkContents />
 				<RoadContainer>
-					<img alt="Road Image" src={Road} style={{ width: '100%' }} />
+					<img alt="Road Image" src={Road} style={{ width: '100vw' }} />
 				</RoadContainer>
 				<ImmergeBackgroundContents />
 			</PageContainer>

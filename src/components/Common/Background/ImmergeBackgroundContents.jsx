@@ -12,15 +12,15 @@ function ImmergeBackgroundContents() {
 		<BackgroundContainer>
 			<CircleStyle
 				color={'rgba(234, 247, 239, 0.8)'}
-				size={'50rem'}
-				top={'-21rem'}
-				left={'-18%'}
+				size={'40vw'}
+				top={'-34vh'}
+				left={'-15vw'}
 				time={'8'}
 				zIndex={2}
 			/>
-			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16rem'} top={'10rem'} left={'25%'} time={'6'} zIndex={1} />
-			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10rem'} top={'16rem'} left={'32%'} time={'5'} zIndex={1} />
-			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6rem'} top={'16rem'} left={'70%'} time={'4'} zIndex={1} />
+			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16vw'} top={'12vh'} left={'25vw'} time={'6'} zIndex={1} />
+			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10vw'} top={'24vh'} left={'32vw'} time={'5'} zIndex={1} />
+			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6vw'} top={'28vh'} left={'70vw'} time={'4'} zIndex={1} />
 		</BackgroundContainer>
 	);
 }
