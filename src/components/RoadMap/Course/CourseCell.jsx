@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedCompetencyState, selectedMyTableContentsState } from '@recoils';
-import { Color, fadeIn } from '@styles';
+import { Color } from '@styles';
 import { CourseDetail } from '@CourseDetail';
 
 const StyledCell = styled.div`
@@ -18,7 +18,6 @@ const StyledCell = styled.div`
 	transition: background-color 0.1s ease-out;
 
 	opacity: 1;
-	animation: ${fadeIn} 0.2s ease-in-out;
 
 	&:hover {
 		color: ${Color.GREEN};
