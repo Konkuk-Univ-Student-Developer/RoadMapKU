@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	display: flex;
@@ -21,26 +22,31 @@ const LabelContainer = styled.div`
 const NameLabel = styled.div`
 	font-size: 20px;
 	font-weight: 600;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const DepartLabel = styled.div`
 	margin: 5px 0;
 	font-size: 15px;
 	font-weight: 600;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const RoleLabel = styled.div`
 	font-size: 15px;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const ProfileUl = styled.ul`
 	margin-top: 30px;
 	width: 60%;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const ProfileLi = styled.li`
 	padding: 5px 0;
 	font-size: 15px;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const ProfileContents = ({

@@ -21,10 +21,12 @@ const HeaderTitle = styled.div`
 const Title = styled.div`
 	font-size: 20px;
 	font-weight: 400;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const BoldText = styled.span`
 	font-weight: bold;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const IntroductionTitleContent = () => {
