@@ -5,7 +5,7 @@ const bounceAnimation = keyframes`
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-2rem);
+    transform: translateY(-4vh);
   }
   100% {
     transform: translateY(0);

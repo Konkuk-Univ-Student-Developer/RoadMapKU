@@ -18,8 +18,8 @@ function ImmergeBackgroundContents() {
 				time={'8'}
 				zIndex={2}
 			/>
-			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16vw'} top={'12vh'} left={'25vw'} time={'6'} zIndex={1} />
-			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10vw'} top={'24vh'} left={'32vw'} time={'5'} zIndex={1} />
+			<CircleStyle color={'rgba(237, 248, 241, 0.7)'} size={'16vw'} top={'9vh'} left={'25vw'} time={'6'} zIndex={1} />
+			<CircleStyle color={'rgba(214, 239, 224, 0.6)'} size={'10vw'} top={'21vh'} left={'32vw'} time={'5'} zIndex={1} />
 			<CircleStyle color={'rgba(221, 242, 229, 0.8)'} size={'6vw'} top={'28vh'} left={'70vw'} time={'4'} zIndex={1} />
 		</BackgroundContainer>
 	);
