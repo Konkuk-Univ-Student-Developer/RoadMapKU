@@ -1,0 +1,1059 @@
+[
+	{
+		"competencyCode": "12125903",
+		"competencyName": "창의성 기반의 콘텐츠 기획 능력",
+		"competencyDescription": "창의적이고 융복합적 시각을 바탕으로 새롭고 가치 있는 콘텐츠를 감각적으로 발굴 및 기획·제작 할 수 있는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BAMA65163",
+				"name": "실감콘텐츠경험분석",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA65291",
+				"name": "UNDERSTANDING OF CULTURE TECHNOLOGY",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA49073",
+				"name": "한국문화콘텐츠분석",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA50068",
+				"name": "소셜미디어콘텐츠",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53400",
+				"name": "상징과이미지",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53434",
+				"name": "게임문화산업론",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 2
+			},
+			{
+				"haksuId": "BAMA59107",
+				"name": "게임인터랙티브콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59108",
+				"name": "테마파크콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59143",
+				"name": "박물관콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59148",
+				"name": "출판퍼블리싱산업론",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 2
+			},
+			{
+				"haksuId": "BAMA59311",
+				"name": "디지털인문학입문",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 2
+			},
+			{
+				"haksuId": "BAMA55650",
+				"name": "영상콘텐츠기획제작실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA55654",
+				"name": "문화테크놀로지연구",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA61431",
+				"name": "산학협력창의워크샵",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA61432",
+				"name": "융복합콘텐츠기획실습",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA65155",
+				"name": "실감콘텐츠기획론",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA65162",
+				"name": "인터랙티브스토리텔링",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59096",
+				"name": "예술콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59098",
+				"name": "문화콘텐츠종합설계(캡스톤디자인)",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59100",
+				"name": "문화마케팅실습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59102",
+				"name": "문화콘텐츠취창업실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67158",
+				"name": "연기표현실습",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67160",
+				"name": "웹툰과콘텐츠IP",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53402",
+				"name": "스토리텔링실습",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53389",
+				"name": "예술콘텐츠연구",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67165",
+				"name": "유럽영화비평세미나",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59135",
+				"name": "영상콘텐츠기초",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59131",
+				"name": "인터랙티브콘텐츠연구",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59091",
+				"name": "발상의전환",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA65292",
+				"name": "A SHIFT IN IDEAS",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59090",
+				"name": "문화콘텐츠학입문",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67162",
+				"name": "디자인과테크놀로지",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67164",
+				"name": "엔터테인먼트기획실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67171",
+				"name": "문화콘텐츠답사3",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			},
+			{
+				"haksuId": "BAMA67428",
+				"name": "문화콘텐츠창작입문",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67169",
+				"name": "문화콘텐츠답사1",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			},
+			{
+				"haksuId": "BAMA67170",
+				"name": "문화콘텐츠답사2",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			}
+		]
+	},
+	{
+		"competencyCode": "12125904",
+		"competencyName": "인문학 기반의 콘텐츠 분석  능력",
+		"competencyDescription": "콘텐츠 가치 분석, 콘텐츠 환경 분석 등을 통해 콘텐츠에 인문학적 가치를 탐색하거나 부여할 수 있는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BAMA49073",
+				"name": "한국문화콘텐츠분석",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA51235",
+				"name": "도시문화콘텐츠연구",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53400",
+				"name": "상징과이미지",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53434",
+				"name": "게임문화산업론",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 2
+			},
+			{
+				"haksuId": "BAMA55637",
+				"name": "영상콘텐츠분석",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA55642",
+				"name": "스토리텔링연구",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA55650",
+				"name": "영상콘텐츠기획제작실습",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59095",
+				"name": "도시문화콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA61426",
+				"name": "문화원형과고전",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA62263",
+				"name": "글로컬라이제이션과문화공감",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59096",
+				"name": "예술콘텐츠기획실습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67157",
+				"name": "문화이론연구",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53402",
+				"name": "스토리텔링실습",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA53389",
+				"name": "예술콘텐츠연구",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67165",
+				"name": "유럽영화비평세미나",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59135",
+				"name": "영상콘텐츠기초",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59131",
+				"name": "인터랙티브콘텐츠연구",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA59090",
+				"name": "문화콘텐츠학입문",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67162",
+				"name": "디자인과테크놀로지",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BAMA67171",
+				"name": "문화콘텐츠답사3",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			},
+			{
+				"haksuId": "BAMA67169",
+				"name": "문화콘텐츠답사1",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			},
+			{
+				"haksuId": "BAMA67170",
+				"name": "문화콘텐츠답사2",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "문화콘텐츠학과",
+				"credit": 1
+			}
+		]
+	},
+	{
+		"competencyCode": "12742801",
+		"competencyName": "대규모 SW의 협동 개발 능력",
+		"competencyDescription": "대규모의 SW를 다수의 개발자가 참여하여 구현할 시 소통 및 호환성을 유지해가며 개발하는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BBAB12190",
+				"name": "운영체제",
+				"openingYear": 3,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB51979",
+				"name": "모바일프로그래밍",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB11792",
+				"name": "객체지향프로그래밍",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12001",
+				"name": "데이터베이스",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12012",
+				"name": "분산시스템및컴퓨팅",
+				"openingYear": 4,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12016",
+				"name": "소프트웨어공학",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB62251",
+				"name": "객체지향개발방법론",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12017",
+				"name": "소프트웨어아키텍처",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12022",
+				"name": "시스템프로그래밍",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12023",
+				"name": "알고리즘",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12042",
+				"name": "자료구조",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12050",
+				"name": "컴파일러",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB54724",
+				"name": "웹프로그래밍",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB54782",
+				"name": "웹기술및응용",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB54855",
+				"name": "차세대분산시스템",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB55840",
+				"name": "졸업프로젝트1(종합설계)",
+				"openingYear": 4,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 1
+			},
+			{
+				"haksuId": "BBAB55841",
+				"name": "졸업프로젝트2(종합설계)",
+				"openingYear": 4,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 1
+			},
+			{
+				"haksuId": "BBAB59068",
+				"name": "클라우드웹서비스",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB59069",
+				"name": "클라우드IOT서비스",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67057",
+				"name": "전공기초프로젝트(종합설계)",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67059",
+				"name": "전공심화프로젝트(종합설계)",
+				"openingYear": 3,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			}
+		]
+	},
+	{
+		"competencyCode": "12742802",
+		"competencyName": "사회문제를 파악하고 해결하는 SW 개발능력",
+		"competencyDescription": "사회에서 발생하는 문제를 파악하고 SW적으로 문제를 세워 사회문제 해결에 기여하는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BBAB63052",
+				"name": "멀티미디어공학",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB65264",
+				"name": "SIGNAL PROCESSING",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB51983",
+				"name": "랜덤프로세스개론",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB05021",
+				"name": "컴퓨터공학개론",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB55840",
+				"name": "졸업프로젝트1(종합설계)",
+				"openingYear": 4,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 1
+			},
+			{
+				"haksuId": "BBAB55841",
+				"name": "졸업프로젝트2(종합설계)",
+				"openingYear": 4,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 1
+			},
+			{
+				"haksuId": "BBAB62242",
+				"name": "컴퓨터공학세미나",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 1
+			},
+			{
+				"haksuId": "BBAB67021",
+				"name": "컴퓨터네트워크1",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67057",
+				"name": "전공기초프로젝트(종합설계)",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67059",
+				"name": "전공심화프로젝트(종합설계)",
+				"openingYear": 3,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67036",
+				"name": "컴퓨터네트워크2",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			}
+		]
+	},
+	{
+		"competencyCode": "12742803",
+		"competencyName": "알고리즘적 문제 해결 능력",
+		"competencyDescription": "까다로운 알고리즘적 문제를 해결하여 계산속도/저장공간 등 향상을 이루어 SW를 진일보 시키는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BBAB51983",
+				"name": "랜덤프로세스개론",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB53292",
+				"name": "컴퓨테이션이론",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB11792",
+				"name": "객체지향프로그래밍",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB62735",
+				"name": "인공지능",
+				"openingYear": 3,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12023",
+				"name": "알고리즘",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB12042",
+				"name": "자료구조",
+				"openingYear": 2,
+				"openingSemester": "1,2학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB54725",
+				"name": "알고리즘연습",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			},
+			{
+				"haksuId": "BBAB67656",
+				"name": "수치방법론",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "컴퓨터공학부",
+				"credit": 3
+			}
+		]
+	},
+	{
+		"competencyCode": "10503103",
+		"competencyName": "멀티미디어 기반 콘텐츠기획 및 개발 역량",
+		"competencyDescription": "교육에 활용되는 멀티미디어 기반 학습콘텐츠를 이해하고 기획 및 개발할 수 있는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BHGA10214",
+				"name": "교육과컴퓨터어플리케이션",
+				"openingYear": 1,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA11881",
+				"name": "인적자원개발론",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA18033",
+				"name": "교육공학",
+				"openingYear": 1,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA32193",
+				"name": "교수-학습이론",
+				"openingYear": 1,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA48029",
+				"name": "교육공학논리및논술",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA48032",
+				"name": "교수설계",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA48035",
+				"name": "원격교육론",
+				"openingYear": 1,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA61357",
+				"name": "뉴미디어와디지털교과서활용",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA61360",
+				"name": "디지털그래픽제작및교육활용",
+				"openingYear": 2,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA65746",
+				"name": "미래교육과교육공학과수업의실제",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67439",
+				"name": "기업교육의요구분석및설계",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67441",
+				"name": "글로벌교육프로그램설계",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67440",
+				"name": "기업교육의품질관리및성과평가",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67443",
+				"name": "첨단기술기반학습콘텐츠개발",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67444",
+				"name": "디지털매체제작및현장적용",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67438",
+				"name": "AI기반교육시스템설계",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67446",
+				"name": "RESEARCH METHODS AND TRENDS IN EDUCATIONAL TECHNOLOGY",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			}
+		]
+	},
+	{
+		"competencyCode": "10503105",
+		"competencyName": "AI와 최신기술 활용 역량",
+		"competencyDescription": "인공지능, 빅데이터, AR, VR 등 최신 디지철 기술을 이해하고 교육에 효과적으로 적용할 수 있는 능력",
+		"courseGetResponseList": [
+			{
+				"haksuId": "BHGA32239",
+				"name": "교육연구방법",
+				"openingYear": 1,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA61357",
+				"name": "뉴미디어와디지털교과서활용",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA65746",
+				"name": "미래교육과교육공학과수업의실제",
+				"openingYear": 3,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67441",
+				"name": "글로벌교육프로그램설계",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67442",
+				"name": "교육빅데이터분석",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67443",
+				"name": "첨단기술기반학습콘텐츠개발",
+				"openingYear": 3,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67444",
+				"name": "디지털매체제작및현장적용",
+				"openingYear": 2,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67438",
+				"name": "AI기반교육시스템설계",
+				"openingYear": 4,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67445",
+				"name": "FUTURE SOCIETY AND EDUCATION",
+				"openingYear": 1,
+				"openingSemester": "1학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			},
+			{
+				"haksuId": "BHGA67446",
+				"name": "RESEARCH METHODS AND TRENDS IN EDUCATIONAL TECHNOLOGY",
+				"openingYear": 4,
+				"openingSemester": "2학기",
+				"openingSubject": "교육공학과",
+				"credit": 3
+			}
+		]
+	}
+]

@@ -1,10 +1,73 @@
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { MainContainer } from '@Common';
-import { Main } from '@RoadMapContents';
+import { FieldSearchBar } from '@FieldSearchBar';
+import { RoadMapContents } from '@RoadMap';
+import { TutorialModal } from '@Modal';
+
+const Container = styled.div`
+	position: relative;
+	height: 100%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
+
+const Content = styled.div`
+	padding-top: 30px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+`;
 
 function RoadMap() {
+	const [showFieldSearchBar, setShowFieldSearchBar] = useState(true);
+
+	const [showModal, setShowModal] = useState(false);
+
+	useEffect(() => {
+		const dismissedUntil = localStorage.getItem('dismissedUntil');
+		const today = new Date();
+
+		if (!dismissedUntil) {
+			setShowModal(true);
+			return;
+		}
+
+		const storedDate = new Date(dismissedUntil);
+		if (storedDate < today) {
+			setShowModal(true);
+		} else {
+			setShowModal(false);
+		}
+	}, []);
+
+	// 팝업 닫기
+	const handleCloseModal = () => {
+		setShowModal(false);
+	};
+
+	// 일주일 동안 보지 않기
+	const handleDismissForAWeek = () => {
+		const nextWeek = new Date();
+		nextWeek.setDate(nextWeek.getDate() + 7); // 오늘 날짜 + 7일
+		localStorage.setItem('dismissedUntil', nextWeek.toISOString()); // 로컬 스토리지에 저장
+		setShowModal(false);
+	};
+
+	const toggleFieldSearchBar = () => {
+		setShowFieldSearchBar((prevShowFieldSearchBar) => !prevShowFieldSearchBar);
+	};
 	return (
 		<MainContainer>
-			<Main />
+			<Container>
+				{showModal && <TutorialModal onClose={handleCloseModal} onDismissForAWeek={handleDismissForAWeek} />}
+				<FieldSearchBar show={showFieldSearchBar} toggleFieldSearchBar={toggleFieldSearchBar} />
+				<Content>
+					<RoadMapContents />
+				</Content>
+			</Container>
 		</MainContainer>
 	);
 }

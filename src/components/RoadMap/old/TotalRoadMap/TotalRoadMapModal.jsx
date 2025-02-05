@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { totalRoadMapState } from '@recoils';
-import { Color } from '@styles';
-import { SemesterTable, parseCourseData } from '@Common/Utils';
 import { Modal } from '@Modal';
-import { TotalRoadMapCell } from '@TotalRoadMap';
+import { Color } from '@styles';
+import { TotalRoadMapCell } from '@RoadMap/TotalRoadMap';
+import { SemesterTable, parseCourseData } from '@Common/Utils';
 
 const ScrollContainer = styled.div`
 	width: 100%;
@@ -61,11 +61,10 @@ const CourseColumn = styled.div`
 `;
 
 function TotalRoadMapModal({ onClose, subjectName }) {
+	const totalRoadMapData = useRecoilValue(totalRoadMapState);
 	const [totalRoadMap, setTotalRoadMap] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-
-	const totalRoadMapData = useRecoilValue(totalRoadMapState);
 
 	// totalRoadMap을 가공하여 totalRoadMapData에 저장
 	useEffect(() => {
