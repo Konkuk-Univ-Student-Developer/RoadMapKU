@@ -74,8 +74,8 @@ const HeaderActions = styled.div`
 `;
 
 const KumapLogoImage = styled.img.attrs({ src: KumapLogo, alt: '쿠맵 로고' })`
-	width: 140px;
-	height: 50px;
+	width: 115px;
+	height: 40px;
 	margin-right: 20px;
 `;
 
