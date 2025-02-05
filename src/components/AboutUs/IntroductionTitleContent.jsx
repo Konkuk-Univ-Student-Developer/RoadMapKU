@@ -3,7 +3,6 @@ import { Color } from '@styles';
 
 const TitleContainer = styled.div`
 	flex: 1;
-	height: fit-content;
 	width: 80%;
 	display: flex;
 	flex-direction: column;

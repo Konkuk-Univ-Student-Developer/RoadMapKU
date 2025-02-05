@@ -4,7 +4,7 @@ import { Color } from '@styles';
 const Container = styled.div`
 	display: flex;
 	width: 300px;
-	height: 70%;
+	height: fit-content;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
@@ -56,8 +56,8 @@ const ProfileContents = ({
 	srcUrl,
 	depart,
 	imageSize = {
-		width: '150px',
-		height: '150px'
+		width: '120px',
+		height: '120px'
 	}
 }) => {
 	return (
