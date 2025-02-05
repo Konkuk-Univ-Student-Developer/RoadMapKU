@@ -4,20 +4,10 @@ import { Video1, Video2, KUBook } from '@img';
 import { Color } from '@styles/Color';
 
 const Container = styled.div`
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	z-index: 1;
-`;
-
-const SubContainer = styled.div`
-	width: 100%;
 	height: 100vh;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 `;
 
 const HeaderContainer = styled.header`
@@ -31,14 +21,14 @@ const Title = styled.h1`
 	text-align: left;
 	color: ${Color.GREEN};
 `;
-const Section = styled.div`
+const ContentsContainer = styled.div`
 	width: 90%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-self: center;
 	align-items: center;
-	text-align: center;
 	flex-grow: 1;
-	background-color: aqua;
 `;
 
 const Step = styled.h2`
@@ -56,15 +46,17 @@ const StepTitle = styled.div`
 	margin-bottom: 1rem;
 	color: black;
 	line-height: 1.5;
+	text-align: center;
 `;
 
-const StepTitle3 = styled.h3`
+const StepContent = styled.h3`
 	font-size: 1.2rem;
 	font-weight: 500;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	color: black;
 	line-height: 1.5;
+	text-align: center;
 `;
 
 const IllustrationVideo = styled.video.attrs({
@@ -90,7 +82,6 @@ const FeaturesContainer = styled.section`
 `;
 
 const FeatureItems = styled.div`
-	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -105,28 +96,26 @@ const KuImage = styled.img`
 function HowToUseContents() {
 	return (
 		<Container>
-			<SubContainer>
-				<HeaderContainer>
-					<Title>KUMAP 사용법</Title>
-				</HeaderContainer>
-				<Section>
-					<Step>Step 1.</Step>
-					<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
-					<FeaturesContainer>
-						<FeatureItems>
-							<IllustrationVideo src={Video1} alt="소개 영상 1" />
-						</FeatureItems>
-						<FeatureItems>
-							<IllustrationVideo src={Video2} alt="소개 영상 2" />
-						</FeatureItems>
-					</FeaturesContainer>
+			<HeaderContainer>
+				<Title>KUMAP 사용법</Title>
+			</HeaderContainer>
+			<ContentsContainer>
+				<Step>Step 1.</Step>
+				<StepTitle>관심 있는 직군을 선택해보세요!</StepTitle>
+				<FeaturesContainer>
+					<FeatureItems>
+						<IllustrationVideo src={Video1} alt="소개 영상 1" />
+					</FeatureItems>
+					<FeatureItems>
+						<IllustrationVideo src={Video2} alt="소개 영상 2" />
+					</FeatureItems>
+				</FeaturesContainer>
 
-					<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0rem' }}>
-						<StepTitle3>💡 중요 Tip! 직군은 언제든지 바꿀 수 있답니다.</StepTitle3>
-						<KuImage src={KUBook} alt="책을 든 쿠" />
-					</div>
-				</Section>
-			</SubContainer>
+				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0rem' }}>
+					<StepContent>💡 중요 Tip! 직군은 언제든지 바꿀 수 있답니다.</StepContent>
+					<KuImage src={KUBook} alt="책을 든 쿠" />
+				</div>
+			</ContentsContainer>
 		</Container>
 	);
 }

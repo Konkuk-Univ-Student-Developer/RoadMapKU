@@ -3,30 +3,20 @@ import styled from 'styled-components';
 import { Video4, KUBook } from '@img';
 
 const Container = styled.div`
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	z-index: 1;
-`;
-
-const SubContainer = styled.div`
-	width: 100%;
 	height: 100vh;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 `;
 
-const Section = styled.div`
+const ContentsContainer = styled.div`
 	width: 90%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-self: center;
 	align-items: center;
-	text-align: center;
 	flex-grow: 1;
-	background-color: aqua;
 `;
 
 const Step = styled.h2`
@@ -44,15 +34,17 @@ const StepTitle = styled.div`
 	margin-bottom: 1rem;
 	color: black;
 	line-height: 1.5;
+	text-align: center;
 `;
 
-const StepTitle3 = styled.h3`
+const StepContent = styled.h3`
 	font-size: 1.2rem;
 	font-weight: 500;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	color: black;
 	line-height: 1.5;
+	text-align: center;
 `;
 
 const IllustrationVideo = styled.video.attrs({
@@ -89,25 +81,23 @@ const StepContainer = styled.div`
 function HowToUseContents() {
 	return (
 		<Container>
-			<SubContainer>
-				<Section>
-					<Step>Step 3.</Step>
-					<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
+			<ContentsContainer>
+				<Step>Step 3.</Step>
+				<StepTitle>관심 있는 교과목을 선택하고 내 로드맵에 추가해보세요!</StepTitle>
 
-					<FeatureItem>
-						<IllustrationVideo src={Video4} alt="소개 영상 4" />
-					</FeatureItem>
+				<FeatureItem>
+					<IllustrationVideo src={Video4} alt="소개 영상 4" />
+				</FeatureItem>
 
-					<StepContainer>
-						<StepTitle3>
-							각 수업 옆 버튼을 누르면 수업 상세정보를 볼 수 있고,
-							<br />
-							해당 교과목을 내 로드맵에 추가할 수 있습니다.
-						</StepTitle3>
-						<KuImage src={KUBook} alt="책 든 쿠" style={{ width: '100px', margin: '5px' }} />
-					</StepContainer>
-				</Section>
-			</SubContainer>
+				<StepContainer>
+					<StepContent>
+						각 수업 옆 버튼을 누르면 수업 상세정보를 볼 수 있고,
+						<br />
+						해당 교과목을 내 로드맵에 추가할 수 있습니다.
+					</StepContent>
+					<KuImage src={KUBook} alt="책 든 쿠" style={{ width: '100px', margin: '5px' }} />
+				</StepContainer>
+			</ContentsContainer>
 		</Container>
 	);
 }
