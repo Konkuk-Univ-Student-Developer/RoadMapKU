@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const HeaderContainer = styled.header`
-	width: 90%;
+	width: 85%;
 	align-self: center;
 `;
 
