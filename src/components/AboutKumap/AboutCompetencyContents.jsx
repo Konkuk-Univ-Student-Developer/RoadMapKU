@@ -56,6 +56,7 @@ const Description = styled.div`
 	text-align: center;
 	font-size: 25px;
 	font-weight: 500;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const AboutCompetencyContents = () => {

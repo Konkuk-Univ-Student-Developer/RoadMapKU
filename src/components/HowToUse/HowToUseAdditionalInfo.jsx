@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Color } from '@styles';
 import { Pic1, Pic2 } from '@img';
 
 const Container = styled.div`
@@ -22,7 +23,7 @@ const Step = styled.h2`
 	font-size: 2rem;
 	font-weight: 800;
 	margin-bottom: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const StepTitle2 = styled.h3`
@@ -30,7 +31,7 @@ const StepTitle2 = styled.h3`
 	font-weight: 600;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const StepContent = styled.h3`
@@ -38,7 +39,7 @@ const StepContent = styled.h3`
 	font-weight: 500;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 	line-height: 1.5;
 	text-align: center;
 `;

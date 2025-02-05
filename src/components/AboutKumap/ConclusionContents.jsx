@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '@styles';
 
 const Container = styled.div`
 	width: 100%;
@@ -14,6 +15,7 @@ const Description = styled.div`
 	text-align: center;
 	font-size: 25px;
 	font-weight: 500;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const ConclusionContents = () => {

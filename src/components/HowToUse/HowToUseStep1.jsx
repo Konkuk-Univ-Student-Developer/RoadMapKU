@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Color } from '@styles';
 import { Video1, Video2, KUBook } from '@img';
-import { Color } from '@styles/Color';
 
 const Container = styled.div`
 	height: 100vh;
@@ -36,7 +36,7 @@ const Step = styled.h2`
 	font-size: 2rem;
 	font-weight: 800;
 	margin-bottom: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const StepTitle = styled.div`
@@ -44,7 +44,7 @@ const StepTitle = styled.div`
 	font-weight: 500;
 	margin-top: 0px;
 	margin-bottom: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 	text-align: center;
 `;
 
@@ -53,7 +53,7 @@ const StepContent = styled.h3`
 	font-weight: 500;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
-	color: black;
+	color: ${Color.TEXT_BLACK};
 	text-align: center;
 `;
 
