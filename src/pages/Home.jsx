@@ -18,8 +18,9 @@ const PageContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
+	position: absolute;
+	top: 22vh;
 	width: 100%;
-	padding-top: 15%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,6 +32,8 @@ const TitleContainer = styled.div`
 `;
 
 const SubTitleContainer = styled.div`
+	position: absolute;
+	top: 44vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -47,8 +50,18 @@ const SubTitleContainer = styled.div`
 	animation-delay: 0.6s;
 `;
 
+const LinkContentsContainer = styled.div`
+	position: absolute;
+	top: 52vh;
+	width: 100%;
+	display: flex;
+	z-index: 2;
+`;
+
 const RoadContainer = styled.div`
-	transform: translateX(-15%) translateY(-85%);
+	position: absolute;
+	top: 46vh;
+	left: -18vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -65,16 +78,18 @@ function Home() {
 			<PageContainer>
 				<HomeBackGroundContents />
 				<TitleContainer>
-					<img alt="Kumap Logo" src={KumapLogo} style={{ width: '25%' }} />
-					<img alt="Kumap Character" src={KUBook} style={{ width: '7%' }} />
+					<img alt="Kumap Logo" src={KumapLogo} style={{ width: '25vw' }} />
+					<img alt="Kumap Character" src={KUBook} style={{ width: '7vw' }} />
 				</TitleContainer>
 				<SubTitleContainer>
 					<div>진로를 탐색하고 수업을 추가하여</div>
 					<div>나만의 로드맵을 만들어 보세요!</div>
 				</SubTitleContainer>
-				<LinkContents />
+				<LinkContentsContainer>
+					<LinkContents />
+				</LinkContentsContainer>
 				<RoadContainer>
-					<img alt="Road Image" src={Road} style={{ width: '100%' }} />
+					<img alt="Road Image" src={Road} style={{ width: '100vw' }} />
 				</RoadContainer>
 				<ImmergeBackgroundContents />
 			</PageContainer>

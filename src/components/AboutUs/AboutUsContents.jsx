@@ -36,6 +36,7 @@ const Description = styled.div`
 	text-align: center;
 	font-size: 20px;
 	font-weight: 500;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const AboutUsContents = () => {

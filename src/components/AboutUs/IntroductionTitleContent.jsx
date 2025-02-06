@@ -3,7 +3,6 @@ import { Color } from '@styles';
 
 const TitleContainer = styled.div`
 	flex: 1;
-	height: fit-content;
 	width: 80%;
 	display: flex;
 	flex-direction: column;
@@ -21,10 +20,12 @@ const HeaderTitle = styled.div`
 const Title = styled.div`
 	font-size: 20px;
 	font-weight: 400;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const BoldText = styled.span`
 	font-weight: bold;
+	color: ${Color.TEXT_BLACK};
 `;
 
 const IntroductionTitleContent = () => {
