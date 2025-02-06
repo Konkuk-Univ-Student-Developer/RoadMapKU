@@ -71,7 +71,7 @@ const AboutKumapContents = () => {
 
 				<SubContainer>
 					<Description>KUMAP을 통해 꿈을 이루기 위한 수업을 찾을 수 있어요!</Description>
-					<div></div>
+					<div />
 					<Description>희망 진로로 나아가기 위해 필요한 전공역량을 알아보고,</Description>
 					<Description>필요한 전공역량을 배울 수 있는 수업을 찾아보아요.</Description>
 				</SubContainer>
