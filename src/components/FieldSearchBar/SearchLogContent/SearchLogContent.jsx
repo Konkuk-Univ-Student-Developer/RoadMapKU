@@ -53,7 +53,9 @@ const LogItem = styled.div`
 	}
 `;
 
-const LogText = styled.span`
+const LogText = styled.span.attrs(({ $searchField, $selectedFieldCode }) => ({
+	id: `field_name_${$searchField} - field_code_${$selectedFieldCode}`
+}))`
 	font-size: 13px;
 	color: ${Color.BLACK};
 `;
@@ -117,7 +119,9 @@ const SearchLogContent = () => {
 
 					return (
 						<LogItem key={index} onClick={() => fetchLogFields(field)}>
-							<LogText>{restructuredFieldName}</LogText>
+							<LogText $searchField={restructuredFieldName} $selectedFieldCode={field.detailFieldCode}>
+								{restructuredFieldName}
+							</LogText>
 							<DeleteButton
 								onClick={(e) => {
 									e.stopPropagation();
