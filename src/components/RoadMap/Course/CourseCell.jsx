@@ -68,7 +68,9 @@ const DropdownContainer = styled.div`
 	padding: 10px 0;
 `;
 
-const DropdownItem = styled.div`
+const DropdownItem = styled.div.attrs(({ $isAdd, $courseName, $courseCode }) => ({
+	id: $isAdd ? `add_${$courseName} course_code_${$courseCode}` : `remove_${$courseName} course_code_${$courseCode}`
+}))`
 	font-family: 'Pretendard-regular';
 	font-size: 12px;
 	padding: 5px;
@@ -158,7 +160,12 @@ const CourseCell = ({ cellData, rowIndex, onClickSendRef }) => {
 				{isDropdownOpen && (
 					<DropdownContainer>
 						<DropdownItem onClick={onClickDetailButton}>상세 정보</DropdownItem>
-						<DropdownItem onClick={(event) => onClickRoadmapButton(event, cellData.isMyTable)}>
+						<DropdownItem
+							onClick={(event) => onClickRoadmapButton(event, cellData.isMyTable)}
+							$isAdd={!cellData.isMyTable}
+							$courseName={cellData.courseName}
+							$courseCode={cellData.haksuId}
+						>
 							{cellData.isMyTable ? '내 로드맵에서 제거' : '내 로드맵에 추가'}
 						</DropdownItem>
 					</DropdownContainer>

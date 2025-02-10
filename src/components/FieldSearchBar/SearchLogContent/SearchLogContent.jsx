@@ -53,7 +53,9 @@ const LogItem = styled.div`
 	}
 `;
 
-const LogText = styled.span`
+const LogText = styled.span.attrs(({ $searchField, $selectedFieldCode }) => ({
+	id: `field_name_${$searchField} - field_code_${$selectedFieldCode}`
+}))`
 	font-size: 13px;
 	color: ${Color.BLACK};
 `;
@@ -87,7 +89,7 @@ const DeleteAllButton = styled.div`
 	}
 `;
 
-const SearchLog = () => {
+const SearchLogContent = () => {
 	const selectedFieldLogList = useRecoilValue(selectedFieldLogState);
 	const setSelectedFieldLogList = useSetRecoilState(selectedFieldLogState);
 	const { fetchLogFields } = useField();
@@ -117,7 +119,9 @@ const SearchLog = () => {
 
 					return (
 						<LogItem key={index} onClick={() => fetchLogFields(field)}>
-							<LogText>{restructuredFieldName}</LogText>
+							<LogText $searchField={restructuredFieldName} $selectedFieldCode={field.detailFieldCode}>
+								{restructuredFieldName}
+							</LogText>
 							<DeleteButton
 								onClick={(e) => {
 									e.stopPropagation();
@@ -134,4 +138,4 @@ const SearchLog = () => {
 	);
 };
 
-export default SearchLog;
+export default SearchLogContent;

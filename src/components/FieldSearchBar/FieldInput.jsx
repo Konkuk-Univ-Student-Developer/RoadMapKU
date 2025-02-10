@@ -58,8 +58,10 @@ const ListContainer = styled.div`
 	gap: 8px;
 `;
 
-const FieldItem = styled.div.attrs(({ selectedField, isDetailField }) => ({
-	id: isDetailField ? `field_name_${selectedField.detailField} - field_code_${selectedField.detailFieldCode}` : ''
+const FieldItem = styled.div.attrs(({ $selectedField, $isDetailField }) => ({
+	id: $isDetailField
+		? `field_name_${$selectedField.middleField} > ${$selectedField.smallField} > ${$selectedField.detailField} - field_code_${$selectedField.detailFieldCode}`
+		: ''
 }))`
 	display: flex;
 	align-items: center;
@@ -247,8 +249,8 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 						{detailFields.map((field, index) => (
 							<FieldItem
 								key={index}
-								selectedField={field}
-								isDetailField={field.detailField}
+								$selectedField={field}
+								$isDetailField={field.detailField}
 								onClick={() => handleDetailFieldClick(field)}
 								$isSelected={selectedField.detailField?.detailField === field.detailField}
 								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
