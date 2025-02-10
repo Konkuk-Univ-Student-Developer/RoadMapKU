@@ -75,8 +75,8 @@ const SuggestionsContainer = styled.div`
 	z-index: 1000;
 `;
 
-const SuggestionItem = styled.div.attrs(({ $searchField }) => ({
-	id: `field_name_${$searchField}`
+const SuggestionItem = styled.div.attrs(({ $searchField, $selectedFieldCode }) => ({
+	id: `field_name_${$searchField} - field_code_${$selectedFieldCode}`
 }))`
 	padding: 10px;
 	cursor: pointer;
@@ -192,7 +192,12 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 						const structuredField = `${middleFieldName} > ${smallFieldName} > ${detailFieldName}`;
 
 						return (
-							<SuggestionItem $searchField={structuredField} key={index} onClick={() => onSuggestionItemClick(field)}>
+							<SuggestionItem
+								$searchField={structuredField}
+								$selectedFieldCode={field.detailFieldCode}
+								key={index}
+								onClick={() => onSuggestionItemClick(field)}
+							>
 								{highlightText(structuredField, userInput)}
 							</SuggestionItem>
 						);
