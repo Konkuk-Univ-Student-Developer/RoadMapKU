@@ -59,7 +59,9 @@ const ListContainer = styled.div`
 `;
 
 const FieldItem = styled.div.attrs(({ selectedField, isDetailField }) => ({
-	id: isDetailField ? `field_name_${selectedField.detailField} - field_code_${selectedField.detailFieldCode}` : ''
+	id: isDetailField
+		? `field_name_${selectedField.middleField} > ${selectedField.smallField} > ${selectedField.detailField} - field_code_${selectedField.detailFieldCode}`
+		: ''
 }))`
 	display: flex;
 	align-items: center;
