@@ -87,7 +87,7 @@ const DeleteAllButton = styled.div`
 	}
 `;
 
-const SearchLog = () => {
+const SearchLogContent = () => {
 	const selectedFieldLogList = useRecoilValue(selectedFieldLogState);
 	const setSelectedFieldLogList = useSetRecoilState(selectedFieldLogState);
 	const { fetchLogFields } = useField();
@@ -134,4 +134,4 @@ const SearchLog = () => {
 	);
 };
 
-export default SearchLog;
+export default SearchLogContent;

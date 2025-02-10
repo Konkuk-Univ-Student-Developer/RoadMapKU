@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { SearchLog, DepartmentList, SearchBar, FieldInput } from '@FieldSearchBar';
+import { DepartmentList, SearchBar, FieldInput, SearchLogContent } from '@FieldSearchBar';
 import { Color } from '@styles';
 import { useRecoilState } from 'recoil';
 import { isShowDepartAndLogState } from '@recoils';
@@ -32,7 +32,7 @@ const FieldSearchBar = () => {
 					{isShowDepartAndLog && (
 						<>
 							<DepartmentList />
-							<SearchLog />
+							<SearchLogContent />
 						</>
 					)}
 				</>
