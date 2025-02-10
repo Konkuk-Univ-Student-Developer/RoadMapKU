@@ -192,7 +192,7 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 						const structuredField = `${middleFieldName} > ${smallFieldName} > ${detailFieldName}`;
 
 						return (
-							<SuggestionItem $searchField={field.detailField} key={index} onClick={() => onSuggestionItemClick(field)}>
+							<SuggestionItem $searchField={structuredField} key={index} onClick={() => onSuggestionItemClick(field)}>
 								{highlightText(structuredField, userInput)}
 							</SuggestionItem>
 						);
