@@ -1,17 +1,17 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '@hooks/useField';
-import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	middleFieldState,
 	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	selectedSubjectState,
-	subjectsInFieldState
+	selectedSubjectState
 } from '@recoils';
 import { Color, fadeIn } from '@styles';
+import useAtomReducer from '@recoils/useAtomReducer';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -104,10 +104,11 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
-	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
+	const selectedField = useRecoilValue(selectedFieldState);
 	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
-	const setSubjectsInField = useSetRecoilState(subjectsInFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
+
+	const { dispatch } = useAtomReducer();
 
 	const fieldRefs = {
 		middle: useRef({}),
@@ -127,22 +128,17 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		}
 	}, [selectedField]);
 
-	const handleMiddleFieldClick = async (field) => {
-		await fetchSmallField(field);
-		setSelectedField({ middleField: field });
-		setSubjectsInField([]);
+	const handleMiddleFieldClick = (field) => {
+		fetchSmallField(field);
+		dispatch({ type: 'clickMiddle', field });
 	};
 
-	const handleSmallFieldClick = async (field) => {
-		await fetchDetailField(field);
-		setSelectedField((prevState) => ({
-			...prevState,
-			smallField: field
-		}));
-		setSubjectsInField([]);
+	const handleSmallFieldClick = (field) => {
+		fetchDetailField(field);
+		dispatch({ type: 'clickSmall', field });
 	};
 
-	const handleDetailFieldClick = async (field) => {
+	const handleDetailFieldClick = (field) => {
 		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) return;
 
 		const updatedFieldCodeList = {
@@ -150,7 +146,8 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 			detailField: field
 		};
 
-		setSelectedField(updatedFieldCodeList);
+		dispatch({ type: 'clickDetail', field });
+
 		setSelectedFieldLog((prevState) => {
 			const isDuplicate = prevState.some(
 				(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
@@ -166,8 +163,8 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		});
 
 		resetSelectedSubjectState();
-		await fetchSubjectsInField(field.detailFieldCode);
-		await fetchCoursesInFields(field.detailFieldCode);
+		fetchSubjectsInField(field.detailFieldCode);
+		fetchCoursesInFields(field.detailFieldCode);
 
 		showHandler(true);
 	};
