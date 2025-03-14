@@ -60,14 +60,7 @@ const useField = () => {
 	};
 
 	const fetchSubjectsInField = (detailFieldCode) => {
-		serverApi
-			.get(`/api/v1/fields/${detailFieldCode}/subjects`)
-			.then((res) => {
-				setSubjectsInFieldState(res.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+		return serverApi.get(`/api/v1/fields/${detailFieldCode}/subjects`);
 	};
 
 	const fetchCoursesInFieldsAndSubjects = (fieldCode, subjectCode) => {
@@ -82,14 +75,7 @@ const useField = () => {
 	};
 
 	const fetchCoursesInFields = (fieldCode) => {
-		serverApi
-			.get(`/api/v1/courses/${fieldCode}/field`)
-			.then((res) => {
-				setCourseByCompetencyInSubjectState(res.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+		return serverApi.get(`/api/v1/courses/${fieldCode}/field`);
 	};
 
 	const fetchCoursesInSubject = (subjectCode) => {
@@ -133,29 +119,28 @@ const useField = () => {
 			});
 	};
 
-	const fetchLogFields = async ({ middleField, smallField, detailField }) => {
-		try {
-			resetSelectedSubjectState();
+	const fetchLogFields = ({ middleField, smallField, detailField }) => {
+		resetSelectedSubjectState();
 
-			const smallFieldResponse = await serverApi.post('/api/v2/field-search/small', middleField);
-			setSmallFieldState(smallFieldResponse.data);
+		fetchSmallField(middleField);
 
-			const detailFieldResponse = await serverApi.post('/api/v2/field-search/detail', smallField);
-			setDetailFieldState(detailFieldResponse.data);
-			setSelectedFieldState({
-				middleField,
-				smallField,
-				detailField
-			});
+		fetchDetailField(smallField);
+		setSelectedFieldState({
+			middleField,
+			smallField,
+			detailField
+		});
 
-			const [subjectsResponse] = await Promise.all([
-				serverApi.get(`/api/v1/fields/${detailField.detailFieldCode}/subjects`),
-				fetchCoursesInFields(detailField.detailFieldCode)
-			]);
-			setSubjectsInFieldState(subjectsResponse.data);
-		} catch (error) {
-			console.error('Error fetching log fields:', error);
-		}
+		fetchSubjectsAndCourses(detailField.detailFieldCode);
+	};
+
+	const fetchSubjectsAndCourses = (detailFieldCode) => {
+		Promise.all([fetchSubjectsInField(detailFieldCode), fetchCoursesInFields(detailFieldCode)])
+			.then(([subjectRes, courseRes]) => {
+				setSubjectsInFieldState(subjectRes.data);
+				setCourseByCompetencyInSubjectState(courseRes.data);
+			})
+			.catch((error) => console.error(error));
 	};
 
 	return {
@@ -169,7 +154,8 @@ const useField = () => {
 		fetchCourseDetail,
 		fetchCompetitionRate,
 		fetchAllFields,
-		fetchLogFields
+		fetchLogFields,
+		fetchSubjectsAndCourses
 	};
 };
 

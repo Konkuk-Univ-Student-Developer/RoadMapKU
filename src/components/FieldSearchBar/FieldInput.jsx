@@ -98,8 +98,7 @@ export const scrollOption = {
 };
 
 const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
-	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
-		useField();
+	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsAndCourses } = useField();
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
@@ -151,8 +150,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		setFieldLog(updatedFieldCodeList);
 
 		resetSelectedSubjectState();
-		fetchSubjectsInField(field.detailFieldCode);
-		fetchCoursesInFields(field.detailFieldCode);
+		fetchSubjectsAndCourses(field.detailFieldCode);
 
 		showHandler(true);
 	};
