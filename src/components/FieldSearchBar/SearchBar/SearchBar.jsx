@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useField } from '@hooks';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { allFieldDataState, selectedFieldLogState, selectedFieldState } from '@recoils';
+import { allFieldDataState, selectedFieldLogSelector, selectedFieldState } from '@recoils';
 import { FaSearch, FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa';
 import { Color } from '@styles';
 
@@ -105,7 +105,7 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 	const [isFocused, setIsFocused] = useState(false);
 	const allFieldData = useRecoilValue(allFieldDataState);
 	const selectedField = useRecoilValue(selectedFieldState);
-	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
+	const setFieldLog = useSetRecoilState(selectedFieldLogSelector);
 	const containerRef = useRef(null);
 
 	useEffect(() => {
@@ -141,19 +141,8 @@ const SearchBar = ({ showHandler, isToggleOn, setIsToggleOn }) => {
 		};
 
 		fetchLogFields(restructuredFieldData);
-		setSelectedFieldLog((prevState) => {
-			const isDuplicate = prevState.some(
-				(item) => item.detailField.detailFieldCode === restructuredFieldData.detailField.detailFieldCode
-			);
+		setFieldLog(restructuredFieldData);
 
-			if (isDuplicate) return prevState;
-
-			const newLog = [...prevState, restructuredFieldData];
-			if (newLog.length > 5) {
-				newLog.shift();
-			}
-			return newLog;
-		});
 		setIsFocused(false);
 		showHandler(true);
 		setIsToggleOn(true);

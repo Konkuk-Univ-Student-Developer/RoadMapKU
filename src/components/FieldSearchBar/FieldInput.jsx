@@ -5,10 +5,10 @@ import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	middleFieldState,
-	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
-	selectedSubjectState
+	selectedSubjectState,
+	selectedFieldLogSelector
 } from '@recoils';
 import { Color, fadeIn } from '@styles';
 import useAtomReducer from '@recoils/useAtomReducer';
@@ -104,8 +104,9 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
+	const setFieldLog = useSetRecoilState(selectedFieldLogSelector);
+
 	const selectedField = useRecoilValue(selectedFieldState);
-	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
 
 	const { dispatch } = useAtomReducer();
@@ -147,20 +148,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		};
 
 		dispatch({ type: 'clickDetail', field });
-
-		setSelectedFieldLog((prevState) => {
-			const isDuplicate = prevState.some(
-				(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
-			);
-
-			if (isDuplicate) return prevState;
-
-			const newLog = [...prevState, updatedFieldCodeList];
-			if (newLog.length > 5) {
-				newLog.shift();
-			}
-			return newLog;
-		});
+		setFieldLog(updatedFieldCodeList);
 
 		resetSelectedSubjectState();
 		fetchSubjectsInField(field.detailFieldCode);

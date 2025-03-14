@@ -130,3 +130,22 @@ export const selectedCompetencyState = atom({
 	key: 'selectedCompetencyState',
 	default: 'default'
 });
+
+export const selectedFieldLogSelector = selector({
+	key: 'selectedFieldLogSelector',
+	get: ({ get }) => get(selectedFieldLogState),
+	set: ({ get, set }, updatedFieldCodeList) => {
+		const prevLog = get(selectedFieldLogState);
+		const isDuplicate = prevLog.some(
+			(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
+		);
+
+		if (isDuplicate) return;
+
+		const newLog = [...prevLog, updatedFieldCodeList];
+		if (newLog.length > 5) {
+			newLog.shift();
+		}
+		set(selectedFieldLogState, newLog);
+	}
+});
