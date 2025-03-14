@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import { Color } from '@styles';
 
 const GridContainer = styled.div`
-	height: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '95%' : '')};
 	display: grid;
 	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
-	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? `0.2px solid ${Color.LIGHT_GREY}` : 'none')};
 	border-radius: 4px;
-	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
+	grid-gap: 10px;
 `;
 
 const FieldItem = styled.div.attrs(({ $selectedField, $isDetailField }) => ({

@@ -43,13 +43,12 @@ const FieldColumn = styled.div`
 	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
 
-const GridContainer = styled.div`
-	height: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '95%' : '')};
+const MiddleGridContainer = styled.div`
+	height: 95%;
 	display: grid;
 	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
-	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? `0.2px solid ${Color.LIGHT_GREY}` : 'none')};
+	border: 0.2px solid ${Color.LIGHT_GREY};
 	border-radius: 4px;
-	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
 `;
 
 const MiddleGridItem = styled.div`
@@ -146,7 +145,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 							fieldsRef={fieldRefs}
 						/>
 					) : (
-						<GridContainer $isMiddleGrid={true}>
+						<MiddleGridContainer $isMiddleGrid={true}>
 							{middleFields.map((field, index) => (
 								<MiddleGridItem
 									key={index}
@@ -157,7 +156,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 									{field.middleField}
 								</MiddleGridItem>
 							))}
-						</GridContainer>
+						</MiddleGridContainer>
 					)}
 				</FieldColumn>
 
