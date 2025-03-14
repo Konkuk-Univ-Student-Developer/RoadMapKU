@@ -13,6 +13,7 @@ import {
 import { Color, fadeIn } from '@styles';
 import useAtomReducer from '@recoils/useAtomReducer';
 import { FieldListContents } from '.';
+import FieldGridContents from './FieldGridContents';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -49,25 +50,6 @@ const GridContainer = styled.div`
 	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? `0.2px solid ${Color.LIGHT_GREY}` : 'none')};
 	border-radius: 4px;
 	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
-`;
-
-const FieldItem = styled.div.attrs(({ $selectedField, $isDetailField }) => ({
-	id: $isDetailField
-		? `field_name_${$selectedField.middleField} > ${$selectedField.smallField} > ${$selectedField.detailField} - field_code_${$selectedField.detailFieldCode}`
-		: ''
-}))`
-	display: flex;
-	align-items: center;
-	width: 90%;
-	padding: 8px;
-	font-size: 14px;
-	cursor: pointer;
-	background: ${({ $isSelected }) => ($isSelected ? Color.HOVER_GREEN : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
-
-	&:hover {
-		background-color: ${Color.HOVER_GREEN};
-	}
 `;
 
 const MiddleGridItem = styled.div`
@@ -193,38 +175,24 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 							fieldsRef={fieldRefs}
 						/>
 					) : (
-						<GridContainer>
-							{smallFields.map((field, index) => (
-								<FieldItem
-									key={index}
-									onClick={() => handleSmallFieldClick(field)}
-									$isSelected={selectedField.smallField?.smallField === field.smallField}
-									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
-									$isList={selectedField.smallField}
-								>
-									{field.smallField}
-								</FieldItem>
-							))}
-						</GridContainer>
+						<FieldGridContents
+							type="small"
+							fieldsData={smallFields}
+							clickHandler={handleSmallFieldClick}
+							fieldsRef={fieldRefs}
+							selectedField={selectedField}
+						/>
 					)}
 				</FieldColumn>
 
 				<FieldColumn $width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
-					<GridContainer>
-						{detailFields.map((field, index) => (
-							<FieldItem
-								key={index}
-								$selectedField={field}
-								$isDetailField={field.detailField}
-								onClick={() => handleDetailFieldClick(field)}
-								$isSelected={selectedField.detailField?.detailField === field.detailField}
-								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
-								$isList={!selectedField.smallField}
-							>
-								{field.detailField}
-							</FieldItem>
-						))}
-					</GridContainer>
+					<FieldGridContents
+						type="detail"
+						fieldsData={detailFields}
+						clickHandler={handleDetailFieldClick}
+						fieldsRef={fieldRefs}
+						selectedField={selectedField}
+					/>
 				</FieldColumn>
 			</FieldInputContentsContainer>
 		</FieldInputContainer>
