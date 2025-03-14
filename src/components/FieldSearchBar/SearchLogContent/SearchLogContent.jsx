@@ -119,7 +119,7 @@ const SearchLogContent = () => {
 
 					return (
 						<LogItem key={index} onClick={() => fetchLogFields(field)}>
-							<LogText $searchField={restructuredFieldName} $selectedFieldCode={field.detailFieldCode}>
+							<LogText $searchField={restructuredFieldName} $selectedFieldCode={field.detailField.detailFieldCode}>
 								{restructuredFieldName}
 							</LogText>
 							<DeleteButton
