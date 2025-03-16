@@ -124,7 +124,11 @@ const useField = () => {
 
 		fetchSmallField(middleField);
 
-		fetchDetailField(smallField);
+		fetchDetailField({
+			middleField: middleField.middleField,
+			...smallField
+		});
+
 		setSelectedFieldState({
 			middleField,
 			smallField,
