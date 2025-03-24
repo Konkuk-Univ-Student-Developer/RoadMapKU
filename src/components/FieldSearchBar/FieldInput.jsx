@@ -1,17 +1,19 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import useField from '@hooks/useField';
-import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import {
 	detailFieldState,
 	middleFieldState,
-	selectedFieldLogState,
 	selectedFieldState,
 	smallFieldState,
 	selectedSubjectState,
-	subjectsInFieldState
+	selectedFieldLogSelector
 } from '@recoils';
 import { Color, fadeIn } from '@styles';
+import useAtomReducer from '@recoils/useAtomReducer';
+import { FieldListContents } from '.';
+import FieldGridContents from './FieldGridContents';
 
 const FieldInputContainer = styled.div`
 	width: 95%;
@@ -41,40 +43,12 @@ const FieldColumn = styled.div`
 	display: ${({ $isShowFieldColumn }) => ($isShowFieldColumn ? 'block' : 'none')};
 `;
 
-const GridContainer = styled.div`
-	height: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '95%' : '')};
+const MiddleGridContainer = styled.div`
+	height: 95%;
 	display: grid;
 	grid-template-columns: repeat(${({ $columnCount }) => $columnCount || '4'}, 1fr);
-	border: ${({ $isMiddleGrid }) => ($isMiddleGrid ? `0.2px solid ${Color.LIGHT_GREY}` : 'none')};
+	border: 0.2px solid ${Color.LIGHT_GREY};
 	border-radius: 4px;
-	grid-gap: ${({ $isMiddleGrid }) => ($isMiddleGrid ? '' : '10px')};
-`;
-
-const ListContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 8px;
-`;
-
-const FieldItem = styled.div.attrs(({ $selectedField, $isDetailField }) => ({
-	id: $isDetailField
-		? `field_name_${$selectedField.middleField} > ${$selectedField.smallField} > ${$selectedField.detailField} - field_code_${$selectedField.detailFieldCode}`
-		: ''
-}))`
-	display: flex;
-	align-items: center;
-	width: 90%;
-	padding: 8px;
-	font-size: 14px;
-	cursor: pointer;
-	background: ${({ $isSelected }) => ($isSelected ? Color.HOVER_GREEN : 'white')};
-	color: ${({ $isSelected }) => ($isSelected ? Color.GREEN : Color.BLACK)};
-
-	&:hover {
-		background-color: ${Color.HOVER_GREEN};
-	}
 `;
 
 const MiddleGridItem = styled.div`
@@ -98,16 +72,17 @@ export const scrollOption = {
 };
 
 const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
-	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsInField, fetchCoursesInFields } =
-		useField();
+	const { fetchMiddleField, fetchSmallField, fetchDetailField, fetchSubjectsAndCourses } = useField();
 	const middleFields = useRecoilValue(middleFieldState);
 	const smallFields = useRecoilValue(smallFieldState);
 	const detailFields = useRecoilValue(detailFieldState);
 
-	const [selectedField, setSelectedField] = useRecoilState(selectedFieldState);
-	const setSelectedFieldLog = useSetRecoilState(selectedFieldLogState);
-	const setSubjectsInField = useSetRecoilState(subjectsInFieldState);
+	const setFieldLog = useSetRecoilState(selectedFieldLogSelector);
+
+	const selectedField = useRecoilValue(selectedFieldState);
 	const resetSelectedSubjectState = useResetRecoilState(selectedSubjectState);
+
+	const { dispatch } = useAtomReducer();
 
 	const fieldRefs = {
 		middle: useRef({}),
@@ -127,22 +102,17 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 		}
 	}, [selectedField]);
 
-	const handleMiddleFieldClick = async (field) => {
-		await fetchSmallField(field);
-		setSelectedField({ middleField: field });
-		setSubjectsInField([]);
+	const handleMiddleFieldClick = (field) => {
+		fetchSmallField(field);
+		dispatch({ type: 'clickMiddle', field });
 	};
 
-	const handleSmallFieldClick = async (field) => {
-		await fetchDetailField(field);
-		setSelectedField((prevState) => ({
-			...prevState,
-			smallField: field
-		}));
-		setSubjectsInField([]);
+	const handleSmallFieldClick = (field) => {
+		fetchDetailField(field);
+		dispatch({ type: 'clickSmall', field });
 	};
 
-	const handleDetailFieldClick = async (field) => {
+	const handleDetailFieldClick = (field) => {
 		if (selectedField?.detailField?.detailFieldCode === field.detailFieldCode) return;
 
 		const updatedFieldCodeList = {
@@ -150,24 +120,11 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 			detailField: field
 		};
 
-		setSelectedField(updatedFieldCodeList);
-		setSelectedFieldLog((prevState) => {
-			const isDuplicate = prevState.some(
-				(item) => item.detailField.detailFieldCode === updatedFieldCodeList.detailField.detailFieldCode
-			);
-
-			if (isDuplicate) return prevState;
-
-			const newLog = [...prevState, updatedFieldCodeList];
-			if (newLog.length > 5) {
-				newLog.shift();
-			}
-			return newLog;
-		});
+		dispatch({ type: 'clickDetail', field });
+		setFieldLog(updatedFieldCodeList);
 
 		resetSelectedSubjectState();
-		await fetchSubjectsInField(field.detailFieldCode);
-		await fetchCoursesInFields(field.detailFieldCode);
+		fetchSubjectsAndCourses(field.detailFieldCode);
 
 		showHandler(true);
 	};
@@ -180,20 +137,15 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 					$isShowFieldColumn={!!selectedField.middleField || !selectedField.smallField}
 				>
 					{selectedField.middleField ? (
-						<ListContainer>
-							{middleFields.map((field, index) => (
-								<FieldItem
-									key={index}
-									onClick={() => handleMiddleFieldClick(field)}
-									$isSelected={selectedField.middleField?.middleField === field.middleField}
-									ref={(el) => (fieldRefs.middle.current[field.middleField] = el)}
-								>
-									{field.middleField}
-								</FieldItem>
-							))}
-						</ListContainer>
+						<FieldListContents
+							type="middle"
+							selectedField={selectedField}
+							fieldsData={middleFields}
+							clickHandler={handleMiddleFieldClick}
+							fieldsRef={fieldRefs}
+						/>
 					) : (
-						<GridContainer $isMiddleGrid={true}>
+						<MiddleGridContainer $isMiddleGrid={true}>
 							{middleFields.map((field, index) => (
 								<MiddleGridItem
 									key={index}
@@ -204,7 +156,7 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 									{field.middleField}
 								</MiddleGridItem>
 							))}
-						</GridContainer>
+						</MiddleGridContainer>
 					)}
 				</FieldColumn>
 
@@ -214,52 +166,32 @@ const FieldInput = ({ showHandler, isShowDepartAndLog }) => {
 					$showBorder={selectedField.middleField}
 				>
 					{selectedField.smallField ? (
-						<ListContainer>
-							{smallFields.map((field, index) => (
-								<FieldItem
-									key={index}
-									onClick={() => handleSmallFieldClick(field)}
-									$isSelected={selectedField.smallField?.smallField === field.smallField}
-									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
-									$isList={selectedField.smallField}
-								>
-									{field.smallField}
-								</FieldItem>
-							))}
-						</ListContainer>
+						<FieldListContents
+							type="small"
+							selectedField={selectedField}
+							fieldsData={smallFields}
+							clickHandler={handleSmallFieldClick}
+							fieldsRef={fieldRefs}
+						/>
 					) : (
-						<GridContainer>
-							{smallFields.map((field, index) => (
-								<FieldItem
-									key={index}
-									onClick={() => handleSmallFieldClick(field)}
-									$isSelected={selectedField.smallField?.smallField === field.smallField}
-									ref={(el) => (fieldRefs.small.current[field.smallField] = el)}
-									$isList={selectedField.smallField}
-								>
-									{field.smallField}
-								</FieldItem>
-							))}
-						</GridContainer>
+						<FieldGridContents
+							type="small"
+							fieldsData={smallFields}
+							clickHandler={handleSmallFieldClick}
+							fieldsRef={fieldRefs}
+							selectedField={selectedField}
+						/>
 					)}
 				</FieldColumn>
 
 				<FieldColumn $width="60%" $isShowFieldColumn={selectedField.smallField} $showBorder={selectedField.smallField}>
-					<GridContainer>
-						{detailFields.map((field, index) => (
-							<FieldItem
-								key={index}
-								$selectedField={field}
-								$isDetailField={field.detailField}
-								onClick={() => handleDetailFieldClick(field)}
-								$isSelected={selectedField.detailField?.detailField === field.detailField}
-								ref={(el) => (fieldRefs.detail.current[field.detailField] = el)}
-								$isList={!selectedField.smallField}
-							>
-								{field.detailField}
-							</FieldItem>
-						))}
-					</GridContainer>
+					<FieldGridContents
+						type="detail"
+						fieldsData={detailFields}
+						clickHandler={handleDetailFieldClick}
+						fieldsRef={fieldRefs}
+						selectedField={selectedField}
+					/>
 				</FieldColumn>
 			</FieldInputContentsContainer>
 		</FieldInputContainer>
